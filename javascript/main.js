@@ -1,1 +1,3 @@
-console.log("Hallo, wereld");
+import helloWorld from "./functions.js";
+
+helloWorld("YES");
