@@ -85,8 +85,8 @@ h1 {
 .btn-begin {
   height: 20rem;
   width: 13rem;
-  -webkit-animation: scale 1s ease-in-out infinite;
-          animation: scale 1s ease-in-out infinite;
+  -webkit-animation: scale 2s ease-in-out infinite;
+          animation: scale 2s ease-in-out infinite;
 }
 
 .button {
