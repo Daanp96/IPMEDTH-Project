@@ -16,10 +16,8 @@ html, body {
 
 h1 {
     color: red;
-    cursor: url("/images/cursor_point_60.cur"), default;
-    cursor: grab;
 }
 
 body {
-    cursor: url("/images/cursor_point_60.cur"), default;
+    cursor: url("../../images/cursor_plain_60.cur"), default;
 }
