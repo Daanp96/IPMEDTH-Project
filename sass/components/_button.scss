@@ -2,3 +2,39 @@
 // deze is bedoeld alleen voor verschillende buttons. dit is gewoon een klasse die je aanmaakt
 // en elke keer kan hergebruiken.
 
+.btn-check{
+    &,
+    &:link,
+    &:visited{
+        text-decoration: none;
+        padding: 0rem 6rem;
+        // display: inline-block;
+        border-radius: 10rem;
+        // transition: all 0.2s;
+        // position: relative;
+        border: 1px solid $color-black;
+        cursor: pointer;
+        font-size: 4rem;
+        background-color: #05DA34;
+        box-shadow: 0 1rem 2rem rgba($color-black, .4);
+    }
+
+    &:hover{
+        background-color: #00ff37;
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    }
+
+    &:active
+    {
+        outline: none;
+        background-color: #00ff37;
+        transform: translateY(0px);
+        box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
+    }
+}
+
+// .btn-begin{
+    
+    
+// }
