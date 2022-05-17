@@ -8,10 +8,7 @@
     &:visited{
         text-decoration: none;
         padding: 0rem 6rem;
-        // display: inline-block;
         border-radius: 10rem;
-        // transition: all 0.2s;
-        // position: relative;
         border: 1px solid $color-black;
         font-size: 4rem;
         background-color: #05DA34;
@@ -36,12 +33,11 @@
 .btn-begin{
     height: 20rem;
     width: 13rem;
-    cursor: pointer;
 
     animation: scale 1s ease-in-out infinite;
 }
 
-button {
+.button {
     cursor: url("../../images/cursor_point_60.cur"), default;
 }
 

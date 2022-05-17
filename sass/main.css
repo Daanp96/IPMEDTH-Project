@@ -85,12 +85,11 @@ h1 {
 .btn-begin {
   height: 20rem;
   width: 13rem;
-  cursor: pointer;
   -webkit-animation: scale 1s ease-in-out infinite;
           animation: scale 1s ease-in-out infinite;
 }
 
-button {
+.button {
   cursor: url("../../images/cursor_point_60.cur"), default;
 }
 /*# sourceMappingURL=main.css.map */
