@@ -73,6 +73,7 @@ html {
 .btn-begin {
   height: 20rem;
   width: 13rem;
+  cursor: pointer;
   -webkit-animation: scale 1s ease-in-out infinite;
           animation: scale 1s ease-in-out infinite;
 }
