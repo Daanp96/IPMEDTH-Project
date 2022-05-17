@@ -13,7 +13,6 @@
         // transition: all 0.2s;
         // position: relative;
         border: 1px solid $color-black;
-        cursor: pointer;
         font-size: 4rem;
         background-color: #05DA34;
         box-shadow: 0 1rem 2rem rgba($color-black, .4);
@@ -40,8 +39,9 @@
     cursor: pointer;
 
     animation: scale 1s ease-in-out infinite;
-    // animation-name: scale;
-    // animation-duration: 1s;
-    // animation-timing-function: ease-in-out;
-    // animation-duration: in;
 }
+
+button {
+    cursor: url("../../images/cursor_point_60.cur"), default;
+}
+

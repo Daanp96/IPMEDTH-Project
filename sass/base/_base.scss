@@ -8,3 +8,18 @@ html{
     box-sizing: inherit;
     font-size: 62.5%;
 }
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    cursor: url("../../images/cursor_plain_60.cur"), default;
+}
+
+h1 {
+    color: red;
+}
+
+

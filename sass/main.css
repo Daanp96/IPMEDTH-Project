@@ -41,12 +41,24 @@ html {
   font-size: 62.5%;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  cursor: url("../../images/cursor_plain_60.cur"), default;
+}
+
+h1 {
+  color: red;
+}
+
 .btn-check, .btn-check:link, .btn-check:visited {
   text-decoration: none;
   padding: 0rem 6rem;
   border-radius: 10rem;
   border: 1px solid #000;
-  cursor: pointer;
   font-size: 4rem;
   background-color: #05DA34;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
@@ -76,5 +88,9 @@ html {
   cursor: pointer;
   -webkit-animation: scale 1s ease-in-out infinite;
           animation: scale 1s ease-in-out infinite;
+}
+
+button {
+  cursor: url("../../images/cursor_point_60.cur"), default;
 }
 /*# sourceMappingURL=main.css.map */
