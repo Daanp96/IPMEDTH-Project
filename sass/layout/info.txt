@@ -1,0 +1,2 @@
+je kan files aanmaken voor bijvoorbeeld verschillende grids die je wilt aanmaken
+of een file voor de navigation, header, footer etc
