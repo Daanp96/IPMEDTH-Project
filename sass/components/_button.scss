@@ -50,3 +50,11 @@
     // animation-timing-function: ease-in-out;
     // animation-duration: in;
 }
+
+.drag {
+    width: 250px;
+    height: 50px;
+    display: block;
+    background-color: red;
+    cursor: url("../../images/cursor_grab_60.cur"), default;
+}

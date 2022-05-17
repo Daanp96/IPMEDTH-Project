@@ -1,3 +1,5 @@
-import helloWorld from "./functions.js";
+import dragDrop from "./functions.js";
 
-helloWorld("YES");
+const drag = document.getElementById("js--drag");
+
+dragDrop(drag);

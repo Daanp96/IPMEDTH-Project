@@ -92,4 +92,12 @@ body {
   -webkit-animation: scale 1s ease-in-out infinite;
           animation: scale 1s ease-in-out infinite;
 }
+
+.drag {
+  width: 250px;
+  height: 50px;
+  display: block;
+  background-color: red;
+  cursor: url("../../images/cursor_grab_60.cur"), default;
+}
 /*# sourceMappingURL=main.css.map */
