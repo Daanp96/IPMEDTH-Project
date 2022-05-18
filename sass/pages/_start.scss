@@ -1,0 +1,29 @@
+.background-start{
+    @include background;
+    background-image: url(../../images/background-start.jpg);
+}
+
+.start{
+
+    &--btn{
+        grid-column: 6 / span 2;
+        grid-row: 6 /span 2;
+    
+        animation: scale 2s ease-in-out infinite;
+
+        &-image{
+            height: 20rem;
+            width: 13rem;
+        }
+    }
+
+    &--figure{
+        grid-column: 10 / span 2;
+        grid-row: 5 /span 4;
+    }
+
+    &--image{
+        width: 20rem;
+        height: auto;
+    }
+}
