@@ -5,11 +5,11 @@
     line-height: 2.4rem;
     width: 40rem;
     height: max-content;
-    background: #fff;
+    background: $color-white;
     border-radius: 4rem;
     padding: 2rem;
     text-align: center;
-    color: #000;
+    color: $color-black;
     grid-column: 11 / span 4;
     grid-row: 4 /span 1;
 }
@@ -19,9 +19,9 @@
     width: 0;
     height: 0;
     position: absolute;
-    border-left: 2.4rem solid #fff;
+    border-left: 2.4rem solid $color-white;
     border-right: 1.2rem solid transparent;
-    border-top: 1.2rem solid #fff;
+    border-top: 1.2rem solid $color-white;
     border-bottom: 2rem solid transparent;
     left: 3.2rem;
     bottom: -2.4rem;
