@@ -36,8 +36,13 @@
     border: none;
 }
 
-.hint-btn{
-    grid-column: 13 / span 1;
+.btn-options{
+    grid-column: 13 / span 4;
+    grid-row: 1 /span 1;
+}
+
+.btn-hint{
+    grid-column: 1 / span 1;
     grid-row: 1 /span 1;
 
     &--image{
@@ -45,8 +50,8 @@
     }
 }
 
-.information-btn{
-    grid-column: 14 / span 1;
+.btn-information{
+    grid-column: 2 / span 1;
     grid-row: 1 /span 1;
 
     &--image{
@@ -54,8 +59,8 @@
     }
 }
 
-.music-on-btn{
-    grid-column: 15 / span 1;
+.btn-music{
+    grid-column: 3 / span 1;
     grid-row: 1 /span 1;
 
     &--image{
@@ -63,11 +68,19 @@
     }
 }
 
-.speak-on-btn{
-    grid-column: 16 / span 1;
+.music-off-btn{
+    visibility: hidden;
+}
+
+.btn-speak{
+    grid-column: 4 / span 1;
     grid-row: 1 /span 1;
 
     &--image{
         @include widthImageSetting;
     }
+}
+
+.speak-off-btn{
+    visibility: hidden;
 }

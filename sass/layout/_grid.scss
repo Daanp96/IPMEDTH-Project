@@ -1,7 +1,13 @@
 .grid-16-8{
-    width: 100%;
-    height: 71.3rem;
+    width: 100vw;
+    height: 100vh; 
     display: grid;
     grid-template-rows: repeat(8, minmax(0,1fr));
     grid-template-columns: repeat(16, minmax(0,1fr));
+}
+
+.grid-4-1{
+    display: grid;
+    grid-template-rows: repeat(1, minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0,1fr));
 }

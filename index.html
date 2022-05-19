@@ -8,25 +8,35 @@
     <link rel="stylesheet" href="./sass/main.css">
     <script src="./javascript/main.js" type="module" defer></script>
 </head>
-<body class="background-start">
+<body>
     <!-- <button href="#" class="btn-check button">&#10004;</button> -->
-    <main>
+    <main class="background-start">
         <section class="section-start grid-16-8">
-            <button class="hint-btn button ">
-                <image class="hint-btn--image" src="./images/hint-btn.png"></image>
-            </button>
+            <article class="btn-options grid-4-1">
+                <button class="btn-hint button ">
+                    <image class="btn-hint--image" src="./images/hint-btn.png"></image>
+                </button>
 
-            <button class="information-btn button ">
-                <image class="information-btn--image" src="./images/information-btn.png"></image>
-            </button>
-
-            <button class="music-on-btn button ">
-                <image class="music-on-btn--image" src="./images/music-on-btn.png"></image>
-            </button>
-
-            <button class="speak-on-btn button ">
-                <image class="speak-on-btn--image" src="./images/speak-on-btn.png"></image>
-            </button>
+                <button class="btn-information button ">
+                    <image class="btn-information--image" src="./images/information-btn.png"></image>
+                </button>
+    
+                <button class="btn-music button" id="js--music-on">
+                    <image class="btn-music--image" src="./images/music-on-btn.png"></image>
+                </button>
+    
+                <button class="btn-music music-off-btn button" id="js--music-off">
+                    <image class="btn-music--image" src="./images/music-off-btn.png"></image>
+                </button>
+    
+                <button class="btn-speak button" id="js--speak-on">
+                    <image class="btn-speak--image" src="./images/speak-on-btn.png"></image>
+                </button>
+    
+                <button class="btn-speak speak-off-btn button" id="js--speak-off">
+                    <image class="btn-speak--image" src="./images/speak-off-btn.png"></image>
+                </button>
+            </article>
 
             <button class="start--btn button">
                 <image class="start--btn-image" src="/images/arrow-begin.png"></image>
@@ -35,6 +45,11 @@
             <figure class="start--figure">
                 <img class="start--image" src="./images/zoo-keeper-1.png" alt="zoo keeper">
             </figure>
+
+            <div class="speech-bubble" contenteditable>
+                <p>Hooooooooooooooi</p>
+            </div>
+
         </section>
     </main>
 </body>

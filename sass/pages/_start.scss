@@ -6,14 +6,16 @@
 .start{
 
     &--btn{
-        grid-column: 6 / span 2;
+        grid-column: 7 / span 1;
         grid-row: 6 /span 2;
+        visibility: hidden;
     
         animation: scale 2s ease-in-out infinite;
 
         &-image{
-            height: 20rem;
-            width: 13rem;
+            height: 100%;
+            width: 100%;
+            transform: rotateX(45deg);
         }
     }
 
@@ -23,7 +25,7 @@
     }
 
     &--image{
-        width: 20rem;
-        height: auto;
+        height: 100%;
+        width: 100%;
     }
 }
