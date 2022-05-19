@@ -46,12 +46,13 @@ html, body {
   width: 100%;
 }
 
-h1 {
-  color: red;
-}
-
 body {
   cursor: url("../../images/cursor_plain_60.cur"), default;
+  overflow: hidden;
+}
+
+h1 {
+  color: red;
 }
 
 .btn-check, .btn-check:link, .btn-check:visited {
@@ -84,13 +85,110 @@ body {
 
 .button {
   cursor: url("../../images/cursor_point_60.cur"), default;
+  background-color: transparent;
+  border: none;
 }
 
-.btn-begin {
+.hint-btn {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 1;
+  grid-column: 13 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /span 1;
+}
+
+.hint-btn--image {
+  width: 6rem;
+  height: auto;
+}
+
+.information-btn {
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 1;
+  grid-column: 14 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /span 1;
+}
+
+.information-btn--image {
+  width: 6rem;
+  height: auto;
+}
+
+.music-on-btn {
+  -ms-grid-column: 15;
+  -ms-grid-column-span: 1;
+  grid-column: 15 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /span 1;
+}
+
+.music-on-btn--image {
+  width: 6rem;
+  height: auto;
+}
+
+.speak-on-btn {
+  -ms-grid-column: 16;
+  -ms-grid-column-span: 1;
+  grid-column: 16 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /span 1;
+}
+
+.speak-on-btn--image {
+  width: 6rem;
+  height: auto;
+}
+
+.grid-16-8 {
+  width: 100%;
+  height: 71.3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (minmax(0, 1fr))[8];
+      grid-template-rows: repeat(8, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[16];
+      grid-template-columns: repeat(16, minmax(0, 1fr));
+}
+
+.background-start {
+  background-size: cover;
+  background-image: url(../../images/background-start.jpg);
+}
+
+.start--btn {
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-column: 6 / span 2;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  grid-row: 6 /span 2;
+  -webkit-animation: scale 2s ease-in-out infinite;
+          animation: scale 2s ease-in-out infinite;
+}
+
+.start--btn-image {
   height: 20rem;
   width: 13rem;
-  -webkit-animation: scale 1s ease-in-out infinite;
-          animation: scale 1s ease-in-out infinite;
+}
+
+.start--figure {
+  -ms-grid-column: 10;
+  -ms-grid-column-span: 2;
+  grid-column: 10 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 4;
+  grid-row: 5 /span 4;
+}
+
+.start--image {
+  width: 20rem;
+  height: auto;
 }
 
 .drag {
