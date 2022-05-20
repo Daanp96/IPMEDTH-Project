@@ -28,6 +28,7 @@
         transform: translateY(0px);
         box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
     }
+    
 }
 
 .button {
@@ -68,7 +69,7 @@
     }
 }
 
-.music-off-btn{
+.btn-music-off{
     visibility: hidden;
 }
 
@@ -81,6 +82,35 @@
     }
 }
 
-.speak-off-btn{
+.btn-speak-off{
     visibility: hidden;
+}
+
+.btn-ok{
+    &,
+    &:link,
+    &:visited{
+        text-decoration: none;
+        padding: 0rem 3rem;
+        border-radius: 10rem;
+        border: 1px solid $color-black;
+        font-size: 2rem;
+        background-color: #05DA34;
+        box-shadow: 0 1rem 2rem rgba($color-black, .4);
+        margin-top: 1rem;
+    }
+
+    &:hover{
+        background-color: #00ff37;
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    }
+
+    &:active
+    {
+        outline: none;
+        background-color: #00ff37;
+        transform: translateY(0px);
+        box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
+    }
 }

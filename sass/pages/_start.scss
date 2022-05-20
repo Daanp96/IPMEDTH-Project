@@ -13,7 +13,7 @@
         animation: scale 2s ease-in-out infinite;
 
         &-image{
-            height: 100%;
+            height: auto;
             width: 100%;
             transform: rotateX(45deg);
         }
@@ -29,3 +29,10 @@
         width: 100%;
     }
 }
+
+// .no-selecting p{
+//     -webkit-user-select: none;  /* Chrome all / Safari all */
+//     -moz-user-select: none;     /* Firefox all */
+//     -ms-user-select: none;      /* IE 10+ */
+//     user-select: none;  
+// }
