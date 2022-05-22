@@ -1,5 +1,5 @@
-const helloWorld = (text) => {
-    console.log(text);
-}
+// const helloWorld = (text) => {
+//     console.log(text);
+// }
 
-export default helloWorld;
+// export default helloWorld;

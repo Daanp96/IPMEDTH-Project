@@ -28,6 +28,7 @@
         transform: translateY(0px);
         box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
     }
+    
 }
 
 .button {
@@ -36,8 +37,13 @@
     border: none;
 }
 
-.hint-btn{
-    grid-column: 13 / span 1;
+.btn-options{
+    grid-column: 13 / span 4;
+    grid-row: 1 /span 1;
+}
+
+.btn-hint{
+    grid-column: 1 / span 1;
     grid-row: 1 /span 1;
 
     &--image{
@@ -45,8 +51,8 @@
     }
 }
 
-.information-btn{
-    grid-column: 14 / span 1;
+.btn-information{
+    grid-column: 2 / span 1;
     grid-row: 1 /span 1;
 
     &--image{
@@ -54,8 +60,8 @@
     }
 }
 
-.music-on-btn{
-    grid-column: 15 / span 1;
+.btn-music{
+    grid-column: 3 / span 1;
     grid-row: 1 /span 1;
 
     &--image{
@@ -63,11 +69,48 @@
     }
 }
 
-.speak-on-btn{
-    grid-column: 16 / span 1;
+.btn-music-off{
+    visibility: hidden;
+}
+
+.btn-speak{
+    grid-column: 4 / span 1;
     grid-row: 1 /span 1;
 
     &--image{
         @include widthImageSetting;
+    }
+}
+
+.btn-speak-off{
+    visibility: hidden;
+}
+
+.btn-ok{
+    &,
+    &:link,
+    &:visited{
+        text-decoration: none;
+        padding: 0rem 3rem;
+        border-radius: 10rem;
+        border: 1px solid $color-black;
+        font-size: 2rem;
+        background-color: #05DA34;
+        box-shadow: 0 1rem 2rem rgba($color-black, .4);
+        margin-top: 1rem;
+    }
+
+    &:hover{
+        background-color: #00ff37;
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    }
+
+    &:active
+    {
+        outline: none;
+        background-color: #00ff37;
+        transform: translateY(0px);
+        box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
     }
 }
