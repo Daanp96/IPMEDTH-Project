@@ -146,8 +146,8 @@ h1 {
 }
 
 .grid-16-8 {
-  width: 100%;
-  height: 71.3rem;
+  width: 100vw;
+  height: 100vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (minmax(0, 1fr))[8];
@@ -158,6 +158,7 @@ h1 {
 
 .background-start {
   background-size: cover;
+  background-repeat: no-repeat;
   background-image: url(../../images/background-start.jpg);
 }
 
@@ -189,5 +190,38 @@ h1 {
 .start--image {
   width: 20rem;
   height: auto;
+}
+
+.background-mappuzzel {
+  background-color: #F0EAD2;
+}
+
+.mappuzzel--btn {
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-column: 6 / span 2;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  grid-row: 6 /span 2;
+  -webkit-animation: scale 2s ease-in-out infinite;
+          animation: scale 2s ease-in-out infinite;
+}
+
+.mappuzzel--btn-image {
+  height: 20rem;
+  width: 13rem;
+}
+
+.mappuzzel--tile {
+  border: 2px solid #3d0101;
+  -ms-grid-column-span: 3;
+      grid-column-end: span 3;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2px;
+      grid-template-areas: "A B C" "D E F" "G H I";
+  background: #3d0101;
+  -webkit-box-shadow: inset 0 0 2em 0 #0a0000;
+          box-shadow: inset 0 0 2em 0 #0a0000;
 }
 /*# sourceMappingURL=main.css.map */
