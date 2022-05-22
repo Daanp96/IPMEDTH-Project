@@ -257,6 +257,13 @@ h1 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid-3-3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 1fr))[3];
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .background-start {
   background-size: cover;
   background-repeat: no-repeat;
@@ -300,32 +307,138 @@ h1 {
   background-color: #F0EAD2;
 }
 
-.mappuzzel--btn {
-  -ms-grid-column: 6;
+.mappuzzel--map {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 7;
+  grid-column: 5/ span 7;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2/ span 4;
+}
+
+.mappuzzel--map-BG {
+  height: auto;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
+  opacity: 30%;
+}
+
+.mappuzzel--slide-1 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-column: 6 / span 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 /span 1;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.mappuzzel--slide-2 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / span 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 /span 1;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
+
+.mappuzzel--slide-3 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5 /span 1;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
+.mappuzzel--slide-4 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 2;
+  grid-column: 13 / span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 /span 1;
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+
+.mappuzzel--slide-5 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 /span 1;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.mappuzzel--slide-6 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 2;
+  grid-column: 13 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5 /span 1;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.mappuzzel--slide-7 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 2;
+  grid-column: 13 / span 2;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.mappuzzel--slide-8 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / span 2;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
+
+.mappuzzel--slide-9 {
+  height: auto;
+  width: 100%;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
   -ms-grid-row: 6;
-  -ms-grid-row-span: 2;
-  grid-row: 6 /span 2;
-  -webkit-animation: scale 2s ease-in-out infinite;
-          animation: scale 2s ease-in-out infinite;
-}
-
-.mappuzzel--btn-image {
-  height: 20rem;
-  width: 13rem;
-}
-
-.mappuzzel--tile {
-  border: 2px solid #3d0101;
-  -ms-grid-column-span: 3;
-      grid-column-end: span 3;
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 2px;
-      grid-template-areas: "A B C" "D E F" "G H I";
-  background: #3d0101;
-  -webkit-box-shadow: inset 0 0 2em 0 #0a0000;
-          box-shadow: inset 0 0 2em 0 #0a0000;
+  -ms-grid-row-span: 1;
+  grid-row: 6 /span 1;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 /*# sourceMappingURL=main.css.map */
