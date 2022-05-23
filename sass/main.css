@@ -60,6 +60,10 @@ h1 {
   color: red;
 }
 
+.hide {
+  display: none;
+}
+
 .btn-check, .btn-check:link, .btn-check:visited {
   text-decoration: none;
   padding: 0rem 6rem;
@@ -167,6 +171,11 @@ h1 {
   visibility: hidden;
 }
 
+.btn-explane {
+  width: 6rem;
+  height: auto;
+}
+
 .btn-ok, .btn-ok:link, .btn-ok:visited {
   text-decoration: none;
   padding: 0rem 3rem;
@@ -201,7 +210,7 @@ h1 {
   font-weight: 400;
   font-size: 2rem;
   line-height: 2.4rem;
-  width: 40rem;
+  width: 38.5rem;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -255,12 +264,18 @@ h1 {
       grid-template-rows: repeat(1, minmax(0, 1fr));
   -ms-grid-columns: (minmax(0, 1fr))[4];
       grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  height: 100%;
 }
 
 .background-start {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../../images/background-start.jpg);
+  background-image: url(../../images/start-background.png);
+}
+
+.section-start {
+  place-items: end;
 }
 
 .start--btn {

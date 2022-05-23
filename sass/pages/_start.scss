@@ -1,6 +1,10 @@
 .background-start{
     @include background;
-    background-image: url(../../images/background-start.jpg);
+    background-image: url(../../images/start-background.png);
+}
+
+.section-start{
+    place-items: end;
 }
 
 .start{
@@ -28,7 +32,9 @@
         height: 100%;
         width: 100%;
     }
+
 }
+
 
 // .no-selecting p{
 //     -webkit-user-select: none;  /* Chrome all / Safari all */
