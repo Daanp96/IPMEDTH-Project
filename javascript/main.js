@@ -35,22 +35,20 @@ speakOff.onclick = () =>{
     speakOn.style.visibility = "visible";
 };
 
-// tekstwolk tekst aanpassen.
-startOKBtn.onclick = () => {
-    console.log(startOKBtn.clicked = true);
 
-    if(startOKBtn.clicked == true && startOK == 0){
+startOKBtn.onclick = () => {
+    console.log(startOK);
+
+    if(startOK == 0 && true){
         startP.innerHTML = "jaja";
-        startOKBtn.clicked = false; 
         startOK ++;
-        console.log(startOK);
+        return;
     }
-    if (startOKBtn.clicked == true && startOK == 1) {
+    if(startOK == 1 && true){
         speechBubble.style.visibility = "hidden";
         startOK ++;
-        console.log(startOK);
     }
-    if (startOKBtn.clicked == true && startOK == 2) {
+    if (startOK == 2) {
         startBtn.style.visibility = "visible";
     }
 };
