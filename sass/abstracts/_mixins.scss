@@ -18,3 +18,8 @@
     width: 6rem;
     height: auto;
 }
+
+@mixin zookeeperSize{
+    height: 50vh;
+    width: 12vw;
+}

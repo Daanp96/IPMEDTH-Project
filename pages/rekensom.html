@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dierentuin</title>
+    <link rel="stylesheet" href="../sass/main.css">
+    <script src="../javascript/rekensom.js" type="module" defer></script>
+    <script src="../javascript/main.js" type="module" defer></script>
+</head>
+<body>
+    <main class="rekensom--background" id="js--rekensom-background">
+        <section class="section-rekensom grid-16-6">
+            <article class="btn-options grid-4-1">
+                <button class="btn-hint button ">
+                    <image class="btn-hint--image" src="../images/hint-btn.png"></image>
+                </button>
+
+                <button class="btn-information button ">
+                    <image class="btn-information--image" src="../images/information-btn.png"></image>
+                </button>
+    
+                <button class="btn-music button" id="js--music-on">
+                    <image class="btn-music--image" src="../images/music-on-btn.png"></image>
+                </button>
+    
+                <button class="btn-music btn-music-off button" id="js--music-off">
+                    <image class="btn-music--image" src="../images/music-off-btn.png"></image>
+                </button>
+    
+                <button class="btn-speak button" id="js--speak-on">
+                    <image class="btn-speak--image" src="../images/speak-on-btn.png"></image>
+                </button>
+    
+                <button class="btn-speak btn-speak-off button" id="js--speak-off">
+                    <image class="btn-speak--image" src="../images/speak-off-btn.png"></image>
+                </button>
+            </article>
+
+            <article class="rekensom--animal-1">
+                <figure>
+                    <img src="../images/fishes-3.png" alt="fish" class="rekensom--image-animal">
+                </figure>
+            </article>
+            <article class="rekensom--animal-2">
+                <figure>
+                    <img src="../images/fishes-3.png" alt="fish" class="rekensom--image-animal">
+                </figure>
+            </article>
+            <article class="rekensom--animal-3">
+                <figure>
+                    <img src="../images/fishes-3.png" alt="fish" class="rekensom--image-animal">
+                </figure>
+            </article>
+            <article class="rekensom--animal-4">
+                <figure>
+                    <img src="../images/fishes-3.png" alt="fish" class="rekensom--image-animal">
+                </figure>
+            </article>
+
+            <form name="answerForm" class="form">
+                <label class="form__label" for="aantalDieren">Aantal dieren:</label>
+                <input name="numberInput" class="form__input" type="number" required>
+                <button class="form__button btn-check" data-puzzel="#1" type="submit" value="">&#10004;</button>
+            </form>  
+
+            <div class="speech-bubble rekensom--speech-bubble" id="js--speech-bubble">
+                <image class="btn-explane hide" id="js--start-explane-btn"></image>
+                <p id="js--start-p">dfjdn dfd df ddf df wo odeokd o wdodk o dkowk wo fn i nwwo wnw .</p>
+                <button class="btn-ok button" id="js--start-ok-btn">OK</button>
+            </div>
+        </section>
+        <section class="grey-bar"></section>
+        <section class="walk-path"></section>
+        <figure class="rekensom--figure">
+            <img class="rekensom--image" src="../images/zoo-keeper-1.png" alt="zoo keeper">
+        </figure>
+    </main>
+</body>
+</html>

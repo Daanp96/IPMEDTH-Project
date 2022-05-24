@@ -1,13 +1,13 @@
-.background-start{
-    @include background;
-    background-image: url(../../images/start-background.png);
-}
-
 .section-start{
     place-items: end;
 }
 
 .start{
+    
+    &--background{
+        @include background;
+        background-image: url(../../images/start-background.png);
+    }
 
     &--btn{
         grid-column: 7 / span 1;
@@ -33,12 +33,9 @@
         width: 100%;
     }
 
+    &--speech-bubble{
+        grid-column: 11 / span 4;
+        grid-row: 4 /span 1;   
+    }
+
 }
-
-
-// .no-selecting p{
-//     -webkit-user-select: none;  /* Chrome all / Safari all */
-//     -moz-user-select: none;     /* Firefox all */
-//     -ms-user-select: none;      /* IE 10+ */
-//     user-select: none;  
-// }
