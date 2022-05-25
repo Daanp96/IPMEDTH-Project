@@ -1,5 +1,5 @@
 
-import dragDrop from "./functions.js";
+// import dragDrop from "./functions.js";
 
 const drag = document.getElementById("js--drag");
 
@@ -28,4 +28,4 @@ speakOff.onclick = () =>{
     speakOn.style.visibility = "visible";
 };
 
-dragDrop(drag);
+// dragDrop(drag);
