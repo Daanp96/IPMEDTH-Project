@@ -11,7 +11,7 @@
         "components/_button.scss",
         "components/_form.scss",
         "components/_speechBubble.scss",
-        "components/_walk-path.scss",
+        "components/_walkPath.scss",
         "layout/_grid.scss",
         "pages/_rekensom.scss",
         "pages/_start.scss",
