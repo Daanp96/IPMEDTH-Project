@@ -15,7 +15,8 @@
         "layout/_grid.scss",
         "pages/_rekensom.scss",
         "pages/_start.scss",
-        "pages/_input.scss"
+        "pages/_input.scss",
+        "pages/_mappuzzel.scss"
     ],
     "names": [],
     "file": "main.css"
