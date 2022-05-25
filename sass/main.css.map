@@ -14,7 +14,8 @@
         "components/_walk-path.scss",
         "layout/_grid.scss",
         "pages/_rekensom.scss",
-        "pages/_start.scss"
+        "pages/_start.scss",
+        "pages/_input.scss"
     ],
     "names": [],
     "file": "main.css"

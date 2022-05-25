@@ -1,6 +1,7 @@
-// import helloWorld from "./functions.js";
 
-// helloWorld("YES");
+import dragDrop from "./functions.js";
+
+const drag = document.getElementById("js--drag");
 
 const musicOn = document.getElementById("js--music-on");
 const musicOff = document.getElementById("js--music-off");
@@ -27,3 +28,4 @@ speakOff.onclick = () =>{
     speakOn.style.visibility = "visible";
 };
 
+dragDrop(drag);

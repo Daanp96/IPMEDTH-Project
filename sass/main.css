@@ -311,6 +311,14 @@ h1 {
   background-color: #F0EAD2;
 }
 
+.drag {
+  width: 250px;
+  height: 50px;
+  display: block;
+  background-color: red;
+  cursor: url("../../images/cursor_grab_60.cur"), default;
+}
+
 .grid-16-8 {
   width: 100vw;
   height: 100vh;
@@ -469,5 +477,39 @@ h1 {
   -ms-grid-row: 4;
   -ms-grid-row-span: 1;
   grid-row: 4 /span 1;
+}
+
+.input-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 8;
+  grid-column: 7 / span 8;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / span 2;
+  -ms-grid-rows: (minmax(0, 1fr))[4];
+      grid-template-rows: repeat(4, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto;
+}
+
+.input-form--text {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / 4;
+  width: 39rem;
+  height: 10rem;
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  font-size: 6rem;
+}
+
+.input-form--button {
+  margin: 2rem 0;
 }
 /*# sourceMappingURL=main.css.map */
