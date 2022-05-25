@@ -1,7 +1,7 @@
 
 // import dragDrop from "./functions.js";
 
-const drag = document.getElementById("js--drag");
+// const drag = document.getElementById("js--drag");
 
 const musicOn = document.getElementById("js--music-on");
 const musicOff = document.getElementById("js--music-off");

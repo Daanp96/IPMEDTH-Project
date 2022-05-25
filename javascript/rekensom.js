@@ -58,7 +58,7 @@ const secondpage = document.getElementById("js--second-page");
 
 nextBtnRight.onclick = () => {
     firstpage.classList.remove("grid-16-6");
-    // firstpage.classList.add("slidein-from-left");
+    firstpage.classList.add("slidein-from-left");
     firstpage.classList.add("hide");
     
     secondpage.classList.add("grid-16-6");
@@ -73,5 +73,5 @@ nextBtnLeft.onclick = () => {
     
     secondpage.classList.remove("grid-16-6");
     secondpage.classList.add("hide");
-    // secondpage.classList.add("slidein-from-right");
+    secondpage.classList.add("slidein-from-right");
 };

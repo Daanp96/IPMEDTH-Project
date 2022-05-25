@@ -1,0 +1,44 @@
+.puzzel-options{
+
+    &__btn-hint{
+        grid-column: 13 / span 1;
+        grid-row: 1 /span 1;
+
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+
+    &__btn-information{
+        grid-column: 14 / span 1;
+        grid-row: 1 /span 1;
+    
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+
+    &__btn-music{
+        grid-column: 15 / span 1;
+        grid-row: 1 /span 1;
+    
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+    &__btn-music-off{
+        visibility: hidden;
+    }
+
+    &__btn-speak{
+        grid-column: 16 / span 1;
+        grid-row: 1 /span 1;
+    
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+    &__btn-speak-off{
+        visibility: hidden;
+    }
+}
