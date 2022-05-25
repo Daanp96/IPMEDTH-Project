@@ -11,3 +11,42 @@
         transform: scale(1);
     }
 }
+
+.slidein-transition{
+    animation: fadein 500ms ease-in;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slidein-from-right{
+    animation: slidein-from-right 500ms;
+}
+
+@keyframes slidein-from-right {
+    from {
+        transform:translateX(100%);
+    }
+    to {
+        transform:translateX(0%);
+    }
+}
+
+.slidein-from-left{
+    animation: slidein-from-left 500ms;
+}
+
+@keyframes slidein-from-left {
+    from {
+        transform:translateX(-100%);
+    }
+    to {
+        transform:translateX(0%);
+    }
+}

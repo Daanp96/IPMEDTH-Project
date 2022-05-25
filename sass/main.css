@@ -28,6 +28,83 @@
   }
 }
 
+.slidein-transition {
+  -webkit-animation: fadein 500ms ease-in;
+          animation: fadein 500ms ease-in;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slidein-from-right {
+  -webkit-animation: slidein-from-right 500ms;
+          animation: slidein-from-right 500ms;
+}
+
+@-webkit-keyframes slidein-from-right {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slidein-from-right {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+.slidein-from-left {
+  -webkit-animation: slidein-from-left 500ms;
+          animation: slidein-from-left 500ms;
+}
+
+@-webkit-keyframes slidein-from-left {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slidein-from-left {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -208,6 +285,36 @@ h1 {
           transform: translateY(0px);
   -webkit-box-shadow: inset 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
           box-shadow: inset 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.next-page-right {
+  text-decoration: none;
+  -ms-grid-column: 15;
+  -ms-grid-column-span: 2;
+  grid-column: 15 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 3;
+  grid-row: 4 /span 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(239, 239, 239, 0.65);
+  -webkit-clip-path: polygon(0% 30%, 60% 30%, 60% 0%, 100% 50%, 60% 100%, 60% 70%, 0% 70%);
+          clip-path: polygon(0% 30%, 60% 30%, 60% 0%, 100% 50%, 60% 100%, 60% 70%, 0% 70%);
+}
+
+.next-page-left {
+  text-decoration: none;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 3;
+  grid-row: 4 /span 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(239, 239, 239, 0.65);
+  -webkit-clip-path: polygon(40% 0%, 40% 30%, 100% 30%, 100% 70%, 40% 70%, 40% 100%, 0% 50%);
+          clip-path: polygon(40% 0%, 40% 30%, 100% 30%, 100% 70%, 40% 70%, 40% 100%, 0% 50%);
 }
 
 .drag {
