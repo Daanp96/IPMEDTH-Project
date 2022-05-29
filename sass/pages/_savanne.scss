@@ -1,0 +1,27 @@
+.section-rekensom{
+    place-items: end;
+}
+
+
+.savanne{
+    &--background{
+        @include background;
+        background-image: url(../../images/Photoshop-transparant/Savanne-3.png);
+    }
+    
+    &--figure{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &--image{
+        @include zookeeperSize;
+    }
+
+    &--speech-bubble{
+        grid-column: 2 / span 4;
+        grid-row: 4 / span 1;
+    }
+
+}

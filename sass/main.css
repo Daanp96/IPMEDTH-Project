@@ -426,6 +426,24 @@ h1 {
   background-color: #F0EAD2;
 }
 
+.walk-path-up {
+  width: 100vw;
+  height: 12vh;
+  background-color: #F0EAD2;
+}
+
+.rock-wood-wall {
+  width: 100vw;
+  height: 15vh;
+  background-image: url("../../images/Photoshop-transparant/savanne-wall-marked.png");
+  z-index: 10;
+}
+
+.rock-wood-wall--savanne {
+  width: 50vw;
+  height: auto;
+}
+
 .grid-16-9 {
   width: 100vw;
   height: 90vh;
@@ -861,5 +879,35 @@ h1 {
   grid-row: 6 /span 1;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
+}
+
+.section-rekensom {
+  place-items: end;
+}
+
+.savanne--background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../../images/Photoshop-transparant/Savanne-3.png);
+}
+
+.savanne--figure {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.savanne--image {
+  height: 50vh;
+  width: 12vw;
+}
+
+.savanne--speech-bubble {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-column: 2 / span 4;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 / span 1;
 }
 /*# sourceMappingURL=main.css.map */
