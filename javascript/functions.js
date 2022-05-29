@@ -41,12 +41,10 @@ const dragDrop = (object, width = '') => {
       };
 }
 
-const dragDropMap = (obj, width = '', map) => {
+const dragDropMap = (obj, width = '') => {
   let currentDroppable = null;
 
     obj.onmousedown = function(event) {
-      let test = event.target.id;
-      console.log(test);
 
       let shiftX = event.clientX - obj.getBoundingClientRect().left;
       let shiftY = event.clientY - obj.getBoundingClientRect().top;
@@ -93,6 +91,12 @@ const dragDropMap = (obj, width = '', map) => {
         document.removeEventListener('mousemove', onMouseMove);
         obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
         obj.onmouseup = null;
+
+        const attr = currentDroppable.getAttribute('data-piece');
+          if(attr == obj.getAttribute('data-piece')) {
+            currentDroppable.style.opacity = '100%';
+            obj.hidden = true;
+          }
       };
 
     };
