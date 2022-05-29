@@ -11,12 +11,12 @@
         border-radius: 10rem;
         border: 1px solid $color-black;
         font-size: 4rem;
-        background-color: #05DA34;
+        background-color: $color-btn !important;
         box-shadow: 0 1rem 2rem rgba($color-black, .4);
     }
 
     &:hover{
-        background-color: #00ff37;
+        background-color: $color-btn;
         transform: translateY(-3px);
         box-shadow: 0 1rem 2rem rgba($color-black, .2);
     }
@@ -24,7 +24,7 @@
     &:active
     {
         outline: none;
-        background-color: #00ff37;
+        background-color: $color-btn;
         transform: translateY(0px);
         box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
     }
@@ -50,13 +50,13 @@
         border-radius: 10rem;
         border: 1px solid $color-black;
         font-size: 2rem;
-        background-color: #05DA34;
+        background-color: $color-btn !important;
         box-shadow: 0 1rem 2rem rgba($color-black, .4);
         margin-top: 1rem;
     }
 
     &:hover{
-        background-color: #00ff37;
+        background-color: $color-btn;
         transform: translateY(-3px);
         box-shadow: 0 1rem 2rem rgba($color-black, .2);
     }
@@ -64,7 +64,7 @@
     &:active
     {
         outline: none;
-        background-color: #00ff37;
+        background-color: $color-btn;
         transform: translateY(0px);
         box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
     }

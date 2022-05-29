@@ -6,10 +6,25 @@
     display: none;
 }
 
+.grey-bar-position{
+    grid-column: 1 / span 16;
+    grid-row: 8/ span 1;
+}
 .grey-bar{
-    width: 100vw;
-    height: 5vh;
+    width: 200%;
+    height: 50%;
     background-color: #A8A8A8;
+}
+
+.walk-path-position{
+    grid-column: 1 / span 16;
+    grid-row: 9/ span 1;
+    
+}
+.walk-path{
+    width: 200%;
+    height: 100%;
+    background-color: #F0EAD2;
 }
 
 .puzzel-btn-options{
