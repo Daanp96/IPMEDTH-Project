@@ -1,8 +1,8 @@
-import {dragDrop, dragDropMap} from "./functions.js";
+import {dragDropMap} from "./functions.js";
 
-const slide = document.getElementsByClassName("drag");
+const slides = document.getElementsByClassName("drag");
+const button = document.getElementById("js--map_btn");
 
-for (let i = 0; i < slide.length; i++) {
-
-    dragDropMap(slide[i], '240px');
+for (let i = 0; i < slides.length; i++) {
+    dragDropMap(slides[i], '240px', button);
 }

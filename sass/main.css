@@ -260,6 +260,10 @@ h1 {
   cursor: url("../../images/cursor_grab_60.cur"), default;
 }
 
+.map-btn {
+  display: none;
+}
+
 .form {
   background-color: #ddd;
   position: absolute;

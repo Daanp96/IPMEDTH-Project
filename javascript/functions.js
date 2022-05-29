@@ -41,7 +41,9 @@ const dragDrop = (object, width = '') => {
       };
 }
 
-const dragDropMap = (obj, width = '') => {
+let layedPieces = 0;
+
+const dragDropMap = (obj, width = '', btn) => {
   let currentDroppable = null;
 
     obj.onmousedown = function(event) {
@@ -93,12 +95,18 @@ const dragDropMap = (obj, width = '') => {
         obj.onmouseup = null;
 
         const attr = currentDroppable.getAttribute('data-piece');
-          if(attr == obj.getAttribute('data-piece')) {
-            currentDroppable.style.opacity = '100%';
-            obj.hidden = true;
-          }
-      };
 
+        if(attr == obj.getAttribute('data-piece')) {
+          currentDroppable.style.opacity = '100%';
+          currentDroppable.classList.add("layed");
+          obj.hidden = true;
+          layedPieces++;
+
+          if(layedPieces == 9){
+            btn.style.display = "block";
+          }
+        }
+      };
     };
 
     function enterDroppable(elem) {
