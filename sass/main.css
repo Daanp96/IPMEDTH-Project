@@ -156,6 +156,31 @@ h1 {
   grid-row: 1 /span 1;
 }
 
+.modal_view {
+  width: 50vh;
+  background-color: red;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  opacity: 1;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.modal_view h2 {
+  padding: 1rem;
+}
+
+.modal_view p {
+  margin: 1rem;
+}
+
+.modal_view button {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: green;
+}
+
 .btn-check, .btn-check:link, .btn-check:visited {
   text-decoration: none;
   border-radius: 10rem;

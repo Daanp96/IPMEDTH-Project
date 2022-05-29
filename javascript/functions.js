@@ -122,4 +122,19 @@ const dragDropMap = (obj, width = '', btn) => {
     };
 }
 
-export { dragDrop, dragDropMap };
+const modalView = (modal, title, text, button, {
+    title_content = "",
+    text_content = "",
+    button_content = ""
+  }) => {
+
+  title.innerHTML = title_content;
+  text.innerHTML = text_content;
+  button.innerHTML = button_content;
+
+  button.onclick = () => {
+    modal.style.opacity = "0";
+  }
+}
+
+export { dragDrop, dragDropMap, modalView};
