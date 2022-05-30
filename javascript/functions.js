@@ -43,7 +43,7 @@ const dragDrop = (object, width = '') => {
 
 let layedPieces = 0;
 
-const dragDropMap = (obj, width = '', btn) => {
+const dragDropMap = (obj, width = '', btn, zookpr) => {
   let currentDroppable = null;
 
     obj.onmousedown = function(event) {
@@ -104,6 +104,9 @@ const dragDropMap = (obj, width = '', btn) => {
 
           if(layedPieces == 9){
             btn.style.display = "block";
+            zookpr.style.opacity = "1";
+            zookpr.style.zIndex = "1";
+            btn.style.zIndex = "2";
           }
         }
       };

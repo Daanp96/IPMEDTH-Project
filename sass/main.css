@@ -287,6 +287,10 @@ h1 {
 
 .map-btn {
   display: none;
+  -ms-grid-column: 13;
+      grid-column-start: 13;
+  -ms-grid-row: 6;
+      grid-row-start: 6;
 }
 
 .form {
@@ -717,28 +721,10 @@ h1 {
 }
 
 .input-form {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-column: 7;
-  -ms-grid-column-span: 8;
-  grid-column: 7 / span 8;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  grid-row: 2 / span 2;
-  -ms-grid-rows: (minmax(0, 1fr))[4];
-      grid-template-rows: repeat(4, minmax(0, 1fr));
-  -ms-grid-columns: (minmax(0, 1fr))[4];
-      grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0 auto;
 }
 
 .input-form--text {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / span 3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  grid-row: 1 / 4;
   width: 39rem;
   height: 10rem;
   margin-top: 1.5rem;
@@ -889,5 +875,30 @@ h1 {
   grid-row: 6 /span 1;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
+}
+
+.section-mappuzzel__finished {
+  -ms-grid-column: 12;
+      grid-column-start: 12;
+  grid-column-end: 15;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  text-align: center;
+  font-size: 2rem;
+  display: none;
+}
+
+.map_zookeeper {
+  -ms-grid-column: 12;
+      grid-column-start: 12;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  text-align: center;
+  font-size: 2rem;
+  width: 30rem;
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: -1;
 }
 /*# sourceMappingURL=main.css.map */
