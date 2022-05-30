@@ -31,3 +31,27 @@
     grid-column: 13 / span 4;
     grid-row: 1 /span 1;
 }
+
+.modal_view {
+    width: 50vh;
+    background-color: red;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 1;
+    transition: 0.5s all;
+
+    h2 {
+        padding: 1rem;
+    }
+
+    p {
+        margin: 1rem;
+    }
+
+    button {
+        margin: 1rem;
+        padding: 1rem;
+        background-color: green;
+    }
+}
