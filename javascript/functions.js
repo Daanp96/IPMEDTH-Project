@@ -1,10 +1,12 @@
-const dragDrop = (object) => {
+const dragDrop = (object, width = '') => {
+
     object.onmousedown = (event) => {
 
         let shiftX = event.clientX - object.getBoundingClientRect().left;
         let shiftY = event.clientY - object.getBoundingClientRect().top;
       
         object.style.position = 'absolute';
+        object.style.width = width;
         object.style.zIndex = 1000;
         object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
         document.body.append(object);
