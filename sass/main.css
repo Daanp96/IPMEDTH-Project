@@ -160,14 +160,19 @@ h1 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 16;
   grid-column: 1 / span 16;
-  -ms-grid-row: 9;
-  -ms-grid-row-span: 1;
-  grid-row: 9/ span 1;
+  -ms-grid-row: 8;
+  -ms-grid-row-span: 2;
+  grid-row: 8/ span 2;
 }
 
 .walk-path {
-  width: 200%;
+  width: 100%;
   height: 100%;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(70%, #f0ead2), color-stop(40%, transparent));
+  background-image: linear-gradient(0deg, #f0ead2 70%, transparent 40%);
+}
+
+.walk-path--up {
   background-color: #F0EAD2;
 }
 
@@ -349,9 +354,9 @@ h1 {
   -ms-grid-column: 13;
   -ms-grid-column-span: 1;
   grid-column: 13 / span 1;
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 1 /span 1;
+  grid-row: 2 /span 1;
 }
 
 .puzzel-options__btn-hint--image {
@@ -363,9 +368,9 @@ h1 {
   -ms-grid-column: 14;
   -ms-grid-column-span: 1;
   grid-column: 14 / span 1;
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 1 /span 1;
+  grid-row: 2 /span 1;
 }
 
 .puzzel-options__btn-information--image {
@@ -377,9 +382,9 @@ h1 {
   -ms-grid-column: 15;
   -ms-grid-column-span: 1;
   grid-column: 15 / span 1;
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 1 /span 1;
+  grid-row: 2 /span 1;
 }
 
 .puzzel-options__btn-music--image {
@@ -395,9 +400,9 @@ h1 {
   -ms-grid-column: 16;
   -ms-grid-column-span: 1;
   grid-column: 16 / span 1;
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 1 /span 1;
+  grid-row: 2 /span 1;
 }
 
 .puzzel-options__btn-speak--image {
@@ -444,15 +449,69 @@ h1 {
   bottom: -2.4rem;
 }
 
-.rock-wood-wall {
-  width: 100vw;
-  height: 15vh;
-  background-image: url("../../images/Photoshop-transparant/savanne-wall-marked.png");
-  z-index: 10;
+.rock-wood-wall-position--1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / span 8;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  grid-row: 7/ span 2;
+  z-index: 1;
 }
 
-.rock-wood-wall--savanne {
+.rock-wood-wall-position--2 {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 16;
+  grid-column: 9 / span 16;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  grid-row: 7/ span 2;
+  z-index: 1;
+}
+
+.rock-wood-wall-position--up-1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / span 4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2/ span 4;
+}
+
+.rock-wood-wall-position--up-2 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 9;
+  grid-column: 5 / span 9;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2/ span 4;
+}
+
+.rock-wood-wall-position--up-3 {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 13;
+  grid-column: 9 / span 13;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2/ span 4;
+}
+
+.rock-wood-wall-position--up-4 {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 16;
+  grid-column: 13 / span 16;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2/ span 4;
+}
+
+.rock-wood-wall {
   width: 50vw;
+  height: auto;
+}
+
+.rock-wood-wall--up {
+  width: 25vw;
   height: auto;
 }
 
@@ -481,12 +540,13 @@ h1 {
 .grid-16-1 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (minmax(0, 1fr))[1];
-      grid-template-rows: repeat(1, minmax(0, 1fr));
+  -ms-grid-rows: (minmax(0, 1fr))[4];
+      grid-template-rows: repeat(4, minmax(0, 1fr));
   -ms-grid-columns: (minmax(0, 1fr))[16];
       grid-template-columns: repeat(16, minmax(0, 1fr));
   width: 100vw;
   height: 10vh;
+  z-index: 100;
 }
 
 .grid-4-1 {
@@ -885,20 +945,68 @@ h1 {
           transform: rotate(30deg);
 }
 
-.section-rekensom {
-  place-items: end;
-}
-
 .savanne--background {
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../../images/Photoshop-transparant/Savanne-3.png);
 }
 
+.savanne-tree-1 {
+  -ms-grid-column: 10;
+  -ms-grid-column-span: 16;
+  grid-column: 10/ span 16;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/ span 1;
+}
+
+.savanne-tree-2 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 16;
+  grid-column: 3/ span 16;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/ span 1;
+}
+
+.savanne-tree-3 {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 16;
+  grid-column: 8/ span 16;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/ span 1;
+}
+
+.savanne-tree--image-1 {
+  width: 40vw;
+  height: auto;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.savanne-tree--image-2 {
+  width: 25vw;
+  height: auto;
+  -webkit-transform: scaleX(-1) rotate(-15deg);
+          transform: scaleX(-1) rotate(-15deg);
+}
+
+.savanne-tree--image-3 {
+  width: 25vw;
+  height: auto;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
 .savanne--figure {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5 / span 1;
+  z-index: 2;
 }
 
 .savanne--image {
