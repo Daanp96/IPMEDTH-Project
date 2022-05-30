@@ -37,7 +37,7 @@
             </button>
         </section>
 
-        <section class="section-rekensom grid-16-7" id="js--first-page">
+        <section class="section-rekensom grid-16-9" id="js--first-page">
             <article class="rekensom--animal-1">
                 <figure>
                     <img src="../images/fishes-3.png" alt="fish" class="rekensom--image-animal">
@@ -63,11 +63,11 @@
                 </figure>
             </article>
 
-            <!-- <form name="answerForm" class="form">
+            <form name="answerForm" class="form">
                 <label class="form__label" for="aantalDieren">Aantal dieren:</label>
-                <input name="numberInput" class="form__input" type="number" required>
-                <button class="form__button btn-check" data-puzzel="#1" type="submit" value="">&#10004;</button>
-            </form>   -->
+                <input name="numberInput" id="aantalDieren" class="form__input" type="number" required>
+                <button class="form__button btn-check button" id="js--form-submit" type="submit" value="">&#10004;</button>
+            </form>  
 
             <div class="speech-bubble rekensom--speech-bubble" id="js--speech-bubble">
                 <!-- <image class="btn-explane hide" id="js--start-explane-btn"></image> -->
@@ -76,15 +76,21 @@
             </div>
 
             <button class="next-page-right button" id="js--next-btn-right"></button>
+
+            <div class="grey-bar-position grey-bar"></div>
+            <div class="walk-path-position walk-path"></div>
+
+            <figure class="rekensom--figure">
+                <img class="rekensom--image" src="../images/zoo-keeper-1.png" alt="zoo keeper">
+            </figure>
         </section>
         <section class="section-rekensom hide" id="js--second-page">
             <button class="next-page-left button" id="js--next-btn-left"></button>
+
+            <div class="grey-bar-position grey-bar"></div>
+            <div class="walk-path-position walk-path"></div>
         </section>
-        <section class="grey-bar"></section>
-        <section class="walk-path"></section>
-        <figure class="rekensom--figure">
-            <img class="rekensom--image" src="../images/zoo-keeper-1.png" alt="zoo keeper">
-        </figure>
+    
     </main>
 </body>
 </html>

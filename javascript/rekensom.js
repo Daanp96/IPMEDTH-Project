@@ -56,22 +56,43 @@ const nextBtnLeft = document.getElementById("js--next-btn-left");
 const firstpage = document.getElementById("js--first-page");
 const secondpage = document.getElementById("js--second-page");
 
+const formBtn = document.getElementById("js--form-submit");
+
+//antwoorden
+const reken_correct = 6;
+
+formBtn.addEventListener("click", function(e){
+
+    let form_answer = document.forms["answerForm"]["numberInput"].value;
+
+    if(form_answer == reken_correct){
+        console.log("jaaa");
+        
+        endRekensomPuzzel();
+    }
+    e.preventDefault();
+});
+
 nextBtnRight.onclick = () => {
-    firstpage.classList.remove("grid-16-6");
+    firstpage.classList.remove("grid-16-9");
     firstpage.classList.add("slidein-from-left");
     firstpage.classList.add("hide");
     
-    secondpage.classList.add("grid-16-6");
+    secondpage.classList.add("grid-16-9");
     secondpage.classList.remove("hide");
     secondpage.classList.add("slidein-from-right");
 };
 
 nextBtnLeft.onclick = () => {
-    firstpage.classList.add("grid-16-6");
+    firstpage.classList.add("grid-16-9");
     firstpage.classList.add("slidein-from-left");
     firstpage.classList.remove("hide");
     
-    secondpage.classList.remove("grid-16-6");
+    secondpage.classList.remove("grid-16-9");
     secondpage.classList.add("hide");
     secondpage.classList.add("slidein-from-right");
 };
+
+function endRekensomPuzzel(){
+    window.location.href="mappuzzle.html";  
+}
