@@ -1254,18 +1254,33 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
+.map--speech-bubble {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  opacity: 1;
+  z-index: 1;
+}
+
+.map--speech-bubble::before {
+  left: 32rem;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
 .map_zookeeper {
-  -ms-grid-column: 10;
-      grid-column-start: 10;
+  -ms-grid-column: 6;
+      grid-column-start: 6;
   -ms-grid-row: 2;
       grid-row-start: 2;
   text-align: center;
   font-size: 2rem;
   width: 30rem;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
-  z-index: -1;
+  z-index: 1;
 }
 
 body {
@@ -1287,6 +1302,7 @@ body {
   font-size: 2rem;
   width: 30rem;
 }
+
 .savanne--background {
   background-size: cover;
   background-repeat: no-repeat;

@@ -106,16 +106,31 @@
         font-size: 2rem;
         display: none;
     }
-    
+
+}
+
+.map--speech-bubble {
+    grid-column-start: 3;
+    transition: 0.5s all;
+    opacity: 1;
+    z-index: 1;
+}
+
+.map--speech-bubble::before {
+    left: 32rem;
+    transform: scaleX(-1);
 }
 
 .map_zookeeper {
-    grid-column-start: 10;
+    // grid-column-start: 10;
+    grid-column-start: 6;
     grid-row-start: 2;
     text-align: center;
     font-size: 2rem;
     width: 30rem;
-    opacity: 0;
+    opacity: 1;
+    // opacity: 0;
     transition: 0.5s all;
-    z-index: -1;
+    // z-index: -1;
+    z-index: 1;
 }
