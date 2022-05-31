@@ -51,6 +51,7 @@
 // console.log(seaAnimal3);
 // console.log(seaAnimal4);
 
+//-------------------------------------------------------------------------------------------------
 const nextBtnRight = document.getElementById("js--next-btn-right");
 const nextBtnLeft = document.getElementById("js--next-btn-left");
 const firstpage = document.getElementById("js--first-page");
@@ -73,25 +74,27 @@ formBtn.addEventListener("click", function(e){
     e.preventDefault();
 });
 
-nextBtnRight.onclick = () => {
-    firstpage.classList.remove("grid-16-9");
-    firstpage.classList.add("slidein-from-left");
-    firstpage.classList.add("hide");
-    
+nextBtnRight.onclick = () => {    
     secondpage.classList.add("grid-16-9");
     secondpage.classList.remove("hide");
     secondpage.classList.add("slidein-from-right");
+
+    firstpage.classList.remove("grid-16-9");
+    // firstpage.classList.add("slidein-from-left");
+    firstpage.classList.add("hide");
 };
 
-nextBtnLeft.onclick = () => {
+nextBtnLeft.onclick = () => {    
+    secondpage.classList.remove("grid-16-9");
+    secondpage.classList.add("hide");
+    // secondpage.classList.add("slidein-from-right");
+
     firstpage.classList.add("grid-16-9");
     firstpage.classList.add("slidein-from-left");
     firstpage.classList.remove("hide");
-    
-    secondpage.classList.remove("grid-16-9");
-    secondpage.classList.add("hide");
-    secondpage.classList.add("slidein-from-right");
 };
+
+
 
 function endRekensomPuzzel(){
     window.location.href="mappuzzle.html";  
