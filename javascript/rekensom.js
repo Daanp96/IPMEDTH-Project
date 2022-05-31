@@ -57,22 +57,22 @@ const nextBtnLeft = document.getElementById("js--next-btn-left");
 const firstpage = document.getElementById("js--first-page");
 const secondpage = document.getElementById("js--second-page");
 
-// const formBtn = document.getElementById("js--form-submit");
+const formBtn = document.getElementById("js--form-submit");
 
 //antwoorden
 const reken_correct = 6;
 
-// formBtn.addEventListener("click", function(e){
+formBtn.addEventListener("click", function(e){
 
-//     let form_answer = document.forms["answerForm"]["numberInput"].value;
+    let form_answer = document.forms["answerForm"]["numberInput"].value;
 
-//     if(form_answer == reken_correct){
-//         console.log("jaaa");
+    if(form_answer == reken_correct){
+        console.log("jaaa");
         
-//         endRekensomPuzzel();
-//     }
-//     e.preventDefault();
-// });
+        endRekensomPuzzel();
+    }
+    e.preventDefault();
+});
 
 nextBtnRight.onclick = () => {    
     secondpage.classList.add("grid-16-9");
