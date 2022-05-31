@@ -311,10 +311,10 @@ h1 {
 
 .map-btn {
   display: none;
-  -ms-grid-column: 13;
-      grid-column-start: 13;
-  -ms-grid-row: 6;
-      grid-row-start: 6;
+  -ms-grid-column: 14;
+      grid-column-start: 14;
+  -ms-grid-row: 5;
+      grid-row-start: 5;
 }
 
 .form {
@@ -899,8 +899,8 @@ h1 {
 }
 
 .map_zookeeper {
-  -ms-grid-column: 12;
-      grid-column-start: 12;
+  -ms-grid-column: 10;
+      grid-column-start: 10;
   -ms-grid-row: 2;
       grid-row-start: 2;
   text-align: center;
@@ -910,5 +910,25 @@ h1 {
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
   z-index: -1;
+}
+
+body {
+  background-color: #F0EAD2;
+}
+
+.background-map__image {
+  width: 50vw;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+}
+
+.background-map__zookeeper {
+  -ms-grid-column: 12;
+      grid-column-start: 12;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  text-align: center;
+  font-size: 2rem;
+  width: 30rem;
 }
 /*# sourceMappingURL=main.css.map */

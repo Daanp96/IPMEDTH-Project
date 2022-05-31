@@ -96,17 +96,21 @@
    
 }
 
-.section-mappuzzel__finished {
-    grid-column-start: 12;
-    grid-column-end: 15;
-    grid-row-start: 4;
-    text-align: center;
-    font-size: 2rem;
-    display: none;
+.section-mappuzzel {
+
+    &__finished {
+        grid-column-start: 12;
+        grid-column-end: 15;
+        grid-row-start: 4;
+        text-align: center;
+        font-size: 2rem;
+        display: none;
+    }
+    
 }
 
 .map_zookeeper {
-    grid-column-start: 12;
+    grid-column-start: 10;
     grid-row-start: 2;
     text-align: center;
     font-size: 2rem;

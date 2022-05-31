@@ -1,0 +1,18 @@
+body {
+    background-color: $color-path;
+}
+
+.background-map {
+    &__image {
+        width: 50vw;
+        grid-column-start: 3;
+    }
+
+    &__zookeeper {
+        grid-column-start: 12;
+        grid-row-start: 2;
+        text-align: center;
+        font-size: 2rem;
+        width: 30rem;
+    }
+}

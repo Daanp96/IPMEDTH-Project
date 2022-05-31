@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dierentuin</title>
+    <link rel="stylesheet" href="../sass/main.css">
+    <script src="../javascript/main.js" type="module" defer></script>
+    <script src="../javascript/map.js" type="module" defer></script>
+</head>
+<body>
+    <main class="background-map">
+        <section class="puzzel-options grid-16-1">
+            <button class="puzzel-options__btn-hint button ">
+                <image class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></image>
+            </button>
+            <button class="puzzel-options__btn-information button ">
+                <image class="puzzel-options__btn-information--image" src="../images/information-btn.png"></image>
+            </button>
+            <button class="puzzel-options__btn-music button" id="js--music-on">
+                <image class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></image>
+            </button>
+            <button class="puzzel-options__btn-music puzzel-options__btn-music-off button" id="js--music-off">
+                <image class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></image>
+            </button>
+            <button class="puzzel-options__btn-speak button" id="js--speak-on">
+                <image class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></image>
+            </button>
+            <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
+                <image class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></image>
+            </button>
+        </section>
+
+        <section class="grid-16-9">
+            <img class="background-map__image" src="../images/map.png" alt="Map">
+            <img class="background-map__zookeeper" src="../images/zoo-keeper-1.png" alt="Zookeeper">
+        </section>
+    </main>
+</body>
+</html>

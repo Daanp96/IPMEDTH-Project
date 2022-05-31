@@ -7,9 +7,38 @@ const speechBubble = document.getElementById("js--speech-bubble");
 
 let startOK = 0;
 
+const bubbleText = {
+    0: {
+        tekst: 'jaja',
+        image: ''
+    },
+    1: {
+        tekst: 'Klik op het lampje voor een hint.',
+        image: './images/hint-btn.png'
+    },
+    2: {
+        tekst: 'Klik op i voor een informatie.',
+        image: './images/information-btn.png'
+    }, 
+    3: {
+        tekst: 'Klik op de muzieknoot om de muziek uit te zetten.',
+        image: './images/music-on-btn.png'
+    }, 
+    4: {
+        tekst: 'Klik op de oor om mijn geluid uit te zetten.',
+        image: './images/speak-on-btn.png'
+    }
+}
+
 // praat wolk
 startOKBtn.onclick = () => {
-    console.log(startOK);
+
+    // for (const [count, content] of Object.entries(bubbleText)) {
+    //    if(count == startOK){
+    //     startP.innerHTML = content.tekst;
+    //     startExplaneBtn.src = content.image;
+    //    }
+    // }
 
     if(startOK == 0 && true){
         startP.innerHTML = "jaja";
@@ -49,3 +78,7 @@ startOKBtn.onclick = () => {
         startBtn.style.visibility = "visible";
     }
 };
+
+startBtn.onclick = () => {
+    window.location.href="./pages/mappuzzel.html";  
+}

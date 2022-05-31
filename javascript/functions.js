@@ -1,3 +1,5 @@
+let layedPieces = 0;
+
 const dragDrop = (object, width = '') => {
 
     object.onmousedown = (event) => {
@@ -40,8 +42,6 @@ const dragDrop = (object, width = '') => {
         return false;
       };
 }
-
-let layedPieces = 0;
 
 const dragDropMap = (obj, width = '', btn, zookpr) => {
   let currentDroppable = null;
@@ -137,6 +137,14 @@ const modalView = (modal, title, text, button, {
 
   button.onclick = () => {
     modal.style.opacity = "0";
+  }
+}
+
+const textBubble = () => {
+  if(startOK == 0 && true){
+    startP.innerHTML = "jaja";
+    startOK ++;
+    return;
   }
 }
 
