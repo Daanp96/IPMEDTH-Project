@@ -27,5 +27,3 @@ speakOff.onclick = () =>{
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
 };
-
-// dragDrop(drag);
