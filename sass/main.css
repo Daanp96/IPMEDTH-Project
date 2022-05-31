@@ -643,7 +643,7 @@ h1 {
 
 .popup__container--form-input {
   width: 100%;
-  height: -webkit-fill-available;
+  height: 100%;
   font-size: 9rem;
   text-align: center;
   border: none;

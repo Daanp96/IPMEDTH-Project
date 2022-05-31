@@ -57,6 +57,8 @@ const nextBtnLeft = document.getElementById("js--next-btn-left");
 const firstpage = document.getElementById("js--first-page");
 const secondpage = document.getElementById("js--second-page");
 
+const speechBubble = document.getElementById("js--speech-bubble");
+const startOKBtn = document.getElementById("js--start-ok-btn");
 const formBtn = document.getElementById("js--form-submit");
 
 //antwoorden
@@ -94,8 +96,10 @@ nextBtnLeft.onclick = () => {
     firstpage.classList.remove("hide");
 };
 
-
+startOKBtn.onclick = () => {
+    speechBubble.style.visibility = "hidden";
+}
 
 function endRekensomPuzzel(){
-    window.location.href="mappuzzle.html";  
+    window.location.href="mappuzzel.html";  
 }
