@@ -12,7 +12,7 @@
 <body>
     <main class="rekensom--background" id="js--rekensom-background">
         <section class="puzzel-options grid-16-1">
-            <button class="puzzel-options__btn-hint button ">
+            <button class="puzzel-options__btn-hint button" id="js--hint">
                 <image class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></image>
             </button>
 
@@ -81,8 +81,8 @@
             </article>
 
             <div class="speech-bubble rekensom--speech-bubble" id="js--speech-bubble">
-                <!-- <image class="btn-explane hide" id="js--start-explane-btn"></image> -->
-                <p id="js--start-p">Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? 
+                <image class="btn-explaine-big hide" id="js--explaine-btn"></image>
+                <p id="js--speech-bubble-p">Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? 
                     Het antwoord mag je invullen op het bord.
                 </p>
                 <button class="btn-ok button" id="js--start-ok-btn">OK</button>
@@ -180,9 +180,9 @@
                     <figure class="popup__container--fish-red">
                         <img class="popup__container--image" src="../images/fish-red.png" alt="rode vis">
                     </figure>
-                    <form class="popup__container--form" name="answerForm">
-                        <label for="aantalDieren"></label>
-                        <input class="popup__container--form-input button" name="numberInput" id="aantalDieren" type="number" placeholder="0" required>
+                    <form class="popup__container--form" id="js--rekensom-form" name="answerForm">
+                        <label for="aantalVissen"></label>
+                        <input class="popup__container--form-input button" name="numberInput" id="aantalVissen" type="number" placeholder="0" required>
                     </form>
 
                     <button class="popup__container--button btn-check button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
