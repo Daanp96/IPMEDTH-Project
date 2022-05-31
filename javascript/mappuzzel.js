@@ -3,7 +3,7 @@ import {dragDropMap} from "./functions.js";
 const slides = document.getElementsByClassName("drag");
 const button = document.getElementById("js--map_btn");
 const speech = document.getElementById("js--speech-bubble");
-const speechButton = document.getElementById("js--map-ok-btn");
+const speechButton = document.getElementById("js--mappuzzle-ok-btn");
 const zookeeper = document.getElementById("js--map_zookeeper");
 
 for (let i = 0; i < slides.length; i++) {

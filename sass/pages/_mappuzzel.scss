@@ -109,14 +109,14 @@
 
 }
 
-.map--speech-bubble {
+.mappuzzle--speech-bubble {
     grid-column-start: 3;
     transition: 0.5s all;
     opacity: 1;
     z-index: 1;
 }
 
-.map--speech-bubble::before {
+.mappuzzle--speech-bubble::before {
     left: 32rem;
     transform: scaleX(-1);
 }
