@@ -77,8 +77,11 @@ formBtn.addEventListener("click", function(e){
 
     if(form_answer == reken_correct){
         console.log("jaaa");
+        document.getElementById("aantalVissen").style.color = "lime";
+        setTimeout(() => {
+            endRekensomPuzzel();
+        }, 700);
         
-        endRekensomPuzzel();
     }else{
         rekensomForm.classList.add("shake");
         document.getElementById("aantalVissen").style.color = "red";
