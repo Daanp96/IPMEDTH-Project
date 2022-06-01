@@ -724,6 +724,24 @@ h1 {
   margin: 1rem;
 }
 
+.popup__content-monkey {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 60%;
+  background-color: transparent;
+  border-radius: 3px;
+  display: table;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.25);
+  transform: translate(-50%, -50%) scale(0.25);
+  -webkit-transition: all .4s .2s;
+  transition: all .4s .2s;
+}
+
 .popup__container-monkey {
   background-image: url(../images/sign-monkey-popup.png);
   background-size: cover;
@@ -747,9 +765,9 @@ h1 {
   grid-column: 1 / span 6;
   -ms-grid-row: 1;
   grid-row: 1;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   text-align: center;
   font-size: 4rem;
   color: #fff;
@@ -804,6 +822,12 @@ h1 {
           transform: translate(-50%, -50%) scale(1);
 }
 
+.popup:target .popup__content-monkey {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
 .popup__close:link, .popup__close:visited {
   color: #fff;
   -ms-grid-column: 6;
@@ -816,9 +840,9 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 6rem;
   text-decoration: none;
   -webkit-transition: all .2s;
