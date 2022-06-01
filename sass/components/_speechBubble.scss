@@ -28,3 +28,12 @@
     left: 3.2rem;
     bottom: -2.4rem;
 }
+
+.btn-explaine{
+    @include widthImageSetting;
+}
+
+.btn-explaine-big{
+    width: 20rem;
+    height: auto;
+}
