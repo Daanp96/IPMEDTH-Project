@@ -2,32 +2,135 @@
     background-color: $color-path;
 
     &__sign {
-        width: 40vw;
-        grid-column-start: 4;
+        grid-column: 2 / span 6;
+        grid-row: 1 / span 9;
+
+        &--image{
+            width: 33vw;
+        }
     }
 
-    &__image {
-        width: 25vw;
-        grid-column-start: 5;
-        grid-column-end: 10;
-        grid-row-start: 2;
-        grid-row-end: 5;
+    &__map-1{
+        grid-column: 3 / span 2;
+        grid-row: 2 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-1{
+            width: 10vw;
+            height: auto;
+            transform: rotate(10deg);
+        }
+    }
+    &__map-2{
+        grid-column: 4 / span 2;
+        grid-row: 3 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-2{
+            width: 10vw;
+            height: auto;
+            transform: rotate(-30deg);
+        }
+    }
+    &__map-3{
+        grid-column: 3 / span 2;
+        grid-row: 4 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-3{
+            width: 10vw;
+            height: auto;
+            transform: rotate(10deg);
+        }
+    }
+    &__map-4{
+        grid-column: 5 / span 2;
+        grid-row: 2 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-4{
+            width: 10vw;
+            height: auto;
+            transform: rotate(10deg);
+        }
+    }
+    &__map-5{
+        grid-column: 5 / span 2;
+        grid-row: 4 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-5{
+            width: 10vw;
+            height: auto;
+            transform: rotate(50deg);
+        }
+    }
+    &__map-6{
+        grid-column: 3 / span 2;
+        grid-row: 3 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-6{
+            width: 10vw;
+            height: auto;
+            transform: rotate(-50deg);
+        }
+    }
+    &__map-7{
+        grid-column: 4 / span 2;
+        grid-row: 2 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-7{
+            width: 10vw;
+            height: auto;
+        }
+    }
+    &__map-8{
+        grid-column: 4 / span 2;
+        grid-row: 4 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-8{
+            width: 10vw;
+            height: auto;
+            transform: rotate(25deg);
+        }
+    }
+    &__map-9{
+        grid-column: 5 / span 2;
+        grid-row: 3 / span 2;
+        animation: scale 2s infinite;
+
+        &--image-9{
+            width: 10vw;
+            height: auto;
+            transform: rotate(70deg);
+            
+        }
     }
 
-    &__zookeeper {
-        transition: 0.5s all;
-        grid-column-start: 12;
-        grid-row-start: 2;
-        text-align: center;
-        font-size: 2rem;
-        width: 30rem;
-        opacity: 1;
-        z-index: 1;
+    &__zookeeper{
+        grid-column: 12 / span 3;
+        grid-row: 2 /span 8;
+
+        &--image {
+            width: 20vw;
+            height: auto;
+        }
+    }
+
+    &__overlay-btn{
+        grid-column: 2 / span 5;
+        grid-row: 2 / span 4;
+        z-index: 20;
+        
     }
 }
 
 .map--speech-bubble {
     grid-column-start: 9;
+    grid-row-start: 2;
     opacity: 1;
     transition: 0.5s all;
     z-index: 1;
