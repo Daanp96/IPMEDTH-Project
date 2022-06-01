@@ -79,9 +79,10 @@
 
     &__element{
         z-index: 2;
+        animation: scale-small 2s infinite;
     }
     &__element:hover{
-        animation: scale-small 2s infinite;
+        animation: scale 2s infinite;
     }
 }
 

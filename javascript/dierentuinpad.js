@@ -25,7 +25,6 @@ if(document.URL.includes("dierentuinpad.html") ){
             pinguin.classList.add("dierentuinpad__element");
             pinguin.classList.add("button");
             break;
-
     }
 }
 
