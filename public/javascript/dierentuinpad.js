@@ -11,6 +11,9 @@ if(document.URL.includes("dierentuinpad.html") ){
     console.log(x);
 
     switch (x) {
+        // case 0:
+        //     fish.classList.add("dierentuinpad__element");
+        //     fish.classList.add("button");
         case 1:
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
@@ -19,7 +22,7 @@ if(document.URL.includes("dierentuinpad.html") ){
             break;
         case 2:
             monkey.classList.remove("dierentuinpad__element");
-            fimonkeysh.classList.remove("button");
+            monkey.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
             pinguin.classList.add("dierentuinpad__element");
