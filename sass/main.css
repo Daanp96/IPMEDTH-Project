@@ -1161,6 +1161,7 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 /span 1;
+  z-index: 100;
 }
 
 .start-options__btn-hint {
@@ -1460,18 +1461,146 @@ input[type=number]::-webkit-outer-spin-button {
   width: 33vw;
 }
 
-.map__map {
+.map__map-1 {
   -ms-grid-column: 3;
-  -ms-grid-column-span: 3;
-  grid-column: 3 / span 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / span 2;
   -ms-grid-row: 2;
-  -ms-grid-row-span: 3;
-  grid-row: 2 / span 3;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / span 2;
 }
 
-.map__map--image {
-  width: 22vw;
-  height: 40vh;
+.map__map-1--image-1 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.map__map-2 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-column: 4 / span 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3 / span 2;
+}
+
+.map__map-2--image-2 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.map__map-3 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  grid-row: 4 / span 2;
+}
+
+.map__map-3--image-3 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.map__map-4 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-column: 5 / span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / span 2;
+}
+
+.map__map-4--image-4 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.map__map-5 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-column: 5 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  grid-row: 4 / span 2;
+}
+
+.map__map-5--image-5 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+
+.map__map-6 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / span 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3 / span 2;
+}
+
+.map__map-6--image-6 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+}
+
+.map__map-7 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-column: 4 / span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / span 2;
+}
+
+.map__map-7--image-7 {
+  width: 10vw;
+  height: auto;
+}
+
+.map__map-8 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-column: 4 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  grid-row: 4 / span 2;
+}
+
+.map__map-8--image-8 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
+}
+
+.map__map-9 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-column: 5 / span 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3 / span 2;
+}
+
+.map__map-9--image-9 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: rotate(70deg);
+          transform: rotate(70deg);
 }
 
 .map__zookeeper {
@@ -1486,6 +1615,16 @@ input[type=number]::-webkit-outer-spin-button {
 .map__zookeeper--image {
   width: 20vw;
   height: auto;
+}
+
+.map__overlay-btn {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2 / span 5;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2 / span 4;
+  z-index: 20;
 }
 
 .map--speech-bubble {
@@ -1678,5 +1817,141 @@ input[type=number]::-webkit-outer-spin-button {
 .savanne--animal-board-image {
   width: 100%;
   height: 100%;
+}
+
+.dierentuinpad {
+  background-color: #F0EAD2;
+}
+
+.dierentuinpad__panda {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  grid-row: 1 / span 4;
+}
+
+.dierentuinpad__panda--image {
+  width: 100%;
+  height: auto;
+}
+
+.dierentuinpad__rhino {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 8;
+  grid-column: 4 / span 8;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
+}
+
+.dierentuinpad__rhino--image {
+  width: 100%;
+  height: auto;
+}
+
+.dierentuinpad__polar {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 4;
+  grid-column: 13 / span 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  grid-row: 1 / span 5;
+}
+
+.dierentuinpad__polar--image {
+  width: 100%;
+  height: auto;
+}
+
+.dierentuinpad__elephant {
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 5;
+  grid-column: 7 / span 5;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 5;
+  grid-row: 3 / span 5;
+}
+
+.dierentuinpad__elephant--image {
+  width: 100%;
+  height: auto;
+}
+
+.dierentuinpad__giraffe {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1 / span 5;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 4;
+  grid-row: 4 / span 4;
+}
+
+.dierentuinpad__giraffe--image {
+  width: 100%;
+  height: auto;
+}
+
+.dierentuinpad__bird {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2 / span 5;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  grid-row: 7 / span 2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  z-index: 2;
+}
+
+.dierentuinpad__bird--image {
+  width: 100%;
+  height: auto;
+}
+
+.dierentuinpad__zebra {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 4;
+  grid-column: 9 / span 4;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  grid-row: 7 / span 2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.dierentuinpad__zebra--image {
+  width: 100%;
+  height: auto;
+}
+
+.dierentuinpad__lama {
+  -ms-grid-column: 15;
+  -ms-grid-column-span: 2;
+  grid-column: 15 / span 2;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  grid-row: 7 / span 2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.dierentuinpad__lama--image {
+  width: 100%;
+  height: auto;
+}
+
+.hide-overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */
