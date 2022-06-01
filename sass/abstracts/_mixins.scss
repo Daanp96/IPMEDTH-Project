@@ -14,10 +14,11 @@
     background-repeat: no-repeat;
 }
 
-// @mixin background-savanne{
-//     background-size: contain;
-//     background-repeat: no-repeat;
-// }
+@mixin background-arctic{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 @mixin widthImageSetting {
     width: 6rem;

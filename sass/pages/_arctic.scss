@@ -1,0 +1,104 @@
+.arctic{
+    &--background{
+        @include background-arctic;
+        background-image: url(../../images/Photoshop-transparant/arctic-2-base.png);
+    }
+    
+    &-mountain{
+
+
+        &-image{
+            width: 45vw;
+            height: auto;
+        }
+    
+    }
+
+    &-animal{
+    
+        &-1{
+            grid-column: 15/ span 3;
+            grid-row: 1/ span 2;
+
+        }
+
+        &-2{
+            grid-column: 7 / span 2;
+            grid-row: 3 /span 2;
+        }
+
+        &-3{
+            grid-column: 9 / span 2;
+            grid-row: 3 /span 2;
+
+        }
+        &-4{
+            grid-column: 12 / span 2;
+            grid-row: 3 /span 2;
+        }
+        &-5{
+            grid-column: 14 / span 2;
+            grid-row: 6 /span 2;
+        }
+        &-6{
+            grid-column: 6 / span 2;
+            grid-row: 3 /span 2;
+        }
+        &-7{
+            grid-column: 2 / span 2;
+            grid-row: 2 /span 2;
+        }
+
+
+        &--image-1{
+            width: 10vw;
+            height: auto;
+        }
+        &--image-2{
+            width: 10vw;
+            height: auto;
+            transform: scaleX(-1);
+        }
+
+        
+
+    }
+
+    &--speech-bubble{
+        grid-column: 2 / span 4;
+        grid-row: 3 / span 1;
+    }
+
+    &--figure{
+        // position: absolute;
+        // bottom: 0;
+        // left: 0;
+        grid-column: 1 / span 2;
+        grid-row: 5 / span 1;
+        z-index: 3;
+    }
+
+
+    &--image{
+        @include zookeeperSize;
+    }
+
+    &--animal-board{
+        grid-column: 7 / span 4;
+        grid-row: 4 / span 1;
+        z-index: 2;
+        
+    }
+
+    &--animal-board:hover{
+        transition: transform 2s;
+        transform: scale(1.4);
+    }
+    
+    &--animal-board-image{
+        width: 100%;
+        height: 100%;
+        
+    }
+
+}
