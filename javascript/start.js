@@ -57,7 +57,7 @@ startOKBtn.onclick = () => {
     // if (startOK == 7) {
     //     startBtn.style.visibility = "visible";
     // }
-};
+// };
     switch (startOK) {
         case 1: 
             tekst = 'jaja';
