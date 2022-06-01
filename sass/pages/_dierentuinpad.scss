@@ -81,16 +81,7 @@
         z-index: 2;
     }
     &__element:hover{
-        animation: scale 2s infinite;
+        animation: scale-small 2s infinite;
     }
 }
 
-.hide-overlay{
-    background-color: rgba(#000, .55);
-    z-index: 1;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-}

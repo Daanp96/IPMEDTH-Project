@@ -13,6 +13,7 @@
     &__map-1{
         grid-column: 3 / span 2;
         grid-row: 2 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-1{
             width: 10vw;
@@ -23,6 +24,7 @@
     &__map-2{
         grid-column: 4 / span 2;
         grid-row: 3 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-2{
             width: 10vw;
@@ -33,6 +35,7 @@
     &__map-3{
         grid-column: 3 / span 2;
         grid-row: 4 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-3{
             width: 10vw;
@@ -43,6 +46,7 @@
     &__map-4{
         grid-column: 5 / span 2;
         grid-row: 2 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-4{
             width: 10vw;
@@ -53,6 +57,7 @@
     &__map-5{
         grid-column: 5 / span 2;
         grid-row: 4 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-5{
             width: 10vw;
@@ -63,6 +68,7 @@
     &__map-6{
         grid-column: 3 / span 2;
         grid-row: 3 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-6{
             width: 10vw;
@@ -73,6 +79,7 @@
     &__map-7{
         grid-column: 4 / span 2;
         grid-row: 2 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-7{
             width: 10vw;
@@ -82,6 +89,7 @@
     &__map-8{
         grid-column: 4 / span 2;
         grid-row: 4 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-8{
             width: 10vw;
@@ -92,11 +100,13 @@
     &__map-9{
         grid-column: 5 / span 2;
         grid-row: 3 / span 2;
+        animation: scale-small 2s infinite;
 
         &--image-9{
             width: 10vw;
             height: auto;
             transform: rotate(70deg);
+            
         }
     }
 
@@ -114,11 +124,13 @@
         grid-column: 2 / span 5;
         grid-row: 2 / span 4;
         z-index: 20;
+        
     }
 }
 
 .map--speech-bubble {
     grid-column-start: 9;
+    grid-row-start: 2;
     opacity: 1;
     transition: 0.5s all;
     z-index: 1;

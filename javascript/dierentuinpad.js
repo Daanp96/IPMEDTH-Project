@@ -13,12 +13,17 @@ if(document.URL.includes("dierentuinpad.html") ){
     switch (x) {
         case 1:
             fish.classList.remove("dierentuinpad__element");
+            fish.classList.remove("button");
             monkey.classList.add("dierentuinpad__element");
+            monkey.classList.add("button");
             break;
         case 2:
             monkey.classList.remove("dierentuinpad__element");
+            fimonkeysh.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
+            fish.classList.remove("button");
             pinguin.classList.add("dierentuinpad__element");
+            pinguin.classList.add("button");
             break;
 
     }

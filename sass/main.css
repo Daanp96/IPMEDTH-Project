@@ -28,6 +28,36 @@
   }
 }
 
+@-webkit-keyframes scale-small {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale-small {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .slidein-from-right {
   -webkit-animation: slidein-from-right 500ms;
           animation: slidein-from-right 500ms;
@@ -244,6 +274,18 @@ h1 {
   margin: 1rem;
   padding: 1rem;
   background-color: green;
+}
+
+.hide-overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 
 .btn-check, .btn-check:link, .btn-check:visited {
@@ -1404,6 +1446,33 @@ input[type=number]::-webkit-outer-spin-button {
           transform: rotate(30deg);
 }
 
+.mappuzzel__zookeeper {
+  -ms-grid-column: 6;
+      grid-column-start: 6;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  text-align: center;
+  font-size: 2rem;
+  width: 30rem;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: 2;
+}
+
+.mappuzzel--speech-bubble {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: 2;
+}
+
+.mappuzzel--speech-bubble::before {
+  left: 32rem;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
 .section-mappuzzel__finished {
   -ms-grid-column: 12;
       grid-column-start: 12;
@@ -1413,35 +1482,6 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   font-size: 2rem;
   display: none;
-}
-
-.mappuzzle--speech-bubble {
-  -ms-grid-column: 3;
-      grid-column-start: 3;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
-  opacity: 1;
-  z-index: 1;
-}
-
-.mappuzzle--speech-bubble::before {
-  left: 32rem;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-.map_zookeeper {
-  -ms-grid-column: 6;
-      grid-column-start: 6;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  text-align: center;
-  font-size: 2rem;
-  width: 30rem;
-  opacity: 1;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
-  z-index: 1;
 }
 
 .map {
@@ -1468,6 +1508,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   grid-row: 2 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-1--image-1 {
@@ -1484,6 +1526,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   grid-row: 3 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-2--image-2 {
@@ -1500,6 +1544,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 4;
   -ms-grid-row-span: 2;
   grid-row: 4 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-3--image-3 {
@@ -1516,6 +1562,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   grid-row: 2 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-4--image-4 {
@@ -1532,6 +1580,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 4;
   -ms-grid-row-span: 2;
   grid-row: 4 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-5--image-5 {
@@ -1548,6 +1598,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   grid-row: 3 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-6--image-6 {
@@ -1564,6 +1616,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   grid-row: 2 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-7--image-7 {
@@ -1578,6 +1632,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 4;
   -ms-grid-row-span: 2;
   grid-row: 4 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-8--image-8 {
@@ -1594,6 +1650,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   grid-row: 3 / span 2;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 
 .map__map-9--image-9 {
@@ -1630,6 +1688,8 @@ input[type=number]::-webkit-outer-spin-button {
 .map--speech-bubble {
   -ms-grid-column: 9;
       grid-column-start: 9;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
   opacity: 1;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
@@ -1949,17 +2009,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .dierentuinpad__element:hover {
-  -webkit-animation: scale 2s infinite;
-          animation: scale 2s infinite;
-}
-
-.hide-overlay {
-  background-color: rgba(0, 0, 0, 0.55);
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
+  -webkit-animation: scale-small 2s infinite;
+          animation: scale-small 2s infinite;
 }
 /*# sourceMappingURL=main.css.map */
