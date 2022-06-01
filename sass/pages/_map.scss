@@ -2,27 +2,32 @@
     background-color: $color-path;
 
     &__sign {
-        width: 40vw;
-        grid-column-start: 4;
+        grid-column: 2 / span 6;
+        grid-row: 1 / span 9;
+
+        &--image{
+            width: 33vw;
+        }
     }
 
-    &__image {
-        width: 25vw;
-        grid-column-start: 5;
-        grid-column-end: 10;
-        grid-row-start: 2;
-        grid-row-end: 5;
+    &__map{
+        grid-column: 3 / span 3;
+        grid-row: 2 / span 3;
+
+        &--image{
+            width: 22vw;
+            height: 40vh;
+        }
     }
 
-    &__zookeeper {
-        transition: 0.5s all;
-        grid-column-start: 12;
-        grid-row-start: 2;
-        text-align: center;
-        font-size: 2rem;
-        width: 30rem;
-        opacity: 1;
-        z-index: 1;
+    &__zookeeper{
+        grid-column: 12 / span 3;
+        grid-row: 2 /span 8;
+
+        &--image {
+            width: 20vw;
+            height: auto;
+        }
     }
 }
 
