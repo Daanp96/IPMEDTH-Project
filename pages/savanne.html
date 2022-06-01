@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../sass/main.css">
     <script src="../javascript/main.js" type="module" defer></script>
+    <script src="../javascript/savanne.js" type="module" defer></script>
     <title>Dierentuin</title>
 </head>
 <body>
@@ -113,16 +114,32 @@
                 <img class="savanne--image" src="../images/zoo-keeper-1.png" alt="zoo keeper">
             </figure>
 
-            <a href="#popup" class="savanne--animal-board button" id="js--animal-board">
+            <a href="#popup" class="savanne--animal-board button">
                 <figure>
-                    <img class="savanne--animal-board-image" src="../images/Photoshop-transparant/sign-monkey.png" alt="dieren bordje">
+                    <img class="savanne--animal-board-image" src="../images/Photoshop-transparant/sign-monkey.png" alt="apen bord">
                 </figure>
             </a>
 
-
         </section>
         
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__container-monkey">
+                    <p class="popup__container-monkey--p1">Weet jij wat de naam is van dit dier?</p>
+                    <figure class="popup__container-monkey--monkey-head">
+                        <img class="popup__container-monkey--image" src="../images/monkey-head.png" alt="apenhoofd">
+                    </figure>
 
+                    <form class="popup__container-monkey--form" id="js--savanne-form" name="answerForm" autocomplete="off">
+                        <label for="naamDier"></label>
+                        <input class="popup__container--form-input button" name="textInput" id="naamDier" type="text" placeholder="?" required>
+                    </form>
+
+                    <button class="popup__container-monkey--button btn-check button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
+                    <a href="" class="popup__close button">&times;</a>
+                </div>
+            </div>
+        </div>
 
     </main>
 </body>

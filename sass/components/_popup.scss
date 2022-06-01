@@ -118,6 +118,48 @@
 
     }
 
+    &__container-monkey{
+        background-image: url(../images/sign-monkey-popup.png);
+        @include background;
+        height: 67vh;
+        display: grid;
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-gap: 1.5rem;
+        padding: 1.5rem;
+        align-content: center;
+
+        &--p1{
+            grid-column: 1 / span 6;
+            grid-row: 1;
+            align-self: center;
+            text-align: center;
+            font-size: 4rem;
+            color: $color-white;
+        }
+
+        &--monkey-head{
+            grid-column: 2 / span 2;
+            grid-row: 2 /span 3;
+            align-self: center;
+            place-self: self-start;
+        }
+        &--image{
+            width: 90%;
+            height: auto;
+        }
+        &--form{
+            grid-column: 4 / span 2;
+            grid-row: 3 /span 2;
+        }
+        &--button{
+            grid-column: 3 / span 2;
+            grid-row: 5 /span 2;
+            font-size: 6rem;
+            margin: 3rem;
+        }
+    }
+
     &:target{
         opacity: 1;
         visibility: visible;
