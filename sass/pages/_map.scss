@@ -1,0 +1,39 @@
+.map {
+    background-color: $color-path;
+
+    &__sign {
+        width: 40vw;
+        grid-column-start: 4;
+    }
+
+    &__image {
+        width: 25vw;
+        grid-column-start: 5;
+        grid-column-end: 10;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+
+    &__zookeeper {
+        transition: 0.5s all;
+        grid-column-start: 12;
+        grid-row-start: 2;
+        text-align: center;
+        font-size: 2rem;
+        width: 30rem;
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+.map--speech-bubble {
+    grid-column-start: 9;
+    opacity: 1;
+    transition: 0.5s all;
+    z-index: 1;
+}
+
+.map--speech-bubble::before {
+    left: 32rem;
+    transform: scaleX(-1);
+}

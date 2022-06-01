@@ -347,10 +347,10 @@ h1 {
 
 .map-btn {
   display: none;
-  -ms-grid-column: 13;
-      grid-column-start: 13;
-  -ms-grid-row: 6;
-      grid-row-start: 6;
+  -ms-grid-column: 14;
+      grid-column-start: 14;
+  -ms-grid-row: 5;
+      grid-row-start: 5;
 }
 
 .puzzel-options__btn-hint {
@@ -1414,7 +1414,58 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
+.mappuzzle--speech-bubble {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  opacity: 1;
+  z-index: 1;
+}
+
+.mappuzzle--speech-bubble::before {
+  left: 32rem;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
 .map_zookeeper {
+  -ms-grid-column: 6;
+      grid-column-start: 6;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  text-align: center;
+  font-size: 2rem;
+  width: 30rem;
+  opacity: 1;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: 1;
+}
+
+.map {
+  background-color: #F0EAD2;
+}
+
+.map__sign {
+  width: 40vw;
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+}
+
+.map__image {
+  width: 25vw;
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  grid-column-end: 10;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 5;
+}
+
+.map__zookeeper {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
   -ms-grid-column: 12;
       grid-column-start: 12;
   -ms-grid-row: 2;
@@ -1422,10 +1473,23 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   font-size: 2rem;
   width: 30rem;
-  opacity: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+.map--speech-bubble {
+  -ms-grid-column: 9;
+      grid-column-start: 9;
+  opacity: 1;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
-  z-index: -1;
+  z-index: 1;
+}
+
+.map--speech-bubble::before {
+  left: 32rem;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 .savanne--background {

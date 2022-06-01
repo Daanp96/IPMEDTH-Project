@@ -1,3 +1,5 @@
+let layedPieces = 0;
+
 const dragDrop = (object, width = '') => {
 
     object.onmousedown = (event) => {
@@ -41,9 +43,7 @@ const dragDrop = (object, width = '') => {
       };
 }
 
-let layedPieces = 0;
-
-const dragDropMap = (obj, width = '', btn, zookpr) => {
+const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
   let currentDroppable = null;
 
     obj.onmousedown = function(event) {
@@ -106,7 +106,12 @@ const dragDropMap = (obj, width = '', btn, zookpr) => {
             btn.style.display = "block";
             zookpr.style.opacity = "1";
             zookpr.style.zIndex = "1";
+            zookpr.style.gridColumnStart = "10";
             btn.style.zIndex = "2";
+            speech.style.gridColumnStart = "7";
+            speech.style.opacity = "1";
+            speech.style.zIndex = "1";
+            speech.innerHTML = "Goed gedaan! Laten we de map maar meteen gebruiken!"
           }
         }
       };
@@ -137,6 +142,14 @@ const modalView = (modal, title, text, button, {
 
   button.onclick = () => {
     modal.style.opacity = "0";
+  }
+}
+
+const textBubble = () => {
+  if(startOK == 0 && true){
+    startP.innerHTML = "jaja";
+    startOK ++;
+    return;
   }
 }
 

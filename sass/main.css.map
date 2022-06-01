@@ -19,6 +19,7 @@
         "pages/_start.scss",
         "pages/_input.scss",
         "pages/_mappuzzel.scss",
+        "pages/_map.scss",
         "pages/_savanne.scss"
     ],
     "names": [],

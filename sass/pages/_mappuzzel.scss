@@ -96,22 +96,41 @@
    
 }
 
-.section-mappuzzel__finished {
-    grid-column-start: 12;
-    grid-column-end: 15;
-    grid-row-start: 4;
-    text-align: center;
-    font-size: 2rem;
-    display: none;
+.section-mappuzzel {
+
+    &__finished {
+        grid-column-start: 12;
+        grid-column-end: 15;
+        grid-row-start: 4;
+        text-align: center;
+        font-size: 2rem;
+        display: none;
+    }
+
+}
+
+.mappuzzle--speech-bubble {
+    grid-column-start: 3;
+    transition: 0.5s all;
+    opacity: 1;
+    z-index: 1;
+}
+
+.mappuzzle--speech-bubble::before {
+    left: 32rem;
+    transform: scaleX(-1);
 }
 
 .map_zookeeper {
-    grid-column-start: 12;
+    // grid-column-start: 10;
+    grid-column-start: 6;
     grid-row-start: 2;
     text-align: center;
     font-size: 2rem;
     width: 30rem;
-    opacity: 0;
+    opacity: 1;
+    // opacity: 0;
     transition: 0.5s all;
-    z-index: -1;
+    // z-index: -1;
+    z-index: 1;
 }
