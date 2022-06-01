@@ -125,5 +125,5 @@ hintBtn.onclick = () => {
 };
 
 function endRekensomPuzzel(){
-    window.location.href="mappuzzel.html";  
+    window.location.href="dierentuinpad.html";  
 }

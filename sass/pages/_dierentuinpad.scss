@@ -50,7 +50,6 @@
         grid-column: 2 / span 5;
         grid-row: 7 / span 2;
         align-self: end;
-        z-index: 2;
 
         &--image{
             width: 100%;
@@ -76,6 +75,13 @@
             width: 100%;
             height: auto;
         }
+    }
+
+    &__element{
+        z-index: 2;
+    }
+    &__element:hover{
+        animation: scale 2s infinite;
     }
 }
 

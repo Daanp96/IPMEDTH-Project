@@ -1903,7 +1903,6 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
-  z-index: 2;
 }
 
 .dierentuinpad__bird--image {
@@ -1943,6 +1942,15 @@ input[type=number]::-webkit-outer-spin-button {
 .dierentuinpad__lama--image {
   width: 100%;
   height: auto;
+}
+
+.dierentuinpad__element {
+  z-index: 2;
+}
+
+.dierentuinpad__element:hover {
+  -webkit-animation: scale 2s infinite;
+          animation: scale 2s infinite;
 }
 
 .hide-overlay {
