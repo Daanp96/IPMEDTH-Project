@@ -27,6 +27,7 @@
 .start-options{
     grid-column: 13 / span 4;
     grid-row: 1 /span 1;
+    z-index: 100;
 
     &__btn-hint{
         grid-column: 1 / span 1;
@@ -76,7 +77,7 @@
     grid-row: 6 /span 2;
     visibility: hidden;
 
-    animation: scale 2s ease-in-out infinite;
+    animation: scale-big 2s ease-in-out infinite;
 
     &--image{
         height: auto;

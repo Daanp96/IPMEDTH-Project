@@ -1,0 +1,88 @@
+.dierentuinpad{
+    background-color: $color-path;
+
+    &__panda{
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 4;
+
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__rhino{
+        grid-column: 4 / span 8;
+        grid-row: 1 / span 2;
+
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__polar{
+        grid-column: 13 / span 4;
+        grid-row: 1 / span 5;
+
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__elephant{
+        grid-column: 7 / span 5;
+        grid-row: 3 / span 5;
+
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__giraffe{
+        grid-column: 1 / span 5;
+        grid-row: 4 / span 4;
+
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__bird{
+        grid-column: 2 / span 5;
+        grid-row: 7 / span 2;
+        align-self: end;
+
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__zebra{
+        grid-column: 9 / span 4;
+        grid-row: 7 / span 2;
+        align-self: end;
+
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__lama{
+        grid-column: 15 / span 2;
+        grid-row: 7 / span 2;
+        align-self: end;
+
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__element{
+        z-index: 2;
+        animation: scale-small 2s infinite;
+    }
+    &__element:hover{
+        animation: scale 2s infinite;
+    }
+}
+
