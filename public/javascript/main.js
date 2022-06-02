@@ -4,10 +4,10 @@ const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 // const infoBtn = document.getElementById("js--info-btn");
 
-// const speechBubble = document.getElementById("js--speech-bubble");
+const speechBubble = document.getElementById("js--speech-bubble");
 // const speechBubbleImg = document.getElementById("js--speech-bubble-img");
-// const speechBubbleP = document.getElementById("js--speech-bubble-p");
-// const speechBubbleBtn = document.getElementById("js--speech-bubble-btn");
+const speechBubbleP = document.getElementById("js--speech-bubble-p");
+const speechBubbleBtn = document.getElementById("js--speech-bubble-btn");
 
 const ratedStar1 = document.getElementById("js--ratedStar1");
 const ratedStar2 = document.getElementById("js--ratedStar2");

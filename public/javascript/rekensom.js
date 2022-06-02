@@ -64,7 +64,7 @@ const explaineBtn = document.getElementById("js--speech-bubble-img");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
 
-let count = 0;
+let countHint = 0;
 
 let startOK = 0;
 let tekst = '';
@@ -85,6 +85,7 @@ startOKBtn.onclick = () => {
         case 2:
             speechBubble.style.visibility = "hidden";
             startOKBtn.style.visibility = "hidden";
+            break;
     }
 
     speechBubble_p.innerHTML = tekst;
@@ -114,21 +115,85 @@ nextBtnLeft.onclick = () => {
 //     speechBubble.style.visibility = "hidden";
 // }
 
-hintBtn.onclick = () => {
-    console.log("klik");
-    speechBubble.style.visibility = "visible";
-    explaineBtn.classList.remove("hide");
-    explaineBtn.src = '../images/aquarium-board.png';
-    speechBubble_p.innerHTML = "Klik op het bord om het juiste getal in te vullen.";
-    speechBubble_p.style.visibility = "visible";
-    startOKBtn.style.visibility = "visible";
+// hintBtn.onclick = () => {
+//     console.log("klik");
+//     speechBubble.style.visibility = "visible";
+//     explaineBtn.classList.remove("hide");
+//     explaineBtn.src = '../images/arrow-right.png';
+//     speechBubble_p.innerHTML = "Loop door het hele aquarium";
+//     speechBubble_p.style.visibility = "visible";
+//     startOKBtn.style.visibility = "visible";
 
-    startOKBtn.onclick = () => {
-        speechBubble.style.visibility = "hidden";
-        explaineBtn.classList.add("hide");
-        speechBubble_p.style.visibility = "hidden";
-        startOKBtn.style.visibility = "hidden";
+//     startOKBtn.onclick = () => {
+//         speechBubble.style.visibility = "hidden";
+//         explaineBtn.classList.add("hide");
+//         speechBubble_p.style.visibility = "hidden";
+//         startOKBtn.style.visibility = "hidden";
+//     }
+// };
+
+hintBtn.onclick = () => {
+    console.log(countHint);
+    switch (countHint) {
+        case 0: 
+            speechBubble.style.visibility = "visible";
+            explaineBtn.classList.remove("hide");
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Loop door het hele aquarium.';
+            image = '../images/arrow-right.png';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 1: 
+            speechBubble.style.visibility = "visible";
+            explaineBtn.classList.remove("hide");
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Klik op het vraagteken.';
+            image = '../images/question-mark.png';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 2: 
+            speechBubble.style.visibility = "visible";
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Kies een getal van de nummers op je toetsenbord.';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 3: 
+            speechBubble.style.visibility = "visible";
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Het antwoord is 6.';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 4:
+            speechBubble.style.visibility = "hidden";
+            startOKBtn.style.visibility = "hidden";
+            break;
     }
+
+    speechBubble_p.innerHTML = tekst;
+    explaineBtn.src = image;
+    countHint++;
 };
 
 function endRekensomPuzzel(){
