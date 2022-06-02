@@ -25,6 +25,8 @@ const rekensomForm = document.getElementById("js--rekensom-form");
 const savanneForm = document.getElementById("js--savanne-form");
 const formSavanneBtn = document.getElementById("js--form-submitSavanne");
 
+const arcticBtn = document.getElementById("js--arctic-btn");
+
 const reken_correct = 6;
 const naam_correct = "aap";
 
@@ -39,7 +41,7 @@ let star8;
 let star9;
 let aantalSecondesRekensom;
 let aantalSecondesSavanne;
-// let aantalSecondesSavanneDragnDrop;
+let aantalSecondesArctic;
 let startTime, endTime;
 
 // let infoOk = 0;
@@ -238,6 +240,47 @@ if(document.URL.includes("savanne.html")){
     });
 }
 
+if(document.URL.includes("arctic.html")){
+    arcticBtn.addEventListener("click", function(e){
+
+        endTime = new Date();
+        var timeDiff = endTime - startTime; //ms
+        timeDiff /= 1000;
+        let seconds = Math.round(timeDiff);
+        aantalSecondesArctic = seconds;
+    
+        if(seconds <= 60){
+            try {
+                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+                localStorage.setItem('star7', 0);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        if(seconds > 60 && seconds <= 120){
+            try {
+                localStorage.setItem('star8', 0);
+                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        if(seconds > 120){
+            try {
+                localStorage.setItem('star9', 0);
+                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        setTimeout(() => {
+            endArcticPuzzel();
+        }, 700);
+            
+        e.preventDefault();
+    });
+}
+
 function endRekensomPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
@@ -245,3 +288,7 @@ function endRekensomPuzzel(){
 function endSavannePuzzel(){
     window.location.href="dierentuinpad.html";  
 }
+function endArcticPuzzel(){
+    window.location.href="dierentuinpad.html";  
+}
+

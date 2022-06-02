@@ -126,6 +126,76 @@ if(document.URL.includes("dierentuinpad.html") ){
                 ratedStar4.style.visibility = "visible";
             }
             break;
+        case 3:
+            monkey.classList.remove("dierentuinpad__element");
+            monkey.classList.remove("button");
+            fish.classList.remove("dierentuinpad__element");
+            fish.classList.remove("button");
+            pinguin.classList.remove("dierentuinpad__element");
+            pinguin.classList.remove("button");
+
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
+            dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
+            dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
+            dierentuinpadSpeechBubbleP.innerHTML = "Bedankt voor je hulp, zonder jou hadden we dit niet gekund. Ik hoop dat je de dierentuin leuk vond!";
+
+            star1 = localStorage.getItem('star1');
+            star2 = localStorage.getItem('star2');
+            star3 = localStorage.getItem('star3');
+            star4 = localStorage.getItem('star4');
+            star5 = localStorage.getItem('star5');
+            star6 = localStorage.getItem('star6');
+            star7 = localStorage.getItem('star7');
+            star8 = localStorage.getItem('star8');
+            star9 = localStorage.getItem('star9');
+
+            if(star1 == 0){
+                console.log(star1);
+                ratedStar1.style.visibility = "visible";
+                ratedStar2.style.visibility = "visible";
+                ratedStar3.style.visibility = "visible";
+            }
+            if(star2 == 0){
+                console.log(star2);
+                ratedStar1.style.visibility = "visible";
+                ratedStar2.style.visibility = "visible";
+            }
+            if(star3 == 0){
+                console.log(star3);
+                ratedStar1.style.visibility = "visible";
+            }
+            if(star4 == 0){
+                console.log(star4);
+                ratedStar4.style.visibility = "visible";
+                ratedStar5.style.visibility = "visible";
+                ratedStar6.style.visibility = "visible";
+            }
+            if(star5 == 0){
+                console.log(star5);
+                ratedStar4.style.visibility = "visible";
+                ratedStar5.style.visibility = "visible";
+            }
+            if(star6 == 0){
+                console.log(star6);
+                ratedStar4.style.visibility = "visible";
+            }
+            if(star7 == 0){
+                console.log(star4);
+                ratedStar7.style.visibility = "visible";
+                ratedStar8.style.visibility = "visible";
+                ratedStar9.style.visibility = "visible";
+            }
+            if(star8 == 0){
+                console.log(star5);
+                ratedStar7.style.visibility = "visible";
+                ratedStar8.style.visibility = "visible";
+            }
+            if(star9 == 0){
+                console.log(star6);
+                ratedStar7.style.visibility = "visible";
+            }
+            break;
     }
 
     fish.onclick = (e) => {
@@ -146,7 +216,7 @@ if(document.URL.includes("dierentuinpad.html") ){
         x = 3;
         // progress = x;
         localStorage.setItem("progress", x);
-        startRekensomPuzzel()
+        startPinguinPuzzel()
         e.preventDefault();
     }
 }
@@ -156,5 +226,8 @@ function startRekensomPuzzel(){
 };
 function startSavannePuzzel(){
     window.location.href="savanne.html";  
+};
+function startPinguinPuzzel(){
+    window.location.href="arctic.html";  
 };
 
