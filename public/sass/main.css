@@ -1989,6 +1989,15 @@ input[type=number]::-webkit-outer-spin-button {
   background-image: url(../images/Photoshop-transparant/arctic-2-background.png);
 }
 
+.arctic-btn {
+  display: none;
+  -ms-grid-column: 15;
+      grid-column-start: 15;
+  -ms-grid-row: 5;
+      grid-row-start: 5;
+  z-index: 1;
+}
+
 .arctic-mountain {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
@@ -2135,6 +2144,11 @@ input[type=number]::-webkit-outer-spin-button {
   height: auto;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  visibility: hidden;
+}
+
+.pinguin-figure {
+  position: relative;
 }
 
 .dierentuinpad {
