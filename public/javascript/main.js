@@ -2,6 +2,12 @@ const musicOn = document.getElementById("js--music-on");
 const musicOff = document.getElementById("js--music-off");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
+// const infoBtn = document.getElementById("js--info-btn");
+
+// const speechBubble = document.getElementById("js--speech-bubble");
+// const speechBubbleImg = document.getElementById("js--speech-bubble-img");
+// const speechBubbleP = document.getElementById("js--speech-bubble-p");
+// const speechBubbleBtn = document.getElementById("js--speech-bubble-btn");
 
 const ratedStar1 = document.getElementById("js--ratedStar1");
 const ratedStar2 = document.getElementById("js--ratedStar2");
@@ -36,6 +42,10 @@ let aantalSecondesSavanne;
 // let aantalSecondesSavanneDragnDrop;
 let startTime, endTime;
 
+// let infoOk = 0;
+let tekst = '';
+let image = '';
+
 window.onload = function() {
     start();
 }
@@ -59,6 +69,59 @@ speakOff.onclick = () =>{
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
 };
+
+// infoBtn.onclick = () =>{
+    
+//     let infoOk = 0;
+//     // speechBubbleBtn.classList.remove("hide");
+//     // speechBubble.classList.remove("hide");
+//     speechBubbleBtn.style.visibility = "visible";
+//     speechBubble.style.visibility = "visible";
+
+//     speechBubbleBtn.onclick = () => {
+//         console.log("info " + infoOk);
+//         switch (infoOk) {
+//             case 0: 
+//                 speechBubbleImg.classList.remove("hide");
+//                 tekst = 'Klik op het lampje voor een hint.';
+//                 if(document.URL.includes("index.html")){
+//                     image = './images/hint-btn.png';
+//                 }else{
+//                     image = '../images/hint-btn.png';
+//                 }
+                
+//                 break;
+//             case 1: 
+//                 tekst = 'Klik op i voor een informatie.';
+//                 image = './images/information-btn.png';
+//                 break;
+//             case 2:
+//                 tekst = 'Klik op de muzieknoot om de muziek uit te zetten.';
+//                 image = './images/music-on-btn.png'; 
+//                 break;  
+//             case 3: 
+//                 tekst = 'Klik op de oor om mijn geluid uit te zetten.';
+//                 image = './images/speak-on-btn.png';
+//                 break;
+//             case 4: 
+//                 speechBubbleImg.classList.add("hide");
+//                 speechBubble.style.visibility = "hidden";
+//                 speechBubbleBtn.style.visibility = "visible";
+//                 break;
+//         }
+    
+//         speechBubbleP.innerHTML = tekst;
+//         speechBubbleImg.src = image;
+//         infoOk++;
+//     };
+    
+// };
+
+// function info(){
+//     speechBubbleBtn.classList.remove("hide");
+//     speechBubble.classList.remove("hide");
+// }
+
 
 function start(){
     startTime = new Date();

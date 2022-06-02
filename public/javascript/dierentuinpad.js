@@ -15,6 +15,10 @@ const ratedStar9 = document.getElementById("js--ratedStar9");
 const formRekensomBtn = document.getElementById("js--form-submit");
 const rekensomForm = document.getElementById("js--rekensom-form");
 
+const dierentuinpadSpeechBubbleP = document.getElementById("js--speech-bubble-p");
+const dierentuinpadSpeechBubble = document.getElementById("js--speech-bubble");
+const dierentuinkeeperZookeeper = document.getElementById("js--dierentuinpad-zookeeper");
+
 const reken_correct = 6;
 
 let star1;
@@ -26,10 +30,6 @@ let star6;
 let star7;
 let star8;
 let star9;
-let aantalSecondesRekensom;
-let aantalSecondesSavanneFoutdier;
-let aantalSecondesSavanneDragnDrop;
-var startTime, endTime;
 
 let x = 0;
 // let progress;
@@ -48,6 +48,13 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             monkey.classList.add("dierentuinpad__element");
             monkey.classList.add("button");
+
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
+            dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble2");
+            dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper2");
+            dierentuinpadSpeechBubbleP.innerHTML = "Zo, zullen we nu maar eens gaan kijken bij het apenverblijf?";
+
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
             star3 = localStorage.getItem('star3');
@@ -74,6 +81,12 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.add("dierentuinpad__element");
             pinguin.classList.add("button");
+
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
+            dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
+            dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
+            dierentuinpadSpeechBubbleP.innerHTML = "Nu is het tijd om bij pinguïns te gaan kijken.";
 
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
