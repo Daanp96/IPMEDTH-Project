@@ -108,14 +108,14 @@ const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
 
         if(layedPieces == 9){
           btn.style.display = "block";
-          zookpr.style.opacity = "1";
+          zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
           zookpr.style.gridColumnStart = "10";
           btn.style.zIndex = "2";
           speech.style.gridColumnStart = "7";
-          speech.style.opacity = "1";
+          speech.style.visibility = "visible";
           speech.style.zIndex = "1";
-          speech.innerHTML = "Goed gedaan! Laten we de map maar meteen gebruiken!"
+          speech.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!"
         }
       }
     };

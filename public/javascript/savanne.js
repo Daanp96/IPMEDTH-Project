@@ -1,32 +1,79 @@
-const savanneForm = document.getElementById("js--savanne-form");
-const formBtn = document.getElementById("js--form-submit");
+const speechBubble = document.getElementById("js--speech-bubble");
+const speechBubble_p = document.getElementById("js--speech-bubble-p"); 
+const explaineBtn = document.getElementById("js--speech-bubble-img");
 
-//antwoorden
-const naam_correct = "aap";
+const startOKBtn = document.getElementById("js--speech-bubble-btn");
+const hintBtn = document.getElementById("js--hint");
 
-formBtn.addEventListener("click", function(e){
+let countHint = 0;
+let tekst = '';
+let image = '';
 
-    let form_answer = document.forms["answerForm"]["textInput"].value;
+startOKBtn.onclick = () => {
+    speechBubble.style.visibility = "hidden";
+};
 
-    if(form_answer == naam_correct){
-        console.log("jaaa");
-        document.getElementById("naamDier").style.color = "lime";
-        setTimeout(() => {
-            endRekensomPuzzel();
-        }, 700);
-        
-    }else{
-        savanneForm.classList.add("shake");
-        document.getElementById("naamDier").style.color = "red";
-        setTimeout(() => {
-            savanneForm.classList.remove("shake");
-            document.getElementById("naamDier").style.color = "black";
-            document.getElementById("naamDier").value = '';
-        }, 500);
+hintBtn.onclick = () => {
+    console.log(countHint);
+    switch (countHint) {
+        case 0: 
+            speechBubble.style.visibility = "visible";
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Klik op het bord.';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 1: 
+            speechBubble.style.visibility = "visible";
+            explaineBtn.classList.remove("hide");
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Klik op het vraagteken.';
+            image = '../images/question-mark.png';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 2: 
+            speechBubble.style.visibility = "visible";
+            explaineBtn.classList.remove("hide");
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            explaineBtn.style.width = "23vw";
+            tekst = 'Je toetsenbord gebruikt blokletters, dit zijn de kleine letters.';
+            image = '../images/keyboard.png';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 3: 
+            speechBubble.style.visibility = "visible";
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Het antwoord is AAP';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 4:
+            speechBubble.style.visibility = "hidden";
+            startOKBtn.style.visibility = "hidden";
+            break;
     }
-    e.preventDefault();
-});
 
-function endRekensomPuzzel(){
-    window.location.href="mappuzzel.html";  
-}
+    speechBubble_p.innerHTML = tekst;
+    explaineBtn.src = image;
+    countHint++;
+};

@@ -59,40 +59,39 @@ const secondpage = document.getElementById("js--second-page");
 
 const speechBubble = document.getElementById("js--speech-bubble");
 const speechBubble_p = document.getElementById("js--speech-bubble-p"); 
-const explaineBtn = document.getElementById("js--explaine-btn");
+const explaineBtn = document.getElementById("js--speech-bubble-img");
 
-const startOKBtn = document.getElementById("js--start-ok-btn");
-const formBtn = document.getElementById("js--form-submit");
+const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
 
-const rekensomForm = document.getElementById("js--rekensom-form");
+let countHint = 0;
 
+let startOK = 0;
+let tekst = '';
+let image = '';
 
-//antwoorden
-const reken_correct = 6;
-
-formBtn.addEventListener("click", function(e){
-
-    let form_answer = document.forms["answerForm"]["numberInput"].value;
-
-    if(form_answer == reken_correct){
-        console.log("jaaa");
-        document.getElementById("aantalVissen").style.color = "lime";
-        setTimeout(() => {
-            endRekensomPuzzel();
-        }, 700);
-        
-    }else{
-        rekensomForm.classList.add("shake");
-        document.getElementById("aantalVissen").style.color = "red";
-        setTimeout(() => {
-            rekensomForm.classList.remove("shake");
-            document.getElementById("aantalVissen").style.color = "black";
-            document.getElementById("aantalVissen").value = '';
-        }, 500);
+// praat wolk
+startOKBtn.onclick = () => {
+    console.log(startOK);
+    switch (startOK) {
+        case 0: 
+            tekst = 'Sinds kort hebben we nieuwe vissen erbij gekregen, alleen weten we nog niet hoeveel.';
+            image = '';
+            break;
+        case 1: 
+            tekst = 'Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? Het antwoord mag je invullen op het bord.';
+            image = '';
+            break;
+        case 2:
+            speechBubble.style.visibility = "hidden";
+            startOKBtn.style.visibility = "hidden";
+            break;
     }
-    e.preventDefault();
-});
+
+    speechBubble_p.innerHTML = tekst;
+    explaineBtn.src = image;
+    startOK++;
+};
 
 nextBtnRight.onclick = () => {    
     secondpage.classList.add("grid-16-9");
@@ -112,16 +111,89 @@ nextBtnLeft.onclick = () => {
     firstpage.classList.remove("hide");
 };
 
-startOKBtn.onclick = () => {
-    speechBubble.style.visibility = "hidden";
-}
+// startOKBtn.onclick = () => {
+//     speechBubble.style.visibility = "hidden";
+// }
+
+// hintBtn.onclick = () => {
+//     console.log("klik");
+//     speechBubble.style.visibility = "visible";
+//     explaineBtn.classList.remove("hide");
+//     explaineBtn.src = '../images/arrow-right.png';
+//     speechBubble_p.innerHTML = "Loop door het hele aquarium";
+//     speechBubble_p.style.visibility = "visible";
+//     startOKBtn.style.visibility = "visible";
+
+//     startOKBtn.onclick = () => {
+//         speechBubble.style.visibility = "hidden";
+//         explaineBtn.classList.add("hide");
+//         speechBubble_p.style.visibility = "hidden";
+//         startOKBtn.style.visibility = "hidden";
+//     }
+// };
 
 hintBtn.onclick = () => {
-    console.log("klik");
-    speechBubble.style.visibility = "visible";
-    explaineBtn.classList.remove("hide");
-    explaineBtn.src = '../images/aquarium-board.png';
-    speechBubble_p.innerHTML = "Klik op het bord om het juiste getal in te vullen."
+    console.log(countHint);
+    switch (countHint) {
+        case 0: 
+            speechBubble.style.visibility = "visible";
+            explaineBtn.classList.remove("hide");
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Loop door het hele aquarium.';
+            image = '../images/arrow-right.png';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 1: 
+            speechBubble.style.visibility = "visible";
+            explaineBtn.classList.remove("hide");
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Klik op het vraagteken.';
+            image = '../images/question-mark.png';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 2: 
+            speechBubble.style.visibility = "visible";
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Kies een getal van de nummers op je toetsenbord.';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 3: 
+            speechBubble.style.visibility = "visible";
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Het antwoord is 6.';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 4:
+            speechBubble.style.visibility = "hidden";
+            startOKBtn.style.visibility = "hidden";
+            break;
+    }
+
+    speechBubble_p.innerHTML = tekst;
+    explaineBtn.src = image;
+    countHint++;
 };
 
 function endRekensomPuzzel(){
