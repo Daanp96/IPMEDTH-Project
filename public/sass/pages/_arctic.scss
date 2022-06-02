@@ -3,6 +3,13 @@
         @include background-arctic;
         background-image: url(../images/Photoshop-transparant/arctic-2-background.png);
     }
+
+    &-btn {
+        display: none;
+        grid-column-start: 15;
+        grid-row-start: 5;
+        z-index: 1;
+    }
     
     &-mountain{
         grid-column: 1 / span 1;
@@ -106,9 +113,9 @@
             width: 10vw;
             height: auto;
             transform: rotate(45deg);
-
-            }
-        }       
+            visibility: hidden;
+        }
+    }       
 
     // &--animal-board{
     //     grid-column: 7 / span 4;
@@ -128,4 +135,8 @@
         
     // }
 
+}
+
+.pinguin-figure {
+    position: relative;
 }
