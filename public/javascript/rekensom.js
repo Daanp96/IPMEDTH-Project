@@ -62,37 +62,37 @@ const speechBubble_p = document.getElementById("js--speech-bubble-p");
 const explaineBtn = document.getElementById("js--explaine-btn");
 
 const startOKBtn = document.getElementById("js--start-ok-btn");
-const formBtn = document.getElementById("js--form-submit");
+// const formBtn = document.getElementById("js--form-submit");
 const hintBtn = document.getElementById("js--hint");
 
-const rekensomForm = document.getElementById("js--rekensom-form");
+// const rekensomForm = document.getElementById("js--rekensom-form");
 
 
 //antwoorden
-const reken_correct = 6;
+// const reken_correct = 6;
 
-formBtn.addEventListener("click", function(e){
+// formBtn.addEventListener("click", function(e){
 
-    let form_answer = document.forms["answerForm"]["numberInput"].value;
+//     let form_answer = document.forms["answerForm"]["numberInput"].value;
 
-    if(form_answer == reken_correct){
-        console.log("jaaa");
-        document.getElementById("aantalVissen").style.color = "lime";
-        setTimeout(() => {
-            endRekensomPuzzel();
-        }, 700);
+//     if(form_answer == reken_correct){
+//         console.log("jaaa");
+//         document.getElementById("aantalVissen").style.color = "lime";
+//         setTimeout(() => {
+//             endRekensomPuzzel();
+//         }, 700);
         
-    }else{
-        rekensomForm.classList.add("shake");
-        document.getElementById("aantalVissen").style.color = "red";
-        setTimeout(() => {
-            rekensomForm.classList.remove("shake");
-            document.getElementById("aantalVissen").style.color = "black";
-            document.getElementById("aantalVissen").value = '';
-        }, 500);
-    }
-    e.preventDefault();
-});
+//     }else{
+//         rekensomForm.classList.add("shake");
+//         document.getElementById("aantalVissen").style.color = "red";
+//         setTimeout(() => {
+//             rekensomForm.classList.remove("shake");
+//             document.getElementById("aantalVissen").style.color = "black";
+//             document.getElementById("aantalVissen").value = '';
+//         }, 500);
+//     }
+//     e.preventDefault();
+// });
 
 nextBtnRight.onclick = () => {    
     secondpage.classList.add("grid-16-9");
