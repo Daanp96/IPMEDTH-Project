@@ -46,7 +46,7 @@ const dragDrop = (object, width = '') => {
 
 const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
   let currentDroppable = null;
-  let kaartHeel = new Audio("../audio/3-mappuzzel/2-kaartKlaar.mp3");
+  let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
   obj.onmousedown = function(event) {
 
