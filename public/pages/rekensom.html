@@ -15,27 +15,27 @@
     <main class="rekensom--background" id="js--rekensom-background">
         <section class="puzzel-options grid-16-1">
             <button class="puzzel-options__btn-hint button" id="js--hint">
-                <image class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></image>
+                <img class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></img>
             </button>
 
-            <button class="puzzel-options__btn-information button ">
-                <image class="puzzel-options__btn-information--image" src="../images/information-btn.png"></image>
+            <button class="puzzel-options__btn-information button " id="js--info-btn">
+                <img class="puzzel-options__btn-information--image" src="../images/information-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-music button" id="js--music-on">
-                <image class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></image>
+                <img class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-music puzzel-options__btn-music-off button" id="js--music-off">
-                <image class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></image>
+                <image class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-speak button" id="js--speak-on">
-                <image class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></image>
+                <img class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
-                <image class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></image>
+                <img class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
             </button>
         </section>
 
@@ -83,11 +83,10 @@
             </article>
 
             <div class="speech-bubble rekensom--speech-bubble" id="js--speech-bubble">
-                <image class="btn-explaine-big hide" id="js--explaine-btn"></image>
-                <p id="js--speech-bubble-p">Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? 
-                    Het antwoord mag je invullen op het bord.
+                <img class="btn-explaine hide" id="js--speech-bubble-img"></img>
+                <p id="js--speech-bubble-p">Welkom in het aquarium! Hier zwemmen veel verschillende vissen rond.
                 </p>
-                <button class="btn-ok button" id="js--start-ok-btn">OK</button>
+                <button class="btn-ok button" id="js--speech-bubble-btn">OK</button>
             </div>
 
             <button class="next-page-right button" id="js--next-btn-right"></button>
@@ -194,5 +193,7 @@
         </div>
 
     </main>
+    <script src="../javascript/dierentuinpad.js" type="module" defer></script>
+
 </body>
 </html>
