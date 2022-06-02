@@ -9,6 +9,11 @@ let countHint = 0;
 let tekst = '';
 let image = '';
 
+const hint1 = new Audio("../audio/6-aap/hint-1.mp3");
+const hint2 = new Audio("../audio/6-aap/hint-2.mp3");
+const hint3 = new Audio("../audio/6-aap/hint-3.mp3");
+const hint4 = new Audio("../audio/6-aap/hint-4.mp3");
+
 startOKBtn.onclick = () => {
     speechBubble.style.visibility = "hidden";
 };
@@ -21,6 +26,7 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
             tekst = 'Klik op het bord.';
+            hint1.play();
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
@@ -33,6 +39,7 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
             tekst = 'Klik op het vraagteken.';
+            hint2.play();
             image = '../images/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
@@ -48,6 +55,7 @@ hintBtn.onclick = () => {
             startOKBtn.style.visibility = "visible";
             explaineBtn.style.width = "23vw";
             tekst = 'Je toetsenbord gebruikt blokletters, dit zijn de kleine letters.';
+            hint3.play();
             image = '../images/keyboard.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
@@ -61,6 +69,7 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
             tekst = 'Het antwoord is AAP';
+            hint4.play();
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";

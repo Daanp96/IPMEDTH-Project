@@ -1,19 +1,68 @@
 import {dragDropArctic} from "./functions.js";
 
 const fishDrag = document.getElementById("js--fish");
-const okBtn = document.getElementById("js--start-ok-btn");
-const speech = document.getElementById("js--speech-bubble");
-const speechText = document.getElementById("js--start-p");
 const arcticBtn = document.getElementById("js--arctic-btn");
 
-okBtn.onclick = () => {
-    speech.style.display = "none";
+const speechBubble = document.getElementById("js--speech-bubble");
+const explaineBtn = document.getElementById("js--speech-bubble-img");
+const speechBubble_p = document.getElementById("js--arctic-p");
+const startOKBtn = document.getElementById("js--arctic-ok-btn");
+const hintBtn = document.getElementById("js--hint");
+
+let countHint = 0;
+let tekst = '';
+let image = '';
+
+const hint1 = new Audio("../audio/7-pinguïn/hint-1.mp3");
+const hint2 = new Audio("../audio/7-pinguïn/hint-2.mp3");
+
+startOKBtn.onclick = () => {
+    speechBubble.style.visibility = "hidden";
     fishDrag.style.visibility ="visible";
-    okBtn.style.display = "none";
+    startOKBtn.style.visibility = "hidden";
 }
 
 arcticBtn.onclick = () => {
     window.location.href = "./dierentuinpad.html";
 }
 
-dragDropArctic(fishDrag, speech, speechText, arcticBtn);
+dragDropArctic(fishDrag, speechBubble, speechBubble_p, arcticBtn, startOKBtn);
+
+hintBtn.onclick = () => {
+    console.log(countHint);
+    switch (countHint) {
+        case 0: 
+            speechBubble.style.visibility = "visible";
+            // explaineBtn.classList.remove("hide");
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Alle pinguïns moeten gevoerd worden.';
+            hint1.play();
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+        case 1: 
+            speechBubble.style.visibility = "visible";
+            explaineBtn.classList.remove("hide");
+            speechBubble_p.style.visibility = "visible";
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Beweeg je muis naar de emmer met vissen en doe dit:';
+            hint2.play();
+            image = '../images/gif/klik_zijkant.gif';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.visibility = "hidden";
+            }
+            break;
+    }
+
+    speechBubble_p.innerHTML = tekst;
+    explaineBtn.src = image;
+    countHint++;
+};

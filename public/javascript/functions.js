@@ -46,6 +46,7 @@ const dragDrop = (object, width = '') => {
 
 const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
   let currentDroppable = null;
+  let kaartHeel = new Audio("../audio/3-mappuzzel/2-kaartKlaar.mp3");
 
   obj.onmousedown = function(event) {
 
@@ -115,7 +116,8 @@ const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
           speech.style.gridColumnStart = "7";
           speech.style.visibility = "visible";
           speech.style.zIndex = "1";
-          speech.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!"
+          speech.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
+          kaartHeel.play();
         }
       }
     };
@@ -134,8 +136,9 @@ const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
   };
 }
 
-const dragDropArctic = (obj, speech, text, nextBtn) => {
+const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
   let currentDroppable = null;
+  const goedZo = new Audio("../audio/7-pinguïn/2-goedzo.mp3");
 
   obj.onmousedown = function(event) {
 
@@ -201,9 +204,11 @@ const dragDropArctic = (obj, speech, text, nextBtn) => {
       }
       
       if(pinguinsFed == 7){
-        speech.style.display = "block";
+        speech.style.visibility = "visible";
         obj.style.visibility = "hidden";
+        speechBtn.style.display = "none";
         text.innerHTML = "Goed zo! Nu zijn de penguins ook weer blij.";
+        goedZo.play();
         nextBtn.style.display = "block";
       }
     };

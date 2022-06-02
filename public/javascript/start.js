@@ -1,14 +1,14 @@
 const startBtn = document.getElementById("js--start-btn")
 
-let intro = new Audio("audio/1-Intro/1-welkom.mp3");
-let bezoeker = new Audio("audio/1-Intro/2-gelukkige-bezoeker.mp3");
-let raadEens = new Audio("audio/1-Intro/3-raadEens.mp3");
-let uitleggen = new Audio("audio/1-Intro/4-uitleggen.mp3");
-let hint = new Audio("audio/1-Intro/5-hint.mp3");
-let informatie = new Audio("audio/1-Intro/6-informatie.mp3");
-let muziek = new Audio("audio/1-Intro/7-muzieknoot.mp3");
-let stem = new Audio("audio/1-Intro/8-stem.mp3");
-let binnen = new Audio("audio/1-Intro/9-binnen.mp3");
+let intro = new Audio("audio/1-intro/1-welkom.mp3");
+let bezoeker = new Audio("audio/1-intro/2-gelukkige-bezoeker.mp3");
+let raadEens = new Audio("audio/1-intro/3-raadEens.mp3");
+let uitleggen = new Audio("audio/1-intro/4-uitleggen.mp3");
+let hint = new Audio("audio/1-intro/5-hint.mp3");
+let informatie = new Audio("audio/1-intro/6-informatie.mp3");
+let muziek = new Audio("audio/1-intro/7-muzieknoot.mp3");
+let stem = new Audio("audio/1-intro/8-stem.mp3");
+let binnen = new Audio("audio/1-intro/9-binnen.mp3");
 
 const speechBubble = document.getElementById("js--speech-bubble");
 const startExplaineBtn = document.getElementById("js--speech-bubble-img");
@@ -33,11 +33,12 @@ startOKBtn.onclick = () => {
         case 1: 
             tekst = 'En raad eens… dat ben jij! Dus waar wachten we nog op, laten we naar binnen gaan!';
             image = '';
-            uitleggen.play();
+            raadEens.play();
             break;
         case 2: 
             tekst = 'Maar, voordat we naar binnen gaan zal ik nog even uitleggen hoe alles werkt.';
             image = '';
+            uitleggen.play();
             break;
         case 3: 
             startExplaineBtn.classList.remove("hide");
@@ -46,7 +47,7 @@ startOKBtn.onclick = () => {
             hint.play();
             break;
         case 4: 
-            tekst = 'Klik op i voor een informatie.';
+            tekst = 'Klik op deii voor informatie.';
             image = './images/information-btn.png';
             informatie.play();
             break;
@@ -56,7 +57,7 @@ startOKBtn.onclick = () => {
             muziek.play();
             break;  
         case 6: 
-            tekst = 'Klik op de oor om mijn geluid uit te zetten.';
+            tekst = 'Klik op het oortje om mijn stem uit te zetten.';
             image = './images/speak-on-btn.png';
             stem.play();
             break;
@@ -81,5 +82,5 @@ startOKBtn.onclick = () => {
 };
 
 startBtn.onclick = () => {
-    window.location.href="/public/pages/map.html";  
+    window.location.href="./pages/map.html";  
 };

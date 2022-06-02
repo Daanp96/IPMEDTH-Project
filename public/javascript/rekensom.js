@@ -66,6 +66,14 @@ const hintBtn = document.getElementById("js--hint");
 
 let countHint = 0;
 
+const nieuweVissen = new Audio("../audio/5-vissen/2-nieuweVissen.mp3");
+const rodeVissen = new Audio("../audio/5-vissen/3-rodeVissen.mp3");
+
+const hint1 = new Audio("../audio/5-vissen/hint-1.mp3");
+const hint2 = new Audio("../audio/5-vissen/hint-2.mp3");
+const hint3 = new Audio("../audio/5-vissen/hint-3.mp3");
+const hint4 = new Audio("../audio/5-vissen/hint-4.mp3");
+
 let startOK = 0;
 let tekst = '';
 let image = '';
@@ -77,10 +85,12 @@ startOKBtn.onclick = () => {
         case 0: 
             tekst = 'Sinds kort hebben we nieuwe vissen erbij gekregen, alleen weten we nog niet hoeveel.';
             image = '';
+            nieuweVissen.play();
             break;
         case 1: 
             tekst = 'Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? Het antwoord mag je invullen op het bord.';
             image = '';
+            rodeVissen.play();
             break;
         case 2:
             speechBubble.style.visibility = "hidden";
@@ -141,6 +151,7 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
             tekst = 'Loop door het hele aquarium.';
+            hint1.play();
             image = '../images/arrow-right.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
@@ -155,6 +166,7 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
             tekst = 'Klik op het vraagteken.';
+            hint2.play();
             image = '../images/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
@@ -168,6 +180,7 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
             tekst = 'Kies een getal van de nummers op je toetsenbord.';
+            hint3.play();
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
@@ -179,6 +192,7 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
             tekst = 'Het antwoord is 6.';
+            hint4.play();
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";

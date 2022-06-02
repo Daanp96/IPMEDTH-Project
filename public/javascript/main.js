@@ -30,6 +30,8 @@ const arcticBtn = document.getElementById("js--arctic-btn");
 const reken_correct = 6;
 const naam_correct = "aap";
 
+const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
+
 let star1;
 let star2;
 let star3;
@@ -142,6 +144,7 @@ if(document.URL.includes("rekensom.html") ){
         aantalSecondesRekensom = seconds;
 
         if(form_answer == reken_correct){
+            terugKaart.play();
             if(seconds <= 60){
                 try {
                     localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
@@ -198,6 +201,7 @@ if(document.URL.includes("savanne.html")){
         aantalSecondesSavanne = seconds;
     
         if(form_answer == naam_correct){
+            terugKaart.play();
             if(seconds <= 60){
                 try {
                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
