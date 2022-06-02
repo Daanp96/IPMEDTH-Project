@@ -1,3 +1,3 @@
-import {dragDropMap} from "./functions.js";
+import {dragDrop} from "./functions.js";
 
 const fishDrag = document.getElementsByClassName;
