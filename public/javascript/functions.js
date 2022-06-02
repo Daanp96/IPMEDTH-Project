@@ -138,7 +138,7 @@ const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
 
 const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
   let currentDroppable = null;
-  const goedZo = new Audio("../audio/7-pinguïn/2-goedzo.mp3");
+  const goedZo = new Audio("../audio/7-pinguïn/2-goedZo.mp3");
 
   obj.onmousedown = function(event) {
 
