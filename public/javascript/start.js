@@ -1,14 +1,14 @@
 const startBtn = document.getElementById("js--start-btn")
 
-let intro = new Audio("../audio/1-intro/1-welkom.mp3");
-let bezoeker = new Audio("../audio/1-intro/2-gelukkige-bezoeker.mp3");
-let raadEens = new Audio("../audio/1-intro/3-raadEens.mp3");
-let uitleggen = new Audio("../audio/1-intro/4-uitleggen.mp3");
-let hint = new Audio("../audio/1-intro/5-hint.mp3");
-let informatie = new Audio("../audio/1-intro/6-informatie.mp3");
-let muziek = new Audio("../audio/1-intro/7-muzieknoot.mp3");
-let stem = new Audio("../audio/1-intro/8-stem.mp3");
-let binnen = new Audio("../audio/1-intro/9-binnen.mp3");
+let intro = new Audio("audio/1-intro/1-welkom.mp3");
+let bezoeker = new Audio("audio/1-intro/2-gelukkige-bezoeker.mp3");
+let raadEens = new Audio("audio/1-intro/3-raadEens.mp3");
+let uitleggen = new Audio("audio/1-intro/4-uitleggen.mp3");
+let hint = new Audio("audio/1-intro/5-hint.mp3");
+let informatie = new Audio("audio/1-intro/6-informatie.mp3");
+let muziek = new Audio("audio/1-intro/7-muzieknoot.mp3");
+let stem = new Audio("audio/1-intro/8-stem.mp3");
+let binnen = new Audio("audio/1-intro/9-binnen.mp3");
 
 const speechBubble = document.getElementById("js--speech-bubble");
 const startExplaineBtn = document.getElementById("js--speech-bubble-img");
