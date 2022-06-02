@@ -1,0 +1,15 @@
+.input-form {
+    margin: 0 auto;
+
+    &--text {
+        width: 39rem;
+        height: 10rem;
+        margin-top: 1.5rem;
+        padding-left: 1rem;
+        font-size: 6rem;
+    }
+
+    &--button {
+        margin: 2rem 0;
+    }
+}

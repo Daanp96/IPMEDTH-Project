@@ -1,0 +1,227 @@
+.popup{
+    background-color: rgba(#000, .55);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &__content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        background-color: #fff;
+        box-shadow: 0 3rem 4rem rgba(#000, .2);
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .4s .2s;
+        border-radius: 2rem;
+    }
+    &__container{
+        display: grid;
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        height: 50vh;
+        background-color: #9A6F48;
+        grid-gap: 1.5rem;
+        padding: 1.5rem;
+        align-content: center;
+
+        &--item-1{
+            // background-color: #F1EAD7;
+            background-color: #FEFFDD;
+            grid-column: 1 / span 2;
+            grid-row: 2 /span 3;
+            border-radius: 2rem;
+        }
+        &--item-2{
+            background-color: #FEFFDD;
+            grid-column: 3 / span 2;
+            grid-row: 2 /span 3;
+            border-radius: 2rem;
+        }
+        &--item-3{
+            background-color: #FEFFDD;
+            grid-column: 5 / span 2;
+            grid-row: 2 /span 3;
+            border-radius: 2rem;
+        }
+
+        &--fish-dark-blue{
+            grid-column: 1 / span 1;
+            grid-row: 2 /span 3;
+            align-self: center;
+            transform: scaleX(-1);
+        }
+        &--fish-light-blue{
+            grid-column: 3 / span 1;
+            grid-row: 2 /span 3;
+            align-self: center;
+        }
+        &--fish-red{
+            grid-column: 5 / span 1;
+            grid-row: 2 /span 3;
+            align-self: center;
+        }
+        &--image{
+            width: 100%;
+            height: auto;
+        }
+        &--p1{
+            grid-column: 1 / span 5;
+            grid-row: 1;
+            align-self: center;
+            text-align: center;
+            font-size: 3rem;
+            color: $color-white;
+        }
+        &--p2{
+            grid-column: 2 / span 1;
+            grid-row: 2 /span 3;
+            align-self: center;
+            text-align: center;
+            font-size: 9rem;
+        }
+        &--p3{
+            grid-column: 4 / span 1;
+            grid-row: 2 /span 3;
+            align-self: center;
+            text-align: center;
+            font-size: 9rem;
+        }
+        &--form{
+            grid-column: 6 / span 1;
+            grid-row: 2 /span 3;
+        }
+        &--form-input{
+            width: 100%;
+            height: 100%;
+            font-size: 9rem;
+            text-align: center;
+            border: none;
+        }
+        &--button{
+            grid-column: 3 / span 2;
+            grid-row: 5 /span 2;
+            font-size: 6rem;
+            margin: 1rem;
+        }
+
+    }
+    &__content-monkey{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 60%;
+        background-color: transparent;
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0.25);
+        transform: translate(-50%, -50%) scale(0.25);
+        -webkit-transition: all .4s .2s;
+        transition: all .4s .2s;
+    }
+
+    &__container-monkey{
+        background-image: url(../images/sign-monkey-popup.png);
+        @include background;
+        height: 67vh;
+        display: grid;
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-gap: 1.5rem;
+        padding: 1.5rem;
+        align-content: center;
+
+        &--p1{
+            grid-column: 1 / span 6;
+            grid-row: 1;
+            align-self: start;
+            text-align: center;
+            font-size: 4rem;
+            color: $color-white;
+        }
+
+        &--monkey-head{
+            grid-column: 2 / span 2;
+            grid-row: 2 /span 3;
+            align-self: center;
+            place-self: self-start;
+        }
+        &--image{
+            width: 90%;
+            height: auto;
+        }
+        &--form{
+            grid-column: 4 / span 2;
+            grid-row: 3 /span 2;
+        }
+        &--button{
+            grid-column: 3 / span 2;
+            grid-row: 5 /span 2;
+            font-size: 6rem;
+            margin: 3rem;
+        }
+    }
+
+    &:target{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    &:target &__content-monkey{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close{
+        &:link,
+        &:visited{
+            color: $color-white;
+            grid-column: 6;
+            grid-row: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            text-decoration: none;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover{
+            color: red;
+        }
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    // height: 30rem;
+    // width: 30rem;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    cursor: url("../../images/cursor_point_60.cur"), default;
+    background-color: transparent;
+    border: none;
+}

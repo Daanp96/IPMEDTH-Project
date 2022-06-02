@@ -1,0 +1,41 @@
+//voorbeeld
+// als je een stukje code vaker gebruikt, dan kan je deze hierin aanmaken
+// en later importeren in een andere sass file
+
+// @mixin absCenter {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+
+@mixin background {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin background-arctic{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin widthImageSetting {
+    width: 6rem;
+    height: auto;
+}
+
+@mixin zookeeperSize{
+    height: 50vh;
+    width: 12vw;
+}
+
+@mixin ratedStar{
+    background: rgba(255, 255, 201, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 3rem;
+    position: relative;
+    transform: rotate(30deg);
+}
