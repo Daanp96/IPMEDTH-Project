@@ -23,7 +23,8 @@
         "pages/_map.scss",
         "pages/_savanne.scss",
         "pages/_arctic.scss",
-        "pages/_dierentuinpad.scss"
+        "pages/_dierentuinpad.scss",
+        "pages/_einde.scss"
     ],
     "names": [],
     "file": "main.css"

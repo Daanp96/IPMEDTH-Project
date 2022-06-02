@@ -5,6 +5,8 @@ g<!DOCTYPE html>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../sass/main.css">
+    <link rel="icon" type="image/x-icon" href="../images/monkey-head.png">
+    <script src="../javascript/arctic.js" type="module" defer></script>
     <script src="../javascript/main.js" type="module" defer></script>
     <title>Dierentuin</title>
 </head>
@@ -63,25 +65,25 @@ g<!DOCTYPE html>
                 </figure>
             </div>
             <article class="arctic-animal-1">
-                <figure><img class="arctic-animal--image-1" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
+                <figure class="pinguin-figure droppable" data-pinguin="pinguin"><img class="arctic-animal--image-1" data-pinguin="pinguin" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
             </article>
             <article class="arctic-animal-2">
-                <figure><img class="arctic-animal--image-2" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
+                <figure class="pinguin-figure droppable" data-pinguin="pinguin"><img class="arctic-animal--image-2" data-pinguin="pinguin" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
             </article>
             <article class="arctic-animal-3">
-                <figure><img class="arctic-animal--image-1" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
+                <figure class="pinguin-figure droppable" data-pinguin="pinguin"><img class="arctic-animal--image-1" data-pinguin="pinguin" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
             </article>
             <article class="arctic-animal-4">
-                <figure><img class="arctic-animal--image-1" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
+                <figure class="pinguin-figure droppable" data-pinguin="pinguin"><img class="arctic-animal--image-1" data-pinguin="pinguin" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
             </article>
             <article class="arctic-animal-5">
-                <figure><img class="arctic-animal--image-2" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
+                <figure class="pinguin-figure droppable" data-pinguin="pinguin"><img class="arctic-animal--image-2" data-pinguin="pinguin" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
             </article>
             <article class="arctic-animal-6">
-                <figure><img class="arctic-animal--image-2" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
+                <figure class="pinguin-figure droppable" data-pinguin="pinguin"><img class="arctic-animal--image-2" data-pinguin="pinguin" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
             </article>
             <article class="arctic-animal-7">
-                <figure><img class="arctic-animal--image-2" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
+                <figure class="pinguin-figure droppable" data-pinguin="pinguin"><img class="arctic-animal--image-2" data-pinguin="pinguin" src="../images/Photoshop-transparant/penguin.png" alt="penguin"></figure>
             </article>
 
 
@@ -99,7 +101,7 @@ g<!DOCTYPE html>
         <div class="walk-path-position walk-path"></div>
 
             <div class="speech-bubble arctic--speech-bubble" id="js--speech-bubble">
-                <p id="js--start-p">Dit is ons peguin verblijf. Het is nu etenstijd voor ze. Kan jij ze hun lunch geven?
+                <p id="js--start-p">Dit is ons pinguïn verblijf. Het is nu etenstijd voor ze. Kan jij ze hun lunch geven?
                 </p>
                 <button class="btn-ok button" id="js--start-ok-btn">OK</button>
             </div>
@@ -118,7 +120,11 @@ g<!DOCTYPE html>
                     <img class="arctic--visemmer-image"src="../images/Photoshop-transparant/Vis-emmer-shutterstock.png" alt="emmer vis">
                 </figure>
             </div>
-
+            <div class="arctic--viscontainer">
+                <figure><img id="js--fish" class="arctic--viscontainer-vis drag" data-pinguin="pinguin" src="../images/Photoshop-transparant/Tuna-shutterstock.png" alt="tonijn"></figure>
+            </div>
+            
+            <button id="js--arctic-btn" class="arctic-btn btn-check button">&#10148;</button>
 
         </section>
         
