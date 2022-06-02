@@ -19,9 +19,11 @@ let startOK = 0;
 let tekst = '';
 let image = '';
 
+localStorage.setItem("progress", 0);
+
 // praat wolk
 startOKBtn.onclick = () => {
-
+    
     switch (startOK) {
         case 0: 
             tekst = 'Ik ben Ron en ik zal jullie rondleiden door het park.';

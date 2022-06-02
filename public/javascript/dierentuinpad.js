@@ -50,7 +50,7 @@ pinguin.onclick = (e) => {
     x = 3;
     // progress = x;
     localStorage.setItem("progress", x);
-    startRekensomPuzzel()
+    startPinguinPuzzel();
     e.preventDefault();
 }
 
@@ -60,4 +60,8 @@ function startRekensomPuzzel(){
 
 function startSavannePuzzel() {
     window.location.href = "savanne.html";
+}
+
+function startPinguinPuzzel() {
+    window.location.href = "arctic.html";
 }

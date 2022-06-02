@@ -28,5 +28,5 @@ formBtn.addEventListener("click", function(e){
 });
 
 function endRekensomPuzzel(){
-    window.location.href="mappuzzel.html";  
+    window.location.href="dierentuinpad.html";  
 }
