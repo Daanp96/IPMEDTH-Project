@@ -32,9 +32,6 @@
 
 }
 
-
-
-
 .puzzel-btn-options{
     grid-column: 13 / span 4;
     grid-row: 1 /span 1;
@@ -62,4 +59,15 @@
         padding: 1rem;
         background-color: green;
     }
+}
+
+.hide-overlay{
+    background-color: rgba(#000, .55);
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s all;
 }
