@@ -5,6 +5,8 @@ const explaineBtn = document.getElementById("js--speech-bubble-img");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
 
+const mapOverlay = document.getElementById("js--map-overlay");
+
 let countHint = 0;
 let tekst = '';
 let image = '';
@@ -16,6 +18,8 @@ const hint4 = new Audio("../audio/6-aap/hint-4.mp3");
 
 startOKBtn.onclick = () => {
     speechBubble.style.visibility = "hidden";
+    speechBubble.style.zIndex = "";
+    mapOverlay.style.zIndex = "-1";
 };
 
 hintBtn.onclick = () => {

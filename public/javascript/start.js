@@ -19,7 +19,7 @@ let startOK = 0;
 let tekst = '';
 let image = '';
 
-localStorage.setItem("progress", 0);
+window.localStorage.clear();
 
 // praat wolk
 startOKBtn.onclick = () => {

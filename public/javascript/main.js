@@ -30,7 +30,7 @@ const arcticBtn = document.getElementById("js--arctic-btn");
 const reken_correct = 6;
 const naam_correct = "aap";
 
-const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
+// const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
 let star1;
 let star2;
@@ -132,7 +132,7 @@ function start(){
 }
 
 if(document.URL.includes("rekensom.html") ){
-    
+    const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
     formRekensomBtn.addEventListener("click", function(e){
         
         let form_answer = document.forms["answerForm"]["numberInput"].value;
@@ -172,7 +172,7 @@ if(document.URL.includes("rekensom.html") ){
             document.getElementById("aantalVissen").style.color = "lime";
             setTimeout(() => {
                 endRekensomPuzzel();
-            }, 700);
+            }, 1000);
             
         }   
         else{
@@ -182,7 +182,7 @@ if(document.URL.includes("rekensom.html") ){
                 rekensomForm.classList.remove("shake");
                 document.getElementById("aantalVissen").style.color = "black";
                 document.getElementById("aantalVissen").value = '';
-            }, 500);
+            }, 2000);
         }      
         e.preventDefault();
 
@@ -190,6 +190,7 @@ if(document.URL.includes("rekensom.html") ){
 }
 
 if(document.URL.includes("savanne.html")){
+    const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
     formSavanneBtn.addEventListener("click", function(e){
 
         let form_answer = document.forms["answerForm"]["textInput"].value;
@@ -229,7 +230,7 @@ if(document.URL.includes("savanne.html")){
             document.getElementById("naamDier").style.color = "lime";
             setTimeout(() => {
                 endSavannePuzzel();
-            }, 700);
+            }, 1000);
             
         }else{
             savanneForm.classList.add("shake");
@@ -238,7 +239,7 @@ if(document.URL.includes("savanne.html")){
                 savanneForm.classList.remove("shake");
                 document.getElementById("naamDier").style.color = "black";
                 document.getElementById("naamDier").value = '';
-            }, 500);
+            }, 2000);
         }
         e.preventDefault();
     });

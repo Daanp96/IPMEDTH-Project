@@ -3,6 +3,8 @@ import {dragDropArctic} from "./functions.js";
 const fishDrag = document.getElementById("js--fish");
 const arcticBtn = document.getElementById("js--arctic-btn");
 
+const mapOverlay = document.getElementById("js--map-overlay");
+
 const speechBubble = document.getElementById("js--speech-bubble");
 const explaineBtn = document.getElementById("js--speech-bubble-img");
 const speechBubble_p = document.getElementById("js--arctic-p");
@@ -20,6 +22,8 @@ startOKBtn.onclick = () => {
     speechBubble.style.visibility = "hidden";
     fishDrag.style.visibility ="visible";
     startOKBtn.style.visibility = "hidden";
+    speechBubble.style.zIndex = "";
+    mapOverlay.style.zIndex = "-1";
 }
 
 arcticBtn.onclick = () => {
