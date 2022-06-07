@@ -44,20 +44,17 @@ const dragDrop = (object, width = '') => {
       };
 }
 
-const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
+const dragDropMap = (obj, btn, zookpr, speech) => {
   let currentDroppable = null;
   let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
   obj.onmousedown = function(event) {
 
-    // let shiftX = event.clientX - obj.getBoundingClientRect().left;
-    // let shiftY = event.clientY - obj.getBoundingClientRect().top;
-
-    let shiftX = event.offsetX - 20;
-    let shiftY = event.offsetY + 20;
+    let shiftX = event.offsetX;
+    let shiftY = event.offsetY;
 
     obj.style.position = 'absolute';
-    obj.style.width = width;
+    obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
     obj.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
@@ -94,7 +91,8 @@ const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
 
     document.addEventListener('mousemove', onMouseMove);
 
-    obj.onmouseup = function() {
+    document.onmouseup = function() {
+
       document.removeEventListener('mousemove', onMouseMove);
       obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
@@ -142,10 +140,11 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
 
   obj.onmousedown = function(event) {
 
-    let shiftX = event.offsetX + 20;
-    let shiftY = event.offsetY - 20;
+    let shiftX = event.offsetX;
+    let shiftY = event.offsetY;
 
     obj.style.position = 'absolute';
+    obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
     obj.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
@@ -182,7 +181,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
 
     document.addEventListener('mousemove', onMouseMove);
 
-    obj.onmouseup = function() {
+    document.onmouseup = function() {
       document.removeEventListener('mousemove', onMouseMove);
       obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       obj.onmouseup = null;

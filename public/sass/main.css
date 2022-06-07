@@ -410,13 +410,6 @@ h1 {
           clip-path: polygon(40% 0%, 40% 30%, 100% 30%, 100% 70%, 40% 70%, 40% 100%, 0% 50%);
 }
 
-.drag {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 50px;
-  cursor: url("../images/cursor_grab_60.cur"), default;
-}
-
 .map-btn {
   display: none;
   -ms-grid-column: 14;
@@ -1596,7 +1589,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-1 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 13;
   -ms-grid-column-span: 2;
   grid-column: 13 / span 2;
@@ -1609,7 +1602,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-2 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -1622,7 +1615,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-3 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -1635,7 +1628,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-4 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 13;
   -ms-grid-column-span: 2;
   grid-column: 13 / span 2;
@@ -1648,7 +1641,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-5 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
@@ -1661,7 +1654,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-6 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 13;
   -ms-grid-column-span: 2;
   grid-column: 13 / span 2;
@@ -1674,7 +1667,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-7 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 13;
   -ms-grid-column-span: 2;
   grid-column: 13 / span 2;
@@ -1687,7 +1680,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-8 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -1700,7 +1693,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-9 {
   height: auto;
-  width: 100%;
+  width: 240px;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;

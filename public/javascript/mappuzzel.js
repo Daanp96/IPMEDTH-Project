@@ -8,7 +8,7 @@ const zookeeper = document.getElementById("js--map_zookeeper");
 const mapOverlay = document.getElementById("js--map-overlay");
 
 for (let i = 0; i < slides.length; i++) {
-    dragDropMap(slides[i], '240px', button, zookeeper, speech);
+    dragDropMap(slides[i], button, zookeeper, speech);
 }
 
 button.onclick = () => {
