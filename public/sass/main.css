@@ -2354,10 +2354,13 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-column: 2 / span 4;
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-row-span: 1;
-  grid-row: 3 / span 1;
+  grid-row: 4 / span 1;
   z-index: 2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 
 .arctic--figure {
