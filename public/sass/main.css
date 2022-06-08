@@ -1642,13 +1642,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-1 {
   height: auto;
-<<<<<<< HEAD
   width: 240px;
-  -ms-grid-column: 13;
-=======
-  width: 100%;
   -ms-grid-column: 12;
->>>>>>> development-damion
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
   -ms-grid-row: 2;
@@ -1686,13 +1681,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-4 {
   height: auto;
-<<<<<<< HEAD
   width: 240px;
-  -ms-grid-column: 13;
-=======
-  width: 100%;
   -ms-grid-column: 14;
->>>>>>> development-damion
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
   -ms-grid-row: 2;
@@ -1717,13 +1707,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-6 {
   height: auto;
-<<<<<<< HEAD
   width: 240px;
-  -ms-grid-column: 13;
-=======
-  width: 100%;
   -ms-grid-column: 14;
->>>>>>> development-damion
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
   -ms-grid-row: 5;
@@ -1735,13 +1720,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-7 {
   height: auto;
-<<<<<<< HEAD
   width: 240px;
-  -ms-grid-column: 13;
-=======
-  width: 100%;
   -ms-grid-column: 14;
->>>>>>> development-damion
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
   -ms-grid-row: 7;
