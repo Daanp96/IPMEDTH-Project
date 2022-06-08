@@ -51,8 +51,8 @@
             grid-row: 5 /span 1;
         }
         &-6{
-            grid-column: 2 / span 1;
-            grid-row:  5/span 1;
+            grid-column: 3 / span 1;
+            grid-row:  4 /span 2;
         }
         &-7{
             grid-column: 6 / span 1;
@@ -77,6 +77,7 @@
     &--speech-bubble{
         grid-column: 2 / span 4;
         grid-row: 3 / span 1;
+        z-index: 2;
     }
 
     &--figure{
@@ -84,8 +85,8 @@
         // bottom: 0;
         // left: 0;
         grid-column: 1 / span 2;
-        grid-row: 5 / span 1;
-        z-index: 3;
+        grid-row: 5 / span 5;
+        z-index: 2;
     }
 
 
@@ -96,8 +97,8 @@
     &--visemmer{
         grid-column: 4 / span 1;
         grid-row: 7 / span 1;
-        z-index: 3;
-
+        // z-index: 3;
+        z-index: 1;
         &-image{
             width: 10vw;
             height: auto;

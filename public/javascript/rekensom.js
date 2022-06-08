@@ -61,6 +61,8 @@ const speechBubble = document.getElementById("js--speech-bubble");
 const speechBubble_p = document.getElementById("js--speech-bubble-p"); 
 const explaineBtn = document.getElementById("js--speech-bubble-img");
 
+const mapOverlay = document.getElementById("js--map-overlay");
+
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
 
@@ -95,6 +97,8 @@ startOKBtn.onclick = () => {
         case 2:
             speechBubble.style.visibility = "hidden";
             startOKBtn.style.visibility = "hidden";
+            speechBubble.style.zIndex = "";
+            mapOverlay.style.zIndex = "-1";
             break;
     }
 

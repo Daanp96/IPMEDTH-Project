@@ -39,7 +39,7 @@
     }
     &-4{
         @include ratedStar;
-        grid-column: 8 / span 1;
+        grid-column: 9 / span 1;
         grid-row: 4 /span 1;
         align-self: end;
         justify-self: center;
@@ -48,7 +48,7 @@
     }
     &-5{
         @include ratedStar;
-        grid-column: 9 / span 1;
+        grid-column: 10 / span 1;
         grid-row: 4 /span 1;
         align-self: end;
         justify-self: center;
@@ -57,7 +57,7 @@
     }
     &-6{
         @include ratedStar;
-        grid-column: 10 / span 1;
+        grid-column: 11 / span 1;
         grid-row: 4 /span 1;
         align-self: end;
         justify-self: center;
