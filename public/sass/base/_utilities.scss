@@ -3,8 +3,12 @@
 // .u-margin-bottom-big{margin-bottom: 8rem !important;}
 
 .hide{
+    display: none;
+}
+.hide-important{
     display: none !important;
 }
+
 
 .grey-bar-position{
     grid-column: 1 / span 16;

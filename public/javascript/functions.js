@@ -199,6 +199,8 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
         currentDroppable.classList.remove("droppable");
         obj.style.left = "18vw";
         obj.style.top ="80vh";
+        //fixed de bug
+        currentDroppable.removeAttribute('data-pinguin');
         pinguinsFed++;
       }
       
