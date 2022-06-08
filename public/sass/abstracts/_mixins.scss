@@ -40,6 +40,18 @@
     transform: rotate(30deg);
 }
 
+@mixin button-style {
+    text-decoration: none;
+    text-decoration: none;color: $color-white;
+    background: $color-btn;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 1rem;
+    top: 0px;
+}
+
 // MEDIA QUERY MANAGER
 /*
 600 - 900px:    Tablet portrait

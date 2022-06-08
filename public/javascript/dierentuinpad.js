@@ -151,6 +151,7 @@ if(document.URL.includes("dierentuinpad.html") ){
             vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Oh, wat gaat de tijd snel, de dierentuin gaat sluiten. Kom, we gaan naar de uitgang.";
             uitgang.play();
+            eindeButton.classList.remove("hide");
             eindeButton.style.display = "block";
 
 
