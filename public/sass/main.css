@@ -423,7 +423,6 @@ h1 {
 
 .btn-ok {
   text-decoration: none;
-  text-decoration: none;
   color: #fff;
   background: #05DA34;
   display: -webkit-box;
@@ -438,18 +437,60 @@ h1 {
   position: relative;
   border-radius: 1rem;
   top: 0px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
   width: 19rem;
   height: 10rem;
   font-size: 10rem;
-  -webkit-box-shadow: 0px 15px 0px 0px #038f22, 0px 0px 20px 0px #bbb;
-          box-shadow: 0px 15px 0px 0px #038f22, 0px 0px 20px 0px #bbb;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+}
+
+.btn-ok::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #018b1f;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.3em, -1em);
+          transform: translate3d(0, 0.3em, -1em);
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.btn-ok:hover {
+  background: #05DA34;
+  -webkit-transform: translate(0, 0.15em);
+          transform: translate(0, 0.15em);
+}
+
+.btn-ok:hover::before {
+  -webkit-transform: translate3d(0, 0.15em, -1em);
+          transform: translate3d(0, 0.15em, -1em);
+}
+
+.btn-ok:active {
+  background: #05DA34;
+  -webkit-transform: translate(0em, 0.3em);
+          transform: translate(0em, 0.3em);
+}
+
+.btn-ok:active::before {
+  -webkit-transform: translate3d(0, 0, -1em);
+          transform: translate3d(0, 0, -1em);
 }
 
 .btn-ok-small {
   text-decoration: none;
-  text-decoration: none;
   color: #fff;
   background: #05DA34;
   display: -webkit-box;
@@ -464,17 +505,60 @@ h1 {
   position: relative;
   border-radius: 1rem;
   top: 0px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
   margin-top: 1rem;
   width: 16rem;
   height: 5rem;
   font-size: 4.5rem;
-  border-radius: 1rem;
-  -webkit-box-shadow: 0px 10px 0px 0px #038f22, 0px 0px 20px 0px #bbb;
-          box-shadow: 0px 10px 0px 0px #038f22, 0px 0px 20px 0px #bbb;
+}
+
+.btn-ok-small::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #018b1f;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.3em, -1em);
+          transform: translate3d(0, 0.3em, -1em);
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.btn-ok-small:hover {
+  background: #05DA34;
+  -webkit-transform: translate(0, 0.15em);
+          transform: translate(0, 0.15em);
+}
+
+.btn-ok-small:hover::before {
+  -webkit-transform: translate3d(0, 0.15em, -1em);
+          transform: translate3d(0, 0.15em, -1em);
+}
+
+.btn-ok-small:active {
+  background: #05DA34;
+  -webkit-transform: translate(0em, 0.3em);
+          transform: translate(0em, 0.3em);
+}
+
+.btn-ok-small:active::before {
+  -webkit-transform: translate3d(0, 0, -1em);
+          transform: translate3d(0, 0, -1em);
 }
 
 .btn-ok-popup {
-  text-decoration: none;
   text-decoration: none;
   color: #fff;
   background: #05DA34;
@@ -490,33 +574,56 @@ h1 {
   position: relative;
   border-radius: 1rem;
   top: 0px;
-  margin-top: 1rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
   width: 29rem;
   height: 8rem;
   font-size: 8rem;
-  border-radius: 1rem;
-  -webkit-box-shadow: 0px 10px 0px 0px #038f22, 0px 0px 20px 0px #bbb;
-          box-shadow: 0px 10px 0px 0px #038f22, 0px 0px 20px 0px #bbb;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
 }
 
-.btn-ok:active {
-  top: 8px;
-  -webkit-box-shadow: 0px 7px 0px 0px #04c12e;
-          box-shadow: 0px 7px 0px 0px #04c12e;
+.btn-ok-popup::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #018b1f;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.3em, -1em);
+          transform: translate3d(0, 0.3em, -1em);
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 }
 
-.btn-ok-small:active {
-  top: 4px;
-  -webkit-box-shadow: 0px 7px 0px 0px #04c12e;
-          box-shadow: 0px 7px 0px 0px #04c12e;
+.btn-ok-popup:hover {
+  background: #05DA34;
+  -webkit-transform: translate(0, 0.15em);
+          transform: translate(0, 0.15em);
+}
+
+.btn-ok-popup:hover::before {
+  -webkit-transform: translate3d(0, 0.15em, -1em);
+          transform: translate3d(0, 0.15em, -1em);
 }
 
 .btn-ok-popup:active {
-  top: 6px;
-  -webkit-box-shadow: 0px 7px 0px 0px #04c12e;
-          box-shadow: 0px 7px 0px 0px #04c12e;
+  background: #05DA34;
+  -webkit-transform: translate(0em, 0.3em);
+          transform: translate(0em, 0.3em);
+}
+
+.btn-ok-popup:active::before {
+  -webkit-transform: translate3d(0, 0, -1em);
+          transform: translate3d(0, 0, -1em);
 }
 
 .puzzel-options__btn-hint {
