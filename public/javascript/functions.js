@@ -105,7 +105,7 @@ const dragDropMap = (obj, btn, zookpr, speech) => {
         obj.hidden = true;
         layedPieces++;
 
-        if(layedPieces == 9){
+        if(layedPieces == 16){
           btn.style.display = "block";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
