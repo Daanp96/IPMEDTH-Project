@@ -1,0 +1,48 @@
+.ijsco {
+    background-color: $color-path;
+}
+
+.ijsco_kraam {
+    grid-column: 3 / span 6;
+    grid-row: 1 / span 9;
+
+    &__img {
+        width: 40vw;
+    }
+}
+
+.ijs {
+    opacity: 0;
+
+    &_hoorn {
+        grid-column: 3 / span 2;
+        grid-row: 5 / span 2;
+        margin-left: 10px;
+        margin-top: 50px;
+    }
+
+    &_roze {
+        grid-column: 3 / span 2;
+        grid-row: 4 / span 2;
+    }
+
+    &_groen {
+        grid-column: 3 / span 2;
+        grid-row: 3 / span 2;
+    }
+
+    &_blauw {
+        grid-column: 3 / span 2;
+        grid-row: 2 / span 2;
+    }
+
+    &_overlay {
+        opacity: 0;
+        transition: 0.5s all;
+        z-index: -1;
+    }
+
+    &_animatie {
+        animation: scale-small 2s ease-in-out infinite;
+    }
+}

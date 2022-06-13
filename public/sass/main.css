@@ -2652,6 +2652,24 @@ input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
+.dierentuinpad__ijskar {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 2;
+  grid-column: 13 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 / span 2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  display: none;
+}
+
+.dierentuinpad__ijskar--image {
+  width: 100%;
+  height: auto;
+}
+
 .dierentuinpad__element {
   z-index: 2;
   -webkit-animation: scale-small 2s infinite;
@@ -2752,5 +2770,76 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 5;
   height: 8vh;
   width: 8vw;
+}
+
+.ijsco {
+  background-color: #F0EAD2;
+}
+
+.ijsco_kraam {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 6;
+  grid-column: 3 / span 6;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 9;
+  grid-row: 1 / span 9;
+}
+
+.ijsco_kraam__img {
+  width: 40vw;
+}
+
+.ijs {
+  opacity: 0;
+}
+
+.ijs_hoorn {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 / span 2;
+  margin-left: 10px;
+  margin-top: 50px;
+}
+
+.ijs_roze {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  grid-row: 4 / span 2;
+}
+
+.ijs_groen {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / span 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3 / span 2;
+}
+
+.ijs_blauw {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / span 2;
+}
+
+.ijs_overlay {
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: -1;
+}
+
+.ijs_animatie {
+  -webkit-animation: scale-small 2s ease-in-out infinite;
+          animation: scale-small 2s ease-in-out infinite;
 }
 /*# sourceMappingURL=main.css.map */

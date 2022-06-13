@@ -77,6 +77,18 @@
         }
     }
 
+    &__ijskar {
+        grid-column: 13 / span 2;
+        grid-row: 5 / span 2;
+        align-self: end;
+        display: none;
+
+        &--image {
+            width: 100%;
+            height: auto;
+        }
+    }
+
     &__element{
         z-index: 2;
         animation: scale-small 2s infinite;

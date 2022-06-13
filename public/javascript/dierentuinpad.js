@@ -1,6 +1,7 @@
 const fish = document.getElementById("js--fish");
 const monkey = document.getElementById("js--monkey");
 const pinguin = document.getElementById("js--pinguin");
+const ijskar = document.getElementById("js--ijskar");
 
 const ratedStar1 = document.getElementById("js--ratedStar1");
 const ratedStar2 = document.getElementById("js--ratedStar2");
@@ -89,8 +90,20 @@ if(document.URL.includes("dierentuinpad.html") ){
             monkey.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
+            ijskar.style.display = "block";
+            ijskar.classList.add("dierentuinpad__element");
+            ijskar.classList.add("button");
+            vissen.remove();
+            dierentuinpadSpeechBubbleP.innerHTML = "Het lijkt me nu wel tijd voor een pauze, zullen we anders een ijsje gaan halen?";
+            break;
+        case 3:
+            monkey.classList.remove("dierentuinpad__element");
+            monkey.classList.remove("button");
+            fish.classList.remove("dierentuinpad__element");
+            fish.classList.remove("button");
             pinguin.classList.add("dierentuinpad__element");
             pinguin.classList.add("button");
+            ijskar.style.display = "none";
 
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
@@ -138,7 +151,7 @@ if(document.URL.includes("dierentuinpad.html") ){
                 ratedStar4.style.visibility = "visible";
             }
             break;
-        case 3:
+        case 4:
             monkey.classList.remove("dierentuinpad__element");
             monkey.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
@@ -228,8 +241,14 @@ if(document.URL.includes("dierentuinpad.html") ){
         startSavannePuzzel();
         e.preventDefault();
     }
-    pinguin.onclick = (e) => {
+    ijskar.onclick = (e) => {
         x = 3;
+        localStorage.setItem("progress", x);
+        startIjskar();
+        e.preventDefault();
+    }
+    pinguin.onclick = (e) => {
+        x = 4;
         // progress = x;
         localStorage.setItem("progress", x);
         startPinguinPuzzel();
@@ -250,6 +269,9 @@ function startSavannePuzzel(){
 function startPinguinPuzzel(){
     window.location.href="arctic.html";  
 };
+function startIjskar() {
+    window.location.href="ijsco.html";  
+}
 function naarEinde(){
     window.location.href = "einde.html";
 }
