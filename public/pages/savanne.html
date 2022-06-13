@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sass/main.css">
+    <link rel="icon" type="image/x-icon" href="../images/monkey-head.png">
+    <script src="../javascript/main.js" type="module" defer></script>
+    <script src="../javascript/savanne.js" type="module" defer></script>
+    <title>Dierentuin</title>
+</head>
+<body>
+    <main class="savanne--background">
+        <section class="puzzel-options grid-16-1 walk-path--up">
+            <article class="rock-wood-wall-position--up-1 ">
+                <figure>
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <article class="rock-wood-wall-position--up-2 ">
+                <figure>
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <article class="rock-wood-wall-position--up-3 ">
+                <figure>
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <article class="rock-wood-wall-position--up-4 ">
+                <figure>
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <button class="puzzel-options__btn-hint button ">
+                <image class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-information button ">
+                <image class="puzzel-options__btn-information--image" src="../images/information-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-music button" id="js--music-on">
+                <image class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-music puzzel-options__btn-music-off button" id="js--music-off">
+                <image class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-speak button" id="js--speak-on">
+                <image class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
+                <image class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></image>
+            </button>
+        </section>
+
+        <section class="section-savanne grid-16-9">
+
+            <article class="savanne-tree-1">
+                <figure>
+                    <img class="savanne-tree--image-1"src="../images/Photoshop-transparant/tree-1.png" alt="tree">
+                </figure>
+            </article>
+            <article class="savanne-tree-2">
+                <figure>
+                    <img class="savanne-tree--image-2"src="../images/Photoshop-transparant/tree-1.png" alt="tree">
+                </figure>
+            </article>
+            <article class="savanne-tree-3">
+                <figure>
+                    <img class="savanne-tree--image-3"src="../images/Photoshop-transparant/tree-1.png" alt="tree">
+                </figure>
+            </article>
+
+            <article class="savanne-animal-1">
+                <figure><img class="savanne-animal--image-1" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+            <article class="savanne-animal-2">
+                <figure><img class="savanne-animal--image-2" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+            <article class="savanne-animal-3">
+                <figure><img class="savanne-animal--image-3" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+            <article class="savanne-animal-4">
+                <figure><img class="savanne-animal--image-4" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+            <article class="savanne-animal-5">
+                <figure><img class="savanne-animal--image-5" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+
+            <article class="rock-wood-wall-position--1">
+                <figure>
+                    <img class="rock-wood-wall" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <article class="rock-wood-wall-position--2">
+                <figure>
+                    <img class="rock-wood-wall" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+
+            <div class="walk-path-position walk-path"></div>
+
+            <div class="speech-bubble savanne--speech-bubble" id="js--speech-bubble">
+                <p id="js--start-p">Oh! Ons verblijf mist de naam van het dier dat hier leeft. Kan jij ons helpen en het invullen?
+                </p>
+                <button class="btn-ok button" id="js--start-ok-btn">OK</button>
+            </div>
+
+            <figure class="savanne--figure">
+                <img class="savanne--image" src="../images/zoo-keeper-1.png" alt="zoo keeper">
+            </figure>
+
+            <a href="#popup" class="savanne--animal-board button">
+                <figure>
+                    <img class="savanne--animal-board-image" src="../images/Photoshop-transparant/sign-monkey.png" alt="apen bord">
+                </figure>
+            </a>
+
+        </section>
+        
+        <div class="popup" id="popup">
+            <div class="popup__content-monkey">
+                <div class="popup__container-monkey">
+                    <p class="popup__container-monkey--p1">Weet jij wat de naam is van dit dier?</p>
+                    <figure class="popup__container-monkey--monkey-head">
+                        <img class="popup__container-monkey--image" src="../images/monkey-head.png" alt="apenhoofd">
+                    </figure>
+
+                    <form class="popup__container-monkey--form" id="js--savanne-form" name="answerForm" autocomplete="off">
+                        <label for="naamDier"></label>
+                        <input class="popup__container--form-input button" name="textInput" id="naamDier" type="text" placeholder="?" required>
+                    </form>
+
+                    <button class="popup__container-monkey--button btn-check button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
+                    <a href="#" class="popup__close button">&times;</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

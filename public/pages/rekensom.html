@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dierentuin</title>
+    <link rel="stylesheet" href="../sass/main.css">
+    <link rel="icon" type="image/x-icon" href="../images/monkey-head.png">
+    <script src="../javascript/rekensom.js" type="module" defer></script>
+    <script src="../javascript/main.js" type="module" defer></script>
+</head>
+<body>
+    <main class="rekensom--background" id="js--rekensom-background">
+        <section class="puzzel-options grid-16-1">
+            <button class="puzzel-options__btn-hint button" id="js--hint">
+                <image class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-information button ">
+                <image class="puzzel-options__btn-information--image" src="../images/information-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-music button" id="js--music-on">
+                <image class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-music puzzel-options__btn-music-off button" id="js--music-off">
+                <image class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-speak button" id="js--speak-on">
+                <image class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></image>
+            </button>
+
+            <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
+                <image class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></image>
+            </button>
+        </section>
+
+        <section class="section-rekensom grid-16-9" id="js--first-page">
+            <article class="rekensom--animal-1">
+                <figure>
+                    <img src="../images/fishes-3.png" alt="vissen" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-1"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-2">
+                <figure>
+                    <img src="../images/fish-dark-blue.png" alt="donkere vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-4"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-3">
+                <figure>
+                    <img src="../images/fish-dark-blue.png" alt="donkere vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-4"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-4">
+                <figure>
+                    <img src="../images/fishes-3.png" alt="vissen" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-4"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-5">
+                <figure>
+                    <img src="../images/fish-light-blue.png" alt="blauwe vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-4"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-6">
+                <figure>
+                    <img src="../images/fish-light-blue.png" alt="blauwe vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-4"> -->
+                </figure>
+            </article>
+
+            <div class="speech-bubble rekensom--speech-bubble" id="js--speech-bubble">
+                <image class="btn-explaine-big hide" id="js--explaine-btn"></image>
+                <p id="js--speech-bubble-p">Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? 
+                    Het antwoord mag je invullen op het bord.
+                </p>
+                <button class="btn-ok button" id="js--start-ok-btn">OK</button>
+            </div>
+
+            <button class="next-page-right button" id="js--next-btn-right"></button>
+
+            <article class="rekensom--figure">
+                <figure>
+                    <img class="rekensom--image" src="../images/zoo-keeper-1.png" alt="dierentuin medewerker">
+                </figure>
+            </article>
+
+            <a href="#popup" class="rekensom--animal-board button" id="js--animal-board">
+                <figure>
+                    <img class="rekensom--animal-board-image" src="../images/aquarium-board.png" alt="dieren bordje">
+                </figure>
+            </a>
+
+            <!-- <div class="grey-bar-position grey-bar"></div> -->
+            <!-- <div class="walk-path-position walk-path"></div> -->
+        </section>
+
+        <section class="section-rekensom hide" id="js--second-page">
+            <article class="rekensom--animal-7">
+                <figure>
+                    <img src="../images/fishes-3.png" alt="vissen" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-2"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-8">
+                <figure>
+                    <img src="../images/fishes-3.png" alt="vissen" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-3"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-9">
+                <figure>
+                    <img src="../images/fish-red.png" alt="rode vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-3"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-10">
+                <figure>
+                    <img src="../images/fish-dark-blue.png" alt="donkere vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-3"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-11">
+                <figure>
+                    <img src="../images/fish-red.png" alt="rode vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-3"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-12">
+                <figure>
+                    <img src="../images/fish-light-blue.png" alt="blauwe vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-3"> -->
+                </figure>
+            </article>
+
+            <article class="rekensom--animal-13">
+                <figure>
+                    <img src="../images/fish-light-blue.png" alt="blauwe vis" class="rekensom--image-animal">
+                    <!-- <img src="" alt="fish" class="rekensom--image-animal" id="js--sea-animal-3"> -->
+                </figure>
+            </article>
+
+            <button class="next-page-left button" id="js--next-btn-left"></button>
+        </section>
+
+        <!-- <div class="rekensom--walk-path"></div> -->
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__container">
+                    <p class="popup__container--p1">Hoeveel rode vissen heb jij gevonden?</p>
+                    <div class="popup__container--item-1"></div>
+                    <figure class="popup__container--fish-dark-blue">
+                        <img class="popup__container--image" src="../images/fish-dark-blue.png" alt="donker blauwe vis">
+                    </figure>
+                    <p class="popup__container--p2">7</p>
+                    
+                    <div class="popup__container--item-2"></div>
+                    <figure class="popup__container--fish-light-blue">
+                        <img class="popup__container--image" src="../images/fish-light-blue.png" alt="licht blauwe vis">
+                    </figure>
+                    <p class="popup__container--p3">8</p>
+                    
+                    <div class="popup__container--item-3"></div>
+                    <figure class="popup__container--fish-red">
+                        <img class="popup__container--image" src="../images/fish-red.png" alt="rode vis">
+                    </figure>
+                    <form class="popup__container--form" id="js--rekensom-form" name="answerForm">
+                        <label for="aantalVissen"></label>
+                        <input class="popup__container--form-input button" name="numberInput" id="aantalVissen" type="number" min="0" placeholder="?" required>
+                    </form>
+
+                    <button class="popup__container--button btn-check button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
+                    <a href="#" class="popup__close button">&times;</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
