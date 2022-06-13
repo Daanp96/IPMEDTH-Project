@@ -193,12 +193,14 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
         elem.src = "../images/heart.png";
         elem.style.width = "50px";
         elem.style.position = "absolute";
-        elem.style.left = "50px";
+        elem.style.left = "40px";
         currentDroppable.append(elem);
         currentDroppable.style.opacity = '100%';
         currentDroppable.classList.remove("droppable");
         obj.style.left = "18vw";
         obj.style.top ="80vh";
+        //fixed de bug
+        currentDroppable.removeAttribute('data-pinguin');
         pinguinsFed++;
       }
       

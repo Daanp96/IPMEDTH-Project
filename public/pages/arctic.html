@@ -104,7 +104,9 @@
             <div class="speech-bubble arctic--speech-bubble" id="js--speech-bubble">
                 <img class="btn-explaine gif hide" id="js--speech-bubble-img"></img>
                 <p id="js--arctic-p">Dit is ons pinguïn verblijf. Het is nu etenstijd voor ze. Kan jij ze hun lunch geven?</p>
-                <button class="btn-ok button" id="js--arctic-ok-btn">OK</button>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small button" id="js--arctic-ok-btn">OK</button>
+                </div>
             </div>
 
             <figure class="arctic--figure">
@@ -122,10 +124,15 @@
                 </figure>
             </div>
             <div class="arctic--viscontainer">
-                <figure><img id="js--fish" class="arctic--viscontainer-vis drag" data-pinguin="pinguin" src="../images/Photoshop-transparant/Tuna-shutterstock.png" alt="tonijn"></figure>
+                <figure>
+                    <img id="js--fish" class="arctic--viscontainer-vis drag" data-pinguin="pinguin" src="../images/Photoshop-transparant/Tuna-shutterstock.png" alt="tonijn">
+                </figure>
             </div>
             
-            <button id="js--arctic-btn" class="arctic-btn btn-check button">&#10148;</button>
+            <!-- <button id="js--arctic-btn" class="arctic-btn btn-check button">&#10148;</button> -->
+            <div id="js--arctic-btn" class="arctic-btn">
+                <button class="btn-ok button">&#10148;</button>
+            </div>
 
         </section>
         

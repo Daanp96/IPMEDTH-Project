@@ -47,6 +47,7 @@ hintBtn.onclick = () => {
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.visibility = "hidden";
+                countHint++;
             }
             break;
         case 1: 
@@ -62,11 +63,12 @@ hintBtn.onclick = () => {
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.visibility = "hidden";
+                countHint++;
             }
             break;
     }
 
     speechBubble_p.innerHTML = tekst;
     explaineBtn.src = image;
-    countHint++;
+    
 };

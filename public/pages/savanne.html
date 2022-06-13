@@ -109,7 +109,9 @@
             <div class="speech-bubble savanne--speech-bubble" id="js--speech-bubble">
                 <image class="btn-explaine hide" id="js--speech-bubble-img"></image>
                 <p id="js--speech-bubble-p">Dit is het savanne verblijf. Hier verblijven allemaal verschillende dieren. Maar blijkbaar zijn we vergeten voor één dier een bord op te hangen! Kan jij het bord voor ons invullen?</p>
-                <button class="btn-ok button" id="js--speech-bubble-btn">OK</button>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small button" id="js--speech-bubble-btn">OK</button>
+                </div>
             </div>
 
             <figure class="savanne--figure">
@@ -136,8 +138,9 @@
                         <label for="naamDier"></label>
                         <input class="popup__container--form-input button" name="textInput" id="naamDier" type="text" placeholder="?" required>
                     </form>
-
-                    <button class="popup__container-monkey--button btn-check button" id="js--form-submitSavanne" form="answerForm" type="submit" value="">&#10004;</button>
+                    <div class="popup__container-monkey--button">
+                        <button class="btn-ok-popup button" id="js--form-submitSavanne" form="answerForm" type="submit" value="">&#10004;</button>
+                    </div>
                     <a href="#" class="popup__close button">&times;</a>
                 </div>
             </div>

@@ -162,6 +162,7 @@ hintBtn.onclick = () => {
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.visibility = "hidden";
+                countHint++;
             }
             break;
         case 1: 
@@ -177,6 +178,7 @@ hintBtn.onclick = () => {
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.visibility = "hidden";
+                countHint++;
             }
             break;
         case 2: 
@@ -189,6 +191,7 @@ hintBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.visibility = "hidden";
+                countHint++;
             }
             break;
         case 3: 
@@ -201,17 +204,19 @@ hintBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.visibility = "hidden";
+                countHint++;
             }
             break;
         case 4:
             speechBubble.style.visibility = "hidden";
             startOKBtn.style.visibility = "hidden";
+            countHint++;
             break;
     }
 
     speechBubble_p.innerHTML = tekst;
     explaineBtn.src = image;
-    countHint++;
+    
 };
 
 function endRekensomPuzzel(){

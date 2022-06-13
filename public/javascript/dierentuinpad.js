@@ -27,6 +27,8 @@ const pinguinVerblijf = new Audio("../audio/4-dierentuinpad/3-pinguïn.mp3");
 const uitgang = new Audio("../audio/4-dierentuinpad/4-uitgang.mp3");
 const vissen = document.getElementById("iframeAudio");
 
+eindeButton.classList.add("hide-important");
+
 let star1;
 let star2;
 let star3;
@@ -143,6 +145,7 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.remove("dierentuinpad__element");
             pinguin.classList.remove("button");
+            eindeButton.classList.remove("hide-important");
 
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
@@ -151,9 +154,6 @@ if(document.URL.includes("dierentuinpad.html") ){
             vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Oh, wat gaat de tijd snel, de dierentuin gaat sluiten. Kom, we gaan naar de uitgang.";
             uitgang.play();
-            eindeButton.style.display = "block";
-
-
 
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');

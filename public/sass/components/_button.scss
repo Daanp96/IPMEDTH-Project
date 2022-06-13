@@ -2,34 +2,34 @@
 // deze is bedoeld alleen voor verschillende buttons. dit is gewoon een klasse die je aanmaakt
 // en elke keer kan hergebruiken.
 
-.btn-check{
-    &,
-    &:link,
-    &:visited{
-        text-decoration: none;
-        // padding: 0rem 6rem;
-        border-radius: 10rem;
-        border: 1px solid $color-black;
-        font-size: 4rem;
-        background-color: $color-btn !important;
-        box-shadow: 0 1rem 2rem rgba($color-black, .4);
-    }
+// .btn-check{
+//     &,
+//     &:link,
+//     &:visited{
+//         text-decoration: none;
+//         // padding: 0rem 6rem;
+//         border-radius: 10rem;
+//         border: 1px solid $color-black;
+//         font-size: 4rem;
+//         background-color: $color-btn !important;
+//         box-shadow: 0 1rem 2rem rgba($color-black, .4);
+//     }
 
-    &:hover{
-        background-color: $color-btn;
-        transform: translateY(-3px);
-        box-shadow: 0 1rem 2rem rgba($color-black, .2);
-    }
+//     &:hover{
+//         background-color: $color-btn;
+//         transform: translateY(-3px);
+//         box-shadow: 0 1rem 2rem rgba($color-black, .2);
+//     }
 
-    &:active
-    {
-        outline: none;
-        background-color: $color-btn;
-        transform: translateY(0px);
-        box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
-    }
+//     &:active
+//     {
+//         outline: none;
+//         background-color: $color-btn;
+//         transform: translateY(0px);
+//         box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
+//     }
     
-}
+// }
 
 .button {
     cursor: url("../images/cursor_point_60.cur"), default;
@@ -37,34 +37,34 @@
     border: none;
 }
 
-.btn-ok{
-    &,
-    &:link,
-    &:visited{
-        text-decoration: none;
-        padding: 0rem 4rem;
-        border-radius: 10rem;
-        border: 1px solid $color-black;
-        font-size: 3rem;
-        background-color: $color-btn !important;
-        box-shadow: 0 1rem 2rem rgba($color-black, .4);
-        margin-top: 1rem;
-    }
+// .btn-ok{
+//     &,
+//     &:link,
+//     &:visited{
+//         text-decoration: none;
+//         padding: 0rem 4rem;
+//         border-radius: 10rem;
+//         border: 1px solid $color-black;
+//         font-size: 3rem;
+//         background-color: $color-btn !important;
+//         box-shadow: 0 1rem 2rem rgba($color-black, .4);
+//         margin-top: 1rem;
+//     }
 
-    &:hover{
-        background-color: $color-btn;
-        transform: translateY(-3px);
-        box-shadow: 0 1rem 2rem rgba($color-black, .2);
-    }
+//     &:hover{
+//         background-color: $color-btn;
+//         transform: translateY(-3px);
+//         box-shadow: 0 1rem 2rem rgba($color-black, .2);
+//     }
 
-    &:active
-    {
-        outline: none;
-        background-color: $color-btn;
-        transform: translateY(0px);
-        box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
-    }
-}
+//     &:active
+//     {
+//         outline: none;
+//         background-color: $color-btn;
+//         transform: translateY(0px);
+//         box-shadow: inset 0 0 0.5rem 0.5rem rgba($color-black, .2);
+//     }
+// }
 
 .next-page-right{
     text-decoration: none;
@@ -93,8 +93,71 @@
 //     cursor: url("../images/cursor_grab_60.cur"), default;
 // }
 
-.map-btn {
-    display: none;
-    grid-column-start: 14;
-    grid-row-start: 5;
+.btn-ok-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// .btn-ok{
+//     @include button-style;
+//     width: 19rem;
+//     height: 10rem;
+//     font-size: 10rem;
+//     box-shadow: 0px 15px 0px 0px darken($color-btn, 15%), 0px 0px 20px 0px #bbb;
+//     transition: all 0.2s;
+// }
+// .btn-ok-small{
+//     @include button-style;
+//     margin-top: 1rem;
+//     width: 16rem;
+//     height: 5rem;
+//     font-size: 4.5rem;
+//     border-radius: 1rem;
+//     box-shadow: 0px 10px 0px 0px darken($color-btn, 15%), 0px 0px 20px 0px #bbb;
+// }
+// .btn-ok-popup{
+//     @include button-style;
+//     margin-top: 1rem;
+//     width: 29rem;
+//     height: 8rem;
+//     font-size: 8rem;
+//     border-radius: 1rem;
+//     box-shadow: 0px 10px 0px 0px darken($color-btn, 15%), 0px 0px 20px 0px #bbb;
+//     transition: all 0.2s;
+// }
+
+// .btn-ok:active{
+//     top: 8px;  
+//     box-shadow: 0px 7px 0px 0px darken($color-btn, 5%);
+// }
+// .btn-ok-small:active{
+//     top: 4px;  
+//     box-shadow: 0px 7px 0px 0px darken($color-btn, 5%);
+// }
+// .btn-ok-popup:active{
+//     top: 6px;  
+//     box-shadow: 0px 7px 0px 0px darken($color-btn, 5%);
+// }
+// .btn-ok:hover{
+//     transform: scale(1.05);
+// }
+
+.btn-ok {
+    @include button-style;
+    width: 19rem;
+    height: 10rem;
+    font-size: 10rem;
+}
+.btn-ok-small {
+    @include button-style;
+    margin-top: 1rem;
+    width: 16rem;
+    height: 5rem;
+    font-size: 4.5rem;
+}
+.btn-ok-popup {
+    @include button-style;
+    width: 29rem;
+    height: 8rem;
+    font-size: 8rem;
 }

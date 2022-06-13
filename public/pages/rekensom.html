@@ -86,7 +86,9 @@
                 <img class="btn-explaine hide" id="js--speech-bubble-img"></img>
                 <p id="js--speech-bubble-p">Welkom in het aquarium! Hier zwemmen veel verschillende vissen rond.
                 </p>
-                <button class="btn-ok button" id="js--speech-bubble-btn">OK</button>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small button" id="js--speech-bubble-btn">OK</button>
+                </div>
             </div>
 
             <button class="next-page-right button" id="js--next-btn-right"></button>
@@ -185,8 +187,9 @@
                         <label for="aantalVissen"></label>
                         <input class="popup__container--form-input button" name="numberInput" id="aantalVissen" type="number" min="0" placeholder="?" required>
                     </form>
-
-                    <button class="popup__container--button btn-check button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
+                    <div class="popup__container--button">
+                        <button class="btn-ok-popup button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
+                    </div>
                     <a href="#" class="popup__close button">&times;</a>
                 </div>
             </div>

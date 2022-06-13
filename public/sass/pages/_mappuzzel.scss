@@ -17,6 +17,11 @@
         border-color: $color-black;
         opacity: 30%;
     }
+    &__eind-btn {
+        display: none;
+        grid-column-start: 14;
+        grid-row-start: 5;
+    }
 
     &--slide{
         
