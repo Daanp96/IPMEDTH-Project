@@ -11,50 +11,51 @@
     <title>Dierentuin</title>
 </head>
 <body>
+    <iframe src="../audio/6-aap/1-savanneverblijf.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
     <main class="savanne--background">
         <section class="puzzel-options grid-16-1 walk-path--up">
             <article class="rock-wood-wall-position--up-1 ">
                 <figure>
-                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
                 </figure>
             </article>
             <article class="rock-wood-wall-position--up-2 ">
                 <figure>
-                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
                 </figure>
             </article>
             <article class="rock-wood-wall-position--up-3 ">
                 <figure>
-                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
                 </figure>
             </article>
             <article class="rock-wood-wall-position--up-4 ">
                 <figure>
-                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
                 </figure>
             </article>
-            <button class="puzzel-options__btn-hint button ">
-                <image class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></image>
+            <button class="puzzel-options__btn-hint button " id="js--hint">
+                <img class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-information button ">
-                <image class="puzzel-options__btn-information--image" src="../images/information-btn.png"></image>
+                <img class="puzzel-options__btn-information--image" src="../images/information-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-music button" id="js--music-on">
-                <image class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></image>
+                <img class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-music puzzel-options__btn-music-off button" id="js--music-off">
-                <image class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></image>
+                <img class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-speak button" id="js--speak-on">
-                <image class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></image>
+                <img class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
-                <image class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></image>
+                <img class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
             </button>
         </section>
 
@@ -94,21 +95,23 @@
 
             <article class="rock-wood-wall-position--1">
                 <figure>
-                    <img class="rock-wood-wall" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                    <img class="rock-wood-wall" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
                 </figure>
             </article>
             <article class="rock-wood-wall-position--2">
                 <figure>
-                    <img class="rock-wood-wall" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                    <img class="rock-wood-wall" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
                 </figure>
             </article>
 
             <div class="walk-path-position walk-path"></div>
 
             <div class="speech-bubble savanne--speech-bubble" id="js--speech-bubble">
-                <p id="js--start-p">Oh! Ons verblijf mist de naam van het dier dat hier leeft. Kan jij ons helpen en het invullen?
-                </p>
-                <button class="btn-ok button" id="js--start-ok-btn">OK</button>
+                <image class="btn-explaine hide" id="js--speech-bubble-img"></image>
+                <p id="js--speech-bubble-p">Dit is het savanne verblijf. Hier verblijven allemaal verschillende dieren. Maar blijkbaar zijn we vergeten voor één dier een bord op te hangen! Kan jij het bord voor ons invullen?</p>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small button" id="js--speech-bubble-btn">OK</button>
+                </div>
             </div>
 
             <figure class="savanne--figure">
@@ -117,7 +120,7 @@
 
             <a href="#popup" class="savanne--animal-board button">
                 <figure>
-                    <img class="savanne--animal-board-image" src="../images/Photoshop-transparant/sign-monkey.png" alt="apen bord">
+                    <img class="savanne--animal-board-image" src="../images/Photoshop-transparant/sign-monkey-2.png" alt="apen bord">
                 </figure>
             </a>
 
@@ -135,13 +138,25 @@
                         <label for="naamDier"></label>
                         <input class="popup__container--form-input button" name="textInput" id="naamDier" type="text" placeholder="?" required>
                     </form>
-
-                    <button class="popup__container-monkey--button btn-check button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
+                    <div class="popup__container-monkey--button">
+                        <button class="btn-ok-popup button" id="js--form-submitSavanne" form="answerForm" type="submit" value="">&#10004;</button>
+                    </div>
                     <a href="#" class="popup__close button">&times;</a>
                 </div>
             </div>
         </div>
 
+        <div class="hide-overlay" id="js--map-overlay"></div>
     </main>
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2898590,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </body>
 </html>

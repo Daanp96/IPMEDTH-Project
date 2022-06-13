@@ -101,7 +101,9 @@
 
     &--speech-bubble{
         grid-column: 2 / span 4;
-        grid-row: 3 / span 1;
+        grid-row: 4 / span 1;
+        align-self: end;
+        z-index: 2;
     }
 
     &--figure{
@@ -120,9 +122,8 @@
 
     &--animal-board{
         grid-column: 7 / span 4;
-        grid-row: 4 / span 1;
-        z-index: 2;
-        
+        grid-row: 4 / span 6;
+        z-index: 1;
     }
 
     &--animal-board:hover{

@@ -44,19 +44,17 @@ const dragDrop = (object, width = '') => {
       };
 }
 
-const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
+const dragDropMap = (obj, btn, zookpr, speech) => {
   let currentDroppable = null;
+  let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
   obj.onmousedown = function(event) {
 
-    // let shiftX = event.clientX - obj.getBoundingClientRect().left;
-    // let shiftY = event.clientY - obj.getBoundingClientRect().top;
-
-    let shiftX = event.offsetX - 20;
-    let shiftY = event.offsetY + 20;
+    let shiftX = event.offsetX;
+    let shiftY = event.offsetY;
 
     obj.style.position = 'absolute';
-    obj.style.width = width;
+    obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
     obj.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
@@ -93,7 +91,8 @@ const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
 
     document.addEventListener('mousemove', onMouseMove);
 
-    obj.onmouseup = function() {
+    document.onmouseup = function() {
+
       document.removeEventListener('mousemove', onMouseMove);
       obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
@@ -108,14 +107,15 @@ const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
 
         if(layedPieces == 9){
           btn.style.display = "block";
-          zookpr.style.opacity = "1";
+          zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
           zookpr.style.gridColumnStart = "10";
           btn.style.zIndex = "2";
           speech.style.gridColumnStart = "7";
-          speech.style.opacity = "1";
+          speech.style.visibility = "visible";
           speech.style.zIndex = "1";
-          speech.innerHTML = "Goed gedaan! Laten we de map maar meteen gebruiken!"
+          speech.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
+          kaartHeel.play();
         }
       }
     };
@@ -134,15 +134,17 @@ const dragDropMap = (obj, width = '', btn, zookpr, speech) => {
   };
 }
 
-const dragDropArctic = (obj, speech, text, nextBtn) => {
+const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
   let currentDroppable = null;
+  const goedZo = new Audio("../audio/7-pinguïn/2-goedZo.mp3");
 
   obj.onmousedown = function(event) {
 
-    let shiftX = event.offsetX + 20;
-    let shiftY = event.offsetY - 20;
+    let shiftX = event.offsetX;
+    let shiftY = event.offsetY;
 
     obj.style.position = 'absolute';
+    obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
     obj.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
@@ -179,7 +181,7 @@ const dragDropArctic = (obj, speech, text, nextBtn) => {
 
     document.addEventListener('mousemove', onMouseMove);
 
-    obj.onmouseup = function() {
+    document.onmouseup = function() {
       document.removeEventListener('mousemove', onMouseMove);
       obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
@@ -191,19 +193,23 @@ const dragDropArctic = (obj, speech, text, nextBtn) => {
         elem.src = "../images/heart.png";
         elem.style.width = "50px";
         elem.style.position = "absolute";
-        elem.style.left = "50px";
+        elem.style.left = "40px";
         currentDroppable.append(elem);
         currentDroppable.style.opacity = '100%';
         currentDroppable.classList.remove("droppable");
         obj.style.left = "18vw";
         obj.style.top ="80vh";
+        //fixed de bug
+        currentDroppable.removeAttribute('data-pinguin');
         pinguinsFed++;
       }
       
       if(pinguinsFed == 7){
-        speech.style.display = "block";
+        speech.style.visibility = "visible";
         obj.style.visibility = "hidden";
+        speechBtn.style.display = "none";
         text.innerHTML = "Goed zo! Nu zijn de penguins ook weer blij.";
+        goedZo.play();
         nextBtn.style.display = "block";
       }
     };

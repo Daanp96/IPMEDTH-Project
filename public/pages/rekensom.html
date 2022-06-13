@@ -11,30 +11,31 @@
     <script src="../javascript/main.js" type="module" defer></script>
 </head>
 <body>
+    <iframe src="../audio/5-vissen/1-welkom.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
     <main class="rekensom--background" id="js--rekensom-background">
         <section class="puzzel-options grid-16-1">
             <button class="puzzel-options__btn-hint button" id="js--hint">
-                <image class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></image>
+                <img class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></img>
             </button>
 
-            <button class="puzzel-options__btn-information button ">
-                <image class="puzzel-options__btn-information--image" src="../images/information-btn.png"></image>
+            <button class="puzzel-options__btn-information button " id="js--info-btn">
+                <img class="puzzel-options__btn-information--image" src="../images/information-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-music button" id="js--music-on">
-                <image class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></image>
+                <img class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-music puzzel-options__btn-music-off button" id="js--music-off">
-                <image class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></image>
+                <image class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-speak button" id="js--speak-on">
-                <image class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></image>
+                <img class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
             </button>
 
             <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
-                <image class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></image>
+                <img class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
             </button>
         </section>
 
@@ -82,11 +83,12 @@
             </article>
 
             <div class="speech-bubble rekensom--speech-bubble" id="js--speech-bubble">
-                <image class="btn-explaine-big hide" id="js--explaine-btn"></image>
-                <p id="js--speech-bubble-p">Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? 
-                    Het antwoord mag je invullen op het bord.
+                <img class="btn-explaine hide" id="js--speech-bubble-img"></img>
+                <p id="js--speech-bubble-p">Welkom in het aquarium! Hier zwemmen veel verschillende vissen rond.
                 </p>
-                <button class="btn-ok button" id="js--start-ok-btn">OK</button>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small button" id="js--speech-bubble-btn">OK</button>
+                </div>
             </div>
 
             <button class="next-page-right button" id="js--next-btn-right"></button>
@@ -185,13 +187,27 @@
                         <label for="aantalVissen"></label>
                         <input class="popup__container--form-input button" name="numberInput" id="aantalVissen" type="number" min="0" placeholder="?" required>
                     </form>
-
-                    <button class="popup__container--button btn-check button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
+                    <div class="popup__container--button">
+                        <button class="btn-ok-popup button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
+                    </div>
                     <a href="#" class="popup__close button">&times;</a>
                 </div>
             </div>
         </div>
 
+        <div class="hide-overlay" id="js--map-overlay"></div>
+
     </main>
+    <script src="../javascript/dierentuinpad.js" type="module" defer></script>
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2898590,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </body>
 </html>
