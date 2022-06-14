@@ -1957,6 +1957,10 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
+.drag {
+  cursor: url("../../images/cursor_grab_60.cur"), default;
+}
+
 .map {
   background-color: #F0EAD2;
 }
@@ -2773,7 +2777,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .ijsco {
-  background-color: #F0EAD2;
+  background: url("../images/ijsbar/ijs-background.png");
+  background-size: cover;
 }
 
 .ijsco_kraam {
@@ -2789,8 +2794,13 @@ input[type=number]::-webkit-outer-spin-button {
   width: 40vw;
 }
 
+.ijsco_kraam__balie {
+  width: 40vw;
+}
+
 .ijs {
   opacity: 0;
+  z-index: -1;
 }
 
 .ijs_hoorn {
@@ -2800,7 +2810,7 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 5;
   -ms-grid-row-span: 2;
   grid-row: 5 / span 2;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-top: 50px;
 }
 
@@ -2841,5 +2851,23 @@ input[type=number]::-webkit-outer-spin-button {
 .ijs_animatie {
   -webkit-animation: scale-small 2s ease-in-out infinite;
           animation: scale-small 2s ease-in-out infinite;
+}
+
+.ijs_balie {
+  -ms-grid-column: 9;
+  grid-column: 9;
+  -ms-grid-row: 4;
+  grid-row: 4;
+}
+
+.ijs_zookeeper {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.ijs_zookeeper__image {
+  width: 15vw;
 }
 /*# sourceMappingURL=main.css.map */
