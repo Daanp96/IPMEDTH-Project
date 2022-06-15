@@ -260,12 +260,9 @@ const dragDropGiraffe = (object) => {
     object.style.position = 'absolute';
     object.style.zIndex = 10;
     object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
-    object.style.height = "50%";
-    object.style.width = "auto";
+
     document.body.append(object);
-    
-    console.log(object);
-   
+       
     moveAt(event.pageX, event.pageY);
     
     // moves the object at (pageX, pageY) coordinates

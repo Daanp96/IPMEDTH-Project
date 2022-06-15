@@ -17,6 +17,7 @@
 
     &__tree{
         @include giraffeSidebarObject1;
+        background-color: red;
 
         &--image{
             @include giraffeSidebarImage;
@@ -26,6 +27,7 @@
 
     &__rock{
         @include giraffeSidebarObject2;
+        background-color: green;
 
         &--image{
             @include giraffeSidebarImage;
@@ -34,6 +36,7 @@
     }
     &__fence{
         @include giraffeSidebarObject3;
+        background-color: yellow;
 
         &--image{
             @include giraffeSidebarImage;
@@ -47,6 +50,7 @@
 
     &__tree-1{
         @include giraffeSidebarObject1;
+        background-color: red;
 
         &--image{
             @include giraffeSidebarImage;
@@ -55,6 +59,7 @@
 
     &__tree-2{
         @include giraffeSidebarObject2;
+        background-color: red;
 
         &--image{
             @include giraffeSidebarImage;
@@ -62,6 +67,32 @@
     }
     &__tree-3{
         @include giraffeSidebarObject3;
+        background-color: red;
+
+        &--image{
+            @include giraffeSidebarImage;
+        }
+    }
+    &__rock-1{
+        @include giraffeSidebarObject1;
+        background-color: green;
+
+        &--image{
+            @include giraffeSidebarImage;
+        }
+    }
+
+    &__rock-2{
+        @include giraffeSidebarObject2;
+        background-color: green;
+
+        &--image{
+            @include giraffeSidebarImage;
+        }
+    }
+    &__rock-3{
+        @include giraffeSidebarObject3;
+        background-color: green;
 
         &--image{
             @include giraffeSidebarImage;
@@ -72,8 +103,15 @@
 .tree-sidebar{
     display: none;
 }
-.tree1{
+.rock-sidebar{
+    display: none;
+}
+.tree{
     height: 40%;
+    width: auto;
+}
+.rock{
+    height: 30%;
     width: auto;
 }
 

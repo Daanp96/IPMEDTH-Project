@@ -100,7 +100,6 @@
 }
 
 @mixin giraffeSidebarObject1 {
-    background-color: red;
     grid-column: 2 / span 2;
     grid-row: 2 / span 2;
     display: flex;
@@ -110,7 +109,6 @@
 }
 
 @mixin giraffeSidebarObject2 {
-    background-color: green;
     grid-column: 2 / span 2;
     grid-row: 4 / span 2;
     display: flex;
@@ -120,7 +118,6 @@
 }
 
 @mixin giraffeSidebarObject3 {
-    background-color: yellow;
     grid-column: 2 / span 2;
     grid-row: 6 / span 2;
     display: flex;
