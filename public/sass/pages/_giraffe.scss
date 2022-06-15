@@ -69,13 +69,17 @@
     }
 }
 
-.tree{
+.tree-sidebar{
     display: none;
+}
+.tree1{
+    height: 40%;
+    width: auto;
 }
 
 .enclosure-field{
     grid-column: 4/ span 13;
-    grid-row: 1 /span 9;
+    grid-row: 1 /span 8;
     background-color: blue;
 
 }
@@ -83,6 +87,8 @@
 .enclosure-animal{
     grid-column: 1 / span 3;
     grid-row: 6 /span 3;
+    z-index: 50;
+    background-color: $color-path;
 
     &--image{
         width: auto;
