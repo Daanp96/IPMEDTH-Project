@@ -1,6 +1,9 @@
 import {dragDropGiraffe} from "./functions.js";
 
-let dragObjects = 0;
+const musicOn2 = document.getElementById("js--music-on-2");
+const musicOff2 = document.getElementById("js--music-off-2");
+const speakOn2 = document.getElementById("js--speak-on-2");
+const speakOff2 = document.getElementById("js--speak-off-2");
 
 const introBtn = document.getElementById("js--intro-btn");
 const endBtn = document.getElementById("js--end-btn");
@@ -47,66 +50,70 @@ const rock3 = document.getElementById("js--rock-3");
 const pond1 = document.getElementById("js--pond-1");
 const pond2 = document.getElementById("js--pond-2");
 
+musicOn2.onclick = () =>{
+    musicOff2.style.visibility = "visible";
+    musicOn2.style.visibility = "hidden";
+};
 
+musicOff2.onclick = () =>{
+    musicOff2.style.visibility = "hidden";
+    musicOn2.style.visibility = "visible";
+};
+
+speakOn2.onclick = () =>{
+    speakOff2.style.visibility = "visible";
+    speakOn2.style.visibility = "hidden";
+};
+
+speakOff2.onclick = () =>{
+    speakOff2.style.visibility = "hidden";
+    speakOn2.style.visibility = "visible";
+};
 
 // dragDropGiraffe(tree1, tree2);
 const array = [tree1, tree2, tree3, rock1, rock2, rock3, pond1, pond2];
 for (let i = 0; i < array.length; i++) {
-    dragDropGiraffe(array[i]);
-}
-
-// setInterval(() => {
-//     console.log(dragObjects);
-//     checkObjecten();
-// }, 1000);
+    dragDropGiraffe(array[i], endBtn);
+};
 
 introBtn.onclick = () => {
     articleIntro.style.display = "none";
-    articleEnclosure.style.display = "block";
+    articleEnclosure.style.display = "grid";
 };
 
 treeBtn.onclick = () => {
     treePopup.classList.remove("tree-sidebar");
     treePopup.classList.add("slidein-from-left");
     sidebar.style.display = "none";
-}
+};
 rockBtn.onclick = () => {
     rockPopup.classList.remove("rock-sidebar");
     rockPopup.classList.add("slidein-from-left");
     sidebar.style.display = "none";
-}
+};
 pondBtn.onclick = () => {
     pondPopup.classList.remove("pond-sidebar");
     pondPopup.classList.add("slidein-from-left");
     sidebar.style.display = "none";
-}
+};
 
 sidebarTree1.onclick = () => {
     tree1.classList.remove("hide");
     sidebar.style.display = "";
     treePopup.classList.add("tree-sidebar");
     sidebar.classList.add("slidein-from-left");
-    dragObjects++;
-    checkObjecten();
-
 };
 sidebarTree2.onclick = () => {
     tree2.classList.remove("hide");
     sidebar.style.display = "";
     treePopup.classList.add("tree-sidebar");
     sidebar.classList.add("slidein-from-left");
-    dragObjects++;
-    checkObjecten();
-
 };
 sidebarTree3.onclick = () => {
     tree3.classList.remove("hide");
     sidebar.style.display = "";
     treePopup.classList.add("tree-sidebar");
     sidebar.classList.add("slidein-from-left");
-    dragObjects++;
-    checkObjecten();
-
 };
 
 sidebarRock1.onclick = () => {
@@ -114,27 +121,18 @@ sidebarRock1.onclick = () => {
     sidebar.style.display = "";
     rockPopup.classList.add("rock-sidebar");
     sidebar.classList.add("slidein-from-left");
-    dragObjects++;
-    checkObjecten();
-
 };
 sidebarRock2.onclick = () => {
     rock2.classList.remove("hide");
     sidebar.style.display = "";
     rockPopup.classList.add("rock-sidebar");
     sidebar.classList.add("slidein-from-left");
-    dragObjects++;
-    checkObjecten();
-
 };
 sidebarRock3.onclick = () => {
     rock3.classList.remove("hide");
     sidebar.style.display = "";
     rockPopup.classList.add("rock-sidebar");
     sidebar.classList.add("slidein-from-left");
-    dragObjects++;
-    checkObjecten();
-
 };
 
 sidebarPond1.onclick = () => {
@@ -142,23 +140,14 @@ sidebarPond1.onclick = () => {
     sidebar.style.display = "";
     pondPopup.classList.add("pond-sidebar");
     sidebar.classList.add("slidein-from-left");
-    dragObjects++;
-    checkObjecten();
-    
 };
 sidebarPond2.onclick = () => {
     pond2.classList.remove("hide");
     sidebar.style.display = "";
     pondPopup.classList.add("pond-sidebar");
     sidebar.classList.add("slidein-from-left");
-    dragObjects++;
-    checkObjecten();
-    
 };
 
-const checkObjecten = () => {
-    console.log(dragObjects);
-    if (dragObjects == 5) {    
-        endBtn.style.display = 'block';
-    }
-}
+endBtn.onclick = () => {
+    window.location = "dierentuinpad.html";
+};

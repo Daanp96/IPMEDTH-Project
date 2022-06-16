@@ -1,5 +1,6 @@
 let layedPieces = 0;
 let pinguinsFed = 0;
+let dragObjects = 0;
 
 const dragDrop = (object) => {
 
@@ -262,7 +263,7 @@ const dragDropGiraffe = (object, endBtn) => {
     object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
 
     document.body.append(object);
-       
+         
     moveAt(event.pageX, event.pageY);
     
     // moves the object at (pageX, pageY) coordinates
@@ -285,6 +286,18 @@ const dragDropGiraffe = (object, endBtn) => {
       document.removeEventListener('mousemove', onMouseMove);
       object.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       object.onmouseup = null;
+
+      const el = object.getAttribute("data-elements");
+
+      if (el == "element") {
+        object.removeAttribute('data-elements');
+        dragObjects++;
+        console.log(dragObjects);
+      }
+
+      if (dragObjects == 5) {
+        endBtn.style.display = "block";
+      }
     };
     
   };

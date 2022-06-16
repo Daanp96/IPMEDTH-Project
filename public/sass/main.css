@@ -1754,22 +1754,6 @@ input[type=number]::-webkit-outer-spin-button {
           transform: rotateX(45deg);
 }
 
-.input-form {
-  margin: 0 auto;
-}
-
-.input-form--text {
-  width: 39rem;
-  height: 10rem;
-  margin-top: 1.5rem;
-  padding-left: 1rem;
-  font-size: 6rem;
-}
-
-.input-form--button {
-  margin: 2rem 0;
-}
-
 .background-mappuzzel {
   background-color: #F0EAD2;
   width: 100vw;
@@ -2848,6 +2832,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .article-intro {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../images/Photoshop-transparant/leeg-hok.png);
+}
+
+.article-enclosure {
   display: none;
   -ms-grid-column: 1;
   -ms-grid-column-span: 16;
@@ -2857,13 +2847,68 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 1 / span 8;
 }
 
-.article-enclosure {
+.intro {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 3;
+  grid-row: 5 / span 3;
+}
+
+.intro__figure {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 4;
+  grid-row: 5 / span 4;
+  z-index: 50;
+}
+
+.intro__figure--image {
+  height: 50vh;
+  width: 12vw;
+}
+
+.intro__speech-bubble {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 / span 1;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  z-index: 50;
+}
+
+.intro__btn {
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 / span 1;
+  z-index: 50;
+}
+
+.intro__background {
   -ms-grid-column: 1;
   -ms-grid-column-span: 16;
   grid-column: 1 / span 16;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 8;
-  grid-row: 1 / span 8;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 6;
+  grid-row: 2 / span 6;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.intro__background--image {
+  width: auto;
+  height: 100%;
 }
 
 .enclosure-sidebar {

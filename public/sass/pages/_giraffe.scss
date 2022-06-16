@@ -2,14 +2,55 @@
     background-color: $color-path;
 }
 .article-intro{
+    @include background;
+    background-image: url(../images/Photoshop-transparant/leeg-hok.png);
+}
+
+.article-enclosure{
     display: none;
     grid-column: 1 / span 16;
     grid-row: 1 / span 8;
 }
 
-.article-enclosure{
-    grid-column: 1 / span 16;
-    grid-row: 1 / span 8;
+.intro{
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 3;
+    
+
+    &__figure{
+        grid-column: 1 / span 2;
+        grid-row: 5 / span 4;
+        z-index: 50;
+
+        &--image{
+            @include zookeeperSize;
+        }
+    }
+
+    &__speech-bubble{
+        grid-column: 2 / span 1;
+        grid-row: 4 / span 1;
+        align-self: end;
+        z-index: 50;
+    }
+
+    &__btn{
+        grid-column: 14 / span 2;
+        grid-row: 7 / span 1;
+        z-index: 50;
+    }
+    &__background{
+        grid-column: 1 / span 16;
+        grid-row: 2 / span 6; 
+        z-index: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &--image{
+            width: auto;
+            height: 100%;
+        }
+    }
 }
 
 .enclosure-sidebar{
@@ -162,3 +203,4 @@
     grid-row: 7 / span 2;
     display: none;
 }
+
