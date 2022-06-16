@@ -34,7 +34,7 @@
             border-radius: 5rem;
         }
     }
-    &__fence{
+    &__pond{
         @include giraffeSidebarObject3;
         background-color: yellow;
 
@@ -98,12 +98,26 @@
             @include giraffeSidebarImage;
         }
     }
+    &__pond-1{
+        @include giraffeSidebarObject1;
+        background-color: yellow;
+
+        &--image{
+            @include giraffeSidebarImage;
+        }
+    }
+
+    &__pond-2{
+        @include giraffeSidebarObject2;
+        background-color: yellow;
+
+        &--image{
+            @include giraffeSidebarImage;
+        }
+    }
 }
 
-.tree-sidebar{
-    display: none;
-}
-.rock-sidebar{
+.tree-sidebar, .rock-sidebar, .pond-sidebar{
     display: none;
 }
 .tree{
@@ -111,6 +125,14 @@
     width: auto;
 }
 .rock{
+    height: 25%;
+    width: auto;
+}
+.pond{
+    height: 20%;
+    width: auto;
+}
+.pond-big{
     height: 30%;
     width: auto;
 }
@@ -118,8 +140,9 @@
 .enclosure-field{
     grid-column: 4/ span 13;
     grid-row: 1 /span 8;
-    background-color: blue;
-
+    // background-color: blue;
+    background-image: url(../images/Photoshop-transparant/leeg-hok.png);
+    @include background;
 }
 
 .enclosure-animal{
@@ -133,4 +156,9 @@
         height: 100%;
     }
 }
-    
+
+.end-btn{
+    grid-column: 14 / span 2;
+    grid-row: 7 / span 2;
+    display: none;
+}

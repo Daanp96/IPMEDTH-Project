@@ -250,7 +250,7 @@ const textBubble = () => {
   }
 }
 
-const dragDropGiraffe = (object) => {
+const dragDropGiraffe = (object, endBtn) => {
 
   object.onmousedown = (event) => {
 
@@ -285,7 +285,6 @@ const dragDropGiraffe = (object) => {
       document.removeEventListener('mousemove', onMouseMove);
       object.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       object.onmouseup = null;
-      
     };
     
   };
