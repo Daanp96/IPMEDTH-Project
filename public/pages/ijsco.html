@@ -10,7 +10,7 @@
     <script src="../javascript/main.js" type="module" defer></script>
     <script src="../javascript/ijskraam.js" type="module" defer></script>
 </head>
-<body>
+<body class="background_ijs">
     <!-- <iframe src="../audio/2-Map/1-kaartKapot.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
     <main class="ijsco">
         <section class="puzzel-options grid-16-1">
@@ -45,31 +45,52 @@
             </figure>
 
             <figure class="ijs_hoorn ijs">
-                <img class="ijsco_kraam__hoorn" src="../images/ijs_hoorn.png" alt="Ijs Hoorn">
+                <img class="ijsco_kraam__hoorn" src="../images/ijsbar/ijs_hoorn_fix.png" alt="Ijs Hoorn">
             </figure>
 
-            <figure class="ijs_roze ijs">
-                <img class="ijsco_kraam__roze" src="../images/ijs_roze.png" alt="Ijs Roze">
+            <!-- <figure class="ijs_roze ijs">
+                <img class="ijsco_kraam__roze" src="../images/ijsbar/ijs_roze.png" alt="Ijs Roze">
             </figure>
 
             <figure class="ijs_groen ijs">
-                <img class="ijsco_kraam__groen" src="../images/ijs_groen.png" alt="Ijs Groen">
+                <img class="ijsco_kraam__groen" src="../images/ijsbar/ijs_groen.png" alt="Ijs Groen">
             </figure>
 
             <figure class="ijs_blauw ijs">
-                <img class="ijsco_kraam__blauw" src="../images/ijs_blauw.png" alt="Ijs Blauw">
-            </figure>
+                <img class="ijsco_kraam__blauw" src="../images/ijsbar/ijs_blauw.png" alt="Ijs Blauw">
+            </figure> -->
 
             <figure class="ijs_zookeeper">
                 <img id="js--ijs_zookeeper" class="ijs_zookeeper__image" src="../images/zoo-keeper-1.png" alt="dierentuin medewerker">
             </figure>
 
-            <div class="speech-bubble map--speech-bubble" id="js--speech-bubble">
+            <figure class="ijs_verkoper">
+                <img id="js--ijs_verkoper" class="ijs_verkoper__image" src="../images/ijsbar/ijs-vrouw.png" alt="ijs verkoper">
+            </figure>
+
+            <figure class="ijs_tafel">
+                <img class="ijs_tafel__image" src="../images/ijsbar/ijs-tafel1.png" alt="ijs tafel">
+            </figure>
+
+            <div class="speech-bubble ijs_speech-bubble" id="js--speech-bubble">
                 <image class="btn-explaine hide" id="js--speech-bubble-img"></image>
-                <p id="js--speech-bubble-p">Haal jij een lekker ijsje voor ons?</p>
+                <p id="js--speech-bubble-p">Goedemiddag! Wat voor ijsje mag het worden?</p>
             </div>
             <div class="ijskar_counter" id="js--counter"></div>
             <div class="hide-overlay ijs_overlay" id="js--overlay"></div>
+            <div class="ijs_popup" id="js--popup">
+                <div class="ijs_keuze ijs_popup_bruin"></div>
+                <div class="ijs_keuze ijs_popup_groen"></div>
+                <div class="ijs_keuze ijs_popup_blauw"></div>
+                <div class="ijs_keuze ijs_popup_roze"></div>
+                <figure class="ijs_keuze_zwart1">
+                    <img class="ijs_keuze_zwart1_image" src="../images/ijsbar/ijs_echtzwart.png" alt="Zwart ijs">
+                </figure>
+                <figure class="ijs_keuze_zwart2">
+                    <img class="ijs_keuze_zwart2_image" src="../images/ijsbar/ijs_echtzwart.png" alt="Zwart ijs">
+                </figure>
+                
+            </div>
         </section>
     </main>
     <script>

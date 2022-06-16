@@ -103,6 +103,7 @@ const dragDropMap = (obj, btn, zookpr, speech) => {
         currentDroppable.style.opacity = '100%';
         currentDroppable.classList.add("layed");
         obj.hidden = true;
+        currentDroppable.removeAttribute('data-piece');
         layedPieces++;
 
         if(layedPieces == 9){
