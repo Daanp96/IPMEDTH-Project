@@ -3123,7 +3123,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 20vw;
 }
 
-.ijs_keuze_zwart1 {
+.ijs_keuze_drop1 {
   -ms-grid-column: 7;
   -ms-grid-column-span: 3;
   grid-column: 7 / span 3;
@@ -3132,14 +3132,14 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 3 / span 3;
 }
 
-.ijs_keuze_zwart1_image {
+.ijs_keuze_drop1_image {
   width: 190px;
   display: block;
   margin: 25px 0 0 40px;
   opacity: 50%;
 }
 
-.ijs_keuze_zwart2 {
+.ijs_keuze_drop2 {
   -ms-grid-column: 7;
   -ms-grid-column-span: 3;
   grid-column: 7 / span 3;
@@ -3148,7 +3148,7 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 1 / span 3;
 }
 
-.ijs_keuze_zwart2_image {
+.ijs_keuze_drop2_image {
   width: 190px;
   display: block;
   margin: 65px 0 0 40px;
@@ -3197,8 +3197,8 @@ input[type=number]::-webkit-outer-spin-button {
   opacity: 0;
 }
 
-.ijs_popup_bruin {
-  background-color: brown;
+.ijs_popup_zwart {
+  background-color: #8e9a9f;
   -ms-grid-column: 11;
   -ms-grid-column-span: 2;
   grid-column: 11 / span 2;
@@ -3209,7 +3209,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .ijs_popup_groen {
-  background-color: green;
+  background-color: #bfe3ae;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
@@ -3220,7 +3220,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .ijs_popup_blauw {
-  background-color: blue;
+  background-color: #aea6d3;
   -ms-grid-column: 11;
   -ms-grid-column-span: 2;
   grid-column: 11 / span 2;
@@ -3231,7 +3231,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .ijs_popup_roze {
-  background-color: pink;
+  background-color: #f69aa7;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
