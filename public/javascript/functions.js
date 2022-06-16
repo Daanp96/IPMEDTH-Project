@@ -106,7 +106,7 @@ const dragDropMap = (obj, btn, zookpr, speech) => {
         currentDroppable.removeAttribute('data-piece');
         layedPieces++;
 
-        if(layedPieces == 9){
+        if(layedPieces == 16){
           btn.style.display = "block";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
