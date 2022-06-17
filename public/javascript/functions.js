@@ -1,6 +1,8 @@
 let layedPieces = 0;
 let pinguinsFed = 0;
-let dragObjects = 0;
+let tree = 0;
+let rock = 0;
+let pond = 0;
 
 const dragDrop = (object) => {
 
@@ -261,7 +263,7 @@ const dragDropGiraffe = (object, endBtn) => {
     object.style.position = 'absolute';
     object.style.zIndex = 10;
     object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
-
+    object.style.top = '100px';
     document.body.append(object);
          
     moveAt(event.pageX, event.pageY);
@@ -289,13 +291,32 @@ const dragDropGiraffe = (object, endBtn) => {
 
       const el = object.getAttribute("data-elements");
 
-      if (el == "element") {
+      if (el == "tree") {
         object.removeAttribute('data-elements');
-        dragObjects++;
-        console.log(dragObjects);
+        tree++;
+        console.log(tree);
+      }
+      if (el == "rock") {
+        object.removeAttribute('data-elements');
+        rock++;
+        console.log(rock);
+      }
+      if (el == "pond") {
+        object.removeAttribute('data-elements');
+        pond++;
+        console.log(pond);
       }
 
-      if (dragObjects == 5) {
+      if (tree == 2) {
+        document.getElementById("tree").checked = true;
+      }
+      if (rock == 2) {
+        document.getElementById("rock").checked = true;
+      }
+      if (pond == 1) {
+        document.getElementById("pond").checked = true;
+      }
+      if (tree == 2 && rock == 2 && pond == 1) {
         endBtn.style.display = "block";
       }
     };
