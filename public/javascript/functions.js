@@ -1,9 +1,7 @@
 let layedPieces = 0;
 let pinguinsFed = 0;
-let ronIjs = 0;
-let ronPrijs = 3;
-let jouwIjs = 0;
-let jouwPrijs = 5;
+let aantalIjs = 0;
+let ijsPrijs = 6;
 
 // const dragDrop = (object, width = '') => {
 
@@ -233,7 +231,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
   };
 }
 
-const dragDropIjs = (obj, kassa) => {
+const dragDropIjs = (obj, kassa, bol1, bol2) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -284,17 +282,26 @@ const dragDropIjs = (obj, kassa) => {
       obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
-      const attr = currentDroppable.getAttribute('data-kleur');
-
-      if(attr == obj.getAttribute('data-kleur')) {
-        currentDroppable.src = `../images/ijsbar/ijs_${attr}.png`;
+      const attr = currentDroppable.getAttribute('data-bol');
+    
+      if(attr == obj.getAttribute('data-bol')) {
+        let kleur = obj.getAttribute('data-kleur');
+        currentDroppable.src = `../images/ijsbar/ijs_${kleur}.png`;
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
-        currentDroppable.removeAttribute('data-kleur');
-        ronIjs++;
+        currentDroppable.removeAttribute('data-bol');
+        aantalIjs++;
 
-        if(ronIjs == 2) {
-          kassa.innerHTML = `Dat is dan ${ronPrijs} Euro.`;
+        if(aantalIjs == 1) {
+          bol1.style.display = "block";
+
+        } else if (aantalIjs == 2) {
+          bol2.style.display = "block";
+
+        } else if(aantalIjs == 3) {
+          kassa.style.display = "block";
+          kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
+          kassa.parentNode.dataset.geld = "1";
         }
       }
     };
@@ -314,7 +321,7 @@ const dragDropIjs = (obj, kassa) => {
 }
 
 
-const dragDropGeld = (obj, kassa) => {
+const dragDropGeld = (obj, kassa, btn) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -368,13 +375,15 @@ const dragDropGeld = (obj, kassa) => {
       const attr = currentDroppable.getAttribute('data-geld');
 
       if(attr == obj.getAttribute('data-geld')) {
-        ronPrijs--;
+        ijsPrijs--;
+        obj.removeAttribute('data-geld');
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
-        kassa.innerHTML = `Dat is dan ${ronPrijs} Euro.`;
+        kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
 
-        if (ronPrijs == 0) {
-          currentDroppable.removeAttribute('data-geld');
+        if (ijsPrijs == 0) {
+          kassa.innerHTML = "Dankjewel!";
+          btn.style.display = "block";
         }
       }
     };
