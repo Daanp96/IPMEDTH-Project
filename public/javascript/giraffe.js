@@ -4,9 +4,13 @@ const musicOn2 = document.getElementById("js--music-on-2");
 const musicOff2 = document.getElementById("js--music-off-2");
 const speakOn2 = document.getElementById("js--speak-on-2");
 const speakOff2 = document.getElementById("js--speak-off-2");
+const hintBtn = document.getElementById("js--hint");
 
-const introBtn = document.getElementById("js--intro-btn");
+// const introBtn = document.getElementById("js--intro-btn");
+const speechBubble_p = document.getElementById("js--speech-bubble-p"); 
+const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const endBtn = document.getElementById("js--end-btn");
+
 const articleIntro = document.getElementById("js--article-intro");
 const articleEnclosure = document.getElementById("js--article-enclosure");
 // const enclosureField = document.getElementById("js--enclosure-field");
@@ -50,6 +54,17 @@ const rock3 = document.getElementById("js--rock-3");
 const pond1 = document.getElementById("js--pond-1");
 const pond2 = document.getElementById("js--pond-2");
 
+const mapOverlay = document.getElementById("js--map-overlay");
+const headZookeeper = document.getElementById("js--head-zookeeper");
+const hintBubble = document.getElementById("js--hintBubble");
+const hintBubbleBtn = document.getElementById("js--hintBubble-btn");
+const hintSpeechBubble_p = document.getElementById("js--speech-bubble-p-hint"); 
+
+let startOK = 0;
+let countHint = 0;
+let tekst = '';
+let image = '';
+
 musicOn2.onclick = () =>{
     musicOff2.style.visibility = "visible";
     musicOn2.style.visibility = "hidden";
@@ -70,16 +85,75 @@ speakOff2.onclick = () =>{
     speakOn2.style.visibility = "visible";
 };
 
+hintBtn.onclick = () => {
+
+    console.log(countHint);
+    switch (countHint) {
+        case 0: 
+            mapOverlay.classList.remove("hide");
+            headZookeeper.classList.remove("hide");
+            hintBubble.classList.remove("hide");
+            tekst = 'Klik op de gekleurde vlakken.';
+            hintBubbleBtn.onclick = () => {
+                mapOverlay.classList.add("hide");
+                headZookeeper.classList.add("hide");
+                hintBubble.classList.add("hide");
+                countHint++;
+            }
+            break;
+        case 1: 
+            mapOverlay.classList.remove("hide");
+            headZookeeper.classList.remove("hide");
+            hintBubble.classList.remove("hide");
+            tekst = 'Sleep een ... naar een plek naar keuze.';
+            hintBubbleBtn.onclick = () => {
+                mapOverlay.classList.add("hide");
+                headZookeeper.classList.add("hide");
+                hintBubble.classList.add("hide");
+                countHint++;
+            }
+            break;
+        case 2:
+            mapOverlay.classList.add("hide");
+            headZookeeper.classList.add("hide");
+            hintBubble.classList.add("hide");
+            countHint++;
+            break;
+    }
+
+    hintSpeechBubble_p.innerHTML = tekst;
+};
+
 // dragDropGiraffe(tree1, tree2);
 const array = [tree1, tree2, tree3, rock1, rock2, rock3, pond1, pond2];
 for (let i = 0; i < array.length; i++) {
     dragDropGiraffe(array[i], endBtn);
 };
 
-introBtn.onclick = () => {
-    articleIntro.style.display = "none";
-    articleEnclosure.style.display = "grid";
+// praat wolk
+startOKBtn.onclick = () => {
+    console.log(startOK);
+    switch (startOK) {
+        case 0: 
+            tekst = 'tekst';          
+            break;
+        case 1: 
+            tekst = 'teksttttt';
+            break;
+        case 2:
+            articleIntro.style.display = "none";
+            articleEnclosure.style.display = "grid";
+            break;
+    }
+
+    speechBubble_p.innerHTML = tekst;
+    startOK++;
 };
+
+// introBtn.onclick = () => {
+//     articleIntro.style.display = "none";
+//     articleEnclosure.style.display = "grid";
+// };
 
 treeBtn.onclick = () => {
     treePopup.classList.remove("tree-sidebar");

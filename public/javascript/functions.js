@@ -260,10 +260,10 @@ const dragDropGiraffe = (object, endBtn) => {
     let shiftX = event.clientX - object.getBoundingClientRect().left;
     let shiftY = event.clientY - object.getBoundingClientRect().top;
     
-    object.style.position = 'absolute';
+    // object.style.position = 'absolute'; //in css al meegegeven
     object.style.zIndex = 10;
     object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
-    object.style.top = '100px';
+    // object.style.top = '100px';
     document.body.append(object);
          
     moveAt(event.pageX, event.pageY);
@@ -316,7 +316,7 @@ const dragDropGiraffe = (object, endBtn) => {
       if (pond == 1) {
         document.getElementById("pond").checked = true;
       }
-      if (tree == 2 && rock == 2 && pond == 1) {
+      if (tree >= 2 && rock >= 2 && pond >= 1) {
         endBtn.style.display = "block";
       }
     };

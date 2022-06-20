@@ -35,7 +35,7 @@
                         <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
                     </figure>
                 </div>
-                <button class="puzzel-options__btn-hint button " id="js--hint">
+                <button class="puzzel-options__btn-hint button ">
                     <img class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></img>
                 </button>
 
@@ -66,13 +66,17 @@
                 </figure>
 
                 <div class="speech-bubble intro__speech-bubble" id="js--speech-bubble">
+                    <!-- <img class="btn-explaine hide" id="js--speech-bubble-img"></img> -->
                     <p id="js--speech-bubble-p">Welkom bij het giraffe verblijf.
                     </p>
+                    <div class="btn-ok-div">
+                        <button class="btn-ok-small button" id="js--speech-bubble-btn">&#10132;</button>
+                    </div>
                 </div>
 
-                <div class="intro__btn">
+                <!-- <div class="intro__btn">
                     <button id="js--intro-btn" class="btn-ok button">&#10132;</button>
-                </div>
+                </div> -->
 
                 <div class="rock-wood-wall-position--1">
                     <figure>
@@ -92,31 +96,43 @@
 
         <section class="section-enclosure" >
             <article class="article-enclosure grid-16-8" id="js--article-enclosure">
-                <div class="start-options grid-4-1">
-                    <button class="start-options__btn-hint button ">
-                        <img class="start-options__btn-hint--image" src="../images/hint-btn.png"></img>
+                <div class="giraffe-options grid-13-1">
+                    <button class="giraffe-options__btn-hint button" id="js--hint">
+                        <img class="giraffe-options__btn-hint--image" src="../images/hint-btn.png"></img>
                     </button>
     
-                    <button class="start-options__btn-information button ">
-                        <img class="start-options__btn-information--image" src="../images/information-btn.png"></img>
+                    <button class="giraffe-options__btn-information button ">
+                        <img class="giraffe-options__btn-information--image" src="../images/information-btn.png"></img>
                     </button>
         
-                    <button class="start-options__btn-music button" id="js--music-on-2">
-                        <img class="start-options__btn-music--image" src="../images/music-on-btn.png"></image>
+                    <button class="giraffe-options__btn-music button" id="js--music-on-2">
+                        <img class="giraffe-options__btn-music--image" src="../images/music-on-btn.png"></image>
                     </button>
         
-                    <button class="start-options__btn-music start-options__btn-music-off button" id="js--music-off-2">
-                        <img class="start-options__btn-music--image" src="../images/music-off-btn.png"></img>
+                    <button class="giraffe-options__btn-music start-options__btn-music-off button" id="js--music-off-2">
+                        <img class="giraffe-options__btn-music--image" src="../images/music-off-btn.png"></img>
                     </button>
         
-                    <button class="start-options__btn-speak button" id="js--speak-on-2">
-                        <img class="start-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
+                    <button class="giraffe-options__btn-speak button" id="js--speak-on-2">
+                        <img class="giraffe-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
                     </button>
         
-                    <button class="start-options__btn-speak start-options__btn-speak-off button" id="js--speak-off-2">
-                        <img class="start-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
+                    <button class="giraffe-options__btn-speak start-options__btn-speak-off button" id="js--speak-off-2">
+                        <img class="giraffe-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
                     </button>
+
+                    <div class="enclosure-form ">
+                        <form action="#">
+                             <input class="enclosure-form--input" type="checkbox" name="tree" id="tree" disabled>
+                             <label class="enclosure-form--label" for="tree">2 bomen</label>
+                             <input class="enclosure-form--input" type="checkbox" name="rock" id="rock" disabled>
+                             <label class="enclosure-form--label" for="rock">2 stenen</label>
+                             <input class="enclosure-form--input" type="checkbox" name="pond" id="pond" disabled>
+                             <label class="enclosure-form--label" for="pond">1 water</label>
+                        </form> 
+                     </div>
                 </div>
+
                 <div class="enclosure-sidebar" id="js--sidebar">
                     <figure class="enclosure-sidebar__tree button" id="js--tree-button">
                         <img class="enclosure-sidebar__tree--image" src="../images/Photoshop-transparant/tree-1.1.png" alt="boom">
@@ -162,17 +178,6 @@
                     </figure>
                 </div>
 
-                <div class="enclosure-form">
-                   <form action="#">
-                        <input class="enclosure-form--input" type="checkbox" name="tree" id="tree" disabled>
-                        <label class="enclosure-form--label" for="tree">2x een boom</label>
-                        <input class="enclosure-form--input" type="checkbox" name="rock" id="rock" disabled>
-                        <label class="enclosure-form--label" for="rock">2x een steen</label>
-                        <input class="enclosure-form--input" type="checkbox" name="pond" id="pond" disabled>
-                        <label class="enclosure-form--label" for="pond">1x water</label>
-                   </form> 
-                </div>
-
                 <div class="enclosure-field" id="js--eclosure-field">
                     <img id="js--tree-1" class="enclosure-sidebar__tree--image tree button hide" data-elements="tree" src="../images/Photoshop-transparant/tree-1.1.png" alt="boom">
                     <img id="js--tree-2" class="enclosure-sidebar__tree--image tree button hide" data-elements="tree" src="../images/Photoshop-transparant/tree-2.png" alt="boom">
@@ -191,12 +196,26 @@
                 </figure>
 
                 <div class="end-btn" id="js--end-btn">
-                    <button id="js--end-btn" class="btn-ok button">&#10132; </button>
+                    <button id="js--end-btn" class="btn-ok button">&#10132;</button>
+                </div>
+
+                <div class="giraffe-hide-overlay hide" id="js--map-overlay"></div>
+
+                <figure class="enclosure-head hide" id="js--head-zookeeper">
+                    <img class="enclosure-head--image" src="../images/zookeeper-pose-loud-head.png" alt="dierentuin medewerker hoofd">
+                </figure>
+    
+                <div class="speech-bubble giraffe-speech-bubble hide" id="js--hintBubble">
+                    <!-- <img class="btn-explaine hide" id="js--speech-bubble-img"></img> -->
+                    <p id="js--speech-bubble-p-hint">Hint 1.</p>
+                    <div class="btn-ok-div">
+                        <button class="btn-ok-small button" id="js--hintBubble-btn">&#10132;</button>
+                    </div>
                 </div>
 
             </article>
-        </section>
-            
+
+        </section>  
     </main>
 </body>
 </html>

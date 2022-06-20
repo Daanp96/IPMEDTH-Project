@@ -18,6 +18,54 @@
     z-index: 50;
 }
 
+.giraffe-options{
+    grid-column: 4 / span 13;
+    background-color: $color-path;
+    z-index: 50;
+
+    &__btn-hint{
+        grid-column: 10 / span 1;
+        grid-row: 1 /span 1;
+
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+
+    &__btn-information{
+        grid-column: 11 / span 1;
+        grid-row: 1 /span 1;
+    
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+
+    &__btn-music{
+        grid-column: 12 / span 1;
+        grid-row: 1 /span 1;
+    
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+    &__btn-music-off{
+        visibility: hidden;
+    }
+
+    &__btn-speak{
+        grid-column: 13 / span 1;
+        grid-row: 1 /span 1;
+    
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+    &__btn-speak-off{
+        visibility: hidden;
+    }
+}
+
 .intro{
     grid-column: 1 / span 2;
     grid-row: 5 / span 3;
@@ -168,24 +216,29 @@
     display: none;
 }
 .tree{
-    height: 40%;
+    height: 35%;
     width: auto;
+    position: absolute;
 }
 .rock{
-    height: 25%;
+    height: 20%;
     width: auto;
+    position: absolute;
 }
 .pond{
     height: 20%;
     width: auto;
+    position: absolute;
 }
 .pond-big{
     height: 30%;
     width: auto;
+    position: absolute;
 }
 .position-tree{
     height: 40%;
     width: auto;
+    position: absolute;
 }
 
 .enclosure-field{
@@ -208,7 +261,7 @@
 }
 
 .enclosure-form{
-    grid-column: 4 / span 9;
+    grid-column: 1 / span 9;
     grid-row: 1;
     z-index: 50;
     margin-left: 1.5rem;
@@ -217,15 +270,47 @@
     &--input[type=checkbox]{
         transform: scale(2.5);
         vertical-align: super;
+        cursor: url("../images/cursor_plain_60.cur"), default;
+        overflow: hidden;
     }
 
     &--label{
         font-size: 3.5rem;
         margin-left: 2rem;
         margin-right: 2.5rem;
+        cursor: url("../images/cursor_plain_60.cur"), default;
+        overflow: hidden;
     }
 }
 
+.giraffe-hide-overlay{
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 60;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+}
+
+.enclosure-head{
+    grid-column: 7 / span 3;
+    grid-row: 5 / span 3;
+    z-index: 60;
+
+    &--image{
+        width: 100%;
+        height: 100%;
+    }
+}
+.giraffe-speech-bubble{
+    grid-column: 9 / span 1;
+    grid-row: 4 / span 1;
+    align-self: end;
+    z-index: 60;
+}
 
 .end-btn{
     grid-column: 14 / span 2;
