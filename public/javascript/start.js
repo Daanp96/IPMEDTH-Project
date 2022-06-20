@@ -1,4 +1,4 @@
-const startBtn = document.getElementById("js--start-btn")
+const startBtn = document.getElementById("js--start-btn");
 
 let intro = new Audio("audio/1-Intro/1-welkom.mp3");
 let bezoeker = new Audio("audio/1-Intro/2-gelukkige-bezoeker.mp3");
@@ -14,6 +14,8 @@ const speechBubble = document.getElementById("js--speech-bubble");
 const startExplaineBtn = document.getElementById("js--speech-bubble-img");
 const startP = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
+const startOverlay = document.getElementById("js--start-overlay");
+const beginBtn = document.getElementById("js--begin-btn");
 
 let startOK = 0;
 let tekst = '';
@@ -47,7 +49,7 @@ startOKBtn.onclick = () => {
             hint.play();
             break;
         case 4: 
-            tekst = 'Klik op deii voor informatie.';
+            tekst = 'Klik op de i voor informatie.';
             image = './images/information-btn.png';
             informatie.play();
             break;
