@@ -95,6 +95,64 @@
             grid-row: 6 /span 1;
             transform: rotate(30deg);
         }
+        
+        &-10{
+            height: auto;
+            width: 240px;
+            grid-column: 12 / span 2;
+            grid-row: 2 /span 1;
+            transform: rotate(30deg);
+        }
+
+        &-11{
+            height: auto;
+            width: 240px;
+            grid-column: 11 / span 2;
+            grid-row: 4 /span 1;
+            transform: rotate(30deg);
+        }
+
+        &-12{
+            height: auto;
+            width: 240px;
+            grid-column: 12 / span 2;
+            grid-row: 5 /span 1;
+            transform: rotate(30deg);
+        }
+
+        &-13{
+            height: auto;
+            width: 240px;
+            grid-column: 13 / span 2;
+            grid-row: 3 /span 1;
+            transform: rotate(30deg);
+        }
+
+        &-14{
+            height: auto;
+            width: 240px;
+            grid-column: 15 / span 2;
+            grid-row: 7 /span 1;
+            transform: rotate(30deg);
+        }
+
+        &-15{
+            height: auto;
+            width: 240px;
+            grid-column: 13 / span 2;
+            grid-row: 3 /span 1;
+            transform: rotate(30deg);
+        }
+
+        &-16{
+            height: auto;
+            width: 240px;
+            grid-column: 11 / span 2;
+            grid-row: 2 /span 1;
+            transform: rotate(30deg);
+        }
+
+
     }
     &__zookeeper {
         // grid-column-start: 10;
@@ -102,7 +160,7 @@
         grid-row-start: 2;
         text-align: center;
         font-size: 2rem;
-        width: 30rem;
+        width: 20rem;
         transition: 0.5s all;
         z-index: 2;
     }

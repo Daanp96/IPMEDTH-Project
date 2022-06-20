@@ -29,7 +29,7 @@ const arcticBtn = document.getElementById("js--arctic-btn");
 
 const reken_correct = 6;
 const naam_correct = "aap";
-
+const typen_correct = "olifant";
 // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
 let star1;
@@ -41,9 +41,13 @@ let star6;
 let star7;
 let star8;
 let star9;
+let star10;
+let star11;
+let star12;
 let aantalSecondesRekensom;
 let aantalSecondesSavanne;
 let aantalSecondesArctic;
+let aantalSecondesTypen;
 let startTime, endTime;
 
 // let infoOk = 0;
@@ -286,6 +290,71 @@ if(document.URL.includes("arctic.html")){
     });
 }
 
+const spanTypen = document.getElementById("js--typen-form");
+const spanTypenBtn = document.getElementById("js--form-submitTypen");
+console.log(spanTypen);
+
+if(document.URL.includes("typen.html")){
+    // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
+    console.log("hoi");
+    spanTypenBtn.addEventListener("click", function(e){
+        console.log(spanTypen.innerText);
+
+        if(spanTypen.innerText == typen_correct){
+            console.log("lukt");
+            document.getElementById("js--typen-form").style.color = "lime";
+            setTimeout(() => {
+                // endSavannePuzzel();
+            }, 1000);
+        }
+        else{
+            document.getElementById("js--typen-form").classList.add("shake");
+            document.getElementById("js--typen-form").style.color = "red";
+            setTimeout(() => {
+                document.getElementById("js--typen-form").classList.remove("shake");
+                document.getElementById("js--typen-form").style.color = "white";
+                document.getElementById("js--typen-form").value = '';
+            }, 2000);
+        }
+        
+        endTime = new Date();
+        var timeDiff = endTime - startTime; //ms
+        timeDiff /= 1000;
+        let seconds = Math.round(timeDiff);
+        aantalSecondesSavanne = seconds;
+        
+        if(seconds <= 60){
+            try {
+                localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                localStorage.setItem('star10', 0);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        if(seconds > 60 && seconds <= 120){
+            try {
+                localStorage.setItem('star11', 0);
+                localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        if(seconds > 120){
+            try {
+                localStorage.setItem('star12', 0);
+                localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        setTimeout(() => {
+            endTypen();
+        }, 700);
+            
+        e.preventDefault();
+    });
+}
+
 function endRekensomPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
@@ -296,4 +365,6 @@ function endSavannePuzzel(){
 function endArcticPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
-
+function endTypen(){
+    window.location.href="dierentuinpad.html";  
+}

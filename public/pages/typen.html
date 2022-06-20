@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sass/main.css">
+    <link rel="icon" type="image/x-icon" href="../images/monkey-head.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../javascript/main.js" type="module" defer></script>
+    <script src="../javascript/typen.js" type="module" defer></script>
+    <title>Dierentuin</title>
+</head>
+<body>
+    <!-- <iframe src="../audio/6-aap/1-savanneverblijf.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
+    <main class="savanne--background overflow">
+        <section class="puzzel-options grid-16-1 walk-path--up">
+            <article class="rock-wood-wall-position--up-1 ">
+                <figure>
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <article class="rock-wood-wall-position--up-2 ">
+                <figure>
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <article class="rock-wood-wall-position--up-3 ">
+                <figure>
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <article class="rock-wood-wall-position--up-4 ">
+                <figure>
+                    <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <button class="puzzel-options__btn-hint button " id="js--hint">
+                <img class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></img>
+            </button>
+
+            <button class="puzzel-options__btn-information button ">
+                <img class="puzzel-options__btn-information--image" src="../images/information-btn.png"></img>
+            </button>
+
+            <button class="puzzel-options__btn-music button" id="js--music-on">
+                <img class="puzzel-options__btn-music--image" src="../images/music-on-btn.png"></img>
+            </button>
+
+            <button class="puzzel-options__btn-music puzzel-options__btn-music-off button" id="js--music-off">
+                <img class="puzzel-options__btn-music--image" src="../images/music-off-btn.png"></img>
+            </button>
+
+            <button class="puzzel-options__btn-speak button" id="js--speak-on">
+                <img class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
+            </button>
+
+            <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
+                <img class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
+            </button>
+        </section>
+
+        <section class="section-typen grid-16-9">
+
+            <article class="typen-tree-1">
+                <figure>
+                    <img class="typen-tree--image-1"src="../images/Photoshop-transparant/tree-1.png" alt="tree">
+                </figure>
+            </article>
+            <article class="typen-tree-2">
+                <figure>
+                    <img class="typen-tree--image-2"src="../images/Photoshop-transparant/tree-1.png" alt="tree">
+                </figure>
+            </article>
+            <article class="typen-tree-3">
+                <figure>
+                    <img class="typen-tree--image-3"src="../images/Photoshop-transparant/tree-1.png" alt="tree">
+                </figure>
+            </article>
+
+            <article class="typen-animal-1">
+                <figure><img class="typen-animal--image-1" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+            <article class="typen-animal-2">
+                <figure><img class="typen-animal--image-2" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+            <article class="typen-animal-3">
+                <figure><img class="typen-animal--image-3" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+            <article class="typen-animal-4">
+                <figure><img class="typen-animal--image-4" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+            <article class="typen-animal-5">
+                <figure><img class="typen-animal--image-5" src="../images/Photoshop-transparant/monkey.png" alt="aap"></figure>
+            </article>
+
+            <article class="rock-wood-wall-position--1">
+                <figure>
+                    <img class="rock-wood-wall" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+            <article class="rock-wood-wall-position--2">
+                <figure>
+                    <img class="rock-wood-wall" src="../images/Photoshop-transparant/savanne-wall.png" alt="wall">
+                </figure>
+            </article>
+
+            <div class="walk-path-position walk-path"></div>
+
+            <div class="speech-bubble typen--speech-bubble" id="js--speech-bubble">
+                <image class="btn-explaine hide" id="js--speech-bubble-img"></image>
+                <p id="js--speech-bubble-p">Dit is het typen verblijf. Hier verblijven allemaal verschillende dieren. Maar blijkbaar zijn we vergeten voor één dier een bord op te hangen! Kan jij het bord voor ons invullen?</p>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small button" id="js--speech-bubble-btn">OK</button>
+                </div>
+            </div>
+
+            <figure class="typen--figure">
+                <img class="typen--image" src="../images/zoo-keeper-1.png" alt="zoo keeper">
+            </figure>
+
+            <a href="#popup" class="typen--animal-board button">
+                <figure>
+                    <img class="typen--animal-board-image" src="../images/Photoshop-transparant/sign-savanne.png" alt="apen bord">
+                </figure>
+            </a>
+
+        </section>
+        
+        <div class="popup" id="popup">
+            <div class="popup__content-typen">
+                <div class="popup__container-typen">
+                    <!-- <p class="popup__container-monkey--p1"></p> -->
+                    <figure class="popup__container-typen--lion-head">
+                        <img class="popup__container-typen--image" src="../images/Photoshop-transparant/lion-head.png" alt="leeuwenhoofd">
+                    </figure>
+                    <p class="popup__container-typen-text--leeuw">Leeuw</p>
+                    <figure class="popup__container-typen--elephant-head">
+                        <img class="popup__container-typen--image" src="../images/Photoshop-transparant/elephant-head.png" alt="olifantenhoofd">
+                    </figure>
+                    <div class="popup__container-typen--wrapper" tabindex="1">
+                        <span class="popup__container-typen--textbox" id="js--typen-form" contentEditable="true">Nijlpaard</span><span class="popup__container-typen--textbox--gray"></span>
+                    </div>
+
+                    <figure class="popup__container-typen--zebra-head">
+                        <img class="popup__container-typen--image" src="../images/Photoshop-transparant/zebra-head.png" alt="zebrahoofd">
+                    </figure>
+                    <p class="popup__container-typen-text--zebra">Zebra</p>
+
+                    <!-- <form class="popup__container-typen--form" id="js--savanne-form" name="answerForm" autocomplete="off">
+                        <label for="naamDier"></label>
+                        <input class="popup__container--form-input button" name="textInput" id="naamDier" type="text" placeholder="?" required>
+                    </form> -->
+                    <div class="popup__container-typen--button">
+                        <button class="btn-ok-popup button" id="js--form-submitTypen" form="answerForm" type="submit" value="">&#10004;</button>
+                    </div>
+                    <a href="#" class="popup__close--typen button">&times;</a>
+                </div>
+            </div>
+        </div>
+        <div class="hide-overlay" id="js--map-overlay"></div>
+    </main>
+</body>
+</html>

@@ -1,3 +1,8 @@
+.overflow{
+    overflow: hidden;
+    // temp fix, check met groep
+}
+
 .popup{
     background-color: rgba(#000, .55);
     height: 100vh;
@@ -105,7 +110,7 @@
         &--form-input{
             width: 100%;
             height: 100%;
-            font-size: 9rem;
+            font-size: 10rem;
             text-align: center;
             border: none;
         }
@@ -137,12 +142,71 @@
 
     &__container-monkey{
         background-image: url(../images/sign-monkey-popup.png);
-        @include background;
+        @include background-popup;
         height: 67vh;
         display: grid;
         grid-template-rows: repeat(6, minmax(0, 1fr));
         grid-template-columns: repeat(6, minmax(0, 1fr));
         grid-gap: 1.5rem;
+        padding: 1.5rem;
+        align-content: center;
+
+        &--p1{
+            grid-column: 1 / span 6;
+            grid-row: 2;
+            align-self: start;
+            text-align: center;
+            font-size: 4rem;
+            color: $color-white;
+        }
+
+        &--monkey-head{
+            grid-column: 2 / span 2;
+            grid-row: 3 /span 3;
+            align-self: center;
+            place-self: self-start;
+        }
+        &--image{
+            width: 60%;
+            height: auto;
+        }
+        &--form{
+            grid-column: 3 / span 2;
+            grid-row: 3 /span 2;
+        }
+        &--button{
+            grid-column: 3 / span 2;
+            grid-row: 5 /span 2;
+            margin-top: 1.5rem;
+        }
+    }
+
+    &__content-typen{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 60%;
+        background-color: transparent;
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0.25);
+        transform: translate(-50%, -50%) scale(0.25);
+        -webkit-transition: all .4s .2s;
+        transition: all .4s .2s;
+    }
+
+    &__container-typen{
+        background-image: url(../images/sign-monkey-popup.png);
+        @include background-popup;
+        height: 70vh;
+        display: grid;
+        grid-template-rows: repeat(9, minmax(0, 1fr));
+        grid-template-columns: repeat(9, minmax(0, 1fr));
+        // grid-gap: 1.5rem;
         padding: 1.5rem;
         align-content: center;
 
@@ -155,24 +219,87 @@
             color: $color-white;
         }
 
-        &--monkey-head{
+        &--lion-head{
             grid-column: 2 / span 2;
-            grid-row: 2 /span 3;
+            grid-row: 3 /span 2;
             align-self: center;
             place-self: self-start;
         }
+        &--elephant-head{
+            grid-column: 4 / span 4;
+            grid-row: 3 /span 2;
+            align-self: center;
+            place-self: self-start;
+        }
+        &--zebra-head{
+            grid-column: 7 / span 2;
+            grid-row: 3 /span 2;
+            align-self: center;
+            place-self: self-start;
+        }
+
         &--image{
-            width: 90%;
+            width: 65%;
             height: auto;
         }
-        &--form{
-            grid-column: 4 / span 2;
-            grid-row: 3 /span 2;
+
+        &-text{
+
+            &--leeuw{
+                color: $color-white;
+                font-weight: 400;
+                font-size: 4rem;
+                grid-column: 2 / span 2;
+                grid-row: 6 / span 1;
+
+            }
+
+            &--zebra{
+                color: $color-white;
+                font-weight: 400;
+                font-size: 4rem;
+                grid-column: 7 / span 2;
+                grid-row: 6 / span 1;
+                text-align: center;
+            }
+
         }
+        &--wrapper{
+                border: 1px solid rgb(150, 150, 150);
+                outline: 0;
+                height: 6rem;
+                border-radius: 3px;
+                padding: 5px 10px;
+                // cursor: url("../../images/cursor_point_60.cur"), default;
+                grid-column: 4 / span 2;
+                grid-row: 6 / span 1;
+                text-align: center;
+                font-size: 4rem;
+                color: $color-white;
+                overflow: hidden;
+
+                &:focus{
+                    border: 1px solid rgb(102, 175, 233);
+                    box-shadow: 0px 0px 10px lightblue;
+                }
+        }
+
+        &--textbox{
+            outline: none;
+            display: inline-block;
+            height: 100%;
+            min-width: 1px;
+            
+            &--gray{
+                color: $color-gray;
+                position: relative;
+            }
+        }
+        
         &--button{
-            grid-column: 3 / span 2;
-            grid-row: 5 /span 2;
-            margin-top: 1.5rem;
+            grid-column: 4 / span 2;
+            grid-row: 8 /span 2;
+            // margin-top: 1.5rem;
         }
     }
 
@@ -186,6 +313,11 @@
         transform: translate(-50%, -50%) scale(1);
     }
     &:target &__content-monkey{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &:target &__content-typen{
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
@@ -204,7 +336,24 @@
             transition: all .2s;
             line-height: 1;
         }
-
+        &:hover{
+            color: red;
+        }
+    }
+    &__close--typen{
+        &:link,
+        &:visited{
+            color: $color-white;
+            grid-column: 9;
+            grid-row: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            text-decoration: none;
+            transition: all .2s;
+            line-height: 1;
+        }
         &:hover{
             color: red;
         }
