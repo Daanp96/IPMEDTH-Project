@@ -151,6 +151,7 @@ if(document.URL.includes("dierentuinpad.html") ){
                 ratedStar4.style.visibility = "visible";
             }
             break;
+
         case 4:
             monkey.classList.remove("dierentuinpad__element");
             monkey.classList.remove("button");
@@ -238,7 +239,7 @@ if(document.URL.includes("dierentuinpad.html") ){
         x = 2;
         // progress = x;
         localStorage.setItem("progress", x);
-        startSavannePuzzel();
+        startTypenPuzzel();
         e.preventDefault();
     }
     ijskar.onclick = (e) => {
@@ -263,9 +264,12 @@ if(document.URL.includes("dierentuinpad.html") ){
 function startRekensomPuzzel(){
     window.location.href="rekensom.html";  
 };
-function startSavannePuzzel(){
-    window.location.href="savanne.html";  
+function startTypenPuzzel(){
+    window.location.href="typen.html";  
 };
+// function startSavannePuzzel(){
+//     window.location.href="savanne.html";  
+// };
 function startPinguinPuzzel(){
     window.location.href="arctic.html";  
 };
