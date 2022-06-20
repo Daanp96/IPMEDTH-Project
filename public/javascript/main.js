@@ -29,7 +29,6 @@ const arcticBtn = document.getElementById("js--arctic-btn");
 
 const reken_correct = 6;
 const naam_correct = "aap";
-
 // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
 let star1;
