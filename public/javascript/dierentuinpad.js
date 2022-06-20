@@ -166,6 +166,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.remove("dierentuinpad__element");
             pinguin.classList.remove("button");
+            giraffe.classList.add("dierentuinpad__element");
+            giraffe.classList.add("button");
             // eindeButton.classList.remove("hide-important");
 
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble3");
