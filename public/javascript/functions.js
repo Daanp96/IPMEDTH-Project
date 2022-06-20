@@ -4,17 +4,21 @@ let aantalIjs = 0;
 let ijsPrijs = 6;
 
 // const dragDrop = (object, width = '') => {
+let tree = 0;
+let rock = 0;
+let pond = 0;
+
+const dragDrop = (object) => {
 
 //     object.onmousedown = (event) => {
 
 //         let shiftX = event.clientX - object.getBoundingClientRect().left;
 //         let shiftY = event.clientY - object.getBoundingClientRect().top;
       
-//         object.style.position = 'absolute';
-//         object.style.width = width;
-//         object.style.zIndex = 1000;
-//         object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
-//         document.body.append(object);
+        object.style.position = 'absolute';
+        object.style.zIndex = 1000;
+        object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
+        document.body.append(object);
       
 //         moveAt(event.pageX, event.pageY);
       
@@ -402,27 +406,79 @@ const dragDropGeld = (obj, kassa, btn) => {
   };
 }
 
-// const modalView = (modal, title, text, button, {
-//     title_content = "",
-//     text_content = "",
-//     button_content = ""
-//   }) => {
+const dragDropGiraffe = (object, endBtn) => {
 
-//   title.innerHTML = title_content;
-//   text.innerHTML = text_content;
-//   button.innerHTML = button_content;
+  object.onmousedown = (event) => {
 
-//   button.onclick = () => {
-//     modal.style.opacity = "0";
-//   }
-// }
+    let shiftX = event.clientX - object.getBoundingClientRect().left;
+    let shiftY = event.clientY - object.getBoundingClientRect().top;
+    
+    // object.style.position = 'absolute'; //in css al meegegeven
+    object.style.zIndex = 10;
+    object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
+    // object.style.top = '100px';
+    document.body.append(object);
+         
+    moveAt(event.pageX, event.pageY);
+    
+    // moves the object at (pageX, pageY) coordinates
+    // taking initial shifts into account
+    function moveAt(pageX, pageY) {
+      object.style.left = pageX - shiftX + 'px';
+      object.style.top = pageY - shiftY + 'px';
+    }
+    
+    function onMouseMove(event) {
+      moveAt(event.pageX, event.pageY);
 
-// const textBubble = () => {
-//   if(startOK == 0 && true){
-//     startP.innerHTML = "jaja";
-//     startOK ++;
-//     return;
-//   }
-// }
+    }
+    
+    // move the object on mousemove
+    document.addEventListener('mousemove', onMouseMove);
+    
+    // drop the object, remove unneeded handlers
+    document.onmouseup = () => {
+      document.removeEventListener('mousemove', onMouseMove);
+      object.style.cursor = "url('../images/cursor_grab_60.cur'), default";
+      object.onmouseup = null;
 
-export { dragDropMap, dragDropArctic, dragDropIjs, dragDropGeld};
+      const el = object.getAttribute("data-elements");
+
+      if (el == "tree") {
+        object.removeAttribute('data-elements');
+        tree++;
+        console.log(tree);
+      }
+      if (el == "rock") {
+        object.removeAttribute('data-elements');
+        rock++;
+        console.log(rock);
+      }
+      if (el == "pond") {
+        object.removeAttribute('data-elements');
+        pond++;
+        console.log(pond);
+      }
+
+      if (tree == 2) {
+        document.getElementById("tree").checked = true;
+      }
+      if (rock == 2) {
+        document.getElementById("rock").checked = true;
+      }
+      if (pond == 1) {
+        document.getElementById("pond").checked = true;
+      }
+      if (tree >= 2 && rock >= 2 && pond >= 1) {
+        endBtn.style.display = "block";
+      }
+    };
+    
+  };
+    
+  object.ondragstart = () => {
+    return false;
+  };
+}
+
+export { dragDrop, dragDropMap, dragDropArctic, modalView, dragDropGiraffe};
