@@ -140,18 +140,3 @@ hintBtn.onclick = () => {
 function endRekensomPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
-
-// const typenForm = document.getElementById("js--typen-form");
-var value = $(this).val();
-const spanTypen = $("#js--typen-form").text();
-const spanTypenBtn = document.getElementById("js--form-submitTypen");
-
-if(document.URL.includes("typen.html")){
-    // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
-    console.log(spanTypen);
-    spanTypenBtn.addEventListener("click", function(e){
-        console.log(spanTypen);
-
-        e.preventDefault();
-    });
-}
