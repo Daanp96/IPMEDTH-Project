@@ -1,4 +1,22 @@
-var text = "olifant";
+const text = "olifant";
+
+const speechBubble = document.getElementById("js--speech-bubble");
+const speechBubble_p = document.getElementById("js--speech-bubble-p"); 
+const explaineBtn = document.getElementById("js--speech-bubble-img");
+
+const startOKBtn = document.getElementById("js--speech-bubble-btn");
+const hintBtn = document.getElementById("js--hint");
+
+const mapOverlay = document.getElementById("js--map-overlay");
+
+let countHint = 0;
+let tekst = '';
+let image = '';
+
+const hint1 = new Audio("../audio/6-aap/hint-1.mp3");
+const hint2 = new Audio("../audio/6-aap/hint-2.mp3");
+const hint3 = new Audio("../audio/6-aap/hint-3.mp3");
+const hint4 = new Audio("../audio/6-aap/hint-4.mp3");
 
 $(".popup__container-typen--textbox").on("focus blur", function(){
     $(".popup__container-typen--wrapper").toggleClass("focused");
@@ -39,23 +57,6 @@ function setEndOfContenteditable(contentEditableElement) {
     }
 }
 
-const speechBubble = document.getElementById("js--speech-bubble");
-const speechBubble_p = document.getElementById("js--speech-bubble-p"); 
-const explaineBtn = document.getElementById("js--speech-bubble-img");
-
-const startOKBtn = document.getElementById("js--speech-bubble-btn");
-const hintBtn = document.getElementById("js--hint");
-
-const mapOverlay = document.getElementById("js--map-overlay");
-
-let countHint = 0;
-let tekst = '';
-let image = '';
-
-const hint1 = new Audio("../audio/6-aap/hint-1.mp3");
-const hint2 = new Audio("../audio/6-aap/hint-2.mp3");
-const hint3 = new Audio("../audio/6-aap/hint-3.mp3");
-const hint4 = new Audio("../audio/6-aap/hint-4.mp3");
 
 startOKBtn.onclick = () => {
     speechBubble.style.visibility = "hidden";
@@ -138,4 +139,19 @@ hintBtn.onclick = () => {
 
 function endRekensomPuzzel(){
     window.location.href="dierentuinpad.html";  
+}
+
+// const typenForm = document.getElementById("js--typen-form");
+var value = $(this).val();
+const spanTypen = $("#js--typen-form").text();
+const spanTypenBtn = document.getElementById("js--form-submitTypen");
+
+if(document.URL.includes("typen.html")){
+    // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
+    console.log(spanTypen);
+    spanTypenBtn.addEventListener("click", function(e){
+        console.log(spanTypen);
+
+        e.preventDefault();
+    });
 }

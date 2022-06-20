@@ -1150,8 +1150,8 @@ h1 {
 
 .popup__container-typen--elephant-head {
   -ms-grid-column: 4;
-  -ms-grid-column-span: 5;
-  grid-column: 4 / span 5;
+  -ms-grid-column-span: 4;
+  grid-column: 4 / span 4;
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   grid-row: 3 /span 2;
@@ -1210,7 +1210,6 @@ h1 {
   height: 6rem;
   border-radius: 3px;
   padding: 5px 10px;
-  cursor: url("../../images/cursor_point_60.cur"), default;
   -ms-grid-column: 4;
   -ms-grid-column-span: 2;
   grid-column: 4 / span 2;
@@ -1237,18 +1236,8 @@ h1 {
 }
 
 .popup__container-typen--textbox--gray {
-  color: gray;
+  color: #808080;
   position: relative;
-  z-index: 2999;
-}
-
-.popup__container-typen--form {
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 2;
-  grid-column: 4 / span 2;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 2;
-  grid-row: 3 /span 2;
 }
 
 .popup__container-typen--button {

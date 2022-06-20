@@ -285,6 +285,7 @@ if(document.URL.includes("arctic.html")){
     });
 }
 
+
 function endRekensomPuzzel(){
     window.location.href="dierentuinpad.html";  
 }

@@ -226,7 +226,7 @@
             place-self: self-start;
         }
         &--elephant-head{
-            grid-column: 4 / span 5;
+            grid-column: 4 / span 4;
             grid-row: 3 /span 2;
             align-self: center;
             place-self: self-start;
@@ -270,7 +270,7 @@
                 height: 6rem;
                 border-radius: 3px;
                 padding: 5px 10px;
-                cursor: url("../../images/cursor_point_60.cur"), default;;
+                // cursor: url("../../images/cursor_point_60.cur"), default;
                 grid-column: 4 / span 2;
                 grid-row: 6 / span 1;
                 text-align: center;
@@ -291,16 +291,11 @@
             min-width: 1px;
             
             &--gray{
-                color: gray;
+                color: $color-gray;
                 position: relative;
-                z-index: 2999;
             }
         }
-
-        &--form{
-            grid-column: 4 / span 2;
-            grid-row: 3 /span 2;
-        }
+        
         &--button{
             grid-column: 4 / span 2;
             grid-row: 8 /span 2;
