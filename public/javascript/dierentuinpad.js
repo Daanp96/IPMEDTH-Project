@@ -2,6 +2,7 @@ const fish = document.getElementById("js--fish");
 const monkey = document.getElementById("js--monkey");
 const pinguin = document.getElementById("js--pinguin");
 const ijskar = document.getElementById("js--ijskar");
+const giraffe = document.getElementById("js--giraffe");
 
 const ratedStar1 = document.getElementById("js--ratedStar1");
 const ratedStar2 = document.getElementById("js--ratedStar2");
@@ -12,6 +13,9 @@ const ratedStar6 = document.getElementById("js--ratedStar6");
 const ratedStar7 = document.getElementById("js--ratedStar7");
 const ratedStar8 = document.getElementById("js--ratedStar8");
 const ratedStar9 = document.getElementById("js--ratedStar9");
+const ratedStar10 = document.getElementById("js--ratedStar10");
+const ratedStar11 = document.getElementById("js--ratedStar11");
+const ratedStar12 = document.getElementById("js--ratedStar12");
 
 const formRekensomBtn = document.getElementById("js--form-submit");
 const rekensomForm = document.getElementById("js--rekensom-form");
@@ -39,6 +43,9 @@ let star6;
 let star7;
 let star8;
 let star9;
+let star10;
+let star11;
+let star12;
 
 let x = 0;
 // let progress;
@@ -159,14 +166,14 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.remove("dierentuinpad__element");
             pinguin.classList.remove("button");
-            eindeButton.classList.remove("hide-important");
+            // eindeButton.classList.remove("hide-important");
 
-            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
-            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
-            dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
-            dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble3");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper3");
+            dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble4");
+            dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper4");
             vissen.remove();
-            dierentuinpadSpeechBubbleP.innerHTML = "Oh, wat gaat de tijd snel, de dierentuin gaat sluiten. Kom, we gaan naar de uitgang.";
+            dierentuinpadSpeechBubbleP.innerHTML = "Zullen we nu naar het verblijf van de giraffe gaan?";
             uitgang.play();
 
             star1 = localStorage.getItem('star1');
@@ -225,6 +232,85 @@ if(document.URL.includes("dierentuinpad.html") ){
                 ratedStar7.style.visibility = "visible";
             }
             break;
+        case 5:
+            monkey.classList.remove("dierentuinpad__element");
+            monkey.classList.remove("button");
+            fish.classList.remove("dierentuinpad__element");
+            fish.classList.remove("button");
+            pinguin.classList.remove("dierentuinpad__element");
+            pinguin.classList.remove("button");
+            giraffe.classList.remove("dierentuinpad__element");
+            giraffe.classList.remove("button");
+            // eindeButton.classList.remove("hide-important");
+
+            dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
+            dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
+            vissen.remove();
+            dierentuinpadSpeechBubbleP.innerHTML = "Oh, wat gaat de tijd snel, de dierentuin gaat sluiten. Kom, we gaan naar de uitgang.";
+            uitgang.play();
+
+            star1 = localStorage.getItem('star1');
+            star2 = localStorage.getItem('star2');
+            star3 = localStorage.getItem('star3');
+            star4 = localStorage.getItem('star4');
+            star5 = localStorage.getItem('star5');
+            star6 = localStorage.getItem('star6');
+            star7 = localStorage.getItem('star7');
+            star8 = localStorage.getItem('star8');
+            star9 = localStorage.getItem('star9');
+            star10 = localStorage.getItem('star10');
+            star11 = localStorage.getItem('star11');
+            star12 = localStorage.getItem('star12');
+
+            if(star1 == 0){
+                ratedStar1.style.visibility = "visible";
+                ratedStar2.style.visibility = "visible";
+                ratedStar3.style.visibility = "visible";
+            }
+            if(star2 == 0){
+                ratedStar1.style.visibility = "visible";
+                ratedStar2.style.visibility = "visible";
+            }
+            if(star3 == 0){
+                ratedStar1.style.visibility = "visible";
+            }
+            if(star4 == 0){
+                ratedStar4.style.visibility = "visible";
+                ratedStar5.style.visibility = "visible";
+                ratedStar6.style.visibility = "visible";
+            }
+            if(star5 == 0){
+                ratedStar4.style.visibility = "visible";
+                ratedStar5.style.visibility = "visible";
+            }
+            if(star6 == 0){
+                ratedStar4.style.visibility = "visible";
+            }
+            if(star7 == 0){
+                ratedStar7.style.visibility = "visible";
+                ratedStar8.style.visibility = "visible";
+                ratedStar9.style.visibility = "visible";
+            }
+            if(star8 == 0){
+                ratedStar7.style.visibility = "visible";
+                ratedStar8.style.visibility = "visible";
+            }
+            if(star9 == 0){
+                ratedStar7.style.visibility = "visible";
+            }
+            if(star10 == 0){
+                ratedStar10.style.visibility = "visible";
+                ratedStar11.style.visibility = "visible";
+                ratedStar12.style.visibility = "visible";
+            }
+            if(star11 == 0){
+                ratedStar10.style.visibility = "visible";
+                ratedStar11.style.visibility = "visible";
+            }
+            if(star12 == 0){
+                ratedStar10.style.visibility = "visible";
+            }
+            break;
     }
 
 
@@ -255,10 +341,17 @@ if(document.URL.includes("dierentuinpad.html") ){
         startPinguinPuzzel();
         e.preventDefault();
     }
-    eindeButton.onclick = (e) => {
-        naarEinde();
+    giraffe.onclick = (e) => {
+        x = 5;
+        // progress = x;
+        localStorage.setItem("progress", x);
+        startGiraffePuzzel();
         e.preventDefault();
     }
+    // eindeButton.onclick = (e) => {
+    //     naarEinde();
+    //     e.preventDefault();
+    // }
 }
 
 function startRekensomPuzzel(){
@@ -267,9 +360,9 @@ function startRekensomPuzzel(){
 function startTypenPuzzel(){
     window.location.href="typen.html";  
 };
-// function startSavannePuzzel(){
-//     window.location.href="savanne.html";  
-// };
+function startGiraffePuzzel(){
+    window.location.href="giraffe.html";  
+};
 function startPinguinPuzzel(){
     window.location.href="arctic.html";  
 };

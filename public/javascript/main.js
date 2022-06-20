@@ -26,6 +26,7 @@ const savanneForm = document.getElementById("js--savanne-form");
 const formSavanneBtn = document.getElementById("js--form-submitSavanne");
 
 const arcticBtn = document.getElementById("js--arctic-btn");
+const giraffeBtn = document.getElementById("js--end-btn");
 
 const reken_correct = 6;
 const naam_correct = "aap";
@@ -48,6 +49,7 @@ let aantalSecondesRekensom;
 let aantalSecondesSavanne;
 let aantalSecondesArctic;
 let aantalSecondesTypen;
+let aantalSecondesGiraffe;
 let startTime, endTime;
 
 // let infoOk = 0;
@@ -351,6 +353,30 @@ if(document.URL.includes("typen.html")){
     });
 }
 
+if(document.URL.includes("giraffe.html")){
+    giraffeBtn.addEventListener("click", function(e){
+
+        endTime = new Date();
+        var timeDiff = endTime - startTime; //ms
+        timeDiff /= 1000;
+        let seconds = Math.round(timeDiff);
+        aantalSecondesGiraffe = seconds;
+    
+        try {
+            localStorage.setItem("aantalSecondesGiraffe", aantalSecondesGiraffe);
+            localStorage.setItem('star10', 0);
+        } catch (error) {
+            console.log(error);
+        }
+        
+        setTimeout(() => {
+            endGiraffe();
+        }, 700);
+            
+        e.preventDefault();
+    });
+}
+
 function endRekensomPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
@@ -362,5 +388,8 @@ function endArcticPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
 function endTypen(){
+    window.location.href="dierentuinpad.html";  
+}
+function endGiraffe(){
     window.location.href="dierentuinpad.html";  
 }
