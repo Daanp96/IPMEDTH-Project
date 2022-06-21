@@ -110,7 +110,6 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.add("dierentuinpad__element");
             pinguin.classList.add("button");
-            ijskar.style.display = "none";
 
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
