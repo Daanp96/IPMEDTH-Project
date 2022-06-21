@@ -32,8 +32,8 @@ ijsbalie.onclick = () => {
             bol_img.dataset.kleur = kleur;
             bol_img.dataset.bol = 'ijs';
             bol_img.classList.add("ijsbol", "button");
-            bol_img.style.top = `${e.layerY - e.offsetY}px`;
-            bol_img.style.left = `${e.layerX - e.offsetX}px`;
+            bol_img.style.top = `${e.clientY - e.offsetY - 180}px`;
+            bol_img.style.left = `${e.clientX - e.offsetX - 250}px`;
             speechBubble.innerHTML = "Sleep jouw bolletje naar de ijshoorn toe."
             popup.append(bol_img);
             dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble);

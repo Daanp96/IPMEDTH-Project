@@ -1905,6 +1905,19 @@ input[type=number]::-webkit-outer-spin-button {
           transform: rotateX(45deg);
 }
 
+.btn_overlay {
+  position: absolute;
+  bottom: 20vh;
+  left: 50vw;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 1;
+}
+
+.hide_overlay {
+  opacity: 1;
+}
+
 .input-form {
   margin: 0 auto;
 }

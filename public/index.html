@@ -11,7 +11,7 @@
     <script src="./javascript/start.js" type="module" defer></script>
 </head>
 <body>
-    <iframe src="./audio/1-Intro/1-welkom.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+    <!-- <iframe src="./audio/1-Intro/1-welkom.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
     <!-- <button href="#" class="btn-check button">&#10004;</button> -->
     <main class="start--background">
         <section class="section-start grid-16-8">
@@ -57,19 +57,11 @@
                 </div>
             </div>
             <div class="hide-overlay" id="js--start-overlay"></div>
-            <button class="btn-begin button" id="js--begin-btn">&#10004;</button>
+            
+            <div id="js--btn-overlay" class="btn_overlay">
+                <button class="btn-begin btn-ok-small button" id="js--begin-btn">&#10004;</button>
+            </div>
         </section>
     </main>
-    <!-- Hotjar Tracking Code for https://ipmedth-project.herokuapp.com/ -->
-<!-- <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2898590,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script> -->
 </body>
 </html>
