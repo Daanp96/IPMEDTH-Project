@@ -11,8 +11,9 @@ const munten = document.getElementsByClassName("geld");
 const ijsbol2 = document.getElementById("js--bol2");
 const ijsbol3 = document.getElementById("js--bol3");
 const ijsBtn = document.getElementById("js--btn-ijs");
+const speechBubble = document.getElementById("js--speech-bubble");
 
-ijsbalie.onclick = (e) => {
+ijsbalie.onclick = () => {
     overlay.style.opacity =  "1";
     overlay.style.zIndex = "1";
     popup.style.opacity = "1";
@@ -21,6 +22,7 @@ ijsbalie.onclick = (e) => {
     for (let ijs of ijsjes) {
         ijs.style.opacity = "1";
         ijs.style.zIndex = "5";
+        ijs.firstElementChild.style.pointerEvents = "none";
 
         ijs.onclick = (e) => {
             let bol_img = document.createElement("img");
@@ -32,11 +34,9 @@ ijsbalie.onclick = (e) => {
             bol_img.classList.add("ijsbol", "button");
             bol_img.style.top = `${e.layerY - e.offsetY}px`;
             bol_img.style.left = `${e.layerX - e.offsetX}px`;
-            // ijs.classList.remove("button");
-            // ijs.onclick = null;
+            speechBubble.innerHTML = "Sleep jouw bolletje naar de ijshoorn toe."
             popup.append(bol_img);
-            dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3);
-            // dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3);
+            dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble);
         }
     }
 }

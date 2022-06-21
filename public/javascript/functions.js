@@ -231,7 +231,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
   };
 }
 
-const dragDropIjs = (obj, kassa, bol1, bol2) => {
+const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -260,7 +260,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2) => {
 
       if (!elemBelow) return;
 
-      let droppableBelow = elemBelow.closest('.droppable');
+      let droppableBelow = elemBelow.closest('.ijs-droppable');
 
       if (currentDroppable != droppableBelow) {
         if (currentDroppable) { // null when we were not over a droppable before this event
@@ -290,6 +290,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2) => {
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
         currentDroppable.removeAttribute('data-bol');
+        currentDroppable.classList.remove('ijs-droppable');
         aantalIjs++;
 
         if(aantalIjs == 1) {
@@ -302,6 +303,10 @@ const dragDropIjs = (obj, kassa, bol1, bol2) => {
           kassa.style.display = "block";
           kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
           kassa.parentNode.dataset.geld = "1";
+          speech.innerHTML = "Zo, je ijsje is klaar! Je kan het geld naar de kassa toe slepen.";
+          for(let ijs of ijsjes){
+            ijs.onclick = null;
+          }
         }
       }
     };
@@ -350,7 +355,7 @@ const dragDropGeld = (obj, kassa, btn) => {
 
       if (!elemBelow) return;
 
-      let droppableBelow = elemBelow.closest('.droppable');
+      let droppableBelow = elemBelow.closest('.geld-droppable');
 
       if (currentDroppable != droppableBelow) {
         if (currentDroppable) { // null when we were not over a droppable before this event
@@ -375,6 +380,8 @@ const dragDropGeld = (obj, kassa, btn) => {
       const attr = currentDroppable.getAttribute('data-geld');
 
       if(attr == obj.getAttribute('data-geld')) {
+        const kaching = new Audio("../audio/ijsbar/kassa_fix.mp3");
+        kaching.play();
         ijsPrijs--;
         obj.removeAttribute('data-geld');
         currentDroppable.style.opacity = "100%";
