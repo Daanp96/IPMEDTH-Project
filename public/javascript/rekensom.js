@@ -98,7 +98,7 @@ startOKBtn.onclick = () => {
             }
             break;
         case 1: 
-            tekst = 'Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? Het antwoord mag je invullen op het bord.';
+            tekst = 'Kan jij mij vertellen hoeveel <b style="color: red;">rode vissen</b> er rond zwemmen? Het antwoord mag je invullen op het bord.';
             image = '';
             rodeVissen.play();
             rodeVissen.onended = () => {

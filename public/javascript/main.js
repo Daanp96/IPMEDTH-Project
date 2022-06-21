@@ -297,6 +297,7 @@ if(document.URL.includes("typen.html")){
         aantalSecondesTypen = seconds;
 
         if(spanTypen.innerText == typen_correct){
+            terugKaart.play();
             if(seconds <= 60){
                 try {
                     localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);

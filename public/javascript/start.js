@@ -1,13 +1,20 @@
 const startBtn = document.getElementById("js--start-btn");
 
-let intro = new Audio("audio/1-Intro/1-welkom.mp3");
-let bezoeker = new Audio("audio/1-Intro/2-gelukkige-bezoeker.mp3");
-let raadEens = new Audio("audio/1-Intro/3-raadEens.mp3");
-let uitleggen = new Audio("audio/1-Intro/4-uitleggen.mp3");
-let hint = new Audio("audio/1-Intro/5-hint.mp3");
-let informatie = new Audio("audio/1-Intro/6-informatie.mp3");
-let stem = new Audio("audio/1-Intro/8-stem.mp3");
-let binnen = new Audio("audio/1-Intro/9-binnen.mp3");
+// let intro = new Audio("audio/1-Intro/1-welkom.mp3");
+// let bezoeker = new Audio("audio/1-Intro/2-gelukkige-bezoeker.mp3");
+// let raadEens = new Audio("audio/1-Intro/3-raadEens.mp3");
+// let uitleggen = new Audio("audio/1-Intro/4-uitleggen.mp3");
+// let hint = new Audio("audio/1-Intro/5-hint.mp3");
+// let informatie = new Audio("audio/1-Intro/6-informatie.mp3");
+// let stem = new Audio("audio/1-Intro/8-stem.mp3");
+// let binnen = new Audio("audio/1-Intro/9-binnen.mp3");
+
+let intro = new Audio("../audio/Tjalle/1-intro/1-welkom.m4a");
+let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoeker_helpen.m4a");
+let uitleggen = new Audio("../audio/Tjalle/1-intro/3-uitleg.m4a");
+let hint = new Audio("../audio/Tjalle/1-intro/4-hints.m4a");
+let stem = new Audio("../audio/Tjalle/1-intro/5-stem.m4a");
+let binnen = new Audio("../audio/Tjalle/1-intro/6-binnen.m4a");
 
 const speechBubble = document.getElementById("js--speech-bubble");
 const startExplaineBtn = document.getElementById("js--speech-bubble-img");
