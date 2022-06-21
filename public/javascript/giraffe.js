@@ -1,7 +1,5 @@
 import {dragDropGiraffe} from "./functions.js";
 
-const musicOn2 = document.getElementById("js--music-on-2");
-const musicOff2 = document.getElementById("js--music-off-2");
 const speakOn2 = document.getElementById("js--speak-on-2");
 const speakOff2 = document.getElementById("js--speak-off-2");
 const hintBtn = document.getElementById("js--hint");
@@ -71,16 +69,6 @@ let countHint = 0;
 let countEnd = 0;
 let tekst = '';
 let image = '';
-
-musicOn2.onclick = () =>{
-    musicOff2.style.visibility = "visible";
-    musicOn2.style.visibility = "hidden";
-};
-
-musicOff2.onclick = () =>{
-    musicOff2.style.visibility = "hidden";
-    musicOn2.style.visibility = "visible";
-};
 
 speakOn2.onclick = () =>{
     speakOff2.style.visibility = "visible";

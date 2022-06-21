@@ -6,7 +6,6 @@ let raadEens = new Audio("audio/1-Intro/3-raadEens.mp3");
 let uitleggen = new Audio("audio/1-Intro/4-uitleggen.mp3");
 let hint = new Audio("audio/1-Intro/5-hint.mp3");
 let informatie = new Audio("audio/1-Intro/6-informatie.mp3");
-let muziek = new Audio("audio/1-Intro/7-muzieknoot.mp3");
 let stem = new Audio("audio/1-Intro/8-stem.mp3");
 let binnen = new Audio("audio/1-Intro/9-binnen.mp3");
 
@@ -53,17 +52,12 @@ startOKBtn.onclick = () => {
             image = './images/information-btn.png';
             informatie.play();
             break;
-        case 5:
-            tekst = 'Klik op de muzieknoot om de muziek uit te zetten.';
-            image = './images/music-on-btn.png'; 
-            muziek.play();
-            break;  
-        case 6: 
+        case 5: 
             tekst = 'Klik op het oortje om mijn stem uit te zetten.';
             image = './images/speak-on-btn.png';
             stem.play();
             break;
-        case 7: 
+        case 6: 
             startExplaineBtn.classList.add("hide");
             tekst = 'Oke, nu alles uitgelegd is, kunnen we nu echt naar binnen gaan. Laten we gaan!';
             image = '';

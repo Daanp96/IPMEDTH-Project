@@ -25,7 +25,7 @@
 }
 
 .start-options{
-    grid-column: 13 / span 4;
+    grid-column: 14 / span 4;
     grid-row: 1 /span 1;
     z-index: 100;
 
@@ -46,21 +46,12 @@
             @include widthImageSetting;
         }
     }
-
-    &__btn-music{
-        grid-column: 3 / span 1;
-        grid-row: 1 /span 1;
-    
-        &--image{
-            @include widthImageSetting;
-        }
-    }
     &__btn-music-off{
         visibility: hidden;
     }
 
     &__btn-speak{
-        grid-column: 4 / span 1;
+        grid-column: 3 / span 1;
         grid-row: 1 /span 1;
     
         &--image{
