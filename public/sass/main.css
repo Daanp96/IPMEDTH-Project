@@ -687,9 +687,9 @@ h1 {
 }
 
 .puzzel-options__btn-hint {
-  -ms-grid-column: 13;
+  -ms-grid-column: 14;
   -ms-grid-column-span: 1;
-  grid-column: 13 / span 1;
+  grid-column: 14 / span 1;
   -ms-grid-row: 1;
   -ms-grid-row-span: 4;
   grid-row: 1 /span 4;
@@ -701,20 +701,6 @@ h1 {
 }
 
 .puzzel-options__btn-information {
-  -ms-grid-column: 14;
-  -ms-grid-column-span: 1;
-  grid-column: 14 / span 1;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
-  grid-row: 1 /span 4;
-}
-
-.puzzel-options__btn-information--image {
-  width: 6rem;
-  height: auto;
-}
-
-.puzzel-options__btn-music {
   -ms-grid-column: 15;
   -ms-grid-column-span: 1;
   grid-column: 15 / span 1;
@@ -723,13 +709,9 @@ h1 {
   grid-row: 1 /span 4;
 }
 
-.puzzel-options__btn-music--image {
+.puzzel-options__btn-information--image {
   width: 6rem;
   height: auto;
-}
-
-.puzzel-options__btn-music-off {
-  visibility: hidden;
 }
 
 .puzzel-options__btn-speak {
@@ -1748,16 +1730,15 @@ input[type=number]::-webkit-outer-spin-button {
       grid-template-columns: repeat(16, minmax(0, 1fr));
   width: 100vw;
   height: 10vh;
-  z-index: 100;
 }
 
-.grid-4-1 {
+.grid-3-1 {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (minmax(0, 1fr))[1];
       grid-template-rows: repeat(1, minmax(0, 1fr));
-  -ms-grid-columns: (minmax(0, 1fr))[4];
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[3];
+      grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 100%;
   height: 100%;
 }
@@ -2017,9 +1998,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .start-options {
-  -ms-grid-column: 13;
+  -ms-grid-column: 14;
   -ms-grid-column-span: 4;
-  grid-column: 13 / span 4;
+  grid-column: 14 / span 4;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 /span 1;
@@ -2054,28 +2035,14 @@ input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-.start-options__btn-music {
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-column: 3 / span 1;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 /span 1;
-}
-
-.start-options__btn-music--image {
-  width: 6rem;
-  height: auto;
-}
-
 .start-options__btn-music-off {
   visibility: hidden;
 }
 
 .start-options__btn-speak {
-  -ms-grid-column: 4;
+  -ms-grid-column: 3;
   -ms-grid-column-span: 1;
-  grid-column: 4 / span 1;
+  grid-column: 3 / span 1;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 /span 1;
@@ -2156,7 +2123,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-1 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -2169,7 +2136,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-2 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -2182,7 +2149,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-3 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -2195,7 +2162,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-4 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
@@ -2208,7 +2175,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-5 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
@@ -2221,7 +2188,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-6 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
@@ -2234,7 +2201,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-7 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
@@ -2247,7 +2214,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-8 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -2260,7 +2227,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-9 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
@@ -2273,7 +2240,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-10 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -2286,7 +2253,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-11 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 11;
   -ms-grid-column-span: 2;
   grid-column: 11 / span 2;
@@ -2299,7 +2266,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-12 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -2312,7 +2279,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-13 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 13;
   -ms-grid-column-span: 2;
   grid-column: 13 / span 2;
@@ -2325,10 +2292,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-14 {
   height: auto;
-  width: 240px;
-  -ms-grid-column: 14;
+  width: 20rem;
+  -ms-grid-column: 15;
   -ms-grid-column-span: 2;
-  grid-column: 14 / span 2;
+  grid-column: 15 / span 2;
   -ms-grid-row: 7;
   -ms-grid-row-span: 1;
   grid-row: 7 /span 1;
@@ -2338,7 +2305,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-15 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 13;
   -ms-grid-column-span: 2;
   grid-column: 13 / span 2;
@@ -2351,7 +2318,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mappuzzel--slide-16 {
   height: auto;
-  width: 240px;
+  width: 20rem;
   -ms-grid-column: 11;
   -ms-grid-column-span: 2;
   grid-column: 11 / span 2;
@@ -2401,7 +2368,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .drag {
-  cursor: url("../../images/cursor_grab_60.cur"), default;
+  cursor: url("../images/cursor_grab_60.cur"), default;
 }
 
 .map {
@@ -3082,34 +3049,16 @@ input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-.dierentuinpad__lama {
-  -ms-grid-column: 15;
-  -ms-grid-column-span: 2;
-  grid-column: 15 / span 2;
-  -ms-grid-row: 7;
-  -ms-grid-row-span: 2;
-  grid-row: 7 / span 2;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-}
-
-.dierentuinpad__lama--image {
-  width: 100%;
-  height: auto;
-}
-
 .dierentuinpad__ijskar {
-  -ms-grid-column: 13;
+  -ms-grid-column: 14;
   -ms-grid-column-span: 2;
-  grid-column: 13 / span 2;
-  -ms-grid-row: 5;
+  grid-column: 14 / span 2;
+  -ms-grid-row: 6;
   -ms-grid-row-span: 2;
-  grid-row: 5 / span 2;
+  grid-row: 6 / span 2;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
-  display: none;
 }
 
 .dierentuinpad__ijskar--image {
@@ -3613,9 +3562,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .giraffe-options__btn-hint {
-  -ms-grid-column: 10;
+  -ms-grid-column: 11;
   -ms-grid-column-span: 1;
-  grid-column: 10 / span 1;
+  grid-column: 11 / span 1;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 /span 1;
@@ -3627,20 +3576,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .giraffe-options__btn-information {
-  -ms-grid-column: 11;
-  -ms-grid-column-span: 1;
-  grid-column: 11 / span 1;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 /span 1;
-}
-
-.giraffe-options__btn-information--image {
-  width: 6rem;
-  height: auto;
-}
-
-.giraffe-options__btn-music {
   -ms-grid-column: 12;
   -ms-grid-column-span: 1;
   grid-column: 12 / span 1;
@@ -3649,13 +3584,9 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 1 /span 1;
 }
 
-.giraffe-options__btn-music--image {
+.giraffe-options__btn-information--image {
   width: 6rem;
   height: auto;
-}
-
-.giraffe-options__btn-music-off {
-  visibility: hidden;
 }
 
 .giraffe-options__btn-speak {

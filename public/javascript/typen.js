@@ -140,3 +140,4 @@ hintBtn.onclick = () => {
 function endRekensomPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
+

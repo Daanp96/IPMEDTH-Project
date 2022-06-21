@@ -32,7 +32,7 @@ const pinguinVerblijf = new Audio("../audio/4-dierentuinpad/3-pinguïn.mp3");
 const uitgang = new Audio("../audio/4-dierentuinpad/4-uitgang.mp3");
 const vissen = document.getElementById("iframeAudio");
 
-eindeButton.classList.add("hide-important");
+
 
 let star1;
 let star2;
@@ -51,6 +51,7 @@ let x = 0;
 // let progress;
 
 if(document.URL.includes("dierentuinpad.html") ){
+    eindeButton.classList.add("hide-important");
     x = localStorage.getItem("progress");
     x = parseInt(x);
     console.log(x);
@@ -110,7 +111,6 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.add("dierentuinpad__element");
             pinguin.classList.add("button");
-            ijskar.style.display = "none";
 
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
