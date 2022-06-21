@@ -294,17 +294,14 @@ const dragDropGiraffe = (object, endBtn) => {
       if (el == "tree") {
         object.removeAttribute('data-elements');
         tree++;
-        console.log(tree);
       }
       if (el == "rock") {
         object.removeAttribute('data-elements');
         rock++;
-        console.log(rock);
       }
       if (el == "pond") {
         object.removeAttribute('data-elements');
         pond++;
-        console.log(pond);
       }
 
       if (tree == 2) {

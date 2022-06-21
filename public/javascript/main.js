@@ -26,7 +26,8 @@ const savanneForm = document.getElementById("js--savanne-form");
 const formSavanneBtn = document.getElementById("js--form-submitSavanne");
 
 const arcticBtn = document.getElementById("js--arctic-btn");
-const giraffeBtn = document.getElementById("js--end-btn");
+const endSpeechBubbleDierentuin = document.getElementById("js--endBubble-dierentuin");
+const endSpeechBubbleNatuur = document.getElementById("js--endBubble-natuur");
 
 const reken_correct = 6;
 const naam_correct = "aap";
@@ -295,7 +296,6 @@ if(document.URL.includes("arctic.html")){
 
 const spanTypen = document.getElementById("js--typen-form");
 const spanTypenBtn = document.getElementById("js--form-submitTypen");
-console.log(spanTypen);
 
 if(document.URL.includes("typen.html")){
     // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
@@ -354,7 +354,7 @@ if(document.URL.includes("typen.html")){
 }
 
 if(document.URL.includes("giraffe.html")){
-    giraffeBtn.addEventListener("click", function(e){
+    endSpeechBubbleDierentuin.addEventListener("click", function(e){
 
         endTime = new Date();
         var timeDiff = endTime - startTime; //ms
@@ -369,9 +369,27 @@ if(document.URL.includes("giraffe.html")){
             console.log(error);
         }
         
-        setTimeout(() => {
-            endGiraffe();
-        }, 700);
+        endGiraffe();
+            
+        e.preventDefault();
+    });
+
+    endSpeechBubbleNatuur.addEventListener("click", function(e){
+
+        endTime = new Date();
+        var timeDiff = endTime - startTime; //ms
+        timeDiff /= 1000;
+        let seconds = Math.round(timeDiff);
+        aantalSecondesGiraffe = seconds;
+    
+        try {
+            localStorage.setItem("aantalSecondesGiraffe", aantalSecondesGiraffe);
+            localStorage.setItem('star10', 0);
+        } catch (error) {
+            console.log(error);
+        }
+        
+        endGiraffe();
             
         e.preventDefault();
     });
