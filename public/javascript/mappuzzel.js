@@ -7,6 +7,13 @@ const speechButton = document.getElementById("js--speech-bubble-btn");
 const zookeeper = document.getElementById("js--map_zookeeper");
 const mapOverlay = document.getElementById("js--map-overlay");
 
+const mapUitleg = new Audio("../audio/3-Mappuzzel/1-kaartInElkaar.mp3");
+
+mapUitleg.play();
+mapUitleg.onended = () => {
+    speechButton.style.display = "flex";
+}
+
 for (let i = 0; i < slides.length; i++) {
     dragDropMap(slides[i], button, zookeeper, speech);
 }

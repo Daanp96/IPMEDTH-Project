@@ -109,7 +109,6 @@ const dragDropMap = (obj, btn, zookpr, speech) => {
         layedPieces++;
 
         if(layedPieces == 16){
-          btn.style.display = "block";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
           zookpr.style.gridColumnStart = "10";
@@ -119,6 +118,9 @@ const dragDropMap = (obj, btn, zookpr, speech) => {
           speech.style.zIndex = "1";
           speech.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
           kaartHeel.play();
+          kaartHeel.onended = () => {
+            btn.style.display = "block";
+          }
         }
       }
     };

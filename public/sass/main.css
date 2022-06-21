@@ -373,6 +373,10 @@ h1 {
   transition: 0.5s all;
 }
 
+.drag {
+  cursor: url("../images/cursor_grab_60.cur"), default;
+}
+
 .button {
   cursor: url("../images/cursor_point_60.cur"), default;
   background-color: transparent;
@@ -624,6 +628,10 @@ h1 {
 .btn-ok-popup:active::before {
   -webkit-transform: translate3d(0, 0, -1em);
           transform: translate3d(0, 0, -1em);
+}
+
+.btn-speech {
+  display: none;
 }
 
 .puzzel-options__btn-hint {
@@ -1919,10 +1927,6 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 1;
 }
 
-.btn-speech {
-  display: none;
-}
-
 .input-form {
   margin: 0 auto;
 }
@@ -2215,10 +2219,6 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   font-size: 2rem;
   display: none;
-}
-
-.drag {
-  cursor: url("../../images/cursor_grab_60.cur"), default;
 }
 
 .map {

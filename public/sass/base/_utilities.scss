@@ -75,3 +75,7 @@
     height: 100vh;
     transition: 0.5s all;
 }
+
+.drag {
+    cursor: url("../images/cursor_grab_60.cur"), default;
+}
