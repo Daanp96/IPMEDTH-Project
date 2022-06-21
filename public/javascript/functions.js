@@ -114,7 +114,6 @@ const dragDropMap = (obj, btn, zookpr, speech) => {
         layedPieces++;
 
         if(layedPieces == 16){
-          btn.style.display = "block";
           zookpr.src = "../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
@@ -125,6 +124,9 @@ const dragDropMap = (obj, btn, zookpr, speech) => {
           speech.style.zIndex = "1";
           speech.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
           kaartHeel.play();
+          kaartHeel.onended = () => {
+            btn.style.display = "block";
+          }
         }
       }
     };

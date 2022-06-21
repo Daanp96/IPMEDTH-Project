@@ -373,6 +373,10 @@ h1 {
   transition: 0.5s all;
 }
 
+.drag {
+  cursor: url("../images/cursor_grab_60.cur"), default;
+}
+
 .button {
   cursor: url("../images/cursor_point_60.cur"), default;
   background-color: transparent;
@@ -684,6 +688,10 @@ h1 {
 .btn-ok-giraffe:active::before {
   -webkit-transform: translate3d(0, 0, -1em);
           transform: translate3d(0, 0, -1em);
+}
+
+.btn-speech {
+  display: none;
 }
 
 .puzzel-options__btn-hint {
@@ -2092,6 +2100,22 @@ input[type=number]::-webkit-outer-spin-button {
 
 .btn-speech {
   display: none;
+}
+
+.input-form {
+  margin: 0 auto;
+}
+
+.input-form--text {
+  width: 39rem;
+  height: 10rem;
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  font-size: 6rem;
+}
+
+.input-form--button {
+  margin: 2rem 0;
 }
 
 .background-mappuzzel {
