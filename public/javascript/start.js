@@ -15,7 +15,7 @@ const startExplaineBtn = document.getElementById("js--speech-bubble-img");
 const startP = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const startOverlay = document.getElementById("js--start-overlay");
-const beginBtn = document.getElementById("js--begin-btn");
+const beginBtn = document.getElementById("js--btn-overlay");
 
 let startOK = 0;
 let tekst = '';
@@ -82,6 +82,12 @@ startOKBtn.onclick = () => {
     startExplaineBtn.src = image;
     startOK++;
 };
+
+beginBtn.onclick = () => {
+    startOverlay.style.opacity = "0";
+    beginBtn.style.display = "none";
+    intro.play();
+}
 
 startBtn.onclick = () => {
     window.location.href="./pages/map.html";  
