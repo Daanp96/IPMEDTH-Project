@@ -93,18 +93,8 @@ if(document.URL.includes("dierentuinpad.html") ){
                 ratedStar1.style.visibility = "visible";
             }
             break;
+
         case 2:
-            monkey.classList.remove("dierentuinpad__element");
-            monkey.classList.remove("button");
-            fish.classList.remove("dierentuinpad__element");
-            fish.classList.remove("button");
-            ijskar.style.display = "block";
-            ijskar.classList.add("dierentuinpad__element");
-            ijskar.classList.add("button");
-            vissen.remove();
-            dierentuinpadSpeechBubbleP.innerHTML = "Het lijkt me nu wel tijd voor een pauze, zullen we anders een ijsje gaan halen?";
-            break;
-        case 3:
             monkey.classList.remove("dierentuinpad__element");
             monkey.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
@@ -159,6 +149,18 @@ if(document.URL.includes("dierentuinpad.html") ){
             }
             break;
 
+        case 3:
+            monkey.classList.remove("dierentuinpad__element");
+            monkey.classList.remove("button");
+            fish.classList.remove("dierentuinpad__element");
+            fish.classList.remove("button");
+            // ijskar.style.display = "block";
+            ijskar.classList.add("dierentuinpad__element");
+            ijskar.classList.add("button");
+            vissen.remove();
+            dierentuinpadSpeechBubbleP.innerHTML = "Het lijkt me nu wel tijd voor een pauze, zullen we anders een ijsje gaan halen?";
+            break;
+
         case 4:
             monkey.classList.remove("dierentuinpad__element");
             monkey.classList.remove("button");
@@ -166,6 +168,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.remove("dierentuinpad__element");
             pinguin.classList.remove("button");
+            ijskar.classList.remove("dierentuinpad__element");
+            ijskar.classList.remove("button");
             giraffe.classList.add("dierentuinpad__element");
             giraffe.classList.add("button");
             // eindeButton.classList.remove("hide-important");
@@ -243,7 +247,7 @@ if(document.URL.includes("dierentuinpad.html") ){
             pinguin.classList.remove("button");
             giraffe.classList.remove("dierentuinpad__element");
             giraffe.classList.remove("button");
-            // eindeButton.classList.remove("hide-important");
+            eindeButton.classList.remove("hide-important");
 
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
             dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
@@ -331,13 +335,13 @@ if(document.URL.includes("dierentuinpad.html") ){
         e.preventDefault();
     }
     ijskar.onclick = (e) => {
-        x = 3;
+        x = 4;
         localStorage.setItem("progress", x);
         startIjskar();
         e.preventDefault();
     }
     pinguin.onclick = (e) => {
-        x = 4;
+        x = 3;
         // progress = x;
         localStorage.setItem("progress", x);
         startPinguinPuzzel();
@@ -350,10 +354,10 @@ if(document.URL.includes("dierentuinpad.html") ){
         startGiraffePuzzel();
         e.preventDefault();
     }
-    // eindeButton.onclick = (e) => {
-    //     naarEinde();
-    //     e.preventDefault();
-    // }
+    eindeButton.onclick = (e) => {
+        naarEinde();
+        e.preventDefault();
+    }
 }
 
 function startRekensomPuzzel(){

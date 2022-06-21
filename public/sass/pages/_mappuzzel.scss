@@ -157,17 +157,17 @@
     &__zookeeper {
         // grid-column-start: 10;
         grid-column-start: 6;
-        grid-row-start: 2;
+        grid-row-start: 4;
         text-align: center;
         font-size: 2rem;
         width: 20rem;
-        transition: 0.5s all;
         z-index: 2;
     }
     &--speech-bubble {
         grid-column-start: 3;
-        transition: 0.5s all;
+        grid-row-start: 3;
         z-index: 2;
+        align-self: end;
     }
     &--speech-bubble::before {
         left: 32rem;

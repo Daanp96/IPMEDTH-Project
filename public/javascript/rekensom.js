@@ -1,57 +1,4 @@
 
-//voor als we 1 html pagina willen en de thema's random willen laten komen
-//of voor als we verschillende achtergronden per thema willen
-//of alleen random dieren 
-//
-
-// const backgrounds = new Array();
-
-// backgrounds[0] = "../images/sea-background.png";
-// backgrounds[1] = "../images/start-background.png";
-
-// const randomBackground = Math.floor(Math.random() * backgrounds.length);
-// const rekensomBackground = document.getElementById('js--rekensom-background');
-
-// rekensomBackground.style.background = "url("+backgrounds[randomBackground]+")";
-// rekensomBackground.style.backgroundSize = "cover";
-// rekensomBackground.style.backgroundRepeat = "no-repeat";
-
-//random images neerzetten
-//probleem: als bijv. index 2 wordt toegewezen, wordt alleen de indexen daarna nog toegewezen, de rest is undefined
-
-// const seaAnimal1 = document.getElementById("js--sea-animal-1");
-// const seaAnimal2 = document.getElementById("js--sea-animal-2");
-// const seaAnimal3 = document.getElementById("js--sea-animal-3");
-// const seaAnimal4 = document.getElementById("js--sea-animal-4");
-
-
-// const animals = new Array('../images/fishes-3.png', '../images/arrow-begin.png','../images/hint-btn.png', '../images/music-off-btn.png');
-
-// const randomAnimals = Math.floor(Math.random() * animals.length);
-// console.log(randomAnimals);
-
-// // const seaAnimal = document.getElementsByClassName("rekensom--image-animal");
-// const x = animals.splice(randomAnimals, 1)[0];
-// const xx = animals.splice(randomAnimals, 1)[0];
-// const xxx = animals.splice(randomAnimals, 1)[0];
-// const xxxx = animals.splice(randomAnimals, 1)[0];
-
-// console.log(x);
-// console.log(xx);
-// console.log(xxx);
-// console.log(xxxx);
-
-// seaAnimal1.src = animals[x];
-// seaAnimal2.src = animals[xx];
-// seaAnimal3.src = animals[xxx];
-// seaAnimal4.src = animals[xxxx];
-
-// console.log(seaAnimal1);
-// console.log(seaAnimal2);
-// console.log(seaAnimal3);
-// console.log(seaAnimal4);
-
-//-------------------------------------------------------------------------------------------------
 const nextBtnRight = document.getElementById("js--next-btn-right");
 const nextBtnLeft = document.getElementById("js--next-btn-left");
 const firstpage = document.getElementById("js--first-page");
@@ -98,7 +45,7 @@ startOKBtn.onclick = () => {
             }
             break;
         case 1: 
-            tekst = 'Kan jij mij vertellen hoeveel <b>rode vissen</b> er rond zwemmen? Het antwoord mag je invullen op het bord.';
+            tekst = 'Kan jij mij vertellen hoeveel <b style="color:red;">rode vissen</b> er rond zwemmen? Het antwoord mag je invullen op het bord.';
             image = '';
             rodeVissen.play();
             rodeVissen.onended = () => {
@@ -137,40 +84,16 @@ nextBtnLeft.onclick = () => {
     firstpage.classList.remove("hide");
 };
 
-// startOKBtn.onclick = () => {
-//     speechBubble.style.visibility = "hidden";
-// }
-
-// hintBtn.onclick = () => {
-//     console.log("klik");
-//     speechBubble.style.visibility = "visible";
-//     explaineBtn.classList.remove("hide");
-//     explaineBtn.src = '../images/arrow-right.png';
-//     speechBubble_p.innerHTML = "Loop door het hele aquarium";
-//     speechBubble_p.style.visibility = "visible";
-//     startOKBtn.style.visibility = "visible";
-
-//     startOKBtn.onclick = () => {
-//         speechBubble.style.visibility = "hidden";
-//         explaineBtn.classList.add("hide");
-//         speechBubble_p.style.visibility = "hidden";
-//         startOKBtn.style.visibility = "hidden";
-//     }
-// };
-
 hintBtn.onclick = () => {
     switch (countHint) {
         case 0: 
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
-            // startOKBtn.style.visibility = "visible";
-            tekst = 'Loop door het hele aquarium.';
-            hint1.play();
-            hint1.onended = () => {
-                startOKBtn.style.display = "block";
-            }
-            image = '../images/arrow-right.png';
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Klik op het vraagteken.';
+            hint2.play();
+            image = '../images/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
@@ -183,13 +106,10 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
-            // startOKBtn.style.visibility = "visible";
-            tekst = 'Klik op het vraagteken.';
-            hint2.play();
-            hint2.onended = () => {
-                startOKBtn.style.display = "block";
-            }
-            image = '../images/question-mark.png';
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Loop door het hele aquarium.';
+            hint1.play();
+            image = '../images/arrow-right.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
@@ -217,8 +137,8 @@ hintBtn.onclick = () => {
         case 3: 
             speechBubble.style.visibility = "visible";
             speechBubble_p.style.visibility = "visible";
-            // startOKBtn.style.visibility = "visible";
-            tekst = 'Het antwoord is 6.';
+            startOKBtn.style.visibility = "visible";
+            tekst = 'Het antwoord is 11.';
             hint4.play();
             hint4.onended = () => {
                 startOKBtn.style.display = "block";
