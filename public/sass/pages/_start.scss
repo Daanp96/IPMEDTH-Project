@@ -87,6 +87,11 @@
 
 .hide_overlay {
     opacity: 1;
+    z-index: 1;
+}
+
+.btn-speech {
+    display: none;
 }
 
 // @media (min-height: $height-750){

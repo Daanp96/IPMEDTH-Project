@@ -2087,6 +2087,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .hide_overlay {
   opacity: 1;
+  z-index: 1;
+}
+
+.btn-speech {
+  display: none;
 }
 
 .background-mappuzzel {
