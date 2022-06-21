@@ -161,3 +161,10 @@
     height: 8rem;
     font-size: 8rem;
 }
+.btn-ok-giraffe {
+    @include button-style-2;
+    margin-top: 1rem;
+    width: 15rem;
+    height: 5rem;
+    font-size: 3rem;
+}

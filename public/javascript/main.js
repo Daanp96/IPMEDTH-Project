@@ -26,10 +26,12 @@ const savanneForm = document.getElementById("js--savanne-form");
 const formSavanneBtn = document.getElementById("js--form-submitSavanne");
 
 const arcticBtn = document.getElementById("js--arctic-btn");
+const endSpeechBubbleDierentuin = document.getElementById("js--endBubble-dierentuin");
+const endSpeechBubbleNatuur = document.getElementById("js--endBubble-natuur");
 
 const reken_correct = 6;
 const naam_correct = "aap";
-
+const typen_correct = "olifant";
 // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
 let star1;
@@ -41,9 +43,14 @@ let star6;
 let star7;
 let star8;
 let star9;
+let star10;
+let star11;
+let star12;
 let aantalSecondesRekensom;
 let aantalSecondesSavanne;
 let aantalSecondesArctic;
+let aantalSecondesTypen;
+let aantalSecondesGiraffe;
 let startTime, endTime;
 
 // let infoOk = 0;
@@ -189,61 +196,61 @@ if(document.URL.includes("rekensom.html") ){
     });
 }
 
-if(document.URL.includes("savanne.html")){
-    const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
-    formSavanneBtn.addEventListener("click", function(e){
+// if(document.URL.includes("savanne.html")){
+//     const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
+//     formSavanneBtn.addEventListener("click", function(e){
 
-        let form_answer = document.forms["answerForm"]["textInput"].value;
+//         let form_answer = document.forms["answerForm"]["textInput"].value;
 
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesSavanne = seconds;
+//         endTime = new Date();
+//         var timeDiff = endTime - startTime; //ms
+//         timeDiff /= 1000;
+//         let seconds = Math.round(timeDiff);
+//         aantalSecondesSavanne = seconds;
     
-        if(form_answer == naam_correct){
-            terugKaart.play();
-            if(seconds <= 60){
-                try {
-                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
-                    localStorage.setItem('star4', 0);
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-            if(seconds > 60 && seconds <= 120){
-                try {
-                    localStorage.setItem('star5', 0);
-                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-            if(seconds > 120){
-                try {
-                    localStorage.setItem('star6', 0);
-                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-            document.getElementById("naamDier").style.color = "lime";
-            setTimeout(() => {
-                endSavannePuzzel();
-            }, 1000);
+//         if(form_answer == naam_correct){
+//             terugKaart.play();
+//             if(seconds <= 60){
+//                 try {
+//                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
+//                     localStorage.setItem('star4', 0);
+//                 } catch (error) {
+//                     console.log(error);
+//                 }
+//             }
+//             if(seconds > 60 && seconds <= 120){
+//                 try {
+//                     localStorage.setItem('star5', 0);
+//                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
+//                 } catch (error) {
+//                     console.log(error);
+//                 }
+//             }
+//             if(seconds > 120){
+//                 try {
+//                     localStorage.setItem('star6', 0);
+//                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
+//                 } catch (error) {
+//                     console.log(error);
+//                 }
+//             }
+//             document.getElementById("naamDier").style.color = "lime";
+//             setTimeout(() => {
+//                 endSavannePuzzel();
+//             }, 1000);
             
-        }else{
-            savanneForm.classList.add("shake");
-            document.getElementById("naamDier").style.color = "red";
-            setTimeout(() => {
-                savanneForm.classList.remove("shake");
-                document.getElementById("naamDier").style.color = "black";
-                document.getElementById("naamDier").value = '';
-            }, 2000);
-        }
-        e.preventDefault();
-    });
-}
+//         }else{
+//             savanneForm.classList.add("shake");
+//             document.getElementById("naamDier").style.color = "red";
+//             setTimeout(() => {
+//                 savanneForm.classList.remove("shake");
+//                 document.getElementById("naamDier").style.color = "black";
+//                 document.getElementById("naamDier").value = '';
+//             }, 2000);
+//         }
+//         e.preventDefault();
+//     });
+// }
 
 if(document.URL.includes("arctic.html")){
     arcticBtn.addEventListener("click", function(e){
@@ -278,9 +285,111 @@ if(document.URL.includes("arctic.html")){
                 console.log(error);
             }
         }
+        
         setTimeout(() => {
             endArcticPuzzel();
         }, 700);
+            
+        e.preventDefault();
+    });
+}
+
+const spanTypen = document.getElementById("js--typen-form");
+const spanTypenBtn = document.getElementById("js--form-submitTypen");
+
+if(document.URL.includes("typen.html")){
+    // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
+    spanTypenBtn.addEventListener("click", function(e){
+        console.log(spanTypen.innerText);
+
+        endTime = new Date();
+        var timeDiff = endTime - startTime; //ms
+        timeDiff /= 1000;
+        let seconds = Math.round(timeDiff);
+        aantalSecondesTypen = seconds;
+
+        if(spanTypen.innerText == typen_correct){
+            if(seconds <= 60){
+                try {
+                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                    localStorage.setItem('star4', 0);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            if(seconds > 60 && seconds <= 120){
+                try {
+                    localStorage.setItem('star5', 0);
+                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            if(seconds > 120){
+                try {
+                    localStorage.setItem('star6', 0);
+                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            document.getElementById("js--typen-form").style.color = "lime";
+            setTimeout(() => {
+                endTypenPuzzel();
+            }, 1000);
+
+        }
+        else{
+            document.getElementById("js--typen-form").classList.add("shake");
+            document.getElementById("js--typen-form").style.color = "red";
+            setTimeout(() => {
+                document.getElementById("js--typen-form").classList.remove("shake");
+                document.getElementById("js--typen-form").style.color = "white";
+                document.getElementById("js--typen-form").value = '';
+            }, 2000);
+        }
+            
+        e.preventDefault();
+    });
+}
+
+if(document.URL.includes("giraffe.html")){
+    endSpeechBubbleDierentuin.addEventListener("click", function(e){
+
+        endTime = new Date();
+        var timeDiff = endTime - startTime; //ms
+        timeDiff /= 1000;
+        let seconds = Math.round(timeDiff);
+        aantalSecondesGiraffe = seconds;
+    
+        try {
+            localStorage.setItem("aantalSecondesGiraffe", aantalSecondesGiraffe);
+            localStorage.setItem('star10', 0);
+        } catch (error) {
+            console.log(error);
+        }
+        
+        endGiraffe();
+            
+        e.preventDefault();
+    });
+
+    endSpeechBubbleNatuur.addEventListener("click", function(e){
+
+        endTime = new Date();
+        var timeDiff = endTime - startTime; //ms
+        timeDiff /= 1000;
+        let seconds = Math.round(timeDiff);
+        aantalSecondesGiraffe = seconds;
+    
+        try {
+            localStorage.setItem("aantalSecondesGiraffe", aantalSecondesGiraffe);
+            localStorage.setItem('star10', 0);
+        } catch (error) {
+            console.log(error);
+        }
+        
+        endGiraffe();
             
         e.preventDefault();
     });
@@ -290,10 +399,15 @@ function endRekensomPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
 
-function endSavannePuzzel(){
+function endTypenPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
 function endArcticPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
-
+function endTypen(){
+    window.location.href="dierentuinpad.html";  
+}
+function endGiraffe(){
+    window.location.href="dierentuinpad.html";  
+}

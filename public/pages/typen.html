@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../sass/main.css">
     <link rel="icon" type="image/x-icon" href="../images/monkey-head.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../javascript/main.js" type="module" defer></script>
-    <script src="../javascript/savanne.js" type="module" defer></script>
+    <script src="../javascript/typen.js" type="module" defer></script>
     <title>Dierentuin</title>
 </head>
 <body>
     <!-- <iframe src="../audio/6-aap/1-savanneverblijf.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
-    <main class="savanne--background">
+    <main class="savanne--background overflow">
         <section class="puzzel-options grid-16-1 walk-path--up">
             <article class="rock-wood-wall-position--up-1 ">
                 <figure>
@@ -133,19 +134,25 @@
                     <figure class="popup__container-typen--lion-head">
                         <img class="popup__container-typen--image" src="../images/Photoshop-transparant/lion-head.png" alt="leeuwenhoofd">
                     </figure>
+                    <p class="popup__container-typen-text--leeuw">Leeuw</p>
                     <figure class="popup__container-typen--elephant-head">
                         <img class="popup__container-typen--image" src="../images/Photoshop-transparant/elephant-head.png" alt="olifantenhoofd">
                     </figure>
+                    <div class="popup__container-typen--wrapper" tabindex="1">
+                        <span class="popup__container-typen--textbox" id="js--typen-form" contentEditable="true">Nijlpaard</span><span class="popup__container-typen--textbox--gray"></span>
+                    </div>
+
                     <figure class="popup__container-typen--zebra-head">
                         <img class="popup__container-typen--image" src="../images/Photoshop-transparant/zebra-head.png" alt="zebrahoofd">
                     </figure>
+                    <p class="popup__container-typen-text--zebra">Zebra</p>
 
-                    <form class="popup__container-typen--form" id="js--savanne-form" name="answerForm" autocomplete="off">
+                    <!-- <form class="popup__container-typen--form" id="js--savanne-form" name="answerForm" autocomplete="off">
                         <label for="naamDier"></label>
-                        <!-- <input class="popup__container--form-input button" name="textInput" id="naamDier" type="text" placeholder="?" required> -->
-                    </form>
+                        <input class="popup__container--form-input button" name="textInput" id="naamDier" type="text" placeholder="?" required>
+                    </form> -->
                     <div class="popup__container-typen--button">
-                        <button class="btn-ok-popup button" id="js--form-submitSavanne" form="answerForm" type="submit" value="">&#10004;</button>
+                        <button class="btn-ok-popup button" id="js--form-submitTypen" form="answerForm" type="submit" value="">&#10004;</button>
                     </div>
                     <a href="#" class="popup__close--typen button">&times;</a>
                 </div>
