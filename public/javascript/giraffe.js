@@ -81,20 +81,20 @@ speakOff2.onclick = () =>{
 };
 
 
-switch (countText) {
-    case 0: 
-        mapOverlay.classList.remove("hide");
-        headZookeeper.classList.remove("hide");
-        hintBubble.classList.remove("hide");
-        hintSpeechBubble_p.innerHTML = 'Kan jij het verblijf leuk maken voor de giraffen? Bovenaan zie je een lijstje wat de dieren nodig hebben.';
-        hintBubbleBtn.onclick = () => {
-            mapOverlay.classList.add("hide");
-            headZookeeper.classList.add("hide");
-            hintBubble.classList.add("hide");
-            countText++;
-        }
-        break;
+hintBubbleBtn.onclick = () => {
+    switch (countText) {            
+        case 0: 
+            hintSpeechBubble_p.innerHTML = 'Bovenaan zie je een lijstje wat de dieren nodig hebben.';
+            hintBubbleBtn.onclick = () => {
+                mapOverlay.classList.add("hide");
+                headZookeeper.classList.add("hide");
+                hintBubble.classList.add("hide");
+                countText++;
+            }
+            break;
+    }
 }
+
 
 
 hintBtn.onclick = () => {
@@ -144,6 +144,9 @@ for (let i = 0; i < array.length; i++) {
 startOKBtn.onclick = () => {
     articleIntro.style.display = "none";
     articleEnclosure.style.display = "grid";
+    mapOverlay.classList.remove("hide");
+    headZookeeper.classList.remove("hide");
+    hintBubble.classList.remove("hide");
 };
 
 // introBtn.onclick = () => {

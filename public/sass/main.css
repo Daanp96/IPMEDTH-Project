@@ -1909,6 +1909,118 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 7 /span 1;
 }
 
+.rekensom--animal-14 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+}
+
+.rekensom--animal-15 {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 1;
+  grid-column: 13 / span 1;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+}
+
+.rekensom--animal-16 {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 1;
+  grid-column: 9 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /span 1;
+}
+
+.rekensom--animal-17 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+}
+
+.rekensom--animal-18 {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 1;
+  grid-column: 8 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /span 1;
+}
+
+.rekensom--animal-19 {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 1;
+  grid-column: 8 / span 1;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 /span 1;
+}
+
+.rekensom--animal-20 {
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 2;
+  grid-column: 11 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 /span 2;
+}
+
+.rekensom--animal-21 {
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 1;
+  grid-column: 14 / span 1;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5 /span 1;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.rekensom--animal-22 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / span 1;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+}
+
+.rekensom--animal-23 {
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 1;
+  grid-column: 12 / span 1;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.rekensom--animal-24 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / span 1;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+}
+
+.rekensom--animal-25 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / span 1;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 /span 1;
+}
+
 .rekensom--image-animal {
   width: 100%;
   height: auto;
