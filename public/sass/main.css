@@ -1205,7 +1205,7 @@ h1 {
 }
 
 .popup__container-typen--wrapper {
-  border: 1px solid #969696;
+  border: 2px solid #969696;
   outline: 0;
   height: 6rem;
   border-radius: 3px;
@@ -1881,6 +1881,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row-span: 1;
   grid-row: 9 / span 1;
   z-index: 2;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 .rekensom--image {
@@ -2251,9 +2253,9 @@ input[type=number]::-webkit-outer-spin-button {
 .mappuzzel--slide-14 {
   height: auto;
   width: 240px;
-  -ms-grid-column: 15;
+  -ms-grid-column: 14;
   -ms-grid-column-span: 2;
-  grid-column: 15 / span 2;
+  grid-column: 14 / span 2;
   -ms-grid-row: 7;
   -ms-grid-row-span: 1;
   grid-row: 7 /span 1;
@@ -2688,6 +2690,8 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row-span: 1;
   grid-row: 5 / span 1;
   z-index: 2;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 .savanne--image {
@@ -2767,9 +2771,9 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-column: 7;
   -ms-grid-column-span: 1;
   grid-column: 7 / span 1;
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-row-span: 1;
-  grid-row: 3 /span 1;
+  grid-row: 4 /span 1;
 }
 
 .arctic-animal-3 {
@@ -4109,15 +4113,6 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 1/ span 1;
 }
 
-.typen-tree-3 {
-  -ms-grid-column: 8;
-  -ms-grid-column-span: 16;
-  grid-column: 8/ span 16;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/ span 1;
-}
-
 .typen-tree--image-1 {
   width: 40vw;
   height: auto;
@@ -4132,11 +4127,46 @@ input[type=number]::-webkit-outer-spin-button {
           transform: scaleX(-1) rotate(-15deg);
 }
 
-.typen-tree--image-3 {
-  width: 25vw;
+.typen-rock-1 {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 16;
+  grid-column: 8/ span 16;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/ span 1;
+}
+
+.typen-rock--image-1 {
+  width: 15vw;
   height: auto;
-  -webkit-transform: rotate(-10deg);
-          transform: rotate(-10deg);
+}
+
+.typen-rock-2 {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 16;
+  grid-column: 8/ span 16;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/ span 1;
+}
+
+.typen-rock--image-2 {
+  width: 15vw;
+  height: auto;
+}
+
+.typen-rock-3 {
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 16;
+  grid-column: 12/ span 16;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/ span 1;
+}
+
+.typen-rock--image-3 {
+  width: 15vw;
+  height: auto;
 }
 
 .typen-animal-1 {
@@ -4149,44 +4179,43 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .typen-animal-2 {
-  -ms-grid-column: 6;
+  -ms-grid-column: 5;
   -ms-grid-column-span: 2;
-  grid-column: 6 / span 2;
-  -ms-grid-row: 6;
+  grid-column: 5 / span 2;
+  -ms-grid-row: 4;
   -ms-grid-row-span: 2;
-  grid-row: 6 /span 2;
+  grid-row: 4 /span 2;
 }
 
 .typen-animal-3 {
-  -ms-grid-column: 10;
+  -ms-grid-column: 11;
   -ms-grid-column-span: 2;
-  grid-column: 10 / span 2;
-  -ms-grid-row: 3;
+  grid-column: 11 / span 2;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 2;
-  grid-row: 3 /span 2;
+  grid-row: 2 /span 2;
 }
 
 .typen-animal-4 {
-  -ms-grid-column: 12;
+  -ms-grid-column: 10;
   -ms-grid-column-span: 2;
-  grid-column: 12 / span 2;
+  grid-column: 10 / span 2;
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   grid-row: 2 /span 2;
 }
 
 .typen-animal-5 {
-  -ms-grid-column: 14;
+  -ms-grid-column: 6;
   -ms-grid-column-span: 2;
-  grid-column: 14 / span 2;
-  -ms-grid-row: 5;
+  grid-column: 6 / span 2;
+  -ms-grid-row: 1;
   -ms-grid-row-span: 2;
-  grid-row: 5 /span 2;
-  z-index: 2;
+  grid-row: 1 /span 2;
 }
 
 .typen-animal--image-1 {
-  width: 10vw;
+  width: 20vw;
   height: auto;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
@@ -4200,17 +4229,21 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .typen-animal--image-3 {
-  width: 7.5vw;
+  width: 8vw;
   height: auto;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 .typen-animal--image-4 {
-  width: 5vw;
+  width: 10vw;
   height: auto;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 .typen-animal--image-5 {
-  width: 5vw;
+  width: 7vw;
   height: auto;
 }
 
