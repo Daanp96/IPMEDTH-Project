@@ -48,7 +48,7 @@ const dragDrop = (object) => {
 //       object.ondragstart = () => {
 //         return false;
 //       };
-// }
+}
 
 const dragDropMap = (obj, btn, zookpr, speech) => {
   let currentDroppable = null;
@@ -481,4 +481,4 @@ const dragDropGiraffe = (object, endBtn) => {
   };
 }
 
-export { dragDrop, dragDropMap, dragDropArctic, modalView, dragDropGiraffe};
+export { dragDrop, dragDropMap, dragDropArctic, dragDropGiraffe};
