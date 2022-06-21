@@ -292,6 +292,10 @@ h1 {
   display: none !important;
 }
 
+.margin-top {
+  margin-top: 1rem;
+}
+
 .grey-bar-position {
   -ms-grid-column: 1;
   -ms-grid-column-span: 16;
@@ -2444,22 +2448,23 @@ input[type=number]::-webkit-outer-spin-button {
 .mappuzzel__zookeeper {
   -ms-grid-column: 6;
       grid-column-start: 6;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
   text-align: center;
   font-size: 2rem;
   width: 20rem;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
   z-index: 2;
 }
 
 .mappuzzel--speech-bubble {
   -ms-grid-column: 3;
       grid-column-start: 3;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
   z-index: 2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 
 .mappuzzel--speech-bubble::before {

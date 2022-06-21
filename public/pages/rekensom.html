@@ -240,7 +240,7 @@
                     </figure>
                     <form class="popup__container--form" id="js--rekensom-form" name="answerForm">
                         <label for="aantalVissen"></label>
-                        <input class="popup__container--form-input button" name="numberInput" id="aantalVissen" type="number" min="0" placeholder="?" required>
+                        <input class="popup__container--form-input button" name="numberInput" id="aantalVissen" type="number" min="0" placeholder="?" required onkeydown="return (event.keyCode!=13);">
                     </form>
                     <div class="popup__container--button">
                         <button class="btn-ok-popup button" id="js--form-submit" form="answerForm" type="submit" value="">&#10004;</button>
