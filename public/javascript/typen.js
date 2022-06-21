@@ -9,14 +9,28 @@ const hintBtn = document.getElementById("js--hint");
 
 const mapOverlay = document.getElementById("js--map-overlay");
 
+let startOK = 0;
 let countHint = 0;
 let tekst = '';
 let image = '';
 
-const hint1 = new Audio("../audio/6-aap/hint-1.mp3");
-const hint2 = new Audio("../audio/6-aap/hint-2.mp3");
-const hint3 = new Audio("../audio/6-aap/hint-3.mp3");
-const hint4 = new Audio("../audio/6-aap/hint-4.mp3");
+// const hint1 = new Audio("../audio/6-aap/hint-1.mp3");
+// const hint2 = new Audio("../audio/6-aap/hint-2.mp3");
+// const hint3 = new Audio("../audio/6-aap/hint-3.mp3");
+// const hint4 = new Audio("../audio/6-aap/hint-4.mp3");
+
+const savanneVerblijf = new Audio("../audio/Tjalle/6-savanne/1-savanneverblijf.m4a");
+const verbeteren = new Audio("../audio/Tjalle/6-savanne/2-verbeteren.m4a");
+
+const hint1 = new Audio("../audio/Tjalle/6-savanne/hint-1.m4a");
+const hint2 = new Audio("../audio/Tjalle/6-savanne/hint-2.m4a");
+const hint3 = new Audio("../audio/Tjalle/6-savanne/hint-3.m4a");
+const hint4 = new Audio("../audio/Tjalle/6-savanne/hint-4.m4a");
+
+savanneVerblijf.play();
+savanneVerblijf.onended = () => {
+    startOKBtn.style.display = "block";
+}
 
 $(".popup__container-typen--textbox").on("focus blur", function(){
     $(".popup__container-typen--wrapper").toggleClass("focused");
@@ -59,9 +73,29 @@ function setEndOfContenteditable(contentEditableElement) {
 
 
 startOKBtn.onclick = () => {
-    speechBubble.style.visibility = "hidden";
-    speechBubble.style.zIndex = "";
-    mapOverlay.style.zIndex = "-1";
+    switch(startOK) {
+        case 0:
+            tekst = 'Maar blijkbaar hebben we de verkeerde naam opgehangen! Kan jij het bord voor ons verbeteren?';
+            image = '';
+            verbeteren.play();
+            verbeteren.onended = () => {
+                startOKBtn.style.display = "block";
+            }
+            break;
+        case 1: 
+            speechBubble.style.visibility = "hidden";
+            speechBubble.style.zIndex = "";
+            mapOverlay.style.zIndex = "-1";
+            break;
+    }
+
+    startOKBtn.style.display = "none";
+    speechBubble_p.innerHTML = tekst;
+    explaineBtn.src = image;
+    startOK++;
+    // speechBubble.style.visibility = "hidden";
+    // speechBubble.style.zIndex = "";
+    // mapOverlay.style.zIndex = "-1";
 };
 
 hintBtn.onclick = () => {

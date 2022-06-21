@@ -11,7 +11,9 @@ const speechButton = document.getElementById("js--speech-bubble-btn");
 const zookeeper = document.getElementById("js--map_zookeeper");
 const mapOverlay = document.getElementById("js--map-overlay");
 
-const mapUitleg = new Audio("../audio/3-Mappuzzel/1-kaartInElkaar.mp3");
+// const mapUitleg = new Audio("../audio/3-Mappuzzel/1-kaartInElkaar.mp3");
+const mapUitleg = new Audio("../audio/Tjalle/3-mappuzzel/1-kaartInElkaar.m4a");
+const hint = new Audio("../audio/Tjalle/3-mappuzzel/hint-1.m4a");
 
 mapUitleg.play();
 mapUitleg.onended = () => {
@@ -21,8 +23,8 @@ const hintBtn = document.getElementById("js--hint");
 
 let countHint = 0;
 
-for (let i = 0; i < slides.length; i++) {
-    dragDropMap(slides[i], button, zookeeper, speech);
+for (let slide of slides) {
+    dragDropMap(slide, button, zookeeper, speech);
 }
 
 button.onclick = () => {
@@ -48,6 +50,7 @@ hintBtn.onclick = () => {
             mapOverlay.style.zIndex = "1";
             speechImage.classList.remove("hide");
             speechP.innerHTML = "Beweeg de muis naar een puzzelstukje en doe dan dit:";
+            hint.play();
 
             speechButton.onclick = () => {
                 zookeeper.style.visibility = "hidden";

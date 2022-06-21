@@ -27,12 +27,17 @@ const eindeButton = document.getElementById("js--pad_btn");
 
 const reken_correct = 6;
 
-const apenVerblijf = new Audio("../audio/4-dierentuinpad/2-apenverblijf.mp3");
-const pinguinVerblijf = new Audio("../audio/4-dierentuinpad/3-pinguïn.mp3");
-const uitgang = new Audio("../audio/4-dierentuinpad/4-uitgang.mp3");
-const vissen = document.getElementById("iframeAudio");
+// const apenVerblijf = new Audio("../audio/4-dierentuinpad/2-apenverblijf.mp3");
+// const pinguinVerblijf = new Audio("../audio/4-dierentuinpad/3-pinguïn.mp3");
+// const uitgang = new Audio("../audio/4-dierentuinpad/4-uitgang.mp3");
+// const vissen = document.getElementById("iframeAudio");
 
-
+const vissen = new Audio("../audio/Tjalle/4-dierentuinpad/1-vissen.m4a");
+const savanne = new Audio("../audio/Tjalle/4-dierentuinpad/2-savanne.m4a");
+const pinguins = new Audio("../audio/Tjalle/4-dierentuinpad/3-pinguin.m4a");
+const ijsje = new Audio("../audio/Tjalle/4-dierentuinpad/4-ijsje.m4a");
+const verblijf = new Audio("../audio/Tjalle/4-dierentuinpad/5-verblijf.m4a");
+const uitgang = new Audio("../audio/Tjalle/4-dierentuinpad/6-uitgang.m4a");
 
 let star1;
 let star2;
@@ -54,12 +59,21 @@ if(document.URL.includes("dierentuinpad.html") ){
     eindeButton.classList.add("hide-important");
     x = localStorage.getItem("progress");
     x = parseInt(x);
+
+    if(localStorage.getItem("progress")) {
+        x = localStorage.getItem("progress");
+        x = parseInt(x);
+    } else {
+        x = 0;
+    }
     console.log(x);
 
     switch (x) {
-        // case 0:
-        //     fish.classList.add("dierentuinpad__element");
-        //     fish.classList.add("button");
+        case 0:
+            vissen.play();
+            fish.classList.add("dierentuinpad__element");
+            fish.classList.add("button");
+            break;
         case 1:
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
@@ -70,9 +84,9 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble2");
             dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper2");
-            vissen.remove();
-            dierentuinpadSpeechBubbleP.innerHTML = "Zo, zullen we nu maar eens gaan kijken bij het apenverblijf?";
-            apenVerblijf.play();
+            // // vissen.remove();
+            dierentuinpadSpeechBubbleP.innerHTML = "Goed gedaan! Zullen we gaan kijken bij de savanne dieren?";
+            savanne.play();
 
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
@@ -106,9 +120,9 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
             dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
-            vissen.remove();
-            dierentuinpadSpeechBubbleP.innerHTML = "Nu is het tijd om bij pinguïns te gaan kijken.";
-            pinguinVerblijf.play();
+            // // vissen.remove();
+            dierentuinpadSpeechBubbleP.innerHTML = "Goedzo! Het is nu tijd om de pinguïns eten te geven.";
+            pinguins.play();
 
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
@@ -157,8 +171,9 @@ if(document.URL.includes("dierentuinpad.html") ){
             // ijskar.style.display = "block";
             ijskar.classList.add("dierentuinpad__element");
             ijskar.classList.add("button");
-            vissen.remove();
-            dierentuinpadSpeechBubbleP.innerHTML = "Het lijkt me nu wel tijd voor een pauze, zullen we anders een ijsje gaan halen?";
+            // // vissen.remove();
+            dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
+            ijsje.play();
             break;
 
         case 4:
@@ -178,9 +193,9 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper3");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble4");
             dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper4");
-            vissen.remove();
-            dierentuinpadSpeechBubbleP.innerHTML = "Zullen we nu naar het verblijf van de giraffe gaan?";
-            uitgang.play();
+            // // vissen.remove();
+            dierentuinpadSpeechBubbleP.innerHTML = "Dat was lekker! Kom we gaan nu naar ons nieuwste verblijf.";
+            verblijf.play();
 
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
@@ -251,8 +266,8 @@ if(document.URL.includes("dierentuinpad.html") ){
 
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
             dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
-            vissen.remove();
-            dierentuinpadSpeechBubbleP.innerHTML = "Oh, wat gaat de tijd snel, de dierentuin gaat sluiten. Kom, we gaan naar de uitgang.";
+            // vissen.remove();
+            dierentuinpadSpeechBubbleP.innerHTML = "Wat vliegt de tijd! De dierentuin gaat sluiten. We gaan naar de uitgang.";
             uitgang.play();
 
             star1 = localStorage.getItem('star1');

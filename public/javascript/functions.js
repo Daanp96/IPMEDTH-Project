@@ -8,6 +8,10 @@ let tree = 0;
 let rock = 0;
 let pond = 0;
 
+// audio
+// let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
+let kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
+
 // const dragDrop = (object) => {
 
 //     object.onmousedown = (event) => {
@@ -53,7 +57,6 @@ let pond = 0;
 
 const dragDropMap = (obj, btn, zookpr, speech) => {
   let currentDroppable = null;
-  let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
   obj.onmousedown = function(event) {
 

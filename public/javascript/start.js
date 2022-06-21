@@ -29,11 +29,21 @@ let image = '';
 
 window.localStorage.clear();
 
+beginBtn.onclick = () => {
+    startOverlay.style.opacity = "0";
+    startOverlay.style.zIndex = "-1";
+    beginBtn.style.display = "none";
+    intro.play();
+    intro.onended = () => {
+        startOKBtn.style.display = "block";
+    }
+}
+
 // praat wolk
 startOKBtn.onclick = () => {
     switch (startOK) {
         case 0: 
-            tekst = 'Je hebt ook wel een goede dag gekozen om te komen, want vandaag nemen we een gelukkige bezoeker mee om ons in de dierentuin te helpen.';
+            tekst = 'Vandaag nemen we een bezoeker mee om ons te helpen in de dierentuin. En raad eens... dat ben jij!';
             image = '';
             bezoeker.play();
             bezoeker.onended = () => {
@@ -41,55 +51,56 @@ startOKBtn.onclick = () => {
             }
             break;
         case 1: 
-            tekst = 'En raad eens… dat ben jij! Dus waar wachten we nog op, laten we naar binnen gaan!';
-            image = '';
-            raadEens.play();
-            raadEens.onended = () => {
-                startOKBtn.style.display = "block";
-            }
-            break;
-        case 2: 
-            tekst = 'Maar, voordat we naar binnen gaan zal ik nog even uitleggen hoe alles werkt.';
+            tekst = 'Voordat we naar binnen gaan leg ik uit hoe alles werkt.';
             image = '';
             uitleggen.play();
             uitleggen.onended = () => {
                 startOKBtn.style.display = "block";
             }
             break;
-        case 3: 
+        case 2: 
             startExplaineBtn.classList.remove("hide");
-            tekst = 'Klik op het lampje voor een hint.';
+            tekst = 'Het lampje geeft hints. Klik hier op als je vastloopt.';
             image = './images/hint-btn.png';
             hint.play();
             hint.onended = () => {
                 startOKBtn.style.display = "block";
             }
             break;
-        case 4: 
-            tekst = 'Klik op de i voor informatie.';
-            image = './images/information-btn.png';
-            informatie.play();
-            informatie.onended = () => {
-                startOKBtn.style.display = "block";
-            }
-            break;
-        case 5: 
-            tekst = 'Klik op het oortje om mijn stem uit te zetten.';
+        case 3: 
+            tekst = 'Het oortje is mijn stem. Klik hierop dan kan je mijn stem aan en uit zetten.';
             image = './images/speak-on-btn.png';
             stem.play();
             stem.onended = () => {
                 startOKBtn.style.display = "block";
             }
             break;
-        case 6: 
+        case 4: 
             startExplaineBtn.classList.add("hide");
-            tekst = 'Oke, nu alles uitgelegd is, kunnen we nu echt naar binnen gaan. Laten we gaan!';
+            tekst = 'Nu is alles uitgelegd. Dus laten we naar binnen gaan!';
             image = '';
             binnen.play();
             binnen.onended = () => {
                 startOKBtn.style.display = "block";
             }
             break;
+        // case 5: 
+        //     tekst = 'Klik op het oortje om mijn stem uit te zetten.';
+        //     image = './images/speak-on-btn.png';
+        //     stem.play();
+        //     stem.onended = () => {
+        //         startOKBtn.style.display = "block";
+        //     }
+        //     break;
+        // case 6: 
+        //     startExplaineBtn.classList.add("hide");
+        //     tekst = 'Oke, nu alles uitgelegd is, kunnen we nu echt naar binnen gaan. Laten we gaan!';
+        //     image = '';
+        //     binnen.play();
+        //     binnen.onended = () => {
+        //         startOKBtn.style.display = "block";
+        //     }
+        //     break;
         default:
             speechBubble.style.visibility = "hidden";
             startBtn.style.visibility = "visible";
@@ -103,16 +114,6 @@ startOKBtn.onclick = () => {
     startExplaineBtn.src = image;
     startOK++;
 };
-
-beginBtn.onclick = () => {
-    startOverlay.style.opacity = "0";
-    startOverlay.style.zIndex = "-1";
-    beginBtn.style.display = "none";
-    intro.play();
-    intro.onended = () => {
-        startOKBtn.style.display = "block";
-    }
-}
 
 startBtn.onclick = () => {
     window.location.href="./pages/map.html";  

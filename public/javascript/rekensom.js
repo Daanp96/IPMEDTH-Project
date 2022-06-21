@@ -15,14 +15,23 @@ const hintBtn = document.getElementById("js--hint");
 
 let countHint = 0;
 
-const welkomAquarium = new Audio("../audio/5-vissen/1-welkom.mp3");
-const nieuweVissen = new Audio("../audio/5-vissen/2-nieuweVissen.mp3");
-const rodeVissen = new Audio("../audio/5-vissen/3-rodeVissen.mp3");
+// const welkomAquarium = new Audio("../audio/5-vissen/1-welkom.mp3");
+// const nieuweVissen = new Audio("../audio/5-vissen/2-nieuweVissen.mp3");
+// const rodeVissen = new Audio("../audio/5-vissen/3-rodeVissen.mp3");
 
-const hint1 = new Audio("../audio/5-vissen/hint-1.mp3");
-const hint2 = new Audio("../audio/5-vissen/hint-2.mp3");
-const hint3 = new Audio("../audio/5-vissen/hint-3.mp3");
-const hint4 = new Audio("../audio/5-vissen/hint-4.mp3");
+// const hint1 = new Audio("../audio/5-vissen/hint-1.mp3");
+// const hint2 = new Audio("../audio/5-vissen/hint-2.mp3");
+// const hint3 = new Audio("../audio/5-vissen/hint-3.mp3");
+// const hint4 = new Audio("../audio/5-vissen/hint-4.mp3");
+
+const welkomAquarium = new Audio("../audio/Tjalle/5-vissen/1-welkom.m4a");
+const nieuweVissen = new Audio("../audio/Tjalle/5-vissen/2-nieuweVissen.m4a");
+const rodeVissen = new Audio("../audio/Tjalle/5-vissen/3-rodeVissen.m4a");
+
+const hint1 = new Audio("../audio/Tjalle/5-vissen/hint-1.m4a");
+const hint2 = new Audio("../audio/Tjalle/5-vissen/hint-2.m4a");
+const hint3 = new Audio("../audio/Tjalle/5-vissen/hint-3.m4a");
+const hint4 = new Audio("../audio/Tjalle/5-vissen/hint-4.m4a");
 
 let startOK = 0;
 let tekst = '';
@@ -37,7 +46,7 @@ welkomAquarium.onended = () => {
 startOKBtn.onclick = () => {
     switch (startOK) {
         case 0: 
-            tekst = 'Sinds kort hebben we nieuwe vissen erbij gekregen, alleen weten we nog niet hoeveel.';
+            tekst = 'We hebben nieuwe vissen gekregen. Alleen weten we nog niet hoeveel.';
             image = '';
             nieuweVissen.play();
             nieuweVissen.onended = () => {
@@ -45,7 +54,7 @@ startOKBtn.onclick = () => {
             }
             break;
         case 1: 
-            tekst = 'Kan jij mij vertellen hoeveel <b style="color:red;">rode vissen</b> er rond zwemmen? Het antwoord mag je invullen op het bord.';
+            tekst = 'Kan jij mij vertellen hoeveel <b style="color:red;">rode vissen</b> er rond zwemmen?';
             image = '';
             rodeVissen.play();
             rodeVissen.onended = () => {
@@ -54,7 +63,7 @@ startOKBtn.onclick = () => {
             break;
         case 2:
             speechBubble.style.visibility = "hidden";
-            // startOKBtn.style.visibility = "hidden";
+            startOKBtn.style.display = "block";
             speechBubble.style.zIndex = "";
             mapOverlay.style.zIndex = "-1";
             break;
@@ -90,15 +99,17 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
-            startOKBtn.style.visibility = "visible";
-            tekst = 'Klik op het vraagteken.';
+            tekst = 'Loop door het hele aquarium.';
             hint2.play();
+            hint2.onended = () => {
+                startOKBtn.style.display = "block";
+            }
             image = '../images/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
-                // startOKBtn.style.visibility = "hidden";
+                startOKBtn.style.display = "none";
                 countHint++;
             }
             break;
@@ -107,13 +118,17 @@ hintBtn.onclick = () => {
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
-            tekst = 'Loop door het hele aquarium.';
+            tekst = 'Klik op het vraagteken.';
             hint1.play();
+            hint1.onended = () => {
+                startOKBtn.style.display = "block";
+            }
             image = '../images/arrow-right.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.display = "none";
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
@@ -122,7 +137,7 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             speechBubble_p.style.visibility = "visible";
             // startOKBtn.style.visibility = "visible";
-            tekst = 'Kies een getal van de nummers op je toetsenbord.';
+            tekst = 'Vul het antwoord in via je toetsenbord.';
             hint3.play();
             hint3.onended = () => {
                 startOKBtn.style.display = "block";
@@ -130,6 +145,7 @@ hintBtn.onclick = () => {
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.display = "none";
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
@@ -146,6 +162,7 @@ hintBtn.onclick = () => {
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
+                startOKBtn.style.display = "none";
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
@@ -157,7 +174,6 @@ hintBtn.onclick = () => {
             break;
     }
 
-    startOKBtn.style.display = "none";
     speechBubble_p.innerHTML = tekst;
     explaineBtn.src = image;
     
