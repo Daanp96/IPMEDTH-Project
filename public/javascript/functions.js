@@ -115,6 +115,7 @@ const dragDropMap = (obj, btn, zookpr, speech) => {
 
         if(layedPieces == 16){
           btn.style.display = "block";
+          zookpr.src = "../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
           zookpr.style.gridColumnStart = "10";
