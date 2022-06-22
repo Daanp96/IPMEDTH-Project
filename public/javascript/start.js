@@ -24,6 +24,7 @@ const startOverlay = document.getElementById("js--start-overlay");
 const beginBtn = document.getElementById("js--btn-overlay");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
+const title = document.getElementById("js--overlay-title");
 
 let startOK = 0;
 let tekst = '';
@@ -35,6 +36,7 @@ beginBtn.onclick = () => {
     startOverlay.style.opacity = "0";
     startOverlay.style.zIndex = "-1";
     beginBtn.style.display = "none";
+    title.style.opacity = "0";
     intro.play();
     intro.onended = () => {
         startOKBtn.style.display = "block";

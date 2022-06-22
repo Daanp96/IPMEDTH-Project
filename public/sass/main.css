@@ -2225,6 +2225,24 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 1;
 }
 
+.overlay-title {
+  text-align: center;
+  position: absolute;
+  bottom: 30vh;
+  left: 50vw;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 5;
+  color: white;
+  font-size: 20rem;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.overlay-start {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 .background-mappuzzel {
   background-color: #F0EAD2;
   width: 100vw;
