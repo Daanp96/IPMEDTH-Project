@@ -11,8 +11,8 @@ let pond = 0;
 // audio
 // let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
-let kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
-let goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
+const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
+const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
 
 // const dragDrop = (object) => {
 
@@ -246,7 +246,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
   };
 }
 
-const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech) => {
+const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -315,10 +315,11 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech) => {
           bol2.style.display = "block";
 
         } else if(aantalIjs == 3) {
+          audio.play();
           kassa.style.display = "block";
           kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
           kassa.parentNode.dataset.geld = "1";
-          speech.innerHTML = "Zo, je ijsje is klaar! Je kan het geld naar de kassa toe slepen.";
+          speech.innerHTML = "Zo je ijsje is klaar! Je kan het geld naar de kassa toe slepen.";
           for(let ijs of ijsjes){
             ijs.onclick = null;
           }
@@ -341,7 +342,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech) => {
 }
 
 
-const dragDropGeld = (obj, kassa, btn) => {
+const dragDropGeld = (obj, kassa, btn, speech, audio) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -404,8 +405,10 @@ const dragDropGeld = (obj, kassa, btn) => {
         kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
 
         if (ijsPrijs == 0) {
+          audio.play();
           kassa.innerHTML = "Dankjewel!";
           btn.style.display = "block";
+          speech.innerHTML = "Dankjewel! Geniet van jullie ijsjes.";
         }
       }
     };

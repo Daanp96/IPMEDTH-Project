@@ -13,6 +13,7 @@
 
     &__balie {
         width: 40vw;
+        z-index: 5;
     }
 }
 
@@ -81,6 +82,7 @@
 
         &__image {
             width: 35vw;
+            z-index: 1;
         }
     }
 

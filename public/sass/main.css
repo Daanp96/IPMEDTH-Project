@@ -3344,6 +3344,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ijsco_kraam__balie {
   width: 40vw;
+  z-index: 5;
 }
 
 .ijs {
@@ -3429,6 +3430,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ijs_verkoper__image {
   width: 35vw;
+  z-index: 1;
 }
 
 .ijs_tafel {
