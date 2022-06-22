@@ -3342,6 +3342,56 @@ input[type=number]::-webkit-outer-spin-button {
   width: 8vw;
 }
 
+.overlay-title-end {
+  opacity: 0;
+  font-size: 5rem;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  text-align: center;
+  position: absolute;
+  bottom: 30vh;
+  left: 50vw;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 5;
+  color: white;
+}
+
+.btn_again {
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  position: absolute;
+  bottom: 20vh;
+  left: 65vw;
+  z-index: 5;
+}
+
+.btn_stop {
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  position: absolute;
+  bottom: 20vh;
+  left: 25vw;
+  width: 250px;
+  z-index: 5;
+}
+
+.overlay-end {
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.again {
+  width: 250px;
+}
+
+.stop {
+  width: 250px;
+}
+
 .background_ijs {
   background: url("../images/ijsbar/ijs-background.png");
   background-size: cover;
