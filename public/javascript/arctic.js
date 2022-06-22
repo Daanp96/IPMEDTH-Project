@@ -17,13 +17,20 @@ let countHint = 0;
 let tekst = '';
 let image = '';
 
-const hint1 = new Audio("../audio/7-pinguïn/hint-1.mp3");
-const hint2 = new Audio("../audio/7-pinguïn/hint-2.mp3");
+const pinguinVerblijf = new Audio("../audio/Tjalle/7-pinguins/1-pinguïnverblijf.m4a");
+
+const hint1 = new Audio("../audio/Tjalle/7-pinguins/hint-1.m4a");
+const hint2 = new Audio("../audio/Tjalle/7-pinguins/hint-2.m4a");
+
+pinguinVerblijf.play();
+pinguinVerblijf.onended = () => {
+    startOKBtn.style.display = "flex";
+}
 
 startOKBtn.onclick = () => {
     speechBubble.style.visibility = "hidden";
     fishDrag.style.visibility ="visible";
-    startOKBtn.style.visibility = "hidden";
+    // startOKBtn.style.visibility = "hidden";
     speechBubble.style.zIndex = "";
     mapOverlay.style.zIndex = "-1";
 }
@@ -56,14 +63,17 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             // explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
-            startOKBtn.style.visibility = "visible";
+            // startOKBtn.style.visibility = "visible";
             tekst = 'Alle pinguïns moeten gevoerd worden.';
             hint1.play();
+            hint1.onended = () => {
+                startOKBtn.style.display = "flex";
+            }
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
-                startOKBtn.style.visibility = "hidden";
+                // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
             break;
@@ -71,9 +81,12 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
-            startOKBtn.style.visibility = "visible";
-            tekst = 'Beweeg je muis naar de emmer met vissen en doe dit:';
+            // startOKBtn.style.visibility = "visible";
+            tekst = 'Beweeg je muis naar de emmer met de vis en doe dit:';
             hint2.play();
+            hint2.onended = () => {
+                startOKBtn.style.display = "flex";
+            }
             image = '../images/gif/klik_zijkant.gif';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
@@ -83,8 +96,15 @@ hintBtn.onclick = () => {
                 countHint++;
             }
             break;
+        case 2:
+            speechBubble.style.visibility = "hidden";
+            startOKBtn.style.display = "none";
+            speechBubble.style.zIndex = "";
+            mapOverlay.style.zIndex = "-1";
+            break;
     }
 
+    startOKBtn.style.display = "none";
     speechBubble_p.innerHTML = tekst;
     explaineBtn.src = image;
     

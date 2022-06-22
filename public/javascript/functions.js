@@ -8,6 +8,11 @@ let tree = 0;
 let rock = 0;
 let pond = 0;
 
+// audio
+// let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
+
+let kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
+let goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
 
 // const dragDrop = (object) => {
 
@@ -147,7 +152,6 @@ const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
 
 const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
   let currentDroppable = null;
-  const goedZo = new Audio("../audio/7-pinguïn/2-goedZo.mp3");
 
   obj.onmousedown = function(event) {
 
@@ -219,9 +223,12 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
         speech.style.visibility = "visible";
         obj.style.visibility = "hidden";
         speechBtn.style.display = "none";
-        text.innerHTML = "Goed zo! Nu zijn de penguins ook weer blij.";
-        goedZo.play();
-        nextBtn.style.display = "block";
+        text.style.visibility = "visible";
+        text.innerHTML = "Goed gedaan! De penguins zijn heel blij.";
+        goedGedaan.play();
+        goedGedaan.onended = () => {
+          nextBtn.style.display = "block";
+        }
       }
     };
   };
