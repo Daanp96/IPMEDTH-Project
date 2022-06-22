@@ -66,51 +66,87 @@ const endSpeechBubble_p = document.getElementById("js--speech-bubble-p-end");
 const endSpeechBubbleDierentuin = document.getElementById("js--endBubble-dierentuin");
 const endSpeechBubbleNatuur = document.getElementById("js--endBubble-natuur");
 
+//audio
+const verblijfAf = new Audio("../audio/Tjalle/9-verblijf/1-verblijfAf.m4a");
+const bovenaan = new Audio("../audio/Tjalle/9-verblijf/2-bovenaan.m4a");
+const goedIngericht = new Audio("../audio/Tjalle/9-verblijf/3-goedIngericht.m4a");
+const vraag = new Audio("../audio/Tjalle/9-verblijf/4-vraag.m4a");
+const veelDieren = new Audio("../audio/Tjalle/9-verblijf/5-veelDieren.m4a");
+const vrijeRuimte = new Audio("../audio/Tjalle/9-verblijf/6-vrijeRuimte.m4a");
+const keuze = new Audio("../audio/Tjalle/9-verblijf/7-keuze.m4a");
+const hint1 = new Audio("../audio/Tjalle/9-verblijf/hint-1.m4a");
+const hint2 = new Audio("../audio/Tjalle/9-verblijf/hint-2.m4a");
+
 let countText = 0;
 let countHint = 0;
 let countEnd = 0;
 let tekst = '';
 let image = '';
 
+speakOn.onclick = () =>{
+    speakOff.style.visibility = "visible";
+    speakOn.style.visibility = "hidden";
+    verblijfAf.muted = true;
+}
 speakOn2.onclick = () =>{
     speakOff2.style.visibility = "visible";
     speakOn2.style.visibility = "hidden";
+    bovenaan.muted = true;
+    goedIngericht.muted = true;
+    vraag.muted = true;
+    veelDieren.muted = true;
+    vrijeRuimte.muted = true;
+    keuze.muted = true;
+    hint1.muted = true;
+    hint2.muted = true;
 };
-
+speakOff.onclick = () =>{
+    speakOff.style.visibility = "hidden";
+    speakOn.style.visibility = "visible";
+    verblijfAf.muted = false;
+};
 speakOff2.onclick = () =>{
     speakOff2.style.visibility = "hidden";
     speakOn2.style.visibility = "visible";
+    bovenaan.muted = false;
+    goedIngericht.muted = false;
+    vraag.muted = false;
+    veelDieren.muted = false;
+    vrijeRuimte.muted = false;
+    keuze.muted = false;
+    hint1.muted = false;
+    hint2.muted = false;
 };
 
-
-hintBubbleBtn.onclick = () => {
-    switch (countText) {            
-        case 0: 
-            hintSpeechBubble_p.innerHTML = 'Bovenaan zie je een lijstje wat de dieren nodig hebben.';
-            hintBubbleBtn.onclick = () => {
-                mapOverlay.classList.add("hide");
-                headZookeeper.classList.add("hide");
-                hintBubble.classList.add("hide");
-                countText++;
-            }
-            break;
-    }
+verblijfAf.play();
+verblijfAf.onended = () => {
+    startOKBtn.style.display = "flex";
 }
 
-
+hintBubbleBtn.onclick = () => {
+    mapOverlay.classList.add("hide");
+    headZookeeper.classList.add("hide");
+    hintBubble.classList.add("hide");
+}
 
 hintBtn.onclick = () => {
     console.log(countHint);
     switch (countHint) {
         case 0: 
+            hintBubbleBtn.style.display = "none";
             mapOverlay.classList.remove("hide");
             headZookeeper.classList.remove("hide");
             hintBubble.classList.remove("hide");
             tekst = 'Klik op de gekleurde vlakken.';
+            hint1.play();
+            hint1.onended = () => {
+                hintBubbleBtn.style.display = "flex";
+            }
             hintBubbleBtn.onclick = () => {
                 mapOverlay.classList.add("hide");
                 headZookeeper.classList.add("hide");
                 hintBubble.classList.add("hide");
+                hintBubbleBtn.style.display = "none";
                 countHint++;
             }
             break;
@@ -119,10 +155,15 @@ hintBtn.onclick = () => {
             headZookeeper.classList.remove("hide");
             hintBubble.classList.remove("hide");
             tekst = 'Sleep de sticker naar een mooie plek.';
+            hint2.play();
+            hint2.onended = () => {
+                hintBubbleBtn.style.display = "flex";
+            }
             hintBubbleBtn.onclick = () => {
                 mapOverlay.classList.add("hide");
                 headZookeeper.classList.add("hide");
                 hintBubble.classList.add("hide");
+                hintBubbleBtn.style.display = "none";
                 countHint++;
             }
             break;
@@ -149,6 +190,14 @@ startOKBtn.onclick = () => {
     mapOverlay.classList.remove("hide");
     headZookeeper.classList.remove("hide");
     hintBubble.classList.remove("hide");
+    // hintBtn.style.zIndex = 60;
+    // speakOn2.style.zIndex = 60;
+    // speakOff2.style.zIndex = 60;
+    hintSpeechBubble_p.innerHTML = 'Bovenaan zie je een lijstje wat ze nodig hebben.';
+    bovenaan.play();
+    bovenaan.onended = () => {
+        hintBubbleBtn.style.display = "flex";
+    }
 };
 
 // introBtn.onclick = () => {
@@ -231,6 +280,10 @@ endBtn.onclick = () => {
     mapOverlay.classList.remove("hide");
     headZookeeper.classList.remove("hide");
     endBubble.classList.remove("hide");
+    goedIngericht.play();
+    goedIngericht.onended = () => {
+        endBubbleBtn.style.display = "flex";
+    }
 };
 
 // function endTalk(){
@@ -257,21 +310,40 @@ endBubbleBtn.onclick = () => {
     console.log(countEnd);
     switch (countEnd) {
         case 0: 
+            endBubbleBtn.style.display = "none";
             tekst = 'Voordat we verder gaan heb ik een vraag voor jou.';
+            vraag.play();
+            vraag.onended = () => {
+                endBubbleBtn.style.display = "flex";
+            }
             countEnd++;
             break;
         case 1: 
+            endBubbleBtn.style.display = "none";
             tekst = 'Veel dieren hier komen niet voor in Nederland, maar we kunnen ze zien dankzij dierentuinen.';
+            veelDieren.play();
+            veelDieren.onended = () => {
+                endBubbleBtn.style.display = "flex";
+            }
             countEnd++;
             break;
         case 2: 
+            endBubbleBtn.style.display = "none";
             tekst = 'Alleen in dierentuinen hebben de dieren minder vrije ruimte dan als ze vrij zijn.';
+            vrijeRuimte.play();
+            vrijeRuimte.onended = () => {
+                endBubbleBtn.style.display = "flex";
+            }
             countEnd++;
             break;
         case 3: 
             document.getElementById("js--speech-bubble-div").classList.add("hide-important");
-            document.getElementById("js--speech-bubble-div-2").classList.remove("hide-important");
+
             tekst = 'Vind je het goed dat de dierentuinen er zijn? kies dan “dierentuin”. <br>Of wil je liever dat alle dieren los in de natuur lopen? kies dan “natuur”.';
+            keuze.play();
+            keuze.onended = () => {
+                document.getElementById("js--speech-bubble-div-2").classList.remove("hide-important");
+            }
             break;
     }
     endSpeechBubble_p.innerHTML = tekst;
