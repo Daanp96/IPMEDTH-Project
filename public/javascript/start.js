@@ -37,6 +37,7 @@ beginBtn.onclick = () => {
     startOverlay.style.zIndex = "-1";
     beginBtn.style.display = "none";
     title.style.opacity = "0";
+    title.style.zIndex = "-1";
     intro.play();
     intro.onended = () => {
         startOKBtn.style.display = "block";
