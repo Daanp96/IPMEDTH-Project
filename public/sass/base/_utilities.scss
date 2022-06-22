@@ -76,6 +76,17 @@
     transition: 0.5s all;
 }
 
+.hide-overlay-high{
+    background-color: rgba(#000, .55);
+    z-index: 4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s all;
+}
+
 .drag {
     cursor: url("../images/cursor_grab_60.cur"), default;
 }

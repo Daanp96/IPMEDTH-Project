@@ -67,7 +67,7 @@ hintBtn.onclick = () => {
     switch (countHint) {
         case 0: 
             zookeeper.style.visibility = "visible";
-            zookeeper.style.zIndex = "2";
+            zookeeper.style.zIndex = "4";
             speech.style.visibility = "visible";
             speech.style.zIndex = "2";
             mapOverlay.style.zIndex = "1";

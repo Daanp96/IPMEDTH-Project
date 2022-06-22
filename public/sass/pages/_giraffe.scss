@@ -24,22 +24,22 @@
     z-index: 50;
 
     &__btn-hint{
-        grid-column: 11 / span 1;
-        grid-row: 1 /span 1;
-
-        &--image{
-            @include widthImageSetting;
-        }
-    }
-
-    &__btn-information{
         grid-column: 12 / span 1;
         grid-row: 1 /span 1;
-    
+
         &--image{
             @include widthImageSetting;
         }
     }
+
+    // &__btn-information{
+    //     grid-column: 12 / span 1;
+    //     grid-row: 1 /span 1;
+    
+    //     &--image{
+    //         @include widthImageSetting;
+    //     }
+    // }
 
     &__btn-speak{
         grid-column: 13 / span 1;

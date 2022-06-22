@@ -1,15 +1,6 @@
 .puzzel-options{
     
     &__btn-hint{
-        grid-column: 14 / span 1;
-        grid-row: 1 /span 4;
-        z-index: 3;
-        &--image{
-            @include widthImageSetting;
-        }
-    }
-
-    &__btn-information{
         grid-column: 15 / span 1;
         grid-row: 1 /span 4;
         z-index: 3;
@@ -17,6 +8,15 @@
             @include widthImageSetting;
         }
     }
+
+    // &__btn-information{
+    //     grid-column: 15 / span 1;
+    //     grid-row: 1 /span 4;
+    //     z-index: 3;
+    //     &--image{
+    //         @include widthImageSetting;
+    //     }
+    // }
 
     &__btn-speak{
         grid-column: 16 / span 1;

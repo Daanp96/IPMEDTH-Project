@@ -156,22 +156,25 @@
     }
     &__zookeeper {
         // grid-column-start: 10;
-        grid-column-start: 6;
+        grid-column-start: 7;
         grid-row-start: 4;
         text-align: center;
         font-size: 2rem;
         width: 20rem;
-        z-index: 3;
+        z-index: 4;
     }
     &--speech-bubble {
         grid-column-start: 3;
-        grid-row-start: 3;
+        grid-row-start: 4;
         z-index: 3;
         align-self: end;
+
     }
     &--speech-bubble::before {
-        left: 32rem;
-        transform: scaleX(-1);
+        left: 36rem;
+        transform: scaleX(-1) rotate(45deg);
+        border-top: 4.2rem solid $color-white !important;
+        bottom: 0.6rem !important;
     }
 }
 
