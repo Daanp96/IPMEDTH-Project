@@ -51,6 +51,9 @@ hintBtn.onclick = () => {
             speechImage.classList.remove("hide");
             speechP.innerHTML = "Beweeg de muis naar een puzzelstukje en doe dan dit:";
             hint.play();
+            hint.onended = () => {
+                speechButton.style.display = "flex";
+            }
 
             speechButton.onclick = () => {
                 zookeeper.style.visibility = "hidden";
@@ -63,4 +66,5 @@ hintBtn.onclick = () => {
             }
             break;
     }
+    speechButton.style.display = "none";
 }

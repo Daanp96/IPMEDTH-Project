@@ -104,13 +104,17 @@ hintBtn.onclick = () => {
         case 0: 
             speechBubble.style.visibility = "visible";
             speechBubble_p.style.visibility = "visible";
-            startOKBtn.style.visibility = "visible";
+            // startOKBtn.style.visibility = "visible";
             tekst = 'Klik op het bord.';
             hint1.play();
+            hint1.onended = () => {
+                startOKBtn.style.display = "block";
+            }
+
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
-                startOKBtn.style.visibility = "hidden";
+                // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
             break;
@@ -118,15 +122,18 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
-            startOKBtn.style.visibility = "visible";
-            tekst = 'Klik op het vraagteken.';
+            // startOKBtn.style.visibility = "visible";
+            tekst = 'Klik op de foute naam.';
             hint2.play();
+            hint2.onended = () => {
+                startOKBtn.style.display = "block";
+            }
             image = '../images/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
-                startOKBtn.style.visibility = "hidden";
+                // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
             break;
@@ -134,16 +141,19 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
-            startOKBtn.style.visibility = "visible";
+            // startOKBtn.style.visibility = "visible";
             explaineBtn.style.width = "23vw";
-            tekst = 'Je toetsenbord gebruikt blokletters, dit zijn de kleine letters.';
+            tekst = 'Je toetsenbord gebruikt blokletters. Dit zijn de kleine letters.';
             hint3.play();
+            hint3.onended = () => {
+                startOKBtn.style.display = "block";
+            }
             image = '../images/keyboard.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
-                startOKBtn.style.visibility = "hidden";
+                // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
             break;
@@ -151,8 +161,11 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
-            tekst = 'Het antwoord is AAP';
+            tekst = 'Het antwoord is olifant';
             hint4.play();
+            hint4.onended = () => {
+                startOKBtn.style.display = "block";
+            }
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
@@ -162,10 +175,13 @@ hintBtn.onclick = () => {
             break;
         case 4:
             speechBubble.style.visibility = "hidden";
-            startOKBtn.style.visibility = "hidden";
+            startOKBtn.style.display = "none";
+            // startOKBtn.style.visibility = "hidden";
             countHint++;
             break;
     }
+
+    startOKBtn.style.display = "none";
     speechBubble_p.innerHTML = tekst;
     explaineBtn.src = image;
     
