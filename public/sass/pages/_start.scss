@@ -90,6 +90,25 @@
     z-index: 1;
 }
 
+.overlay {
+    &-title{
+        text-align: center;
+        position: absolute;
+        bottom: 30vh;
+        left: 50vw;
+        transform: translate(-50%);
+        z-index: 5;
+        color: white;
+        font-size: 20rem;
+        transition: 0.5s all;
+    }
+
+    &-start {
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    
+}
+
 // @media (min-height: $height-750){
 //     .start{
        

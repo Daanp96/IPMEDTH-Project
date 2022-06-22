@@ -51,18 +51,23 @@ speakOff.onclick = () => {
 
 
 ijsbalie.onclick = () => {
-    goedemiddag.play();
+    kleuren.play();
     overlay.style.opacity =  "1";
     overlay.style.zIndex = "1";
     popup.style.opacity = "1";
     popup.style.zIndex = "1";
     ijsbalie.classList.remove("ijs_animatie");
+
     for (let ijs of ijsjes) {
         ijs.style.opacity = "1";
         ijs.style.zIndex = "5";
         ijs.firstElementChild.style.pointerEvents = "none";
 
         ijs.onclick = (e) => {
+            slepen.play();
+            slepen.onended = () => {
+                slepen.src = '';
+            };
             let bol_img = document.createElement("img");
             let kleur = ijs.getAttribute("data-kleur");
             bol_img.src = `../images/ijsbar/ijs_${kleur}.png`;
@@ -72,15 +77,15 @@ ijsbalie.onclick = () => {
             bol_img.classList.add("ijsbol", "button");
             bol_img.style.top = `${e.clientY - e.offsetY - 180}px`;
             bol_img.style.left = `${e.clientX - e.offsetX - 250}px`;
-            speechBubble.innerHTML = "Sleep jouw bolletje naar de ijshoorn toe."
+            speechBubble.innerHTML = "Sleep jouw bolletje naar de ijshoorn toe.";
             popup.append(bol_img);
-            dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble);
+            dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble, ijsjeKlaar);
         }
     }
 }
 
 for(let munt of munten) {
-    dragDropGeld(munt, kassa, ijsBtn);
+    dragDropGeld(munt, kassa, ijsBtn, speechBubble, dankje);
 }
 
 ijsBtn.onclick = () => {
