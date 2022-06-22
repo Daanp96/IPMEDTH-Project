@@ -3642,6 +3642,34 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 3;
 }
 
+.ijs_keuze_geld7 {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.ijs_keuze_geld8 {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.ijs_keuze_geld9 {
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.ijs_keuze_geld10 {
+  -ms-grid-column: 5;
+  grid-column: 5;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
 .ijs_popup {
   display: -ms-grid;
   display: grid;

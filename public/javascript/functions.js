@@ -1,7 +1,7 @@
 let layedPieces = 0;
 let pinguinsFed = 0;
 let aantalIjs = 0;
-let ijsPrijs = 6;
+let ijsPrijs = 7;
 
 // const dragDrop = (object, width = '') => {
 let tree = 0;
@@ -397,6 +397,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio) => {
 
       if(attr == obj.getAttribute('data-geld')) {
         const kaching = new Audio("../audio/ijsbar/kassa_fix.mp3");
+        kaching.volume = 0.2;
         kaching.play();
         ijsPrijs--;
         obj.removeAttribute('data-geld');
