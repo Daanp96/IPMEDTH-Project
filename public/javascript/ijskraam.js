@@ -13,7 +13,45 @@ const ijsbol3 = document.getElementById("js--bol3");
 const ijsBtn = document.getElementById("js--btn-ijs");
 const speechBubble = document.getElementById("js--speech-bubble");
 
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
+
+//audio
+const goedemiddag = new Audio("../audio/Tjalle/8-ijsbar/1-goedemiddag.m4a");
+const bolletjes = new Audio("../audio/Tjalle/8-ijsbar/2-bolletjes.m4a");
+const betalen = new Audio("../audio/Tjalle/8-ijsbar/3-betalen.m4a");
+const dankje = new Audio("../audio/Tjalle/8-ijsbar/4-dankje.m4a");
+
+const hint1 = new Audio("../audio/Tjalle/8-ijsbar/hint-1.m4a");
+const hint2 = new Audio("../audio/Tjalle/8-ijsbar/hint-2.m4a");
+
+goedemiddag.play();
+
+speakOn.onclick = () => {
+    speakOff.style.visibility = "visible";
+    speakOn.style.visibility = "hidden";
+    goedemiddag.muted = true;
+    bolletjes.muted = true;
+    betalen.muted = true;
+    dankje.muted = true;
+    hint1.muted = true;
+    hint2.muted = true;
+};
+
+speakOff.onclick = () => {
+    speakOff.style.visibility = "hidden";
+    speakOn.style.visibility = "visible";
+    goedemiddag.muted = false;
+    bolletjes.muted = false;
+    betalen.muted = false;
+    dankje.muted = false;
+    hint1.muted = false;
+    hint2.muted = false;
+};
+
+
 ijsbalie.onclick = () => {
+    goedemiddag.play();
     overlay.style.opacity =  "1";
     overlay.style.zIndex = "1";
     popup.style.opacity = "1";
