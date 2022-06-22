@@ -6,6 +6,8 @@ const explaineBtn = document.getElementById("js--speech-bubble-img");
 
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
 
 const mapOverlay = document.getElementById("js--map-overlay");
 
@@ -26,6 +28,28 @@ const hint1 = new Audio("../audio/Tjalle/6-savanne/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/6-savanne/hint-2.m4a");
 const hint3 = new Audio("../audio/Tjalle/6-savanne/hint-3.m4a");
 const hint4 = new Audio("../audio/Tjalle/6-savanne/hint-4.m4a");
+
+speakOn.onclick = () => {
+    speakOff.style.visibility = "visible";
+    speakOn.style.visibility = "hidden";
+    savanneVerblijf.muted = true;
+    verbeteren.muted = true;
+    hint1.muted = true;
+    hint2.muted = true;
+    hint3.muted = true;
+    hint4.muted = true;
+};
+
+speakOff.onclick = () => {
+    speakOff.style.visibility = "hidden";
+    speakOn.style.visibility = "visible";
+    savanneVerblijf.muted = false;
+    verbeteren.muted = false;
+    hint1.muted = false;
+    hint2.muted = false;
+    hint3.muted = false;
+    hint4.muted = false;
+};
 
 savanneVerblijf.play();
 savanneVerblijf.onended = () => {

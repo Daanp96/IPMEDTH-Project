@@ -27,7 +27,7 @@
 .start-options{
     grid-column: 14 / span 4;
     grid-row: 1 /span 1;
-    z-index: 100;
+    z-index: 3;
 
     &__btn-hint{
         grid-column: 1 / span 1;
@@ -82,7 +82,7 @@
     bottom: 20vh;
     left: 50vw;
     transform: translate(-50%);
-    z-index: 1;
+    z-index: 5;
 }
 
 .hide_overlay {

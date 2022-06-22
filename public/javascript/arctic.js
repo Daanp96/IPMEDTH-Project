@@ -10,6 +10,8 @@ const explaineBtn = document.getElementById("js--speech-bubble-img");
 const speechBubble_p = document.getElementById("js--arctic-p");
 const startOKBtn = document.getElementById("js--arctic-ok-btn");
 const hintBtn = document.getElementById("js--hint");
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
 
 let countHint = 0;
 let tekst = '';
@@ -25,6 +27,21 @@ startOKBtn.onclick = () => {
     speechBubble.style.zIndex = "";
     mapOverlay.style.zIndex = "-1";
 }
+
+speakOn.onclick = () => {
+    speakOff.style.visibility = "visible";
+    speakOn.style.visibility = "hidden";
+    hint1.muted = true;
+    hint2.muted = true;
+};
+
+speakOff.onclick = () => {
+    console.log("klik");
+    speakOff.style.visibility = "hidden";
+    speakOn.style.visibility = "visible";
+    hint1.muted = false;
+    hint2.muted = false;
+};
 
 arcticBtn.onclick = () => {
     window.location.href = "./dierentuinpad.html";

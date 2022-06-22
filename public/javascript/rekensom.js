@@ -13,6 +13,9 @@ const mapOverlay = document.getElementById("js--map-overlay");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
 
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
+
 let countHint = 0;
 
 // const welkomAquarium = new Audio("../audio/5-vissen/1-welkom.mp3");
@@ -36,6 +39,32 @@ const hint4 = new Audio("../audio/Tjalle/5-vissen/hint-4.m4a");
 let startOK = 0;
 let tekst = '';
 let image = '';
+
+
+speakOn.onclick = () => {
+    speakOff.style.visibility = "visible";
+    speakOn.style.visibility = "hidden";
+    welkomAquarium.muted = true;
+    nieuweVissen.muted = true;
+    rodeVissen.muted = true;
+    hint1.muted = true;
+    hint2.muted = true;
+    hint3.muted = true;
+    hint4.muted = true;
+};
+
+speakOff.onclick = () => {
+    console.log("klik");
+    speakOff.style.visibility = "hidden";
+    speakOn.style.visibility = "visible";
+    welkomAquarium.muted = false;
+    nieuweVissen.muted = false;
+    rodeVissen.muted = false;
+    hint1.muted = false;
+    hint2.muted = false;
+    hint3.muted = false;
+    hint4.muted = false;
+};
 
 welkomAquarium.play();
 welkomAquarium.onended = () => {
@@ -99,7 +128,8 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
-            tekst = 'Loop door het hele aquarium.';
+            
+            tekst = 'Klik op het vraagteken.';
             hint2.play();
             hint2.onended = () => {
                 startOKBtn.style.display = "block";
@@ -118,7 +148,7 @@ hintBtn.onclick = () => {
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
-            tekst = 'Klik op het vraagteken.';
+            tekst = 'Loop door het hele aquarium.';
             hint1.play();
             hint1.onended = () => {
                 startOKBtn.style.display = "block";

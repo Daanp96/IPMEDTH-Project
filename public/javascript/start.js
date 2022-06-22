@@ -22,6 +22,8 @@ const startP = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const startOverlay = document.getElementById("js--start-overlay");
 const beginBtn = document.getElementById("js--btn-overlay");
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
 
 let startOK = 0;
 let tekst = '';
@@ -38,6 +40,27 @@ beginBtn.onclick = () => {
         startOKBtn.style.display = "block";
     }
 }
+
+speakOn.onclick = () => {
+    speakOff.style.visibility = "visible";
+    speakOn.style.visibility = "hidden";
+    intro.muted = true;
+    bezoeker.muted = true;
+    uitleggen.muted = true;
+    hint.muted = true;
+    stem.muted = true;
+    binnen.muted = true;
+};
+speakOff.onclick = () => {
+    speakOff.style.visibility = "hidden";
+    speakOn.style.visibility = "visible";
+    intro.muted = false;
+    bezoeker.muted = false;
+    uitleggen.muted = false;
+    hint.muted = false;
+    stem.muted = false;
+    binnen.muted = false;
+};
 
 // praat wolk
 startOKBtn.onclick = () => {
@@ -118,3 +141,5 @@ startOKBtn.onclick = () => {
 startBtn.onclick = () => {
     window.location.href="./pages/map.html";  
 };
+
+// export {speakBtnStart};

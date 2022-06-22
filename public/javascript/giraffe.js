@@ -1,5 +1,7 @@
 import {dragDropGiraffe} from "./functions.js";
 
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
 const speakOn2 = document.getElementById("js--speak-on-2");
 const speakOff2 = document.getElementById("js--speak-off-2");
 const hintBtn = document.getElementById("js--hint");

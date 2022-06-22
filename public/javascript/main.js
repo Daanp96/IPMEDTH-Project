@@ -1,5 +1,11 @@
-const speakOn = document.getElementById("js--speak-on");
-const speakOff = document.getElementById("js--speak-off");
+// import {speakBtnStart} from "./start.js";
+// import {speakBtnMap} from "./map.js";
+// import {speakBtnMappuzzelFunction} from "./functions.js";
+// import {speakBtnMappuzzel} from "./mappuzzel.js";
+// import {speakBtnDierentuinpad} from "./dierentuinpad.js";
+
+// const speakOn = document.getElementById("js--speak-on");
+// const speakOff = document.getElementById("js--speak-off");
 // const infoBtn = document.getElementById("js--info-btn");
 
 const speechBubble = document.getElementById("js--speech-bubble");
@@ -7,45 +13,45 @@ const speechBubble = document.getElementById("js--speech-bubble");
 const speechBubbleP = document.getElementById("js--speech-bubble-p");
 const speechBubbleBtn = document.getElementById("js--speech-bubble-btn");
 
-const ratedStar1 = document.getElementById("js--ratedStar1");
-const ratedStar2 = document.getElementById("js--ratedStar2");
-const ratedStar3 = document.getElementById("js--ratedStar3");
-const ratedStar4 = document.getElementById("js--ratedStar4");
-const ratedStar5 = document.getElementById("js--ratedStar5");
-const ratedStar6 = document.getElementById("js--ratedStar6");
-const ratedStar7 = document.getElementById("js--ratedStar7");
-const ratedStar8 = document.getElementById("js--ratedStar8");
-const ratedStar9 = document.getElementById("js--ratedStar9");
+// const ratedStar1 = document.getElementById("js--ratedStar1");
+// const ratedStar2 = document.getElementById("js--ratedStar2");
+// const ratedStar3 = document.getElementById("js--ratedStar3");
+// const ratedStar4 = document.getElementById("js--ratedStar4");
+// const ratedStar5 = document.getElementById("js--ratedStar5");
+// const ratedStar6 = document.getElementById("js--ratedStar6");
+// const ratedStar7 = document.getElementById("js--ratedStar7");
+// const ratedStar8 = document.getElementById("js--ratedStar8");
+// const ratedStar9 = document.getElementById("js--ratedStar9");
 
 const formRekensomBtn = document.getElementById("js--form-submit");
 const rekensomForm = document.getElementById("js--rekensom-form");
 
-const savanneForm = document.getElementById("js--savanne-form");
-const formSavanneBtn = document.getElementById("js--form-submitSavanne");
+// const savanneForm = document.getElementById("js--savanne-form");
+// const formSavanneBtn = document.getElementById("js--form-submitSavanne");
 
 const arcticBtn = document.getElementById("js--arctic-btn");
 const endSpeechBubbleDierentuin = document.getElementById("js--endBubble-dierentuin");
 const endSpeechBubbleNatuur = document.getElementById("js--endBubble-natuur");
 
 const reken_correct = 11;
-const naam_correct = "aap";
+// const naam_correct = "aap";
 const typen_correct = "olifant";
 const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
-let star1;
-let star2;
-let star3;
-let star4;
-let star5;
-let star6;
-let star7;
-let star8;
-let star9;
-let star10;
-let star11;
-let star12;
+// let star1;
+// let star2;
+// let star3;
+// let star4;
+// let star5;
+// let star6;
+// let star7;
+// let star8;
+// let star9;
+// let star10;
+// let star11;
+// let star12;
 let aantalSecondesRekensom;
-let aantalSecondesSavanne;
+// let aantalSecondesSavanne;
 let aantalSecondesArctic;
 let aantalSecondesTypen;
 let aantalSecondesGiraffe;
@@ -59,15 +65,13 @@ window.onload = function() {
     start();
 }
 
-speakOn.onclick = () =>{
-    speakOff.style.visibility = "visible";
-    speakOn.style.visibility = "hidden";
-};
+// speakBtnStart (speakOn, speakOff);
+// speakBtnMap (speakOn, speakOff);
+// speakBtnMappuzzelFunction(speakOn, speakOff);
+// speakBtnMappuzzel(speakOn, speakOff);
+// speakBtnDierentuinpad(speakOn, speakOff);
 
-speakOff.onclick = () =>{
-    speakOff.style.visibility = "hidden";
-    speakOn.style.visibility = "visible";
-};
+
 
 // infoBtn.onclick = () =>{
     

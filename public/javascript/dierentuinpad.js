@@ -32,6 +32,9 @@ const reken_correct = 6;
 // const uitgang = new Audio("../audio/4-dierentuinpad/4-uitgang.mp3");
 // const vissen = document.getElementById("iframeAudio");
 
+const speakOn = document.getElementById("js--speakOn");
+const speakOff = document.getElementById("js--speakOff");
+
 const vissen = new Audio("../audio/Tjalle/4-dierentuinpad/1-vissen.m4a");
 const savanne = new Audio("../audio/Tjalle/4-dierentuinpad/2-savanne.m4a");
 const pinguins = new Audio("../audio/Tjalle/4-dierentuinpad/3-pinguin.m4a");
@@ -55,6 +58,28 @@ let star12;
 let x = 0;
 // let progress;
 
+speakOn.onclick = () => {
+    speakOff.style.visibility = "visible";
+    speakOn.style.visibility = "hidden";
+    vissen.muted = true;
+    savanne.muted = true;
+    pinguins.muted = true;
+    ijsje.muted = true;
+    verblijf.muted = true;
+    uitgang.muted = true;
+};
+speakOff.onclick = () => {
+    speakOff.style.visibility = "hidden";
+    speakOn.style.visibility = "visible";
+    vissen.muted = false;
+    savanne.muted = false;
+    pinguins.muted = false;
+    ijsje.muted = false;
+    verblijf.muted = false;
+    uitgang.muted = false;
+};
+
+
 if(document.URL.includes("dierentuinpad.html") ){
     eindeButton.classList.add("hide-important");
     x = localStorage.getItem("progress");
@@ -71,14 +96,15 @@ if(document.URL.includes("dierentuinpad.html") ){
     switch (x) {
         case 0:
             vissen.play();
-            fish.classList.add("dierentuinpad__element");
-            fish.classList.add("button");
+            vissen.onended = () => {
+                fish.classList.add("dierentuinpad__element");
+                fish.classList.add("button");
+            }
+            
             break;
         case 1:
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
-            monkey.classList.add("dierentuinpad__element");
-            monkey.classList.add("button");
 
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
@@ -87,6 +113,10 @@ if(document.URL.includes("dierentuinpad.html") ){
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Goed gedaan! Zullen we gaan kijken bij de savanne dieren?";
             savanne.play();
+            savanne.onended = () => {
+                monkey.classList.add("dierentuinpad__element");
+                monkey.classList.add("button");
+            }
 
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
@@ -113,8 +143,6 @@ if(document.URL.includes("dierentuinpad.html") ){
             monkey.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
-            pinguin.classList.add("dierentuinpad__element");
-            pinguin.classList.add("button");
 
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
@@ -123,6 +151,10 @@ if(document.URL.includes("dierentuinpad.html") ){
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Goedzo! Het is nu tijd om de pinguïns eten te geven.";
             pinguins.play();
+            pinguins.onended = () => {
+                pinguin.classList.add("dierentuinpad__element");
+                pinguin.classList.add("button");
+            }
 
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
@@ -169,11 +201,13 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
             // ijskar.style.display = "block";
-            ijskar.classList.add("dierentuinpad__element");
-            ijskar.classList.add("button");
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
             ijsje.play();
+            ijsje.onended = () => {
+                ijskar.classList.add("dierentuinpad__element");
+                ijskar.classList.add("button");
+            }
             break;
 
         case 4:
@@ -185,8 +219,7 @@ if(document.URL.includes("dierentuinpad.html") ){
             pinguin.classList.remove("button");
             ijskar.classList.remove("dierentuinpad__element");
             ijskar.classList.remove("button");
-            giraffe.classList.add("dierentuinpad__element");
-            giraffe.classList.add("button");
+
             // eindeButton.classList.remove("hide-important");
 
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble3");
@@ -196,6 +229,10 @@ if(document.URL.includes("dierentuinpad.html") ){
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Dat was lekker! Kom we gaan nu naar ons nieuwste verblijf.";
             verblijf.play();
+            verblijf.onended = () => {
+                giraffe.classList.add("dierentuinpad__element");
+                giraffe.classList.add("button");
+            }
 
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
@@ -393,3 +430,5 @@ function startIjskar() {
 function naarEinde(){
     window.location.href = "einde.html";
 }
+
+// export{speakBtnDierentuinpad};
