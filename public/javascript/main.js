@@ -148,7 +148,6 @@ function start(){
 }
 
 if(document.URL.includes("rekensom.html") ){
-    const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
     formRekensomBtn.addEventListener("click", function(e){
         
         let form_answer = document.forms["answerForm"]["numberInput"].value;
@@ -160,7 +159,7 @@ if(document.URL.includes("rekensom.html") ){
         aantalSecondesRekensom = seconds;
 
         if(form_answer == reken_correct){
-            terugKaart.play();
+
             if(seconds <= 60){
                 try {
                     localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
@@ -307,7 +306,6 @@ const spanTypen = document.getElementById("js--typen-form");
 const spanTypenBtn = document.getElementById("js--form-submitTypen");
 
 if(document.URL.includes("typen.html")){
-    // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
     spanTypenBtn.addEventListener("click", function(e){
         console.log(spanTypen.innerText);
 
@@ -318,7 +316,6 @@ if(document.URL.includes("typen.html")){
         aantalSecondesTypen = seconds;
 
         if(spanTypen.innerText == typen_correct){
-            terugKaart.play();
             if(seconds <= 60){
                 try {
                     localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);

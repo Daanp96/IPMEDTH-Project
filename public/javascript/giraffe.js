@@ -196,6 +196,7 @@ speakOff2.onclick = () => {
 //     hint2.muted = false;
 // };
 
+hintBtn.disabled = true;
 verblijfAf.play();
 verblijfAf.onended = () => {
     startOKBtn.style.display = "flex";
@@ -205,6 +206,7 @@ hintBubbleBtn.onclick = () => {
     mapOverlay.classList.add("hide");
     headZookeeper.classList.add("hide");
     hintBubble.classList.add("hide");
+    hintBtn.disabled = false;
 }
 
 hintBtn.onclick = () => {
@@ -275,6 +277,7 @@ startOKBtn.onclick = () => {
     bovenaan.play();
     bovenaan.onended = () => {
         hintBubbleBtn.style.display = "flex";
+        
     }
 };
 
@@ -358,6 +361,7 @@ endBtn.onclick = () => {
     mapOverlay.classList.remove("hide");
     headZookeeper.classList.remove("hide");
     endBubble.classList.remove("hide");
+    hintBtn.disabled = true;
     goedIngericht.play();
     goedIngericht.onended = () => {
         endBubbleBtn.style.display = "flex";

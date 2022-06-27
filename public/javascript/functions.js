@@ -122,7 +122,7 @@ const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
           zookpr.src = "../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
-          zookpr.style.gridColumnStart = "10";
+          zookpr.style.gridColumnStart = "11";
           btn.style.zIndex = "2";
           speech.style.gridColumnStart = "7";
           speech.style.visibility = "visible";

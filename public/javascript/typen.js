@@ -89,6 +89,7 @@ speakOff.onclick = () => {
 //     hint4.muted = false;
 // };
 
+hintBtn.disabled = true;
 savanneVerblijf.play();
 savanneVerblijf.onended = () => {
     startOKBtn.style.display = "block";
@@ -148,6 +149,7 @@ startOKBtn.onclick = () => {
             speechBubble.style.visibility = "hidden";
             speechBubble.style.zIndex = "";
             mapOverlay.style.zIndex = "-1";
+            hintBtn.disabled = false;
             break;
     }
 
@@ -182,7 +184,6 @@ hintBtn.onclick = () => {
             break;
         case 1: 
             speechBubble.style.visibility = "visible";
-            explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
             // startOKBtn.style.visibility = "visible";
             tekst = 'Klik op de foute naam.';
@@ -193,7 +194,6 @@ hintBtn.onclick = () => {
             image = '../images/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
-                explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;

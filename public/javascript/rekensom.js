@@ -81,6 +81,7 @@ speakOff.onclick = () => {
     speakOffFunction();
 };
 
+hintBtn.disabled = true;
 welkomAquarium.play();
 welkomAquarium.onended = () => {
     startOKBtn.style.display = "block";
@@ -110,6 +111,7 @@ startOKBtn.onclick = () => {
             startOKBtn.style.display = "block";
             speechBubble.style.zIndex = "";
             mapOverlay.style.zIndex = "-1";
+            hintBtn.disabled = false;
             break;
     }
 
