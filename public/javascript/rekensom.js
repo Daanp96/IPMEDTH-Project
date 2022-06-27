@@ -40,8 +40,7 @@ let startOK = 0;
 let tekst = '';
 let image = '';
 
-
-speakOn.onclick = () => {
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     welkomAquarium.muted = true;
@@ -53,8 +52,7 @@ speakOn.onclick = () => {
     hint4.muted = true;
 };
 
-speakOff.onclick = () => {
-    console.log("klik");
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     welkomAquarium.muted = false;
@@ -64,6 +62,23 @@ speakOff.onclick = () => {
     hint2.muted = false;
     hint3.muted = false;
     hint4.muted = false;
+}
+
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 1000);
+
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+
+speakOff.onclick = () => {
+    speakOffFunction();
 };
 
 welkomAquarium.play();

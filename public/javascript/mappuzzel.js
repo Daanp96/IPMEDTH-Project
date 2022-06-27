@@ -32,23 +32,52 @@ for (let slide of slides) {
     dragDropMap(slide, button, zookeeper, speech, kaartHeel);
 }
 
-
-speakOn.onclick = () => {
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 1000);
+  
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     mapUitleg.muted = true;
     hint.muted = true;
     kaartHeel.muted = true;
 };
-speakOff.onclick = () => {
+  
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     mapUitleg.muted = false;
     hint.muted = false;
     kaartHeel.muted = false;
 };
+  
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+speakOff.onclick = () => {
+    speakOffFunction();
+};
 
-
+// speakOn.onclick = () => {
+//     speakOff.style.visibility = "visible";
+//     speakOn.style.visibility = "hidden";
+//     mapUitleg.muted = true;
+//     hint.muted = true;
+//     kaartHeel.muted = true;
+// };
+// speakOff.onclick = () => {
+//     speakOff.style.visibility = "hidden";
+//     speakOn.style.visibility = "visible";
+//     mapUitleg.muted = false;
+//     hint.muted = false;
+//     kaartHeel.muted = false;
+// };
 
 button.onclick = () => {
     window.location.href = "./dierentuinpad.html"; 

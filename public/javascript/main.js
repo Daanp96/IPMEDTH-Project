@@ -4,8 +4,8 @@
 // import {speakBtnMappuzzel} from "./mappuzzel.js";
 // import {speakBtnDierentuinpad} from "./dierentuinpad.js";
 
-// const speakOn = document.getElementById("js--speak-on");
-// const speakOff = document.getElementById("js--speak-off");
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
 // const infoBtn = document.getElementById("js--info-btn");
 
 const speechBubble = document.getElementById("js--speech-bubble");
@@ -57,6 +57,8 @@ let aantalSecondesTypen;
 let aantalSecondesGiraffe;
 let startTime, endTime;
 
+let speakOnStorage;
+
 // let infoOk = 0;
 let tekst = '';
 let image = '';
@@ -64,6 +66,21 @@ let image = '';
 window.onload = function() {
     start();
 }
+
+
+setInterval(() => {
+    if (speakOn.style.visibility == 'hidden') {
+        speakOnStorage = 'hidden';
+        localStorage.setItem("speakOnStorage", speakOnStorage);
+    }
+    if (speakOn.style.visibility == 'visible') {
+        speakOnStorage = 'visible';
+        localStorage.setItem("speakOnStorage", speakOnStorage);
+    }
+}, 200);
+    
+
+
 
 // speakBtnStart (speakOn, speakOff);
 // speakBtnMap (speakOn, speakOff);

@@ -29,7 +29,16 @@ const hint2 = new Audio("../audio/Tjalle/6-savanne/hint-2.m4a");
 const hint3 = new Audio("../audio/Tjalle/6-savanne/hint-3.m4a");
 const hint4 = new Audio("../audio/Tjalle/6-savanne/hint-4.m4a");
 
-speakOn.onclick = () => {
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 1000);
+  
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     savanneVerblijf.muted = true;
@@ -39,8 +48,8 @@ speakOn.onclick = () => {
     hint3.muted = true;
     hint4.muted = true;
 };
-
-speakOff.onclick = () => {
+  
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     savanneVerblijf.muted = false;
@@ -50,6 +59,35 @@ speakOff.onclick = () => {
     hint3.muted = false;
     hint4.muted = false;
 };
+  
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+speakOff.onclick = () => {
+    speakOffFunction();
+};
+
+// speakOn.onclick = () => {
+//     speakOff.style.visibility = "visible";
+//     speakOn.style.visibility = "hidden";
+//     savanneVerblijf.muted = true;
+//     verbeteren.muted = true;
+//     hint1.muted = true;
+//     hint2.muted = true;
+//     hint3.muted = true;
+//     hint4.muted = true;
+// };
+
+// speakOff.onclick = () => {
+//     speakOff.style.visibility = "hidden";
+//     speakOn.style.visibility = "visible";
+//     savanneVerblijf.muted = false;
+//     verbeteren.muted = false;
+//     hint1.muted = false;
+//     hint2.muted = false;
+//     hint3.muted = false;
+//     hint4.muted = false;
+// };
 
 savanneVerblijf.play();
 savanneVerblijf.onended = () => {

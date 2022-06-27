@@ -32,8 +32,8 @@ const reken_correct = 6;
 // const uitgang = new Audio("../audio/4-dierentuinpad/4-uitgang.mp3");
 // const vissen = document.getElementById("iframeAudio");
 
-const speakOn = document.getElementById("js--speakOn");
-const speakOff = document.getElementById("js--speakOff");
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
 
 const vissen = new Audio("../audio/Tjalle/4-dierentuinpad/1-vissen.m4a");
 const savanne = new Audio("../audio/Tjalle/4-dierentuinpad/2-savanne.m4a");
@@ -58,7 +58,16 @@ let star12;
 let x = 0;
 // let progress;
 
-speakOn.onclick = () => {
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 1000);
+  
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     vissen.muted = true;
@@ -68,7 +77,8 @@ speakOn.onclick = () => {
     verblijf.muted = true;
     uitgang.muted = true;
 };
-speakOff.onclick = () => {
+  
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     vissen.muted = false;
@@ -78,6 +88,34 @@ speakOff.onclick = () => {
     verblijf.muted = false;
     uitgang.muted = false;
 };
+  
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+speakOff.onclick = () => {
+    speakOffFunction();
+};
+
+// speakOn.onclick = () => {
+//     speakOff.style.visibility = "visible";
+//     speakOn.style.visibility = "hidden";
+//     vissen.muted = true;
+//     savanne.muted = true;
+//     pinguins.muted = true;
+//     ijsje.muted = true;
+//     verblijf.muted = true;
+//     uitgang.muted = true;
+// };
+// speakOff.onclick = () => {
+//     speakOff.style.visibility = "hidden";
+//     speakOn.style.visibility = "visible";
+//     vissen.muted = false;
+//     savanne.muted = false;
+//     pinguins.muted = false;
+//     ijsje.muted = false;
+//     verblijf.muted = false;
+//     uitgang.muted = false;
+// };
 
 
 if(document.URL.includes("dierentuinpad.html") ){

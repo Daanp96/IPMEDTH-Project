@@ -7,22 +7,22 @@
 
 @import "components/button";
 @import "components/form";
+@import "components/popup";
 @import "components/puzzelOptions";
 @import "components/speechBubble";
-@import "components/walls";
-@import "components/popup";
 @import "components/star";
+@import "components/walls";
 
 @import "layout/grid";
 
-@import "pages/rekensom";
-@import "pages/start";
-@import "pages/mappuzzel";
-@import "pages/map";
-@import "pages/savanne";
 @import "pages/arctic";
 @import "pages/dierentuinpad";
 @import "pages/einde";
-@import "pages/ijsco";
 @import "pages/giraffe";
+@import "pages/ijsco";
+@import "pages/map";
+@import "pages/mappuzzel";
+@import "pages/rekensom";
+@import "pages/savanne";
+@import "pages/start";
 @import "pages/typen";
