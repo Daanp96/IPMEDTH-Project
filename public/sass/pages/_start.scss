@@ -35,6 +35,7 @@
 
         &--image{
             @include widthImageSetting;
+            animation: glow 1s linear infinite alternate;
         }
     }
 
