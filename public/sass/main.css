@@ -749,6 +749,7 @@ img {
 .puzzel-options__btn-hint--image {
   width: 6rem;
   height: auto;
+  border-radius: 50%;
 }
 
 .puzzel-options__btn-speak {
@@ -2170,9 +2171,6 @@ input[type=number]::-webkit-outer-spin-button {
 .start-options__btn-hint--image {
   width: 6rem;
   height: auto;
-  border-radius: 50%;
-  -webkit-animation: glow 1s linear infinite alternate;
-          animation: glow 1s linear infinite alternate;
 }
 
 .start-options__btn-music-off {

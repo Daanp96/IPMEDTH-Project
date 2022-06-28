@@ -6,6 +6,8 @@
         z-index: 3;
         &--image{
             @include widthImageSetting;
+            border-radius: 50%;
+            // Hier moet de glow class werken.
         }
         
     }
