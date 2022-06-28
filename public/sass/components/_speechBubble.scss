@@ -37,3 +37,20 @@
     width: 20rem;
     height: auto;
 }
+
+.btn-reload {
+    position: absolute;
+    width: 7rem;
+    left: 21vw;
+    top: 1vh;
+}
+
+.reload_animation {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
