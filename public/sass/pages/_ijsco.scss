@@ -1,5 +1,5 @@
 .background_ijs {
-    background: url("../images/ijsbar/ijs-background.png");
+    background: url("../images/ijskraam/ijs-background.png");
     background-size: cover;
 }
 
@@ -133,11 +133,36 @@
             }
         }
 
-        &_titel {
-            font-size: 32px;
-            position: relative;
-            bottom: 50px;
-            left: 25px;
+        &_titel-1 {
+            font-size: 3rem;
+            // position: relative;
+            // bottom: 50px;
+            // left: 15px;
+            grid-column: 11/ span 2;
+            grid-row: 1;
+            align-self: center;
+            text-align: center;
+        }
+        &_titel-2 {
+            font-size: 3rem;
+            grid-column: 14/ span 2;
+            grid-row: 1;
+            align-self: center;
+            text-align: center;
+        }
+        &_titel-3 {
+            font-size: 3rem;
+            grid-column: 11/ span 2;
+            grid-row: 5;
+            align-self: center;
+            text-align: center;
+        }
+        &_titel-4 {
+            font-size: 3rem;
+            grid-column: 14/ span 2;
+            grid-row: 5;
+            align-self: center;
+            text-align: center;
         }
 
         &_kassa {
@@ -265,14 +290,31 @@
     display: none;
 }
 
-.head_ijsco {
-    &_img {
-        z-index: 1;
-        width: 150px;
-        position: absolute;
-        top: -165px;
-        left: 20vw;
+// .head_ijsco {
+//     &_img {
+//         z-index: 1;
+//         width: 150px;
+//         position: absolute;
+//         top: -165px;
+//         left: 20vw;
+//     }
+// }
+
+.hint-head {
+    grid-column: 7 / span 3;
+    grid-row: 4 / span 4;
+    z-index: 60;
+    &--image{
+        width: 100%;
+        height: 100%  
     }
+}
+
+.ijsco-speech-bubble{
+    grid-column: 9 / span 1;
+    grid-row: 3 / span 1;
+    align-self: end;
+    z-index: 60;
 }
 
 .grid-16-1 {

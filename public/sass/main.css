@@ -1021,7 +1021,7 @@ img {
 }
 
 .popup__container-typen {
-  background-image: url(../images/sign-monkey-popup.png);
+  background-image: url(../images/savanne/sign-monkey-popup.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1779,6 +1779,7 @@ input[type=number]::-webkit-outer-spin-button {
       grid-template-columns: repeat(13, minmax(0, 1fr));
   width: 100%;
   height: 100%;
+  z-index: 50;
 }
 
 .grid-4-4 {
@@ -1792,7 +1793,7 @@ input[type=number]::-webkit-outer-spin-button {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/Photoshop-transparant/arctic-2-background.png);
+  background-image: url(../images/arctic/arctic-2-background.png);
 }
 
 .arctic-btn {
@@ -2239,54 +2240,65 @@ input[type=number]::-webkit-outer-spin-button {
   width: 8vw;
 }
 
-.overlay-title-end {
-  opacity: 0;
-  font-size: 5rem;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
-  text-align: center;
-  position: absolute;
-  bottom: 30vh;
-  left: 50vw;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  z-index: 5;
-  color: white;
-}
-
-.btn_again {
-  opacity: 0;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
-  position: absolute;
-  bottom: 20vh;
-  left: 65vw;
-  z-index: 5;
-}
-
-.btn_stop {
-  opacity: 0;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
-  position: absolute;
-  bottom: 20vh;
-  left: 25vw;
-  width: 250px;
-  z-index: 5;
-}
-
 .overlay-end {
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
 
-.again {
-  width: 250px;
+.diploma {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 10;
+  grid-column: 4 /span 10;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 6;
+  grid-row: 2 / span 6;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 5;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (minmax(0, 1fr))[6];
+      grid-template-rows: repeat(6, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[10];
+      grid-template-columns: repeat(10, minmax(0, 1fr));
 }
 
-.stop {
-  width: 250px;
+.diploma--image {
+  width: 100%;
+  height: 100%;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 10;
+  grid-column: 1 /span 10;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 15;
+  grid-row: 1 / span 15;
+}
+
+.diploma--input {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 4;
+  grid-column: 4 /span 4;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / span 1;
+  margin-top: 4rem;
+  outline: 0;
+  border-bottom: 3px solid #ff6600;
+  text-align: center;
+  font-size: 4rem;
+  color: #FF6600;
+}
+
+.diploma--button {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-column: 5 /span 2;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  grid-row: 6 / span 1;
+  width: 100%;
 }
 
 .section-giraffe {
@@ -2842,6 +2854,10 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 60;
 }
 
+.giraffe-speech-bubble--buttons {
+  padding-bottom: 1rem;
+}
+
 .end-btn {
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
@@ -2854,7 +2870,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .background_ijs {
-  background: url("../images/ijsbar/ijs-background.png");
+  background: url("../images/ijskraam/ijs-background.png");
   background-size: cover;
 }
 
@@ -3025,11 +3041,56 @@ input[type=number]::-webkit-outer-spin-button {
   opacity: 50%;
 }
 
-.ijs_keuze_titel {
-  font-size: 32px;
-  position: relative;
-  bottom: 50px;
-  left: 25px;
+.ijs_keuze_titel-1 {
+  font-size: 3rem;
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 2;
+  grid-column: 11/ span 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.ijs_keuze_titel-2 {
+  font-size: 3rem;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14/ span 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.ijs_keuze_titel-3 {
+  font-size: 3rem;
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 2;
+  grid-column: 11/ span 2;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.ijs_keuze_titel-4 {
+  font-size: 3rem;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14/ span 2;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
 }
 
 .ijs_keuze_kassa {
@@ -3215,12 +3276,32 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
-.head_ijsco_img {
-  z-index: 1;
-  width: 150px;
-  position: absolute;
-  top: -165px;
-  left: 20vw;
+.hint-head {
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 3;
+  grid-column: 7 / span 3;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 4;
+  grid-row: 4 / span 4;
+  z-index: 60;
+}
+
+.hint-head--image {
+  width: 100%;
+  height: 100%;
+}
+
+.ijsco-speech-bubble {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 1;
+  grid-column: 9 / span 1;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / span 1;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  z-index: 60;
 }
 
 .grid-16-1 {
@@ -3724,7 +3805,7 @@ input[type=number]::-webkit-outer-spin-button {
 .rekensom--background {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../images/sea-background-2.png);
+  background-image: url(../images/aquarium/sea-background-2.png);
 }
 
 .rekensom--animal-1 {

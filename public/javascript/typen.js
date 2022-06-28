@@ -191,7 +191,6 @@ hintBtn.onclick = () => {
             hint2.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
@@ -210,7 +209,7 @@ hintBtn.onclick = () => {
             hint3.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/keyboard.png';
+            image = '../images/savanne/keyboard.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");

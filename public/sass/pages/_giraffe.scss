@@ -301,6 +301,10 @@
     grid-row: 4 / span 1;
     align-self: end;
     z-index: 60;
+
+    &--buttons{
+        padding-bottom: 1rem;
+    }
 }
 
 .end-btn{

@@ -151,7 +151,7 @@ hintBtn.onclick = () => {
             hint2.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/question-mark.png';
+            image = '../images/aquarium/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
@@ -170,7 +170,7 @@ hintBtn.onclick = () => {
             hint1.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/arrow-right.png';
+            image = '../images/aquarium/arrow-right.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");

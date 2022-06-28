@@ -205,7 +205,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
 
       if(attr == obj.getAttribute('data-pinguin')) {
         let elem = document.createElement("img");
-        elem.src = "../images/heart.png";
+        elem.src = "../images/arctic/heart.png";
         elem.style.width = "50px";
         elem.style.position = "absolute";
         elem.style.left = "40px";
@@ -301,7 +301,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
     
       if(attr == obj.getAttribute('data-bol')) {
         let kleur = obj.getAttribute('data-kleur');
-        currentDroppable.src = `../images/ijsbar/ijs_${kleur}.png`;
+        currentDroppable.src = `../images/ijskraam/ijs_${kleur}.png`;
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
         currentDroppable.removeAttribute('data-bol');
