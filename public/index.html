@@ -9,51 +9,37 @@
     <link rel="icon" type="image/x-icon" href="./images/monkey-head.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="./javascript/main.js" type="module" defer></script>
-    <script src="./javascript/start.js" type="module" defer></script>
+    <script src="./javascript/begin.js" type="module" defer></script>
 </head>
 <body>
-    <!-- <iframe src="./audio/1-Intro/1-welkom.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
-    <!-- <button href="#" class="btn-check button">&#10004;</button> -->
-    <main class="start--background">
-        <section class="section-start grid-16-8">
-            <article class="start-options grid-3-1">
-                <button class="start-options__btn-hint button">
-                    <image id="js--hint" class="start-options__btn-hint--image" src="./images/hint-btn.png"></image>
-                </button>
+    <main class="begin--background">
+        <section class="section-begin grid-16-8">
+            <article class="begin-options grid-3-1">
 
-                <!-- <button class="start-options__btn-information button" id="js--info-btn">
-                    <image class="start-options__btn-information--image" src="./images/information-btn.png"></image>
-                </button> -->
-    
-                <button class="start-options__btn-speak button" id="js--speak-on">
-                    <image class="start-options__btn-speak--image" src="./images/speak-on-btn.png"></image>
+                <button class="begin-options__btn-speak button" id="js--speak-on">
+                    <image class="begin-options__btn-speak--image" src="./images/speak-on-btn.png"></image>
                 </button>
     
-                <button class="start-options__btn-speak start-options__btn-speak-off button" id="js--speak-off">
-                    <image class="start-options__btn-speak--image" src="./images/speak-off-btn.png"></image>
+                <button class="begin-options__btn-speak begin-options__btn-speak-off button" id="js--speak-off">
+                    <image class="begin-options__btn-speak--image" src="./images/speak-off-btn.png"></image>
                 </button>
             </article>
 
-            <button class="start-btn button" id="js--start-btn">
-                <image class="start-btn--image" src="./images/arrow-begin.png" alt="begin pijl"></image>
-            </button>
-
-            <figure class="start-figure">
-                <img class="start-figure--image" src="./images/zoo-keeper-1.png" alt="dierentuin medewerker">
+            <figure class="begin-figure">
+                <img class="begin-figure--image" src="./images/zookeeper-poses/Male/zookeeper-pose-happy-welcome.png" alt="dierentuin medewerker">
             </figure>
 
-            <div class="speech-bubble start--speech-bubble" id="js--speech-bubble">
+            <div class="speech-bubble begin--speech-bubble" id="js--speech-bubble">
                 <image class="btn-reload button" id="js--speech-reload" src="./images/reload_button.png"></image>
                 <image class="btn-explaine hide" id="js--speech-bubble-img"></image>
-                <p id="js--speech-bubble-p">Welkom! Wat leuk dat je bij onze dierentuin langs komt.</p>
-                <div class="btn-ok-div">
-                    <button class="btn-ok-small btn-speech button" id="js--speech-bubble-btn">&#10132;</button>
-                </div>
+                <p id="js--speech-bubble-p">Hoi! Welke klas zit jij?</p>
             </div>
-            <div class="hide-overlay overlay-start" id="js--start-overlay"></div>
-            <span id="js--overlay-title" class="overlay-title">Help de dierentuin</span>
-            <div id="js--btn-overlay" class="btn_overlay">
-                <button class="btn-begin btn-ok-small button" id="js--begin-btn">START</button>
+
+            <div id="js--btn-groep2" class="btn_again">
+                <button class="stop btn-ok-small button" id="js--groep2-btn">Groep 2</button>
+            </div>
+            <div id="js--btn-groep3" class="btn_stop">
+                <button class="again btn-ok-small button" id="js--groep3-btn">Groep 3</button>
             </div>
         </section>
     </main>
