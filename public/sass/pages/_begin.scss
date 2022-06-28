@@ -8,9 +8,10 @@
         background-image: url(../images/start-background.png);
     }
 
-    &-figure{
-        grid-column: 8 / span 2;
+    &__figure{
+        grid-column: 11 / span 2;
         grid-row: 5 /span 4;
+        z-index: 2;
 
         &--image{
             height: 100%;
@@ -18,9 +19,31 @@
         }
     }
 
-    &--speech-bubble{
-        grid-column: 10 / span 4;
+    &__speech-bubble{
+        grid-column: 12 / span 4;
         grid-row: 4 /span 1;   
+
+        &--p{
+            margin-top: 1rem;
+        }
+    }
+    &__groep2{
+        grid-column: 4 / span 2;
+        grid-row: 6;
+
+        &--button{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__groep3{
+        grid-column: 9 / span 2;
+        grid-row: 6;
+
+        &--button{
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 
@@ -57,51 +80,39 @@
     }
 }
 
-.begin-btn{
-    grid-column: 7 / span 1;
-    grid-row: 6 /span 2;
-    visibility: hidden;
 
-    animation: scale-big 2s ease-in-out infinite;
+// .btn_overlay {
+//     position: absolute;
+//     bottom: 20vh;
+//     left: 50vw;
+//     transform: translate(-50%);
+//     z-index: 5;
+// }
 
-    &--image{
-        height: auto;
-        width: 100%;
-        transform: rotateX(45deg);
-    }
-}
+// .hide_overlay {
+//     opacity: 1;
+//     z-index: 1;
+// }
 
-.btn_overlay {
-    position: absolute;
-    bottom: 20vh;
-    left: 50vw;
-    transform: translate(-50%);
-    z-index: 5;
-}
+// .overlay {
+//     &-title{
+//         text-align: center;
+//         position: absolute;
+//         bottom: 30vh;
+//         left: 50vw;
+//         transform: translate(-50%);
+//         z-index: 5;
+//         color: white;
+//         font-size: 20rem;
+//         transition: 0.5s all;
+//     }
 
-.hide_overlay {
-    opacity: 1;
-    z-index: 1;
-}
-
-.overlay {
-    &-title{
-        text-align: center;
-        position: absolute;
-        bottom: 30vh;
-        left: 50vw;
-        transform: translate(-50%);
-        z-index: 5;
-        color: white;
-        font-size: 20rem;
-        transition: 0.5s all;
-    }
-
-    &-begin {
-        background-color: rgba(0, 0, 0, 0.75);
-    }
+//     &-begin {
+//         background-color: rgba(0, 0, 0, 0.75);
+//     }
     
-}
+// }
+
 
 // @media (min-height: $height-750){
 //     .begin{

@@ -39,8 +39,6 @@
 }
 
 .btn-reload {
-    position: absolute;
-    width: 7rem;
-    left: 21vw;
-    top: 1vh;
+    @include widthImageSetting;
+    float: right;
 }
