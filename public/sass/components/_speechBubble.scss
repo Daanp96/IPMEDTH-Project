@@ -40,7 +40,10 @@
 
 .btn-reload {
     position: absolute;
-    width: 7rem;
-    left: 21vw;
+    width: 6rem;
+    right: -5vw;
     top: 1vh;
+    display: none;
+    // opacity: 0;
+    // transition: 0.5s all;
 }

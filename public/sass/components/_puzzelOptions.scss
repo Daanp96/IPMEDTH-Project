@@ -9,7 +9,9 @@
             border-radius: 50%;
             // Hier moet de glow class werken.
         }
-        
+        // &-glow {
+        //     animation: glow 1s linear infinite alternate;
+        // }
     }
 
     // &__btn-information{
@@ -29,6 +31,7 @@
             @include widthImageSetting;
         }
     }
+    
     &__btn-speak-off{
         visibility: hidden;
         z-index: 3;
