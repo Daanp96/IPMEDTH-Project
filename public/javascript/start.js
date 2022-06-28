@@ -3,7 +3,7 @@ import {addAnimate, removeAnimate, reloadSpeech, hintGlow} from "./functions.js"
 const startBtn = document.getElementById("js--start-btn");
 
 let intro = new Audio("../audio/Tjalle/1-intro/1-welkom.m4a");
-let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoeker_helpen.m4a");
+let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoekerHelpen.m4a");
 let uitleggen = new Audio("../audio/Tjalle/1-intro/3-uitleg.m4a");
 let hint = new Audio("../audio/Tjalle/1-intro/4-hints.m4a");
 let stem = new Audio("../audio/Tjalle/1-intro/5-stem.m4a");
