@@ -271,6 +271,25 @@ $breakpoint arguement choices:
           animation: glow 1s linear infinite alternate;
 }
 
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.reload_animation {
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -815,6 +834,13 @@ img {
 .btn-explaine-big {
   width: 20rem;
   height: auto;
+}
+
+.btn-reload {
+  position: absolute;
+  width: 7rem;
+  left: 21vw;
+  top: 1vh;
 }
 
 .rock-wood-wall-position--1 {
@@ -2171,6 +2197,7 @@ input[type=number]::-webkit-outer-spin-button {
 .start-options__btn-hint--image {
   width: 6rem;
   height: auto;
+  border-radius: 50%;
 }
 
 .start-options__btn-music-off {

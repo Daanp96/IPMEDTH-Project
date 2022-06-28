@@ -14,48 +14,27 @@ let pond = 0;
 const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
 const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
 
-// const dragDrop = (object) => {
+const addAnimate = (animate) => {
+  animate.classList.add("reload_animation");
+}
 
-//     object.onmousedown = (event) => {
+const removeAnimate = (animate) => {
+  animate.classList.remove("reload_animation");
+}
 
-//         let shiftX = event.clientX - object.getBoundingClientRect().left;
-//         let shiftY = event.clientY - object.getBoundingClientRect().top;
-      
-//         object.style.position = 'absolute';
-//         object.style.width = width;
-//         object.style.zIndex = 1000;
-//         object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
-//         document.body.append(object);
-      
-//         moveAt(event.pageX, event.pageY);
-      
-//         // moves the object at (pageX, pageY) coordinates
-//         // taking initial shifts into account
-//         function moveAt(pageX, pageY) {
-//           object.style.left = pageX - shiftX + 'px';
-//           object.style.top = pageY - shiftY + 'px';
-//         }
-      
-//         function onMouseMove(event) {
-//           moveAt(event.pageX, event.pageY);
-//         }
-      
-//         // move the object on mousemove
-//         document.addEventListener('mousemove', onMouseMove);
-      
-//         // drop the object, remove unneeded handlers
-//         object.onmouseup = () => {
-//           document.removeEventListener('mousemove', onMouseMove);
-//           object.style.cursor = "url('../images/cursor_grab_60.cur'), default";
-//           object.onmouseup = null;
-//         };
-      
-//       };
-      
-//       object.ondragstart = () => {
-//         return false;
-//       };
-// }
+const reloadSpeech = (audio, animate) => {
+  addAnimate(animate);
+  audio.play();
+  audio.onended = () => {
+    removeAnimate(animate);
+  }
+}
+
+const hintGlow = (tijd, hint) => {
+  setTimeout(() => {
+    hint.classList.add("glow");
+  }, tijd);
+}
 
 const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
   let currentDroppable = null;
@@ -430,30 +409,6 @@ const dragDropGeld = (obj, kassa, btn, speech, audio) => {
   };
 }
 
-// const modalView = (modal, title, text, button, {
-//     title_content = "",
-//     text_content = "",
-//     button_content = ""
-//   }) => {
-
-//   title.innerHTML = title_content;
-//   text.innerHTML = text_content;
-//   button.innerHTML = button_content;
-
-//   button.onclick = () => {
-//     modal.style.opacity = "0";
-//   }
-// }
-
-// const textBubble = () => {
-//   if(startOK == 0 && true){
-//     startP.innerHTML = "jaja";
-//     startOK ++;
-//     return;
-//   }
-// }
-
-
 const dragDropGiraffe = (object, endBtn) => {
 
   object.onmousedown = (event) => {
@@ -526,5 +481,14 @@ const dragDropGiraffe = (object, endBtn) => {
   };
 };
 
-// export { dragDrop, dragDropMap, dragDropArctic, modalView, dragDropGiraffe};
-export { dragDropMap, dragDropArctic, dragDropIjs, dragDropGeld,dragDropGiraffe};
+export { 
+  addAnimate, 
+  removeAnimate, 
+  reloadSpeech,
+  hintGlow, 
+  dragDropMap, 
+  dragDropArctic, 
+  dragDropIjs, 
+  dragDropGeld, 
+  dragDropGiraffe 
+};

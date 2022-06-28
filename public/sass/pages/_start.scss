@@ -35,6 +35,8 @@
 
         &--image{
             @include widthImageSetting;
+            border-radius: 50%;
+
         }
     }
 

@@ -146,3 +146,13 @@
     animation: glow 1s linear infinite alternate;
 
 }
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.reload_animation {
+    animation: spin 2s linear infinite;
+}

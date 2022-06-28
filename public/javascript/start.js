@@ -1,13 +1,6 @@
-const startBtn = document.getElementById("js--start-btn");
+import {addAnimate, removeAnimate, reloadSpeech, hintGlow} from "./functions.js"; 
 
-// let intro = new Audio("audio/1-Intro/1-welkom.mp3");
-// let bezoeker = new Audio("audio/1-Intro/2-gelukkige-bezoeker.mp3");
-// let raadEens = new Audio("audio/1-Intro/3-raadEens.mp3");
-// let uitleggen = new Audio("audio/1-Intro/4-uitleggen.mp3");
-// let hint = new Audio("audio/1-Intro/5-hint.mp3");
-// let informatie = new Audio("audio/1-Intro/6-informatie.mp3");
-// let stem = new Audio("audio/1-Intro/8-stem.mp3");
-// let binnen = new Audio("audio/1-Intro/9-binnen.mp3");
+const startBtn = document.getElementById("js--start-btn");
 
 let intro = new Audio("../audio/Tjalle/1-intro/1-welkom.m4a");
 let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoeker_helpen.m4a");
@@ -22,15 +15,23 @@ const startP = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const startOverlay = document.getElementById("js--start-overlay");
 const beginBtn = document.getElementById("js--btn-overlay");
+const hintBtn = document.getElementById("js--hint");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const title = document.getElementById("js--overlay-title");
+const speechReload = document.getElementById("js--speech-reload");
 
 let startOK = 0;
 let tekst = '';
 let image = '';
 
+hintGlow(5000, hintBtn);
+
 window.localStorage.clear();
+
+speechReload.onclick = () => {
+    reloadSpeech(intro, speechReload);
+}
 
 beginBtn.onclick = () => {
     startOverlay.style.opacity = "0";
@@ -38,9 +39,11 @@ beginBtn.onclick = () => {
     beginBtn.style.display = "none";
     title.style.opacity = "0";
     title.style.zIndex = "-1";
+    addAnimate(speechReload);
     intro.play();
     intro.onended = () => {
         startOKBtn.style.display = "block";
+        removeAnimate(speechReload);
     }
 }
 
@@ -71,43 +74,53 @@ startOKBtn.onclick = () => {
         case 0: 
             tekst = 'Vandaag nemen we een bezoeker mee om ons te helpen in de dierentuin. En raad eens... dat ben jij!';
             image = '';
+            addAnimate(speechReload);
             bezoeker.play();
             bezoeker.onended = () => {
                 startOKBtn.style.display = "block";
+                removeAnimate(speechReload);
             }
             break;
         case 1: 
             tekst = 'Voordat we naar binnen gaan leg ik uit hoe alles werkt.';
             image = '';
+            addAnimate(speechReload);
             uitleggen.play();
             uitleggen.onended = () => {
                 startOKBtn.style.display = "block";
+                removeAnimate(speechReload);
             }
             break;
         case 2: 
             startExplaineBtn.classList.remove("hide");
             tekst = 'Het lampje geeft hints. Klik hier op als je vastloopt.';
             image = './images/hint-btn.png';
+            addAnimate(speechReload);
             hint.play();
             hint.onended = () => {
                 startOKBtn.style.display = "block";
+                removeAnimate(speechReload);
             }
             break;
         case 3: 
             tekst = 'Het oortje is mijn stem. Klik hierop dan kan je mijn stem aan en uit zetten.';
             image = './images/speak-on-btn.png';
+            addAnimate(speechReload);
             stem.play();
             stem.onended = () => {
                 startOKBtn.style.display = "block";
+                removeAnimate(speechReload);
             }
             break;
         case 4: 
             startExplaineBtn.classList.add("hide");
             tekst = 'Nu is alles uitgelegd. Dus laten we naar binnen gaan!';
             image = '';
+            addAnimate(speechReload);
             binnen.play();
             binnen.onended = () => {
                 startOKBtn.style.display = "block";
+                removeAnimate(speechReload);
             }
             break;
         // case 5: 
