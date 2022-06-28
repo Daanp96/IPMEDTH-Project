@@ -30,22 +30,25 @@
     z-index: 3;
 
     &__btn-hint{
-        grid-column: 1 / span 1;
-        grid-row: 1 /span 1;
-
-        &--image{
-            @include widthImageSetting;
-        }
-    }
-
-    &__btn-information{
         grid-column: 2 / span 1;
         grid-row: 1 /span 1;
-    
+
         &--image{
             @include widthImageSetting;
+            border-radius: 50%;
+            animation: glow 1s linear infinite alternate;
+
         }
     }
+
+    // &__btn-information{
+    //     grid-column: 2 / span 1;
+    //     grid-row: 1 /span 1;
+    
+    //     &--image{
+    //         @include widthImageSetting;
+    //     }
+    // }
     &__btn-music-off{
         visibility: hidden;
     }

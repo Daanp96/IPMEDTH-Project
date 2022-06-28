@@ -131,7 +131,7 @@ function start(){
 }
 
 if(document.URL.includes("rekensom.html") ){
-    const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
+    
     formRekensomBtn.addEventListener("click", function(e){
         
         let form_answer = document.forms["answerForm"]["numberInput"].value;
@@ -143,7 +143,7 @@ if(document.URL.includes("rekensom.html") ){
         aantalSecondesRekensom = seconds;
 
         if(form_answer == reken_correct){
-            terugKaart.play();
+            
             if(seconds <= 60){
                 try {
                     localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
@@ -301,7 +301,6 @@ if(document.URL.includes("typen.html")){
         aantalSecondesTypen = seconds;
 
         if(spanTypen.innerText == typen_correct){
-            terugKaart.play();
             if(seconds <= 60){
                 try {
                     localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);

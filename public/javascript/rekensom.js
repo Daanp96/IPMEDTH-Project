@@ -130,8 +130,8 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             
             tekst = 'Klik op het vraagteken.';
-            hint2.play();
-            hint2.onended = () => {
+            hint1.play();
+            hint1.onended = () => {
                 startOKBtn.style.display = "block";
             }
             image = '../images/question-mark.png';
@@ -149,8 +149,8 @@ hintBtn.onclick = () => {
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
             tekst = 'Loop door het hele aquarium.';
-            hint1.play();
-            hint1.onended = () => {
+            hint2.play();
+            hint2.onended = () => {
                 startOKBtn.style.display = "block";
             }
             image = '../images/arrow-right.png';

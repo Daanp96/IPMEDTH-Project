@@ -373,6 +373,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio) => {
       obj.onmouseup = null;
 
       const attr = currentDroppable.getAttribute('data-geld');
+      console.log(obj);
 
       if(attr == obj.getAttribute('data-geld')) {
         const kaching = new Audio("../audio/ijsbar/kassa_fix.mp3");
@@ -386,6 +387,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio) => {
 
         if (ijsPrijs == 0) {
           audio.play();
+          document.getElementById("js--ijs-keuze-kassa").classList.remove("geld-droppable");
           kassa.innerHTML = "Dankjewel!";
           btn.style.display = "block";
           speech.innerHTML = "Dankjewel! Geniet van jullie ijsjes.";
