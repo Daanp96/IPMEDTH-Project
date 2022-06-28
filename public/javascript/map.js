@@ -6,6 +6,35 @@ const mapKapot = new Audio("../audio/Tjalle/2-map/1-kaartkapot.m4a");
 
 mapKapot.play();
 
+setInterval(() => {
+  if (localStorage.getItem("speakOnStorage") == 'hidden') {
+      speakOnFunction();
+  }
+  if (localStorage.getItem("speakOnStorage") == 'visible') {
+      speakOffFunction();
+  }
+}, 1000);
+
+function speakOnFunction(){
+  speakOff.style.visibility = "visible";
+  speakOn.style.visibility = "hidden";
+  mapKapot.muted = true;
+};
+
+function speakOffFunction(){
+  speakOff.style.visibility = "hidden";
+  speakOn.style.visibility = "visible";
+  mapKapot.muted = false;
+};
+
+speakOn.onclick = () => {
+  speakOnFunction();
+};
+speakOff.onclick = () => {
+  speakOffFunction();
+};
+
+
 puzzelButton.onclick = () => {
   endMap();
 };
@@ -14,16 +43,16 @@ function endMap(){
   window.location.href="mappuzzel.html";  
 };
 
-speakOn.onclick = () => {
-  speakOff.style.visibility = "visible";
-  speakOn.style.visibility = "hidden";
-  mapKapot.muted = true;
-};
-speakOff.onclick = () => {
-  speakOff.style.visibility = "hidden";
-  speakOn.style.visibility = "visible";
-  mapKapot.muted = false;
-};
+// speakOn.onclick = () => {
+//   speakOff.style.visibility = "visible";
+//   speakOn.style.visibility = "hidden";
+//   mapKapot.muted = true;
+// };
+// speakOff.onclick = () => {
+//   speakOff.style.visibility = "hidden";
+//   speakOn.style.visibility = "visible";
+//   mapKapot.muted = false;
+// };
 
 
 

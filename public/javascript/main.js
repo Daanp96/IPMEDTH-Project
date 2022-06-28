@@ -4,8 +4,8 @@
 // import {speakBtnMappuzzel} from "./mappuzzel.js";
 // import {speakBtnDierentuinpad} from "./dierentuinpad.js";
 
-// const speakOn = document.getElementById("js--speak-on");
-// const speakOff = document.getElementById("js--speak-off");
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
 // const infoBtn = document.getElementById("js--info-btn");
 
 const speechBubble = document.getElementById("js--speech-bubble");
@@ -57,6 +57,8 @@ let aantalSecondesTypen;
 let aantalSecondesGiraffe;
 let startTime, endTime;
 
+let speakOnStorage;
+
 // let infoOk = 0;
 let tekst = '';
 let image = '';
@@ -64,6 +66,21 @@ let image = '';
 window.onload = function() {
     start();
 }
+
+
+setInterval(() => {
+    if (speakOn.style.visibility == 'hidden') {
+        speakOnStorage = 'hidden';
+        localStorage.setItem("speakOnStorage", speakOnStorage);
+    }
+    if (speakOn.style.visibility == 'visible') {
+        speakOnStorage = 'visible';
+        localStorage.setItem("speakOnStorage", speakOnStorage);
+    }
+}, 200);
+    
+
+
 
 // speakBtnStart (speakOn, speakOff);
 // speakBtnMap (speakOn, speakOff);
@@ -131,7 +148,6 @@ function start(){
 }
 
 if(document.URL.includes("rekensom.html") ){
-    
     formRekensomBtn.addEventListener("click", function(e){
         
         let form_answer = document.forms["answerForm"]["numberInput"].value;
@@ -143,7 +159,6 @@ if(document.URL.includes("rekensom.html") ){
         aantalSecondesRekensom = seconds;
 
         if(form_answer == reken_correct){
-            
             if(seconds <= 60){
                 try {
                     localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
@@ -290,7 +305,6 @@ const spanTypen = document.getElementById("js--typen-form");
 const spanTypenBtn = document.getElementById("js--form-submitTypen");
 
 if(document.URL.includes("typen.html")){
-    // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
     spanTypenBtn.addEventListener("click", function(e){
         console.log(spanTypen.innerText);
 

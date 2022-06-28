@@ -82,13 +82,47 @@ let countHint = 0;
 let countEnd = 0;
 let tekst = '';
 let image = '';
+let speakOnStorage;
 
-speakOn.onclick = () =>{
+setInterval(() => {
+    if (speakOn2.style.visibility == 'hidden') {
+        speakOnStorage = 'hidden';
+        localStorage.setItem("speakOnStorage", speakOnStorage);
+    }
+    if (speakOn2.style.visibility == 'visible') {
+        speakOnStorage = 'visible';
+        localStorage.setItem("speakOnStorage", speakOnStorage);
+    }
+}, 200);
+
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    } 
+    if (localStorage.getItem("speakOnStorage") == 'hidden' && articleIntro.style.display == "none") {
+        speakOnFunction2();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible' && articleIntro.style.display == "none") {
+        speakOffFunction2();
+    }
+}, 1000);
+  
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     verblijfAf.muted = true;
-}
-speakOn2.onclick = () =>{
+};
+  
+function speakOffFunction(){
+    speakOff.style.visibility = "hidden";
+    speakOn.style.visibility = "visible";
+    verblijfAf.muted = false;
+};
+
+function speakOnFunction2(){
     speakOff2.style.visibility = "visible";
     speakOn2.style.visibility = "hidden";
     bovenaan.muted = true;
@@ -100,12 +134,8 @@ speakOn2.onclick = () =>{
     hint1.muted = true;
     hint2.muted = true;
 };
-speakOff.onclick = () =>{
-    speakOff.style.visibility = "hidden";
-    speakOn.style.visibility = "visible";
-    verblijfAf.muted = false;
-};
-speakOff2.onclick = () =>{
+  
+function speakOffFunction2(){
     speakOff2.style.visibility = "hidden";
     speakOn2.style.visibility = "visible";
     bovenaan.muted = false;
@@ -117,7 +147,56 @@ speakOff2.onclick = () =>{
     hint1.muted = false;
     hint2.muted = false;
 };
+  
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+speakOff.onclick = () => {
+    speakOffFunction();
+};
+speakOn2.onclick = () => {
+    speakOnFunction2();
+};
+speakOff2.onclick = () => {
+    speakOffFunction2();
+};
 
+// speakOn.onclick = () =>{
+//     speakOff.style.visibility = "visible";
+//     speakOn.style.visibility = "hidden";
+//     verblijfAf.muted = true;
+// }
+// speakOn2.onclick = () =>{
+//     speakOff2.style.visibility = "visible";
+//     speakOn2.style.visibility = "hidden";
+//     bovenaan.muted = true;
+//     goedIngericht.muted = true;
+//     vraag.muted = true;
+//     veelDieren.muted = true;
+//     vrijeRuimte.muted = true;
+//     keuze.muted = true;
+//     hint1.muted = true;
+//     hint2.muted = true;
+// };
+// speakOff.onclick = () =>{
+//     speakOff.style.visibility = "hidden";
+//     speakOn.style.visibility = "visible";
+//     verblijfAf.muted = false;
+// };
+// speakOff2.onclick = () =>{
+//     speakOff2.style.visibility = "hidden";
+//     speakOn2.style.visibility = "visible";
+//     bovenaan.muted = false;
+//     goedIngericht.muted = false;
+//     vraag.muted = false;
+//     veelDieren.muted = false;
+//     vrijeRuimte.muted = false;
+//     keuze.muted = false;
+//     hint1.muted = false;
+//     hint2.muted = false;
+// };
+
+hintBtn.disabled = true;
 verblijfAf.play();
 verblijfAf.onended = () => {
     startOKBtn.style.display = "flex";
@@ -127,6 +206,7 @@ hintBubbleBtn.onclick = () => {
     mapOverlay.classList.add("hide");
     headZookeeper.classList.add("hide");
     hintBubble.classList.add("hide");
+    hintBtn.disabled = false;
 }
 
 hintBtn.onclick = () => {
@@ -197,6 +277,7 @@ startOKBtn.onclick = () => {
     bovenaan.play();
     bovenaan.onended = () => {
         hintBubbleBtn.style.display = "flex";
+        
     }
 };
 
@@ -280,6 +361,7 @@ endBtn.onclick = () => {
     mapOverlay.classList.remove("hide");
     headZookeeper.classList.remove("hide");
     endBubble.classList.remove("hide");
+    hintBtn.disabled = true;
     goedIngericht.play();
     goedIngericht.onended = () => {
         endBubbleBtn.style.display = "flex";

@@ -47,7 +47,16 @@ beginBtn.onclick = () => {
     }
 }
 
-speakOn.onclick = () => {
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 1000);
+
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     intro.muted = true;
@@ -57,7 +66,8 @@ speakOn.onclick = () => {
     stem.muted = true;
     binnen.muted = true;
 };
-speakOff.onclick = () => {
+
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     intro.muted = false;
@@ -66,6 +76,13 @@ speakOff.onclick = () => {
     hint.muted = false;
     stem.muted = false;
     binnen.muted = false;
+};
+
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+speakOff.onclick = () => {
+    speakOffFunction();
 };
 
 // praat wolk

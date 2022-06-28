@@ -40,8 +40,7 @@ let startOK = 0;
 let tekst = '';
 let image = '';
 
-
-speakOn.onclick = () => {
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     welkomAquarium.muted = true;
@@ -53,8 +52,7 @@ speakOn.onclick = () => {
     hint4.muted = true;
 };
 
-speakOff.onclick = () => {
-    console.log("klik");
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     welkomAquarium.muted = false;
@@ -64,8 +62,26 @@ speakOff.onclick = () => {
     hint2.muted = false;
     hint3.muted = false;
     hint4.muted = false;
+}
+
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 1000);
+
+speakOn.onclick = () => {
+    speakOnFunction();
 };
 
+speakOff.onclick = () => {
+    speakOffFunction();
+};
+
+hintBtn.disabled = true;
 welkomAquarium.play();
 welkomAquarium.onended = () => {
     startOKBtn.style.display = "block";
@@ -95,6 +111,7 @@ startOKBtn.onclick = () => {
             startOKBtn.style.display = "block";
             speechBubble.style.zIndex = "";
             mapOverlay.style.zIndex = "-1";
+            hintBtn.disabled = false;
             break;
     }
 
@@ -134,7 +151,7 @@ hintBtn.onclick = () => {
             hint1.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/question-mark.png';
+            image = '../images/aquarium/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
@@ -153,7 +170,7 @@ hintBtn.onclick = () => {
             hint2.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/arrow-right.png';
+            image = '../images/aquarium/arrow-right.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");

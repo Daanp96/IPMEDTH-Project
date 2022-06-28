@@ -22,6 +22,7 @@ const pinguinVerblijf = new Audio("../audio/Tjalle/7-pinguins/1-pinguïnverblijf
 const hint1 = new Audio("../audio/Tjalle/7-pinguins/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/7-pinguins/hint-2.m4a");
 
+hintBtn.disabled = true;
 pinguinVerblijf.play();
 pinguinVerblijf.onended = () => {
     startOKBtn.style.display = "flex";
@@ -33,22 +34,55 @@ startOKBtn.onclick = () => {
     // startOKBtn.style.visibility = "hidden";
     speechBubble.style.zIndex = "";
     mapOverlay.style.zIndex = "-1";
+    hintBtn.disabled = false;
 }
 
-speakOn.onclick = () => {
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 1000);
+  
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
+    pinguinVerblijf.muted = true;
     hint1.muted = true;
     hint2.muted = true;
 };
-
-speakOff.onclick = () => {
-    console.log("klik");
+  
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
+    pinguinVerblijf.muted = false;
     hint1.muted = false;
     hint2.muted = false;
 };
+  
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+speakOff.onclick = () => {
+    speakOffFunction();
+};
+
+// speakOn.onclick = () => {
+//     speakOff.style.visibility = "visible";
+//     speakOn.style.visibility = "hidden";
+//     hint1.muted = true;
+//     hint2.muted = true;
+// };
+
+// speakOff.onclick = () => {
+//     console.log("klik");
+//     speakOff.style.visibility = "hidden";
+//     speakOn.style.visibility = "visible";
+//     hint1.muted = false;
+//     hint2.muted = false;
+// };
 
 arcticBtn.onclick = () => {
     window.location.href = "./dierentuinpad.html";

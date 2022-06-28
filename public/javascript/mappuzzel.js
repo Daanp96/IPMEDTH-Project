@@ -4,6 +4,7 @@ const slides = document.getElementsByClassName("drag");
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
+const hintBtn = document.getElementById("js--hint");
 
 const button = document.getElementById("js--map_btn");
 const speech = document.getElementById("js--speech-bubble");
@@ -19,12 +20,11 @@ const mapUitleg = new Audio("../audio/Tjalle/3-mappuzzel/1-kaartInElkaar.m4a");
 const hint = new Audio("../audio/Tjalle/3-mappuzzel/hint-1.m4a");
 const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
 
-
+hintBtn.disabled = true;
 mapUitleg.play();
 mapUitleg.onended = () => {
     speechButton.style.display = "flex";
 }
-const hintBtn = document.getElementById("js--hint");
 
 let countHint = 0;
 
@@ -32,23 +32,52 @@ for (let slide of slides) {
     dragDropMap(slide, button, zookeeper, speech, kaartHeel);
 }
 
-
-speakOn.onclick = () => {
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 1000);
+  
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     mapUitleg.muted = true;
     hint.muted = true;
     kaartHeel.muted = true;
 };
-speakOff.onclick = () => {
+  
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     mapUitleg.muted = false;
     hint.muted = false;
     kaartHeel.muted = false;
 };
+  
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+speakOff.onclick = () => {
+    speakOffFunction();
+};
 
-
+// speakOn.onclick = () => {
+//     speakOff.style.visibility = "visible";
+//     speakOn.style.visibility = "hidden";
+//     mapUitleg.muted = true;
+//     hint.muted = true;
+//     kaartHeel.muted = true;
+// };
+// speakOff.onclick = () => {
+//     speakOff.style.visibility = "hidden";
+//     speakOn.style.visibility = "visible";
+//     mapUitleg.muted = false;
+//     hint.muted = false;
+//     kaartHeel.muted = false;
+// };
 
 button.onclick = () => {
     window.location.href = "./dierentuinpad.html"; 
@@ -60,6 +89,7 @@ speechButton.onclick = () => {
     speech.style.visibility = "hidden";
     speech.style.zIndex = "-1";
     mapOverlay.style.zIndex = "-1";
+    hintBtn.disabled = false;
 }
 
 hintBtn.onclick = () => {
