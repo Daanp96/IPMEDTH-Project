@@ -44,13 +44,3 @@
     left: 21vw;
     top: 1vh;
 }
-
-.reload_animation {
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
