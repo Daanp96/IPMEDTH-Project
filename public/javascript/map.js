@@ -1,10 +1,17 @@
+import {reloadSpeech} from "./functions.js";
+
 const puzzelButton = document.getElementById("js--map-btn");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
+const herhaal = document.getElementById("js--speech-reload");
 
 const mapKapot = new Audio("../audio/Tjalle/2-map/1-kaartkapot.m4a");
 
 mapKapot.play();
+mapKapot.onended = () => {
+  puzzelButton.style.display = "flex";
+  herhaal.style.display = "block";
+}
 
 setInterval(() => {
   if (localStorage.getItem("speakOnStorage") == 'hidden') {
@@ -34,6 +41,9 @@ speakOff.onclick = () => {
   speakOffFunction();
 };
 
+herhaal.onclick = () => {
+  reloadSpeech(mapKapot, herhaal);
+}
 
 puzzelButton.onclick = () => {
   endMap();
