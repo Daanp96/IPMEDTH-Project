@@ -25,33 +25,12 @@ let startOK = 0;
 let tekst = '';
 let image = '';
 let audioHerhaal = [intro, bezoeker, uitleggen, hint, stem, herhaal, binnen];
+let countHerhaal = 0;
 
 window.localStorage.clear();
 
 speechReload.onclick = () => {
-    switch(startOK) {
-        case 0:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 1:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 2:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 3: 
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 4:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 5:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 6:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-    }
+    reloadSpeech(audioHerhaal[countHerhaal], speechReload);
 }
 
 intro.play();
@@ -195,6 +174,7 @@ startOKBtn.onclick = () => {
     startP.innerHTML = tekst;
     startExplaineBtn.src = image;
     startOK++;
+    countHerhaal++;
 };
 
 startBtn.onclick = () => {

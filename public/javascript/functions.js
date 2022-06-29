@@ -11,7 +11,6 @@ let pond = 0;
 // audio
 // let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
-const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
 const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
 
 const addAnimate = (animate) => {
@@ -22,12 +21,12 @@ const removeAnimate = (animate) => {
   animate.classList.remove("reload_animation");
 }
 
-const reloadSpeech = (audio, animate) => {
-  addAnimate(animate);
-  audio.play();
-  audio.onended = () => {
-    removeAnimate(animate);
-  }
+const reloadSpeech = (audio, animate, audioHint = []) => {
+    addAnimate(animate);
+    audio.play();
+    audio.onended = () => {
+      removeAnimate(animate);
+    }
 }
 
 const hintGlow = (tijd, hint) => {
@@ -37,7 +36,7 @@ const hintGlow = (tijd, hint) => {
   }, tijd);
 }
 
-const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
+const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -107,7 +106,7 @@ const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
           speech.style.gridColumnStart = "7";
           speech.style.visibility = "visible";
           speech.style.zIndex = "1";
-          speech.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
+          speechP.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
           kaartHeel.play();
           kaartHeel.onended = () => {
             btn.style.display = "block";

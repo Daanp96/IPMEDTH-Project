@@ -1,4 +1,4 @@
-import {dragDropMap, hintGlow} from "./functions.js";
+import {dragDropMap, hintGlow, reloadSpeech} from "./functions.js";
 
 const slides = document.getElementsByClassName("drag");
 
@@ -11,6 +11,7 @@ const speech = document.getElementById("js--speech-bubble");
 const speechP = document.getElementById("js--speech-bubble-p");
 const speechImage = document.getElementById("js--speech-bubble-img");
 const speechButton = document.getElementById("js--speech-bubble-btn");
+const herhaal = document.getElementById("js--speech-reload");
 
 const zookeeper = document.getElementById("js--map_zookeeper");
 const mapOverlay = document.getElementById("js--map-overlay");
@@ -24,12 +25,22 @@ hintBtn.disabled = true;
 mapUitleg.play();
 mapUitleg.onended = () => {
     speechButton.style.display = "flex";
+    herhaal.style.display = "block";
 }
 
 let countHint = 0;
+let countReload = 0;
+
+herhaal.onclick = () => {
+    switch(countReload) {
+        case 0:
+            reloadSpeech(mapUitleg, herhaal);
+            break;
+    }
+}
 
 for (let slide of slides) {
-    dragDropMap(slide, button, zookeeper, speech, kaartHeel);
+    dragDropMap(slide, button, zookeeper, speech, speechP, kaartHeel);
 }
 
 setInterval(() => {
@@ -91,7 +102,8 @@ speechButton.onclick = () => {
     speech.style.zIndex = "-1";
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
-    hintGlow(5000, hintBtn);
+    hintGlow(60000, hintBtn);
+    countReload++;
 }
 
 hintBtn.onclick = () => {
@@ -119,6 +131,7 @@ hintBtn.onclick = () => {
                 speechImage.classList.add("hide");
                 hintBtn.muted = true;
                 countHint++;
+                countReload++;
             }
             break;
     }
