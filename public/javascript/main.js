@@ -19,7 +19,7 @@ const formVissenverblijf = document.getElementById("js--vissenverblijf-form");
 // const savanneForm = document.getElementById("js--savanne-form");
 // const formSavanneBtn = document.getElementById("js--form-submitSavanne");
 
-const arcticBtn = document.getElementById("js--arctic-btn");
+const pinguinverblijfBtn = document.getElementById("js--pinguinverblijf-btn");
 const endSpeechBubbleDierentuin = document.getElementById("js--endBubble-dierentuin");
 const endSpeechBubbleNatuur = document.getElementById("js--endBubble-natuur");
 
@@ -28,11 +28,11 @@ const reken_correct = 11;
 const typen_correct = "olifant";
 const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
-let aantalSecondesRekensom;
+let aantalSecondesVissenverblijf;
 // let aantalSecondesSavanne;
-let aantalSecondesArctic;
-let aantalSecondesTypen;
-let aantalSecondesGiraffe;
+let aantalSecondesPinguinverblijf;
+let aantalSecondesSavanne;
+let aantalSecondesGiraffeverblijf;
 let startTime, endTime;
 
 let speakOnStorage;
@@ -71,12 +71,12 @@ if(document.URL.includes("vissenverblijf.html") ){
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
-        aantalSecondesRekensom = seconds;
+        aantalSecondesVissenverblijf = seconds;
 
         if(form_answer == reken_correct){
             if(seconds <= 60){
                 try {
-                    localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
+                    localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                     localStorage.setItem('star1', 0);
                 } catch (error) {
                     console.log(error);
@@ -85,7 +85,7 @@ if(document.URL.includes("vissenverblijf.html") ){
             if(seconds > 60 && seconds <= 120){
                 try {
                     localStorage.setItem('star2', 0);
-                    localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
+                    localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                 } catch (error) {
                     console.log(error);
                 }
@@ -93,7 +93,7 @@ if(document.URL.includes("vissenverblijf.html") ){
             if(seconds > 120){
                 try {
                     localStorage.setItem('star3', 0);
-                    localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
+                    localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                 } catch (error) {
                     console.log(error);
                 }
@@ -175,17 +175,17 @@ if(document.URL.includes("vissenverblijf.html") ){
 // }
 
 if(document.URL.includes("pinguinverblijf.html")){
-    arcticBtn.addEventListener("click", function(e){
+    pinguinverblijfBtn.addEventListener("click", function(e){
 
         endTime = new Date();
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
-        aantalSecondesArctic = seconds;
+        aantalSecondesPinguinverblijf = seconds;
     
         if(seconds <= 60){
             try {
-                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+                localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
                 localStorage.setItem('star7', 0);
             } catch (error) {
                 console.log(error);
@@ -194,7 +194,7 @@ if(document.URL.includes("pinguinverblijf.html")){
         if(seconds > 60 && seconds <= 120){
             try {
                 localStorage.setItem('star8', 0);
-                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+                localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
             } catch (error) {
                 console.log(error);
             }
@@ -202,7 +202,7 @@ if(document.URL.includes("pinguinverblijf.html")){
         if(seconds > 120){
             try {
                 localStorage.setItem('star9', 0);
-                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+                localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
             } catch (error) {
                 console.log(error);
             }
@@ -227,12 +227,12 @@ if(document.URL.includes("savanne.html")){
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
-        aantalSecondesTypen = seconds;
+        aantalSecondesSavanne = seconds;
 
         if(spanTypen.innerText == typen_correct){
             if(seconds <= 60){
                 try {
-                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                     localStorage.setItem('star4', 0);
                 } catch (error) {
                     console.log(error);
@@ -241,7 +241,7 @@ if(document.URL.includes("savanne.html")){
             if(seconds > 60 && seconds <= 120){
                 try {
                     localStorage.setItem('star5', 0);
-                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                 } catch (error) {
                     console.log(error);
                 }
@@ -249,7 +249,7 @@ if(document.URL.includes("savanne.html")){
             if(seconds > 120){
                 try {
                     localStorage.setItem('star6', 0);
-                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                 } catch (error) {
                     console.log(error);
                 }
@@ -281,10 +281,10 @@ if(document.URL.includes("giraffeverblijf.html")){
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
-        aantalSecondesGiraffe = seconds;
+        aantalSecondesGiraffeverblijf = seconds;
     
         try {
-            localStorage.setItem("aantalSecondesGiraffe", aantalSecondesGiraffe);
+            localStorage.setItem("aantalSecondesGiraffeverblijf", aantalSecondesGiraffeverblijf);
             localStorage.setItem('star10', 0);
         } catch (error) {
             console.log(error);
@@ -301,10 +301,10 @@ if(document.URL.includes("giraffeverblijf.html")){
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
-        aantalSecondesGiraffe = seconds;
+        aantalSecondesGiraffeverblijf = seconds;
     
         try {
-            localStorage.setItem("aantalSecondesGiraffe", aantalSecondesGiraffe);
+            localStorage.setItem("aantalSecondesGiraffeverblijf", aantalSecondesGiraffeverblijf);
             localStorage.setItem('star10', 0);
         } catch (error) {
             console.log(error);

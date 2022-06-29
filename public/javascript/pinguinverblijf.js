@@ -1,7 +1,7 @@
 import {dragDropArctic} from "./functions.js";
 
 const fishDrag = document.getElementById("js--fish");
-const pinguinverblijfBtn = document.getElementById("js--pinguin-btn");
+const pinguinverblijfBtn = document.getElementById("js--pinguinverblijf-btn");
 
 const mapOverlay = document.getElementById("js--map-overlay");
 
