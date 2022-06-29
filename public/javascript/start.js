@@ -1,9 +1,9 @@
-import {addAnimate, removeAnimate, reloadSpeech, hintGlow} from "./functions.js"; 
+import {addAnimate, removeAnimate, reloadSpeech} from "./functions.js"; 
 
 const startBtn = document.getElementById("js--start-btn");
 
 let intro = new Audio("../audio/Tjalle/1-intro/1-welkom.m4a");
-let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoeker_helpen.m4a");
+let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoekerHelpen.m4a");
 let uitleggen = new Audio("../audio/Tjalle/1-intro/3-uitleg.m4a");
 let hint = new Audio("../audio/Tjalle/1-intro/4-hints.m4a");
 let stem = new Audio("../audio/Tjalle/1-intro/5-stem.m4a");
@@ -15,7 +15,6 @@ const startP = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const startOverlay = document.getElementById("js--start-overlay");
 const beginBtn = document.getElementById("js--btn-overlay");
-const hintBtn = document.getElementById("js--hint");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const title = document.getElementById("js--overlay-title");
@@ -24,13 +23,31 @@ const speechReload = document.getElementById("js--speech-reload");
 let startOK = 0;
 let tekst = '';
 let image = '';
-
-hintGlow(5000, hintBtn);
+let audioHerhaal = [intro, bezoeker, uitleggen, hint, stem, binnen];
 
 window.localStorage.clear();
 
 speechReload.onclick = () => {
-    reloadSpeech(intro, speechReload);
+    switch(startOK) {
+        case 0:
+            reloadSpeech(audioHerhaal[startOK], speechReload);
+            break;
+        case 1:
+            reloadSpeech(audioHerhaal[startOK], speechReload);
+            break;
+        case 2:
+            reloadSpeech(audioHerhaal[startOK], speechReload);
+            break;
+        case 3: 
+            reloadSpeech(audioHerhaal[startOK], speechReload);
+            break;
+        case 4:
+            reloadSpeech(audioHerhaal[startOK], speechReload);
+            break;
+        case 5:
+            reloadSpeech(audioHerhaal[startOK], speechReload);
+            break;
+    }
 }
 
 beginBtn.onclick = () => {
@@ -39,11 +56,10 @@ beginBtn.onclick = () => {
     beginBtn.style.display = "none";
     title.style.opacity = "0";
     title.style.zIndex = "-1";
-    addAnimate(speechReload);
     intro.play();
     intro.onended = () => {
         startOKBtn.style.display = "block";
-        removeAnimate(speechReload);
+        speechReload.style.display = "block";
     }
 }
 
@@ -91,53 +107,48 @@ startOKBtn.onclick = () => {
         case 0: 
             tekst = 'Vandaag nemen we een bezoeker mee om ons te helpen in de dierentuin. En raad eens... dat ben jij!';
             image = '';
-            addAnimate(speechReload);
             bezoeker.play();
             bezoeker.onended = () => {
                 startOKBtn.style.display = "block";
-                removeAnimate(speechReload);
+                speechReload.style.display = "block";
             }
             break;
         case 1: 
             tekst = 'Voordat we naar binnen gaan leg ik uit hoe alles werkt.';
             image = '';
-            addAnimate(speechReload);
             uitleggen.play();
             uitleggen.onended = () => {
                 startOKBtn.style.display = "block";
-                removeAnimate(speechReload);
+                speechReload.style.display = "block";
             }
             break;
         case 2: 
             startExplaineBtn.classList.remove("hide");
             tekst = 'Het lampje geeft hints. Klik hier op als je vastloopt.';
             image = './images/hint-btn.png';
-            addAnimate(speechReload);
             hint.play();
             hint.onended = () => {
                 startOKBtn.style.display = "block";
-                removeAnimate(speechReload);
+                speechReload.style.display = "block";
             }
             break;
         case 3: 
             tekst = 'Het oortje is mijn stem. Klik hierop dan kan je mijn stem aan en uit zetten.';
             image = './images/speak-on-btn.png';
-            addAnimate(speechReload);
             stem.play();
             stem.onended = () => {
                 startOKBtn.style.display = "block";
-                removeAnimate(speechReload);
+                speechReload.style.display = "block";
             }
             break;
         case 4: 
             startExplaineBtn.classList.add("hide");
             tekst = 'Nu is alles uitgelegd. Dus laten we naar binnen gaan!';
             image = '';
-            addAnimate(speechReload);
             binnen.play();
             binnen.onended = () => {
                 startOKBtn.style.display = "block";
-                removeAnimate(speechReload);
+                speechReload.style.display = "block";
             }
             break;
         // case 5: 
@@ -165,6 +176,7 @@ startOKBtn.onclick = () => {
             break;
 
     }
+    speechReload.style.display = "none";
     startOKBtn.style.display = "none";
     startP.innerHTML = tekst;
     startExplaineBtn.src = image;

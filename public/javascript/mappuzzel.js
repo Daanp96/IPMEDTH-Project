@@ -1,4 +1,4 @@
-import {dragDropMap} from "./functions.js";
+import {dragDropMap, hintGlow} from "./functions.js";
 
 const slides = document.getElementsByClassName("drag");
 
@@ -42,6 +42,7 @@ setInterval(() => {
 }, 1000);
   
 function speakOnFunction(){
+// speakOn.onclick = () => {
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     mapUitleg.muted = true;
@@ -90,6 +91,7 @@ speechButton.onclick = () => {
     speech.style.zIndex = "-1";
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
+    hintGlow(5000, hintBtn);
 }
 
 hintBtn.onclick = () => {
