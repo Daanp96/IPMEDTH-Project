@@ -39,13 +39,13 @@
 }
 
 .btn-reload {
-    @include widthImageSetting;
-    float: right;
-    // position: absolute;
-    // width: 6rem;
-    // right: -5vw;
-    // top: 1vh;
-    // display: none;
+    position: absolute;
+    width: 6rem;
+    right: -5vw;
+    top: 1vh;
+    display: none;
+    // @include widthImageSetting;
+    // float: right;
     // opacity: 0;
     // transition: 0.5s all;
 }

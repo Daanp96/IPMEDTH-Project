@@ -1,4 +1,4 @@
-import {dragDropArctic} from "./functions.js";
+import {dragDropArctic, reloadSpeech, reloadHint} from "./functions.js";
 
 const fishDrag = document.getElementById("js--fish");
 const arcticBtn = document.getElementById("js--arctic-btn");
@@ -13,6 +13,8 @@ const hintBtn = document.getElementById("js--hint");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 
+const herhaal = document.getElementById("js--speech-reload");
+
 let countHint = 0;
 let tekst = '';
 let image = '';
@@ -22,10 +24,14 @@ const pinguinVerblijf = new Audio("../audio/Tjalle/7-pinguins/1-pinguïnverblijf
 const hint1 = new Audio("../audio/Tjalle/7-pinguins/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/7-pinguins/hint-2.m4a");
 
+const hintHerhaalArctic = [hint1, hint2];
+let isHint = false;
+
 hintBtn.disabled = true;
 pinguinVerblijf.play();
 pinguinVerblijf.onended = () => {
     startOKBtn.style.display = "flex";
+    herhaal.style.display = "block";
 }
 
 startOKBtn.onclick = () => {
@@ -69,6 +75,14 @@ speakOff.onclick = () => {
     speakOffFunction();
 };
 
+herhaal.onclick = () => {
+    if(isHint) {
+        reloadHint(hintHerhaalArctic[countHint], herhaal);
+    } else {
+        reloadSpeech(pinguinVerblijf, herhaal);
+    }
+}
+
 // speakOn.onclick = () => {
 //     speakOff.style.visibility = "visible";
 //     speakOn.style.visibility = "hidden";
@@ -91,6 +105,7 @@ arcticBtn.onclick = () => {
 dragDropArctic(fishDrag, speechBubble, speechBubble_p, arcticBtn, startOKBtn);
 
 hintBtn.onclick = () => {
+    isHint = true;
     console.log(countHint);
     switch (countHint) {
         case 0: 
@@ -98,15 +113,17 @@ hintBtn.onclick = () => {
             // explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
             // startOKBtn.style.visibility = "visible";
-            tekst = 'Alle pinguïns moeten gevoerd worden.';
+            tekst = 'Alle pinguïns moeten gevoed worden.';
             hint1.play();
             hint1.onended = () => {
                 startOKBtn.style.display = "flex";
+                herhaal.style.display = "block";
             }
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
+                isHint = false;
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
@@ -120,6 +137,7 @@ hintBtn.onclick = () => {
             hint2.play();
             hint2.onended = () => {
                 startOKBtn.style.display = "flex";
+                herhaal.style.display = "block";
             }
             image = '../images/gif/klik_zijkant.gif';
             startOKBtn.onclick = () => {
@@ -127,6 +145,7 @@ hintBtn.onclick = () => {
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.visibility = "hidden";
+                isHint = false;
                 countHint++;
             }
             break;
@@ -138,6 +157,7 @@ hintBtn.onclick = () => {
             break;
     }
 
+    herhaal.style.display = "none";
     startOKBtn.style.display = "none";
     speechBubble_p.innerHTML = tekst;
     explaineBtn.src = image;

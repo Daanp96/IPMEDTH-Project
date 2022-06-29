@@ -7,7 +7,8 @@ let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoekerHelpen.m4a");
 let uitleggen = new Audio("../audio/Tjalle/1-intro/3-uitleg.m4a");
 let hint = new Audio("../audio/Tjalle/1-intro/4-hints.m4a");
 let stem = new Audio("../audio/Tjalle/1-intro/5-stem.m4a");
-let binnen = new Audio("../audio/Tjalle/1-intro/6-binnen.m4a");
+let herhaal = new Audio("../audio/Tjalle/1-intro/6-herhaal.m4a");
+let binnen = new Audio("../audio/Tjalle/1-intro/7-binnen.m4a");
 
 const speechBubble = document.getElementById("js--speech-bubble");
 const startExplaineBtn = document.getElementById("js--speech-bubble-img");
@@ -23,45 +24,28 @@ const speechReload = document.getElementById("js--speech-reload");
 let startOK = 0;
 let tekst = '';
 let image = '';
-let audioHerhaal = [intro, bezoeker, uitleggen, hint, stem, binnen];
+let audioHerhaal = [intro, bezoeker, uitleggen, hint, stem, herhaal, binnen];
+let countHerhaal = 0;
 
 window.localStorage.clear();
 
 speechReload.onclick = () => {
-    switch(startOK) {
-        case 0:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 1:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 2:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 3: 
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 4:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-        case 5:
-            reloadSpeech(audioHerhaal[startOK], speechReload);
-            break;
-    }
+    reloadSpeech(audioHerhaal[countHerhaal], speechReload);
 }
 
-beginBtn.onclick = () => {
-    startOverlay.style.opacity = "0";
-    startOverlay.style.zIndex = "-1";
-    beginBtn.style.display = "none";
-    title.style.opacity = "0";
-    title.style.zIndex = "-1";
-    intro.play();
-    intro.onended = () => {
-        startOKBtn.style.display = "block";
-        speechReload.style.display = "block";
-    }
+intro.play();
+intro.onended = () => {
+    startOKBtn.style.display = "block";
+    speechReload.style.display = "block";
 }
+
+// beginBtn.onclick = () => {
+//     startOverlay.style.opacity = "0";
+//     startOverlay.style.zIndex = "-1";
+//     beginBtn.style.display = "none";
+//     title.style.opacity = "0";
+//     title.style.zIndex = "-1";
+// }
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'hidden') {
@@ -125,7 +109,7 @@ startOKBtn.onclick = () => {
         case 2: 
             startExplaineBtn.classList.remove("hide");
             tekst = 'Het lampje geeft hints. Klik hier op als je vastloopt.';
-            image = './images/hint-btn.png';
+            image = '../images/hint-btn.png';
             hint.play();
             hint.onended = () => {
                 startOKBtn.style.display = "block";
@@ -134,7 +118,7 @@ startOKBtn.onclick = () => {
             break;
         case 3: 
             tekst = 'Het oortje is mijn stem. Klik hierop dan kan je mijn stem aan en uit zetten.';
-            image = './images/speak-on-btn.png';
+            image = '../images/speak-on-btn.png';
             stem.play();
             stem.onended = () => {
                 startOKBtn.style.display = "block";
@@ -143,6 +127,15 @@ startOKBtn.onclick = () => {
             break;
         case 4: 
             startExplaineBtn.classList.add("hide");
+            tekst = 'Klik op de knop met de pijl. Dan herhaal ik het.';
+            image = '';
+            herhaal.play();
+            herhaal.onended = () => {
+                startOKBtn.style.display = "block";
+                speechReload.style.display = "block";
+            }
+            break;
+        case 5: 
             tekst = 'Nu is alles uitgelegd. Dus laten we naar binnen gaan!';
             image = '';
             binnen.play();
@@ -181,10 +174,11 @@ startOKBtn.onclick = () => {
     startP.innerHTML = tekst;
     startExplaineBtn.src = image;
     startOK++;
+    countHerhaal++;
 };
 
 startBtn.onclick = () => {
-    window.location.href="./pages/map.html";  
+    window.location.href="./map.html";  
 };
 
 // export {speakBtnStart};
