@@ -1,14 +1,14 @@
 import {dragDropArctic} from "./functions.js";
 
 const fishDrag = document.getElementById("js--fish");
-const arcticBtn = document.getElementById("js--arctic-btn");
+const pinguinverblijfBtn = document.getElementById("js--pinguin-btn");
 
 const mapOverlay = document.getElementById("js--map-overlay");
 
 const speechBubble = document.getElementById("js--speech-bubble");
 const explaineBtn = document.getElementById("js--speech-bubble-img");
-const speechBubble_p = document.getElementById("js--arctic-p");
-const startOKBtn = document.getElementById("js--arctic-ok-btn");
+const speechBubble_p = document.getElementById("js--speech-bubble-p");
+const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -19,6 +19,7 @@ let image = '';
 
 const pinguinVerblijf = new Audio("../audio/Tjalle/7-pinguins/1-pinguïnverblijf.m4a");
 
+const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
 const hint1 = new Audio("../audio/Tjalle/7-pinguins/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/7-pinguins/hint-2.m4a");
 
@@ -50,6 +51,7 @@ function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     pinguinVerblijf.muted = true;
+    goedGedaan.muted = true;
     hint1.muted = true;
     hint2.muted = true;
 };
@@ -58,6 +60,7 @@ function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     pinguinVerblijf.muted = false;
+    goedGedaan.muted = false;
     hint1.muted = false;
     hint2.muted = false;
 };
@@ -84,11 +87,11 @@ speakOff.onclick = () => {
 //     hint2.muted = false;
 // };
 
-arcticBtn.onclick = () => {
+pinguinverblijfBtn.onclick = () => {
     window.location.href = "./dierentuinpad.html";
 }
 
-dragDropArctic(fishDrag, speechBubble, speechBubble_p, arcticBtn, startOKBtn);
+dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan);
 
 hintBtn.onclick = () => {
     console.log(countHint);

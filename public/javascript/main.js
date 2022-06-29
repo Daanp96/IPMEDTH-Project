@@ -13,16 +13,6 @@ const speechBubble = document.getElementById("js--speech-bubble");
 const speechBubbleP = document.getElementById("js--speech-bubble-p");
 const speechBubbleBtn = document.getElementById("js--speech-bubble-btn");
 
-// const ratedStar1 = document.getElementById("js--ratedStar1");
-// const ratedStar2 = document.getElementById("js--ratedStar2");
-// const ratedStar3 = document.getElementById("js--ratedStar3");
-// const ratedStar4 = document.getElementById("js--ratedStar4");
-// const ratedStar5 = document.getElementById("js--ratedStar5");
-// const ratedStar6 = document.getElementById("js--ratedStar6");
-// const ratedStar7 = document.getElementById("js--ratedStar7");
-// const ratedStar8 = document.getElementById("js--ratedStar8");
-// const ratedStar9 = document.getElementById("js--ratedStar9");
-
 const formVissenverblijfBtn = document.getElementById("js--vissenverblijf-form-submit");
 const formVissenverblijf = document.getElementById("js--vissenverblijf-form");
 
@@ -38,18 +28,6 @@ const reken_correct = 11;
 const typen_correct = "olifant";
 const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
-// let star1;
-// let star2;
-// let star3;
-// let star4;
-// let star5;
-// let star6;
-// let star7;
-// let star8;
-// let star9;
-// let star10;
-// let star11;
-// let star12;
 let aantalSecondesRekensom;
 // let aantalSecondesSavanne;
 let aantalSecondesArctic;
@@ -67,7 +45,6 @@ window.onload = function() {
     start();
 }
 
-
 setInterval(() => {
     if (speakOn.style.visibility == 'hidden') {
         speakOnStorage = 'hidden';
@@ -79,69 +56,6 @@ setInterval(() => {
     }
 }, 200);
     
-
-
-
-// speakBtnStart (speakOn, speakOff);
-// speakBtnMap (speakOn, speakOff);
-// speakBtnMappuzzelFunction(speakOn, speakOff);
-// speakBtnMappuzzel(speakOn, speakOff);
-// speakBtnDierentuinpad(speakOn, speakOff);
-
-
-
-// infoBtn.onclick = () =>{
-    
-//     let infoOk = 0;
-//     // speechBubbleBtn.classList.remove("hide");
-//     // speechBubble.classList.remove("hide");
-//     speechBubbleBtn.style.visibility = "visible";
-//     speechBubble.style.visibility = "visible";
-
-//     speechBubbleBtn.onclick = () => {
-//         console.log("info " + infoOk);
-//         switch (infoOk) {
-//             case 0: 
-//                 speechBubbleImg.classList.remove("hide");
-//                 tekst = 'Klik op het lampje voor een hint.';
-//                 if(document.URL.includes("index.html")){
-//                     image = './images/hint-btn.png';
-//                 }else{
-//                     image = '../images/hint-btn.png';
-//                 }
-                
-//                 break;
-//             case 1: 
-//                 tekst = 'Klik op i voor een informatie.';
-//                 image = './images/information-btn.png';
-//                 break;
-//             case 2:
-//                 tekst = 'Klik op de muzieknoot om de muziek uit te zetten.';
-//                 image = './images/music-on-btn.png'; 
-//                 break;  
-//             case 3: 
-//                 tekst = 'Klik op de oor om mijn geluid uit te zetten.';
-//                 image = './images/speak-on-btn.png';
-//                 break;
-//             case 4: 
-//                 speechBubbleImg.classList.add("hide");
-//                 speechBubble.style.visibility = "hidden";
-//                 speechBubbleBtn.style.visibility = "visible";
-//                 break;
-//         }
-    
-//         speechBubbleP.innerHTML = tekst;
-//         speechBubbleImg.src = image;
-//         infoOk++;
-//     };
-    
-// };
-
-// function info(){
-//     speechBubbleBtn.classList.remove("hide");
-//     speechBubble.classList.remove("hide");
-// }
-
 
 function start(){
     startTime = new Date();
@@ -360,7 +274,7 @@ if(document.URL.includes("savanne.html")){
     });
 }
 
-if(document.URL.includes("giraffe.html")){
+if(document.URL.includes("giraffeverblijf.html")){
     endSpeechBubbleDierentuin.addEventListener("click", function(e){
 
         endTime = new Date();

@@ -16,30 +16,26 @@
     <!-- <iframe src="../audio/8-einde/1-bedankt.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
     <main class="start--background">
         <section class="section-start grid-16-8">
-            <article class="start-options grid-3-1">
-                <button class="start-options__btn-hint button ">
-                    <image class="start-options__btn-hint--image" src="../images/hint-btn.png"></image>
-                </button>
-
-                <!-- <button class="start-options__btn-information button ">
-                    <image class="start-options__btn-information--image" src="../images/information-btn.png"></image>
-                </button> -->
-    
-                <button class="start-options__btn-speak button" id="js--speak-on">
-                    <image class="start-options__btn-speak--image" src="../images/speak-on-btn.png"></image>
+            <article class="button-options-small grid-3-1">
+                <button class="button-options-small__hint button ">
+                    <image class="button-options-small__hint--image" src="../images/hint-btn.png"></image>
                 </button>
     
-                <button class="start-options__btn-speak start-options__btn-speak-off button" id="js--speak-off">
-                    <image class="start-options__btn-speak--image" src="../images/speak-off-btn.png"></image>
+                <button class="button-options-small__speak button" id="js--speak-on">
+                    <image class="button-options-small__speak--image" src="../images/speak-on-btn.png"></image>
+                </button>
+    
+                <button class="button-options-small__speak button-options-small__speak-off button" id="js--speak-off">
+                    <image class="button-options-small__speak--image" src="../images/speak-off-btn.png"></image>
                 </button>
             </article>
 
-            <figure class="start-figure">
-                <img class="start-figure--image" src="../images/zookeeper-poses/Male/zookeeper-pose-happy-welcome.png" alt="dierentuin medewerker">
+            <figure class="start__figure">
+                <img class="start__figure--image" src="../images/zookeeper-poses/Male/zookeeper-pose-happy-welcome.png" alt="dierentuin medewerker">
             </figure>
 
-            <div class="speech-bubble start--speech-bubble" id="js--speech-bubble">
-                <image class="btn-explaine hide" id="js--start-explaine-btn"></image>
+            <div class="speech-bubble start__speech-bubble" id="js--speech-bubble">
+                <image class="speech-bubble-explaine hide" id="js--start-explaine-btn"></image>
                 <p id="js--start-p">Bedankt voor je hulp, zonder jou hadden we dit niet gekunt. Ik hoop dat je de dierentuin leuk vond!</p>
             </div>
 
@@ -49,13 +45,6 @@
                 <input class="diploma--input" type="text" placeholder="naam" id="js--diploma-input">
                 <button class="btn-ok-small diploma--button" id="js--diploma-button">Printen</button>
             </figure>
-            <!-- <span id="js--overlay-title" class="overlay-title-end">Klik links om opnieuw te spelen. Klik rechts om af te sluiten.</span>
-            <div id="js--btn-again" class="btn_again">
-                <button class="stop btn-ok-small button" id="js--again-btn">OPNIEUW</button>
-            </div>
-            <div id="js--btn-stop" class="btn_stop">
-                <button class="again btn-ok-small button" onclick="javascript: window.open('', '_self', ''); window.close();" id="js--stop-btn">SLUITEN</button>
-            </div> -->
 
         </section>
     </main>

@@ -1,4 +1,4 @@
-.section-giraffe{
+.section-giraffeverblijf{
     background-color: $color-path;
 }
 .article-intro{
@@ -18,12 +18,12 @@
     z-index: 50;
 }
 
-.giraffe-options{
+.giraffeverblijf-options{
     grid-column: 4 / span 13;
     background-color: $color-path;
    
 
-    &__btn-hint{
+    &__hint{
         grid-column: 12 / span 1;
         grid-row: 1 /span 1;
         z-index: 70;
@@ -42,7 +42,7 @@
     //     }
     // }
 
-    &__btn-speak{
+    &__speak{
         grid-column: 13 / span 1;
         grid-row: 1 /span 1;
         z-index: 70;
@@ -51,7 +51,7 @@
             @include widthImageSetting;
         }
     }
-    &__btn-speak-off{
+    &__speak-off{
         visibility: hidden;
         z-index: 70;
     }
@@ -274,7 +274,7 @@
     }
 }
 
-.giraffe-hide-overlay{
+.giraffeverblijf-hide-overlay{
     background-color: rgba(0, 0, 0, 0.55);
     z-index: 60;
     position: absolute;
@@ -296,7 +296,7 @@
         height: 100%;
     }
 }
-.giraffe-speech-bubble{
+.giraffeverblijf__speech-bubble{
     grid-column: 9 / span 1;
     grid-row: 4 / span 1;
     align-self: end;

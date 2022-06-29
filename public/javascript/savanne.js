@@ -209,7 +209,7 @@ hintBtn.onclick = () => {
             hint3.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/savanne/keyboard.png';
+            image = '../images/savanne/keyboard2.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");

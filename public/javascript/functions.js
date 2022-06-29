@@ -12,7 +12,7 @@ let pond = 0;
 // let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
 const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
-const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
+// const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
 
 const addAnimate = (animate) => {
   animate.classList.add("reload_animation");
@@ -130,7 +130,7 @@ const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
   };
 }
 
-const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
+const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -185,7 +185,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
 
       if(attr == obj.getAttribute('data-pinguin')) {
         let elem = document.createElement("img");
-        elem.src = "../images/arctic/heart.png";
+        elem.src = "../images/pinguinverblijf/heart.png";
         elem.style.width = "50px";
         elem.style.position = "absolute";
         elem.style.left = "40px";
@@ -281,7 +281,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
     
       if(attr == obj.getAttribute('data-bol')) {
         let kleur = obj.getAttribute('data-kleur');
-        currentDroppable.src = `../images/ijskraam/ijs_${kleur}.png`;
+        currentDroppable.src = `../images/ijswinkel/ijs_${kleur}.png`;
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
         currentDroppable.removeAttribute('data-bol');
@@ -322,7 +322,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
 }
 
 
-const dragDropGeld = (obj, kassa, btn, speech, audio) => {
+const dragDropGeld = (obj, kassa, btn, speech, audio, kaching) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -374,10 +374,9 @@ const dragDropGeld = (obj, kassa, btn, speech, audio) => {
       obj.onmouseup = null;
 
       const attr = currentDroppable.getAttribute('data-geld');
-      console.log(obj);
 
       if(attr == obj.getAttribute('data-geld')) {
-        const kaching = new Audio("../audio/ijsbar/kassa_fix.mp3");
+        
         kaching.volume = 0.2;
         kaching.play();
         ijsPrijs--;

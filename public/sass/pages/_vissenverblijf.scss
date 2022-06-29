@@ -157,17 +157,14 @@
     &__animal-board{
         grid-column: 7 / span 4;
         grid-row: 8 / span 1;
+
+        &:hover{
+            transition: transform 2s;
+            transform: scale(1.4);
+        }
         &--image{
             width: 25vw;
             height: 10vh;
         }
     }
-
-    &__animal-board:hover{
-        transition: transform 2s;
-        transform: scale(1.4);
-    }
-    
-
-
 }
