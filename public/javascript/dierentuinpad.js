@@ -1,7 +1,7 @@
 const fish = document.getElementById("js--fish");
 const monkey = document.getElementById("js--monkey");
 const pinguin = document.getElementById("js--pinguin");
-const ijskar = document.getElementById("js--ijskar");
+const ijswinkel = document.getElementById("js--ijswinkel");
 const giraffe = document.getElementById("js--giraffe");
 
 const ratedStar1 = document.getElementById("js--ratedStar1");
@@ -238,13 +238,13 @@ if(document.URL.includes("dierentuinpad.html") ){
             monkey.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
-            // ijskar.style.display = "block";
+            // ijswinkel.style.display = "block";
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
             ijsje.play();
             ijsje.onended = () => {
-                ijskar.classList.add("dierentuinpad__element");
-                ijskar.classList.add("button");
+                ijswinkel.classList.add("dierentuinpad__element");
+                ijswinkel.classList.add("button");
             }
             break;
 
@@ -255,8 +255,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.remove("dierentuinpad__element");
             pinguin.classList.remove("button");
-            ijskar.classList.remove("dierentuinpad__element");
-            ijskar.classList.remove("button");
+            ijswinkel.classList.remove("dierentuinpad__element");
+            ijswinkel.classList.remove("button");
 
             // eindeButton.classList.remove("hide-important");
 
@@ -414,7 +414,7 @@ if(document.URL.includes("dierentuinpad.html") ){
         x = 1;
         // progress = x;
         localStorage.setItem("progress", x);
-        startRekensomPuzzel()
+        startVissenPuzzel()
         e.preventDefault();
     }
     monkey.onclick = (e) => {
@@ -424,10 +424,10 @@ if(document.URL.includes("dierentuinpad.html") ){
         startTypenPuzzel();
         e.preventDefault();
     }
-    ijskar.onclick = (e) => {
+    ijswinkel.onclick = (e) => {
         x = 4;
         localStorage.setItem("progress", x);
-        startIjskar();
+        startIjswinkel();
         e.preventDefault();
     }
     pinguin.onclick = (e) => {
@@ -450,20 +450,20 @@ if(document.URL.includes("dierentuinpad.html") ){
     }
 }
 
-function startRekensomPuzzel(){
-    window.location.href="rekensom.html";  
+function startVissenPuzzel(){
+    window.location.href="vissenverblijf.html";  
 };
 function startTypenPuzzel(){
-    window.location.href="typen.html";  
+    window.location.href="savanne.html";  
 };
 function startGiraffePuzzel(){
-    window.location.href="giraffe.html";  
+    window.location.href="giraffeverblijf.html";  
 };
 function startPinguinPuzzel(){
-    window.location.href="arctic.html";  
+    window.location.href="pinguinverblijf.html";  
 };
-function startIjskar() {
-    window.location.href="ijsco.html";  
+function startIjswinkel() {
+    window.location.href="ijswinkel.html";  
 }
 function naarEinde(){
     window.location.href = "einde.html";

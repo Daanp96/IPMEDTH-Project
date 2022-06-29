@@ -7,17 +7,14 @@ let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoekerHelpen.m4a");
 let uitleggen = new Audio("../audio/Tjalle/1-intro/3-uitleg.m4a");
 let hint = new Audio("../audio/Tjalle/1-intro/4-hints.m4a");
 let stem = new Audio("../audio/Tjalle/1-intro/5-stem.m4a");
-let binnen = new Audio("../audio/Tjalle/1-intro/6-binnen.m4a");
+let binnen = new Audio("../audio/Tjalle/1-intro/7-binnen.m4a");
 
 const speechBubble = document.getElementById("js--speech-bubble");
 const startExplaineBtn = document.getElementById("js--speech-bubble-img");
 const startP = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
-const startOverlay = document.getElementById("js--start-overlay");
-const beginBtn = document.getElementById("js--btn-overlay");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
-const title = document.getElementById("js--overlay-title");
 const speechReload = document.getElementById("js--speech-reload");
 
 let startOK = 0;
@@ -50,18 +47,12 @@ speechReload.onclick = () => {
     }
 }
 
-beginBtn.onclick = () => {
-    startOverlay.style.opacity = "0";
-    startOverlay.style.zIndex = "-1";
-    beginBtn.style.display = "none";
-    title.style.opacity = "0";
-    title.style.zIndex = "-1";
-    intro.play();
-    intro.onended = () => {
-        startOKBtn.style.display = "block";
-        speechReload.style.display = "block";
-    }
+intro.play();
+intro.onended = () => {
+    startOKBtn.style.display = "block";
+    speechReload.style.display = "block";
 }
+
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'hidden') {
@@ -125,7 +116,7 @@ startOKBtn.onclick = () => {
         case 2: 
             startExplaineBtn.classList.remove("hide");
             tekst = 'Het lampje geeft hints. Klik hier op als je vastloopt.';
-            image = './images/hint-btn.png';
+            image = '../images/hint-btn.png';
             hint.play();
             hint.onended = () => {
                 startOKBtn.style.display = "block";
@@ -134,7 +125,7 @@ startOKBtn.onclick = () => {
             break;
         case 3: 
             tekst = 'Het oortje is mijn stem. Klik hierop dan kan je mijn stem aan en uit zetten.';
-            image = './images/speak-on-btn.png';
+            image = '../images/speak-on-btn.png';
             stem.play();
             stem.onended = () => {
                 startOKBtn.style.display = "block";
@@ -184,7 +175,7 @@ startOKBtn.onclick = () => {
 };
 
 startBtn.onclick = () => {
-    window.location.href="./pages/map.html";  
+    window.location.href="map.html";  
 };
 
 // export {speakBtnStart};

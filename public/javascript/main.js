@@ -23,8 +23,8 @@ const speechBubbleBtn = document.getElementById("js--speech-bubble-btn");
 // const ratedStar8 = document.getElementById("js--ratedStar8");
 // const ratedStar9 = document.getElementById("js--ratedStar9");
 
-const formRekensomBtn = document.getElementById("js--form-submit");
-const rekensomForm = document.getElementById("js--rekensom-form");
+const formVissenverblijfBtn = document.getElementById("js--vissenverblijf-form-submit");
+const formVissenverblijf = document.getElementById("js--vissenverblijf-form");
 
 // const savanneForm = document.getElementById("js--savanne-form");
 // const formSavanneBtn = document.getElementById("js--form-submitSavanne");
@@ -147,8 +147,9 @@ function start(){
     startTime = new Date();
 }
 
-if(document.URL.includes("rekensom.html") ){
-    formRekensomBtn.addEventListener("click", function(e){
+if(document.URL.includes("vissenverblijf.html") ){
+    
+    formVissenverblijfBtn.addEventListener("click", function(e){
         
         let form_answer = document.forms["answerForm"]["numberInput"].value;
         
@@ -185,15 +186,15 @@ if(document.URL.includes("rekensom.html") ){
             }
             document.getElementById("aantalVissen").style.color = "lime";
             setTimeout(() => {
-                endRekensomPuzzel();
+                endVissenverblijfPuzzel();
             }, 1000);
             
         }   
         else{
-            rekensomForm.classList.add("shake");
+            formVissenverblijf.classList.add("shake");
             document.getElementById("aantalVissen").style.color = "red";
             setTimeout(() => {
-                rekensomForm.classList.remove("shake");
+                formVissenverblijf.classList.remove("shake");
                 document.getElementById("aantalVissen").style.color = "black";
                 document.getElementById("aantalVissen").value = '';
             }, 2000);
@@ -259,7 +260,7 @@ if(document.URL.includes("rekensom.html") ){
 //     });
 // }
 
-if(document.URL.includes("arctic.html")){
+if(document.URL.includes("pinguinverblijf.html")){
     arcticBtn.addEventListener("click", function(e){
 
         endTime = new Date();
@@ -294,7 +295,7 @@ if(document.URL.includes("arctic.html")){
         }
         
         setTimeout(() => {
-            endArcticPuzzel();
+            endPinguinverblijfPuzzel();
         }, 700);
             
         e.preventDefault();
@@ -304,7 +305,7 @@ if(document.URL.includes("arctic.html")){
 const spanTypen = document.getElementById("js--typen-form");
 const spanTypenBtn = document.getElementById("js--form-submitTypen");
 
-if(document.URL.includes("typen.html")){
+if(document.URL.includes("savanne.html")){
     spanTypenBtn.addEventListener("click", function(e){
         console.log(spanTypen.innerText);
 
@@ -341,7 +342,7 @@ if(document.URL.includes("typen.html")){
             }
             document.getElementById("js--typen-form").style.color = "lime";
             setTimeout(() => {
-                endTypenPuzzel();
+                endSavannePuzzel();
             }, 1000);
 
         }
@@ -375,7 +376,7 @@ if(document.URL.includes("giraffe.html")){
             console.log(error);
         }
         
-        endGiraffe();
+        endGiraffeverblijfPuzzel();
             
         e.preventDefault();
     });
@@ -395,25 +396,23 @@ if(document.URL.includes("giraffe.html")){
             console.log(error);
         }
         
-        endGiraffe();
+        endGiraffeverblijfPuzzel();
             
         e.preventDefault();
     });
 }
 
-function endRekensomPuzzel(){
+function endVissenverblijfPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
 
-function endTypenPuzzel(){
+function endSavannePuzzel(){
     window.location.href="dierentuinpad.html";  
 }
-function endArcticPuzzel(){
+function endPinguinverblijfPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
-function endTypen(){
-    window.location.href="dierentuinpad.html";  
-}
-function endGiraffe(){
+
+function endGiraffeverblijfPuzzel(){
     window.location.href="dierentuinpad.html";  
 }

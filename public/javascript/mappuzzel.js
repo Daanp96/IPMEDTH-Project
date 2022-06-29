@@ -6,7 +6,7 @@ const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const hintBtn = document.getElementById("js--hint");
 
-const button = document.getElementById("js--map_btn");
+const button = document.getElementById("js--map-btn");
 const speech = document.getElementById("js--speech-bubble");
 const speechP = document.getElementById("js--speech-bubble-p");
 const speechImage = document.getElementById("js--speech-bubble-img");

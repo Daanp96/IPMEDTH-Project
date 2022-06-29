@@ -18,7 +18,7 @@ const speakOff = document.getElementById("js--speak-off");
 
 let countHint = 0;
 
-// const welkomAquarium = new Audio("../audio/5-vissen/1-welkom.mp3");
+// const welkomVissenverblijf = new Audio("../audio/5-vissen/1-welkom.mp3");
 // const nieuweVissen = new Audio("../audio/5-vissen/2-nieuweVissen.mp3");
 // const rodeVissen = new Audio("../audio/5-vissen/3-rodeVissen.mp3");
 
@@ -27,7 +27,7 @@ let countHint = 0;
 // const hint3 = new Audio("../audio/5-vissen/hint-3.mp3");
 // const hint4 = new Audio("../audio/5-vissen/hint-4.mp3");
 
-const welkomAquarium = new Audio("../audio/Tjalle/5-vissen/1-welkom.m4a");
+const welkomVissenverblijf = new Audio("../audio/Tjalle/5-vissen/1-welkom.m4a");
 const nieuweVissen = new Audio("../audio/Tjalle/5-vissen/2-nieuweVissen.m4a");
 const rodeVissen = new Audio("../audio/Tjalle/5-vissen/3-rodeVissen.m4a");
 
@@ -43,7 +43,7 @@ let image = '';
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
-    welkomAquarium.muted = true;
+    welkomVissenverblijf.muted = true;
     nieuweVissen.muted = true;
     rodeVissen.muted = true;
     hint1.muted = true;
@@ -55,7 +55,7 @@ function speakOnFunction(){
 function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
-    welkomAquarium.muted = false;
+    welkomVissenverblijf.muted = false;
     nieuweVissen.muted = false;
     rodeVissen.muted = false;
     hint1.muted = false;
@@ -82,8 +82,8 @@ speakOff.onclick = () => {
 };
 
 hintBtn.disabled = true;
-welkomAquarium.play();
-welkomAquarium.onended = () => {
+welkomVissenverblijf.play();
+welkomVissenverblijf.onended = () => {
     startOKBtn.style.display = "block";
 }
 
@@ -151,7 +151,7 @@ hintBtn.onclick = () => {
             hint1.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/aquarium/question-mark.png';
+            image = '../images/vissenverblijf/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
@@ -170,7 +170,7 @@ hintBtn.onclick = () => {
             hint2.onended = () => {
                 startOKBtn.style.display = "block";
             }
-            image = '../images/aquarium/arrow-right.png';
+            image = '../images/vissenverblijf/arrow-right.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");

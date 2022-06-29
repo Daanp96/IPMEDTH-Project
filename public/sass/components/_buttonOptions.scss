@@ -1,0 +1,55 @@
+.button-options-big{
+    
+    &__hint{
+        grid-column: 14 / span 1;
+        grid-row: 1 /span 4;
+        z-index: 3;
+        &--image{
+            @include widthImageSetting;
+            border-radius: 50%;
+            // Hier moet de glow class werken.
+        }
+        // &-glow {
+        //     animation: glow 1s linear infinite alternate;
+        // }
+    }
+    &__speak{
+        grid-column: 15 / span 1;
+        grid-row: 1 /span 4;
+        z-index: 3;
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+    &__speak-off{
+        visibility: hidden;
+        z-index: 3;
+    }
+}
+
+.button-options-small{
+    grid-column: 13 / span 3;
+    grid-row: 1 /span 1;
+    z-index: 3;
+
+    &__hint{
+        grid-column: 2 / span 1;
+        grid-row: 1 /span 1;
+
+        &--image{
+            @include widthImageSetting;
+            border-radius: 50%;
+        }
+    }
+    &__speak{
+        grid-column: 3 / span 1;
+        grid-row: 1 /span 1;
+    
+        &--image{
+            @include widthImageSetting;
+        }
+    }
+    &__speak-off{
+        visibility: hidden;
+    }
+}

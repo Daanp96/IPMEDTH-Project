@@ -29,22 +29,22 @@
     bottom: -2.4rem;
 }
 
-.btn-explaine{
+.speech-bubble-explaine{
     @include widthImageSetting;
 }
 
-.btn-explaine-big{
+.speech-bubble-explaine-big{
     width: 20rem;
     height: auto;
 }
 
-.btn-reload {
+.speech-bubble-reload {
     @include widthImageSetting;
     float: right;
     // position: absolute;
     // width: 6rem;
     // right: -5vw;
-    // top: 1vh;
+    // top: 1vh;    
     // display: none;
     // opacity: 0;
     // transition: 0.5s all;
