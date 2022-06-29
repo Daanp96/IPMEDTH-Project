@@ -21,12 +21,20 @@ const removeAnimate = (animate) => {
   animate.classList.remove("reload_animation");
 }
 
-const reloadSpeech = (audio, animate, audioHint = []) => {
-    addAnimate(animate);
-    audio.play();
-    audio.onended = () => {
-      removeAnimate(animate);
-    }
+const reloadSpeech = (audio, animate) => {
+  addAnimate(animate);
+  audio.play();
+  audio.onended = () => {
+    removeAnimate(animate);
+  }
+}
+
+const reloadHint = (audio, animate) => {
+  addAnimate(animate);
+  audio.play();
+  audio.onended = () => {
+    removeAnimate(animate);
+  }
 }
 
 const hintGlow = (tijd, hint) => {
@@ -485,6 +493,7 @@ export {
   addAnimate, 
   removeAnimate, 
   reloadSpeech,
+  reloadHint,
   hintGlow, 
   dragDropMap, 
   dragDropArctic, 

@@ -1,4 +1,4 @@
-import {dragDropMap, hintGlow, reloadSpeech} from "./functions.js";
+import {dragDropMap, hintGlow, reloadSpeech, reloadHint} from "./functions.js";
 
 const slides = document.getElementsByClassName("drag");
 
@@ -29,13 +29,17 @@ mapUitleg.onended = () => {
 }
 
 let countHint = 0;
-let countReload = 0;
+let isHint = false;
+let countHerhaal = 0;
+let audioHerhaal = [mapUitleg, kaartHeel]
 
 herhaal.onclick = () => {
-    switch(countReload) {
-        case 0:
-            reloadSpeech(mapUitleg, herhaal);
-            break;
+    if(isHint) {
+        console.log('is hint')
+        reloadHint(hint, herhaal);
+    } else {
+        console.log("is geen hint")
+        reloadSpeech(audioHerhaal[countHerhaal], herhaal);
     }
 }
 
@@ -103,11 +107,12 @@ speechButton.onclick = () => {
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
     hintGlow(60000, hintBtn);
-    countReload++;
+    countHerhaal++;
 }
 
 hintBtn.onclick = () => {
     console.log(countHint);
+    isHint = true;
     switch (countHint) {
         case 0: 
             zookeeper.style.visibility = "visible";
@@ -130,10 +135,11 @@ hintBtn.onclick = () => {
                 mapOverlay.style.zIndex = "-1";
                 speechImage.classList.add("hide");
                 hintBtn.muted = true;
+                isHint = false;
                 countHint++;
-                countReload++;
             }
             break;
     }
+    // isHint = false;
     speechButton.style.display = "none";
 }
