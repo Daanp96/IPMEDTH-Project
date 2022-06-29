@@ -44,7 +44,7 @@ const ijsje = new Audio("../audio/Tjalle/4-dierentuinpad/4-ijsje.m4a");
 const verblijf = new Audio("../audio/Tjalle/4-dierentuinpad/5-verblijf.m4a");
 const uitgang = new Audio("../audio/Tjalle/4-dierentuinpad/6-uitgang.m4a");
 
-const speechHerhaal = document.getElementById("js--speech-reload");
+const speechHerhaal = document.getElementById("js--speech-reload-path");
 const audioHerhaal = [vissen, savanne, pinguins, ijsje, verblijf, uitgang];
 let countHerhaal = 0;
 
