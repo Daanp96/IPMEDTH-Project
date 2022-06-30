@@ -58,7 +58,12 @@ window.onafterprint = (e) =>{
 };
 
 bedankt.play();
+bedankt.onplaying = () => {
+    mouthMove.style.display = "block";
+    mouthMove.classList.add("mouth_move");
+}
 bedankt.onended = () => {
+    mouthMove.style.display = "none";
     overlay.style.opacity = "1";
     diploma.style.opacity = "1"
     diplomaBtn.classList.add("button");

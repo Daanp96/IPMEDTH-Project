@@ -12,6 +12,7 @@ const speechP = document.getElementById("js--speech-bubble-p");
 const speechImage = document.getElementById("js--speech-bubble-img");
 const speechButton = document.getElementById("js--speech-bubble-btn");
 const herhaal = document.getElementById("js--speech-reload");
+const mouthMove = document.getElementById("js--mouth");
 
 const zookeeper = document.getElementById("js--map_zookeeper");
 const mapOverlay = document.getElementById("js--map-overlay");
@@ -23,7 +24,12 @@ const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
 
 hintBtn.disabled = true;
 mapUitleg.play();
+mapUitleg.onplaying = () => {
+    mouthMove.style.display = "block";
+    mouthMove.classList.add("mouth_move_map");
+  }
 mapUitleg.onended = () => {
+    mouthMove.style.display = "none";
     speechButton.style.display = "flex";
     herhaal.style.display = "block";
 }
@@ -129,7 +135,12 @@ hintBtn.onclick = () => {
             speechImage.classList.remove("hide");
             speechP.innerHTML = "Beweeg de muis naar een puzzelstukje en doe dan dit:";
             hint.play();
+            hint.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_map");
+              }
             hint.onended = () => {
+                mouthMove.style.display = "none";
                 speechButton.style.display = "flex";
             }
 

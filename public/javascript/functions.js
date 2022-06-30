@@ -9,6 +9,8 @@ let rock = 0;
 let pond = 0;
 
 // audio
+const mouthMove = document.getElementById("js--mouth");
+const mouthMovePinguin = document.getElementById("js--mouth-pinguin");
 // let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
 const addAnimate = (animate) => {
@@ -114,7 +116,12 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel) => {
           speech.style.zIndex = "1";
           speechP.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
           kaartHeel.play();
+          kaartHeel.onplaying = () => {
+            mouthMove.style.display = "block";
+            mouthMove.classList.add("mouth_move");
+          }
           kaartHeel.onended = () => {
+            mouthMove.style.display = "none";
             btn.style.display = "block";
           }
         }
@@ -211,7 +218,11 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan) => {
         text.style.visibility = "visible";
         text.innerHTML = "Goed gedaan! De penguins zijn heel blij.";
         goedGedaan.play();
+        goedGedaan.onplaying = () => {
+          mouthMovePinguin.style.display = "block";
+        }
         goedGedaan.onended = () => {
+          mouthMovePinguin.style.display = "none";
           nextBtn.style.display = "block";
         }
       }

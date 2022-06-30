@@ -67,10 +67,11 @@
         grid-row: 5 / span 4;
         z-index: 50;
         position: relative;
+        transform: scaleX(-1);
 
         &--image{
             @include zookeeperSize;
-            transform: scaleX(-1);
+
         }
     }
 

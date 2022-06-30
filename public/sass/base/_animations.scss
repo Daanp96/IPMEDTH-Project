@@ -173,20 +173,35 @@
 .mouth_move{
     animation: mouth_move 0.3s alternate infinite;
     position: absolute;
-    left: 5.1vw;
+    left: 5.4vw;
     top: 12.5vh;
     width: 1.75vw;
+    border-radius: 50%;
+}
+
+.mouth_move_map{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 11vw;
+    top: 18.5vh;
+    width: 2.75vw;
     border-radius: 50%;
 }
 
 .mouth_move_pad{
     animation: mouth_move 0.3s alternate infinite;
     position: absolute;
-    left: 5.6vw;
+    left: 5.7vw;
     top: 9.5vh;
     width: 1.4vw;
 }
-
+.mouth_move_verblijf{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 7.5vw;
+    top: 12.7vh;
+    width: 1.4vw;
+}
 .mouth_move_head{
     animation: mouth_move 0.3s alternate infinite;
     position: absolute;
@@ -196,11 +211,3 @@
     border-radius: 50%;
 }
 
-.mouth_move_map{
-    animation: mouth_move 0.3s alternate infinite;
-    position: absolute;
-    left: 11vw;
-    top: 18.5vh;
-    width: 2.5vw;
-    border-radius: 50%;
-}

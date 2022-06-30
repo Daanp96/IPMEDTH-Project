@@ -12,7 +12,7 @@ const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
-const mouthMove = document.getElementById("js--mouth");
+const mouthMove = document.getElementById("js--mouth-pinguin");
 
 const herhaal = document.getElementById("js--speech-reload");
 
@@ -33,7 +33,7 @@ hintBtn.disabled = true;
 pinguinVerblijf.play();
 pinguinVerblijf.onplaying = () => {
     mouthMove.style.display = "block";
-    mouthMove.classList.add("mouth_move");
+    mouthMove.classList.add("mouth_move_verblijf");
 }
 pinguinVerblijf.onended = () => {
     mouthMove.style.display = "none";

@@ -16,6 +16,7 @@ const hintBtn = document.getElementById("js--hint");
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
+const mouthMove = document.getElementById("js--mouth");
 
 const herhaal = document.getElementById("js--speech-reload");
 
@@ -82,7 +83,12 @@ speakOff.onclick = () => {
 
 hintBtn.disabled = true;
 welkomVissenverblijf.play();
+welkomVissenverblijf.onplaying = () => {
+    mouthMove.style.display = "block";
+    mouthMove.classList.add("mouth_move_verblijf");
+}
 welkomVissenverblijf.onended = () => {
+    mouthMove.style.display = "none";
     startOKBtn.style.display = "block";
     herhaal.style.display = "block";
 }
@@ -102,7 +108,12 @@ startOKBtn.onclick = () => {
             tekst = 'We hebben nieuwe vissen gekregen. Alleen weten we nog niet hoeveel.';
             image = '';
             nieuweVissen.play();
+            nieuweVissen.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             nieuweVissen.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
@@ -111,7 +122,12 @@ startOKBtn.onclick = () => {
             tekst = 'Kan jij mij vertellen hoeveel <b style="color:red;">rode vissen</b> er rond zwemmen?';
             image = '';
             rodeVissen.play();
+            rodeVissen.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             rodeVissen.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
@@ -159,13 +175,18 @@ hintBtn.onclick = () => {
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
             
-            tekst = 'Klik op het vraagteken.';
+            tekst = 'Loop door het hele aquarium.';
             hint1.play();
+            hint1.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             hint1.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
-            image = '../images/vissenverblijf/question-mark.png';
+            image = '../images/vissenverblijf/arrow-right.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
@@ -180,13 +201,18 @@ hintBtn.onclick = () => {
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
-            tekst = 'Loop door het hele aquarium.';
+            tekst = 'Klik op het vraagteken.';
             hint2.play();
+            hint2.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             hint2.onended = () => {
+                mouthMove.style.display = "block";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
-            image = '../images/vissenverblijf/arrow-right.png';
+            image = '../images/vissenverblijf/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
@@ -203,7 +229,12 @@ hintBtn.onclick = () => {
             // startOKBtn.style.visibility = "visible";
             tekst = 'Vul het antwoord in via je toetsenbord.';
             hint3.play();
+            hint3.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             hint3.onended = () => {
+                mouthMove.style.display = "block";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
@@ -222,7 +253,12 @@ hintBtn.onclick = () => {
             startOKBtn.style.visibility = "visible";
             tekst = 'Het antwoord is 11.';
             hint4.play();
+            hint4.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             hint4.onended = () => {
+                mouthMove.style.display = "block";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }

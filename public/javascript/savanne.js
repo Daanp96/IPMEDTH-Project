@@ -12,6 +12,7 @@ const speakOff = document.getElementById("js--speak-off");
 
 const mapOverlay = document.getElementById("js--map-overlay");
 const herhaal = document.getElementById("js--speech-reload");
+const mouthMove = document.getElementById("js--mouth");
 
 let startOK = 0;
 let countHint = 0;
@@ -77,7 +78,12 @@ speakOff.onclick = () => {
 
 hintBtn.disabled = true;
 savanneVerblijf.play();
+savanneVerblijf.onplaying = () => {
+    mouthMove.style.display = "block";
+    mouthMove.classList.add("mouth_move_verblijf");
+}
 savanneVerblijf.onended = () => {
+    mouthMove.style.display = "none";
     startOKBtn.style.display = "block";
     herhaal.style.display = "block";
 }
@@ -136,7 +142,12 @@ startOKBtn.onclick = () => {
             tekst = 'Maar blijkbaar hebben we de verkeerde naam opgehangen! Kan jij het bord voor ons verbeteren?';
             image = '';
             verbeteren.play();
+            verbeteren.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             verbeteren.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
@@ -166,7 +177,12 @@ hintBtn.onclick = () => {
             // startOKBtn.style.visibility = "visible";
             tekst = 'Klik op het bord.';
             hint1.play();
+            hint1.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             hint1.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
@@ -185,7 +201,12 @@ hintBtn.onclick = () => {
             // startOKBtn.style.visibility = "visible";
             tekst = 'Klik op de foute naam.';
             hint2.play();
+            hint2.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             hint2.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
@@ -205,7 +226,12 @@ hintBtn.onclick = () => {
             explaineBtn.style.width = "23vw";
             tekst = 'Je toetsenbord gebruikt blokletters. Dit zijn de kleine letters.';
             hint3.play();
+            hint3.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             hint3.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }
@@ -223,9 +249,14 @@ hintBtn.onclick = () => {
             speechBubble.style.visibility = "visible";
             speechBubble_p.style.visibility = "visible";
             startOKBtn.style.visibility = "visible";
-            tekst = 'Het antwoord is olifant';
+            tekst = 'Het antwoord is olifant.';
             hint4.play();
+            hint4.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
+            }
             hint4.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
                 herhaal.style.display = "block";
             }

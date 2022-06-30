@@ -222,10 +222,10 @@ herhaalEnd.onclick = () => {
 hintBtn.disabled = true;
 verblijfAf.play();
 verblijfAf.onplaying = () => {
-    mouthMove.classList.add("mouth_move");
+    mouthMove.classList.add("mouth_move_verblijf");
 }
 verblijfAf.onended = () => {
-    mouthMove.classList.remove("mouth_move");
+    mouthMove.classList.remove("mouth_move_verblijf");
     startOKBtn.style.display = "flex";
     herhaalIntro.style.display = "block";
 }
@@ -326,9 +326,9 @@ startOKBtn.onclick = () => {
     bovenaan.play();
     bovenaan.onplaying = () => {
         mouthMoveHead.classList.add("mouth_move_head");
+        mouthMoveHead.style.display = "block";
     }
     bovenaan.onended = () => {
-        mouthMoveHead.classList.remove("mouth_move_head");
         mouthMoveHead.style.display = "none";
         hintBubbleBtn.style.display = "flex";
         herhaalHint.style.display = "block";
@@ -417,7 +417,13 @@ endBtn.onclick = () => {
     endBubble.classList.remove("hide");
     hintBtn.disabled = true;
     goedIngericht.play();
+    goedIngericht.onplaying = () => {
+        mouthMoveHead.classList.add("mouth_move_head");
+        mouthMoveHead.style.display = "block";
+
+    }
     goedIngericht.onended = () => {
+        mouthMoveHead.style.display = "none";
         endBubbleBtn.style.display = "flex";
         herhaalEnd.style.display = "block";
     }
@@ -452,6 +458,7 @@ endBubbleBtn.onclick = () => {
             vraag.play();
             vraag.onplaying = () => {
                 mouthMoveHead.classList.add("mouth_move_head");
+                mouthMoveHead.style.display = "block";
             }
             vraag.onended = () => {
                 mouthMoveHead.classList.remove("mouth_move_head");
@@ -467,6 +474,7 @@ endBubbleBtn.onclick = () => {
             veelDieren.play();
             veelDieren.onplaying = () => {
                 mouthMoveHead.classList.add("mouth_move_head");
+                mouthMoveHead.style.display = "block";
             }
             veelDieren.onended = () => {
                 mouthMoveHead.classList.remove("mouth_move_head");
@@ -483,6 +491,7 @@ endBubbleBtn.onclick = () => {
             vrijeRuimte.play();
             vrijeRuimte.onplaying = () => {
                 mouthMoveHead.classList.add("mouth_move_head");
+                mouthMoveHead.style.display = "block";
             }
             vrijeRuimte.onended = () => {
                 mouthMoveHead.classList.remove("mouth_move_head");
@@ -499,6 +508,7 @@ endBubbleBtn.onclick = () => {
             keuze.play();
             keuze.onplaying = () => {
                 mouthMoveHead.classList.add("mouth_move_head");
+                mouthMoveHead.style.display = "block";
             }
             keuze.onended = () => {
                 mouthMoveHead.classList.remove("mouth_move_head");
