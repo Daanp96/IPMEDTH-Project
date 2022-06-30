@@ -3,3 +3,5 @@
 groep3.onclick = () =>{
     window.location = "pages/start.html"
 };
+
+window.localStorage.clear();

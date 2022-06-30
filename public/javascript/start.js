@@ -22,8 +22,6 @@ let tekst = '';
 let image = '';
 let audioHerhaal = [intro, bezoeker, uitleggen, hint, stem, binnen];
 
-window.localStorage.clear();
-
 speechReload.onclick = () => {
     switch(startOK) {
         case 0:

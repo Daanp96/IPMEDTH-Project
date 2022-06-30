@@ -23,6 +23,8 @@ const hintBubble = document.getElementById("js--hintBubble");
 const hintBubbleP = document.getElementById("js--speech-bubble-p-hint");
 const hintBubbleBtn = document.getElementById("js--hintBubble-btn");
 const mapOverlay = document.getElementById("js--map-overlay");
+const ijswinkelSpeechBubble = document.getElementById("js--ijswinkel-speech-bubble");
+const ijswinkelHead = document.getElementById("js--ijswinkel-head");
 
 //audio
 const goedemiddag = new Audio("../audio/Tjalle/8-ijsbar/1-goedemiddag.m4a");
@@ -43,6 +45,7 @@ let countHint = 0;
 let tekst = '';
 
 goedemiddag.play();
+hintBtn.disabled = true;
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'hidden') {
@@ -120,11 +123,16 @@ speakOff.onclick = () => {
 // };
 
 ijsbalie.onclick = () => {
+    hintBtn.disabled = false;
     // kleuren.play();
     overlay.style.opacity =  "1";
     overlay.style.zIndex = "1";
     popup.style.opacity = "1";
     popup.style.zIndex = "1";
+    ijswinkelSpeechBubble.style.zIndex = "1";
+    ijswinkelSpeechBubble.style.opacity = "1";
+    ijswinkelHead.style.opacity = "1";
+    ijswinkelHead.style.zIndex = "1";
     ijsbalie.classList.remove("ijs_animatie");
 
     for (let ijs of ijsjes) {
@@ -144,8 +152,8 @@ ijsbalie.onclick = () => {
             bol_img.dataset.kleur = kleur;
             bol_img.dataset.bol = 'ijs';
             bol_img.classList.add("ijswinkel-popup__bol", "button");
-            bol_img.style.top = `${e.clientY - e.offsetY - 180}px`;
-            bol_img.style.left = `${e.clientX - e.offsetX - 250}px`;
+            bol_img.style.top = `${e.clientY - e.offsetY - 25}px`;
+            bol_img.style.left = `${e.clientX - e.offsetX - 25}px`;
             // speechBubble.innerHTML = "Sleep jouw bolletje naar de ijshoorn toe.";
             popup.append(bol_img);
             dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble, ijsjeKlaar);

@@ -13,21 +13,21 @@
 </head>
 <body class="ijswinkel--background">
     <main class="ijsco">
-        <section class="button-options-big grid-16-1 relative">
-            <button class="button-options-big__hint button " id="js--hint">
-                <img class="button-options-big__hint--image" src="../images/hint-btn.png"></img>
-            </button>
+        <section class="button-options-small grid-16-9-full relative">
+            <article class="button-options-small grid-3-1">
+                <button class="button-options-small__hint button " id="js--hint">
+                    <img class="button-options-small__hint--image" src="../images/hint-btn.png"></img>
+                </button>
+    
+                <button class="button-options-small__speak button" id="js--speak-on">
+                    <img class="button-options-small__speak--image" src="../images/speak-on-btn.png"></img>
+                </button>
+    
+                <button class="button-options-small__speak button-options-small__speak-off button" id="js--speak-off">
+                    <img class="button-options-small__speak--image" src="../images/speak-off-btn.png"></img>
+                </button>
+            </article>
 
-            <button class="button-options-big__speak button" id="js--speak-on">
-                <img class="button-options-big__speak--image" src="../images/speak-on-btn.png"></img>
-            </button>
-
-            <button class="button-options-big__speak button-options-big__speak-off button" id="js--speak-off">
-                <img class="button-options-big__speak--image" src="../images/speak-off-btn.png"></img>
-            </button>
-        </section>
-
-        <section class="grid-16-9">
             <figure class="ijswinkel__balie">
                 <img class="ijswinkel__balie--image button" id="js--balie" src="../images/ijswinkel/ijs-balie.png" alt="Ijs Hoorn">
             </figure>
@@ -44,8 +44,8 @@
                 <img class="ijswinkel__tafel--image" src="../images/ijswinkel/ijs-tafel1.png" alt="ijs tafel">
             </figure>
 
-            <div class="speech-bubble ijswinkel__speech-bubble">
-                <!-- <image class="speech-bubble-explaine hide"></image> -->
+            <div class="speech-bubble ijswinkel__speech-bubble-begin">
+                <!-- <img class="speech-bubble-explaine hide"></img> -->
                 <p >Goedemiddag! Welk ijsje wil je?</p>
             </div>
 
@@ -95,19 +95,29 @@
                 <figure class="ijswinkel-popup__geld-8"><img class="geld button" data-geld="1" src="../images/ijswinkel/1-euro.png" alt="1 Euro munt"></figure>
                 <figure class="ijswinkel-popup__geld-9"><img class="geld button" data-geld="1" src="../images/ijswinkel/1-euro.png" alt="1 Euro munt"></figure>
                 <figure class="ijswinkel-popup__geld-10"><img class="geld button" data-geld="1" src="../images/ijswinkel/1-euro.png" alt="1 Euro munt"></figure>
+            
             </div>
 
-                <div class="giraffe-hide-overlay hide" id="js--map-overlay"></div>
-                <figure class="hint-head hide" id="js--head-ijsco">
-                    <img class="hint-head--image" src="../images/ijswinkel/vrouw_hoofd.png" alt="ijsco medewerker">
-                </figure>
-    
-                <div class="speech-bubble ijswinkel__speech-bubble-hint hide" id="js--hintBubble">
-                    <p id="js--speech-bubble-p-hint"></p>
-                    <div class="btn-ok-div">
-                        <button class="btn-ok-small btn-speech button" id="js--hintBubble-btn">&#10132;</button>
-                    </div>
+            <figure class="ijswinkel__head" id="js--ijswinkel-head">
+                <img class="ijswinkel__head--image" src="../images/ijswinkel/vrouw_hoofd.png" alt="Ijsco medewerker">
+            </figure>
+            <div class="ijswinkel__speech-bubble" id="js--ijswinkel-speech-bubble">
+                <div class="speech-bubble ijswinkel__speech-bubble--p" id="js--speech-bubble">
+                    <p id="js--speech-bubble-p">Maak hier je eigen ijsje.</p>
                 </div>
+            </div>
+
+            <div class="giraffeverblijf-hide-overlay hide" id="js--map-overlay"></div>
+            <figure class="hint-head hide" id="js--head-ijsco">
+                <img class="hint-head--image" src="../images/ijswinkel/vrouw_hoofd.png" alt="ijsco medewerker">
+            </figure>
+
+            <div class="speech-bubble ijswinkel__speech-bubble-hint hide" id="js--hintBubble">
+                <p id="js--speech-bubble-p-hint"></p>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small btn-speech button" id="js--hintBubble-btn">&#10132;</button>
+                </div>
+            </div>
         </section>
     </main>
 </body>

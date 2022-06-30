@@ -1836,6 +1836,17 @@ input[type=number]::-webkit-outer-spin-button {
       grid-template-columns: repeat(16, minmax(0, 1fr));
 }
 
+.grid-16-9-full {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (minmax(0, 1fr))[9];
+      grid-template-rows: repeat(9, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[16];
+      grid-template-columns: repeat(16, minmax(0, 1fr));
+}
+
 .grid-16-8 {
   width: 100vw;
   height: 100vh;
@@ -2889,9 +2900,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ijswinkel__balie {
   -ms-grid-column: 9;
-  grid-column: 9;
-  -ms-grid-row: 4;
-  grid-row: 4;
+  -ms-grid-column-span: 6;
+  grid-column: 9 /span 6;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 5;
+  grid-row: 5 / span 5;
 }
 
 .ijswinkel__balie--image {
@@ -2903,9 +2916,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ijswinkel__verkoper {
   -ms-grid-column: 9;
-  grid-column: 9;
-  -ms-grid-row: 3;
-  grid-row: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 9 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 5;
+  grid-row: 4 / span 5;
 }
 
 .ijswinkel__verkoper--image {
@@ -2915,24 +2930,52 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ijswinkel__tafel {
   -ms-grid-column: 3;
-  grid-column: 3;
-  -ms-grid-row: 6;
-  grid-row: 6;
+  -ms-grid-column-span: 3;
+  grid-column: 3 / span 3;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 3;
+  grid-row: 7 / span 3;
 }
 
 .ijswinkel__tafel--image {
   width: 20vw;
 }
 
-.ijswinkel__speech-bubble {
-  -ms-grid-column: 7;
-  grid-column: 7;
+.ijswinkel__speech-bubble-begin {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 4;
+  grid-column: 8 / span 4;
   -ms-grid-row: 2;
-  grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / span 2;
   opacity: 1;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
   z-index: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.ijswinkel__speech-bubble-begin::before {
+  left: 32rem;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.ijswinkel__speech-bubble {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 4;
+  grid-column: 8 / span 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .ijswinkel__speech-bubble::before {
@@ -2941,13 +2984,42 @@ input[type=number]::-webkit-outer-spin-button {
           transform: scaleX(-1);
 }
 
+.ijswinkel__speech-bubble--p {
+  -ms-grid-column: 7;
+  grid-column: 7;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.ijswinkel__speech-bubble--p::before {
+  content: none;
+}
+
+.ijswinkel__head {
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-column: 6 / span 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: 1;
+}
+
+.ijswinkel__head--image {
+  width: 100%;
+  height: 100%;
+}
+
 .ijswinkel__speech-bubble-hint {
   -ms-grid-column: 9;
   -ms-grid-column-span: 1;
   grid-column: 9 / span 1;
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-row-span: 1;
-  grid-row: 3 / span 1;
+  grid-row: 4 / span 1;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
@@ -2957,7 +3029,6 @@ input[type=number]::-webkit-outer-spin-button {
 .ijswinkel-popup {
   display: -ms-grid;
   display: grid;
-  position: relative;
   -ms-grid-columns: (minmax(0, 1fr))[16];
       grid-template-columns: repeat(16, minmax(0, 1fr));
   -ms-grid-rows: (minmax(0, 1fr))[9];
@@ -2966,9 +3037,9 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-column: 3;
   -ms-grid-column-span: 12;
   grid-column: 3 / span 12;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 7;
-  grid-row: 2 / span 7;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 6;
+  grid-row: 3 / span 6;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
   z-index: -1;
@@ -3255,9 +3326,9 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-column: 7;
   -ms-grid-column-span: 3;
   grid-column: 7 / span 3;
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 4;
-  grid-row: 4 / span 4;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 3;
+  grid-row: 5 / span 3;
   z-index: 60;
 }
 
