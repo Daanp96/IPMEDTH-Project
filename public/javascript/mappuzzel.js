@@ -1,4 +1,4 @@
-import {dragDropMap, hintGlow} from "./functions.js";
+import {dragDropMap, hintGlow, reloadSpeech, reloadHint} from "./functions.js";
 
 const slides = document.getElementsByClassName("drag");
 
@@ -6,11 +6,12 @@ const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const hintBtn = document.getElementById("js--hint");
 
-const button = document.getElementById("js--map_btn");
+const button = document.getElementById("js--map-btn");
 const speech = document.getElementById("js--speech-bubble");
 const speechP = document.getElementById("js--speech-bubble-p");
 const speechImage = document.getElementById("js--speech-bubble-img");
 const speechButton = document.getElementById("js--speech-bubble-btn");
+const herhaal = document.getElementById("js--speech-reload");
 
 const zookeeper = document.getElementById("js--map_zookeeper");
 const mapOverlay = document.getElementById("js--map-overlay");
@@ -24,12 +25,26 @@ hintBtn.disabled = true;
 mapUitleg.play();
 mapUitleg.onended = () => {
     speechButton.style.display = "flex";
+    herhaal.style.display = "block";
 }
 
 let countHint = 0;
+let isHint = false;
+let countHerhaal = 0;
+let audioHerhaal = [mapUitleg, kaartHeel]
+
+herhaal.onclick = () => {
+    if(isHint) {
+        console.log('is hint')
+        reloadHint(hint, herhaal);
+    } else {
+        console.log("is geen hint")
+        reloadSpeech(audioHerhaal[countHerhaal], herhaal);
+    }
+}
 
 for (let slide of slides) {
-    dragDropMap(slide, button, zookeeper, speech, kaartHeel);
+    dragDropMap(slide, button, zookeeper, speech, speechP, kaartHeel);
 }
 
 setInterval(() => {
@@ -39,7 +54,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 1000);
+}, 100);
   
 function speakOnFunction(){
 // speakOn.onclick = () => {
@@ -91,13 +106,21 @@ speechButton.onclick = () => {
     speech.style.zIndex = "-1";
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
-    hintGlow(5000, hintBtn);
+    countHerhaal++;
+    
+    if(countHint == 0){
+        hintGlow(10000, hintBtn);
+    } else {
+        hintBtn.classList.remove("glow");
+    }
 }
 
 hintBtn.onclick = () => {
     console.log(countHint);
+    isHint = true;
     switch (countHint) {
         case 0: 
+            hintBtn.classList.remove("glow");
             zookeeper.style.visibility = "visible";
             zookeeper.style.zIndex = "4";
             speech.style.visibility = "visible";
@@ -118,9 +141,11 @@ hintBtn.onclick = () => {
                 mapOverlay.style.zIndex = "-1";
                 speechImage.classList.add("hide");
                 hintBtn.muted = true;
+                isHint = false;
                 countHint++;
             }
             break;
     }
+    // isHint = false;
     speechButton.style.display = "none";
 }

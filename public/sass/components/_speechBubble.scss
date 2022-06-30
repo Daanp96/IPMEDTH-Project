@@ -29,23 +29,44 @@
     bottom: -2.4rem;
 }
 
-.btn-explaine{
+.speech-bubble-explaine{
     @include widthImageSetting;
 }
 
-.btn-explaine-big{
+.speech-bubble-explaine-big{
     width: 20rem;
     height: auto;
 }
 
-.btn-reload {
-    @include widthImageSetting;
-    float: right;
-    // position: absolute;
-    // width: 6rem;
-    // right: -5vw;
-    // top: 1vh;
-    // display: none;
+.speech-bubble-reload {
+    position: absolute;
+    width: 6rem;
+    right: -5vw;
+    top: 1vh;
+    display: none;
+    // @include widthImageSetting;
+    // float: right;
     // opacity: 0;
     // transition: 0.5s all;
+    &-intro {
+        position: absolute;
+        width: 6rem;
+        right: -5vw;
+        top: 1vh;
+        display: none;       
+    }
+    &-hint{
+        position: absolute;
+        width: 6rem;
+        right: -5vw;
+        top: 1vh;
+        display: none;
+    }
+    &-end {
+        position: absolute;
+        width: 6rem;
+        right: -5vw;
+        top: 1vh;
+        display: none;
+    }
 }

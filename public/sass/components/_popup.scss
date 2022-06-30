@@ -181,7 +181,7 @@
         }
     }
 
-    &__content-typen{
+    &__content-savanne{
         position: absolute;
         top: 50%;
         left: 50%;
@@ -199,7 +199,7 @@
         transition: all .4s .2s;
     }
 
-    &__container-typen{
+    &__container-savanne{
         background-image: url(../images/savanne/sign-monkey-popup.png);
         @include background-popup;
         height: 70vh;
@@ -236,6 +236,7 @@
             grid-row: 3 /span 2;
             align-self: center;
             place-self: self-start;
+            text-align-last: center;
         }
 
         &--image{
@@ -271,7 +272,7 @@
                 border-radius: 3px;
                 padding: 5px 10px;
                 // cursor: url("../../images/cursor_point_60.cur"), default;
-                grid-column: 4 / span 2;
+                grid-column: 4 / span 3;
                 grid-row: 6 / span 1;
                 text-align: center;
                 font-size: 4rem;
@@ -303,6 +304,8 @@
         }
     }
 
+    
+
     &:target{
         opacity: 1;
         visibility: visible;
@@ -317,7 +320,7 @@
         transform: translate(-50%, -50%) scale(1);
     }
 
-    &:target &__content-typen{
+    &:target &__content-savanne{
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }

@@ -1,4 +1,4 @@
-import {dragDropGiraffe} from "./functions.js";
+import {dragDropGiraffe, reloadSpeech} from "./functions.js";
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -68,6 +68,11 @@ const endSpeechBubble_p = document.getElementById("js--speech-bubble-p-end");
 const endSpeechBubbleDierentuin = document.getElementById("js--endBubble-dierentuin");
 const endSpeechBubbleNatuur = document.getElementById("js--endBubble-natuur");
 
+// herhaal knoppen
+const herhaalIntro = document.getElementById("js--speech-reload-intro");
+const herhaalHint = document.getElementById("js--speech-reload-hint");
+const herhaalEnd = document.getElementById("js--speech-reload-end");
+
 //audio
 const verblijfAf = new Audio("../audio/Tjalle/9-verblijf/1-verblijfAf.m4a");
 const bovenaan = new Audio("../audio/Tjalle/9-verblijf/2-bovenaan.m4a");
@@ -76,10 +81,15 @@ const vraag = new Audio("../audio/Tjalle/9-verblijf/4-vraag.m4a");
 const veelDieren = new Audio("../audio/Tjalle/9-verblijf/5-veelDieren.m4a");
 const vrijeRuimte = new Audio("../audio/Tjalle/9-verblijf/6-vrijeRuimte.m4a");
 const keuze = new Audio("../audio/Tjalle/9-verblijf/7-keuze.m4a");
+
 const hint1 = new Audio("../audio/Tjalle/9-verblijf/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/9-verblijf/hint-2.m4a");
 
-let countText = 0;
+const endHerhaal = [goedIngericht, vraag, veelDieren, vrijeRuimte, keuze];
+const hintHerhaal = [bovenaan, hint1, hint2];
+let isHint = false;
+
+let countHerhaal = 0;
 let countHint = 0;
 let countEnd = 0;
 let tekst = '';
@@ -110,7 +120,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible' && articleIntro.style.display == "none") {
         speakOffFunction2();
     }
-}, 1000);
+}, 100);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -163,6 +173,17 @@ speakOff2.onclick = () => {
     speakOffFunction2();
 };
 
+herhaalIntro.onclick = () => {
+    reloadSpeech(verblijfAf, herhaalIntro);
+}
+
+herhaalHint.onclick = () => {
+    reloadSpeech(hintHerhaal[countHerhaal], herhaalHint);
+}
+
+herhaalEnd.onclick = () => {
+    reloadSpeech(endHerhaal[countEnd], herhaalEnd);
+}
 // speakOn.onclick = () =>{
 //     speakOff.style.visibility = "visible";
 //     speakOn.style.visibility = "hidden";
@@ -206,6 +227,7 @@ verblijfAf.onplaying = () => {
 verblijfAf.onended = () => {
     mouthMove.classList.remove("mouth_move");
     startOKBtn.style.display = "flex";
+    herhaalIntro.style.display = "block";
 }
 
 hintBubbleBtn.onclick = () => {
@@ -213,10 +235,12 @@ hintBubbleBtn.onclick = () => {
     headZookeeper.classList.add("hide");
     hintBubble.classList.add("hide");
     hintBtn.disabled = false;
+    countHerhaal++;
 }
 
 hintBtn.onclick = () => {
     console.log(countHint);
+    isHint = true;
     switch (countHint) {
         case 0: 
             hintBubbleBtn.style.display = "none";
@@ -233,13 +257,16 @@ hintBtn.onclick = () => {
                 mouthMoveHead.classList.remove("mouth_move_head");
                 mouthMoveHead.style.display = "none";
                 hintBubbleBtn.style.display = "flex";
+                herhaalHint.style.display = "block";
             }
             hintBubbleBtn.onclick = () => {
                 mapOverlay.classList.add("hide");
                 headZookeeper.classList.add("hide");
                 hintBubble.classList.add("hide");
                 hintBubbleBtn.style.display = "none";
+                isHint = false;
                 countHint++;
+                countHerhaal++;
             }
             break;
         case 1: 
@@ -256,13 +283,16 @@ hintBtn.onclick = () => {
                 mouthMoveHead.classList.remove("mouth_move_head");
                 mouthMoveHead.style.display = "none";
                 hintBubbleBtn.style.display = "flex";
+                herhaalHint.style.display = "block";
             }
             hintBubbleBtn.onclick = () => {
                 mapOverlay.classList.add("hide");
                 headZookeeper.classList.add("hide");
                 hintBubble.classList.add("hide");
                 hintBubbleBtn.style.display = "none";
+                isHint = false;
                 countHint++;
+                countHerhaal++;
             }
             break;
         case 2:
@@ -272,6 +302,7 @@ hintBtn.onclick = () => {
             break;
     }
 
+    herhaalHint.style.display = "none";
     hintSpeechBubble_p.innerHTML = tekst;
 };
 
@@ -300,7 +331,7 @@ startOKBtn.onclick = () => {
         mouthMoveHead.classList.remove("mouth_move_head");
         mouthMoveHead.style.display = "none";
         hintBubbleBtn.style.display = "flex";
-        
+        herhaalHint.style.display = "block";
     }
 };
 
@@ -388,6 +419,7 @@ endBtn.onclick = () => {
     goedIngericht.play();
     goedIngericht.onended = () => {
         endBubbleBtn.style.display = "flex";
+        herhaalEnd.style.display = "block";
     }
 };
 
@@ -425,6 +457,7 @@ endBubbleBtn.onclick = () => {
                 mouthMoveHead.classList.remove("mouth_move_head");
                 mouthMoveHead.style.display = "none";
                 endBubbleBtn.style.display = "flex";
+                herhaalEnd.style.display = "block";
             }
             countEnd++;
             break;
@@ -440,12 +473,13 @@ endBubbleBtn.onclick = () => {
                 mouthMoveHead.style.display = "none";
 
                 endBubbleBtn.style.display = "flex";
+                herhaalEnd.style.display = "block";
             }
             countEnd++;
             break;
         case 2: 
             endBubbleBtn.style.display = "none";
-            tekst = 'Alleen in dierentuinen hebben de dieren minder vrije ruimte dan als ze vrij zijn.';
+            tekst = 'Alleen in dierentuinen hebben dieren minder vrije ruimte dan als ze vrij zijn.';
             vrijeRuimte.play();
             vrijeRuimte.onplaying = () => {
                 mouthMoveHead.classList.add("mouth_move_head");
@@ -455,13 +489,13 @@ endBubbleBtn.onclick = () => {
                 mouthMoveHead.style.display = "none";
 
                 endBubbleBtn.style.display = "flex";
+                herhaalEnd.style.display = "block";
             }
             countEnd++;
             break;
         case 3: 
             document.getElementById("js--speech-bubble-div").classList.add("hide-important");
-
-            tekst = 'Vind je het goed dat de dierentuinen er zijn? kies dan “dierentuin”. <br>Of wil je liever dat alle dieren los in de natuur lopen? kies dan “natuur”.';
+            tekst = 'Vind je het goed dat de dierentuinen er zijn? Kies dan “Dierentuin”. <br>Of wil je liever dat alle dieren los in de natuur lopen? Kies dan “Natuur”.';
             keuze.play();
             keuze.onplaying = () => {
                 mouthMoveHead.classList.add("mouth_move_head");
@@ -470,8 +504,11 @@ endBubbleBtn.onclick = () => {
                 mouthMoveHead.classList.remove("mouth_move_head");
                 mouthMoveHead.style.display = "none";
                 document.getElementById("js--speech-bubble-div-2").classList.remove("hide-important");
+                herhaalEnd.style.display = "block";
             }
+            countEnd++;
             break;
     }
+    herhaalEnd.style.display = "none";
     endSpeechBubble_p.innerHTML = tekst;
 };

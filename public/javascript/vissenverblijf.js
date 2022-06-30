@@ -1,3 +1,4 @@
+import {reloadSpeech, reloadHint} from "./functions.js";
 
 const nextBtnRight = document.getElementById("js--next-btn-right");
 const nextBtnLeft = document.getElementById("js--next-btn-left");
@@ -16,18 +17,12 @@ const hintBtn = document.getElementById("js--hint");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 
+const herhaal = document.getElementById("js--speech-reload");
+
 let countHint = 0;
+let countHerhaal = 0;
 
-// const welkomAquarium = new Audio("../audio/5-vissen/1-welkom.mp3");
-// const nieuweVissen = new Audio("../audio/5-vissen/2-nieuweVissen.mp3");
-// const rodeVissen = new Audio("../audio/5-vissen/3-rodeVissen.mp3");
-
-// const hint1 = new Audio("../audio/5-vissen/hint-1.mp3");
-// const hint2 = new Audio("../audio/5-vissen/hint-2.mp3");
-// const hint3 = new Audio("../audio/5-vissen/hint-3.mp3");
-// const hint4 = new Audio("../audio/5-vissen/hint-4.mp3");
-
-const welkomAquarium = new Audio("../audio/Tjalle/5-vissen/1-welkom.m4a");
+const welkomVissenverblijf = new Audio("../audio/Tjalle/5-vissen/1-welkom.m4a");
 const nieuweVissen = new Audio("../audio/Tjalle/5-vissen/2-nieuweVissen.m4a");
 const rodeVissen = new Audio("../audio/Tjalle/5-vissen/3-rodeVissen.m4a");
 
@@ -36,6 +31,10 @@ const hint2 = new Audio("../audio/Tjalle/5-vissen/hint-2.m4a");
 const hint3 = new Audio("../audio/Tjalle/5-vissen/hint-3.m4a");
 const hint4 = new Audio("../audio/Tjalle/5-vissen/hint-4.m4a");
 
+const audioHerhaalVissen = [welkomVissenverblijf, nieuweVissen, rodeVissen];
+const hintHerhaalVissen = [hint1, hint2, hint3, hint4];
+let isHint = false;
+
 let startOK = 0;
 let tekst = '';
 let image = '';
@@ -43,7 +42,7 @@ let image = '';
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
-    welkomAquarium.muted = true;
+    welkomVissenverblijf.muted = true;
     nieuweVissen.muted = true;
     rodeVissen.muted = true;
     hint1.muted = true;
@@ -55,7 +54,7 @@ function speakOnFunction(){
 function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
-    welkomAquarium.muted = false;
+    welkomVissenverblijf.muted = false;
     nieuweVissen.muted = false;
     rodeVissen.muted = false;
     hint1.muted = false;
@@ -71,7 +70,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 1000);
+}, 100);
 
 speakOn.onclick = () => {
     speakOnFunction();
@@ -82,9 +81,18 @@ speakOff.onclick = () => {
 };
 
 hintBtn.disabled = true;
-welkomAquarium.play();
-welkomAquarium.onended = () => {
+welkomVissenverblijf.play();
+welkomVissenverblijf.onended = () => {
     startOKBtn.style.display = "block";
+    herhaal.style.display = "block";
+}
+
+herhaal.onclick = () => {
+    if(isHint) {
+        reloadHint(hintHerhaalVissen[countHint], herhaal);
+    } else {
+        reloadSpeech(audioHerhaalVissen[countHerhaal], herhaal);
+    }
 }
 
 // praat wolk
@@ -96,6 +104,7 @@ startOKBtn.onclick = () => {
             nieuweVissen.play();
             nieuweVissen.onended = () => {
                 startOKBtn.style.display = "block";
+                herhaal.style.display = "block";
             }
             break;
         case 1: 
@@ -104,6 +113,7 @@ startOKBtn.onclick = () => {
             rodeVissen.play();
             rodeVissen.onended = () => {
                 startOKBtn.style.display = "block";
+                herhaal.style.display = "block";
             }
             break;
         case 2:
@@ -115,10 +125,12 @@ startOKBtn.onclick = () => {
             break;
     }
 
+    herhaal.style.display = "none";
     startOKBtn.style.display = "none";
     speechBubble_p.innerHTML = tekst;
     explaineBtn.src = image;
     startOK++;
+    countHerhaal++;
 };
 
 nextBtnRight.onclick = () => {    
@@ -140,6 +152,7 @@ nextBtnLeft.onclick = () => {
 };
 
 hintBtn.onclick = () => {
+    isHint = true;
     switch (countHint) {
         case 0: 
             speechBubble.style.visibility = "visible";
@@ -150,13 +163,15 @@ hintBtn.onclick = () => {
             hint1.play();
             hint1.onended = () => {
                 startOKBtn.style.display = "block";
+                herhaal.style.display = "block";
             }
-            image = '../images/aquarium/question-mark.png';
+            image = '../images/vissenverblijf/question-mark.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.display = "none";
+                isHint = false;
                 countHint++;
             }
             break;
@@ -169,13 +184,15 @@ hintBtn.onclick = () => {
             hint2.play();
             hint2.onended = () => {
                 startOKBtn.style.display = "block";
+                herhaal.style.display = "block";
             }
-            image = '../images/aquarium/arrow-right.png';
+            image = '../images/vissenverblijf/arrow-right.png';
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.display = "none";
+                isHint = false;
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
@@ -188,11 +205,13 @@ hintBtn.onclick = () => {
             hint3.play();
             hint3.onended = () => {
                 startOKBtn.style.display = "block";
+                herhaal.style.display = "block";
             }
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.display = "none";
+                isHint = false;
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
@@ -205,11 +224,13 @@ hintBtn.onclick = () => {
             hint4.play();
             hint4.onended = () => {
                 startOKBtn.style.display = "block";
+                herhaal.style.display = "block";
             }
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.display = "none";
+                isHint = false;
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }
@@ -221,6 +242,7 @@ hintBtn.onclick = () => {
             break;
     }
 
+    herhaal.style.display = "none";
     speechBubble_p.innerHTML = tekst;
     explaineBtn.src = image;
     

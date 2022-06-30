@@ -1,7 +1,9 @@
+import {reloadSpeech} from "./functions.js";
+
 const fish = document.getElementById("js--fish");
 const monkey = document.getElementById("js--monkey");
 const pinguin = document.getElementById("js--pinguin");
-const ijskar = document.getElementById("js--ijskar");
+const ijswinkel = document.getElementById("js--ijswinkel");
 const giraffe = document.getElementById("js--giraffe");
 
 const ratedStar1 = document.getElementById("js--ratedStar1");
@@ -43,6 +45,10 @@ const ijsje = new Audio("../audio/Tjalle/4-dierentuinpad/4-ijsje.m4a");
 const verblijf = new Audio("../audio/Tjalle/4-dierentuinpad/5-verblijf.m4a");
 const uitgang = new Audio("../audio/Tjalle/4-dierentuinpad/6-uitgang.m4a");
 
+const speechHerhaal = document.getElementById("js--speech-reload-path");
+const audioHerhaal = [vissen, savanne, pinguins, ijsje, verblijf, uitgang];
+let countHerhaal = 0;
+
 let star1;
 let star2;
 let star3;
@@ -66,7 +72,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 1000);
+}, 100);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -96,6 +102,10 @@ speakOn.onclick = () => {
 speakOff.onclick = () => {
     speakOffFunction();
 };
+
+speechHerhaal.onclick = () => {
+    reloadSpeech(audioHerhaal[x], speechHerhaal);
+}
 
 // speakOn.onclick = () => {
 //     speakOff.style.visibility = "visible";
@@ -143,6 +153,7 @@ if(document.URL.includes("dierentuinpad.html") ){
                 mouthMove.style.display = "none";
                 fish.classList.add("dierentuinpad__element");
                 fish.classList.add("button");
+                speechHerhaal.style.display = "block";
             }
             
             break;
@@ -165,6 +176,7 @@ if(document.URL.includes("dierentuinpad.html") ){
                 mouthMove.style.display = "none";
                 monkey.classList.add("dierentuinpad__element");
                 monkey.classList.add("button");
+                speechHerhaal.style.display = "block";
             }
 
             star1 = localStorage.getItem('star1');
@@ -208,6 +220,7 @@ if(document.URL.includes("dierentuinpad.html") ){
                 mouthMove.style.display = "none";
                 pinguin.classList.add("dierentuinpad__element");
                 pinguin.classList.add("button");
+                speechHerhaal.style.display = "block";
             }
 
             star1 = localStorage.getItem('star1');
@@ -254,7 +267,7 @@ if(document.URL.includes("dierentuinpad.html") ){
             monkey.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
-            // ijskar.style.display = "block";
+            // ijswinkel.style.display = "block";
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
             ijsje.play();
@@ -264,8 +277,9 @@ if(document.URL.includes("dierentuinpad.html") ){
             ijsje.onended = () => {
                 mouthMove.classList.remove("mouth_move_pad");
                 mouthMove.style.display = "none";
-                ijskar.classList.add("dierentuinpad__element");
-                ijskar.classList.add("button");
+                ijswinkel.classList.add("dierentuinpad__element");
+                ijswinkel.classList.add("button");
+                speechHerhaal.style.display = "block";
             }
             break;
 
@@ -276,8 +290,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("button");
             pinguin.classList.remove("dierentuinpad__element");
             pinguin.classList.remove("button");
-            ijskar.classList.remove("dierentuinpad__element");
-            ijskar.classList.remove("button");
+            ijswinkel.classList.remove("dierentuinpad__element");
+            ijswinkel.classList.remove("button");
 
             // eindeButton.classList.remove("hide-important");
 
@@ -296,6 +310,7 @@ if(document.URL.includes("dierentuinpad.html") ){
                 mouthMove.style.display = "none";
                 giraffe.classList.add("dierentuinpad__element");
                 giraffe.classList.add("button");
+                speechHerhaal.style.display = "block";
             }
 
             star1 = localStorage.getItem('star1');
@@ -376,9 +391,10 @@ if(document.URL.includes("dierentuinpad.html") ){
             uitgang.onended = () => {
                 mouthMove.classList.remove("mouth_move_pad");
                 mouthMove.style.display = "none";
+                speechHerhaal.style.display = "block";
+                eindeButton.style.display = "flex";
             }
             
-
             star1 = localStorage.getItem('star1');
             star2 = localStorage.getItem('star2');
             star3 = localStorage.getItem('star3');
@@ -448,7 +464,7 @@ if(document.URL.includes("dierentuinpad.html") ){
         x = 1;
         // progress = x;
         localStorage.setItem("progress", x);
-        startRekensomPuzzel()
+        startVissenPuzzel()
         e.preventDefault();
     }
     monkey.onclick = (e) => {
@@ -458,10 +474,10 @@ if(document.URL.includes("dierentuinpad.html") ){
         startTypenPuzzel();
         e.preventDefault();
     }
-    ijskar.onclick = (e) => {
+    ijswinkel.onclick = (e) => {
         x = 4;
         localStorage.setItem("progress", x);
-        startIjskar();
+        startIjswinkel();
         e.preventDefault();
     }
     pinguin.onclick = (e) => {
@@ -479,25 +495,25 @@ if(document.URL.includes("dierentuinpad.html") ){
         e.preventDefault();
     }
     eindeButton.onclick = (e) => {
-        naarEinde();
+        naarEinde();ijswinkel
         e.preventDefault();
     }
 }
 
-function startRekensomPuzzel(){
-    window.location.href="rekensom.html";  
+function startVissenPuzzel(){
+    window.location.href="vissenverblijf.html";  
 };
 function startTypenPuzzel(){
-    window.location.href="typen.html";  
+    window.location.href="savanne.html";  
 };
 function startGiraffePuzzel(){
-    window.location.href="giraffe.html";  
+    window.location.href="giraffeverblijf.html";  
 };
 function startPinguinPuzzel(){
-    window.location.href="arctic.html";  
+    window.location.href="pinguinverblijf.html";  
 };
-function startIjskar() {
-    window.location.href="ijsco.html";  
+function startIjswinkel() {
+    window.location.href="ijswinkel.html";  
 }
 function naarEinde(){
     window.location.href = "einde.html";

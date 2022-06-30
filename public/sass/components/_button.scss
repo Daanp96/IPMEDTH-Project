@@ -93,11 +93,7 @@
 //     cursor: url("../images/cursor_grab_60.cur"), default;
 // }
 
-.btn-ok-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 // .btn-ok{
 //     @include button-style;
 //     width: 19rem;
@@ -141,7 +137,11 @@
 // .btn-ok:hover{
 //     transform: scale(1.05);
 // }
-
+.btn-ok-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .btn-ok {
     @include button-style;
     width: 19rem;
@@ -161,14 +161,16 @@
     height: 8rem;
     font-size: 8rem;
 }
-.btn-ok-giraffe {
+.btn-ok-giraffeverblijf {
     @include button-style-2;
     margin-top: 1rem;
     width: 15rem;
     height: 5rem;
     font-size: 3rem;
 }
-
 .btn-speech {
+    display: none;
+}
+.btn-einde {
     display: none;
 }

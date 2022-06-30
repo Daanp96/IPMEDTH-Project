@@ -6,6 +6,14 @@
     grid-template-columns: repeat(16, minmax(0,1fr));
 }
 
+.grid-16-9-full{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(9, minmax(0,1fr));
+    grid-template-columns: repeat(16, minmax(0,1fr));
+}
+
 .grid-16-8{
     width: 100vw;
     height: 100vh; 

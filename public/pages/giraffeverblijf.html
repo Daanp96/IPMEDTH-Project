@@ -6,49 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../sass/main.css">
-    <link rel="icon" type="image/x-icon" href="../images/monkey-head.png">
+    <link rel="icon" type="image/x-icon" href="../images/zookeeper-face.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="../javascript/main.js" type="module" defer></script>
-    <script src="../javascript/giraffe.js" type="module" defer></script>
+    <script src="../javascript/giraffeverblijf.js" type="module" defer></script>
 </head>
 <body>
     <main>
-        <section class="section-intro" id="js--article-intro">
-            <article class="puzzel-options grid-16-1 walk-path--up">
-                <div class="rock-wood-wall-position--up-1 ">
+        <section id="js--article-intro">
+            <article class="button-options-big grid-16-1 walk-path--background">
+                <div class="wall__up-1 ">
                     <figure>
-                        <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
+                        <img  class="wall__up-1--image" src="../images/savanne/savanne-wall.png" alt="wall">
                     </figure>
                 </div>
-                <div class="rock-wood-wall-position--up-2 ">
+                <div class="wall__up-2 ">
                     <figure>
-                        <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
+                        <img  class="wall__up-2--image" src="../images/savanne/savanne-wall.png" alt="wall">
                     </figure>
                 </div>
-                <div class="rock-wood-wall-position--up-3 ">
+                <div class="wall__up-3 ">
                     <figure>
-                        <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
+                        <img  class="wall__up-3--image" src="../images/savanne/savanne-wall.png" alt="wall">
                     </figure>
                 </div>
-                <div class="rock-wood-wall-position--up-4 ">
+                <div class="wall__up-4 ">
                     <figure>
-                        <img  class="rock-wood-wall--up" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
+                        <img  class="wall__up-4--image" src="../images/savanne/savanne-wall.png" alt="wall">
                     </figure>
                 </div>
-                <button class="puzzel-options__btn-hint button ">
-                    <img class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></img>
-                </button>
-<!-- 
-                <button class="puzzel-options__btn-information button ">
-                    <img class="puzzel-options__btn-information--image" src="../images/information-btn.png"></img>
-                </button> -->
-
-                <button class="puzzel-options__btn-speak button" id="js--speak-on">
-                    <img class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
+                <button class="button-options-big__hint button ">
+                    <img class="button-options-big__hint--image" src="../images/hint-btn.png"></img>
                 </button>
 
-                <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
-                    <img class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
+                <button class="button-options-big__speak button" id="js--speak-on">
+                    <img class="button-options-big__speak--image" src="../images/speak-on-btn.png"></img>
+                </button>
+
+                <button class="button-options-big__speak button-options-big__speak-off button" id="js--speak-off">
+                    <img class="button-options-big__speak--image" src="../images/speak-off-btn.png"></img>
                 </button>
             </article>
 
@@ -59,7 +55,8 @@
                 </figure>
 
                 <div class="speech-bubble intro__speech-bubble" id="js--speech-bubble">
-                    <p >Dit verblijf moet nog worden afgemaakt. <br>Kan jij het leuk maken voor de giraffen? 
+                    <img class="speech-bubble-reload-intro button" id="js--speech-reload-intro" src="../images/reload_button.png"></img>
+                    <p>Dit verblijf moet nog worden afgemaakt. <br>Kan jij het leuk maken voor de giraffen? 
                     </p>
                     <div class="btn-ok-div">
                         <button class="btn-ok-small btn-speech button" id="js--speech-bubble-btn">&#10132;</button>
@@ -70,16 +67,16 @@
                     <button id="js--intro-btn" class="btn-ok button">&#10132;</button>
                 </div> -->
 
-                <div class="rock-wood-wall-position--1">
+                <article class="wall__down-1">
                     <figure>
-                        <img class="rock-wood-wall" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
+                        <img class="wall__down-1--image" src="../images/savanne/savanne-wall.png" alt="wall">
                     </figure>
-                </div>
-                <div class="rock-wood-wall-position--2">
+                </article>
+                <article class="wall__down-2">
                     <figure>
-                        <img class="rock-wood-wall" src="../images/Photoshop-transparant/Savanne-wall.png" alt="wall">
+                        <img class="wall__down-2--image" src="../images/savanne/savanne-wall.png" alt="wall">
                     </figure>
-                </div>
+                </article>
 
                 <div class="walk-path-position walk-path"></div>
 
@@ -88,21 +85,21 @@
 
         <section class="section-enclosure" >
             <article class="article-enclosure grid-16-8" id="js--article-enclosure">
-                <div class="giraffe-options grid-13-1">
-                    <button class="giraffe-options__btn-hint button" id="js--hint">
-                        <img class="giraffe-options__btn-hint--image" src="../images/hint-btn.png"></img>
+                <div class="giraffeverblijf-options grid-13-1">
+                    <button class="giraffeverblijf-options__hint button" id="js--hint">
+                        <img class="giraffeverblijf-options__hint--image" src="../images/hint-btn.png"></img>
                     </button>
     
                     <!-- <button class="giraffe-options__btn-information button ">
                         <img class="giraffe-options__btn-information--image" src="../images/information-btn.png"></img>
                     </button> -->
         
-                    <button class="giraffe-options__btn-speak button" id="js--speak-on-2">
-                        <img class="giraffe-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
+                    <button class="giraffeverblijf-options__speak button" id="js--speak-on-2">
+                        <img class="giraffeverblijf-options__speak--image" src="../images/speak-on-btn.png"></img>
                     </button>
         
-                    <button class="giraffe-options__btn-speak start-options__btn-speak-off button" id="js--speak-off-2">
-                        <img class="giraffe-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
+                    <button class="giraffeverblijf-options__speak start-options__speak-off button" id="js--speak-off-2">
+                        <img class="giraffeverblijf-options__speak--image" src="../images/speak-off-btn.png"></img>
                     </button>
 
                     <div class="enclosure-form ">
@@ -131,34 +128,34 @@
 
                 <div class="enclosure-sidebar tree-sidebar" id="js--tree-popup">
                     <figure class="enclosure-sidebar__tree-1" id="js--sidebar-tree-1">
-                        <img class="enclosure-sidebar__tree--image button" src="../images/Photoshop-transparant/tree-1.1.png" alt="boom">
+                        <img class="enclosure-sidebar__tree-1--image button" src="../images/Photoshop-transparant/tree-1.1.png" alt="boom">
                     </figure>
                     <figure class="enclosure-sidebar__tree-2" id="js--sidebar-tree-2">
-                        <img class="enclosure-sidebar__tree--image button" src="../images/Photoshop-transparant/tree-2.png" alt="boom">
+                        <img class="enclosure-sidebar__tree-2--image button" src="../images/Photoshop-transparant/tree-2.png" alt="boom">
                     </figure>
                     <figure class="enclosure-sidebar__tree-3" id="js--sidebar-tree-3">
-                        <img class="enclosure-sidebar__tree--image button" src="../images/Photoshop-transparant/tree-3.1.png" alt="boom">
+                        <img class="enclosure-sidebar__tree-3--image button" src="../images/Photoshop-transparant/tree-3.1.png" alt="boom">
                     </figure>
                 </div>
 
                 <div class="enclosure-sidebar rock-sidebar" id="js--rock-popup">
                     <figure class="enclosure-sidebar__rock-1" id="js--sidebar-rock-1">
-                        <img class="enclosure-sidebar__rock--image button" src="../images/Photoshop-transparant/rock-3.1.png" alt="steen">
+                        <img class="enclosure-sidebar__rock-1--image button" src="../images/Photoshop-transparant/rock-3.1.png" alt="steen">
                     </figure>
                     <figure class="enclosure-sidebar__rock-2" id="js--sidebar-rock-2">
-                        <img class="enclosure-sidebar__rock--image button" src="../images/Photoshop-transparant/rock.png" alt="steen">
+                        <img class="enclosure-sidebar__rock-2--image button" src="../images/Photoshop-transparant/rock.png" alt="steen">
                     </figure>
                     <figure class="enclosure-sidebar__rock-3" id="js--sidebar-rock-3">
-                        <img class="enclosure-sidebar__rock--image button" src="../images/Photoshop-transparant/rock-2.1.png" alt="steen">
+                        <img class="enclosure-sidebar__rock-3--image button" src="../images/Photoshop-transparant/rock-2.1.png" alt="steen">
                     </figure>
                 </div>
 
                 <div class="enclosure-sidebar pond-sidebar" id="js--pond-popup">
                     <figure class="enclosure-sidebar__pond-1" id="js--sidebar-pond-1">
-                        <img class="enclosure-sidebar__pond--image button" src="../images/Photoshop-transparant/pond-2.1.png" alt="water">
+                        <img class="enclosure-sidebar__pond-1--image button" src="../images/Photoshop-transparant/pond-2.1.png" alt="water">
                     </figure>
                     <figure class="enclosure-sidebar__pond-2" id="js--sidebar-pond-2">
-                        <img class="enclosure-sidebar__pond--image button" src="../images/Photoshop-transparant/pond.png" alt="water">
+                        <img class="enclosure-sidebar__pond-2--image button" src="../images/Photoshop-transparant/pond.png" alt="water">
                     </figure>
                 </div>
 
@@ -183,30 +180,32 @@
                     <button id="js--end-btn" class="btn-ok button">&#10132;</button>
                 </div>
 
-                <div class="giraffe-hide-overlay hide" id="js--map-overlay"></div>
+                <div class="giraffeverblijf-hide-overlay hide" id="js--map-overlay"></div>
 
                 <figure class="enclosure-head hide" id="js--head-zookeeper">
                     <img class="enclosure-head--image" src="../images/zookeeper-poses/Male/zookeeper-pose-smile-head.png" alt="dierentuin medewerker hoofd">
                     <img id="js--mouth-head" src="../images/zookeeper-poses/Male/zookeeper-pose-mouth-open.png" alt="">
                 </figure>
     
-                <div class="speech-bubble giraffe-speech-bubble hide" id="js--hintBubble">
+                <div class="speech-bubble giraffeverblijf__speech-bubble hide" id="js--hintBubble">
                     <!-- <img class="btn-explaine hide" id="js--speech-bubble-img"></img> -->
+                    <img class="speech-bubble-reload-hint button" id="js--speech-reload-hint" src="../images/reload_button.png"></img>
                     <p id="js--speech-bubble-p-hint"></p>
                     <div class="btn-ok-div">
                         <button class="btn-ok-small btn-speech button" id="js--hintBubble-btn">&#10132;</button>
                     </div>
                 </div>
 
-                <div class="speech-bubble giraffe-speech-bubble hide" id="js--endBubble">
+                <div class="speech-bubble giraffeverblijf__speech-bubble hide" id="js--endBubble">
                     <!-- <img class="btn-explaine hide" id="js--speech-bubble-img"></img> -->
+                    <img class="speech-bubble-reload-end button" id="js--speech-reload-end" src="../images/reload_button.png"></img>
                     <p id="js--speech-bubble-p-end">Dat ziet er goed uit. Een goed ingericht hok is goed voor de gezondheid van de dieren.</p>
                     <div class="btn-ok-div" id="js--speech-bubble-div">
                         <button class="btn-ok-small btn-speech button" id="js--endBubble-btn">&#10132;</button>
                     </div>
-                    <div class="hide-important giraffe-speech-bubble--buttons" id="js--speech-bubble-div-2">
-                        <button class="btn-ok-giraffe button" id="js--endBubble-dierentuin">dierentuin</button>
-                        <button class="btn-ok-giraffe button" id="js--endBubble-natuur">natuur</button>
+                    <div class="hide-important giraffeverblijf__speech-bubble--buttons" id="js--speech-bubble-div-2">
+                        <button class="btn-ok-giraffeverblijf button" id="js--endBubble-dierentuin">dierentuin</button>
+                        <button class="btn-ok-giraffeverblijf button" id="js--endBubble-natuur">natuur</button>
                     </div>
                 </div>
 

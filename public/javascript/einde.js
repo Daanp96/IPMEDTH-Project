@@ -2,6 +2,7 @@ const bedankt = new Audio("../audio/Tjalle/10-uitgang/1-bedankt.m4a");
 
 const overlay = document.getElementById("js--end-overlay");
 const diploma = document.getElementById("js--diploma");
+const diplomaInput = document.getElementById("js--diploma-input");
 const diplomaBtn = document.getElementById("js--diploma-button")
 // const overlayTitle = document.getElementById("js--overlay-title");
 
@@ -19,7 +20,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 1000);
+}, 100);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -56,14 +57,13 @@ window.onafterprint = (e) =>{
     // return false;
 };
 
-// bedankt.play();
-// bedankt.onended = () => {
-//     overlay.style.opacity = "1";
-//     diploma.style.opacity = "1"
-//     // overlayTitle.style.opacity = "1";
-//     // againBtn.style.opacity = "1";
-//     // stopBtn.style.opacity = "1"; 
-// }
+bedankt.play();
+bedankt.onended = () => {
+    overlay.style.opacity = "1";
+    diploma.style.opacity = "1"
+    diplomaBtn.classList.add("button");
+    diplomaInput.classList.add("button");
+}
 
 // againBtn.onclick = () => {
 //     toStart();

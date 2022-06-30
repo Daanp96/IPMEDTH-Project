@@ -23,6 +23,8 @@ const hintBubble = document.getElementById("js--hintBubble");
 const hintBubbleP = document.getElementById("js--speech-bubble-p-hint");
 const hintBubbleBtn = document.getElementById("js--hintBubble-btn");
 const mapOverlay = document.getElementById("js--map-overlay");
+const ijswinkelSpeechBubble = document.getElementById("js--ijswinkel-speech-bubble");
+const ijswinkelHead = document.getElementById("js--ijswinkel-head");
 
 //audio
 const goedemiddag = new Audio("../audio/Tjalle/8-ijsbar/1-goedemiddag.m4a");
@@ -34,6 +36,7 @@ const dankje = new Audio("../audio/Tjalle/8-ijsbar/4-dankje.m4a");
 // const velden = new Audio("../audio/Tjalle/8-ijsbar/7-velden.m4a");
 const ijsjeKlaar = new Audio("../audio/Tjalle/8-ijsbar/8-ijsjeKlaar.m4a");
 // const bedrag = new Audio("../audio/Tjalle/8-ijsbar/9-bedrag.m4a");
+const kaching = new Audio("../audio/ijsbar/kassa_fix.mp3");
 
 const hint1 = new Audio("../audio/Tjalle/8-ijsbar/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/8-ijsbar/hint-2.m4a");
@@ -42,6 +45,7 @@ let countHint = 0;
 let tekst = '';
 
 goedemiddag.play();
+hintBtn.disabled = true;
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'hidden') {
@@ -50,7 +54,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 1000);
+}, 100);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -60,6 +64,7 @@ function speakOnFunction(){
     betalen.muted = true;
     // kleuren.muted = true;
     // slepen.muted = true;
+    kaching.muted = true;
     ijsjeKlaar.muted = true;
     dankje.muted = true;
     hint1.muted = true;
@@ -74,6 +79,7 @@ function speakOffFunction(){
     betalen.muted = false;
     // kleuren.muted = false;
     // slepen.muted = false;
+    kaching.muted = false;
     ijsjeKlaar.muted = false;
     dankje.muted = false;
     hint1.muted = false;
@@ -117,18 +123,23 @@ speakOff.onclick = () => {
 // };
 
 ijsbalie.onclick = () => {
+    hintBtn.disabled = false;
     // kleuren.play();
     overlay.style.opacity =  "1";
     overlay.style.zIndex = "1";
     popup.style.opacity = "1";
     popup.style.zIndex = "1";
+    ijswinkelSpeechBubble.style.zIndex = "1";
+    ijswinkelSpeechBubble.style.opacity = "1";
+    ijswinkelHead.style.opacity = "1";
+    ijswinkelHead.style.zIndex = "1";
     ijsbalie.classList.remove("ijs_animatie");
 
     for (let ijs of ijsjes) {
+
         ijs.style.opacity = "1";
         ijs.style.zIndex = "5";
         // ijs.firstElementChild.style.pointerEvents = "none";
-
         ijs.onclick = (e) => {
             // slepen.play();
             // slepen.onended = () => {
@@ -136,13 +147,13 @@ ijsbalie.onclick = () => {
             // };
             let bol_img = document.createElement("img");
             let kleur = ijs.getAttribute("data-kleur");
-            bol_img.src = `../images/ijskraam/ijs_${kleur}.png`;
+            bol_img.src = `../images/ijswinkel/ijs_${kleur}.png`;
             bol_img.className = `ijsbol_${kleur}`;
             bol_img.dataset.kleur = kleur;
             bol_img.dataset.bol = 'ijs';
-            bol_img.classList.add("ijsbol", "button");
-            bol_img.style.top = `${e.clientY - e.offsetY - 180}px`;
-            bol_img.style.left = `${e.clientX - e.offsetX - 250}px`;
+            bol_img.classList.add("ijswinkel-popup__bol", "button");
+            bol_img.style.top = `${e.clientY - e.offsetY - 25}px`;
+            bol_img.style.left = `${e.clientX - e.offsetX - 25}px`;
             // speechBubble.innerHTML = "Sleep jouw bolletje naar de ijshoorn toe.";
             popup.append(bol_img);
             dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble, ijsjeKlaar);
@@ -151,7 +162,7 @@ ijsbalie.onclick = () => {
 }
 
 for(let munt of munten) {
-    dragDropGeld(munt, kassa, ijsBtn, speechBubble, dankje);
+    dragDropGeld(munt, kassa, ijsBtn, speechBubble, dankje, kaching);
 }
 
 hintBtn.onclick = () => {

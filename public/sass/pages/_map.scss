@@ -108,6 +108,8 @@
         position: relative;
 
         &--image {
+            //width: auto;
+            //height: 100%;
             width: 18vw;
             height: auto;
         }
@@ -125,6 +127,10 @@
         grid-row: 7 / span 2;
     }
     
+}
+
+.btn-map {
+    display: none;
 }
 
 .map--speech-bubble {
