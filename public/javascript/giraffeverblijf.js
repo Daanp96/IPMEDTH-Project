@@ -118,7 +118,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible' && articleIntro.style.display == "none") {
         speakOffFunction2();
     }
-}, 100);
+}, 300);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -301,9 +301,9 @@ startOKBtn.onclick = () => {
     mapOverlay.classList.remove("hide");
     headZookeeper.classList.remove("hide");
     hintBubble.classList.remove("hide");
-    // hintBtn.style.zIndex = 60;
-    // speakOn2.style.zIndex = 60;
-    // speakOff2.style.zIndex = 60;
+    hintBtn.style.zIndex = 70;
+    speakOn2.style.zIndex = 70;
+    speakOff2.style.zIndex = 70;
     hintSpeechBubble_p.innerHTML = 'Bovenaan zie je een lijstje wat ze nodig hebben.';
     bovenaan.play();
     bovenaan.onended = () => {
