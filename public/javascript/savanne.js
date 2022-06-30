@@ -90,24 +90,24 @@ herhaal.onclick = () => {
     }
 }
 
-$(".popup__container-typen--textbox").on("focus blur", function(){
-    $(".popup__container-typen--wrapper").toggleClass("focused");
+$(".popup__container-savanne--textbox").on("focus blur", function(){
+    $(".popup__container-savanne--wrapper").toggleClass("focused");
 });
 
-$(".popup__container-typen--wrapper").click(function (e) {
+$(".popup__container-savanne--wrapper").click(function (e) {
     if (e.target == this) {
-        var b = $(".popup__container-typen--textbox", this).focus();
+        var b = $(".popup__container-savanne--textbox", this).focus();
         setEndOfContenteditable(b[0]);
     }
 }).trigger("click");
 
-$(".popup__container-typen--wrapper > .popup__container-typen--textbox").on("input", function(){
+$(".popup__container-savanne--wrapper > .popup__container-savanne--textbox").on("input", function(){
     var ipt = $(this).text().replace(/\u00A0/g, " ");
     //freakin NO-BREAK SPACE needs extra care
     if(text.indexOf(ipt) == 0){
-        $(".popup__container-typen--textbox--gray").text(text.substr(ipt.length, text.length));
+        $(".popup__container-savanne--textbox--gray").text(text.substr(ipt.length, text.length));
     }else{
-        $(".popup__container-typen--textbox--gray").text("");
+        $(".popup__container-savanne--textbox--gray").text("");
     }
 }).trigger("input");
 
