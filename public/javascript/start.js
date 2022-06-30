@@ -53,6 +53,7 @@ function speakOnFunction(){
     hint.muted = true;
     stem.muted = true;
     binnen.muted = true;
+    herhaal.muted = true;
 };
 
 function speakOffFunction(){
@@ -64,6 +65,7 @@ function speakOffFunction(){
     hint.muted = false;
     stem.muted = false;
     binnen.muted = false;
+    herhaal.muted = false;
 };
 
 speakOn.onclick = () => {
