@@ -48,25 +48,32 @@
     // float: right;
     // opacity: 0;
     // transition: 0.5s all;
-    &-intro {
+    &--intro {
         position: absolute;
         width: 6rem;
         right: -5vw;
         top: 1vh;
         display: none;       
     }
-    &-hint{
+    &--hint{
         position: absolute;
         width: 6rem;
         right: -5vw;
         top: 1vh;
         display: none;
     }
-    &-end {
+    &--end {
         position: absolute;
         width: 6rem;
         right: -5vw;
         top: 1vh;
         display: none;
+    }
+    &--ijs {
+        position: absolute;
+        width: 6rem;
+        right: -5vw;
+        top: 1vh;
+        display: none;       
     }
 }

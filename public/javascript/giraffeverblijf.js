@@ -85,7 +85,6 @@ const hint2 = new Audio("../audio/Tjalle/9-verblijf/hint-2.m4a");
 
 const endHerhaal = [goedIngericht, vraag, veelDieren, vrijeRuimte, keuze];
 const hintHerhaal = [bovenaan, hint1, hint2];
-let isHint = false;
 
 let countHerhaal = 0;
 let countHint = 0;

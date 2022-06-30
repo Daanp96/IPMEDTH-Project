@@ -231,7 +231,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan) => {
   };
 }
 
-const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
+const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -301,12 +301,19 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
 
         } else if(aantalIjs == 3) {
           audio.play();
+          audio.onended = () => {
+            herhaal.style.display = "block";
+          }
           kassa.style.display = "block";
           kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
           kassa.parentNode.dataset.geld = "1";
           speech.innerHTML = "Zo je ijsje is klaar! Je kan het geld naar de kassa toe slepen.";
           for(let ijs of ijsjes){
             ijs.onclick = null;
+          }
+
+          herhaal.onclick = () => {
+            reloadSpeech(audio, herhaal);
           }
         }
       }
@@ -327,7 +334,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
 }
 
 
-const dragDropGeld = (obj, kassa, btn, speech, audio, kaching) => {
+const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -392,10 +399,17 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching) => {
 
         if (ijsPrijs == 0) {
           audio.play();
+          audio.onended = () => {
+            herhaal.style.display = "block";
+          }
           document.getElementById("js--ijs-keuze-kassa").classList.remove("geld-droppable");
           kassa.innerHTML = "Dankjewel!";
           btn.style.display = "block";
           speech.innerHTML = "Dankjewel! Geniet van jullie ijsjes.";
+
+          herhaal.onclick = () => {
+            reloadSpeech(audio, herhaal);
+          }
         }
       }
     };
