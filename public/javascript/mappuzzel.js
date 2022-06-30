@@ -106,8 +106,13 @@ speechButton.onclick = () => {
     speech.style.zIndex = "-1";
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
-    hintGlow(60000, hintBtn);
     countHerhaal++;
+    
+    if(countHint == 0){
+        hintGlow(10000, hintBtn);
+    } else {
+        hintBtn.classList.remove("glow");
+    }
 }
 
 hintBtn.onclick = () => {
@@ -115,6 +120,7 @@ hintBtn.onclick = () => {
     isHint = true;
     switch (countHint) {
         case 0: 
+            hintBtn.classList.remove("glow");
             zookeeper.style.visibility = "visible";
             zookeeper.style.zIndex = "4";
             speech.style.visibility = "visible";
