@@ -70,7 +70,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 100);
+}, 1000);
 
 speakOn.onclick = () => {
     speakOnFunction();

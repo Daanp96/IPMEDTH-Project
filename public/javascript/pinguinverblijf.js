@@ -51,7 +51,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 100);
+}, 1000);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
