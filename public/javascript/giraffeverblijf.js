@@ -118,7 +118,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible' && articleIntro.style.display == "none") {
         speakOffFunction2();
     }
-}, 1000);
+}, 100);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";

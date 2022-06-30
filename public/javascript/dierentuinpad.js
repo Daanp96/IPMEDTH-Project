@@ -71,7 +71,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 1000);
+}, 100);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -256,8 +256,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
             ijsje.play();
             ijsje.onended = () => {
-                ijskar.classList.add("dierentuinpad__element");
-                ijskar.classList.add("button");
+                ijswinkel.classList.add("dierentuinpad__element");
+                ijswinkel.classList.add("button");
                 speechHerhaal.style.display = "block";
             }
             break;
@@ -464,7 +464,7 @@ if(document.URL.includes("dierentuinpad.html") ){
         e.preventDefault();
     }
     eindeButton.onclick = (e) => {
-        naarEinde();
+        naarEinde();ijswinkel
         e.preventDefault();
     }
 }

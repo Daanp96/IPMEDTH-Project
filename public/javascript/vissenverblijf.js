@@ -31,7 +31,7 @@ const hint2 = new Audio("../audio/Tjalle/5-vissen/hint-2.m4a");
 const hint3 = new Audio("../audio/Tjalle/5-vissen/hint-3.m4a");
 const hint4 = new Audio("../audio/Tjalle/5-vissen/hint-4.m4a");
 
-const audioHerhaalVissen = [welkomAquarium, nieuweVissen, rodeVissen];
+const audioHerhaalVissen = [welkomVissenverblijf, nieuweVissen, rodeVissen];
 const hintHerhaalVissen = [hint1, hint2, hint3, hint4];
 let isHint = false;
 
@@ -70,7 +70,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 1000);
+}, 100);
 
 speakOn.onclick = () => {
     speakOnFunction();
