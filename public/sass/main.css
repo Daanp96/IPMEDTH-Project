@@ -298,6 +298,63 @@ $breakpoint arguement choices:
           animation: spin 2s linear infinite;
 }
 
+@-webkit-keyframes mouth_move {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes mouth_move {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.mouth_move {
+  -webkit-animation: mouth_move 0.3s alternate infinite;
+          animation: mouth_move 0.3s alternate infinite;
+  position: absolute;
+  left: 5.1vw;
+  top: 12.5vh;
+  width: 1.75vw;
+  border-radius: 50%;
+}
+
+.mouth_move_pad {
+  -webkit-animation: mouth_move 0.3s alternate infinite;
+          animation: mouth_move 0.3s alternate infinite;
+  position: absolute;
+  left: 5.6vw;
+  top: 9.5vh;
+  width: 1.4vw;
+}
+
+.mouth_move_head {
+  -webkit-animation: mouth_move 0.3s alternate infinite;
+          animation: mouth_move 0.3s alternate infinite;
+  position: absolute;
+  left: 6.8vw;
+  top: 27vh;
+  width: 4.4vw;
+  border-radius: 50%;
+}
+
+.mouth_move_map {
+  -webkit-animation: mouth_move 0.3s alternate infinite;
+          animation: mouth_move 0.3s alternate infinite;
+  position: absolute;
+  left: 11vw;
+  top: 18.5vh;
+  width: 2.5vw;
+  border-radius: 50%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1966,6 +2023,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .arctic--figure {
+  position: relative;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
@@ -2161,14 +2219,15 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-column-span: 2;
   grid-column: 8 / span 2;
   -ms-grid-row: 6;
-  -ms-grid-row-span: 2;
-  grid-row: 6 / span 2;
+  -ms-grid-row-span: 4;
+  grid-row: 6 / span 4;
   z-index: 3;
+  position: relative;
 }
 
 .dierentuinpad__zookeeper--image {
-  height: 38vh;
   width: auto;
+  height: 38vh;
 }
 
 .dierentuinpad__speech-bubble {
@@ -2198,6 +2257,7 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row-span: 2;
   grid-row: 3 / span 2;
   z-index: 3;
+  position: relative;
 }
 
 .dierentuinpad__speech-bubble2 {
@@ -2221,6 +2281,7 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row-span: 2;
   grid-row: 3 / span 2;
   z-index: 3;
+  position: relative;
 }
 
 .dierentuinpad__speech-bubble3 {
@@ -2244,6 +2305,7 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row-span: 2;
   grid-row: 3 / span 2;
   z-index: 3;
+  position: relative;
 }
 
 .dierentuinpad__speech-bubble4 {
@@ -2291,6 +2353,36 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 5;
   height: 8vh;
   width: 8vw;
+}
+
+.einde--background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../images/start-background.png);
+}
+
+.einde-figure {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 2;
+  grid-column: 8 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 4;
+  grid-row: 5 /span 4;
+  position: relative;
+}
+
+.einde-figure--image {
+  height: 100%;
+  width: 100%;
+}
+
+.einde--speech-bubble {
+  -ms-grid-column: 10;
+  -ms-grid-column-span: 4;
+  grid-column: 10 / span 4;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 /span 1;
 }
 
 .overlay-end {
@@ -2435,11 +2527,14 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row-span: 4;
   grid-row: 5 / span 4;
   z-index: 50;
+  position: relative;
 }
 
 .intro__figure--image {
   height: 50vh;
   width: 12vw;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 .intro__speech-bubble {
@@ -2887,6 +2982,7 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row-span: 3;
   grid-row: 5 / span 3;
   z-index: 60;
+  position: relative;
 }
 
 .enclosure-head--image {
@@ -3527,10 +3623,11 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 2;
   -ms-grid-row-span: 8;
   grid-row: 2 /span 8;
+  position: relative;
 }
 
 .map__zookeeper--image {
-  width: 20vw;
+  width: 18vw;
   height: auto;
 }
 
@@ -4359,6 +4456,7 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row: 5;
   -ms-grid-row-span: 4;
   grid-row: 5 /span 4;
+  position: relative;
 }
 
 .start-figure--image {
@@ -4656,6 +4754,7 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-grid-row-span: 1;
   grid-row: 5 / span 1;
   z-index: 3;
+  position: relative;
 }
 
 .typen--image {

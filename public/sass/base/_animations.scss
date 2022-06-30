@@ -159,3 +159,48 @@
 .reload_animation {
     animation: spin 2s linear infinite;
 }
+
+@keyframes mouth_move{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+
+.mouth_move{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 5.1vw;
+    top: 12.5vh;
+    width: 1.75vw;
+    border-radius: 50%;
+}
+
+.mouth_move_pad{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 5.6vw;
+    top: 9.5vh;
+    width: 1.4vw;
+}
+
+.mouth_move_head{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 6.8vw;
+    top: 27vh;
+    width: 4.4vw;
+    border-radius: 50%;
+}
+
+.mouth_move_map{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 11vw;
+    top: 18.5vh;
+    width: 2.5vw;
+    border-radius: 50%;
+}

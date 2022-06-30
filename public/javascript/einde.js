@@ -10,6 +10,7 @@ const diplomaBtn = document.getElementById("js--diploma-button")
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
+const mouthMove = document.getElementById("js--mouth");
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'hidden') {

@@ -12,6 +12,7 @@ const startOKBtn = document.getElementById("js--arctic-ok-btn");
 const hintBtn = document.getElementById("js--hint");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
+const mouthMove = document.getElementById("js--mouth");
 
 let countHint = 0;
 let tekst = '';
@@ -24,7 +25,12 @@ const hint2 = new Audio("../audio/Tjalle/7-pinguins/hint-2.m4a");
 
 hintBtn.disabled = true;
 pinguinVerblijf.play();
+pinguinVerblijf.onplaying = () => {
+    mouthMove.style.display = "block";
+    mouthMove.classList.add("mouth_move");
+}
 pinguinVerblijf.onended = () => {
+    mouthMove.style.display = "none";
     startOKBtn.style.display = "flex";
 }
 
@@ -98,9 +104,13 @@ hintBtn.onclick = () => {
             // explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
             // startOKBtn.style.visibility = "visible";
-            tekst = 'Alle pinguïns moeten gevoerd worden.';
+            tekst = 'Alle pinguïns moeten gevoed worden.';
             hint1.play();
+            hint1.onplaying = () => {
+                mouthMove.style.display = "block";
+            }
             hint1.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "flex";
             }
             startOKBtn.onclick = () => {
@@ -118,7 +128,11 @@ hintBtn.onclick = () => {
             // startOKBtn.style.visibility = "visible";
             tekst = 'Beweeg je muis naar de emmer met de vis en doe dit:';
             hint2.play();
+            hint2.onplaying = () => {
+                mouthMove.style.display = "block";
+            }
             hint2.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "flex";
             }
             image = '../images/gif/klik_zijkant.gif';
