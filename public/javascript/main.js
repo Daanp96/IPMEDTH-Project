@@ -26,7 +26,6 @@ const endSpeechBubbleNatuur = document.getElementById("js--endBubble-natuur");
 const reken_correct = 11;
 // const naam_correct = "aap";
 const typen_correct = "olifant";
-const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
 let aantalSecondesVissenverblijf;
 // let aantalSecondesSavanne;

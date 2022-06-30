@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dierentuin</title>
     <link rel="stylesheet" href="../sass/main.css">
-    <link rel="icon" type="image/x-icon" href="../images/monkey-head.png">
+    <link rel="icon" type="image/x-icon" href="../images/zookeeper-face.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="../javascript/main.js" type="module" defer></script>
     <script src="../javascript/map.js" type="module" defer></script>
@@ -65,7 +65,7 @@
 
             <!-- <button id="js--map-btn" class="map__btn btn-check button">&#10148;</button> -->
             <div class="map__btn">
-                <button id="js--map-btn" class="btn-ok button">&#10132;</button>
+                <button id="js--map-btn" class="btn-ok btn-map button">&#10132;</button>
             </div>
 
             <figure class="map__zookeeper">
@@ -74,6 +74,8 @@
 
 
             <div class="speech-bubble map--speech-bubble" id="js--speech-bubble">
+                <image class="btn-reload button" id="js--speech-reload" src="../images/reload_button.png"></image>
+                <image class="btn-explaine hide" id="js--speech-bubble-img"></image>
                 <p id="js--speech-bubble-p">Oh nee, de kaart is kapot! Kan jij mij helpen de kaart te maken?</p>
             </div>
         </section>
