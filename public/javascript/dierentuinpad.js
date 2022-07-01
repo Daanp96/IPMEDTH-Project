@@ -104,7 +104,7 @@ speakOff.onclick = () => {
 };
 
 speechHerhaal.onclick = () => {
-    reloadSpeech(audioHerhaal[x], speechHerhaal);
+    reloadSpeech(audioHerhaal[x], speechHerhaal, mouthMove);
 }
 
 // speakOn.onclick = () => {
@@ -150,10 +150,10 @@ if(document.URL.includes("dierentuinpad.html") ){
                 mouthMove.classList.add("mouth_move_pad");
             }
             vissen.onended = () => {
-                mouthMove.style.display = "none";
                 fish.classList.add("dierentuinpad__element");
                 fish.classList.add("button");
                 speechHerhaal.style.display = "block";
+                mouthMove.style.display = "none";
             }
             
             break;

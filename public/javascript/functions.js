@@ -21,19 +21,30 @@ const removeAnimate = (animate) => {
   animate.classList.remove("reload_animation");
 }
 
-const reloadSpeech = (audio, animate) => {
+const removeMoveMouth = (mouth) => {
+  mouth.classList.remove("mouth_move");
+  mouth.classList.remove("mouth_move_wave");
+  mouth.classList.remove("mouth_move_map");
+  mouth.classList.remove("mouth_move_pad");
+  mouth.classList.remove("mouth_move_verblijf");
+  mouth.classList.remove("mouth_move_head");
+  mouth.style.display = "none";
+}
+const reloadSpeech = (audio, animate, mouth) => {
   addAnimate(animate);
   audio.play();
   audio.onended = () => {
     removeAnimate(animate);
+    removeMoveMouth(mouth);
   }
 }
 
-const reloadHint = (audio, animate) => {
+const reloadHint = (audio, animate, mouth) => {
   addAnimate(animate);
   audio.play();
   audio.onended = () => {
     removeAnimate(animate);
+    removeMoveMouth(mouth);
   }
 }
 
@@ -108,16 +119,16 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel) => {
           zookpr.src = "../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
-          zookpr.style.gridColumnStart = "11";
+          zookpr.style.gridColumnStart = "7 / span 3;";
           btn.style.zIndex = "2";
-          speech.style.gridColumnStart = "7";
+          speech.style.gridColumn = "3 / span 1";
           speech.style.visibility = "visible";
           speech.style.zIndex = "1";
           speechP.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
           kaartHeel.play();
           kaartHeel.onplaying = () => {
             mouthMove.style.display = "block";
-            mouthMove.classList.add("mouth_move");
+            mouthMove.classList.add("mouth_move_head");
           }
           kaartHeel.onended = () => {
             mouthMove.style.display = "none";
@@ -141,8 +152,9 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel) => {
   };
 }
 
-const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan) => {
+const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herhaal) => {
   let currentDroppable = null;
+
 
   obj.onmousedown = function(event) {
 
@@ -219,10 +231,18 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan) => {
         goedGedaan.play();
         goedGedaan.onplaying = () => {
           mouthMovePinguin.style.display = "block";
+          mouthMove.classList.add("mouth_move_verblijf");
+
         }
         goedGedaan.onended = () => {
           mouthMovePinguin.style.display = "none";
           nextBtn.style.display = "block";
+          herhaal.style.display = "block";
+
+        }
+        
+        herhaal.onclick = () => {
+          reloadSpeech(goedGedaan, herhaal);
         }
       }
     };

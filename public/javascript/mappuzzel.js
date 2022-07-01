@@ -45,10 +45,10 @@ let audioHerhaal = [mapUitleg, kaartHeel]
 herhaal.onclick = () => {
     if(isHint) {
         console.log('is hint')
-        reloadHint(hint, herhaal);
+        reloadHint(hint, herhaal, mouthMove);
     } else {
         console.log("is geen hint")
-        reloadSpeech(audioHerhaal[countHerhaal], herhaal);
+        reloadSpeech(audioHerhaal[countHerhaal], herhaal, mouthMove);
     }
 }
 
@@ -124,6 +124,7 @@ hintBtn.onclick = () => {
             speech.style.zIndex = "2";
             mapOverlay.style.zIndex = "1";
             speechImage.classList.remove("hide");
+            herhaal.style.display = "none";
             speechP.innerHTML = "Beweeg de muis naar een puzzelstukje en doe dan dit:";
             hint.play();
             hint.onplaying = () => {
@@ -133,6 +134,7 @@ hintBtn.onclick = () => {
             hint.onended = () => {
                 mouthMove.style.display = "none";
                 speechButton.style.display = "flex";
+                herhaal.style.display = "block";
             }
 
             speechButton.onclick = () => {

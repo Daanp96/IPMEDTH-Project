@@ -26,7 +26,7 @@ let audioHerhaal = [intro, bezoeker, uitleggen, hint, stem, herhaal, binnen];
 let countHerhaal = 0;
 
 speechReload.onclick = () => {
-    reloadSpeech(audioHerhaal[countHerhaal], speechReload);
+    reloadSpeech(audioHerhaal[countHerhaal], speechReload, mouthMove);
 }
 
 intro.play();
@@ -48,7 +48,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 1000);
+}, 100);
 
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -142,9 +142,8 @@ startOKBtn.onclick = () => {
             }
             break;
         case 4: 
-            startExplaineBtn.classList.add("hide");
             tekst = 'Klik op de knop met de pijl. Dan herhaal ik het.';
-            image = '';
+            image = '../images/reload_button.png';
             herhaal.play();
             herhaal.onplaying = () => {
                 mouthMove.style.display = "block";
@@ -157,6 +156,7 @@ startOKBtn.onclick = () => {
             }
             break;
         case 5: 
+            startExplaineBtn.classList.add("hide");
             tekst = 'Nu is alles uitgelegd. Dus laten we naar binnen gaan!';
             image = '';
             binnen.play();

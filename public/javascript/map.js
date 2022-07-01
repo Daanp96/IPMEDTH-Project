@@ -47,7 +47,7 @@ speakOff.onclick = () => {
 };
 
 herhaal.onclick = () => {
-  reloadSpeech(mapKapot, herhaal);
+  reloadSpeech(mapKapot, herhaal, mouthMove);
 }
 
 puzzelButton.onclick = () => {

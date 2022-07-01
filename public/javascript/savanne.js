@@ -91,9 +91,9 @@ savanneVerblijf.onended = () => {
 
 herhaal.onclick = () => {
     if(isHint) {
-        reloadHint(hintHerhaalSavanne[countHint], herhaal);
+        reloadHint(hintHerhaalSavanne[countHint], herhaal, mouthMove);
     } else {
-        reloadSpeech(audioHerhaalSavanne[countHerhaal], herhaal);
+        reloadSpeech(audioHerhaalSavanne[countHerhaal], herhaal, mouthMove);
     }
 }
 

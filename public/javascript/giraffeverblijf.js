@@ -93,7 +93,7 @@ let countHerhaal = 0;
 let countHint = 0;
 let countEnd = 0;
 let tekst = '';
-let image = '';
+let isHint;
 let speakOnStorage;
 
 setInterval(() => {
@@ -174,15 +174,15 @@ speakOff2.onclick = () => {
 };
 
 herhaalIntro.onclick = () => {
-    reloadSpeech(verblijfAf, herhaalIntro);
+    reloadSpeech(verblijfAf, herhaalIntro, mouthMove);
 }
 
 herhaalHint.onclick = () => {
-    reloadSpeech(hintHerhaal[countHerhaal], herhaalHint);
+    reloadSpeech(hintHerhaal[countHerhaal], herhaalHint, mouthMoveHead);
 }
 
 herhaalEnd.onclick = () => {
-    reloadSpeech(endHerhaal[countEnd], herhaalEnd);
+    reloadSpeech(endHerhaal[countEnd], herhaalEnd, mouthMoveHead);
 }
 
 hintBtn.disabled = true;
@@ -437,7 +437,6 @@ endBubbleBtn.onclick = () => {
                 mouthMoveHead.style.display = "block";
             }
             vraag.onended = () => {
-                mouthMoveHead.classList.remove("mouth_move_head");
                 mouthMoveHead.style.display = "none";
                 endBubbleBtn.style.display = "flex";
                 herhaalEnd.style.display = "block";
@@ -453,7 +452,6 @@ endBubbleBtn.onclick = () => {
                 mouthMoveHead.style.display = "block";
             }
             veelDieren.onended = () => {
-                mouthMoveHead.classList.remove("mouth_move_head");
                 mouthMoveHead.style.display = "none";
 
                 endBubbleBtn.style.display = "flex";
@@ -470,9 +468,7 @@ endBubbleBtn.onclick = () => {
                 mouthMoveHead.style.display = "block";
             }
             vrijeRuimte.onended = () => {
-                mouthMoveHead.classList.remove("mouth_move_head");
                 mouthMoveHead.style.display = "none";
-
                 endBubbleBtn.style.display = "flex";
                 herhaalEnd.style.display = "block";
             }
@@ -487,7 +483,6 @@ endBubbleBtn.onclick = () => {
                 mouthMoveHead.style.display = "block";
             }
             keuze.onended = () => {
-                mouthMoveHead.classList.remove("mouth_move_head");
                 mouthMoveHead.style.display = "none";
                 document.getElementById("js--speech-bubble-div-2").classList.remove("hide-important");
                 herhaalEnd.style.display = "block";

@@ -50,6 +50,8 @@ startOKBtn.onclick = () => {
     speechBubble.style.zIndex = "";
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
+    herhaal.style.display = "none";
+
     if(countHint == 0){
         hintGlow(60000, hintBtnGlow);
         setTimeout(() => {
@@ -96,9 +98,9 @@ speakOff.onclick = () => {
 
 herhaal.onclick = () => {
     if(isHint) {
-        reloadHint(hintHerhaalArctic[countHint], herhaal);
+        reloadHint(hintHerhaalArctic[countHint], herhaal, mouthMove);
     } else {
-        reloadSpeech(pinguinVerblijf, herhaal);
+        reloadSpeech(pinguinVerblijf, herhaal, mouthMove);
     }
 }
 
@@ -106,7 +108,7 @@ pinguinverblijfBtn.onclick = () => {
     window.location.href = "./dierentuinpad.html";
 }
 
-dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan);
+dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan, herhaal);
 
 hintBtn.onclick = () => {
     isHint = true;
@@ -122,6 +124,7 @@ hintBtn.onclick = () => {
             hint1.play();
             hint1.onplaying = () => {
                 mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
             }
             hint1.onended = () => {
                 mouthMove.style.display = "none";
@@ -146,6 +149,7 @@ hintBtn.onclick = () => {
             hint2.play();
             hint2.onplaying = () => {
                 mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move_verblijf");
             }
             hint2.onended = () => {
                 mouthMove.style.display = "none";
