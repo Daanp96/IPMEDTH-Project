@@ -1,4 +1,4 @@
-import {reloadSpeech, reloadHint} from "./functions.js";
+import {reloadSpeech, hintGlow, reloadHint} from "./functions.js";
 
 const nextBtnRight = document.getElementById("js--next-btn-right");
 const nextBtnLeft = document.getElementById("js--next-btn-left");
@@ -13,6 +13,7 @@ const mapOverlay = document.getElementById("js--map-overlay");
 
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -71,7 +72,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 100);
+}, 1000);
 
 speakOn.onclick = () => {
     speakOnFunction();
@@ -138,6 +139,14 @@ startOKBtn.onclick = () => {
             speechBubble.style.zIndex = "";
             mapOverlay.style.zIndex = "-1";
             hintBtn.disabled = false;
+            if(countHint == 0){
+                hintGlow(60000, hintBtnGlow);
+                setTimeout(() => {
+                    hintBtnGlow.classList.remove("glow");
+                }, 70000);
+            } else {
+                hintBtnGlow.classList.remove("glow");
+            }
             break;
     }
 
@@ -147,6 +156,7 @@ startOKBtn.onclick = () => {
     explaineBtn.src = image;
     startOK++;
     countHerhaal++;
+
 };
 
 nextBtnRight.onclick = () => {    
@@ -171,6 +181,8 @@ hintBtn.onclick = () => {
     isHint = true;
     switch (countHint) {
         case 0: 
+            hintBtnGlow.classList.remove("glow");
+
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";

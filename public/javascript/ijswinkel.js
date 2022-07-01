@@ -1,4 +1,4 @@
-import {dragDropIjs, dragDropGeld, reloadSpeech} from "./functions.js";
+import {dragDropIjs, dragDropGeld, reloadSpeech, hintGlow} from "./functions.js";
 
 const ijsbalie = document.getElementById("js--balie");
 const overlay = document.getElementById("js--overlay");
@@ -16,6 +16,7 @@ const speechBubble = document.getElementById("js--speech-bubble");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
 
 //hint popup
 const headIjsco = document.getElementById("js--head-ijsco");
@@ -64,7 +65,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 100);
+}, 1000);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -115,35 +116,6 @@ herhaalHint.onclick = () => {
     reloadSpeech(audioHints[countHint], herhaalHint);
 }   
 
-// speakOn.onclick = () => {
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     goedemiddag.muted = true;
-//     bolletjes.muted = true;
-//     betalen.muted = true;
-//     kleuren.muted = true;
-//     slepen.muted = true;
-//     ijsjeKlaar.muted = true;
-//     dankje.muted = true;
-//     hint1.muted = true;
-//     hint2.muted = true;
-
-// };
-
-// speakOff.onclick = () => {
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     goedemiddag.muted = false;
-//     bolletjes.muted = false;
-//     betalen.muted = false;
-//     kleuren.muted = false;
-//     slepen.muted = false;
-//     ijsjeKlaar.muted = false;
-//     dankje.muted = false;
-//     hint1.muted = false;
-//     hint2.muted = false;
-// };
-
 ijsbalie.onclick = () => {
     hintBtn.disabled = false;
     // kleuren.play();
@@ -155,10 +127,15 @@ ijsbalie.onclick = () => {
     ijswinkelSpeechBubble.style.opacity = "1";
     ijswinkelHead.style.opacity = "1";
     ijswinkelHead.style.zIndex = "1";
-    ijsbalie.classList.remove("ijs_animatie");
-    bolletjes.play();
-    bolletjes.onended = () => {
-        herhaalIjs.style.display = "block";
+    ijsbalie.classList.remove("scale-small");
+
+    if(countHint == 0){
+        hintGlow(60000, hintBtnGlow);
+        setTimeout(() => {
+            hintBtnGlow.classList.remove("glow");
+        }, 70000);
+    } else {
+        hintBtnGlow.classList.remove("glow");
     }
 
     for (let ijs of ijsjes) {
@@ -194,6 +171,7 @@ for(let munt of munten) {
 hintBtn.onclick = () => {
     switch (countHint) {
         case 0:
+            hintBtnGlow.classList.remove("glow");
             hintBubbleBtn.style.display = "none";
             mapOverlay.classList.remove("hide");
             headIjsco.classList.remove("hide");

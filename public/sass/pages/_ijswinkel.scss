@@ -12,11 +12,12 @@
     &__balie {
         grid-column: 9 /span 6;
         grid-row: 5 / span 5;
-
+        z-index: 1;
+    
         &--image {
             width: 40vw;
             z-index: 5;
-            animation: scale-small 2s ease-in-out infinite;
+            
         }
     }
 
