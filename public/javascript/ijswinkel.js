@@ -55,7 +55,6 @@ let tekst = '';
 goedemiddag.play();
 goedemiddag.onended = () => {
     herhaalIntro.style.display = "block";
-    herhaal.style.display = "block";
 
 }
 hintBtn.disabled = true;
@@ -132,7 +131,7 @@ ijsbalie.onclick = () => {
     ijsbalie.classList.remove("scale-small");
     bolletjes.play();
     bolletjes.onended = () => {
-    herhaal.style.display = "block";
+    herhaalIjs.style.display = "block";
 
 }
 
