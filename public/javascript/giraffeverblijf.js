@@ -5,6 +5,7 @@ const speakOff = document.getElementById("js--speak-off");
 const speakOn2 = document.getElementById("js--speak-on-2");
 const speakOff2 = document.getElementById("js--speak-off-2");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
 
 // const introBtn = document.getElementById("js--intro-btn");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
@@ -196,12 +197,12 @@ hintBubbleBtn.onclick = () => {
     hintBubble.classList.add("hide");
     hintBtn.disabled = false;
     if(countHint == 0){
-        hintGlow(60000, hintBtn);
+        hintGlow(60000, hintBtnGlow);
         setTimeout(() => {
-            hintBtn.classList.remove("glow");
+            hintBtnGlow.classList.remove("glow");
         }, 70000);
     } else {
-        hintBtn.classList.remove("glow");
+        hintBtnGlow.classList.remove("glow");
     }
     countHerhaal++;
 }
@@ -211,6 +212,7 @@ hintBtn.onclick = () => {
     isHint = true;
     switch (countHint) {
         case 0: 
+            hintBtnGlow.classList.remove("glow");
             hintBubbleBtn.style.display = "none";
             mapOverlay.classList.remove("hide");
             headZookeeper.classList.remove("hide");
@@ -226,7 +228,6 @@ hintBtn.onclick = () => {
                 headZookeeper.classList.add("hide");
                 hintBubble.classList.add("hide");
                 hintBubbleBtn.style.display = "none";
-                hintBtn.classList.remove("glow");
                 isHint = false;
                 countHint++;
                 countHerhaal++;

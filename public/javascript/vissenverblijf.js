@@ -13,6 +13,7 @@ const mapOverlay = document.getElementById("js--map-overlay");
 
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -123,12 +124,12 @@ startOKBtn.onclick = () => {
             mapOverlay.style.zIndex = "-1";
             hintBtn.disabled = false;
             if(countHint == 0){
-                hintGlow(60000, hintBtn);
+                hintGlow(60000, hintBtnGlow);
                 setTimeout(() => {
-                    hintBtn.classList.remove("glow");
+                    hintBtnGlow.classList.remove("glow");
                 }, 70000);
             } else {
-                hintBtn.classList.remove("glow");
+                hintBtnGlow.classList.remove("glow");
             }
             break;
     }
@@ -164,6 +165,8 @@ hintBtn.onclick = () => {
     isHint = true;
     switch (countHint) {
         case 0: 
+            hintBtnGlow.classList.remove("glow");
+
             speechBubble.style.visibility = "visible";
             explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
@@ -175,12 +178,12 @@ hintBtn.onclick = () => {
                 herhaal.style.display = "block";
             }
             image = '../images/vissenverblijf/question-mark.png';
+            
             startOKBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.display = "none";
-                hintBtn.classList.remove("glow");
                 isHint = false;
                 countHint++;
             }

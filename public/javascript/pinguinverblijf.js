@@ -10,6 +10,8 @@ const explaineBtn = document.getElementById("js--speech-bubble-img");
 const speechBubble_p = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
+
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 
@@ -43,12 +45,12 @@ startOKBtn.onclick = () => {
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
     if(countHint == 0){
-        hintGlow(60000, hintBtn);
+        hintGlow(60000, hintBtnGlow);
         setTimeout(() => {
-            hintBtn.classList.remove("glow");
+            hintBtnGlow.classList.remove("glow");
         }, 70000);
     } else {
-        hintBtn.classList.remove("glow");
+        hintBtnGlow.classList.remove("glow");
     }
 }
 
@@ -105,6 +107,7 @@ hintBtn.onclick = () => {
     console.log(countHint);
     switch (countHint) {
         case 0: 
+            hintBtnGlow.classList.remove("glow");
             speechBubble.style.visibility = "visible";
             // explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";
@@ -120,7 +123,6 @@ hintBtn.onclick = () => {
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 isHint = false;
-                hintBtn.classList.remove("glow");
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }

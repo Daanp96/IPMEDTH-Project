@@ -5,6 +5,8 @@ const slides = document.getElementsByClassName("drag");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
+
 
 const button = document.getElementById("js--map-btn");
 const speech = document.getElementById("js--speech-bubble");
@@ -22,7 +24,7 @@ const hint = new Audio("../audio/Tjalle/3-mappuzzel/hint-1.m4a");
 const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
 
 hintBtn.disabled = true;
-console.log(hintBtn.disabled);
+
 mapUitleg.play();
 mapUitleg.onended = () => {
     speechButton.style.display = "flex";
@@ -95,12 +97,12 @@ speechButton.onclick = () => {
     countHerhaal++;
     
     if(countHint == 0){
-        hintGlow(60000, hintBtn);
+        hintGlow(60000, hintBtnGlow);
         setTimeout(() => {
-            hintBtn.classList.remove("glow");
+            hintBtnGlow.classList.remove("glow");
         }, 70000);
     } else {
-        hintBtn.classList.remove("glow");
+        hintBtnGlow.classList.remove("glow");
     }
 }
 
@@ -109,7 +111,7 @@ hintBtn.onclick = () => {
     isHint = true;
     switch (countHint) {
         case 0: 
-            hintBtn.classList.remove("glow");
+        hintBtnGlow.classList.remove("glow");
             zookeeper.style.visibility = "visible";
             zookeeper.style.zIndex = "4";
             speech.style.visibility = "visible";
@@ -129,7 +131,6 @@ hintBtn.onclick = () => {
                 speech.style.zIndex = "-1";
                 mapOverlay.style.zIndex = "-1";
                 speechImage.classList.add("hide");
-                hintBtn.classList.remove("glow");
                 hintBtn.muted = true;
                 isHint = false;
                 countHint++;

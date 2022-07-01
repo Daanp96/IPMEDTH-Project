@@ -16,6 +16,7 @@ const speechBubble = document.getElementById("js--speech-bubble");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
 
 //hint popup
 const headIjsco = document.getElementById("js--head-ijsco");
@@ -107,12 +108,12 @@ ijsbalie.onclick = () => {
     ijsbalie.classList.remove("scale-small");
 
     if(countHint == 0){
-        hintGlow(60000, hintBtn);
+        hintGlow(60000, hintBtnGlow);
         setTimeout(() => {
-            hintBtn.classList.remove("glow");
+            hintBtnGlow.classList.remove("glow");
         }, 70000);
     } else {
-        hintBtn.classList.remove("glow");
+        hintBtnGlow.classList.remove("glow");
     }
 
     for (let ijs of ijsjes) {
@@ -148,6 +149,7 @@ for(let munt of munten) {
 hintBtn.onclick = () => {
     switch (countHint) {
         case 0:
+            hintBtnGlow.classList.remove("glow");
             hintBubbleBtn.style.display = "none";
             mapOverlay.classList.remove("hide");
             headIjsco.classList.remove("hide");
@@ -162,7 +164,6 @@ hintBtn.onclick = () => {
                 headIjsco.classList.add("hide");
                 hintBubble.classList.add("hide");
                 hintBubbleBtn.style.display = "none";
-                hintBtn.classList.remove("glow");
                 countHint++;
             }
             break;
