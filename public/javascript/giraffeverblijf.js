@@ -95,6 +95,7 @@ let countEnd = 0;
 let tekst = '';
 let image = '';
 let speakOnStorage;
+let isHint;
 
 setInterval(() => {
     if (speakOn2.style.visibility == 'hidden') {
@@ -178,7 +179,7 @@ herhaalIntro.onclick = () => {
 }
 
 herhaalHint.onclick = () => {
-    reloadSpeech(hintHerhaal[countHerhaal], herhaalHint);
+    reloadSpeech(hintHerhaal[countHerhaal], herhaalHint, mouthMoveHead);
 }
 
 herhaalEnd.onclick = () => {
@@ -305,6 +306,7 @@ startOKBtn.onclick = () => {
     }
     bovenaan.onended = () => {
         mouthMoveHead.style.display = "none";
+        console.log("none");
         hintBubbleBtn.style.display = "flex";
         herhaalHint.style.display = "block";
     }
