@@ -107,27 +107,6 @@ speechHerhaal.onclick = () => {
     reloadSpeech(audioHerhaal[x], speechHerhaal);
 }
 
-// speakOn.onclick = () => {
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     vissen.muted = true;
-//     savanne.muted = true;
-//     pinguins.muted = true;
-//     ijsje.muted = true;
-//     verblijf.muted = true;
-//     uitgang.muted = true;
-// };
-// speakOff.onclick = () => {
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     vissen.muted = false;
-//     savanne.muted = false;
-//     pinguins.muted = false;
-//     ijsje.muted = false;
-//     verblijf.muted = false;
-//     uitgang.muted = false;
-// };
-
 
 if(document.URL.includes("dierentuinpad.html") ){
     eindeButton.classList.add("hide-important");
