@@ -17,8 +17,8 @@ welkeKlas.onplaying = () => {
 }
 welkeKlas.onended = () => {
     mouthMove.style.display = "none";
-    startOKBtn.style.display = "block";
-    speechReload.style.display = "block";
+    // startOKBtn.style.display = "block";
+    // speechReload.style.display = "block";
 }
 
 groep3.onclick = () =>{
@@ -27,8 +27,8 @@ groep3.onclick = () =>{
 
 window.localStorage.clear();
 
-speechReload.onclick = () => {
-    reloadSpeech(audioHerhaal[countHerhaal], speechReload);
-}
+// speechReload.onclick = () => {
+//     reloadSpeech(audioHerhaal[countHerhaal], speechReload);
+// }
 
 
