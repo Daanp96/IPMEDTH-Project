@@ -1,4 +1,4 @@
-import {dragDropGiraffe, reloadSpeech} from "./functions.js";
+import {dragDropGiraffe, reloadSpeech, hintGlow} from "./functions.js";
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -182,40 +182,6 @@ herhaalHint.onclick = () => {
 herhaalEnd.onclick = () => {
     reloadSpeech(endHerhaal[countEnd], herhaalEnd);
 }
-// speakOn.onclick = () =>{
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     verblijfAf.muted = true;
-// }
-// speakOn2.onclick = () =>{
-//     speakOff2.style.visibility = "visible";
-//     speakOn2.style.visibility = "hidden";
-//     bovenaan.muted = true;
-//     goedIngericht.muted = true;
-//     vraag.muted = true;
-//     veelDieren.muted = true;
-//     vrijeRuimte.muted = true;
-//     keuze.muted = true;
-//     hint1.muted = true;
-//     hint2.muted = true;
-// };
-// speakOff.onclick = () =>{
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     verblijfAf.muted = false;
-// };
-// speakOff2.onclick = () =>{
-//     speakOff2.style.visibility = "hidden";
-//     speakOn2.style.visibility = "visible";
-//     bovenaan.muted = false;
-//     goedIngericht.muted = false;
-//     vraag.muted = false;
-//     veelDieren.muted = false;
-//     vrijeRuimte.muted = false;
-//     keuze.muted = false;
-//     hint1.muted = false;
-//     hint2.muted = false;
-// };
 
 hintBtn.disabled = true;
 verblijfAf.play();
@@ -229,6 +195,14 @@ hintBubbleBtn.onclick = () => {
     headZookeeper.classList.add("hide");
     hintBubble.classList.add("hide");
     hintBtn.disabled = false;
+    if(countHint == 0){
+        hintGlow(60000, hintBtn);
+        setTimeout(() => {
+            hintBtn.classList.remove("glow");
+        }, 70000);
+    } else {
+        hintBtn.classList.remove("glow");
+    }
     countHerhaal++;
 }
 
@@ -252,6 +226,7 @@ hintBtn.onclick = () => {
                 headZookeeper.classList.add("hide");
                 hintBubble.classList.add("hide");
                 hintBubbleBtn.style.display = "none";
+                hintBtn.classList.remove("glow");
                 isHint = false;
                 countHint++;
                 countHerhaal++;
@@ -310,6 +285,7 @@ startOKBtn.onclick = () => {
         hintBubbleBtn.style.display = "flex";
         herhaalHint.style.display = "block";
     }
+
 };
 
 // introBtn.onclick = () => {

@@ -1,4 +1,4 @@
-import {dragDropIjs, dragDropGeld} from "./functions.js";
+import {dragDropIjs, dragDropGeld, hintGlow} from "./functions.js";
 
 const ijsbalie = document.getElementById("js--balie");
 const overlay = document.getElementById("js--overlay");
@@ -93,35 +93,6 @@ speakOff.onclick = () => {
     speakOffFunction();
 };
 
-// speakOn.onclick = () => {
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     goedemiddag.muted = true;
-//     bolletjes.muted = true;
-//     betalen.muted = true;
-//     kleuren.muted = true;
-//     slepen.muted = true;
-//     ijsjeKlaar.muted = true;
-//     dankje.muted = true;
-//     hint1.muted = true;
-//     hint2.muted = true;
-
-// };
-
-// speakOff.onclick = () => {
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     goedemiddag.muted = false;
-//     bolletjes.muted = false;
-//     betalen.muted = false;
-//     kleuren.muted = false;
-//     slepen.muted = false;
-//     ijsjeKlaar.muted = false;
-//     dankje.muted = false;
-//     hint1.muted = false;
-//     hint2.muted = false;
-// };
-
 ijsbalie.onclick = () => {
     hintBtn.disabled = false;
     // kleuren.play();
@@ -133,7 +104,16 @@ ijsbalie.onclick = () => {
     ijswinkelSpeechBubble.style.opacity = "1";
     ijswinkelHead.style.opacity = "1";
     ijswinkelHead.style.zIndex = "1";
-    ijsbalie.classList.remove("ijs_animatie");
+    ijsbalie.classList.remove("scale-small");
+
+    if(countHint == 0){
+        hintGlow(60000, hintBtn);
+        setTimeout(() => {
+            hintBtn.classList.remove("glow");
+        }, 70000);
+    } else {
+        hintBtn.classList.remove("glow");
+    }
 
     for (let ijs of ijsjes) {
 
@@ -182,6 +162,7 @@ hintBtn.onclick = () => {
                 headIjsco.classList.add("hide");
                 hintBubble.classList.add("hide");
                 hintBubbleBtn.style.display = "none";
+                hintBtn.classList.remove("glow");
                 countHint++;
             }
             break;

@@ -1,4 +1,4 @@
-import {reloadSpeech, reloadHint} from "./functions.js";
+import {reloadSpeech, hintGlow, reloadHint} from "./functions.js";
 
 const nextBtnRight = document.getElementById("js--next-btn-right");
 const nextBtnLeft = document.getElementById("js--next-btn-left");
@@ -122,6 +122,14 @@ startOKBtn.onclick = () => {
             speechBubble.style.zIndex = "";
             mapOverlay.style.zIndex = "-1";
             hintBtn.disabled = false;
+            if(countHint == 0){
+                hintGlow(60000, hintBtn);
+                setTimeout(() => {
+                    hintBtn.classList.remove("glow");
+                }, 70000);
+            } else {
+                hintBtn.classList.remove("glow");
+            }
             break;
     }
 
@@ -131,6 +139,7 @@ startOKBtn.onclick = () => {
     explaineBtn.src = image;
     startOK++;
     countHerhaal++;
+
 };
 
 nextBtnRight.onclick = () => {    
@@ -171,6 +180,7 @@ hintBtn.onclick = () => {
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 startOKBtn.style.display = "none";
+                hintBtn.classList.remove("glow");
                 isHint = false;
                 countHint++;
             }

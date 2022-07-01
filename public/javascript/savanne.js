@@ -1,4 +1,4 @@
-import {reloadSpeech, reloadHint} from "./functions.js";
+import {reloadSpeech, hintGlow, reloadHint} from "./functions.js";
 const text = "olifant";
 
 const speechBubble = document.getElementById("js--speech-bubble");
@@ -35,6 +35,7 @@ const hint4 = new Audio("../audio/Tjalle/6-savanne/hint-4.m4a");
 const audioHerhaalSavanne = [savanneVerblijf, verbeteren];
 const hintHerhaalSavanne = [hint1, hint2, hint3, hint4];
 let isHint = false;
+hintBtn.disabled = true;
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'hidden') {
@@ -75,7 +76,6 @@ speakOff.onclick = () => {
 };
 
 
-hintBtn.disabled = true;
 savanneVerblijf.play();
 savanneVerblijf.onended = () => {
     startOKBtn.style.display = "block";
@@ -146,6 +146,15 @@ startOKBtn.onclick = () => {
             speechBubble.style.zIndex = "";
             mapOverlay.style.zIndex = "-1";
             hintBtn.disabled = false;
+            if(countHint == 0){
+                console.log("tellen2");
+                hintGlow(60000, hintBtn);
+                setTimeout(() => {
+                    hintBtn.classList.remove("glow");
+                }, 70000);
+            } else {
+                hintBtn.classList.remove("glow");
+            }
             break;
     }
     herhaal.style.display = "none";
@@ -175,6 +184,7 @@ hintBtn.onclick = () => {
                 speechBubble.style.visibility = "hidden";
                 speechBubble_p.style.visibility = "hidden";
                 // startOKBtn.style.visibility = "hidden";
+                hintBtn.classList.remove("glow");
                 countHint++;
                 isHint = false;
             }

@@ -1,4 +1,4 @@
-import {dragDropArctic, reloadSpeech, reloadHint} from "./functions.js";
+import {dragDropArctic, reloadSpeech, reloadHint, hintGlow} from "./functions.js";
 
 const fishDrag = document.getElementById("js--fish");
 const pinguinverblijfBtn = document.getElementById("js--pinguinverblijf-btn");
@@ -42,6 +42,14 @@ startOKBtn.onclick = () => {
     speechBubble.style.zIndex = "";
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
+    if(countHint == 0){
+        hintGlow(60000, hintBtn);
+        setTimeout(() => {
+            hintBtn.classList.remove("glow");
+        }, 70000);
+    } else {
+        hintBtn.classList.remove("glow");
+    }
 }
 
 setInterval(() => {
@@ -86,21 +94,6 @@ herhaal.onclick = () => {
     }
 }
 
-// speakOn.onclick = () => {
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     hint1.muted = true;
-//     hint2.muted = true;
-// };
-
-// speakOff.onclick = () => {
-//     console.log("klik");
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     hint1.muted = false;
-//     hint2.muted = false;
-// };
-
 pinguinverblijfBtn.onclick = () => {
     window.location.href = "./dierentuinpad.html";
 }
@@ -127,6 +120,7 @@ hintBtn.onclick = () => {
                 explaineBtn.classList.add("hide");
                 speechBubble_p.style.visibility = "hidden";
                 isHint = false;
+                hintBtn.classList.remove("glow");
                 // startOKBtn.style.visibility = "hidden";
                 countHint++;
             }

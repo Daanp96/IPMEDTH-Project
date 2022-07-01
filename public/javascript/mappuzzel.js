@@ -22,6 +22,7 @@ const hint = new Audio("../audio/Tjalle/3-mappuzzel/hint-1.m4a");
 const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
 
 hintBtn.disabled = true;
+console.log(hintBtn.disabled);
 mapUitleg.play();
 mapUitleg.onended = () => {
     speechButton.style.display = "flex";
@@ -57,7 +58,6 @@ setInterval(() => {
 }, 1000);
   
 function speakOnFunction(){
-// speakOn.onclick = () => {
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     mapUitleg.muted = true;
@@ -80,20 +80,6 @@ speakOff.onclick = () => {
     speakOffFunction();
 };
 
-// speakOn.onclick = () => {
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     mapUitleg.muted = true;
-//     hint.muted = true;
-//     kaartHeel.muted = true;
-// };
-// speakOff.onclick = () => {
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     mapUitleg.muted = false;
-//     hint.muted = false;
-//     kaartHeel.muted = false;
-// };
 
 button.onclick = () => {
     window.location.href = "./dierentuinpad.html"; 
@@ -109,7 +95,10 @@ speechButton.onclick = () => {
     countHerhaal++;
     
     if(countHint == 0){
-        hintGlow(10000, hintBtn);
+        hintGlow(60000, hintBtn);
+        setTimeout(() => {
+            hintBtn.classList.remove("glow");
+        }, 70000);
     } else {
         hintBtn.classList.remove("glow");
     }
@@ -140,6 +129,7 @@ hintBtn.onclick = () => {
                 speech.style.zIndex = "-1";
                 mapOverlay.style.zIndex = "-1";
                 speechImage.classList.add("hide");
+                hintBtn.classList.remove("glow");
                 hintBtn.muted = true;
                 isHint = false;
                 countHint++;
