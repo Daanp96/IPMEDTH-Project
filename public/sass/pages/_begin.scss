@@ -12,6 +12,7 @@
         grid-column: 7 / span 2;
         grid-row: 5 /span 4;
         z-index: 2;
+        position: relative;
 
         &--image{
             height: 100%;

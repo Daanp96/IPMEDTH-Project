@@ -60,7 +60,7 @@ window.onafterprint = (e) =>{
 bedankt.play();
 bedankt.onplaying = () => {
     mouthMove.style.display = "block";
-    mouthMove.classList.add("mouth_move");
+    mouthMove.classList.add("mouth_move_wave");
 }
 bedankt.onended = () => {
     mouthMove.style.display = "none";
