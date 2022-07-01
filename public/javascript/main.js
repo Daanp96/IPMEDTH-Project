@@ -1,11 +1,9 @@
-// import {speakBtnStart} from "./start.js";
-// import {speakBtnMap} from "./map.js";
-// import {speakBtnMappuzzelFunction} from "./functions.js";
-// import {speakBtnMappuzzel} from "./mappuzzel.js";
-// import {speakBtnDierentuinpad} from "./dierentuinpad.js";
+import {countHint as countHintVis, startTime as startTimeVis} from "./vissenverblijf.js";
+import {countHint as countHintSavanne,startTime as startTimeSavanne} from "./savanne.js";
+import {countHint as countHintPinguin,startTime as startTimePinguin} from "./pinguinverblijf.js";
 
-// const speakOn = document.getElementById("js--speak-on");
-// const speakOff = document.getElementById("js--speak-off");
+const speakOn = document.getElementById("js--speak-on");
+const speakOff = document.getElementById("js--speak-off");
 // const infoBtn = document.getElementById("js--info-btn");
 
 const speechBubble = document.getElementById("js--speech-bubble");
@@ -13,172 +11,125 @@ const speechBubble = document.getElementById("js--speech-bubble");
 const speechBubbleP = document.getElementById("js--speech-bubble-p");
 const speechBubbleBtn = document.getElementById("js--speech-bubble-btn");
 
-// const ratedStar1 = document.getElementById("js--ratedStar1");
-// const ratedStar2 = document.getElementById("js--ratedStar2");
-// const ratedStar3 = document.getElementById("js--ratedStar3");
-// const ratedStar4 = document.getElementById("js--ratedStar4");
-// const ratedStar5 = document.getElementById("js--ratedStar5");
-// const ratedStar6 = document.getElementById("js--ratedStar6");
-// const ratedStar7 = document.getElementById("js--ratedStar7");
-// const ratedStar8 = document.getElementById("js--ratedStar8");
-// const ratedStar9 = document.getElementById("js--ratedStar9");
-
-const formRekensomBtn = document.getElementById("js--form-submit");
-const rekensomForm = document.getElementById("js--rekensom-form");
+const formVissenverblijfBtn = document.getElementById("js--vissenverblijf-form-submit");
+const formVissenverblijf = document.getElementById("js--vissenverblijf-form");
 
 // const savanneForm = document.getElementById("js--savanne-form");
 // const formSavanneBtn = document.getElementById("js--form-submitSavanne");
 
-const arcticBtn = document.getElementById("js--arctic-btn");
+const pinguinverblijfBtn = document.getElementById("js--pinguinverblijf-btn");
 const endSpeechBubbleDierentuin = document.getElementById("js--endBubble-dierentuin");
 const endSpeechBubbleNatuur = document.getElementById("js--endBubble-natuur");
 
 const reken_correct = 11;
 // const naam_correct = "aap";
 const typen_correct = "olifant";
-const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
 
-// let star1;
-// let star2;
-// let star3;
-// let star4;
-// let star5;
-// let star6;
-// let star7;
-// let star8;
-// let star9;
-// let star10;
-// let star11;
-// let star12;
-let aantalSecondesRekensom;
+let aantalSecondesVissenverblijf;
 // let aantalSecondesSavanne;
-let aantalSecondesArctic;
-let aantalSecondesTypen;
-let aantalSecondesGiraffe;
-let startTime, endTime;
+let aantalSecondesPinguinverblijf;
+let aantalSecondesSavanne;
+let aantalSecondesGiraffeverblijf;
+// let startTime, endTime;
+let endTime;
 
+let speakOnStorage;
+// let countHint;
 // let infoOk = 0;
 let tekst = '';
 let image = '';
 
-window.onload = function() {
-    start();
-}
-
-// speakBtnStart (speakOn, speakOff);
-// speakBtnMap (speakOn, speakOff);
-// speakBtnMappuzzelFunction(speakOn, speakOff);
-// speakBtnMappuzzel(speakOn, speakOff);
-// speakBtnDierentuinpad(speakOn, speakOff);
-
-
-
-// infoBtn.onclick = () =>{
-    
-//     let infoOk = 0;
-//     // speechBubbleBtn.classList.remove("hide");
-//     // speechBubble.classList.remove("hide");
-//     speechBubbleBtn.style.visibility = "visible";
-//     speechBubble.style.visibility = "visible";
-
-//     speechBubbleBtn.onclick = () => {
-//         console.log("info " + infoOk);
-//         switch (infoOk) {
-//             case 0: 
-//                 speechBubbleImg.classList.remove("hide");
-//                 tekst = 'Klik op het lampje voor een hint.';
-//                 if(document.URL.includes("index.html")){
-//                     image = './images/hint-btn.png';
-//                 }else{
-//                     image = '../images/hint-btn.png';
-//                 }
-                
-//                 break;
-//             case 1: 
-//                 tekst = 'Klik op i voor een informatie.';
-//                 image = './images/information-btn.png';
-//                 break;
-//             case 2:
-//                 tekst = 'Klik op de muzieknoot om de muziek uit te zetten.';
-//                 image = './images/music-on-btn.png'; 
-//                 break;  
-//             case 3: 
-//                 tekst = 'Klik op de oor om mijn geluid uit te zetten.';
-//                 image = './images/speak-on-btn.png';
-//                 break;
-//             case 4: 
-//                 speechBubbleImg.classList.add("hide");
-//                 speechBubble.style.visibility = "hidden";
-//                 speechBubbleBtn.style.visibility = "visible";
-//                 break;
-//         }
-    
-//         speechBubbleP.innerHTML = tekst;
-//         speechBubbleImg.src = image;
-//         infoOk++;
-//     };
-    
-// };
-
-// function info(){
-//     speechBubbleBtn.classList.remove("hide");
-//     speechBubble.classList.remove("hide");
+// window.onload = function() {
+//     start();
 // }
 
-
-function start(){
-    startTime = new Date();
-}
-
-if(document.URL.includes("rekensom.html") ){
+setInterval(() => {
+    if (speakOn.style.visibility == 'hidden') {
+        speakOnStorage = 'hidden';
+        localStorage.setItem("speakOnStorage", speakOnStorage);
+    }
+    if (speakOn.style.visibility == 'visible') {
+        speakOnStorage = 'visible';
+        localStorage.setItem("speakOnStorage", speakOnStorage);
+    }
+}, 200);
     
-    formRekensomBtn.addEventListener("click", function(e){
+
+// function start(){
+//     startTime = new Date();
+// }
+
+if(document.URL.includes("vissenverblijf.html") ){
+    
+    formVissenverblijfBtn.addEventListener("click", function(e){
         
         let form_answer = document.forms["answerForm"]["numberInput"].value;
         
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesRekensom = seconds;
-
         if(form_answer == reken_correct){
-            
-            if(seconds <= 60){
+
+            endTime = new Date();
+            var timeDiff = endTime - startTimeVis; //ms
+            timeDiff /= 1000;
+            let seconds = Math.round(timeDiff);
+            aantalSecondesVissenverblijf = seconds;
+            // hintCountPlusSeconds(countHint);
+            // console.log(aantalSecondesVissenverblijf);
+            // countHint = hintCountPlusSeconds(countHint);
+            console.log(startTimeVis);
+            console.log(countHintVis);
+    
+            if(countHintVis == 1){
+                aantalSecondesVissenverblijf += 10;
+                console.log(aantalSecondesVissenverblijf);
+            }
+            if(countHintVis == 2){
+                aantalSecondesVissenverblijf += 20;
+                console.log(aantalSecondesVissenverblijf);
+            }
+            if(countHintVis == 3){
+                aantalSecondesVissenverblijf += 30;
+                console.log(aantalSecondesVissenverblijf);
+            }
+            if(countHintVis == 4){
+                aantalSecondesVissenverblijf += 40;
+                console.log(aantalSecondesVissenverblijf);
+            }
+
+            if(seconds <= 90){
                 try {
-                    localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
+                    localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                     localStorage.setItem('star1', 0);
                 } catch (error) {
                     console.log(error);
                 }
             }
-            if(seconds > 60 && seconds <= 120){
+            if(seconds > 90 && seconds <= 150){
                 try {
                     localStorage.setItem('star2', 0);
-                    localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
+                    localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                 } catch (error) {
                     console.log(error);
                 }
             }
-            if(seconds > 120){
+            if(seconds > 150){
                 try {
                     localStorage.setItem('star3', 0);
-                    localStorage.setItem("aantalSecondesRekensom", aantalSecondesRekensom);
+                    localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                 } catch (error) {
                     console.log(error);
                 }
             }
             document.getElementById("aantalVissen").style.color = "lime";
             setTimeout(() => {
-                endRekensomPuzzel();
+                endVissenverblijfPuzzel();
             }, 1000);
             
         }   
         else{
-            rekensomForm.classList.add("shake");
+            formVissenverblijf.classList.add("shake");
             document.getElementById("aantalVissen").style.color = "red";
             setTimeout(() => {
-                rekensomForm.classList.remove("shake");
+                formVissenverblijf.classList.remove("shake");
                 document.getElementById("aantalVissen").style.color = "black";
                 document.getElementById("aantalVissen").value = '';
             }, 2000);
@@ -202,7 +153,7 @@ if(document.URL.includes("rekensom.html") ){
     
 //         if(form_answer == naam_correct){
 //             terugKaart.play();
-//             if(seconds <= 60){
+//             if(seconds <= 90){
 //                 try {
 //                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
 //                     localStorage.setItem('star4', 0);
@@ -210,7 +161,7 @@ if(document.URL.includes("rekensom.html") ){
 //                     console.log(error);
 //                 }
 //             }
-//             if(seconds > 60 && seconds <= 120){
+//             if(seconds > 90 && seconds <= 150){
 //                 try {
 //                     localStorage.setItem('star5', 0);
 //                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
@@ -218,7 +169,7 @@ if(document.URL.includes("rekensom.html") ){
 //                     console.log(error);
 //                 }
 //             }
-//             if(seconds > 120){
+//             if(seconds > 150){
 //                 try {
 //                     localStorage.setItem('star6', 0);
 //                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
@@ -244,42 +195,54 @@ if(document.URL.includes("rekensom.html") ){
 //     });
 // }
 
-if(document.URL.includes("arctic.html")){
-    arcticBtn.addEventListener("click", function(e){
-
+if(document.URL.includes("pinguinverblijf.html")){
+    pinguinverblijfBtn.addEventListener("click", function(e){
+        
         endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
+        var timeDiff = endTime - startTimePinguin; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
-        aantalSecondesArctic = seconds;
+        aantalSecondesPinguinverblijf = seconds;
+
+        console.log(startTimePinguin);
+        console.log(countHintPinguin);
+
+        if(countHintPinguin == 1){
+            aantalSecondesPinguinverblijf += 10;
+            console.log(aantalSecondesPinguinverblijf);
+        }
+        if(countHintPinguin == 2){
+            aantalSecondesPinguinverblijf += 20;
+            console.log(aantalSecondesPinguinverblijf);
+        }
     
-        if(seconds <= 60){
+        if(seconds <= 90){
             try {
-                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+                localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
                 localStorage.setItem('star7', 0);
             } catch (error) {
                 console.log(error);
             }
         }
-        if(seconds > 60 && seconds <= 120){
+        if(seconds > 90 && seconds <= 150){
             try {
                 localStorage.setItem('star8', 0);
-                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+                localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
             } catch (error) {
                 console.log(error);
             }
         }
-        if(seconds > 120){
+        if(seconds > 150){
             try {
                 localStorage.setItem('star9', 0);
-                localStorage.setItem("aantalSecondesArctic", aantalSecondesArctic);
+                localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
             } catch (error) {
                 console.log(error);
             }
         }
         
         setTimeout(() => {
-            endArcticPuzzel();
+            endPinguinverblijfPuzzel();
         }, 700);
             
         e.preventDefault();
@@ -289,45 +252,64 @@ if(document.URL.includes("arctic.html")){
 const spanTypen = document.getElementById("js--typen-form");
 const spanTypenBtn = document.getElementById("js--form-submitTypen");
 
-if(document.URL.includes("typen.html")){
-    // const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
+if(document.URL.includes("savanne.html")){
     spanTypenBtn.addEventListener("click", function(e){
         console.log(spanTypen.innerText);
 
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesTypen = seconds;
-
         if(spanTypen.innerText == typen_correct){
-            if(seconds <= 60){
+            endTime = new Date();
+            var timeDiff = endTime - startTimeSavanne; //ms
+            timeDiff /= 1000;
+            let seconds = Math.round(timeDiff);
+            aantalSecondesSavanne = seconds;
+
+            console.log(startTimeSavanne);
+            console.log(countHintSavanne);
+    
+            if(countHintSavanne == 1){
+                aantalSecondesSavanne += 10;
+                console.log(aantalSecondesSavanne);
+            }
+            if(countHintSavanne == 2){
+                aantalSecondesSavanne += 20;
+                console.log(aantalSecondesSavanne);
+            }
+            if(countHintSavanne == 3){
+                aantalSecondesSavanne += 30;
+                console.log(aantalSecondesSavanne);
+            }
+            if(countHintSavanne == 4){
+                aantalSecondesSavanne += 40;
+                console.log(aantalSecondesSavanne);
+            }
+
+            if(seconds <= 90){
                 try {
-                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                     localStorage.setItem('star4', 0);
                 } catch (error) {
                     console.log(error);
                 }
             }
-            if(seconds > 60 && seconds <= 120){
+            if(seconds > 90 && seconds <= 150){
                 try {
                     localStorage.setItem('star5', 0);
-                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                 } catch (error) {
                     console.log(error);
                 }
             }
-            if(seconds > 120){
+            if(seconds > 150){
                 try {
                     localStorage.setItem('star6', 0);
-                    localStorage.setItem("aantalSecondesTypen", aantalSecondesTypen);
+                    localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                 } catch (error) {
                     console.log(error);
                 }
             }
             document.getElementById("js--typen-form").style.color = "lime";
             setTimeout(() => {
-                endTypenPuzzel();
+                endSavannePuzzel();
             }, 1000);
 
         }
@@ -345,23 +327,23 @@ if(document.URL.includes("typen.html")){
     });
 }
 
-if(document.URL.includes("giraffe.html")){
+if(document.URL.includes("giraffeverblijf.html")){
     endSpeechBubbleDierentuin.addEventListener("click", function(e){
 
         endTime = new Date();
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
-        aantalSecondesGiraffe = seconds;
+        aantalSecondesGiraffeverblijf = seconds;
     
         try {
-            localStorage.setItem("aantalSecondesGiraffe", aantalSecondesGiraffe);
+            localStorage.setItem("aantalSecondesGiraffeverblijf", aantalSecondesGiraffeverblijf);
             localStorage.setItem('star10', 0);
         } catch (error) {
             console.log(error);
         }
         
-        endGiraffe();
+        endGiraffeverblijfPuzzel();
             
         e.preventDefault();
     });
@@ -372,34 +354,32 @@ if(document.URL.includes("giraffe.html")){
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
-        aantalSecondesGiraffe = seconds;
+        aantalSecondesGiraffeverblijf = seconds;
     
         try {
-            localStorage.setItem("aantalSecondesGiraffe", aantalSecondesGiraffe);
+            localStorage.setItem("aantalSecondesGiraffeverblijf", aantalSecondesGiraffeverblijf);
             localStorage.setItem('star10', 0);
         } catch (error) {
             console.log(error);
         }
         
-        endGiraffe();
+        endGiraffeverblijfPuzzel();
             
         e.preventDefault();
     });
 }
 
-function endRekensomPuzzel(){
+function endVissenverblijfPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
 
-function endTypenPuzzel(){
+function endSavannePuzzel(){
     window.location.href="dierentuinpad.html";  
 }
-function endArcticPuzzel(){
+function endPinguinverblijfPuzzel(){
     window.location.href="dierentuinpad.html";  
 }
-function endTypen(){
-    window.location.href="dierentuinpad.html";  
-}
-function endGiraffe(){
+
+function endGiraffeverblijfPuzzel(){
     window.location.href="dierentuinpad.html";  
 }

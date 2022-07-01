@@ -36,18 +36,9 @@
     }
 }
 
-// .slidein-transition{
-//     animation: fadein 500ms ease-in;
-// }
-
-// @keyframes fadein {
-//     from {
-//         opacity: 0;
-//     }
-//     to {
-//         opacity: 1;
-//     }
-// }
+.scale-small{
+    animation: scale-small 2s ease-in-out infinite;
+}
 
 .slidein-from-right{
     animation: slidein-from-right 500ms;
@@ -76,26 +67,6 @@
 }
 
 
-// @keyframes shake {
-//     0% {
-//       transform: translate(0);
-//     }
-//     20% {
-//       transform: translate(1.5em);
-//     }
-//     40% {
-//       transform: translate(-1.5em);
-//     }
-//     60% {
-//       transform: translate(1.5em);
-//     }
-//     80% {
-//       transform: translate(-1.5em);
-//     }
-//     100% {
-//       transform: translate(0);
-//     }
-//   }
 @keyframes shake {
     0% {
         transform: translate(0);
@@ -135,3 +106,85 @@
 .shake{
     animation: shake 2s infinite;
 }
+
+@keyframes glow{
+    to {
+        box-shadow: 0px 0px 15px 15px #FF6600;
+      }
+}
+
+.glow{
+    animation: glow 1s linear infinite alternate;
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+
+}
+
+.reload_animation {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes mouth_move{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+
+.mouth_move{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 5.4vw;
+    top: 12.5vh;
+    width: 1.75vw;
+    border-radius: 50%;
+}
+.mouth_move_wave{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 6.3vw;
+    top: 13vh;
+    width: 1.75vw;
+    border-radius: 50%;
+}
+.mouth_move_map{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 11vw;
+    top: 18.5vh;
+    width: 2.75vw;
+    border-radius: 50%;
+}
+.mouth_move_pad{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 5.7vw;
+    top: 9.5vh;
+    width: 1.4vw;
+}
+.mouth_move_verblijf{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 7.5vw;
+    top: 12.7vh;
+    width: 1.4vw;
+}
+.mouth_move_head{
+    animation: mouth_move 0.3s alternate infinite;
+    position: absolute;
+    left: 7.5vw;
+    top: 34vh;
+    width: 4.4vw;
+    border-radius: 50%;
+}
+

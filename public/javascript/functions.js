@@ -9,55 +9,53 @@ let rock = 0;
 let pond = 0;
 
 // audio
+const mouthMove = document.getElementById("js--mouth");
+const mouthMovePinguin = document.getElementById("js--mouth-pinguin");
 // let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
-const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
-const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
+const addAnimate = (animate) => {
+  animate.classList.add("reload_animation");
+}
 
-// const dragDrop = (object) => {
+const removeAnimate = (animate) => {
+  animate.classList.remove("reload_animation");
+}
 
-//     object.onmousedown = (event) => {
+const removeMoveMouth = (mouth) => {
+  mouth.classList.remove("mouth_move");
+  mouth.classList.remove("mouth_move_wave");
+  mouth.classList.remove("mouth_move_map");
+  mouth.classList.remove("mouth_move_pad");
+  mouth.classList.remove("mouth_move_verblijf");
+  mouth.classList.remove("mouth_move_head");
+  mouth.style.display = "none";
+}
+const reloadSpeech = (audio, animate, mouth) => {
+  addAnimate(animate);
+  audio.play();
+  audio.onended = () => {
+    removeAnimate(animate);
+    removeMoveMouth(mouth);
+  }
+}
 
-//         let shiftX = event.clientX - object.getBoundingClientRect().left;
-//         let shiftY = event.clientY - object.getBoundingClientRect().top;
-      
-//         object.style.position = 'absolute';
-//         object.style.width = width;
-//         object.style.zIndex = 1000;
-//         object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
-//         document.body.append(object);
-      
-//         moveAt(event.pageX, event.pageY);
-      
-//         // moves the object at (pageX, pageY) coordinates
-//         // taking initial shifts into account
-//         function moveAt(pageX, pageY) {
-//           object.style.left = pageX - shiftX + 'px';
-//           object.style.top = pageY - shiftY + 'px';
-//         }
-      
-//         function onMouseMove(event) {
-//           moveAt(event.pageX, event.pageY);
-//         }
-      
-//         // move the object on mousemove
-//         document.addEventListener('mousemove', onMouseMove);
-      
-//         // drop the object, remove unneeded handlers
-//         object.onmouseup = () => {
-//           document.removeEventListener('mousemove', onMouseMove);
-//           object.style.cursor = "url('../images/cursor_grab_60.cur'), default";
-//           object.onmouseup = null;
-//         };
-      
-//       };
-      
-//       object.ondragstart = () => {
-//         return false;
-//       };
-// }
+const reloadHint = (audio, animate, mouth) => {
+  addAnimate(animate);
+  audio.play();
+  audio.onended = () => {
+    removeAnimate(animate);
+    removeMoveMouth(mouth);
+  }
+}
 
-const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
+const hintGlow = (tijd, hint) => {
+  setTimeout(() => {
+    hint.classList.add("glow");
+    // hint.classList.add("puzzel-options__btn-hint-glow");
+  }, tijd);
+}
+
+const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -122,14 +120,20 @@ const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
           zookpr.src = "../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "1";
-          zookpr.style.gridColumnStart = "10";
+          zookpr.style.gridColumnStart = "7 / span 3;";
           btn.style.zIndex = "2";
-          speech.style.gridColumnStart = "7";
+          speech.style.gridColumn = "3 / span 1";
           speech.style.visibility = "visible";
           speech.style.zIndex = "1";
-          speech.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
+          speechP.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
           kaartHeel.play();
+          kaartHeel.onplaying = () => {
+            mouthMove.style.display = "block";
+            mouthMove.classList.add("mouth_move_head");
+          }
           kaartHeel.onended = () => {
+            mouthMove.style.display = "none";
+            herhaal.style.display = "block";
             btn.style.display = "block";
           }
         }
@@ -150,8 +154,9 @@ const dragDropMap = (obj, btn, zookpr, speech, kaartHeel) => {
   };
 }
 
-const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
+const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herhaal) => {
   let currentDroppable = null;
+
 
   obj.onmousedown = function(event) {
 
@@ -205,7 +210,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
 
       if(attr == obj.getAttribute('data-pinguin')) {
         let elem = document.createElement("img");
-        elem.src = "../images/heart.png";
+        elem.src = "../images/pinguinverblijf/heart.png";
         elem.style.width = "50px";
         elem.style.position = "absolute";
         elem.style.left = "40px";
@@ -226,8 +231,20 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
         text.style.visibility = "visible";
         text.innerHTML = "Goed gedaan! De penguins zijn heel blij.";
         goedGedaan.play();
+        goedGedaan.onplaying = () => {
+          mouthMovePinguin.style.display = "block";
+          mouthMove.classList.add("mouth_move_verblijf");
+
+        }
         goedGedaan.onended = () => {
+          mouthMovePinguin.style.display = "none";
           nextBtn.style.display = "block";
+          herhaal.style.display = "block";
+
+        }
+        
+        herhaal.onclick = () => {
+          reloadSpeech(goedGedaan, herhaal);
         }
       }
     };
@@ -246,7 +263,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn) => {
   };
 }
 
-const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
+const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -301,7 +318,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
     
       if(attr == obj.getAttribute('data-bol')) {
         let kleur = obj.getAttribute('data-kleur');
-        currentDroppable.src = `../images/ijsbar/ijs_${kleur}.png`;
+        currentDroppable.src = `../images/ijswinkel/ijs_${kleur}.png`;
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
         currentDroppable.removeAttribute('data-bol');
@@ -316,12 +333,20 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
 
         } else if(aantalIjs == 3) {
           audio.play();
+          audio.onended = () => {
+            herhaal.style.display = "block";
+          }
           kassa.style.display = "block";
           kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
-          kassa.parentNode.dataset.geld = "1";
+          kassa.parentNode.dataset.geld1 = "1";
+          kassa.parentNode.dataset.geld2 = "2";
           speech.innerHTML = "Zo je ijsje is klaar! Je kan het geld naar de kassa toe slepen.";
           for(let ijs of ijsjes){
             ijs.onclick = null;
+          }
+
+          herhaal.onclick = () => {
+            reloadSpeech(audio, herhaal);
           }
         }
       }
@@ -342,7 +367,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio) => {
 }
 
 
-const dragDropGeld = (obj, kassa, btn, speech, audio) => {
+const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -393,25 +418,39 @@ const dragDropGeld = (obj, kassa, btn, speech, audio) => {
       obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
-      const attr = currentDroppable.getAttribute('data-geld');
-      console.log(obj);
+      const attr1 = currentDroppable.getAttribute('data-geld1');
+      const attr2 = currentDroppable.getAttribute('data-geld2');
 
-      if(attr == obj.getAttribute('data-geld')) {
-        const kaching = new Audio("../audio/ijsbar/kassa_fix.mp3");
+      if(attr1 == obj.getAttribute('data-geld1')) {
         kaching.volume = 0.2;
         kaching.play();
         ijsPrijs--;
-        obj.removeAttribute('data-geld');
+        obj.removeAttribute('data-geld1');
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
-        kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
+        
+      } else if (attr2 == obj.getAttribute('data-geld2')) {
+        kaching.volume = 0.2;
+        kaching.play();
+        ijsPrijs = ijsPrijs- 2;
+        obj.removeAttribute('data-geld2');
+        currentDroppable.style.opacity = "100%";
+        obj.hidden = true;
+      }
+      kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
 
-        if (ijsPrijs == 0) {
-          audio.play();
-          document.getElementById("js--ijs-keuze-kassa").classList.remove("geld-droppable");
-          kassa.innerHTML = "Dankjewel!";
-          btn.style.display = "block";
-          speech.innerHTML = "Dankjewel! Geniet van jullie ijsjes.";
+      if (ijsPrijs == 0) {
+        audio.play();
+        audio.onended = () => {
+          herhaal.style.display = "block";
+        }
+        document.getElementById("js--ijs-keuze-kassa").classList.remove("geld-droppable");
+        kassa.innerHTML = "Dankjewel!";
+        btn.style.display = "block";
+        speech.innerHTML = "Dankjewel! Geniet van jullie ijsjes.";
+
+        herhaal.onclick = () => {
+          reloadSpeech(audio, herhaal);
         }
       }
     };
@@ -429,30 +468,6 @@ const dragDropGeld = (obj, kassa, btn, speech, audio) => {
     return false;
   };
 }
-
-// const modalView = (modal, title, text, button, {
-//     title_content = "",
-//     text_content = "",
-//     button_content = ""
-//   }) => {
-
-//   title.innerHTML = title_content;
-//   text.innerHTML = text_content;
-//   button.innerHTML = button_content;
-
-//   button.onclick = () => {
-//     modal.style.opacity = "0";
-//   }
-// }
-
-// const textBubble = () => {
-//   if(startOK == 0 && true){
-//     startP.innerHTML = "jaja";
-//     startOK ++;
-//     return;
-//   }
-// }
-
 
 const dragDropGiraffe = (object, endBtn) => {
 
@@ -526,5 +541,15 @@ const dragDropGiraffe = (object, endBtn) => {
   };
 };
 
-// export { dragDrop, dragDropMap, dragDropArctic, modalView, dragDropGiraffe};
-export { dragDropMap, dragDropArctic, dragDropIjs, dragDropGeld,dragDropGiraffe};
+export { 
+  addAnimate, 
+  removeAnimate, 
+  reloadSpeech,
+  reloadHint,
+  hintGlow, 
+  dragDropMap, 
+  dragDropArctic, 
+  dragDropIjs, 
+  dragDropGeld, 
+  dragDropGiraffe 
+};

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dierentuin</title>
     <link rel="stylesheet" href="../sass/main.css">
-    <link rel="icon" type="image/x-icon" href="../images/monkey-head.png">
+    <link rel="icon" type="image/x-icon" href="../images/zookeeper-face.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="../javascript/main.js" type="module" defer></script>
     <script src="../javascript/map.js" type="module" defer></script>
@@ -14,19 +14,19 @@
 <body>
     <!-- <iframe src="../audio/2-Map/1-kaartKapot.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
     <main class="map">
-        <section class="puzzel-options grid-16-1">
-            <button class="puzzel-options__btn-hint button ">
-                <img class="puzzel-options__btn-hint--image" src="../images/hint-btn.png"></img>
+        <section class="button-options-big grid-16-1">
+            <button class="button-options-big__hint button ">
+                <img class="button-options-big__hint--image" src="../images/hint-btn.png"></img>
             </button>
             <!-- <button class="puzzel-options__btn-information button ">
                 <img class="puzzel-options__btn-information--image" src="../images/information-btn.png"></img>
             </button> -->
 
-            <button class="puzzel-options__btn-speak button" id="js--speak-on">
-                <img class="puzzel-options__btn-speak--image" src="../images/speak-on-btn.png"></img>
+            <button class="button-options-big__speak button" id="js--speak-on">
+                <img class="button-options-big__speak--image" src="../images/speak-on-btn.png"></img>
             </button>
-            <button class="puzzel-options__btn-speak puzzel-options__btn-speak-off button" id="js--speak-off">
-                <img class="puzzel-options__btn-speak--image" src="../images/speak-off-btn.png"></img>
+            <button class="button-options-big__speak button-options-big__speak-off button" id="js--speak-off">
+                <img class="button-options-big__speak--image" src="../images/speak-off-btn.png"></img>
             </button>
         </section>
 
@@ -65,15 +65,22 @@
 
             <!-- <button id="js--map-btn" class="map__btn btn-check button">&#10148;</button> -->
             <div class="map__btn">
-                <button id="js--map-btn" class="btn-ok button">&#10132;</button>
+                <button id="js--map-btn" class="btn-ok btn-map button">&#10132;</button>
             </div>
 
-            <figure class="map__zookeeper">
-                <img id="js--map_zookeeper" class="map__zookeeper--image" src="../images/zookeeper-poses/Male/zookeeper-pose-loud-explain.png" alt="dierentuin medewerker">
-            </figure>
+            <article class="map__zookeeper">
+                <figure >
+                    <img id="js--map_zookeeper" class="map__zookeeper--image" src="../images/zookeeper-poses/Male/zookeeper-pose-smile-explain.png" alt="dierentuin medewerker">
+                </figure>
+                <figure>
+                    <img id="js--mouth" src="../images/zookeeper-poses/Male/zookeeper-pose-mouth-open.png" alt="" >
+                </figure>
+            </article>    
+
 
 
             <div class="speech-bubble map--speech-bubble" id="js--speech-bubble">
+                <image class="speech-bubble-reload button" id="js--speech-reload" src="../images/reload_button.png"></image>
                 <image class="btn-explaine hide" id="js--speech-bubble-img"></image>
                 <p id="js--speech-bubble-p">Oh nee, de kaart is kapot! Kan jij mij helpen de kaart te maken?</p>
             </div>

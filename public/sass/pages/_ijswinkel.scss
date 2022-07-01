@@ -1,0 +1,296 @@
+.ijswinkel {
+
+    &--background{
+        background: url("../images/ijswinkel/ijs-background.png");
+        background-size: cover;
+    }
+    &--overlay {
+        opacity: 0;
+        transition: 0.5s all;
+        z-index: -1;
+    }
+    &__balie {
+        grid-column: 9 /span 6;
+        grid-row: 5 / span 5;
+        z-index: 1;
+    
+        &--image {
+            width: 40vw;
+            z-index: 5;
+            
+        }
+    }
+
+    &__verkoper {
+        grid-column: 9 / span 2;
+        grid-row: 4 / span 5;
+
+        &--image {
+            width: 35vw;
+            z-index: 1;
+        }
+    }
+    &__tafel {
+        grid-column: 3 / span 3;
+        grid-row: 7 / span 3;
+
+        &--image {
+            width: 20vw;
+        }
+    }
+    &__speech-bubble-begin {
+        grid-column: 8 / span 4;
+        grid-row: 2 / span 2;
+        opacity: 1;
+        transition: 0.5s all;
+        z-index: 1;
+        align-self: center;
+
+        &::before {
+            left: 32rem;
+            transform: scaleX(-1);
+        }
+    }
+    &__speech-bubble {
+        grid-column: 8 / span 4;
+        grid-row: 1 / span 2;
+        opacity: 0;
+        transition: 0.5s all;
+        align-self: center;
+        position: relative;
+
+        &::before {
+            left: 32rem;
+            transform: scaleX(-1);
+        }
+        &--p {
+            margin-left: 1vw;
+            grid-column: 7/ span 1;
+            grid-row: 1 / span 1;
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+    &__head {
+        grid-column: 6 / span 2;
+        grid-row: 1 / span 2;
+        opacity: 0;
+        transition: 0.5s all;
+        z-index: 1;
+        &--image {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__speech-bubble-hint{
+        grid-column: 9 / span 1;
+        grid-row: 4 / span 1;
+        align-self: end;
+        z-index: 60;
+    }
+    &-popup{
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        grid-template-rows: repeat(9, minmax(0, 1fr));
+        background-color: #ffe0db;
+        grid-column: 3 / span 12;
+        grid-row: 3 / span 6;
+        transition: 0.5s all;
+        z-index: -1;
+        opacity: 0;
+    
+        &__banana{
+            font-size: 3rem;
+            grid-column: 11/ span 2;
+            grid-row: 1;
+            align-self: center;
+            text-align: center;
+        }
+        &__yellow{
+            background-color: #f5ef8c;
+            grid-column: 11 / span 2;
+            grid-row: 2 / span 3;
+            border-radius: 70px;
+            border: 2px solid black;
+        }   
+        &__melon{
+            font-size: 3rem;
+            grid-column: 14/ span 2;
+            grid-row: 1;
+            align-self: center;
+            text-align: center;
+        }
+                     
+        &__green{
+            background-color: #bfe3ae;
+            grid-column: 14 / span 2;
+            grid-row: 2 / span 3;
+            border-radius: 70px; 
+            border: 2px solid black;
+        } 
+        &__blueberry{
+            font-size: 3rem;
+            grid-column: 11/ span 2;
+            grid-row: 5;
+            align-self: center;
+            text-align: center;
+        }
+                     
+        &__blue{
+            background-color: #aea6d3;
+            grid-column: 11 / span 2;
+            grid-row: 6 / span 3;
+            border-radius: 70px;
+            border: 2px solid black;
+        } 
+        &__strawberry{
+            font-size: 3rem;
+            grid-column: 14/ span 2;
+            grid-row: 5;
+            align-self: center;
+            text-align: center;
+        }
+                     
+        &__pink{
+            background-color: #f69aa7;
+            grid-column: 14 / span 2;
+            grid-row: 6 / span 3;
+            border-radius: 70px;
+            border: 2px solid black;
+        } 
+        &__bol {
+            z-index: 5;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &__ijshoorn {
+            grid-column: 8 / span 2;
+            grid-row: 5 / span 3;
+            margin-top: 60px;
+        }
+        &__drop-1 {
+            grid-column: 7 / span 3;
+            grid-row: 3 / span 3;
+
+            &--image {
+                width: 190px;
+                display: block;
+                margin: 70px 0 0 60px;
+                opacity: 50%;
+            }
+        }
+        &__drop-2 {
+            grid-column: 7 / span 3;
+            grid-row: 1 / span 3;
+
+            &--image {
+                width: 190px;
+                display: none;
+                margin: 135px 0 0 60px;
+                opacity: 50%;
+            }
+        }
+        &__drop-3 {
+            grid-column: 7 / span 3;
+            grid-row: 1 / span 3;
+
+            &--image {
+                width: 190px;
+                display: none;
+                margin: 60px 0 0 60px;
+                opacity: 50%;
+            }
+        }
+        &__kassa {
+            background-color: #c5c5c5;
+            grid-column: 1 / span 6;
+            grid-row: 5 / span 5;
+            border: 5px solid black;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            flex-direction: column;
+
+            &--veld {
+                font-size: 36px;
+                display: none;
+            }
+        }
+        &__geld-1 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        &__geld-2 {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        &__geld-3 {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        &__geld-4 {
+            grid-column: 4;
+            grid-row: 3;
+        }
+        
+        &__geld-5 {
+            grid-column: 5;
+            grid-row: 2;
+        }
+
+        &__geld-6 {
+            grid-column: 6;
+            grid-row: 3;
+        }   
+        &__geld-7 {
+            grid-column: 2;
+            grid-row: 2;
+        }  
+        &__geld-8 {
+            grid-column: 3;
+            grid-row: 3;
+        } 
+        &__geld-9 {
+            grid-column: 4;
+            grid-row: 2;
+        } 
+        &__geld-10 {
+            grid-column: 5;
+            grid-row: 3;
+        } 
+
+    }
+}
+
+
+.drop {
+    left: 45px;
+}
+
+.geld {
+    width: 100px;
+}
+.btn-ijs {
+    display: none;
+}
+
+.hint-head {
+    grid-column: 7 / span 3;
+    grid-row: 5 / span 3;
+    z-index: 60;
+    &--image{
+        width: 100%;
+        height: 100%  
+    }
+}
+
+.relative {
+    position: relative;
+}

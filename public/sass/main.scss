@@ -6,23 +6,24 @@
 @import "base/utilities";
 
 @import "components/button";
+@import "components/buttonOptions";
 @import "components/form";
-@import "components/puzzelOptions";
-@import "components/speechBubble";
-@import "components/walls";
 @import "components/popup";
+@import "components/speechBubble";
 @import "components/star";
+@import "components/walls";
 
 @import "layout/grid";
 
-@import "pages/rekensom";
-@import "pages/start";
-@import "pages/mappuzzel";
-@import "pages/map";
-@import "pages/savanne";
-@import "pages/arctic";
+@import "pages/begin";
 @import "pages/dierentuinpad";
 @import "pages/einde";
-@import "pages/ijsco";
-@import "pages/giraffe";
-@import "pages/typen";
+@import "pages/giraffeverblijf";
+@import "pages/ijswinkel";
+@import "pages/map";
+@import "pages/mappuzzel";
+@import "pages/pinguinverblijf";
+@import "pages/savanne";
+@import "pages/savanne2";
+@import "pages/start";
+@import "pages/vissenverblijf";

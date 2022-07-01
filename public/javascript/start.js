@@ -1,50 +1,56 @@
+import {addAnimate, removeAnimate, reloadSpeech} from "./functions.js"; 
+
 const startBtn = document.getElementById("js--start-btn");
 
-// let intro = new Audio("audio/1-Intro/1-welkom.mp3");
-// let bezoeker = new Audio("audio/1-Intro/2-gelukkige-bezoeker.mp3");
-// let raadEens = new Audio("audio/1-Intro/3-raadEens.mp3");
-// let uitleggen = new Audio("audio/1-Intro/4-uitleggen.mp3");
-// let hint = new Audio("audio/1-Intro/5-hint.mp3");
-// let informatie = new Audio("audio/1-Intro/6-informatie.mp3");
-// let stem = new Audio("audio/1-Intro/8-stem.mp3");
-// let binnen = new Audio("audio/1-Intro/9-binnen.mp3");
-
 let intro = new Audio("../audio/Tjalle/1-intro/1-welkom.m4a");
-let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoeker_helpen.m4a");
+let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoekerHelpen.m4a");
 let uitleggen = new Audio("../audio/Tjalle/1-intro/3-uitleg.m4a");
 let hint = new Audio("../audio/Tjalle/1-intro/4-hints.m4a");
 let stem = new Audio("../audio/Tjalle/1-intro/5-stem.m4a");
-let binnen = new Audio("../audio/Tjalle/1-intro/6-binnen.m4a");
+let herhaal = new Audio("../audio/Tjalle/1-intro/6-herhaal.m4a");
+let binnen = new Audio("../audio/Tjalle/1-intro/7-binnen.m4a");
 
 const speechBubble = document.getElementById("js--speech-bubble");
 const startExplaineBtn = document.getElementById("js--speech-bubble-img");
 const startP = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
-const startOverlay = document.getElementById("js--start-overlay");
-const beginBtn = document.getElementById("js--btn-overlay");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
-const title = document.getElementById("js--overlay-title");
+const speechReload = document.getElementById("js--speech-reload");
+const mouthMove = document.getElementById("js--mouth");
 
 let startOK = 0;
 let tekst = '';
 let image = '';
+let audioHerhaal = [intro, bezoeker, uitleggen, hint, stem, herhaal, binnen];
+let countHerhaal = 0;
 
-window.localStorage.clear();
-
-beginBtn.onclick = () => {
-    startOverlay.style.opacity = "0";
-    startOverlay.style.zIndex = "-1";
-    beginBtn.style.display = "none";
-    title.style.opacity = "0";
-    title.style.zIndex = "-1";
-    intro.play();
-    intro.onended = () => {
-        startOKBtn.style.display = "block";
-    }
+speechReload.onclick = () => {
+    reloadSpeech(audioHerhaal[countHerhaal], speechReload, mouthMove);
 }
 
-speakOn.onclick = () => {
+intro.play();
+intro.onplaying = () => {
+    mouthMove.style.display = "block";
+    mouthMove.classList.add("mouth_move");
+}
+intro.onended = () => {
+    mouthMove.style.display = "none";
+    startOKBtn.style.display = "block";
+    speechReload.style.display = "block";
+}
+
+
+setInterval(() => {
+    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+        speakOnFunction();
+    }
+    if (localStorage.getItem("speakOnStorage") == 'visible') {
+        speakOffFunction();
+    }
+}, 100);
+
+function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
     intro.muted = true;
@@ -53,8 +59,10 @@ speakOn.onclick = () => {
     hint.muted = true;
     stem.muted = true;
     binnen.muted = true;
+    herhaal.muted = true;
 };
-speakOff.onclick = () => {
+
+function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
     intro.muted = false;
@@ -63,6 +71,14 @@ speakOff.onclick = () => {
     hint.muted = false;
     stem.muted = false;
     binnen.muted = false;
+    herhaal.muted = false;
+};
+
+speakOn.onclick = () => {
+    speakOnFunction();
+};
+speakOff.onclick = () => {
+    speakOffFunction();
 };
 
 // praat wolk
@@ -72,42 +88,86 @@ startOKBtn.onclick = () => {
             tekst = 'Vandaag nemen we een bezoeker mee om ons te helpen in de dierentuin. En raad eens... dat ben jij!';
             image = '';
             bezoeker.play();
+            bezoeker.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move");
+            }
             bezoeker.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
+                speechReload.style.display = "block";
             }
             break;
         case 1: 
             tekst = 'Voordat we naar binnen gaan leg ik uit hoe alles werkt.';
             image = '';
             uitleggen.play();
+            uitleggen.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move");
+            }
             uitleggen.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
+                speechReload.style.display = "block";
             }
             break;
         case 2: 
             startExplaineBtn.classList.remove("hide");
             tekst = 'Het lampje geeft hints. Klik hier op als je vastloopt.';
-            image = './images/hint-btn.png';
+            image = '../images/hint-btn.png';
             hint.play();
+            hint.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move");
+            }
             hint.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
+                speechReload.style.display = "block";
             }
             break;
         case 3: 
             tekst = 'Het oortje is mijn stem. Klik hierop dan kan je mijn stem aan en uit zetten.';
-            image = './images/speak-on-btn.png';
+            image = '../images/speak-on-btn.png';
             stem.play();
+            stem.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move");
+            }
             stem.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
+                speechReload.style.display = "block";
             }
             break;
         case 4: 
+            tekst = 'Klik op de knop met de pijl. Dan herhaal ik het.';
+            image = '../images/reload_button.png';
+            herhaal.play();
+            herhaal.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move");
+            }
+            herhaal.onended = () => {
+                mouthMove.style.display = "none";
+                startOKBtn.style.display = "block";
+                speechReload.style.display = "block";
+            }
+            break;
+        case 5: 
             startExplaineBtn.classList.add("hide");
             tekst = 'Nu is alles uitgelegd. Dus laten we naar binnen gaan!';
             image = '';
             binnen.play();
+            binnen.onplaying = () => {
+                mouthMove.style.display = "block";
+                mouthMove.classList.add("mouth_move");
+            }
             binnen.onended = () => {
+                mouthMove.style.display = "none";
                 startOKBtn.style.display = "block";
+                speechReload.style.display = "block";
             }
             break;
         // case 5: 
@@ -135,14 +195,16 @@ startOKBtn.onclick = () => {
             break;
 
     }
+    speechReload.style.display = "none";
     startOKBtn.style.display = "none";
     startP.innerHTML = tekst;
     startExplaineBtn.src = image;
     startOK++;
+    countHerhaal++;
 };
 
 startBtn.onclick = () => {
-    window.location.href="./pages/map.html";  
+    window.location.href="./map.html";  
 };
 
 // export {speakBtnStart};
