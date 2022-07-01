@@ -1,4 +1,4 @@
-import {reloadSpeech, reloadHint} from "./functions.js";
+import {reloadSpeech, hintGlow, reloadHint} from "./functions.js";
 const text = "olifant";
 
 const speechBubble = document.getElementById("js--speech-bubble");
@@ -7,6 +7,7 @@ const explaineBtn = document.getElementById("js--speech-bubble-img");
 
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 
@@ -36,6 +37,7 @@ const hint4 = new Audio("../audio/Tjalle/6-savanne/hint-4.m4a");
 const audioHerhaalSavanne = [savanneVerblijf, verbeteren];
 const hintHerhaalSavanne = [hint1, hint2, hint3, hint4];
 let isHint = false;
+hintBtn.disabled = true;
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'hidden') {
@@ -44,7 +46,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 100);
+}, 1000);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -76,7 +78,6 @@ speakOff.onclick = () => {
 };
 
 
-hintBtn.disabled = true;
 savanneVerblijf.play();
 savanneVerblijf.onplaying = () => {
     mouthMove.style.display = "block";
@@ -96,24 +97,24 @@ herhaal.onclick = () => {
     }
 }
 
-$(".popup__container-typen--textbox").on("focus blur", function(){
-    $(".popup__container-typen--wrapper").toggleClass("focused");
+$(".popup__container-savanne--textbox").on("focus blur", function(){
+    $(".popup__container-savanne--wrapper").toggleClass("focused");
 });
 
-$(".popup__container-typen--wrapper").click(function (e) {
+$(".popup__container-savanne--wrapper").click(function (e) {
     if (e.target == this) {
-        var b = $(".popup__container-typen--textbox", this).focus();
+        var b = $(".popup__container-savanne--textbox", this).focus();
         setEndOfContenteditable(b[0]);
     }
 }).trigger("click");
 
-$(".popup__container-typen--wrapper > .popup__container-typen--textbox").on("input", function(){
+$(".popup__container-savanne--wrapper > .popup__container-savanne--textbox").on("input", function(){
     var ipt = $(this).text().replace(/\u00A0/g, " ");
     //freakin NO-BREAK SPACE needs extra care
     if(text.indexOf(ipt) == 0){
-        $(".popup__container-typen--textbox--gray").text(text.substr(ipt.length, text.length));
+        $(".popup__container-savanne--textbox--gray").text(text.substr(ipt.length, text.length));
     }else{
-        $(".popup__container-typen--textbox--gray").text("");
+        $(".popup__container-savanne--textbox--gray").text("");
     }
 }).trigger("input");
 
@@ -157,6 +158,15 @@ startOKBtn.onclick = () => {
             speechBubble.style.zIndex = "";
             mapOverlay.style.zIndex = "-1";
             hintBtn.disabled = false;
+            if(countHint == 0){
+                console.log("tellen2");
+                hintGlow(60000, hintBtnGlow);
+                setTimeout(() => {
+                    hintBtnGlow.classList.remove("glow");
+                }, 70000);
+            } else {
+                hintBtnGlow.classList.remove("glow");
+            }
             break;
     }
     herhaal.style.display = "none";
@@ -172,6 +182,8 @@ hintBtn.onclick = () => {
     isHint = true;
     switch (countHint) {
         case 0: 
+            hintBtnGlow.classList.remove("glow");
+
             speechBubble.style.visibility = "visible";
             speechBubble_p.style.visibility = "visible";
             // startOKBtn.style.visibility = "visible";

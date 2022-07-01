@@ -1,4 +1,4 @@
-import {dragDropArctic, reloadSpeech, reloadHint} from "./functions.js";
+import {dragDropArctic, reloadSpeech, reloadHint, hintGlow} from "./functions.js";
 
 const fishDrag = document.getElementById("js--fish");
 const pinguinverblijfBtn = document.getElementById("js--pinguinverblijf-btn");
@@ -10,6 +10,8 @@ const explaineBtn = document.getElementById("js--speech-bubble-img");
 const speechBubble_p = document.getElementById("js--speech-bubble-p");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
+
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const mouthMove = document.getElementById("js--mouth-pinguin");
@@ -48,6 +50,14 @@ startOKBtn.onclick = () => {
     speechBubble.style.zIndex = "";
     mapOverlay.style.zIndex = "-1";
     hintBtn.disabled = false;
+    if(countHint == 0){
+        hintGlow(60000, hintBtnGlow);
+        setTimeout(() => {
+            hintBtnGlow.classList.remove("glow");
+        }, 70000);
+    } else {
+        hintBtnGlow.classList.remove("glow");
+    }
 }
 
 setInterval(() => {
@@ -57,7 +67,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible') {
         speakOffFunction();
     }
-}, 100);
+}, 1000);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -92,21 +102,6 @@ herhaal.onclick = () => {
     }
 }
 
-// speakOn.onclick = () => {
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     hint1.muted = true;
-//     hint2.muted = true;
-// };
-
-// speakOff.onclick = () => {
-//     console.log("klik");
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     hint1.muted = false;
-//     hint2.muted = false;
-// };
-
 pinguinverblijfBtn.onclick = () => {
     window.location.href = "./dierentuinpad.html";
 }
@@ -118,6 +113,7 @@ hintBtn.onclick = () => {
     console.log(countHint);
     switch (countHint) {
         case 0: 
+            hintBtnGlow.classList.remove("glow");
             speechBubble.style.visibility = "visible";
             // explaineBtn.classList.remove("hide");
             speechBubble_p.style.visibility = "visible";

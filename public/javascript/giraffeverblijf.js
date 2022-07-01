@@ -1,10 +1,11 @@
-import {dragDropGiraffe, reloadSpeech} from "./functions.js";
+import {dragDropGiraffe, reloadSpeech, hintGlow} from "./functions.js";
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 const speakOn2 = document.getElementById("js--speak-on-2");
 const speakOff2 = document.getElementById("js--speak-off-2");
 const hintBtn = document.getElementById("js--hint");
+const hintBtnGlow = document.getElementById("js--hint-glow");
 
 // const introBtn = document.getElementById("js--intro-btn");
 const startOKBtn = document.getElementById("js--speech-bubble-btn");
@@ -119,7 +120,7 @@ setInterval(() => {
     if (localStorage.getItem("speakOnStorage") == 'visible' && articleIntro.style.display == "none") {
         speakOffFunction2();
     }
-}, 100);
+}, 1000);
   
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
@@ -183,40 +184,6 @@ herhaalHint.onclick = () => {
 herhaalEnd.onclick = () => {
     reloadSpeech(endHerhaal[countEnd], herhaalEnd);
 }
-// speakOn.onclick = () =>{
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     verblijfAf.muted = true;
-// }
-// speakOn2.onclick = () =>{
-//     speakOff2.style.visibility = "visible";
-//     speakOn2.style.visibility = "hidden";
-//     bovenaan.muted = true;
-//     goedIngericht.muted = true;
-//     vraag.muted = true;
-//     veelDieren.muted = true;
-//     vrijeRuimte.muted = true;
-//     keuze.muted = true;
-//     hint1.muted = true;
-//     hint2.muted = true;
-// };
-// speakOff.onclick = () =>{
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     verblijfAf.muted = false;
-// };
-// speakOff2.onclick = () =>{
-//     speakOff2.style.visibility = "hidden";
-//     speakOn2.style.visibility = "visible";
-//     bovenaan.muted = false;
-//     goedIngericht.muted = false;
-//     vraag.muted = false;
-//     veelDieren.muted = false;
-//     vrijeRuimte.muted = false;
-//     keuze.muted = false;
-//     hint1.muted = false;
-//     hint2.muted = false;
-// };
 
 hintBtn.disabled = true;
 verblijfAf.play();
@@ -234,6 +201,14 @@ hintBubbleBtn.onclick = () => {
     headZookeeper.classList.add("hide");
     hintBubble.classList.add("hide");
     hintBtn.disabled = false;
+    if(countHint == 0){
+        hintGlow(60000, hintBtnGlow);
+        setTimeout(() => {
+            hintBtnGlow.classList.remove("glow");
+        }, 70000);
+    } else {
+        hintBtnGlow.classList.remove("glow");
+    }
     countHerhaal++;
 }
 
@@ -242,6 +217,7 @@ hintBtn.onclick = () => {
     isHint = true;
     switch (countHint) {
         case 0: 
+            hintBtnGlow.classList.remove("glow");
             hintBubbleBtn.style.display = "none";
             mapOverlay.classList.remove("hide");
             headZookeeper.classList.remove("hide");
@@ -318,9 +294,9 @@ startOKBtn.onclick = () => {
     mapOverlay.classList.remove("hide");
     headZookeeper.classList.remove("hide");
     hintBubble.classList.remove("hide");
-    // hintBtn.style.zIndex = 60;
-    // speakOn2.style.zIndex = 60;
-    // speakOff2.style.zIndex = 60;
+    hintBtn.style.zIndex = 70;
+    speakOn2.style.zIndex = 70;
+    speakOff2.style.zIndex = 70;
     hintSpeechBubble_p.innerHTML = 'Bovenaan zie je een lijstje wat ze nodig hebben.';
     bovenaan.play();
     bovenaan.onplaying = () => {
@@ -332,6 +308,7 @@ startOKBtn.onclick = () => {
         hintBubbleBtn.style.display = "flex";
         herhaalHint.style.display = "block";
     }
+
 };
 
 // introBtn.onclick = () => {
