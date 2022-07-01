@@ -117,7 +117,7 @@ hintBtn.onclick = () => {
     isHint = true;
     switch (countHint) {
         case 0: 
-        hintBtnGlow.classList.remove("glow");
+            hintBtnGlow.classList.remove("glow");
             zookeeper.style.visibility = "visible";
             zookeeper.style.zIndex = "4";
             speech.style.visibility = "visible";

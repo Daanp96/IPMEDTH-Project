@@ -51,6 +51,7 @@ const reloadHint = (audio, animate, mouth) => {
 const hintGlow = (tijd, hint) => {
   setTimeout(() => {
     hint.classList.add("glow");
+    // hint.classList.add("puzzel-options__btn-hint-glow");
   }, tijd);
 }
 

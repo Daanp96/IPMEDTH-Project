@@ -95,6 +95,7 @@ let countEnd = 0;
 let tekst = '';
 let isHint;
 let speakOnStorage;
+let isHint;
 
 setInterval(() => {
     if (speakOn2.style.visibility == 'hidden') {
@@ -305,6 +306,7 @@ startOKBtn.onclick = () => {
     }
     bovenaan.onended = () => {
         mouthMoveHead.style.display = "none";
+        console.log("none");
         hintBubbleBtn.style.display = "flex";
         herhaalHint.style.display = "block";
     }
