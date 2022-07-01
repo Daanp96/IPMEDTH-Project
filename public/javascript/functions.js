@@ -55,7 +55,7 @@ const hintGlow = (tijd, hint) => {
   }, tijd);
 }
 
-const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel) => {
+const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -133,6 +133,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel) => {
           }
           kaartHeel.onended = () => {
             mouthMove.style.display = "none";
+            herhaal.style.display = "block";
             btn.style.display = "block";
           }
         }
