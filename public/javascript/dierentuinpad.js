@@ -146,10 +146,10 @@ if(document.URL.includes("dierentuinpad.html") ){
         case 0:
             vissen.play();
             vissen.onplaying = () => {
+                mouthMove.style.display = "block";
                 mouthMove.classList.add("mouth_move_pad");
             }
             vissen.onended = () => {
-                mouthMove.classList.remove("mouth_move_pad");
                 mouthMove.style.display = "none";
                 fish.classList.add("dierentuinpad__element");
                 fish.classList.add("button");
@@ -169,10 +169,10 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinpadSpeechBubbleP.innerHTML = "Goed gedaan! Zullen we gaan kijken bij de savanne dieren?";
             savanne.play();
             savanne.onplaying = () => {
+                mouthMove.style.display = "block";
                 mouthMove.classList.add("mouth_move_pad");
             }
             savanne.onended = () => {
-                mouthMove.classList.remove("mouth_move_pad");
                 mouthMove.style.display = "none";
                 monkey.classList.add("dierentuinpad__element");
                 monkey.classList.add("button");
@@ -213,10 +213,10 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinpadSpeechBubbleP.innerHTML = "Goedzo! Het is nu tijd om de pinguïns eten te geven.";
             pinguins.play();
             pinguins.onplaying = () => {
+                mouthMove.style.display = "block";
                 mouthMove.classList.add("mouth_move_pad");
             }
             pinguins.onended = () => {
-                mouthMove.classList.remove("mouth_move_pad");
                 mouthMove.style.display = "none";
                 pinguin.classList.add("dierentuinpad__element");
                 pinguin.classList.add("button");
@@ -272,10 +272,10 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
             ijsje.play();
             ijsje.onplaying = () => {
+                mouthMove.style.display = "block";
                 mouthMove.classList.add("mouth_move_pad");
             }
             ijsje.onended = () => {
-                mouthMove.classList.remove("mouth_move_pad");
                 mouthMove.style.display = "none";
                 ijswinkel.classList.add("dierentuinpad__element");
                 ijswinkel.classList.add("button");
@@ -303,10 +303,10 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinpadSpeechBubbleP.innerHTML = "Dat was lekker! Kom we gaan nu naar ons nieuwste verblijf.";
             verblijf.play();
             verblijf.onplaying = () => {
+                mouthMove.style.display = "block";
                 mouthMove.classList.add("mouth_move_pad");
             }
             verblijf.onended = () => {
-                mouthMove.classList.remove("mouth_move_pad");
                 mouthMove.style.display = "none";
                 giraffe.classList.add("dierentuinpad__element");
                 giraffe.classList.add("button");
@@ -386,6 +386,7 @@ if(document.URL.includes("dierentuinpad.html") ){
             dierentuinpadSpeechBubbleP.innerHTML = "Wat vliegt de tijd! De dierentuin gaat sluiten. We gaan naar de uitgang.";
             uitgang.play();
             uitgang.onplaying = () => {
+                mouthMove.style.display = "block";
                 mouthMove.classList.add("mouth_move_pad");
             }
             uitgang.onended = () => {
