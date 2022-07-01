@@ -155,23 +155,19 @@
 
     }
     &__zookeeper {
-        // grid-column-start: 10;
-        grid-column: 7 / span 2;
-        grid-row: 4 / span 5;
-        text-align: center;
-        font-size: 2rem;
-        width: 20rem;
-        z-index: 4;
+        grid-column: 7 / span 3;
+        grid-row: 5 / span 3;
         position: relative;
+        z-index: 4;
 
         &--image{
-            width: 13vw;
+            width: 20vw;
             height: auto;
         }
     }
     &--speech-bubble {
-        grid-column-start: 3;
-        grid-row-start: 4;
+        grid-column: 3 / span 1;
+        grid-row: 5 / span 1;
         z-index: 3;
         align-self: end;
 

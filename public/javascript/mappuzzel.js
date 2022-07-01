@@ -29,7 +29,7 @@ hintBtn.disabled = true;
 mapUitleg.play();
 mapUitleg.onplaying = () => {
     mouthMove.style.display = "block";
-    mouthMove.classList.add("mouth_move_map");
+    mouthMove.classList.add("mouth_move_head");
   }
 mapUitleg.onended = () => {
     mouthMove.style.display = "none";
@@ -128,7 +128,7 @@ hintBtn.onclick = () => {
             hint.play();
             hint.onplaying = () => {
                 mouthMove.style.display = "block";
-                mouthMove.classList.add("mouth_move_map");
+                mouthMove.classList.add("mouth_move_head");
               }
             hint.onended = () => {
                 mouthMove.style.display = "none";
