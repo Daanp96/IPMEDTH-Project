@@ -7,9 +7,6 @@ const speechReload = document.getElementById("js--speech-reload");
 
 const groep3 = document.getElementById("js--btn-groep3");
 
-let audioHerhaal = [welkeKlas];
-let countHerhaal = 0;
-
 welkeKlas.play();
 welkeKlas.onplaying = () => {
     mouthMove.style.display = "block";
@@ -27,5 +24,5 @@ groep3.onclick = () =>{
 window.localStorage.clear();
 
 speechReload.onclick = () => {
-    reloadSpeech(audioHerhaal[countHerhaal], speechReload);
+    reloadSpeech(welkeKlas, speechReload, mouthMove);
 }

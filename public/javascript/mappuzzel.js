@@ -53,7 +53,7 @@ herhaal.onclick = () => {
 }
 
 for (let slide of slides) {
-    dragDropMap(slide, button, zookeeper, speech, speechP, kaartHeel, herhaal);
+    dragDropMap(slide, button, zookeeper, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay);
 }
 
 setInterval(() => {
@@ -94,6 +94,7 @@ button.onclick = () => {
 }
 
 speechButton.onclick = () => {
+    speechButton.style.display = "none";
     zookeeper.style.visibility = "hidden";
     zookeeper.style.zIndex = "-1";
     speech.style.visibility = "hidden";

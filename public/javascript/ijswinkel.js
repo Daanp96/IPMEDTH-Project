@@ -5,6 +5,7 @@ const overlay = document.getElementById("js--overlay");
 const ijsjes = document.getElementsByClassName("ijs_keuze");
 const popup = document.getElementById("js--popup");
 const kassa = document.getElementById("js--kassa");
+const kassaDrop = document.getElementById("js--ijs-keuze-kassa");
 const munten = document.getElementsByClassName("geld");
 
 // const ijsbol1 = document.getElementById("js--bol1");
@@ -163,7 +164,7 @@ ijsbalie.onclick = () => {
             bol_img.style.left = `${e.clientX - e.offsetX - 25}px`;
             // speechBubble.innerHTML = "Sleep jouw bolletje naar de ijshoorn toe.";
             popup.append(bol_img);
-            dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble, ijsjeKlaar, herhaalIjs);
+            dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble, ijsjeKlaar, herhaalIjs, kassaDrop);
         }
     }
 }
