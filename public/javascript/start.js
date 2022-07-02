@@ -115,7 +115,7 @@ startOKBtn.onclick = () => {
         case 2: 
             startExplaineBtn.classList.remove("hide");
             tekst = 'Het lampje geeft hints. Klik hier op als je vastloopt.';
-            image = '../images/hint-btn.png';
+            image = '../images/buttons/hint-btn.png';
             hint.play();
             hint.onplaying = () => {
                 mouthMove.style.display = "block";
@@ -129,7 +129,7 @@ startOKBtn.onclick = () => {
             break;
         case 3: 
             tekst = 'Het oortje is mijn stem. Klik hierop dan kan je mijn stem aan en uit zetten.';
-            image = '../images/speak-on-btn.png';
+            image = '../images/buttons/speak-on-btn.png';
             stem.play();
             stem.onplaying = () => {
                 mouthMove.style.display = "block";
@@ -143,7 +143,7 @@ startOKBtn.onclick = () => {
             break;
         case 4: 
             tekst = 'Klik op de knop met de pijl. Dan herhaal ik het.';
-            image = '../images/reload_button.png';
+            image = '../images/buttons/reload_button.png';
             herhaal.play();
             herhaal.onplaying = () => {
                 mouthMove.style.display = "block";
