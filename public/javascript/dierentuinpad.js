@@ -274,8 +274,8 @@ if(document.URL.includes("dierentuinpad.html") ){
     star8 = localStorage.getItem('star8');
     star9 = localStorage.getItem('star9');
     star10 = localStorage.getItem('star10');
-    star11 = localStorage.getItem('star11');
-    star12 = localStorage.getItem('star12');
+    // star11 = localStorage.getItem('star11');
+    // star12 = localStorage.getItem('star12');
 
     if(star1 == 0){
         ratedStar1.classList.remove("hidden");
@@ -318,13 +318,13 @@ if(document.URL.includes("dierentuinpad.html") ){
         ratedStar11.classList.remove("hidden");
         ratedStar12.classList.remove("hidden");
     }
-    if(star11 == 0){
-        ratedStar10.classList.remove("hidden");
-        ratedStar11.classList.remove("hidden");
-    }
-    if(star12 == 0){
-        ratedStar10.classList.remove("hidden");
-    }
+    // if(star11 == 0){
+    //     ratedStar10.classList.remove("hidden");
+    //     ratedStar11.classList.remove("hidden");
+    // }
+    // if(star12 == 0){
+    //     ratedStar10.classList.remove("hidden");
+    // }
 
     fish.onclick = (e) => {
         x = 1;
