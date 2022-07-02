@@ -49,6 +49,7 @@ diplomaBtn.onclick = () => {
 };
 
 window.onafterprint = (e) =>{
+    console.log("terug");
     window.localStorage.clear();
     window.location = "../index.html";
     e.preventDefault();

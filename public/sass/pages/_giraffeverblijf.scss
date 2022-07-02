@@ -265,7 +265,7 @@
     &--input[type=checkbox]{
         transform: scale(2.5);
         vertical-align: super;
-        cursor: url("../images/cursor_plain_60.cur"), default;
+        cursor: $cursor-plain;
         overflow: hidden;
     }
 
@@ -273,7 +273,7 @@
         font-size: 3.5rem;
         margin-left: 2rem;
         margin-right: 2.5rem;
-        cursor: url("../images/cursor_plain_60.cur"), default;
+        cursor: $cursor-plain;
         overflow: hidden;
     }
 }
