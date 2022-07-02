@@ -55,7 +55,7 @@ const hintGlow = (tijd, hint) => {
   }, tijd);
 }
 
-const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel) => {
+const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -133,6 +133,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel) => {
           }
           kaartHeel.onended = () => {
             mouthMove.style.display = "none";
+            herhaal.style.display = "block";
             btn.style.display = "block";
           }
         }
@@ -337,7 +338,8 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal) => 
           }
           kassa.style.display = "block";
           kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
-          kassa.parentNode.dataset.geld = "1";
+          kassa.parentNode.dataset.geld1 = "1";
+          kassa.parentNode.dataset.geld2 = "2";
           speech.innerHTML = "Zo je ijsje is klaar! Je kan het geld naar de kassa toe slepen.";
           for(let ijs of ijsjes){
             ijs.onclick = null;
@@ -416,31 +418,39 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
       obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
-      const attr = currentDroppable.getAttribute('data-geld');
+      const attr1 = currentDroppable.getAttribute('data-geld1');
+      const attr2 = currentDroppable.getAttribute('data-geld2');
 
-      if(attr == obj.getAttribute('data-geld')) {
-        
+      if(attr1 == obj.getAttribute('data-geld1')) {
         kaching.volume = 0.2;
         kaching.play();
         ijsPrijs--;
-        obj.removeAttribute('data-geld');
+        obj.removeAttribute('data-geld1');
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
-        kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
+        
+      } else if (attr2 == obj.getAttribute('data-geld2')) {
+        kaching.volume = 0.2;
+        kaching.play();
+        ijsPrijs = ijsPrijs- 2;
+        obj.removeAttribute('data-geld2');
+        currentDroppable.style.opacity = "100%";
+        obj.hidden = true;
+      }
+      kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
 
-        if (ijsPrijs == 0) {
-          audio.play();
-          audio.onended = () => {
-            herhaal.style.display = "block";
-          }
-          document.getElementById("js--ijs-keuze-kassa").classList.remove("geld-droppable");
-          kassa.innerHTML = "Dankjewel!";
-          btn.style.display = "block";
-          speech.innerHTML = "Dankjewel! Geniet van jullie ijsjes.";
+      if (ijsPrijs == 0) {
+        audio.play();
+        audio.onended = () => {
+          herhaal.style.display = "block";
+        }
+        document.getElementById("js--ijs-keuze-kassa").classList.remove("geld-droppable");
+        kassa.innerHTML = "Dankjewel!";
+        btn.style.display = "block";
+        speech.innerHTML = "Dankjewel! Geniet van jullie ijsjes.";
 
-          herhaal.onclick = () => {
-            reloadSpeech(audio, herhaal);
-          }
+        herhaal.onclick = () => {
+          reloadSpeech(audio, herhaal);
         }
       }
     };
