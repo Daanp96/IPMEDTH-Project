@@ -235,7 +235,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         goedGedaan.play();
         goedGedaan.onplaying = () => {
           mouthMovePinguin.style.display = "block";
-          mouthMove.classList.add("mouth_move_verblijf");
+          mouthMovePinguin.classList.add("mouth_move_verblijf");
 
         }
         goedGedaan.onended = () => {
