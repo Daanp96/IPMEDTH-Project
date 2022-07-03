@@ -28,7 +28,7 @@
             height: auto;
         }
     }
-    &__monkey{
+    &__elephant{
         grid-column: 8 / span 5;
         grid-row: 3 / span 4;
 
@@ -177,4 +177,34 @@
     z-index: 5;
     height: 8vh;
     width: 8vw;
+}
+
+@media (max-width: 1400px){
+    .dierentuinpad{
+        &__speech-bubble{
+            grid-column: 3 / span 2;
+            grid-row: 3 / span 1;
+        }
+        &__zookeeper{
+            grid-column: 7 / span 2;
+            grid-row: 4 / span 4; 
+        }
+    }
+}
+@media (max-width: 1100px){
+    .dierentuinpad{
+        &__giraffe{
+            grid-column: 2 / span 6;
+        }
+        &__elephant{
+            grid-column: 8 / span 6;
+        }
+    }
+}
+@media (min-width: 1600px){
+    .dierentuinpad{
+        &__zebra{
+            grid-column: 10 / span 3;
+        }
+    }
 }
