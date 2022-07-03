@@ -1,8 +1,6 @@
-// import {speakBtnStart} from "./start.js";
-// import {speakBtnMap} from "./map.js";
-// import {speakBtnMappuzzelFunction} from "./functions.js";
-// import {speakBtnMappuzzel} from "./mappuzzel.js";
-// import {speakBtnDierentuinpad} from "./dierentuinpad.js";
+import {countHint as countHintVis, startTime as startTimeVis} from "./vissenverblijf.js";
+import {countHint as countHintSavanne,startTime as startTimeSavanne} from "./savanne.js";
+import {countHint as countHintPinguin,startTime as startTimePinguin} from "./pinguinverblijf.js";
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -32,17 +30,18 @@ let aantalSecondesVissenverblijf;
 let aantalSecondesPinguinverblijf;
 let aantalSecondesSavanne;
 let aantalSecondesGiraffeverblijf;
-let startTime, endTime;
+// let startTime, endTime;
+let endTime;
 
 let speakOnStorage;
-
+// let countHint;
 // let infoOk = 0;
 let tekst = '';
 let image = '';
 
-window.onload = function() {
-    start();
-}
+// window.onload = function() {
+//     start();
+// }
 
 setInterval(() => {
     if (speakOn.style.visibility == 'hidden') {
@@ -56,9 +55,9 @@ setInterval(() => {
 }, 200);
     
 
-function start(){
-    startTime = new Date();
-}
+// function start(){
+//     startTime = new Date();
+// }
 
 if(document.URL.includes("vissenverblijf.html") ){
     
@@ -66,14 +65,37 @@ if(document.URL.includes("vissenverblijf.html") ){
         
         let form_answer = document.forms["answerForm"]["numberInput"].value;
         
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesVissenverblijf = seconds;
-
         if(form_answer == reken_correct){
-            if(seconds <= 60){
+
+            endTime = new Date();
+            var timeDiff = endTime - startTimeVis; //ms
+            timeDiff /= 1000;
+            let seconds = Math.round(timeDiff);
+            aantalSecondesVissenverblijf = seconds;
+            // hintCountPlusSeconds(countHint);
+            // console.log(aantalSecondesVissenverblijf);
+            // countHint = hintCountPlusSeconds(countHint);
+            console.log(startTimeVis);
+            console.log(countHintVis);
+    
+            if(countHintVis == 1){
+                aantalSecondesVissenverblijf += 10;
+                console.log(aantalSecondesVissenverblijf);
+            }
+            if(countHintVis == 2){
+                aantalSecondesVissenverblijf += 20;
+                console.log(aantalSecondesVissenverblijf);
+            }
+            if(countHintVis == 3){
+                aantalSecondesVissenverblijf += 30;
+                console.log(aantalSecondesVissenverblijf);
+            }
+            if(countHintVis == 4){
+                aantalSecondesVissenverblijf += 40;
+                console.log(aantalSecondesVissenverblijf);
+            }
+
+            if(seconds <= 90){
                 try {
                     localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                     localStorage.setItem('star1', 0);
@@ -81,7 +103,7 @@ if(document.URL.includes("vissenverblijf.html") ){
                     console.log(error);
                 }
             }
-            if(seconds > 60 && seconds <= 120){
+            if(seconds > 90 && seconds <= 150){
                 try {
                     localStorage.setItem('star2', 0);
                     localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
@@ -89,7 +111,7 @@ if(document.URL.includes("vissenverblijf.html") ){
                     console.log(error);
                 }
             }
-            if(seconds > 120){
+            if(seconds > 150){
                 try {
                     localStorage.setItem('star3', 0);
                     localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
@@ -131,7 +153,7 @@ if(document.URL.includes("vissenverblijf.html") ){
     
 //         if(form_answer == naam_correct){
 //             terugKaart.play();
-//             if(seconds <= 60){
+//             if(seconds <= 90){
 //                 try {
 //                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
 //                     localStorage.setItem('star4', 0);
@@ -139,7 +161,7 @@ if(document.URL.includes("vissenverblijf.html") ){
 //                     console.log(error);
 //                 }
 //             }
-//             if(seconds > 60 && seconds <= 120){
+//             if(seconds > 90 && seconds <= 150){
 //                 try {
 //                     localStorage.setItem('star5', 0);
 //                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
@@ -147,7 +169,7 @@ if(document.URL.includes("vissenverblijf.html") ){
 //                     console.log(error);
 //                 }
 //             }
-//             if(seconds > 120){
+//             if(seconds > 150){
 //                 try {
 //                     localStorage.setItem('star6', 0);
 //                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
@@ -175,14 +197,26 @@ if(document.URL.includes("vissenverblijf.html") ){
 
 if(document.URL.includes("pinguinverblijf.html")){
     pinguinverblijfBtn.addEventListener("click", function(e){
-
+        
         endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
+        var timeDiff = endTime - startTimePinguin; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
         aantalSecondesPinguinverblijf = seconds;
+
+        console.log(startTimePinguin);
+        console.log(countHintPinguin);
+
+        if(countHintPinguin == 1){
+            aantalSecondesPinguinverblijf += 10;
+            console.log(aantalSecondesPinguinverblijf);
+        }
+        if(countHintPinguin == 2){
+            aantalSecondesPinguinverblijf += 20;
+            console.log(aantalSecondesPinguinverblijf);
+        }
     
-        if(seconds <= 60){
+        if(seconds <= 90){
             try {
                 localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
                 localStorage.setItem('star7', 0);
@@ -190,7 +224,7 @@ if(document.URL.includes("pinguinverblijf.html")){
                 console.log(error);
             }
         }
-        if(seconds > 60 && seconds <= 120){
+        if(seconds > 90 && seconds <= 150){
             try {
                 localStorage.setItem('star8', 0);
                 localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
@@ -198,7 +232,7 @@ if(document.URL.includes("pinguinverblijf.html")){
                 console.log(error);
             }
         }
-        if(seconds > 120){
+        if(seconds > 150){
             try {
                 localStorage.setItem('star9', 0);
                 localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
@@ -222,14 +256,34 @@ if(document.URL.includes("savanne.html")){
     spanTypenBtn.addEventListener("click", function(e){
         console.log(spanTypen.innerText);
 
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesSavanne = seconds;
-
         if(spanTypen.innerText == typen_correct){
-            if(seconds <= 60){
+            endTime = new Date();
+            var timeDiff = endTime - startTimeSavanne; //ms
+            timeDiff /= 1000;
+            let seconds = Math.round(timeDiff);
+            aantalSecondesSavanne = seconds;
+
+            console.log(startTimeSavanne);
+            console.log(countHintSavanne);
+    
+            if(countHintSavanne == 1){
+                aantalSecondesSavanne += 10;
+                console.log(aantalSecondesSavanne);
+            }
+            if(countHintSavanne == 2){
+                aantalSecondesSavanne += 20;
+                console.log(aantalSecondesSavanne);
+            }
+            if(countHintSavanne == 3){
+                aantalSecondesSavanne += 30;
+                console.log(aantalSecondesSavanne);
+            }
+            if(countHintSavanne == 4){
+                aantalSecondesSavanne += 40;
+                console.log(aantalSecondesSavanne);
+            }
+
+            if(seconds <= 90){
                 try {
                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                     localStorage.setItem('star4', 0);
@@ -237,7 +291,7 @@ if(document.URL.includes("savanne.html")){
                     console.log(error);
                 }
             }
-            if(seconds > 60 && seconds <= 120){
+            if(seconds > 90 && seconds <= 150){
                 try {
                     localStorage.setItem('star5', 0);
                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
@@ -245,7 +299,7 @@ if(document.URL.includes("savanne.html")){
                     console.log(error);
                 }
             }
-            if(seconds > 120){
+            if(seconds > 150){
                 try {
                     localStorage.setItem('star6', 0);
                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
@@ -275,16 +329,10 @@ if(document.URL.includes("savanne.html")){
 
 if(document.URL.includes("giraffeverblijf.html")){
     endSpeechBubbleDierentuin.addEventListener("click", function(e){
-
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesGiraffeverblijf = seconds;
     
         try {
-            localStorage.setItem("aantalSecondesGiraffeverblijf", aantalSecondesGiraffeverblijf);
             localStorage.setItem('star10', 0);
+
         } catch (error) {
             console.log(error);
         }
@@ -296,14 +344,7 @@ if(document.URL.includes("giraffeverblijf.html")){
 
     endSpeechBubbleNatuur.addEventListener("click", function(e){
 
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesGiraffeverblijf = seconds;
-    
         try {
-            localStorage.setItem("aantalSecondesGiraffeverblijf", aantalSecondesGiraffeverblijf);
             localStorage.setItem('star10', 0);
         } catch (error) {
             console.log(error);

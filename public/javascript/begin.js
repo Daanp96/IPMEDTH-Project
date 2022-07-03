@@ -1,14 +1,11 @@
+import {reloadSpeech} from "./functions.js";
+
 let welkeKlas = new Audio("./audio/Tjalle/0-keuzescherm/1-welkeklas.m4a");
 
-const speechBubble = document.getElementById("js--speech-bubble");
-const startExplaineBtn = document.getElementById("js--speech-bubble-img");
-const startP = document.getElementById("js--speech-bubble-p");
 const mouthMove = document.getElementById("js--mouth");
+const speechReload = document.getElementById("js--speech-reload");
 
 const groep3 = document.getElementById("js--btn-groep3");
-
-let audioHerhaal = [welkeKlas];
-let countHerhaal = 0;
 
 welkeKlas.play();
 welkeKlas.onplaying = () => {
@@ -17,7 +14,6 @@ welkeKlas.onplaying = () => {
 }
 welkeKlas.onended = () => {
     mouthMove.style.display = "none";
-    startOKBtn.style.display = "block";
     speechReload.style.display = "block";
 }
 
@@ -28,7 +24,5 @@ groep3.onclick = () =>{
 window.localStorage.clear();
 
 speechReload.onclick = () => {
-    reloadSpeech(audioHerhaal[countHerhaal], speechReload);
+    reloadSpeech(welkeKlas, speechReload, mouthMove);
 }
-
-

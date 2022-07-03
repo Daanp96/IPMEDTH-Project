@@ -107,27 +107,6 @@ speechHerhaal.onclick = () => {
     reloadSpeech(audioHerhaal[x], speechHerhaal, mouthMove);
 }
 
-// speakOn.onclick = () => {
-//     speakOff.style.visibility = "visible";
-//     speakOn.style.visibility = "hidden";
-//     vissen.muted = true;
-//     savanne.muted = true;
-//     pinguins.muted = true;
-//     ijsje.muted = true;
-//     verblijf.muted = true;
-//     uitgang.muted = true;
-// };
-// speakOff.onclick = () => {
-//     speakOff.style.visibility = "hidden";
-//     speakOn.style.visibility = "visible";
-//     vissen.muted = false;
-//     savanne.muted = false;
-//     pinguins.muted = false;
-//     ijsje.muted = false;
-//     verblijf.muted = false;
-//     uitgang.muted = false;
-// };
-
 
 if(document.URL.includes("dierentuinpad.html") ){
     eindeButton.classList.add("hide-important");
@@ -178,25 +157,6 @@ if(document.URL.includes("dierentuinpad.html") ){
                 monkey.classList.add("button");
                 speechHerhaal.style.display = "block";
             }
-
-            star1 = localStorage.getItem('star1');
-            star2 = localStorage.getItem('star2');
-            star3 = localStorage.getItem('star3');
-            if(star1 == 0){
-                console.log(star1);
-                ratedStar1.style.visibility = "visible";
-                ratedStar2.style.visibility = "visible";
-                ratedStar3.style.visibility = "visible";
-            }
-            if(star2 == 0){
-                console.log(star2);
-                ratedStar1.style.visibility = "visible";
-                ratedStar2.style.visibility = "visible";
-            }
-            if(star3 == 0){
-                console.log(star3);
-                ratedStar1.style.visibility = "visible";
-            }
             break;
 
         case 2:
@@ -221,44 +181,6 @@ if(document.URL.includes("dierentuinpad.html") ){
                 pinguin.classList.add("dierentuinpad__element");
                 pinguin.classList.add("button");
                 speechHerhaal.style.display = "block";
-            }
-
-            star1 = localStorage.getItem('star1');
-            star2 = localStorage.getItem('star2');
-            star3 = localStorage.getItem('star3');
-            star4 = localStorage.getItem('star4');
-            star5 = localStorage.getItem('star5');
-            star6 = localStorage.getItem('star6');
-
-            if(star1 == 0){
-                console.log(star1);
-                ratedStar1.style.visibility = "visible";
-                ratedStar2.style.visibility = "visible";
-                ratedStar3.style.visibility = "visible";
-            }
-            if(star2 == 0){
-                console.log(star2);
-                ratedStar1.style.visibility = "visible";
-                ratedStar2.style.visibility = "visible";
-            }
-            if(star3 == 0){
-                console.log(star3);
-                ratedStar1.style.visibility = "visible";
-            }
-            if(star4 == 0){
-                console.log(star4);
-                ratedStar4.style.visibility = "visible";
-                ratedStar5.style.visibility = "visible";
-                ratedStar6.style.visibility = "visible";
-            }
-            if(star5 == 0){
-                console.log(star5);
-                ratedStar4.style.visibility = "visible";
-                ratedStar5.style.visibility = "visible";
-            }
-            if(star6 == 0){
-                console.log(star6);
-                ratedStar4.style.visibility = "visible";
             }
             break;
 
@@ -293,8 +215,6 @@ if(document.URL.includes("dierentuinpad.html") ){
             ijswinkel.classList.remove("dierentuinpad__element");
             ijswinkel.classList.remove("button");
 
-            // eindeButton.classList.remove("hide-important");
-
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble3");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper3");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble4");
@@ -313,61 +233,6 @@ if(document.URL.includes("dierentuinpad.html") ){
                 speechHerhaal.style.display = "block";
             }
 
-            star1 = localStorage.getItem('star1');
-            star2 = localStorage.getItem('star2');
-            star3 = localStorage.getItem('star3');
-            star4 = localStorage.getItem('star4');
-            star5 = localStorage.getItem('star5');
-            star6 = localStorage.getItem('star6');
-            star7 = localStorage.getItem('star7');
-            star8 = localStorage.getItem('star8');
-            star9 = localStorage.getItem('star9');
-
-            if(star1 == 0){
-                console.log(star1);
-                ratedStar1.style.visibility = "visible";
-                ratedStar2.style.visibility = "visible";
-                ratedStar3.style.visibility = "visible";
-            }
-            if(star2 == 0){
-                console.log(star2);
-                ratedStar1.style.visibility = "visible";
-                ratedStar2.style.visibility = "visible";
-            }
-            if(star3 == 0){
-                console.log(star3);
-                ratedStar1.style.visibility = "visible";
-            }
-            if(star4 == 0){
-                console.log(star4);
-                ratedStar4.style.visibility = "visible";
-                ratedStar5.style.visibility = "visible";
-                ratedStar6.style.visibility = "visible";
-            }
-            if(star5 == 0){
-                console.log(star5);
-                ratedStar4.style.visibility = "visible";
-                ratedStar5.style.visibility = "visible";
-            }
-            if(star6 == 0){
-                console.log(star6);
-                ratedStar4.style.visibility = "visible";
-            }
-            if(star7 == 0){
-                console.log(star4);
-                ratedStar7.style.visibility = "visible";
-                ratedStar8.style.visibility = "visible";
-                ratedStar9.style.visibility = "visible";
-            }
-            if(star8 == 0){
-                console.log(star5);
-                ratedStar7.style.visibility = "visible";
-                ratedStar8.style.visibility = "visible";
-            }
-            if(star9 == 0){
-                console.log(star6);
-                ratedStar7.style.visibility = "visible";
-            }
             break;
         case 5:
             monkey.classList.remove("dierentuinpad__element");
@@ -396,70 +261,70 @@ if(document.URL.includes("dierentuinpad.html") ){
                 eindeButton.style.display = "flex";
             }
             
-            star1 = localStorage.getItem('star1');
-            star2 = localStorage.getItem('star2');
-            star3 = localStorage.getItem('star3');
-            star4 = localStorage.getItem('star4');
-            star5 = localStorage.getItem('star5');
-            star6 = localStorage.getItem('star6');
-            star7 = localStorage.getItem('star7');
-            star8 = localStorage.getItem('star8');
-            star9 = localStorage.getItem('star9');
-            star10 = localStorage.getItem('star10');
-            star11 = localStorage.getItem('star11');
-            star12 = localStorage.getItem('star12');
-
-            if(star1 == 0){
-                ratedStar1.style.visibility = "visible";
-                ratedStar2.style.visibility = "visible";
-                ratedStar3.style.visibility = "visible";
-            }
-            if(star2 == 0){
-                ratedStar1.style.visibility = "visible";
-                ratedStar2.style.visibility = "visible";
-            }
-            if(star3 == 0){
-                ratedStar1.style.visibility = "visible";
-            }
-            if(star4 == 0){
-                ratedStar4.style.visibility = "visible";
-                ratedStar5.style.visibility = "visible";
-                ratedStar6.style.visibility = "visible";
-            }
-            if(star5 == 0){
-                ratedStar4.style.visibility = "visible";
-                ratedStar5.style.visibility = "visible";
-            }
-            if(star6 == 0){
-                ratedStar4.style.visibility = "visible";
-            }
-            if(star7 == 0){
-                ratedStar7.style.visibility = "visible";
-                ratedStar8.style.visibility = "visible";
-                ratedStar9.style.visibility = "visible";
-            }
-            if(star8 == 0){
-                ratedStar7.style.visibility = "visible";
-                ratedStar8.style.visibility = "visible";
-            }
-            if(star9 == 0){
-                ratedStar7.style.visibility = "visible";
-            }
-            if(star10 == 0){
-                ratedStar10.style.visibility = "visible";
-                ratedStar11.style.visibility = "visible";
-                ratedStar12.style.visibility = "visible";
-            }
-            if(star11 == 0){
-                ratedStar10.style.visibility = "visible";
-                ratedStar11.style.visibility = "visible";
-            }
-            if(star12 == 0){
-                ratedStar10.style.visibility = "visible";
-            }
             break;
     }
 
+    star1 = localStorage.getItem('star1');
+    star2 = localStorage.getItem('star2');
+    star3 = localStorage.getItem('star3');
+    star4 = localStorage.getItem('star4');
+    star5 = localStorage.getItem('star5');
+    star6 = localStorage.getItem('star6');
+    star7 = localStorage.getItem('star7');
+    star8 = localStorage.getItem('star8');
+    star9 = localStorage.getItem('star9');
+    star10 = localStorage.getItem('star10');
+    // star11 = localStorage.getItem('star11');
+    // star12 = localStorage.getItem('star12');
+
+    if(star1 == 0){
+        ratedStar1.classList.remove("hidden");
+        ratedStar2.classList.remove("hidden");
+        ratedStar3.classList.remove("hidden");
+    }
+    if(star2 == 0){
+        ratedStar1.classList.remove("hidden");
+        ratedStar2.classList.remove("hidden");
+    }
+    if(star3 == 0){
+        ratedStar1.classList.remove("hidden");
+    }
+    if(star4 == 0){
+        ratedStar4.classList.remove("hidden");
+        ratedStar5.classList.remove("hidden");
+        ratedStar6.classList.remove("hidden");
+    }
+    if(star5 == 0){
+        ratedStar4.classList.remove("hidden");
+        ratedStar5.classList.remove("hidden");
+    }
+    if(star6 == 0){
+        ratedStar4.classList.remove("hidden");
+    }
+    if(star7 == 0){
+        ratedStar7.classList.remove("hidden");
+        ratedStar8.classList.remove("hidden");
+        ratedStar9.classList.remove("hidden");
+    }
+    if(star8 == 0){
+        ratedStar7.classList.remove("hidden");
+        ratedStar8.classList.remove("hidden");
+    }
+    if(star9 == 0){
+        ratedStar7.classList.remove("hidden");
+    }
+    if(star10 == 0){
+        ratedStar10.classList.remove("hidden");
+        ratedStar11.classList.remove("hidden");
+        ratedStar12.classList.remove("hidden");
+    }
+    // if(star11 == 0){
+    //     ratedStar10.classList.remove("hidden");
+    //     ratedStar11.classList.remove("hidden");
+    // }
+    // if(star12 == 0){
+    //     ratedStar10.classList.remove("hidden");
+    // }
 
     fish.onclick = (e) => {
         x = 1;

@@ -32,7 +32,7 @@
 // }
 
 .button {
-    cursor: url("../images/cursor_point_60.cur"), default;
+    cursor: $cursor-point;
     background-color: transparent;
     border: none;
 }

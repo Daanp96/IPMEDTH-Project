@@ -93,7 +93,6 @@ let countHerhaal = 0;
 let countHint = 0;
 let countEnd = 0;
 let tekst = '';
-let isHint;
 let speakOnStorage;
 
 setInterval(() => {
@@ -305,6 +304,7 @@ startOKBtn.onclick = () => {
     }
     bovenaan.onended = () => {
         mouthMoveHead.style.display = "none";
+        console.log("none");
         hintBubbleBtn.style.display = "flex";
         herhaalHint.style.display = "block";
     }
@@ -405,6 +405,10 @@ endBtn.onclick = () => {
     }
 };
 
+const naarPad = () => {
+    window.location.href =  "./dierentuinpad.html";
+}
+
 // function endTalk(){
 //     countEnd = 0;
 // }
@@ -415,6 +419,7 @@ endSpeechBubbleDierentuin.onclick = () =>{
     mapOverlay.classList.add("hide");
     headZookeeper.classList.add("hide");
     endBubble.classList.add("hide");
+    naarPad();
 };
 
 endSpeechBubbleNatuur.onclick = () =>{
@@ -423,6 +428,7 @@ endSpeechBubbleNatuur.onclick = () =>{
     mapOverlay.classList.add("hide");
     headZookeeper.classList.add("hide");
     endBubble.classList.add("hide");
+    naarPad();
 };
 
 endBubbleBtn.onclick = () => {

@@ -5,6 +5,7 @@ const overlay = document.getElementById("js--overlay");
 const ijsjes = document.getElementsByClassName("ijs_keuze");
 const popup = document.getElementById("js--popup");
 const kassa = document.getElementById("js--kassa");
+const kassaDrop = document.getElementById("js--ijs-keuze-kassa");
 const munten = document.getElementsByClassName("geld");
 
 // const ijsbol1 = document.getElementById("js--bol1");
@@ -42,7 +43,7 @@ const ijsjeKlaar = new Audio("../audio/Tjalle/8-ijsbar/8-ijsjeKlaar.m4a");
 // const slepen = new Audio("../audio/Tjalle/8-ijsbar/6-slepen.m4a");
 // const velden = new Audio("../audio/Tjalle/8-ijsbar/7-velden.m4a");
 // const bedrag = new Audio("../audio/Tjalle/8-ijsbar/9-bedrag.m4a");
-const kaching = new Audio("../audio/ijsbar/kassa_fix.mp3");
+const kaching = new Audio("../audio/Tjalle/8-ijsbar/kassa_fix.mp3");
 
 const hint1 = new Audio("../audio/Tjalle/8-ijsbar/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/8-ijsbar/hint-2.m4a");
@@ -55,7 +56,6 @@ let tekst = '';
 goedemiddag.play();
 goedemiddag.onended = () => {
     herhaalIntro.style.display = "block";
-
 }
 hintBtn.disabled = true;
 
@@ -131,9 +131,8 @@ ijsbalie.onclick = () => {
     ijsbalie.classList.remove("scale-small");
     bolletjes.play();
     bolletjes.onended = () => {
-    herhaalIjs.style.display = "block";
-
-}
+        herhaalIjs.style.display = "block";
+    }
 
     if(countHint == 0){
         hintGlow(60000, hintBtnGlow);
@@ -165,7 +164,7 @@ ijsbalie.onclick = () => {
             bol_img.style.left = `${e.clientX - e.offsetX - 25}px`;
             // speechBubble.innerHTML = "Sleep jouw bolletje naar de ijshoorn toe.";
             popup.append(bol_img);
-            dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble, ijsjeKlaar, herhaalIjs);
+            dragDropIjs(bol_img, kassa, ijsbol2, ijsbol3, ijsjes, speechBubble, ijsjeKlaar, herhaalIjs, kassaDrop);
         }
     }
 }
