@@ -53,3 +53,9 @@
         visibility: hidden;
     }
 }
+
+@media (max-width: 1300px) {
+    .button-options-big__hint{
+        grid-column: 13 / span 1;
+    }
+}
