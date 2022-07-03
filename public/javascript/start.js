@@ -5,7 +5,7 @@ const startBtn = document.getElementById("js--start-btn");
 let intro = new Audio("../audio/Tjalle/1-intro/1-welkom.m4a");
 let bezoeker = new Audio("../audio/Tjalle/1-intro/2-bezoekerHelpen.m4a");
 let uitleggen = new Audio("../audio/Tjalle/1-intro/3-uitleg.m4a");
-let hint = new Audio("../audio/Tjalle/1-intro/4-hints.m4a");
+let hint = new Audio("../audio/Tjalle/1-intro/4-tips.m4a");
 let stem = new Audio("../audio/Tjalle/1-intro/5-stem.m4a");
 let herhaal = new Audio("../audio/Tjalle/1-intro/6-herhaal.m4a");
 let binnen = new Audio("../audio/Tjalle/1-intro/7-binnen.m4a");
@@ -114,7 +114,7 @@ startOKBtn.onclick = () => {
             break;
         case 2: 
             startExplaineBtn.classList.remove("hide");
-            tekst = 'Het lampje geeft hints. Klik hier op als je vastloopt.';
+            tekst = 'Het lampje geeft een tip. Klik hier op als je vastloopt.';
             image = '../images/buttons/hint-btn.png';
             hint.play();
             hint.onplaying = () => {
