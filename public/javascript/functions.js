@@ -55,7 +55,7 @@ const hintGlow = (tijd, hint) => {
   }, tijd);
 }
 
-const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal) => {
+const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -66,7 +66,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal) => {
     obj.style.position = 'absolute';
     obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -104,7 +104,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal) => {
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr = currentDroppable.getAttribute('data-piece');
@@ -119,13 +119,15 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal) => {
         if(layedPieces == 16){
           zookpr.src = "../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
           zookpr.style.visibility = "visible";
-          zookpr.style.zIndex = "1";
+          zookpr.style.zIndex = "2";
           zookpr.style.gridColumnStart = "7 / span 3;";
           btn.style.zIndex = "2";
           speech.style.gridColumn = "3 / span 1";
           speech.style.visibility = "visible";
-          speech.style.zIndex = "1";
+          speech.style.zIndex = "2";
           speechP.innerHTML = "Dat ziet er veel beter uit! Laten we de kaart maar meteen gebruiken!";
+          speechButton.style.display = "none";
+          mapOverlay.style.zIndex = '1';
           kaartHeel.play();
           kaartHeel.onplaying = () => {
             mouthMove.style.display = "block";
@@ -166,7 +168,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
     obj.style.position = 'absolute';
     obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -203,7 +205,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
 
     document.onmouseup = function() {
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
       
       const attr = currentDroppable.getAttribute('data-pinguin');
@@ -263,7 +265,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
   };
 }
 
-const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal) => {
+const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kassaDrop) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -273,9 +275,8 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal) => 
 
     obj.style.position = 'absolute';
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
-
     moveAt(event.pageX, event.pageY);
 
     function moveAt(pageX, pageY) {
@@ -311,7 +312,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal) => 
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr = currentDroppable.getAttribute('data-bol');
@@ -336,6 +337,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal) => 
           audio.onended = () => {
             herhaal.style.display = "block";
           }
+          kassaDrop.classList.add("geld-droppable");
           kassa.style.display = "block";
           kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
           kassa.parentNode.dataset.geld1 = "1";
@@ -377,7 +379,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
 
     obj.style.position = 'absolute';
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -415,11 +417,15 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr1 = currentDroppable.getAttribute('data-geld1');
       const attr2 = currentDroppable.getAttribute('data-geld2');
+
+      if (ijsPrijs == 1) {
+        obj.removeAttribute('data-geld2');
+      }
 
       if(attr1 == obj.getAttribute('data-geld1')) {
         kaching.volume = 0.2;
@@ -478,7 +484,7 @@ const dragDropGiraffe = (object, endBtn) => {
     
     // object.style.position = 'absolute'; //in css al meegegeven
     object.style.zIndex = 10;
-    object.style.cursor = "url('../images/cursor_grabbing_60.cur'), default";
+    object.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
     // object.style.top = '100px';
     document.body.append(object);
          
@@ -502,7 +508,7 @@ const dragDropGiraffe = (object, endBtn) => {
     // drop the object, remove unneeded handlers
     document.onmouseup = () => {
       document.removeEventListener('mousemove', onMouseMove);
-      object.style.cursor = "url('../images/cursor_grab_60.cur'), default";
+      object.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
       object.onmouseup = null;
 
       const el = object.getAttribute("data-elements");

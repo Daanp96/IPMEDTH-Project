@@ -329,16 +329,10 @@ if(document.URL.includes("savanne.html")){
 
 if(document.URL.includes("giraffeverblijf.html")){
     endSpeechBubbleDierentuin.addEventListener("click", function(e){
-
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesGiraffeverblijf = seconds;
     
         try {
-            localStorage.setItem("aantalSecondesGiraffeverblijf", aantalSecondesGiraffeverblijf);
             localStorage.setItem('star10', 0);
+
         } catch (error) {
             console.log(error);
         }
@@ -350,14 +344,7 @@ if(document.URL.includes("giraffeverblijf.html")){
 
     endSpeechBubbleNatuur.addEventListener("click", function(e){
 
-        endTime = new Date();
-        var timeDiff = endTime - startTime; //ms
-        timeDiff /= 1000;
-        let seconds = Math.round(timeDiff);
-        aantalSecondesGiraffeverblijf = seconds;
-    
         try {
-            localStorage.setItem("aantalSecondesGiraffeverblijf", aantalSecondesGiraffeverblijf);
             localStorage.setItem('star10', 0);
         } catch (error) {
             console.log(error);
