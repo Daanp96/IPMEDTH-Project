@@ -77,3 +77,19 @@
         display: none;       
     }
 }
+
+@media (max-width: 1300px){
+    .speech-bubble-reload {
+        right: -6vw;
+    }
+}
+@media (max-width: 1100px){
+    .speech-bubble-reload {
+        right: -7vw;
+    }
+}
+@media (min-width: 1600px){
+    .speech-bubble-reload {
+        right: -4vw;
+    }
+}
