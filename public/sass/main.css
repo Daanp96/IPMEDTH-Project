@@ -2124,7 +2124,7 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 1;
 }
 .ijswinkel__head--image {
-  width: 100%;
+  width: 140px;
   height: 100%;
 }
 .ijswinkel__speech-bubble-hint {
@@ -2212,33 +2212,33 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 60px;
 }
 .ijswinkel-popup__drop-1 {
-  grid-column: 7/span 3;
+  grid-column: 8/span 3;
   grid-row: 3/span 3;
 }
 .ijswinkel-popup__drop-1--image {
   width: 190px;
   display: block;
-  margin: 70px 0 0 60px;
+  margin: 40px 0 0 0;
   opacity: 50%;
 }
 .ijswinkel-popup__drop-2 {
-  grid-column: 7/span 3;
+  grid-column: 8/span 3;
   grid-row: 1/span 3;
 }
 .ijswinkel-popup__drop-2--image {
   width: 190px;
   display: none;
-  margin: 135px 0 0 60px;
+  margin: 75px 0 0 0;
   opacity: 50%;
 }
 .ijswinkel-popup__drop-3 {
-  grid-column: 7/span 3;
+  grid-column: 8/span 3;
   grid-row: 1/span 3;
 }
 .ijswinkel-popup__drop-3--image {
   width: 190px;
   display: none;
-  margin: 60px 0 0 60px;
+  margin: 25px 0 0 0;
   opacity: 50%;
 }
 .ijswinkel-popup__kassa {
@@ -2322,6 +2322,78 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
 }
 
+@media screen and (max-width: 1200px) {
+  .geld {
+    width: 75px;
+  }
+
+  .ijswinkel__ijshoorn {
+    width: 150px;
+  }
+  .ijswinkel_drop {
+    width: 155px;
+  }
+  .ijswinkel-popup__drop-1--image {
+    margin: 50px 0 0 0;
+  }
+  .ijswinkel-popup__drop-2--image {
+    margin: 85px 0 0 0;
+  }
+  .ijswinkel-popup__drop-3--image {
+    margin: 35px 0 0 0;
+  }
+  .ijswinkel-popup__geld-6 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .ijswinkel-popup__kassa {
+    grid-column: 1/span 5;
+    grid-row: 5/span 5;
+  }
+  .ijswinkel-popup__ijshoorn {
+    grid-column: 7/span 2;
+  }
+  .ijswinkel-popup__drop-1 {
+    grid-column: 7/span 3;
+  }
+  .ijswinkel-popup__drop-2 {
+    grid-column: 7/span 3;
+  }
+  .ijswinkel-popup__drop-3 {
+    grid-column: 7/span 3;
+  }
+  .ijswinkel__balie {
+    grid-row: 6/span 5;
+  }
+  .ijswinkel__verkoper {
+    grid-row: 5/span 5;
+  }
+  .ijswinkel-popup__bol {
+    width: 155px;
+  }
+  .ijswinkel__speech-bubble-begin {
+    grid-column: 8/span 4;
+    grid-row: 3/span 2;
+  }
+  .ijswinkel__speech-bubble-begin::before {
+    left: 19rem;
+  }
+  .ijswinkel__head {
+    grid-column: 5/span 2;
+  }
+
+  .grid-3-1 {
+    -moz-column-gap: 35px;
+         column-gap: 35px;
+  }
+
+  .speech-bubble {
+    width: 25rem;
+  }
+  .speech-bubble-reload--ijs {
+    right: -8vw;
+  }
+}
 .map {
   background-color: #F0EAD2;
 }

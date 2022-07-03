@@ -80,7 +80,8 @@
         transition: 0.5s all;
         z-index: 1;
         &--image {
-            width: 100%;
+            // width: 100%;
+            width: 140px;
             height: 100%;
         }
     }
@@ -173,35 +174,35 @@
             margin-top: 60px;
         }
         &__drop-1 {
-            grid-column: 7 / span 3;
+            grid-column: 8 / span 3;
             grid-row: 3 / span 3;
 
             &--image {
                 width: 190px;
                 display: block;
-                margin: 70px 0 0 60px;
+                margin: 40px 0 0 0;
                 opacity: 50%;
             }
         }
         &__drop-2 {
-            grid-column: 7 / span 3;
+            grid-column: 8 / span 3;
             grid-row: 1 / span 3;
 
             &--image {
                 width: 190px;
                 display: none;
-                margin: 135px 0 0 60px;
+                margin: 75px 0 0 0;
                 opacity: 50%;
             }
         }
         &__drop-3 {
-            grid-column: 7 / span 3;
+            grid-column: 8 / span 3;
             grid-row: 1 / span 3;
 
             &--image {
                 width: 190px;
                 display: none;
-                margin: 60px 0 0 60px;
+                margin: 25px 0 0 0;
                 opacity: 50%;
             }
         }
@@ -293,4 +294,79 @@
 
 .relative {
     position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+    .geld {
+        width: 75px;
+    }
+    .ijswinkel {
+        &__ijshoorn {
+            width: 150px;            
+        }
+        &_drop{
+            width: 155px;
+        }
+        &-popup{
+            &__drop {
+                &-1--image{
+                    margin: 50px 0 0 0;
+                }
+                &-2--image{
+                    margin: 85px 0 0 0;
+                }
+                &-3--image{
+                    margin: 35px 0 0 0;
+                }
+            }
+            &__geld-6{
+                grid-column: 1;
+                grid-row: 3;
+            }
+            &__kassa{
+                grid-column: 1 / span 5;
+                grid-row: 5 / span 5;
+            }
+            &__ijshoorn{
+                grid-column: 7 / span 2;
+            }
+            &__drop-1{
+                grid-column: 7 / span 3;
+            }
+            &__drop-2{
+                grid-column: 7 / span 3;
+            }
+            &__drop-3{
+                grid-column: 7 / span 3;
+            }
+        }
+        &__balie{
+            grid-row: 6 / span 5;
+        }
+        &__verkoper {
+            grid-row: 5 / span 5;
+        }
+        &-popup__bol{
+            width: 155px;
+        }
+        &__speech-bubble-begin{
+            grid-column: 8 / span 4;
+            grid-row: 3 / span 2;
+            &::before{
+                left: 19rem;
+            }
+        }
+        &__head{
+            grid-column: 5 / span 2;
+        }
+    }
+    .grid-3-1{
+        column-gap: 35px;
+    }
+    .speech-bubble{
+        width: 25rem;
+        &-reload--ijs{
+            right: -8vw;
+        }
+    }
 }
