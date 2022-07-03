@@ -335,7 +335,7 @@ html, body {
 }
 
 body {
-  cursor: url("../images/cursor_plain_60.cur"), default;
+  cursor: url("../images/cursor/cursor_plain_60.cur"), default;
   overflow: hidden;
 }
 
@@ -422,7 +422,7 @@ img {
 }
 
 .drag {
-  cursor: url("../images/cursor_grab_60.cur"), default;
+  cursor: url("../images/cursor/cursor_grab_60.cur"), default;
 }
 
 .hidden {
@@ -430,7 +430,7 @@ img {
 }
 
 .button {
-  cursor: url("../images/cursor_point_60.cur"), default;
+  cursor: url("../images/cursor/cursor_point_60.cur"), default;
   background-color: transparent;
   border: none;
 }
@@ -1029,7 +1029,7 @@ input[type=number]::-webkit-outer-spin-button {
   left: 0;
   bottom: 0;
   top: 0;
-  cursor: url("../../images/cursor_point_60.cur"), default;
+  cursor: url("../images/cursor/cursor_point_60.cur"), default;
   background-color: transparent;
   border: none;
 }
@@ -1117,7 +1117,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .star {
   position: absolute;
-  background-image: url("../images/ratedStar.png");
+  background-image: url("../images/dierentuinpad/ratedStar.png");
   width: 100%;
   height: 100%;
   bottom: 0.3rem;
@@ -1433,7 +1433,7 @@ input[type=number]::-webkit-outer-spin-button {
 .begin--background {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../images/start-background.png);
+  background-image: url(../images/voorkant-dierentuin/start-background.png);
 }
 .begin__figure {
   grid-column: 7/span 2;
@@ -1447,7 +1447,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .begin__speech-bubble {
   align-self: end;
-  grid-column: 8/span 4;
+  grid-column: 9/span 4;
   grid-row: 4/span 1;
   align-self: end;
 }
@@ -1630,7 +1630,7 @@ input[type=number]::-webkit-outer-spin-button {
 .einde--background {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../images/start-background.png);
+  background-image: url(../images/voorkant-dierentuin/start-background.png);
 }
 .einde-figure {
   grid-column: 8/span 2;
@@ -1691,7 +1691,7 @@ input[type=number]::-webkit-outer-spin-button {
 .article-intro {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../images/Photoshop-transparant/leeg-hok.png);
+  background-image: url(../images/giraffeverblijf/leeg-hok.png);
 }
 
 .article-enclosure {
@@ -1975,7 +1975,7 @@ input[type=number]::-webkit-outer-spin-button {
 .enclosure-field {
   grid-column: 4/span 13;
   grid-row: 2/span 7;
-  background-image: url(../images/Photoshop-transparant/leeg-hok.png);
+  background-image: url(../images/giraffeverblijf/leeg-hok.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -2001,14 +2001,14 @@ input[type=number]::-webkit-outer-spin-button {
 .enclosure-form--input[type=checkbox] {
   transform: scale(2.5);
   vertical-align: super;
-  cursor: url("../images/cursor_plain_60.cur"), default;
+  cursor: url("../images/cursor/cursor_plain_60.cur"), default;
   overflow: hidden;
 }
 .enclosure-form--label {
   font-size: 3.5rem;
   margin-left: 2rem;
   margin-right: 2.5rem;
-  cursor: url("../images/cursor_plain_60.cur"), default;
+  cursor: url("../images/cursor/cursor_plain_60.cur"), default;
   overflow: hidden;
 }
 
@@ -2750,7 +2750,7 @@ input[type=number]::-webkit-outer-spin-button {
 .savanne--background {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../images/Photoshop-transparant/Savanne-3.png);
+  background-image: url(../images/savanne/Savanne-3.png);
 }
 .savanne__tree-1 {
   grid-column: 11/span 16;
@@ -2872,7 +2872,7 @@ input[type=number]::-webkit-outer-spin-button {
 .savanne--background {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../images/Photoshop-transparant/Savanne-3.png);
+  background-image: url(../images/savanne/Savanne-3.png);
 }
 .savanne-tree-1 {
   grid-column: 11/span 16;
@@ -2981,7 +2981,7 @@ input[type=number]::-webkit-outer-spin-button {
 .start--background {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../images/start-background.png);
+  background-image: url(../images/voorkant-dierentuin/start-background.png);
 }
 .start__figure {
   grid-column: 9/span 2;
