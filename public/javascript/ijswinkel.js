@@ -43,7 +43,7 @@ const ijsjeKlaar = new Audio("../audio/Tjalle/8-ijsbar/8-ijsjeKlaar.m4a");
 // const slepen = new Audio("../audio/Tjalle/8-ijsbar/6-slepen.m4a");
 // const velden = new Audio("../audio/Tjalle/8-ijsbar/7-velden.m4a");
 // const bedrag = new Audio("../audio/Tjalle/8-ijsbar/9-bedrag.m4a");
-const kaching = new Audio("../audio/ijsbar/kassa_fix.mp3");
+const kaching = new Audio("../audio/8-ijsbar/kassa_fix.mp3");
 
 const hint1 = new Audio("../audio/Tjalle/8-ijsbar/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/8-ijsbar/hint-2.m4a");
