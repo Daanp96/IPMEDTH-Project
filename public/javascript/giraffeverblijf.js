@@ -214,7 +214,6 @@ hintBubbleBtn.onclick = () => {
 
 hintBtn.onclick = () => {
     console.log(countHint);
-    isHint = true;
     switch (countHint) {
         case 0: 
             hintBtnGlow.classList.remove("glow");
@@ -239,7 +238,6 @@ hintBtn.onclick = () => {
                 headZookeeper.classList.add("hide");
                 hintBubble.classList.add("hide");
                 hintBubbleBtn.style.display = "none";
-                isHint = false;
                 countHint++;
                 countHerhaal++;
             }
@@ -265,7 +263,6 @@ hintBtn.onclick = () => {
                 headZookeeper.classList.add("hide");
                 hintBubble.classList.add("hide");
                 hintBubbleBtn.style.display = "none";
-                isHint = false;
                 countHint++;
                 countHerhaal++;
             }
