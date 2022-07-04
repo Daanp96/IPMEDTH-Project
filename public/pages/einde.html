@@ -45,12 +45,16 @@
             </div>
 
             <div class="hide-overlay overlay-end" id="js--end-overlay"></div>
+            <span id="js--einde_tekst" class="einde__tekst">Wil je het spel opnieuw spelen?</span>
             <figure class="diploma" id="js--diploma">
                 <img class="diploma--image" src="../images/voorkant-dierentuin/Diploma.png" alt="diploma">
-                <input class="diploma--input" type="text" placeholder="naam" id="js--diploma-input">
+                <input class="diploma--input" type="text" placeholder="naam" id="js--diploma-input" autocomplete="off">
                 <button class="btn-ok-small diploma--button" id="js--diploma-button">Printen</button>
             </figure>
-
+            <section id="js--keuzes" class="einde__keuzes">
+                <button id="js--opnieuw" class="einde__keuzes--btn opnieuw btn-ok-small button">Opnieuw</button>
+                <button id="js--afsluiten" class="einde__keuzes--btn afsluiten btn-ok-small button">Afsluiten</button>
+            </section>
         </section>
     </main>
 </body>
