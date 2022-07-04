@@ -151,6 +151,76 @@
             grid-row: 2 /span 1;
             transform: rotate(30deg);
         }
+        &-21{
+            height: auto;
+            width: 25rem;
+            grid-column: 12 / span 2;
+            grid-row: 2 /span 1;
+            transform: rotate(30deg);
+        }
+        &-22{
+            height: auto;
+            width: 25rem;
+            grid-column: 12 / span 2;
+            grid-row: 3 /span 1;
+            transform: rotate(-20deg);
+        }
+        &-23{
+            height: auto;
+            width: 25rem;
+            grid-column: 12 / span 2;
+            grid-row: 5 /span 1;
+            transform: rotate(15deg);
+        }
+        &-24{
+            height: auto;
+            width: 25rem;
+            grid-column: 14 / span 2;
+            grid-row: 2 /span 1;
+            transform: rotate(-30deg);
+    
+        }
+        &-25{
+            height: auto;
+            width: 25rem;
+            grid-column: 14 / span 2;
+            grid-row: 4 /span 1;
+            transform: rotate(-30deg);
+    
+        }
+        &-26{
+            height: auto;
+            width: 25rem;
+            grid-column: 14 / span 2;
+            grid-row: 5 /span 1;
+            transform: rotate(40deg);
+        }
+    
+        &-27{
+            height: auto;
+            width: 25rem;
+            grid-column: 14 / span 2;
+            grid-row: 7 /span 1;
+            transform: rotate(-5deg);
+    
+        }
+    
+        &-28{
+            height: auto;
+            width: 25rem;
+            grid-column: 12 / span 2;
+            grid-row: 7 /span 1;
+            transform: rotate(-5deg);
+    
+        }
+    
+        &-29{
+            height: auto;
+            width: 25rem;
+            grid-column: 14 / span 2;
+            grid-row: 6 /span 1;
+            transform: rotate(30deg);
+        }
 
 
     }

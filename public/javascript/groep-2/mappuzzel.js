@@ -1,4 +1,4 @@
-import {dragDropMap, hintGlow, reloadSpeech, reloadHint} from "./functions.js";
+import {dragDropMap2, hintGlow, reloadSpeech, reloadHint} from "./functions2.js";
 
 const slides = document.getElementsByClassName("drag");
 
@@ -19,10 +19,10 @@ const mouthMove = document.getElementById("js--mouth");
 const zookeeper = document.getElementById("js--map_zookeeper");
 const mapOverlay = document.getElementById("js--map-overlay");
 
-// const mapUitleg = new Audio("../audio/3-Mappuzzel/1-kaartInElkaar.mp3");
-const mapUitleg = new Audio("../audio/Tjalle/3-mappuzzel/1-kaartInElkaar.m4a");
-const hint = new Audio("../audio/Tjalle/3-mappuzzel/hint-1.m4a");
-const kaartHeel = new Audio("../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
+// const mapUitleg = new Audio("../../audio/3-Mappuzzel/1-kaartInElkaar.mp3");
+const mapUitleg = new Audio("../../audio/Tjalle/3-mappuzzel/1-kaartInElkaar.m4a");
+const hint = new Audio("../../audio/Tjalle/3-mappuzzel/hint-1.m4a");
+const kaartHeel = new Audio("../../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
 
 hintBtn.disabled = true;
 
@@ -53,7 +53,7 @@ herhaal.onclick = () => {
 }
 
 for (let slide of slides) {
-    dragDropMap(slide, button, zookeeper, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay, hintBtn);
+    dragDropMap2(slide, button, zookeeper, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay, hintBtn);
 }
 
 setInterval(() => {

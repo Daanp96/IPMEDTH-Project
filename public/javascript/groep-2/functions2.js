@@ -55,7 +55,7 @@ const hintGlow = (tijd, hint) => {
   }, tijd);
 }
 
-const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay, hintBtn) => {
+const dragDropMap2 = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay, hintBtn) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -116,9 +116,9 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spee
         currentDroppable.removeAttribute('data-piece');
         layedPieces++;
 
-        if(layedPieces == 16){
-          hintBtn,disabled = true;
-          zookpr.src = "../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
+        if(layedPieces == 9){
+          hintBtn.disabled = true;
+          zookpr.src = "../../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "2";
           zookpr.style.gridColumnStart = "7 / span 3;";
@@ -554,7 +554,7 @@ export {
   reloadSpeech,
   reloadHint,
   hintGlow, 
-  dragDropMap, 
+  dragDropMap2, 
   dragDropArctic, 
   dragDropIjs, 
   dragDropGeld, 
