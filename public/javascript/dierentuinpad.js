@@ -167,7 +167,7 @@ if(document.URL.includes("dierentuinpad.html") ){
                 if (max1300.matches) {
                     elephant.style.gridColumn = "8 / span 6";
                 }
-                if (max1100.matches) {
+                if (max1200.matches) {
                     elephant.style.gridColumn = "9/ span 6";
                 }
             }
@@ -179,6 +179,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
 
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
@@ -203,8 +205,12 @@ if(document.URL.includes("dierentuinpad.html") ){
             elephant.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
-            // ijswinkel.style.display = "block";
-            // // vissen.remove();
+            
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
+            dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
+            dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
+
             dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
             ijsje.play();
             ijsje.onplaying = () => {
@@ -229,6 +235,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             ijswinkel.classList.remove("dierentuinpad__element");
             ijswinkel.classList.remove("button");
 
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble3");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper3");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble4");
@@ -259,6 +267,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             giraffe.classList.remove("button");
             eindeButton.classList.remove("hide-important");
 
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
             dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
             // vissen.remove();
