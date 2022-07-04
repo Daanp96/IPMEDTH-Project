@@ -49,6 +49,8 @@ const speechHerhaal = document.getElementById("js--speech-reload-path");
 const audioHerhaal = [vissen, savanne, pinguins, ijsje, verblijf, uitgang];
 
 const max1400 = window.matchMedia("(max-width: 1400px)");
+const max1300 = window.matchMedia("(max-width: 1300px)");
+const max1100 = window.matchMedia("(max-width: 1100px)");
 
 let countHerhaal = 0;
 
@@ -162,6 +164,12 @@ if(document.URL.includes("dierentuinpad.html") ){
                 elephant.classList.add("dierentuinpad__element");
                 elephant.classList.add("button");
                 speechHerhaal.style.display = "block";
+                if (max1300.matches) {
+                    elephant.style.gridColumn = "8 / span 6";
+                }
+                if (max1100.matches) {
+                    elephant.style.gridColumn = "9/ span 6";
+                }
             }
             break;
 
