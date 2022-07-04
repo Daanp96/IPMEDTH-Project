@@ -44,10 +44,6 @@
 }
 
 @media (max-width: 1300px) {
-    .button-options-small__hint{
-        grid-column: 1 / span 1;
-    }
-
     .start{
                 &__figure{
                     grid-column: 8 / span 2;
