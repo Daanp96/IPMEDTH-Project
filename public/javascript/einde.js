@@ -3,11 +3,13 @@ const bedankt = new Audio("../audio/Tjalle/10-uitgang/1-bedankt.m4a");
 const overlay = document.getElementById("js--end-overlay");
 const diploma = document.getElementById("js--diploma");
 const diplomaInput = document.getElementById("js--diploma-input");
-const diplomaBtn = document.getElementById("js--diploma-button")
+const diplomaBtn = document.getElementById("js--diploma-button");
+const eindeTekst = document.getElementById("js--einde_tekst");
 // const overlayTitle = document.getElementById("js--overlay-title");
 
-// const againBtn = document.getElementById("js--btn-again");
-// const stopBtn = document.getElementById("js--btn-stop");
+const keuzes = document.getElementById("js--keuzes");
+const opnieuw = document.getElementById("js--opnieuw");
+const afsluiten = document.getElementById("js--afsluiten");
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -50,9 +52,13 @@ diplomaBtn.onclick = () => {
 
 window.onafterprint = (e) =>{
     console.log("terug");
+    diploma.style.display = "none";
+    opnieuw.style.display = "inline";
+    afsluiten.style.display = "inline";
+    eindeTekst.style.display = "block";
     window.localStorage.clear();
-    window.location = "../index.html";
     e.preventDefault();
+
     
     // window.close();
     // return false;
@@ -66,23 +72,23 @@ bedankt.onplaying = () => {
 bedankt.onended = () => {
     mouthMove.style.display = "none";
     overlay.style.opacity = "1";
-    diploma.style.opacity = "1"
+    diploma.style.opacity = "1";
     diplomaBtn.classList.add("button");
     diplomaInput.classList.add("button");
 }
 
-// againBtn.onclick = () => {
-//     toStart();
-// }
+opnieuw.onclick = () => {
+    toStart();
+}
 
-// stopBtn.onclick = () => {
-//     closeWindow();
-// }
+afsluiten.onclick = () => {
+    closeWindow();
+}
 
-// const toStart = () => {
-//     window.location = "/";
-// }
+const toStart = () => {
+    window.location = "/";
+}
 
-// const closeWindow = () => {
-//     window.open("https://www.lessonup.com/nl/channel/futurenl/series/509ed9706731b2ae88e13ca2", '_self');
-// }
+const closeWindow = () => {
+    window.open("https://www.lessonup.com/nl/channel/futurenl/series/509ed9706731b2ae88e13ca2", '_self');
+}
