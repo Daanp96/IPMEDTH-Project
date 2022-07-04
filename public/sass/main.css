@@ -610,7 +610,7 @@ img {
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
   margin-top: 1rem;
   width: 15rem;
-  height: 5rem;
+  height: 100%;
   font-size: 3rem;
 }
 .btn-ok-giraffeverblijf::before {
@@ -2049,6 +2049,13 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 7/span 2;
   display: none;
   z-index: 50;
+}
+
+.giraffeverblijf__keuze--dierentuin {
+  width: 75%;
+}
+.giraffeverblijf__keuze--natuur {
+  width: 60%;
 }
 
 .ijswinkel--background {

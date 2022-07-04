@@ -319,3 +319,12 @@
     z-index: 50;
 }
 
+.giraffeverblijf__keuze {
+    &--dierentuin {
+        width: 75%;
+    }
+    &--natuur {
+        width: 60%;
+    }
+}
+
