@@ -11,10 +11,10 @@ let countHint = 0;
 let tekst = '';
 let image = '';
 
-const hint1 = new Audio("../audio/6-aap/hint-1.mp3");
-const hint2 = new Audio("../audio/6-aap/hint-2.mp3");
-const hint3 = new Audio("../audio/6-aap/hint-3.mp3");
-const hint4 = new Audio("../audio/6-aap/hint-4.mp3");
+// const hint1 = new Audio("../audio/6-aap/hint-1.mp3");
+// const hint2 = new Audio("../audio/6-aap/hint-2.mp3");
+// const hint3 = new Audio("../audio/6-aap/hint-3.mp3");
+// const hint4 = new Audio("../audio/6-aap/hint-4.mp3");
 
 startOKBtn.onclick = () => {
     speechBubble.style.visibility = "hidden";

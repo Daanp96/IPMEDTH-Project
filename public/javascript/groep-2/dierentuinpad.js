@@ -50,7 +50,7 @@ const audioHerhaal = [vissen, savanne, pinguins, ijsje, verblijf, uitgang];
 
 const max1400 = window.matchMedia("(max-width: 1400px)");
 const max1300 = window.matchMedia("(max-width: 1300px)");
-const max1100 = window.matchMedia("(max-width: 1100px)");
+const max1200 = window.matchMedia("(max-width: 1200px)");
 
 let countHerhaal = 0;
 

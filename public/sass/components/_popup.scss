@@ -141,7 +141,7 @@
     }
 
     &__container-monkey{
-        background-image: url(../images/sign-monkey-popup.png);
+        background-image: url(../images/savanne2/sign-monkey-popup.png);
         @include background-popup;
         height: 67vh;
         display: grid;
@@ -171,7 +171,7 @@
             height: auto;
         }
         &--form{
-            grid-column: 3 / span 2;
+            grid-column: 4 / span 2;
             grid-row: 3 /span 2;
         }
         &--button{

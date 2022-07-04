@@ -1141,7 +1141,7 @@ img {
 }
 
 .popup__container-monkey {
-  background-image: url(../images/sign-monkey-popup.png);
+  background-image: url(../images/savanne2/sign-monkey-popup.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1191,9 +1191,9 @@ img {
 }
 
 .popup__container-monkey--form {
-  -ms-grid-column: 3;
+  -ms-grid-column: 4;
   -ms-grid-column-span: 2;
-  grid-column: 3 / span 2;
+  grid-column: 4 / span 2;
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   grid-row: 3 /span 2;
@@ -4542,6 +4542,123 @@ input[type=number]::-webkit-outer-spin-button {
           transform: rotate(30deg);
 }
 
+.mappuzzel--slide-21 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 2;
+  grid-column: 12 / span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 /span 1;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.mappuzzel--slide-22 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 2;
+  grid-column: 12 / span 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 /span 1;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
+
+.mappuzzel--slide-23 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 2;
+  grid-column: 12 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5 /span 1;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
+.mappuzzel--slide-24 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 /span 1;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.mappuzzel--slide-25 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 /span 1;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.mappuzzel--slide-26 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5 /span 1;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.mappuzzel--slide-27 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+.mappuzzel--slide-28 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 2;
+  grid-column: 12 / span 2;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 /span 1;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+.mappuzzel--slide-29 {
+  height: auto;
+  width: 25rem;
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  grid-row: 6 /span 1;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
 .mappuzzel__zookeeper {
   -ms-grid-column: 7;
   -ms-grid-column-span: 3;
@@ -5128,13 +5245,13 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-.savanne--background {
+.savanne2--background {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(../images/savanne/Savanne-3.png);
 }
 
-.savanne-tree-1 {
+.savanne2__tree-1 {
   -ms-grid-column: 11;
   -ms-grid-column-span: 16;
   grid-column: 11/ span 16;
@@ -5143,7 +5260,14 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 1/ span 1;
 }
 
-.savanne-tree-2 {
+.savanne2__tree-1--image-1 {
+  width: 40vw;
+  height: auto;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.savanne2__tree-2 {
   -ms-grid-column: 3;
   -ms-grid-column-span: 16;
   grid-column: 3/ span 16;
@@ -5152,7 +5276,14 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 1/ span 1;
 }
 
-.savanne-tree-3 {
+.savanne2__tree-2--image-2 {
+  width: 25vw;
+  height: auto;
+  -webkit-transform: scaleX(-1) rotate(-15deg);
+          transform: scaleX(-1) rotate(-15deg);
+}
+
+.savanne2__tree-3 {
   -ms-grid-column: 8;
   -ms-grid-column-span: 16;
   grid-column: 8/ span 16;
@@ -5161,28 +5292,14 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 1/ span 1;
 }
 
-.savanne-tree--image-1 {
-  width: 40vw;
-  height: auto;
-  -webkit-transform: rotate(-10deg);
-          transform: rotate(-10deg);
-}
-
-.savanne-tree--image-2 {
-  width: 25vw;
-  height: auto;
-  -webkit-transform: scaleX(-1) rotate(-15deg);
-          transform: scaleX(-1) rotate(-15deg);
-}
-
-.savanne-tree--image-3 {
+.savanne2__tree-3--image-3 {
   width: 25vw;
   height: auto;
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
 
-.savanne-animal-1 {
+.savanne2__animal-1 {
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-column: 2/ span 3;
@@ -5191,7 +5308,14 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 2/ span 2;
 }
 
-.savanne-animal-2 {
+.savanne2__animal-1--image-1 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.savanne2__animal-2 {
   -ms-grid-column: 6;
   -ms-grid-column-span: 2;
   grid-column: 6 / span 2;
@@ -5200,7 +5324,14 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 6 /span 2;
 }
 
-.savanne-animal-3 {
+.savanne2__animal-2--image-2 {
+  width: 10vw;
+  height: auto;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.savanne2__animal-3 {
   -ms-grid-column: 10;
   -ms-grid-column-span: 2;
   grid-column: 10 / span 2;
@@ -5209,7 +5340,12 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 3 /span 2;
 }
 
-.savanne-animal-4 {
+.savanne2__animal-3--image-3 {
+  width: 7.5vw;
+  height: auto;
+}
+
+.savanne2__animal-4 {
   -ms-grid-column: 12;
   -ms-grid-column-span: 2;
   grid-column: 12 / span 2;
@@ -5218,7 +5354,12 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 2 /span 2;
 }
 
-.savanne-animal-5 {
+.savanne2__animal-4--image-4 {
+  width: 5vw;
+  height: auto;
+}
+
+.savanne2__animal-5 {
   -ms-grid-column: 14;
   -ms-grid-column-span: 2;
   grid-column: 14 / span 2;
@@ -5228,36 +5369,12 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 2;
 }
 
-.savanne-animal--image-1 {
-  width: 10vw;
-  height: auto;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-.savanne-animal--image-2 {
-  width: 10vw;
-  height: auto;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-.savanne-animal--image-3 {
-  width: 7.5vw;
-  height: auto;
-}
-
-.savanne-animal--image-4 {
+.savanne2__animal-5--image-5 {
   width: 5vw;
   height: auto;
 }
 
-.savanne-animal--image-5 {
-  width: 5vw;
-  height: auto;
-}
-
-.savanne--speech-bubble {
+.savanne2__speech-bubble {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-column: 2 / span 4;
@@ -5267,27 +5384,27 @@ input[type=number]::-webkit-outer-spin-button {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
-  z-index: 2;
+  z-index: 3;
 }
 
-.savanne--figure {
+.savanne2__figure {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
   -ms-grid-row: 5;
   -ms-grid-row-span: 1;
   grid-row: 5 / span 1;
-  z-index: 2;
+  z-index: 3;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-.savanne--image {
+.savanne2__figure--image {
   height: 100%;
   width: 100%;
 }
 
-.savanne--animal-board {
+.savanne2__animal-board {
   -ms-grid-column: 7;
   -ms-grid-column-span: 4;
   grid-column: 7 / span 4;
@@ -5297,18 +5414,18 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 1;
 }
 
-.savanne--animal-board:hover {
+.savanne2__animal-board--image {
+  width: 100%;
+  height: 100%;
+}
+
+.savanne2__animal-board:hover {
   -webkit-transition: -webkit-transform 2s;
   transition: -webkit-transform 2s;
   transition: transform 2s;
   transition: transform 2s, -webkit-transform 2s;
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
-}
-
-.savanne--animal-board-image {
-  width: 100%;
-  height: 100%;
 }
 
 .section-start {

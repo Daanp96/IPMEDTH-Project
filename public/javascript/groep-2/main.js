@@ -14,8 +14,8 @@ const speechBubbleBtn = document.getElementById("js--speech-bubble-btn");
 const formVissenverblijfBtn = document.getElementById("js--vissenverblijf-form-submit");
 const formVissenverblijf = document.getElementById("js--vissenverblijf-form");
 
-// const savanneForm = document.getElementById("js--savanne-form");
-// const formSavanneBtn = document.getElementById("js--form-submitSavanne");
+const savanneForm = document.getElementById("js--savanne-form");
+const formSavanneBtn = document.getElementById("js--form-submitSavanne");
 
 const pinguinverblijfBtn = document.getElementById("js--pinguinverblijf-btn");
 const endSpeechBubbleDierentuin = document.getElementById("js--endBubble-dierentuin");
@@ -195,7 +195,7 @@ if(document.URL.includes("groep-2/pinguinverblijf.html")){
 // const spanTypenBtn = document.getElementById("js--form-submitTypen");
 
 if(document.URL.includes("groep-2/savanne.html")){
-    spanTypenBtn.addEventListener("click", function(e){
+    formSavanneBtn.addEventListener("click", function(e){
         // console.log(spanTypen.innerText);
 
         let form_answer = document.forms["answerForm"]["textInput"].value;
