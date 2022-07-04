@@ -15,6 +15,10 @@ const mapOverlay = document.getElementById("js--map-overlay");
 const herhaal = document.getElementById("js--speech-reload");
 const mouthMove = document.getElementById("js--mouth");
 
+const animalHeads = document.getElementsByClassName("popup__container-savanne--image");
+for(let animal of animalHeads){
+    animal.setAttribute('draggable', false);
+}
 
 const savanneVerblijf = new Audio("../audio/Tjalle/6-savanne/1-savanneverblijf.m4a");
 const verbeteren = new Audio("../audio/Tjalle/6-savanne/2-verbeteren.m4a");

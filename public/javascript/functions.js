@@ -231,7 +231,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         obj.style.visibility = "hidden";
         speechBtn.style.display = "none";
         text.style.visibility = "visible";
-        text.innerHTML = "Goed gedaan! De penguins zijn heel blij.";
+        text.innerHTML = "Goed gedaan! De pinguïns zijn heel blij.";
         goedGedaan.play();
         goedGedaan.onplaying = () => {
           mouthMovePinguin.style.display = "block";
@@ -333,6 +333,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
           bol2.style.display = "block";
 
         } else if(aantalIjs == 3) {
+          herhaal.style.display = "none";
           audio.play();
           audio.onended = () => {
             herhaal.style.display = "block";
@@ -343,6 +344,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
           kassa.parentNode.dataset.geld1 = "1";
           kassa.parentNode.dataset.geld2 = "2";
           speech.innerHTML = "Zo je ijsje is klaar! Je kan het geld naar de kassa toe slepen.";
+          speech.style.fontSize = "14px";
           for(let ijs of ijsjes){
             ijs.onclick = null;
           }
@@ -369,7 +371,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
 }
 
 
-const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
+const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal, hint) => {
   let currentDroppable = null;
 
   obj.onmousedown = function(event) {
@@ -446,6 +448,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
       kassa.innerHTML = `Dat is dan ${ijsPrijs} Euro.`;
 
       if (ijsPrijs == 0) {
+        herhaal.style.display = "none";
         audio.play();
         audio.onended = () => {
           herhaal.style.display = "block";
