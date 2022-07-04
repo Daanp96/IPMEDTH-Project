@@ -94,6 +94,7 @@ let countHint = 0;
 let countEnd = 0;
 let tekst = '';
 let speakOnStorage;
+let isHint = false;
 
 setInterval(() => {
     if (speakOn2.style.visibility == 'hidden') {

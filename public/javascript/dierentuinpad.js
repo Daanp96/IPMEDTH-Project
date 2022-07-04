@@ -1,7 +1,7 @@
 import {reloadSpeech} from "./functions.js";
 
 const fish = document.getElementById("js--fish");
-const monkey = document.getElementById("js--monkey");
+const elephant = document.getElementById("js--elephant");
 const pinguin = document.getElementById("js--pinguin");
 const ijswinkel = document.getElementById("js--ijswinkel");
 const giraffe = document.getElementById("js--giraffe");
@@ -47,6 +47,11 @@ const uitgang = new Audio("../audio/Tjalle/4-dierentuinpad/6-uitgang.m4a");
 
 const speechHerhaal = document.getElementById("js--speech-reload-path");
 const audioHerhaal = [vissen, savanne, pinguins, ijsje, verblijf, uitgang];
+
+const max1400 = window.matchMedia("(max-width: 1400px)");
+const max1300 = window.matchMedia("(max-width: 1300px)");
+const max1100 = window.matchMedia("(max-width: 1100px)");
+
 let countHerhaal = 0;
 
 let star1;
@@ -133,6 +138,9 @@ if(document.URL.includes("dierentuinpad.html") ){
                 fish.classList.add("button");
                 speechHerhaal.style.display = "block";
                 mouthMove.style.display = "none";
+                if (max1400.matches) {
+                    fish.style.gridColumn = "1 / span 8";
+                }
             }
             
             break;
@@ -153,18 +161,26 @@ if(document.URL.includes("dierentuinpad.html") ){
             }
             savanne.onended = () => {
                 mouthMove.style.display = "none";
-                monkey.classList.add("dierentuinpad__element");
-                monkey.classList.add("button");
+                elephant.classList.add("dierentuinpad__element");
+                elephant.classList.add("button");
                 speechHerhaal.style.display = "block";
+                if (max1300.matches) {
+                    elephant.style.gridColumn = "8 / span 6";
+                }
+                if (max1200.matches) {
+                    elephant.style.gridColumn = "9/ span 6";
+                }
             }
             break;
 
         case 2:
-            monkey.classList.remove("dierentuinpad__element");
-            monkey.classList.remove("button");
+            elephant.classList.remove("dierentuinpad__element");
+            elephant.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
 
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble2");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper2");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
@@ -185,12 +201,16 @@ if(document.URL.includes("dierentuinpad.html") ){
             break;
 
         case 3:
-            monkey.classList.remove("dierentuinpad__element");
-            monkey.classList.remove("button");
+            elephant.classList.remove("dierentuinpad__element");
+            elephant.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
-            // ijswinkel.style.display = "block";
-            // // vissen.remove();
+            
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
+            dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
+            dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
+
             dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
             ijsje.play();
             ijsje.onplaying = () => {
@@ -206,8 +226,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             break;
 
         case 4:
-            monkey.classList.remove("dierentuinpad__element");
-            monkey.classList.remove("button");
+            elephant.classList.remove("dierentuinpad__element");
+            elephant.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
             pinguin.classList.remove("dierentuinpad__element");
@@ -215,6 +235,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             ijswinkel.classList.remove("dierentuinpad__element");
             ijswinkel.classList.remove("button");
 
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
             dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble3");
             dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper3");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble4");
@@ -235,8 +257,8 @@ if(document.URL.includes("dierentuinpad.html") ){
 
             break;
         case 5:
-            monkey.classList.remove("dierentuinpad__element");
-            monkey.classList.remove("button");
+            elephant.classList.remove("dierentuinpad__element");
+            elephant.classList.remove("button");
             fish.classList.remove("dierentuinpad__element");
             fish.classList.remove("button");
             pinguin.classList.remove("dierentuinpad__element");
@@ -245,6 +267,8 @@ if(document.URL.includes("dierentuinpad.html") ){
             giraffe.classList.remove("button");
             eindeButton.classList.remove("hide-important");
 
+            dierentuinpadSpeechBubble.classList.remove("dierentuinpad__speech-bubble");
+            dierentuinkeeperZookeeper.classList.remove("dierentuinpad__zookeeper");
             dierentuinpadSpeechBubble.classList.add("dierentuinpad__speech-bubble3");
             dierentuinkeeperZookeeper.classList.add("dierentuinpad__zookeeper3");
             // vissen.remove();
@@ -333,7 +357,7 @@ if(document.URL.includes("dierentuinpad.html") ){
         startVissenPuzzel()
         e.preventDefault();
     }
-    monkey.onclick = (e) => {
+    elephant.onclick = (e) => {
         x = 2;
         // progress = x;
         localStorage.setItem("progress", x);

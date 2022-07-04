@@ -5,8 +5,8 @@
     @include background;
     background-image: url(../images/giraffeverblijf/leeg-hok.png);
 }
-//testen
-// .section-intro{
+// testen
+// #js--article-intro{
 //     display: none;
 // }
 
@@ -256,7 +256,7 @@
 }
 
 .enclosure-form{
-    grid-column: 1 / span 9;
+    grid-column: 1 / span 11;
     grid-row: 1;
     z-index: 50;
     margin-left: 1.5rem;
@@ -319,3 +319,45 @@
     z-index: 50;
 }
 
+@media (max-width: 1400px){
+    .tree{
+        height: 37%;
+    }
+    .rock{
+        height: 17%;
+    }
+    .pond{
+        height: 17%;
+    }
+    .pond-big{
+        height: 32%;
+    }
+}
+@media (max-width: 1200px){
+    .tree{
+        height: 35%;
+    }
+    .rock{
+        height: 15%;
+    }
+    .pond{
+        height: 15%;
+    }
+    .pond-big{
+        height: 30%;
+    }
+}
+@media (min-width: 1700px){
+    .tree{
+        height: 42%;
+    }
+    .rock{
+        height: 22%;
+    }
+    .pond{
+        height: 22%;
+    }
+    .pond-big{
+        height: 37%;
+    }
+}
