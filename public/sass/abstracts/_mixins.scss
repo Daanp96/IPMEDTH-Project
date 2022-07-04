@@ -14,8 +14,14 @@
     background-repeat: no-repeat;
 }
 
-@mixin background-arctic{
+@mixin background-vissenverblijf{
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin background-vissenverblijf-1450{
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
