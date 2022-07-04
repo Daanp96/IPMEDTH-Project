@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../sass/main.css">
+    <link rel="icon" type="image/x-icon" href="../../images/algemeen/zookeeper-face.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="../../javascript/groep-2/pinguinverblijf.js" type="module" defer></script>
+    <script src="../../javascript/groep-2/main.js" type="module" defer></script>
+    <title>Dierentuin</title>
+</head>
+<body>
+    <!-- <iframe src="../audio/7-pinguïn/1-penguïnverblijf.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
+    <main class="pinguinverblijf--background">
+        <section class="button-options-big grid-16-1 walk-path--background">
+            <article class="wall__up-1">
+                <figure>
+                    <img  class="wall__up-1--image" draggable="false" src="../../images/hok_items/wall.png" alt="muur">
+                </figure>
+            </article>
+            <article class="wall__up-2">
+                <figure>
+                    <img  class="wall__up-2--image" draggable="false" src="../../images/hok_items/wall.png" alt="muur">
+                </figure>
+            </article>
+            <article class="wall__up-3">
+                <figure>
+                    <img  class="wall__up-3--image" draggable="false" src="../../images/hok_items/wall.png" alt="muur">
+                </figure>
+            </article>
+            <article class="wall__up-4">
+                <figure>
+                    <img  class="wall__up-4--image" draggable="false" src="../../images/hok_items/wall.png" alt="muur">
+                </figure>
+            </article>
+            <button class="button-options-big__hint button" id="js--hint">
+                <img class="button-options-big__hint--image" id="js--hint-glow" src="../../images/buttons/hint-btn.png"></img>
+            </button>
+
+            <button class="button-options-big__speak button" id="js--speak-on">
+                <img class="button-options-big__speak--image" src="../../images/buttons/speak-on-btn.png"></img>
+            </button>
+
+            <button class="button-options-big__speak button-options-big__speak-off button" id="js--speak-off">
+                <img class="button-options-big__speak--image" src="../../images/buttons/speak-off-btn.png"></img>
+            </button>
+        </section>
+
+        <section class="grid-16-9">
+            <div class="pinguinverblijf__mountain">
+                <figure>
+                    <img class="pinguinverblijf__mountain--image" draggable="false" src="../../images/pinguinverblijf/arctic-berg.png" alt="Berg">
+                </figure>
+            </div>
+            <article class="pinguinverblijf__animal-1">
+                <figure class="pinguinverblijf-figure droppable" draggable="false" data-pinguin="pinguin">
+                    <img class="pinguinverblijf__animal-1--image" draggable="false" data-pinguin="pinguin" src="../../images/pinguinverblijf/penguin.png" alt="penguin">
+                </figure>
+            </article>
+            <article class="pinguinverblijf__animal-2">
+                <figure class="pinguinverblijf-figure droppable" draggable="false" data-pinguin="pinguin">
+                    <img class="pinguinverblijf__animal-2--image" draggable="false" data-pinguin="pinguin" src="../../images/pinguinverblijf/penguin.png" alt="penguin">
+                </figure>
+            </article>
+            <article class="pinguinverblijf__animal-3">
+                <figure class="pinguinverblijf-figure droppable" draggable="false" data-pinguin="pinguin">
+                    <img class="pinguinverblijf__animal-3--image" draggable="false" data-pinguin="pinguin" src="../../images/pinguinverblijf/penguin.png" alt="penguin">
+                </figure>
+            </article>
+            <article class="pinguinverblijf__animal-4">
+                <figure class="pinguinverblijf-figure droppable" draggable="false" data-pinguin="pinguin">
+                    <img class="pinguinverblijf__animal-4--image" draggable="false" data-pinguin="pinguin" src="../../images/pinguinverblijf/penguin.png" alt="penguin">
+                </figure>
+            </article>
+            <article class="pinguinverblijf__animal-5">
+                <figure class="pinguinverblijf-figure droppable" draggable="false" data-pinguin="pinguin">
+                    <img class="pinguinverblijf__animal-5--image" draggable="false" data-pinguin="pinguin" src="../../images/pinguinverblijf/penguin.png" alt="penguin">
+                </figure>
+            </article>
+            <article class="pinguinverblijf__animal-6">
+                <figure class="pinguinverblijf-figure droppable" draggable="false" data-pinguin="pinguin">
+                    <img class="pinguinverblijf__animal-6--image" draggable="false" data-pinguin="pinguin" src="../../images/pinguinverblijf/penguin.png" alt="penguin">
+                </figure>
+            </article>
+            <article class="pinguinverblijf__animal-7">
+                <figure class="pinguinverblijf-figure droppable" draggable="false" data-pinguin="pinguin">
+                    <img class="pinguinverblijf__animal-7--image" draggable="false" data-pinguin="pinguin" src="../../images/pinguinverblijf/penguin.png" alt="penguin">
+                </figure>
+            </article>
+
+            <section class="wall__down-1">
+                <figure>
+                    <img class="wall__down-1--image" draggable="false" src="../../images/hok_items/wall.png" alt="wall">
+                </figure>
+            </section>
+            <section class="wall__down-2">
+                <figure>
+                    <img class="wall__down-2--image" draggable="false" src="../../images/hok_items/wall.png" alt="wall">
+                </figure>
+            </section>
+
+        <div class="walk-path-position walk-path"></div>
+
+            <div class="speech-bubble pinguinverblijf__speech-bubble" id="js--speech-bubble">
+                <img class="speech-bubble-explaine gif hide" id="js--speech-bubble-img"></img>
+                <image class="speech-bubble-reload button" id="js--speech-reload" src="../../images/buttons/reload_button.png"></image>
+                <p id="js--speech-bubble-p">Dit is ons pinguïn verblijf. Het is nu etenstijd voor ze. Kan jij ze hun lunch geven?</p>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small btn-speech button" id="js--speech-bubble-btn">&#10132;</button>
+                </div>
+            </div>
+
+            <article class="pinguinverblijf__figure">
+                <figure>
+                    <img class="pinguinverblijf__figure--image" draggable="false" src="../../images/zookeeper-poses/Male/zookeeper-pose-smile-explain.png" alt="zoo keeper">
+                </figure>
+                <figure>
+                    <img id="js--mouth-pinguin" src="../../images/zookeeper-poses/Male/zookeeper-pose-mouth-open.png" alt="" style="display: none;">
+                </figure>
+            </article>
+
+            <div class="pinguinverblijf__visemmer">
+                <figure>
+                    <img class="pinguinverblijf__visemmer--image" draggable="false" src="../../images/pinguinverblijf/Vis-emmer.png" alt="emmer vis">
+                </figure>
+            </div>
+            <div class="pinguinverblijf__vis">
+                <figure>
+                    <img id="js--fish" class="pinguinverblijf__vis--image drag" data-pinguin="pinguin" src="../../images/pinguinverblijf/Tuna.png" alt="tonijn">
+                </figure>
+            </div>
+            
+            <!-- <button id="js--arctic-btn" class="arctic-btn btn-check button">&#10148;</button> -->
+            <div id="js--pinguinverblijf-btn" class="pinguinverblijf__button">
+                <button class="btn-ok button">&#10132;</button>
+            </div>
+
+        </section>
+        
+        <div class="hide-overlay" id="js--map-overlay"></div>
+    </main>
+</body>
+</html>

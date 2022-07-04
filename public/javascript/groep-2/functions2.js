@@ -66,7 +66,7 @@ const dragDropMap2 = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spe
     obj.style.position = 'absolute';
     obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -104,7 +104,7 @@ const dragDropMap2 = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spe
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr = currentDroppable.getAttribute('data-piece');
@@ -169,7 +169,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
     obj.style.position = 'absolute';
     obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -206,14 +206,14 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
 
     document.onmouseup = function() {
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
       
       const attr = currentDroppable.getAttribute('data-pinguin');
 
       if(attr == obj.getAttribute('data-pinguin')) {
         let elem = document.createElement("img");
-        elem.src = "../images/pinguinverblijf/heart.png";
+        elem.src = "../../images/pinguinverblijf/heart.png";
         elem.style.width = "50px";
         elem.style.position = "absolute";
         elem.style.left = "40px";
@@ -276,7 +276,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
 
     obj.style.position = 'absolute';
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
     moveAt(event.pageX, event.pageY);
 
@@ -313,14 +313,14 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr = currentDroppable.getAttribute('data-bol');
     
       if(attr == obj.getAttribute('data-bol')) {
         let kleur = obj.getAttribute('data-kleur');
-        currentDroppable.src = `../images/ijswinkel/ijs_${kleur}.png`;
+        currentDroppable.src = `../../images/ijswinkel/ijs_${kleur}.png`;
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
         currentDroppable.removeAttribute('data-bol');
@@ -380,7 +380,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
 
     obj.style.position = 'absolute';
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -418,7 +418,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr1 = currentDroppable.getAttribute('data-geld1');
@@ -485,7 +485,7 @@ const dragDropGiraffe = (object, endBtn) => {
     
     // object.style.position = 'absolute'; //in css al meegegeven
     object.style.zIndex = 10;
-    object.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    object.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     // object.style.top = '100px';
     document.body.append(object);
          
@@ -509,7 +509,7 @@ const dragDropGiraffe = (object, endBtn) => {
     // drop the object, remove unneeded handlers
     document.onmouseup = () => {
       document.removeEventListener('mousemove', onMouseMove);
-      object.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+      object.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
       object.onmouseup = null;
 
       const el = object.getAttribute("data-elements");

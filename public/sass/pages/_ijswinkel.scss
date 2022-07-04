@@ -298,6 +298,9 @@
 .relative {
     position: relative;
 }
+.width{
+    width: 38.5rem !important;
+}
 
 @media screen and (max-width: 1200px) {
     .geld1 {
@@ -367,15 +370,19 @@
             &--image{
                 width: 140px;
             }
+        } 
+        &__speech-bubble{
+            grid-column: 7 / span 4;
+        }   
+    }
+    .width{
+        width: 25rem !important;
+        &-reload--ijs{
+            right: -8vw;
         }
     }
     .grid-3-1{
         column-gap: 35px;
     }
-    .speech-bubble{
-        width: 25rem;
-        &-reload--ijs{
-            right: -8vw;
-        }
-    }
+
 }

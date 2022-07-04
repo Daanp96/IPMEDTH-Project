@@ -1,5 +1,5 @@
 import {countHint as countHintVis, startTime as startTimeVis} from "./vissenverblijf.js";
-// import {countHint as countHintSavanne,startTime as startTimeSavanne} from "./savanne.js";
+import {countHint as countHintSavanne, startTime as startTimeSavanne} from "./savanne.js";
 // import {countHint as countHintPinguin,startTime as startTimePinguin} from "./pinguinverblijf.js";
 
 const speakOn = document.getElementById("js--speak-on");

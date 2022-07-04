@@ -68,7 +68,7 @@ let star11;
 let star12;
 
 let x = 0;
-// let progress;
+// let progress2;
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage2") == 'hidden') {
@@ -115,11 +115,11 @@ speechHerhaal.onclick = () => {
 
 if(document.URL.includes("groep-2/dierentuinpad.html") ){
     eindeButton.classList.add("hide-important");
-    x = localStorage.getItem("progress");
+    x = localStorage.getItem("progress2");
     x = parseInt(x);
 
-    if(localStorage.getItem("progress")) {
-        x = localStorage.getItem("progress");
+    if(localStorage.getItem("progress2")) {
+        x = localStorage.getItem("progress2");
         x = parseInt(x);
     } else {
         x = 0;
@@ -353,34 +353,34 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
     fish.onclick = (e) => {
         x = 1;
         // progress = x;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startVissenPuzzel()
         e.preventDefault();
     }
     elephant.onclick = (e) => {
         x = 2;
         // progress = x;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startTypenPuzzel();
         e.preventDefault();
     }
     ijswinkel.onclick = (e) => {
         x = 4;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startIjswinkel();
         e.preventDefault();
     }
     pinguin.onclick = (e) => {
         x = 3;
         // progress = x;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startPinguinPuzzel();
         e.preventDefault();
     }
     giraffe.onclick = (e) => {
         x = 5;
         // progress = x;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startGiraffePuzzel();
         e.preventDefault();
     }
