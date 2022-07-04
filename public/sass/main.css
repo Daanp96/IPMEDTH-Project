@@ -2124,7 +2124,7 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 1;
 }
 .ijswinkel__head--image {
-  width: 140px;
+  width: 100%;
   height: 100%;
 }
 .ijswinkel__speech-bubble-hint {
@@ -2300,8 +2300,12 @@ input[type=number]::-webkit-outer-spin-button {
   left: 45px;
 }
 
-.geld {
+.geld1 {
   width: 100px;
+}
+
+.geld2 {
+  width: 130px;
 }
 
 .btn-ijs {
@@ -2323,8 +2327,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 1200px) {
-  .geld {
+  .geld1 {
     width: 75px;
+  }
+
+  .geld2 {
+    width: 95px;
   }
 
   .ijswinkel__ijshoorn {
@@ -2380,6 +2388,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .ijswinkel__head {
     grid-column: 5/span 2;
+  }
+  .ijswinkel__head--image {
+    width: 140px;
   }
 
   .grid-3-1 {

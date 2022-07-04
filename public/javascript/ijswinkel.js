@@ -170,7 +170,7 @@ ijsbalie.onclick = () => {
 }
 
 for(let munt of munten) {
-    dragDropGeld(munt, kassa, ijsBtn, speechBubble, dankje, kaching, herhaalIjs);
+    dragDropGeld(munt, kassa, ijsBtn, speechBubble, dankje, kaching, herhaalIjs, hintBtn);
 }
 
 hintBtn.onclick = () => {
