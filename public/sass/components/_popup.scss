@@ -325,7 +325,8 @@
         transform: translate(-50%, -50%) scale(1);
     }
 
-    &__close{
+    &__close,
+    &__close-vissenverblijf{
         &:link,
         &:visited{
             color: $color-white;
@@ -343,12 +344,13 @@
             color: red;
         }
     }
-    &__close--savanne{
+    &__close--savanne,
+    &__close-savanne{
         &:link,
         &:visited{
             color: $color-white;
             grid-column: 9;
-            grid-row: 1;
+            grid-row: 2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -375,4 +377,97 @@ input[type=number]::-webkit-outer-spin-button{
     cursor: $cursor-point;
     background-color: transparent;
     border: none;
+}
+
+@media(max-width: 1450px){
+    .popup{
+        &__close{
+            margin-top: 3rem;
+        }
+    }
+}
+@media(max-width: 1350px){
+    .popup{
+        &__container-monkey{
+            &--p1{
+                font-size: 3.5rem;
+            }
+        }
+        &__close{
+            margin-top: 6rem;
+        }
+    }
+}
+@media(max-width: 1300px){
+    .popup{
+        &__container-monkey{
+            &--p1{
+                font-size: 3rem;
+            }
+            &--button{
+                margin-top: 0rem;
+            }
+        }
+
+        &__close{
+            margin-top: 8rem;
+        }
+    }
+}
+@media(max-width: 1250px){
+    .popup{
+        &__container-monkey{
+            &--p1{
+                font-size: 2.7rem;
+            }
+        }
+        &__close,
+        &__close--savanne{
+            margin-top: 8rem;
+        }
+        &__close-savanne{
+            margin-top: 5rem;
+        }
+        &__close-vissenverblijf{
+            margin-left: 5rem;
+        }
+    }
+}
+@media(max-width: 1150px){
+    .popup{
+        &__container{
+            &--p1{
+                font-size: 2.5rem;
+            }
+        }
+        &__close{
+            margin-top: 9rem;
+        }
+    }
+}
+@media(max-width: 1100px){
+    .popup{
+        &__container-monkey{
+            &--p1{
+                align-self: end;
+            }
+        }
+    }
+}
+@media(max-width: 1050px){
+    .popup{
+        &__close{
+            margin-left: 2rem;
+        } 
+        &__close-savanne{
+            margin-top: 7rem;
+        }   
+    }
+}
+@media(min-width: 1700px){
+    .popup{
+        &__close{
+            margin-right: 5rem;
+        }    
+    }
 }
