@@ -117,7 +117,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spee
         layedPieces++;
 
         if(layedPieces == 16){
-          hintBtn,disabled = true;
+          hintBtn.disabled = true;
           zookpr.src = "../images/zookeeper-poses/male/zookeeper-pose-happy-goodjob.png";
           zookpr.style.visibility = "visible";
           zookpr.style.zIndex = "2";

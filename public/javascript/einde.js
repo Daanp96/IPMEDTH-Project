@@ -1,4 +1,5 @@
 const bedankt = new Audio("../audio/Tjalle/10-uitgang/1-bedankt.m4a");
+// const opnieuwSpelen = new Audio("../audio/Tjalle/10-uitgang/2-opnieuw_spelen.m4a");
 
 const overlay = document.getElementById("js--end-overlay");
 const diploma = document.getElementById("js--diploma");
@@ -58,7 +59,7 @@ window.onafterprint = (e) =>{
     eindeTekst.style.display = "block";
     window.localStorage.clear();
     e.preventDefault();
-
+    // opnieuwSpelen.play();
     
     // window.close();
     // return false;
