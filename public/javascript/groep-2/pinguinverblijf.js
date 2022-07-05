@@ -1,4 +1,4 @@
-import {dragDropArctic, reloadSpeech, reloadHint, hintGlow} from "./functions.js";
+import {dragDropArctic, reloadSpeech, reloadHint, hintGlow} from "./functions2.js";
 
 const fishDrag = document.getElementById("js--fish");
 const pinguinverblijfBtn = document.getElementById("js--pinguinverblijf-btn");
@@ -21,11 +21,11 @@ let countHint = 0;
 let tekst = '';
 let image = '';
 
-const pinguinVerblijf = new Audio("../audio/Tjalle/7-pinguins/1-pinguïnverblijf.m4a");
+const pinguinVerblijf = new Audio("../../audio/Tjalle/7-pinguins/1-pinguïnverblijf.m4a");
 
-const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
-const hint1 = new Audio("../audio/Tjalle/7-pinguins/hint-1.m4a");
-const hint2 = new Audio("../audio/Tjalle/7-pinguins/hint-2.m4a");
+const goedGedaan = new Audio("../../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
+const hint1 = new Audio("../../audio/Tjalle/7-pinguins/hint-1.m4a");
+const hint2 = new Audio("../../audio/Tjalle/7-pinguins/hint-2.m4a");
 
 const hintHerhaalArctic = [hint1, hint2];
 let isHint = false;
@@ -36,10 +36,10 @@ function start(){
 }
 
 setInterval(() => {
-    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+    if (localStorage.getItem("speakOnStorage2") == 'hidden') {
         speakOnFunction();
     }
-    if (localStorage.getItem("speakOnStorage") == 'visible') {
+    if (localStorage.getItem("speakOnStorage2") == 'visible') {
         speakOffFunction();
     }
 }, 1000);
@@ -150,7 +150,7 @@ if(document.URL.includes("pinguinverblijf.html") ){
                     startOKBtn.style.display = "flex";
                     herhaal.style.display = "block";
                 }
-                image = '../images/gif/klik_zijkant.gif';
+                image = '../../images/gif/klik_zijkant.gif';
                 startOKBtn.onclick = () => {
                     speechBubble.style.visibility = "hidden";
                     explaineBtn.classList.add("hide");

@@ -72,24 +72,45 @@
     &--ijs {
         position: absolute;
         width: 6rem;
-        right: -5vw;
+        right: -6vw;
         top: 1vh;
         display: none;       
     }
 }
-
+@media (max-width: 1500px){
+    .speech-bubble-reload--ijs {
+        right: -6vw;
+    }
+}
+@media (max-width: 1400px){
+    .speech-bubble-reload--ijs {
+        right: -8vw;
+    }
+}
 @media (max-width: 1300px){
     .speech-bubble-reload {
         right: -6vw;
     }
+    .speech-bubble-reload--ijs {
+        right: -11vw;
+    }
+}
+@media (max-width: 1200px){
+    .speech-bubble-reload--intro {
+        right: -6vw;
+    }
 }
 @media (max-width: 1100px){
-    .speech-bubble-reload {
+    .speech-bubble-reload,
+    .speech-bubble-reload--intro {
         right: -7vw;
     }
 }
 @media (min-width: 1600px){
     .speech-bubble-reload {
         right: -4vw;
+    }
+    .speech-bubble-reload--ijs{
+        right: -5vw;
     }
 }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dierentuin</title>
+    <link rel="stylesheet" href="../../sass/main.css">
+    <link rel="icon" type="image/x-icon" href="../../images/algemeen/zookeeper-face.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="../../javascript/groep-2/main.js" type="module" defer></script>
+    <script src="../../javascript/groep-2/ijswinkel.js" type="module" defer></script>
+</head>
+<body class="ijswinkel--background">
+    <main class="ijsco">
+        <section class="button-options-small grid-16-9-full relative">
+            <article class="button-options-small grid-3-1">
+                <button class="button-options-small__hint button " id="js--hint">
+                    <img class="button-options-small__hint--image" id="js--hint-glow" src="../../images/buttons/hint-btn.png"></img>
+                </button>
+    
+                <button class="button-options-small__speak button" id="js--speak-on">
+                    <img class="button-options-small__speak--image" src="../../images/buttons/speak-on-btn.png"></img>
+                </button>
+    
+                <button class="button-options-small__speak button-options-small__speak-off button" id="js--speak-off">
+                    <img class="button-options-small__speak--image" src="../../images/buttons/speak-off-btn.png"></img>
+                </button>
+            </article>
+
+            <figure class="ijswinkel__balie">
+                <img class="ijswinkel__balie--image scale-small button" id="js--balie" src="../../images/ijswinkel/ijs-balie.png" alt="ijs balie">
+            </figure>
+
+            <!-- <figure class="ijswinkel__zookeeper">
+                <img id="js--ijs_zookeeper" class="ijswinkel__zookeeper--image" src="../../images/zoo-keeper-1.png" alt="dierentuin medewerker">
+            </figure> -->
+
+            <figure class="ijswinkel__verkoper">
+                <img id="js--ijs_verkoper" class="ijswinkel__verkoper--image" src="../../images/ijswinkel/ijs-vrouw.png" alt="ijs verkoper">
+            </figure>
+
+            <figure class="ijswinkel__tafel">
+                <img class="ijswinkel__tafel--image" src="../../images/ijswinkel/ijs-tafel1.png" alt="ijs tafel">
+            </figure>
+
+            <div class="speech-bubble ijswinkel__speech-bubble-begin">
+                <img class="speech-bubble-reload--intro button" id="js--speech-reload--intro" src="../../images/buttons/reload_button.png"></img>
+                <p >Goedemiddag! Welk ijsje wil je?</p>
+            </div>
+
+            <div class="hide-overlay ijswinkel--overlay" id="js--overlay"></div>
+
+            <div class="ijswinkel-popup" id="js--popup">
+                <span class="ijswinkel-popup__banana ">Banaan</span>
+                <div class="ijswinkel-popup__yellow button ijs_keuze" data-bol="ijs" data-kleur="yellow"></div>
+                
+                <span class="ijswinkel-popup__melon ">Meloen</span>
+                <div class="ijswinkel-popup__green button ijs_keuze" data-bol="ijs" data-kleur="green"></div>
+
+                <span class="ijswinkel-popup__blueberry">Bosbes</span>
+                <div class="ijswinkel-popup__blue button ijs_keuze" data-bol="ijs" data-kleur="blue"></div>
+
+                <span class="ijswinkel-popup__strawberry">Aardbei</span>
+                <div class="ijswinkel-popup__pink button ijs_keuze" data-bol="ijs" data-kleur="pink"></div>
+
+                <figure class="ijswinkel-popup__ijshoorn">
+                    <img class="ijswinkel__ijshoorn" src="../../images/ijswinkel/ijs_hoorn_fix.png" alt="Ijs Hoorn">
+                </figure>
+
+                <figure class="ijswinkel-popup__drop-1">
+                    <img id="js--bol1" class="ijswinkel-popup__drop-1--image ijswinkel_drop ijs-droppable" data-bol="ijs" src="../../images/ijswinkel/ijs_echtzwart.png" alt="Zwart ijs">
+                </figure>
+                <figure class="ijswinkel-popup__drop-2">
+                    <img id="js--bol2" class="ijswinkel-popup__drop-2--image ijswinkel_drop ijs-droppable" data-bol="ijs" src="../../images/ijswinkel/ijs_echtzwart.png" alt="Zwart ijs">
+                </figure>
+                <figure class="ijswinkel-popup__drop-3">
+                    <img id="js--bol3" class="ijswinkel-popup__drop-3--image ijswinkel_drop ijs-droppable" data-bol="ijs" src="../../images/ijswinkel/ijs_echtzwart.png" alt="Zwart ijs">
+                </figure>
+
+                <div class="ijswinkel-popup__kassa" id="js--ijs-keuze-kassa">
+                    <span id="js--kassa" class="ijswinkel-popup__kassa--veld">GELD HIER</span>
+                    <div id="js--btn-ijs" class="btn-ijs">
+                        <button class="btn-ok-small button">&#10004;</button>
+                    </div>
+                </div>
+
+                <figure class="ijswinkel-popup__geld-1"><img class="geld geld2 button" data-geld2="2" src="../../images/ijswinkel/2-euro-v2.png" alt="2 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-2"><img class="geld geld1 button" data-geld1="1" src="../../images/ijswinkel/1-euro-v2.png" alt="1 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-3"><img class="geld geld2 button" data-geld2="2" src="../../images/ijswinkel/2-euro-v2.png" alt="2 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-4"><img class="geld geld1 button" data-geld1="1" src="../../images/ijswinkel/1-euro-v2.png" alt="1 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-5"><img class="geld geld1 button" data-geld1="1" src="../../images/ijswinkel/1-euro-v2.png" alt="1 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-6"><img class="geld geld2 button" data-geld2="2" src="../../images/ijswinkel/2-euro-v2.png" alt="2 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-7"><img class="geld geld2 button" data-geld2="2" src="../../images/ijswinkel/2-euro-v2.png" alt="2 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-8"><img class="geld geld1 button" data-geld1="1" src="../../images/ijswinkel/1-euro-v2.png" alt="1 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-9"><img class="geld geld1 button" data-geld1="1" src="../../images/ijswinkel/1-euro-v2.png" alt="1 Euro munt"></figure>
+                <figure class="ijswinkel-popup__geld-10"><img class="geld geld2 button" data-geld2="2" src="../../images/ijswinkel/2-euro-v2.png" alt="2 Euro munt"></figure>
+
+            </div>
+
+            <figure class="ijswinkel__head" id="js--ijswinkel-head">
+                <img class="ijswinkel__head--image" src="../../images/ijswinkel/vrouw_hoofd.png" alt="Ijsco medewerker">
+            </figure>
+            <div class="ijswinkel__speech-bubble" id="js--ijswinkel-speech-bubble">
+                <img class="speech-bubble-reload--ijs button" id="js--speech-reload--ijs" src="../../images/buttons/reload_button.png"></img>
+                <div class="speech-bubble ijswinkel__speech-bubble--p width" id="js--speech-bubble">
+                    <p id="js--speech-bubble-p">Je mag tot 3 bolletjes kiezen.</p>
+                </div>
+            </div>
+
+            <div class="giraffeverblijf-hide-overlay hide" id="js--map-overlay"></div>
+            <figure class="hint-head hide" id="js--head-ijsco">
+                <img class="hint-head--image" src="../../images/ijswinkel/vrouw_hoofd.png" alt="ijsco medewerker">
+            </figure>
+
+            <div class="speech-bubble ijswinkel__speech-bubble-hint hide" id="js--hintBubble">
+                <img class="speech-bubble-reload--hint button" id="js--speech-reload--hint" src="../../images/buttons/reload_button.png"></img>
+                <p id="js--speech-bubble-p-hint"></p>
+                <div class="btn-ok-div">
+                    <button class="btn-ok-small btn-speech button" id="js--hintBubble-btn">&#10132;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

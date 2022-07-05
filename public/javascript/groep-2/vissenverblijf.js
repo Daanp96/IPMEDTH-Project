@@ -17,7 +17,6 @@ const hintBtnGlow = document.getElementById("js--hint-glow");
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
-const mouthMove = document.getElementById("js--mouth");
 
 const herhaal = document.getElementById("js--speech-reload");
 
@@ -71,10 +70,10 @@ function speakOffFunction(){
 }
 
 setInterval(() => {
-    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+    if (localStorage.getItem("speakOnStorage2") == 'hidden') {
         speakOnFunction();
     }
-    if (localStorage.getItem("speakOnStorage") == 'visible') {
+    if (localStorage.getItem("speakOnStorage2") == 'visible') {
         speakOffFunction();
     }
 }, 1000);
@@ -90,12 +89,8 @@ if(document.URL.includes("vissenverblijf.html") ){
     
     hintBtn.disabled = true;
     welkomVissenverblijf.play();
-    welkomVissenverblijf.onplaying = () => {
-        mouthMove.style.display = "block";
-        mouthMove.classList.add("mouth_move_verblijf");
-    }
+
     welkomVissenverblijf.onended = () => {
-        mouthMove.style.display = "none";
         startOKBtn.style.display = "block";
         herhaal.style.display = "block";
     }
@@ -115,12 +110,8 @@ if(document.URL.includes("vissenverblijf.html") ){
                 tekst = 'We hebben nieuwe vissen gekregen. Alleen weten we nog niet hoeveel.';
                 image = '';
                 nieuweVissen.play();
-                nieuweVissen.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 nieuweVissen.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -129,12 +120,8 @@ if(document.URL.includes("vissenverblijf.html") ){
                 tekst = 'Kan jij mij vertellen hoeveel <b style="color:red;">rode vissen</b> er rond zwemmen?';
                 image = '';
                 rodeVissen.play();
-                rodeVissen.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 rodeVissen.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -196,12 +183,8 @@ if(document.URL.includes("vissenverblijf.html") ){
                 
                 tekst = 'Loop door het hele aquarium.';
                 hint1.play();
-                hint1.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint1.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -222,12 +205,8 @@ if(document.URL.includes("vissenverblijf.html") ){
                 startOKBtn.style.visibility = "visible";
                 tekst = 'Klik op het vraagteken.';
                 hint2.play();
-                hint2.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint2.onended = () => {
-                    mouthMove.style.display = "block";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -248,12 +227,8 @@ if(document.URL.includes("vissenverblijf.html") ){
                 // startOKBtn.style.visibility = "visible";
                 tekst = 'Vul het antwoord in via je toetsenbord.';
                 hint3.play();
-                hint3.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint3.onended = () => {
-                    mouthMove.style.display = "block";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -272,12 +247,8 @@ if(document.URL.includes("vissenverblijf.html") ){
                 startOKBtn.style.visibility = "visible";
                 tekst = 'Het antwoord is 8.';
                 hint4.play();
-                hint4.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint4.onended = () => {
-                    mouthMove.style.display = "block";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }

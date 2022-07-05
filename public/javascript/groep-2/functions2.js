@@ -1,7 +1,7 @@
 let layedPieces = 0;
 let pinguinsFed = 0;
 let aantalIjs = 0;
-let ijsPrijs = 7;
+let ijsPrijs = 5;
 
 // const dragDrop = (object, width = '') => {
 let tree = 0;
@@ -9,8 +9,7 @@ let rock = 0;
 let pond = 0;
 
 // audio
-const mouthMove = document.getElementById("js--mouth");
-const mouthMovePinguin = document.getElementById("js--mouth-pinguin");
+
 // let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
 const addAnimate = (animate) => {
@@ -21,30 +20,19 @@ const removeAnimate = (animate) => {
   animate.classList.remove("reload_animation");
 }
 
-const removeMoveMouth = (mouth) => {
-  mouth.classList.remove("mouth_move");
-  mouth.classList.remove("mouth_move_wave");
-  mouth.classList.remove("mouth_move_map");
-  mouth.classList.remove("mouth_move_pad");
-  mouth.classList.remove("mouth_move_verblijf");
-  mouth.classList.remove("mouth_move_head");
-  mouth.style.display = "none";
-}
-const reloadSpeech = (audio, animate, mouth) => {
+const reloadSpeech = (audio, animate) => {
   addAnimate(animate);
   audio.play();
   audio.onended = () => {
     removeAnimate(animate);
-    removeMoveMouth(mouth);
   }
 }
 
-const reloadHint = (audio, animate, mouth) => {
+const reloadHint = (audio, animate) => {
   addAnimate(animate);
   audio.play();
   audio.onended = () => {
     removeAnimate(animate);
-    removeMoveMouth(mouth);
   }
 }
 
@@ -66,7 +54,7 @@ const dragDropMap2 = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spe
     obj.style.position = 'absolute';
     obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -104,7 +92,7 @@ const dragDropMap2 = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spe
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr = currentDroppable.getAttribute('data-piece');
@@ -130,12 +118,8 @@ const dragDropMap2 = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spe
           speechButton.style.display = "none";
           mapOverlay.style.zIndex = '1';
           kaartHeel.play();
-          kaartHeel.onplaying = () => {
-            mouthMove.style.display = "block";
-            mouthMove.classList.add("mouth_move_head");
-          }
+
           kaartHeel.onended = () => {
-            mouthMove.style.display = "none";
             herhaal.style.display = "block";
             btn.style.display = "block";
           }
@@ -169,7 +153,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
     obj.style.position = 'absolute';
     obj.style.transform = "rotate(0)";
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -206,17 +190,19 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
 
     document.onmouseup = function() {
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
       
       const attr = currentDroppable.getAttribute('data-pinguin');
 
       if(attr == obj.getAttribute('data-pinguin')) {
         let elem = document.createElement("img");
-        elem.src = "../images/pinguinverblijf/heart.png";
+        elem.src = "../../images/pinguinverblijf/heart.png";
         elem.style.width = "50px";
         elem.style.position = "absolute";
-        elem.style.left = "40px";
+        // elem.style.left = "40px";
+        elem.style.left = "1vw";
+        elem.style.top = "13vh";
         currentDroppable.append(elem);
         currentDroppable.style.opacity = '100%';
         currentDroppable.classList.remove("droppable");
@@ -234,13 +220,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         text.style.visibility = "visible";
         text.innerHTML = "Goed gedaan! De penguins zijn heel blij.";
         goedGedaan.play();
-        goedGedaan.onplaying = () => {
-          mouthMovePinguin.style.display = "block";
-          mouthMovePinguin.classList.add("mouth_move_verblijf");
-
-        }
         goedGedaan.onended = () => {
-          mouthMovePinguin.style.display = "none";
           nextBtn.style.display = "block";
           herhaal.style.display = "block";
 
@@ -276,7 +256,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
 
     obj.style.position = 'absolute';
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
     moveAt(event.pageX, event.pageY);
 
@@ -313,14 +293,14 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr = currentDroppable.getAttribute('data-bol');
     
       if(attr == obj.getAttribute('data-bol')) {
         let kleur = obj.getAttribute('data-kleur');
-        currentDroppable.src = `../images/ijswinkel/ijs_${kleur}.png`;
+        currentDroppable.src = `../../images/ijswinkel/ijs_${kleur}.png`;
         currentDroppable.style.opacity = "100%";
         obj.hidden = true;
         currentDroppable.removeAttribute('data-bol');
@@ -380,7 +360,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
 
     obj.style.position = 'absolute';
     obj.style.zIndex = 1000;
-    obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    obj.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 
     moveAt(event.pageX, event.pageY);
@@ -418,7 +398,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
     document.onmouseup = function() {
 
       document.removeEventListener('mousemove', onMouseMove);
-      obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
+      obj.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
       const attr1 = currentDroppable.getAttribute('data-geld1');
@@ -476,7 +456,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal) => {
   };
 }
 
-const dragDropGiraffe = (object, endBtn) => {
+const dragDropGiraffe = (object, endBtn, giraffeImage) => {
 
   object.onmousedown = (event) => {
 
@@ -485,7 +465,7 @@ const dragDropGiraffe = (object, endBtn) => {
     
     // object.style.position = 'absolute'; //in css al meegegeven
     object.style.zIndex = 10;
-    object.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+    object.style.cursor = "url('../../images/cursor/cursor_grabbing_60.cur'), default";
     // object.style.top = '100px';
     document.body.append(object);
          
@@ -509,7 +489,7 @@ const dragDropGiraffe = (object, endBtn) => {
     // drop the object, remove unneeded handlers
     document.onmouseup = () => {
       document.removeEventListener('mousemove', onMouseMove);
-      object.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+      object.style.cursor = "url('../../images/cursor/cursor_grab_60.cur'), default";
       object.onmouseup = null;
 
       const el = object.getAttribute("data-elements");
@@ -538,6 +518,9 @@ const dragDropGiraffe = (object, endBtn) => {
       }
       if (tree >= 2 && rock >= 2 && pond >= 1) {
         endBtn.style.display = "block";
+        giraffeImage.style.gridColumn = "7 / span 3";
+        giraffeImage.style.gridRow = "3 / span 3";
+        giraffeImage.style.backgroundColor = "transparent";
       }
     };
     

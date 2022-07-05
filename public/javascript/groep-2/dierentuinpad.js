@@ -19,15 +19,11 @@ const ratedStar10 = document.getElementById("js--ratedStar10");
 const ratedStar11 = document.getElementById("js--ratedStar11");
 const ratedStar12 = document.getElementById("js--ratedStar12");
 
-const formRekensomBtn = document.getElementById("js--form-submit");
-const rekensomForm = document.getElementById("js--rekensom-form");
 
 const dierentuinpadSpeechBubbleP = document.getElementById("js--speech-bubble-p");
 const dierentuinpadSpeechBubble = document.getElementById("js--speech-bubble");
 const dierentuinkeeperZookeeper = document.getElementById("js--dierentuinpad-zookeeper");
 const eindeButton = document.getElementById("js--pad_btn");
-
-const reken_correct = 6;
 
 // const apenVerblijf = new Audio("../audio/4-dierentuinpad/2-apenverblijf.mp3");
 // const pinguinVerblijf = new Audio("../audio/4-dierentuinpad/3-pinguïn.mp3");
@@ -36,7 +32,6 @@ const reken_correct = 6;
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
-const mouthMove = document.getElementById("js--mouth");
 
 const vissen = new Audio("../../audio/Tjalle/4-dierentuinpad/1-vissen.m4a");
 const savanne = new Audio("../../audio/Tjalle/4-dierentuinpad/2-savanne.m4a");
@@ -50,25 +45,22 @@ const audioHerhaal = [vissen, savanne, pinguins, ijsje, verblijf, uitgang];
 
 const max1400 = window.matchMedia("(max-width: 1400px)");
 const max1300 = window.matchMedia("(max-width: 1300px)");
-const max1100 = window.matchMedia("(max-width: 1100px)");
+const max1200 = window.matchMedia("(max-width: 1200px)");
 
 let countHerhaal = 0;
 
-let star1;
-let star2;
-let star3;
-let star4;
-let star5;
-let star6;
-let star7;
-let star8;
-let star9;
-let star10;
-let star11;
-let star12;
+let groep2Star1;
+let groep2Star2;
+let groep2Star3;
+let groep2Star4;
+let groep2Star5;
+let groep2Star6;
+let groep2Star7;
+let groep2Star8;
+let groep2Star9;
+let groep2Star10;
 
 let x = 0;
-// let progress;
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage2") == 'hidden') {
@@ -109,17 +101,17 @@ speakOff.onclick = () => {
 };
 
 speechHerhaal.onclick = () => {
-    reloadSpeech(audioHerhaal[x], speechHerhaal, mouthMove);
+    reloadSpeech(audioHerhaal[x], speechHerhaal);
 }
 
 
 if(document.URL.includes("groep-2/dierentuinpad.html") ){
     eindeButton.classList.add("hide-important");
-    x = localStorage.getItem("progress");
+    x = localStorage.getItem("progress2");
     x = parseInt(x);
 
-    if(localStorage.getItem("progress")) {
-        x = localStorage.getItem("progress");
+    if(localStorage.getItem("progress2")) {
+        x = localStorage.getItem("progress2");
         x = parseInt(x);
     } else {
         x = 0;
@@ -129,15 +121,10 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
     switch (x) {
         case 0:
             vissen.play();
-            vissen.onplaying = () => {
-                mouthMove.style.display = "block";
-                mouthMove.classList.add("mouth_move_pad");
-            }
             vissen.onended = () => {
                 fish.classList.add("dierentuinpad__element");
                 fish.classList.add("button");
                 speechHerhaal.style.display = "block";
-                mouthMove.style.display = "none";
                 if (max1400.matches) {
                     fish.style.gridColumn = "1 / span 8";
                 }
@@ -155,12 +142,8 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Goed gedaan! Zullen we gaan kijken bij de savanne dieren?";
             savanne.play();
-            savanne.onplaying = () => {
-                mouthMove.style.display = "block";
-                mouthMove.classList.add("mouth_move_pad");
-            }
+
             savanne.onended = () => {
-                mouthMove.style.display = "none";
                 elephant.classList.add("dierentuinpad__element");
                 elephant.classList.add("button");
                 speechHerhaal.style.display = "block";
@@ -188,12 +171,8 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Goedzo! Het is nu tijd om de pinguïns eten te geven.";
             pinguins.play();
-            pinguins.onplaying = () => {
-                mouthMove.style.display = "block";
-                mouthMove.classList.add("mouth_move_pad");
-            }
+
             pinguins.onended = () => {
-                mouthMove.style.display = "none";
                 pinguin.classList.add("dierentuinpad__element");
                 pinguin.classList.add("button");
                 speechHerhaal.style.display = "block";
@@ -213,12 +192,8 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
 
             dierentuinpadSpeechBubbleP.innerHTML = "Poeh ik ben nu wel toe aan een pauze. Zullen we even een ijsje gaan halen?";
             ijsje.play();
-            ijsje.onplaying = () => {
-                mouthMove.style.display = "block";
-                mouthMove.classList.add("mouth_move_pad");
-            }
+
             ijsje.onended = () => {
-                mouthMove.style.display = "none";
                 ijswinkel.classList.add("dierentuinpad__element");
                 ijswinkel.classList.add("button");
                 speechHerhaal.style.display = "block";
@@ -244,12 +219,8 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
             // // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Dat was lekker! Kom we gaan nu naar ons nieuwste verblijf.";
             verblijf.play();
-            verblijf.onplaying = () => {
-                mouthMove.style.display = "block";
-                mouthMove.classList.add("mouth_move_pad");
-            }
+
             verblijf.onended = () => {
-                mouthMove.style.display = "none";
                 giraffe.classList.add("dierentuinpad__element");
                 giraffe.classList.add("button");
                 speechHerhaal.style.display = "block";
@@ -274,13 +245,8 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
             // vissen.remove();
             dierentuinpadSpeechBubbleP.innerHTML = "Wat vliegt de tijd! De dierentuin gaat sluiten. We gaan naar de uitgang.";
             uitgang.play();
-            uitgang.onplaying = () => {
-                mouthMove.style.display = "block";
-                mouthMove.classList.add("mouth_move_pad");
-            }
+
             uitgang.onended = () => {
-                mouthMove.classList.remove("mouth_move_pad");
-                mouthMove.style.display = "none";
                 speechHerhaal.style.display = "block";
                 eindeButton.style.display = "flex";
             }
@@ -288,56 +254,56 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
             break;
     }
 
-    star1 = localStorage.getItem('star1');
-    star2 = localStorage.getItem('star2');
-    star3 = localStorage.getItem('star3');
-    star4 = localStorage.getItem('star4');
-    star5 = localStorage.getItem('star5');
-    star6 = localStorage.getItem('star6');
-    star7 = localStorage.getItem('star7');
-    star8 = localStorage.getItem('star8');
-    star9 = localStorage.getItem('star9');
-    star10 = localStorage.getItem('star10');
+    groep2Star1 = localStorage.getItem('groep2Star1');
+    groep2Star2 = localStorage.getItem('groep2Star2');
+    groep2Star3 = localStorage.getItem('groep2Star3');
+    groep2Star4 = localStorage.getItem('groep2Star4');
+    groep2Star5 = localStorage.getItem('groep2Star5');
+    groep2Star6 = localStorage.getItem('groep2Star6');
+    groep2Star7 = localStorage.getItem('groep2Star7');
+    groep2Star8 = localStorage.getItem('groep2Star8');
+    groep2Star9 = localStorage.getItem('groep2Star9');
+    groep2Star10 = localStorage.getItem('groep2Star10');
     // star11 = localStorage.getItem('star11');
     // star12 = localStorage.getItem('star12');
 
-    if(star1 == 0){
+    if(groep2Star1 == 0){
         ratedStar1.classList.remove("hidden");
         ratedStar2.classList.remove("hidden");
         ratedStar3.classList.remove("hidden");
     }
-    if(star2 == 0){
+    if(groep2Star2 == 0){
         ratedStar1.classList.remove("hidden");
         ratedStar2.classList.remove("hidden");
     }
-    if(star3 == 0){
+    if(groep2Star3 == 0){
         ratedStar1.classList.remove("hidden");
     }
-    if(star4 == 0){
+    if(groep2Star4 == 0){
         ratedStar4.classList.remove("hidden");
         ratedStar5.classList.remove("hidden");
         ratedStar6.classList.remove("hidden");
     }
-    if(star5 == 0){
+    if(groep2Star5 == 0){
         ratedStar4.classList.remove("hidden");
         ratedStar5.classList.remove("hidden");
     }
-    if(star6 == 0){
+    if(groep2Star6 == 0){
         ratedStar4.classList.remove("hidden");
     }
-    if(star7 == 0){
+    if(groep2Star7 == 0){
         ratedStar7.classList.remove("hidden");
         ratedStar8.classList.remove("hidden");
         ratedStar9.classList.remove("hidden");
     }
-    if(star8 == 0){
+    if(groep2Star8 == 0){
         ratedStar7.classList.remove("hidden");
         ratedStar8.classList.remove("hidden");
     }
-    if(star9 == 0){
+    if(groep2Star9 == 0){
         ratedStar7.classList.remove("hidden");
     }
-    if(star10 == 0){
+    if(groep2Star10 == 0){
         ratedStar10.classList.remove("hidden");
         ratedStar11.classList.remove("hidden");
         ratedStar12.classList.remove("hidden");
@@ -353,34 +319,34 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
     fish.onclick = (e) => {
         x = 1;
         // progress = x;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startVissenPuzzel()
         e.preventDefault();
     }
     elephant.onclick = (e) => {
         x = 2;
         // progress = x;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startTypenPuzzel();
         e.preventDefault();
     }
     ijswinkel.onclick = (e) => {
         x = 4;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startIjswinkel();
         e.preventDefault();
     }
     pinguin.onclick = (e) => {
         x = 3;
         // progress = x;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startPinguinPuzzel();
         e.preventDefault();
     }
     giraffe.onclick = (e) => {
         x = 5;
         // progress = x;
-        localStorage.setItem("progress", x);
+        localStorage.setItem("progress2", x);
         startGiraffePuzzel();
         e.preventDefault();
     }

@@ -222,49 +222,49 @@
             }
         }
         &__geld-1 {
-            grid-column: 1;
-            grid-row: 2;
+            grid-column: 1 / span 2;
+            grid-row: 2 / span 2;
         }
 
         &__geld-2 {
-            grid-column: 2;
-            grid-row: 3;
+            grid-column: 2 / span 2;
+            grid-row: 3 / span 2;
         }
 
         &__geld-3 {
-            grid-column: 3;
-            grid-row: 2;
+            grid-column: 3 / span 2;
+            grid-row: 1 / span 2;
         }
 
         &__geld-4 {
-            grid-column: 4;
-            grid-row: 3;
+            grid-column: 4 / span 2;
+            grid-row: 3 / span 2;
         }
         
         &__geld-5 {
-            grid-column: 5;
-            grid-row: 2;
+            grid-column: 5 / span 2;
+            grid-row: 3 / span 2;
         }
 
         &__geld-6 {
-            grid-column: 6;
-            grid-row: 3;
+            grid-column: 6 / span 2;
+            grid-row: 2 / span 2;
         }   
         &__geld-7 {
-            grid-column: 2;
-            grid-row: 2;
+            grid-column: 2 / span 2;
+            grid-row: 1 / span 2;
         }  
         &__geld-8 {
-            grid-column: 3;
-            grid-row: 3;
+            grid-column: 3 / span 2;
+            grid-row: 3 / span 2;
         } 
         &__geld-9 {
-            grid-column: 4;
-            grid-row: 2;
+            grid-column: 4 / span 2;
+            grid-row: 2 / span 2;
         } 
         &__geld-10 {
-            grid-column: 5;
-            grid-row: 3;
+            grid-column: 5 / span 2;
+            grid-row: 1 / span 2;
         } 
 
     }
@@ -276,10 +276,12 @@
 }
 
 .geld1 {
-    width: 100px;
+    // width: 100px;
+    width: 75%;
 }
 .geld2 {
-    width: 130px;
+    // width: 130px;
+    width: 100%;
 }
 .btn-ijs {
     display: none;
@@ -297,6 +299,30 @@
 
 .relative {
     position: relative;
+}
+.width{
+    width: 38.5rem !important;
+}
+
+@media (max-width: 1500px){
+    .ijswinkel{
+        &__speech-bubble-begin{
+            grid-column: 7 / span 4;
+        } 
+    }
+    .width{
+        width: 35.5rem !important;
+    }
+}
+@media (max-width: 1300px){
+    .ijswinkel{
+        &__speech-bubble{
+            grid-column: 7 / span 4;
+        }
+        &__head{
+            grid-column: 5 / span 2;
+        }
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -356,26 +382,38 @@
             width: 155px;
         }
         &__speech-bubble-begin{
-            grid-column: 8 / span 4;
+            grid-column: 6 / span 4;
             grid-row: 3 / span 2;
-            &::before{
-                left: 19rem;
-            }
+
         }
         &__head{
             grid-column: 5 / span 2;
+            align-self: center;
             &--image{
-                width: 140px;
+                width: 80%;
+                height: 80%;
             }
+        } 
+        &__speech-bubble{
+            grid-column: 7 / span 4;
+            &--p{
+                font-size: 2rem;
+            }
+        } 
+    }
+    .width{
+        width: 30rem !important;
+        &-reload--ijs{
+            right: -8vw;
         }
     }
     .grid-3-1{
         column-gap: 35px;
     }
-    .speech-bubble{
-        width: 25rem;
-        &-reload--ijs{
-            right: -8vw;
-        }
+}
+
+@media (max-width: 1100px){
+    .width{
+        width: 27rem !important;
     }
 }

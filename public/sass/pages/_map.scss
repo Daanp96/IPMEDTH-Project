@@ -132,7 +132,7 @@
     display: none;
 }
 
-.map--speech-bubble {
+.map__speech-bubble {
     grid-column: 9 / span 1;
     grid-row: 1 / span 1;
     opacity: 1;
@@ -140,58 +140,34 @@
     z-index: 1;
 }
 
-.map--speech-bubble::before {
+.map__speech-bubble::before {
     left: 32rem;
     transform: scaleX(-1);
 }
 
-@media (min-width: 1536px){
-}
-//KANKER ANIMATIE MOND
-@media (max-width: 1436px){
-    .mouth_move_map{
-        top: 21%;        
-    }
-}
-@media (max-width: 1336px){
-    .mouth_move_map{
-        top: 21%;        
-    }
-}
 
-@media (max-width: 1136px){
-    .mouth_move_map{
-        top: 19%;        
-    }
-}
-
-@media (max-width: 1036px){
-    .mouth_move_map{
-        top: 18%;        
-    }
-}
 @media (max-width: 1300px) {
     .map__zookeeper{
         grid-column: 12 / span 3;
         grid-row: 3 /span 8;
     }
-    .map--speech-bubble {
+    .map__speech-bubble {
         grid-column: 8 / span 1;
     }
 
 
 }
 
-@media (max-width: 1300px) {
-    .map--speech-bubble {
-        grid-column: 7 / span 1;
-    }
-    .map--speech-bubble {
-        grid-column: 9 / span 1;
-    }
+// @media (max-width: 1300px) {
+//     .map__speech-bubble {
+//         grid-column: 7 / span 1;
+//     }
+//     .map__speech-bubble {
+//         grid-column: 9 / span 1;
+//     }
     
 
-}
+// }
 
 @media (max-width: 1200px) {
 
@@ -215,9 +191,9 @@
 
         }
     }
-    .map--speech-bubble {
-        grid-column: 8 / span 1;
-    }
+    // .map__speech-bubble {
+    //     grid-column: 8 / span 1;
+    // }
 }
 
 @media (max-width: 1000px) {
@@ -228,9 +204,9 @@
             grid-row: 2 / span 9;
         }
     }
-    .map--speech-bubble {
-        grid-column: 8 / span 1;
-    }
+    // .map__speech-bubble {
+    //     grid-column: 8 / span 1;
+    // }
 
 
 }
