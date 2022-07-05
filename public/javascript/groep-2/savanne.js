@@ -154,8 +154,8 @@ if(document.URL.includes("groep-2/savanne.html") ){
                 }
                 break;
         }
-        // herhaal.style.display = "none";
-        // startOKBtn.style.display = "none";
+        herhaal.style.display = "none";
+        startOKBtn.style.display = "none";
         speechBubble_p.innerHTML = tekst;
         startOK++;
         countHerhaal++;
