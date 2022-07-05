@@ -304,6 +304,27 @@
     width: 38.5rem !important;
 }
 
+@media (max-width: 1500px){
+    .ijswinkel{
+        &__speech-bubble-begin{
+            grid-column: 7 / span 4;
+        } 
+    }
+    .width{
+        width: 35.5rem !important;
+    }
+}
+@media (max-width: 1300px){
+    .ijswinkel{
+        &__speech-bubble{
+            grid-column: 7 / span 4;
+        }
+        &__head{
+            grid-column: 5 / span 2;
+        }
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .geld1 {
         width: 75px;
@@ -361,24 +382,27 @@
             width: 155px;
         }
         &__speech-bubble-begin{
-            grid-column: 8 / span 4;
+            grid-column: 6 / span 4;
             grid-row: 3 / span 2;
-            &::before{
-                left: 19rem;
-            }
+
         }
         &__head{
             grid-column: 5 / span 2;
+            align-self: center;
             &--image{
-                width: 140px;
+                width: 80%;
+                height: 80%;
             }
         } 
         &__speech-bubble{
             grid-column: 7 / span 4;
-        }   
+            &--p{
+                font-size: 2rem;
+            }
+        } 
     }
     .width{
-        width: 25rem !important;
+        width: 30rem !important;
         &-reload--ijs{
             right: -8vw;
         }
@@ -386,5 +410,10 @@
     .grid-3-1{
         column-gap: 35px;
     }
+}
 
+@media (max-width: 1100px){
+    .width{
+        width: 27rem !important;
+    }
 }

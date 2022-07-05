@@ -1,7 +1,7 @@
 let layedPieces = 0;
 let pinguinsFed = 0;
 let aantalIjs = 0;
-let ijsPrijs = 7;
+let ijsPrijs = 5;
 
 // const dragDrop = (object, width = '') => {
 let tree = 0;

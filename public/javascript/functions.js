@@ -328,7 +328,7 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
           kassa.parentNode.dataset.geld1 = "1";
           kassa.parentNode.dataset.geld2 = "2";
           speech.innerHTML = "Zo je ijsje is klaar! Je kan het geld naar de kassa toe slepen.";
-          speech.style.fontSize = "14px";
+          // speech.style.fontSize = "14px";
           for(let ijs of ijsjes){
             ijs.onclick = null;
           }
