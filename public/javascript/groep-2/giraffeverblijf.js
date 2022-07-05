@@ -84,6 +84,8 @@ const keuze = new Audio("../../audio/Tjalle/9-verblijf/7-keuze.m4a");
 const hint1 = new Audio("../../audio/Tjalle/9-verblijf/hint-1.m4a");
 const hint2 = new Audio("../../audio/Tjalle/9-verblijf/hint-2.m4a");
 
+const giraffeImage = document.getElementById("js--enclosure-giraffe");
+
 const endHerhaal = [goedIngericht, vraag, veelDieren, vrijeRuimte, keuze];
 const hintHerhaal = [bovenaan, hint1, hint2];
 
@@ -266,7 +268,7 @@ hintBtn.onclick = () => {
 // dragDropGiraffe(tree1, tree2);
 const array = [tree1, tree2, tree3, rock1, rock2, rock3, pond1, pond2];
 for (let i = 0; i < array.length; i++) {
-    dragDropGiraffe(array[i], endBtn);
+    dragDropGiraffe(array[i], endBtn, giraffeImage);
 };
 
 // praat wolk
@@ -316,18 +318,24 @@ sidebarTree1.onclick = () => {
     sidebar.style.display = "";
     treePopup.classList.add("tree-sidebar");
     sidebar.classList.add("slidein-from-left");
+    sidebarTree1.innerHTML = "&#10006;";
+    sidebarTree1.style.fontSize = "8rem";
 };
 sidebarTree2.onclick = () => {
     tree2.classList.remove("hide");
     sidebar.style.display = "";
     treePopup.classList.add("tree-sidebar");
     sidebar.classList.add("slidein-from-left");
+    sidebarTree2.innerHTML = "&#10006;";
+    sidebarTree2.style.fontSize = "8rem";
 };
 sidebarTree3.onclick = () => {
     tree3.classList.remove("hide");
     sidebar.style.display = "";
     treePopup.classList.add("tree-sidebar");
     sidebar.classList.add("slidein-from-left");
+    sidebarTree3.innerHTML = "&#10006;";
+    sidebarTree3.style.fontSize = "8rem";
 };
 
 sidebarRock1.onclick = () => {
@@ -335,18 +343,24 @@ sidebarRock1.onclick = () => {
     sidebar.style.display = "";
     rockPopup.classList.add("rock-sidebar");
     sidebar.classList.add("slidein-from-left");
+    sidebarRock1.innerHTML = "&#10006;";
+    sidebarRock1.style.fontSize = "8rem";
 };
 sidebarRock2.onclick = () => {
     rock2.classList.remove("hide");
     sidebar.style.display = "";
     rockPopup.classList.add("rock-sidebar");
     sidebar.classList.add("slidein-from-left");
+    sidebarRock2.innerHTML = "&#10006;";
+    sidebarRock2.style.fontSize = "8rem";
 };
 sidebarRock3.onclick = () => {
     rock3.classList.remove("hide");
     sidebar.style.display = "";
     rockPopup.classList.add("rock-sidebar");
     sidebar.classList.add("slidein-from-left");
+    sidebarRock3.innerHTML = "&#10006;";
+    sidebarRock3.style.fontSize = "8rem";
 };
 
 sidebarPond1.onclick = () => {
@@ -354,12 +368,16 @@ sidebarPond1.onclick = () => {
     sidebar.style.display = "";
     pondPopup.classList.add("pond-sidebar");
     sidebar.classList.add("slidein-from-left");
+    sidebarPond1.innerHTML = "&#10006;";
+    sidebarPond1.style.fontSize = "8rem";
 };
 sidebarPond2.onclick = () => {
     pond2.classList.remove("hide");
     sidebar.style.display = "";
     pondPopup.classList.add("pond-sidebar");
     sidebar.classList.add("slidein-from-left");
+    sidebarPond2.innerHTML = "&#10006;";
+    sidebarPond2.style.fontSize = "8rem";
 };
 
 endBtn.onclick = () => {

@@ -96,6 +96,7 @@
         z-index: 3;
         position: relative;
         transform: scaleX(-1);
+        align-self: end;
         
         &--image{
             @include zookeeperSize;
@@ -132,143 +133,6 @@
     }
 }
 
-.arctic{
-    // &--background{
-    //     @include background-arctic;
-    //     background-image: url(../images/arctic/arctic-2-background.png);
-    // }
-
-    // &-btn {
-    //     display: none;
-    //     grid-column: 14 /span 2;
-    //     grid-row: 7 / span 2;
-    //     z-index: 1;
-    // }
-    
-    // &-mountain{
-    //     grid-column: 1 / span 1;
-    //     grid-row: 1 /span 4;
-
-    //     &-image{
-    //         width: 25vw;
-    //         height: auto;
-    //         transform: scaleX(-1); 
-    //         margin: -80px;
-    //     }
-    
-    // }
-
-    // &-animal{
-    
-        // &-1{
-        //     grid-column: 15/ span 1;
-        //     grid-row: 1/ span 2;
-
-        // }
-
-        // &-2{
-        //     grid-column: 7 / span 1;
-        //     grid-row: 4 /span 1;
-        // }
-
-        // &-3{
-        //     grid-column: 9 / span 1;
-        //     grid-row: 3 /span 1;
-
-        // }
-        // &-4{
-        //     grid-column: 8 / span 1;
-        //     grid-row: 1 /span 1;
-        // }
-        // &-5{
-        //     grid-column: 14 / span 1;
-        //     grid-row: 5 /span 1;
-        // }
-        // &-6{
-        //     grid-column: 3 / span 1;
-        //     grid-row:  4 /span 2;
-        // }
-        // &-7{
-        //     grid-column: 6 / span 1;
-        //     grid-row: 1 /span 1;
-        // }
-
-
-        // &--image-1{
-        //     width: 10vw;
-        //     height: auto;
-        // }
-        // &--image-2{
-        //     width: 7.5vw;
-        //     height: auto;
-        //     transform: scaleX(-1);
-        // }
-
-    // }
-
-    // &--speech-bubble{
-    //     grid-column: 2 / span 4;
-    //     grid-row: 4 / span 1;
-    //     z-index: 3;
-    //     align-self: end;
-    // }
-
-    // &--figure{
-    //     // position: absolute;
-    //     // bottom: 0;
-    //     // left: 0;
-    //     grid-column: 1 / span 2;
-    //     grid-row: 5 / span 5;
-    //     z-index: 3;
-    // }
-
-
-    // &--image{
-    //     @include zookeeperSize;
-    // }
-
-    // &--visemmer{
-    //     grid-column: 4 / span 1;
-    //     grid-row: 7 / span 1;
-    //     // z-index: 3;
-    //     z-index: 1;
-    //     &-image{
-    //         width: 10vw;
-    //         height: auto;
-    //     }
-    // }
-    
-    // &--viscontainer{
-    //     grid-column: 4 / span 1;
-    //     grid-row: 7 / span 1;
-    //     z-index: 3;
-
-    //     &-vis{
-    //         width: 4vw;
-    //         height: auto;
-    //         visibility: hidden;
-    //     }
-    // }       
-
-    // &--animal-board{
-    //     grid-column: 7 / span 4;
-    //     grid-row: 4 / span 1;
-    //     z-index: 2;
-        
-    // }
-
-    // &--animal-board:hover{
-    //     transition: transform 2s;
-    //     transform: scale(1.4);
-    // }
-    
-    // &--animal-board-image{
-    //     width: 100%;
-    //     height: 100%;
-        
-    // }
-
-}
 
 .pinguinverblijf-figure {
     position: relative;
@@ -279,26 +143,29 @@
     height: auto;
 }
 
-@media (min-width: 1536px){
-}
-
 @media (max-width: 1450px){
-.pinguinverblijf{
-    &--background{
-        @include background-vissenverblijf-1450;
+    .pinguinverblijf{
+        &--background{
+            @include background-vissenverblijf-1450;
 
+        }
     }
-
 }
-}
+@media (max-width: 1200px) {
+    .pinguinverblijf{
 
+        &__speech-bubble{
+            grid-row: 5 /span 1;
+
+        }
+    }
+}
 @media (max-width: 1350px) {
     .pinguinverblijf{
 
-    &__animal-3{
-        grid-row: 4 /span 1;
+        &__animal-3{
+            grid-row: 4 /span 1;
 
+        }
     }
-    
-}
 }

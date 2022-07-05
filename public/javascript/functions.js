@@ -201,7 +201,10 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         elem.src = "../images/pinguinverblijf/heart.png";
         elem.style.width = "50px";
         elem.style.position = "absolute";
-        elem.style.left = "40px";
+        // elem.style.left = "40px";
+        elem.style.left = "1vw";
+        elem.style.top = "13vh";
+
         currentDroppable.append(elem);
         currentDroppable.style.opacity = '100%';
         currentDroppable.classList.remove("droppable");
@@ -459,7 +462,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal, hint) =>
   };
 }
 
-const dragDropGiraffe = (object, endBtn) => {
+const dragDropGiraffe = (object, endBtn, giraffeImage) => {
 
   object.onmousedown = (event) => {
 
@@ -492,7 +495,7 @@ const dragDropGiraffe = (object, endBtn) => {
     // drop the object, remove unneeded handlers
     document.onmouseup = () => {
       document.removeEventListener('mousemove', onMouseMove);
-      object.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
+      object.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       object.onmouseup = null;
 
       const el = object.getAttribute("data-elements");
@@ -521,6 +524,9 @@ const dragDropGiraffe = (object, endBtn) => {
       }
       if (tree >= 2 && rock >= 2 && pond >= 1) {
         endBtn.style.display = "block";
+        giraffeImage.style.gridColumn = "7 / span 3";
+        giraffeImage.style.gridRow = "3 / span 3";
+        giraffeImage.style.backgroundColor = "transparent";
       }
     };
     
