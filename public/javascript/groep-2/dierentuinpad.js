@@ -54,16 +54,16 @@ const max1200 = window.matchMedia("(max-width: 1200px)");
 
 let countHerhaal = 0;
 
-let star1;
-let star2;
-let star3;
-let star4;
-let star5;
-let star6;
-let star7;
-let star8;
-let star9;
-let star10;
+let groep2Star1;
+let groep2Star2;
+let groep2Star3;
+let groep2Star4;
+let groep2Star5;
+let groep2Star6;
+let groep2Star7;
+let groep2Star8;
+let groep2Star9;
+let groep2Star10;
 let star11;
 let star12;
 
@@ -288,56 +288,56 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
             break;
     }
 
-    star1 = localStorage.getItem('star1');
-    star2 = localStorage.getItem('star2');
-    star3 = localStorage.getItem('star3');
-    star4 = localStorage.getItem('star4');
-    star5 = localStorage.getItem('star5');
-    star6 = localStorage.getItem('star6');
-    star7 = localStorage.getItem('star7');
-    star8 = localStorage.getItem('star8');
-    star9 = localStorage.getItem('star9');
-    star10 = localStorage.getItem('star10');
+    groep2Star1 = localStorage.getItem('groep2Star1');
+    groep2Star2 = localStorage.getItem('groep2Star2');
+    groep2Star3 = localStorage.getItem('groep2Star3');
+    groep2Star4 = localStorage.getItem('groep2Star4');
+    groep2Star5 = localStorage.getItem('groep2Star5');
+    groep2Star6 = localStorage.getItem('groep2Star6');
+    groep2Star7 = localStorage.getItem('groep2Star7');
+    groep2Star8 = localStorage.getItem('groep2Star8');
+    groep2Star9 = localStorage.getItem('groep2Star9');
+    groep2Star10 = localStorage.getItem('groep2Star10');
     // star11 = localStorage.getItem('star11');
     // star12 = localStorage.getItem('star12');
 
-    if(star1 == 0){
+    if(groep2Star1 == 0){
         ratedStar1.classList.remove("hidden");
         ratedStar2.classList.remove("hidden");
         ratedStar3.classList.remove("hidden");
     }
-    if(star2 == 0){
+    if(groep2Star2 == 0){
         ratedStar1.classList.remove("hidden");
         ratedStar2.classList.remove("hidden");
     }
-    if(star3 == 0){
+    if(groep2Star3 == 0){
         ratedStar1.classList.remove("hidden");
     }
-    if(star4 == 0){
+    if(groep2Star4 == 0){
         ratedStar4.classList.remove("hidden");
         ratedStar5.classList.remove("hidden");
         ratedStar6.classList.remove("hidden");
     }
-    if(star5 == 0){
+    if(groep2Star5 == 0){
         ratedStar4.classList.remove("hidden");
         ratedStar5.classList.remove("hidden");
     }
-    if(star6 == 0){
+    if(groep2Star6 == 0){
         ratedStar4.classList.remove("hidden");
     }
-    if(star7 == 0){
+    if(groep2Star7 == 0){
         ratedStar7.classList.remove("hidden");
         ratedStar8.classList.remove("hidden");
         ratedStar9.classList.remove("hidden");
     }
-    if(star8 == 0){
+    if(groep2Star8 == 0){
         ratedStar7.classList.remove("hidden");
         ratedStar8.classList.remove("hidden");
     }
-    if(star9 == 0){
+    if(groep2Star9 == 0){
         ratedStar7.classList.remove("hidden");
     }
-    if(star10 == 0){
+    if(groep2Star10 == 0){
         ratedStar10.classList.remove("hidden");
         ratedStar11.classList.remove("hidden");
         ratedStar12.classList.remove("hidden");

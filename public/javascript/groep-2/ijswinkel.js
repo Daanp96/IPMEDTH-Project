@@ -60,10 +60,10 @@ goedemiddag.onended = () => {
 hintBtn.disabled = true;
 
 setInterval(() => {
-    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+    if (localStorage.getItem("speakOnStorage2") == 'hidden') {
         speakOnFunction();
     }
-    if (localStorage.getItem("speakOnStorage") == 'visible') {
+    if (localStorage.getItem("speakOnStorage2") == 'visible') {
         speakOffFunction();
     }
 }, 1000);

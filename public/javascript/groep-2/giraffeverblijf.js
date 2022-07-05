@@ -1,4 +1,4 @@
-import {dragDropGiraffe, reloadSpeech, hintGlow} from "./functions.js";
+import {dragDropGiraffe, reloadSpeech, hintGlow} from "./functions2.js";
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -75,16 +75,16 @@ const herhaalHint = document.getElementById("js--speech-reload-hint");
 const herhaalEnd = document.getElementById("js--speech-reload-end");
 
 //audio
-const verblijfAf = new Audio("../audio/Tjalle/9-verblijf/1-verblijfAf.m4a");
-const bovenaan = new Audio("../audio/Tjalle/9-verblijf/2-bovenaan.m4a");
-const goedIngericht = new Audio("../audio/Tjalle/9-verblijf/3-goedIngericht.m4a");
-const vraag = new Audio("../audio/Tjalle/9-verblijf/4-vraag.m4a");
-const veelDieren = new Audio("../audio/Tjalle/9-verblijf/5-veelDieren.m4a");
-const vrijeRuimte = new Audio("../audio/Tjalle/9-verblijf/6-vrijeRuimte.m4a");
-const keuze = new Audio("../audio/Tjalle/9-verblijf/7-keuze.m4a");
+const verblijfAf = new Audio("../../audio/Tjalle/9-verblijf/1-verblijfAf.m4a");
+const bovenaan = new Audio("../../audio/Tjalle/9-verblijf/2-bovenaan.m4a");
+const goedIngericht = new Audio("../../audio/Tjalle/9-verblijf/3-goedIngericht.m4a");
+const vraag = new Audio("../../audio/Tjalle/9-verblijf/4-vraag.m4a");
+const veelDieren = new Audio("../../audio/Tjalle/9-verblijf/5-veelDieren.m4a");
+const vrijeRuimte = new Audio("../../audio/Tjalle/9-verblijf/6-vrijeRuimte.m4a");
+const keuze = new Audio("../../audio/Tjalle/9-verblijf/7-keuze.m4a");
 
-const hint1 = new Audio("../audio/Tjalle/9-verblijf/hint-1.m4a");
-const hint2 = new Audio("../audio/Tjalle/9-verblijf/hint-2.m4a");
+const hint1 = new Audio("../../audio/Tjalle/9-verblijf/hint-1.m4a");
+const hint2 = new Audio("../../audio/Tjalle/9-verblijf/hint-2.m4a");
 
 const endHerhaal = [goedIngericht, vraag, veelDieren, vrijeRuimte, keuze];
 const hintHerhaal = [bovenaan, hint1, hint2];
@@ -95,29 +95,30 @@ let countEnd = 0;
 let tekst = '';
 let speakOnStorage;
 let isHint = false;
+hintBtn.disabled = true;
 
 setInterval(() => {
     if (speakOn2.style.visibility == 'hidden') {
         speakOnStorage = 'hidden';
-        localStorage.setItem("speakOnStorage", speakOnStorage);
+        localStorage.setItem("speakOnStorage2", speakOnStorage);
     }
     if (speakOn2.style.visibility == 'visible') {
         speakOnStorage = 'visible';
-        localStorage.setItem("speakOnStorage", speakOnStorage);
+        localStorage.setItem("speakOnStorage2", speakOnStorage);
     }
 }, 200);
 
 setInterval(() => {
-    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+    if (localStorage.getItem("speakOnStorage2") == 'hidden') {
         speakOnFunction();
     }
-    if (localStorage.getItem("speakOnStorage") == 'visible') {
+    if (localStorage.getItem("speakOnStorage2") == 'visible') {
         speakOffFunction();
     } 
-    if (localStorage.getItem("speakOnStorage") == 'hidden' && articleIntro.style.display == "none") {
+    if (localStorage.getItem("speakOnStorage2") == 'hidden' && articleIntro.style.display == "none") {
         speakOnFunction2();
     }
-    if (localStorage.getItem("speakOnStorage") == 'visible' && articleIntro.style.display == "none") {
+    if (localStorage.getItem("speakOnStorage2") == 'visible' && articleIntro.style.display == "none") {
         speakOffFunction2();
     }
 }, 1000);
@@ -185,7 +186,6 @@ herhaalEnd.onclick = () => {
     reloadSpeech(endHerhaal[countEnd], herhaalEnd, mouthMoveHead);
 }
 
-hintBtn.disabled = true;
 verblijfAf.play();
 verblijfAf.onplaying = () => {
     mouthMove.classList.add("mouth_move_verblijf");
@@ -391,6 +391,7 @@ endBtn.onclick = () => {
     endBubble.classList.remove("hide");
     hintBtn.disabled = true;
     hintBtnGlow.classList.remove("glow");
+    
     goedIngericht.play();
     goedIngericht.onplaying = () => {
         mouthMoveHead.classList.add("mouth_move_head");
