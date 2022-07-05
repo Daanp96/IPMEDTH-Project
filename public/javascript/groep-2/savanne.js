@@ -26,11 +26,17 @@ function start(){
 }
 
 //andere audio files -> let op ../../
+const savanne = new Audio("../../audio/Tjalle/groep-2/6-aap/1-savanne.m4a");
+const verschillende = new Audio("../../audio/Tjalle/groep-2/6-aap/2-verschillendeDieren.m4a");
+const vergeten = new Audio("../../audio/Tjalle/groep-2/6-aap/3-vergeten.m4a");
+const invullen = new Audio("../../audio/Tjalle/groep-2/6-aap/4-invullen.m4a");
 
-// const hint1 = new Audio("../../audio/6-aap/hint-1.mp3");
-// const hint2 = new Audio("../../audio/6-aap/hint-2.mp3");
-// const hint3 = new Audio("../../audio/6-aap/hint-3.mp3");
-// const hint4 = new Audio("../../audio/6-aap/hint-4.mp3");
+const hint1 = new Audio("../../audio/Tjalle/groep-2/6-aap/hint-1.m4a");
+const hint2 = new Audio("../../audio/Tjalle/groep-2/6-aap/hint-2.m4a");
+const hint3 = new Audio("../../audio/Tjalle/groep-2/6-aap/hint-3.m4a");
+const hint4 = new Audio("../../audio/Tjalle/groep-2/6-aap/hint-4.m4a");
+
+
 
 setInterval(() => {
     if (localStorage.getItem("speakOnStorage2") == 'hidden') {
@@ -44,23 +50,27 @@ setInterval(() => {
 function speakOnFunction(){
     speakOff.style.visibility = "visible";
     speakOn.style.visibility = "hidden";
-    // savanneVerblijf.muted = true;
-    // verbeteren.muted = true;
-    // hint1.muted = true;
-    // hint2.muted = true;
-    // hint3.muted = true;
-    // hint4.muted = true;
+    savanne.muted = true;
+    verschillende.muted = true;
+    vergeten.muted = true;
+    invullen.muted = true;
+    hint1.muted = true;
+    hint2.muted = true;
+    hint3.muted = true;
+    hint4.muted = true;
 };
   
 function speakOffFunction(){
     speakOff.style.visibility = "hidden";
     speakOn.style.visibility = "visible";
-    // savanneVerblijf.muted = false;
-    // verbeteren.muted = false;
-    // hint1.muted = false;
-    // hint2.muted = false;
-    // hint3.muted = false;
-    // hint4.muted = false;
+    savanne.muted = false;
+    verschillende.muted = false;
+    vergeten.muted = false;
+    invullen.muted = false;
+    hint1.muted = false;
+    hint2.muted = false;
+    hint3.muted = false;
+    hint4.muted = false;
 };
 
 if(document.URL.includes("groep-2/savanne.html") ){
@@ -73,12 +83,12 @@ if(document.URL.includes("groep-2/savanne.html") ){
         speakOffFunction();
     };
 
-    //eerste audio die in de html staat
-    // .play();
-    // .onended = () => {
-    //     startOKBtn.style.display = "block";
-    //     herhaal.style.display = "block";
-    // }
+    // eerste audio die in de html staat
+    savanne.play();
+    savanne.onended = () => {
+        startOKBtn.style.display = "block";
+        herhaal.style.display = "block";
+    }
 
     herhaal.onclick = () => {
         if(isHint) {
@@ -94,39 +104,39 @@ if(document.URL.includes("groep-2/savanne.html") ){
         switch(startOK) {
             case 0:
                 tekst = 'Hier verblijven allemaal verschillende dieren.';
-                // .play();
-                // .onplaying = () => {
-                //     //andere image
-                // }
-                // .onended = () => {
-                //     //andere image
+                verschillende.play();
+                verschillende.onplaying = () => {
+                    //andere image
+                }
+                verschillende.onended = () => {
+                    //andere image
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
-                // }
+                }
                 break;
             case 1:
                 tekst = 'Maar blijkbaar zijn we vergeten voor één dier een bord op te hangen!';
-                // .play();
-                // .onplaying = () => {
-                //     //andere image
-                // }
-                // .onended = () => {
-                //     //andere image
+                vergeten.play();
+                vergeten.onplaying = () => {
+                    //andere image
+                }
+                vergeten.onended = () => {
+                    //andere image
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
-                // }
+                }
                 break;
             case 2:
                 tekst = 'Kan jij het bord voor ons invullen?';
-                // .play();
-                // .onplaying = () => {
-                //     //andere image
-                // }
-                // .onended = () => {
-                //     //andere image
+                invullen.play();
+                invullen.onplaying = () => {
+                    //andere image
+                }
+                invullen.onended = () => {
+                    //andere image
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
-                // }
+                }
                 break;
             case 3: 
                 speechBubble.style.visibility = "hidden";
@@ -160,11 +170,11 @@ if(document.URL.includes("groep-2/savanne.html") ){
                 speechBubble_p.style.visibility = "visible";
                 startOKBtn.style.visibility = "visible";
                 tekst = 'Klik op het bord.';
-                // hint1.play();
-                // hint1.onended = () => {
-                //     startOKBtn.style.display = "block";
-                //     herhaal.style.display = "block";
-                // }
+                hint1.play();
+                hint1.onended = () => {
+                    startOKBtn.style.display = "block";
+                    herhaal.style.display = "block";
+                }
                 startOKBtn.onclick = () => {
                     speechBubble.style.visibility = "hidden";
                     speechBubble_p.style.visibility = "hidden";
@@ -178,11 +188,11 @@ if(document.URL.includes("groep-2/savanne.html") ){
                 speechBubble_p.style.visibility = "visible";
                 startOKBtn.style.visibility = "visible";
                 tekst = 'Klik op het vraagteken.';
-                // hint2.play();
-                // hint2.onended = () => {
-                //     startOKBtn.style.display = "block";
-                //     herhaal.style.display = "block";
-                // }
+                hint2.play();
+                hint2.onended = () => {
+                    startOKBtn.style.display = "block";
+                    herhaal.style.display = "block";
+                }
                 image = '../../images/savanne2/question-mark.png';
                 startOKBtn.onclick = () => {
                     speechBubble.style.visibility = "hidden";
@@ -199,11 +209,11 @@ if(document.URL.includes("groep-2/savanne.html") ){
                 startOKBtn.style.visibility = "visible";
                 explaineBtn.style.width = "23vw";
                 tekst = 'Je toetsenbord gebruikt blokletters, dit zijn de kleine letters.';
-                // hint3.play();
-                // hint3.onended = () => {
-                //     startOKBtn.style.display = "block";
-                //     herhaal.style.display = "block";
-                // }
+                hint3.play();
+                hint3.onended = () => {
+                    startOKBtn.style.display = "block";
+                    herhaal.style.display = "block";
+                }
                 image = '../../images/savanne2/Keyboard2.png';
                 startOKBtn.onclick = () => {
                     speechBubble.style.visibility = "hidden";
@@ -218,11 +228,11 @@ if(document.URL.includes("groep-2/savanne.html") ){
                 speechBubble_p.style.visibility = "visible";
                 startOKBtn.style.visibility = "visible";
                 tekst = 'Het antwoord is: aap';
-                // hint4.play();
-                // hint4.onended = () => {
-                //     startOKBtn.style.display = "block";
-                //     herhaal.style.display = "block";
-                // }
+                hint4.play();
+                hint4.onended = () => {
+                    startOKBtn.style.display = "block";
+                    herhaal.style.display = "block";
+                }
                 startOKBtn.onclick = () => {
                     speechBubble.style.visibility = "hidden";
                     speechBubble_p.style.visibility = "hidden";

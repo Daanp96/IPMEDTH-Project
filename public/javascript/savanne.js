@@ -24,13 +24,14 @@ const verbeteren = new Audio("../audio/Tjalle/6-savanne/2-verbeteren.m4a");
 
 const hint1 = new Audio("../audio/Tjalle/6-savanne/hint-1.m4a");
 const hint2 = new Audio("../audio/Tjalle/6-savanne/hint-2.m4a");
-const hint3 = new Audio("../audio/Tjalle/6-savanne/hint-3.m4a");
+const hint3 = new Audio("../audio/Tjalle/6-savanne/hint-3.m4a"); 
 const hint4 = new Audio("../audio/Tjalle/6-savanne/hint-4.m4a");
+const hint5 = new Audio("../audio/Tjalle/6-savanne/hint-5.m4a");
 
-// const hint2 = new Audio("../audio/Tjalle/6-savanne/hint-2.m4a"); backsapce audio
+
 
 const audioHerhaalSavanne = [savanneVerblijf, verbeteren];
-const hintHerhaalSavanne = [hint1, hint2, hint3, hint4];
+const hintHerhaalSavanne = [hint1, hint2, hint3, hint4, hint5];
 
 
 let startOK = 0;
@@ -60,10 +61,10 @@ function speakOnFunction(){
     savanneVerblijf.muted = true;
     verbeteren.muted = true;
     hint1.muted = true;
-//  hint2.muted = true; backspace hint uodate alle ander hint nummers
     hint2.muted = true;
     hint3.muted = true;
     hint4.muted = true;
+    hint5.muted = true;
 };
   
 function speakOffFunction(){
@@ -75,6 +76,7 @@ function speakOffFunction(){
     hint2.muted = false;
     hint3.muted = false;
     hint4.muted = false;
+    hint5.muted = false;
 };
 
 
@@ -232,7 +234,7 @@ if(document.URL.includes("savanne.html") ){
                 speechBubble_p.style.visibility = "visible";
                 // startOKBtn.style.visibility = "visible";
                 explaineBtn.style.width = "23vw";
-                tekst = 'Deze knop op je toestenboord verwijderd de letters.';
+                tekst = 'Met deze knop op je toestenboord verwijder je de letters.';
                 hint3.play();
 
                 hint3.onended = () => {
@@ -256,9 +258,9 @@ if(document.URL.includes("savanne.html") ){
                 // startOKBtn.style.visibility = "visible";
                 explaineBtn.style.width = "23vw";
                 tekst = 'Je toetsenbord gebruikt blokletters. Dit zijn de kleine letters.';
-                hint3.play();
+                hint4.play();
 
-                hint3.onended = () => {
+                hint4.onended = () => {
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -277,9 +279,9 @@ if(document.URL.includes("savanne.html") ){
                 speechBubble_p.style.visibility = "visible";
                 startOKBtn.style.visibility = "visible";
                 tekst = 'Het antwoord is olifant.';
-                hint4.play();
+                hint5.play();
 
-                hint4.onended = () => {
+                hint5.onended = () => {
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
