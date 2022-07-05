@@ -27,6 +27,8 @@ const hint2 = new Audio("../audio/Tjalle/6-savanne/hint-2.m4a");
 const hint3 = new Audio("../audio/Tjalle/6-savanne/hint-3.m4a");
 const hint4 = new Audio("../audio/Tjalle/6-savanne/hint-4.m4a");
 
+// const hint2 = new Audio("../audio/Tjalle/6-savanne/hint-2.m4a"); backsapce audio
+
 const audioHerhaalSavanne = [savanneVerblijf, verbeteren];
 const hintHerhaalSavanne = [hint1, hint2, hint3, hint4];
 
@@ -58,6 +60,7 @@ function speakOnFunction(){
     savanneVerblijf.muted = true;
     verbeteren.muted = true;
     hint1.muted = true;
+//  hint2.muted = true; backspace hint uodate alle ander hint nummers
     hint2.muted = true;
     hint3.muted = true;
     hint4.muted = true;
@@ -222,7 +225,31 @@ if(document.URL.includes("savanne.html") ){
                     isHint = false;
                 }
                 break;
+
             case 2: 
+                speechBubble.style.visibility = "visible";
+                explaineBtn.classList.remove("hide");
+                speechBubble_p.style.visibility = "visible";
+                // startOKBtn.style.visibility = "visible";
+                explaineBtn.style.width = "23vw";
+                tekst = 'Deze knop op je toestenboord verwijderd de letters.';
+                hint3.play();
+
+                hint3.onended = () => {
+                    startOKBtn.style.display = "block";
+                    herhaal.style.display = "block";
+                }
+            image = '../images/savanne/backspace.png';
+            startOKBtn.onclick = () => {
+                speechBubble.style.visibility = "hidden";
+                explaineBtn.classList.add("hide");
+                speechBubble_p.style.visibility = "hidden";
+                isHint = false;
+                // startOKBtn.style.visibility = "hidden";
+                countHint++;
+            }
+                break;
+            case 3: 
                 speechBubble.style.visibility = "visible";
                 explaineBtn.classList.remove("hide");
                 speechBubble_p.style.visibility = "visible";
@@ -245,7 +272,7 @@ if(document.URL.includes("savanne.html") ){
                     countHint++;
                 }
                 break;
-            case 3: 
+            case 4: 
                 speechBubble.style.visibility = "visible";
                 speechBubble_p.style.visibility = "visible";
                 startOKBtn.style.visibility = "visible";
@@ -264,7 +291,7 @@ if(document.URL.includes("savanne.html") ){
                     countHint++;
                 }
                 break;
-            case 4:
+            case 5:
                 speechBubble.style.visibility = "hidden";
                 startOKBtn.style.display = "none";
                 // startOKBtn.style.visibility = "hidden";
