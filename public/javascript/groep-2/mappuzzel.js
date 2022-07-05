@@ -14,7 +14,6 @@ const speechP = document.getElementById("js--speech-bubble-p");
 const speechImage = document.getElementById("js--speech-bubble-img");
 const speechButton = document.getElementById("js--speech-bubble-btn");
 const herhaal = document.getElementById("js--speech-reload");
-const mouthMove = document.getElementById("js--mouth");
 
 const zookeeper = document.getElementById("js--map_zookeeper");
 const mapOverlay = document.getElementById("js--map-overlay");
@@ -27,12 +26,8 @@ const kaartHeel = new Audio("../../audio/Tjalle/3-mappuzzel/2-kaartKlaar.m4a");
 hintBtn.disabled = true;
 
 mapUitleg.play();
-mapUitleg.onplaying = () => {
-    mouthMove.style.display = "block";
-    mouthMove.classList.add("mouth_move_head");
-  }
+
 mapUitleg.onended = () => {
-    mouthMove.style.display = "none";
     speechButton.style.display = "flex";
     herhaal.style.display = "block";
 }
@@ -45,10 +40,10 @@ let audioHerhaal = [mapUitleg, kaartHeel]
 herhaal.onclick = () => {
     if(isHint) {
         console.log('is hint')
-        reloadHint(hint, herhaal, mouthMove);
+        reloadHint(hint, herhaal);
     } else {
         console.log("is geen hint")
-        reloadSpeech(audioHerhaal[countHerhaal], herhaal, mouthMove);
+        reloadSpeech(audioHerhaal[countHerhaal], herhaal);
     }
 }
 
@@ -130,12 +125,8 @@ hintBtn.onclick = () => {
             herhaal.style.display = "none";
             speechP.innerHTML = "Beweeg de muis naar een puzzelstukje en doe dan dit:";
             hint.play();
-            hint.onplaying = () => {
-                mouthMove.style.display = "block";
-                mouthMove.classList.add("mouth_move_head");
-              }
+
             hint.onended = () => {
-                mouthMove.style.display = "none";
                 speechButton.style.display = "flex";
                 herhaal.style.display = "block";
             }

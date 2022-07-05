@@ -59,8 +59,6 @@ const headZookeeper = document.getElementById("js--head-zookeeper");
 const hintBubble = document.getElementById("js--hintBubble");
 const hintBubbleBtn = document.getElementById("js--hintBubble-btn");
 const hintSpeechBubble_p = document.getElementById("js--speech-bubble-p-hint"); 
-const mouthMove = document.getElementById("js--mouth");
-const mouthMoveHead = document.getElementById("js--mouth-head");
 
 // eind gesprek
 const endBubble = document.getElementById("js--endBubble");
@@ -175,23 +173,19 @@ speakOff2.onclick = () => {
 };
 
 herhaalIntro.onclick = () => {
-    reloadSpeech(verblijfAf, herhaalIntro, mouthMove);
+    reloadSpeech(verblijfAf, herhaalIntro);
 }
 
 herhaalHint.onclick = () => {
-    reloadSpeech(hintHerhaal[countHerhaal], herhaalHint, mouthMoveHead);
+    reloadSpeech(hintHerhaal[countHerhaal], herhaalHint);
 }
 
 herhaalEnd.onclick = () => {
-    reloadSpeech(endHerhaal[countEnd], herhaalEnd, mouthMoveHead);
+    reloadSpeech(endHerhaal[countEnd], herhaalEnd);
 }
 
 verblijfAf.play();
-verblijfAf.onplaying = () => {
-    mouthMove.classList.add("mouth_move_verblijf");
-}
 verblijfAf.onended = () => {
-    mouthMove.classList.remove("mouth_move_verblijf");
     startOKBtn.style.display = "flex";
     herhaalIntro.style.display = "block";
 }
@@ -223,13 +217,8 @@ hintBtn.onclick = () => {
             hintBubble.classList.remove("hide");
             tekst = 'Klik op de gekleurde vlakken.';
             hint1.play();
-            hint1.onplaying = () => {
-                mouthMoveHead.classList.add("mouth_move_head");
-                mouthMoveHead.style.display = "block";
-            }
+
             hint1.onended = () => {
-                mouthMoveHead.classList.remove("mouth_move_head");
-                mouthMoveHead.style.display = "none";
                 hintBubbleBtn.style.display = "flex";
                 herhaalHint.style.display = "block";
             }
@@ -248,13 +237,9 @@ hintBtn.onclick = () => {
             hintBubble.classList.remove("hide");
             tekst = 'Sleep de sticker naar een mooie plek.';
             hint2.play();
-            hint2.onplaying = () => {
-                mouthMoveHead.classList.add("mouth_move_head");
-                mouthMoveHead.style.display = "block";
-            }
+
             hint2.onended = () => {
-                mouthMoveHead.classList.remove("mouth_move_head");
-                mouthMoveHead.style.display = "none";
+
                 hintBubbleBtn.style.display = "flex";
                 herhaalHint.style.display = "block";
             }
@@ -296,12 +281,8 @@ startOKBtn.onclick = () => {
     speakOff2.style.zIndex = 70;
     hintSpeechBubble_p.innerHTML = 'Bovenaan zie je een lijstje wat ze nodig hebben.';
     bovenaan.play();
-    bovenaan.onplaying = () => {
-        mouthMoveHead.classList.add("mouth_move_head");
-        mouthMoveHead.style.display = "block";
-    }
+
     bovenaan.onended = () => {
-        mouthMoveHead.style.display = "none";
         console.log("none");
         hintBubbleBtn.style.display = "flex";
         herhaalHint.style.display = "block";
@@ -393,13 +374,8 @@ endBtn.onclick = () => {
     hintBtnGlow.classList.remove("glow");
     
     goedIngericht.play();
-    goedIngericht.onplaying = () => {
-        mouthMoveHead.classList.add("mouth_move_head");
-        mouthMoveHead.style.display = "block";
 
-    }
     goedIngericht.onended = () => {
-        mouthMoveHead.style.display = "none";
         endBubbleBtn.style.display = "flex";
         herhaalEnd.style.display = "block";
     }
@@ -438,12 +414,8 @@ endBubbleBtn.onclick = () => {
             endBubbleBtn.style.display = "none";
             tekst = 'Voordat we verder gaan heb ik een vraag voor jou.';
             vraag.play();
-            vraag.onplaying = () => {
-                mouthMoveHead.classList.add("mouth_move_head");
-                mouthMoveHead.style.display = "block";
-            }
+
             vraag.onended = () => {
-                mouthMoveHead.style.display = "none";
                 endBubbleBtn.style.display = "flex";
                 herhaalEnd.style.display = "block";
             }
@@ -453,13 +425,8 @@ endBubbleBtn.onclick = () => {
             endBubbleBtn.style.display = "none";
             tekst = 'Veel dieren hier komen niet voor in Nederland, maar we kunnen ze zien dankzij dierentuinen.';
             veelDieren.play();
-            veelDieren.onplaying = () => {
-                mouthMoveHead.classList.add("mouth_move_head");
-                mouthMoveHead.style.display = "block";
-            }
-            veelDieren.onended = () => {
-                mouthMoveHead.style.display = "none";
 
+            veelDieren.onended = () => {
                 endBubbleBtn.style.display = "flex";
                 herhaalEnd.style.display = "block";
             }
@@ -469,12 +436,8 @@ endBubbleBtn.onclick = () => {
             endBubbleBtn.style.display = "none";
             tekst = 'Alleen in dierentuinen hebben dieren minder vrije ruimte dan als ze vrij zijn.';
             vrijeRuimte.play();
-            vrijeRuimte.onplaying = () => {
-                mouthMoveHead.classList.add("mouth_move_head");
-                mouthMoveHead.style.display = "block";
-            }
+
             vrijeRuimte.onended = () => {
-                mouthMoveHead.style.display = "none";
                 endBubbleBtn.style.display = "flex";
                 herhaalEnd.style.display = "block";
             }
@@ -484,12 +447,7 @@ endBubbleBtn.onclick = () => {
             document.getElementById("js--speech-bubble-div").classList.add("hide-important");
             tekst = 'Vind je het goed dat de dierentuinen er zijn? Kies dan “Dierentuin”. <br>Of wil je liever dat alle dieren los in de natuur lopen? Kies dan “Natuur”.';
             keuze.play();
-            keuze.onplaying = () => {
-                mouthMoveHead.classList.add("mouth_move_head");
-                mouthMoveHead.style.display = "block";
-            }
             keuze.onended = () => {
-                mouthMoveHead.style.display = "none";
                 document.getElementById("js--speech-bubble-div-2").classList.remove("hide-important");
                 herhaalEnd.style.display = "block";
             }

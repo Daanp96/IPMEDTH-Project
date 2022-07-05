@@ -1,14 +1,16 @@
 .savanne2{
+    
     &--background{
         @include background;
         background-image: url(../images/savanne/Savanne-3.png);
     }
    
     &__tree{
-
+        
         &-1{
-            grid-column: 11/ span 16;
-            grid-row: 1/ span 1;
+            grid-column: 11/ span 6;
+            grid-row: 9/ span 1;
+            align-self: end;
             &--image-1{
                 width: 40vw;
                 height: auto;
@@ -17,8 +19,9 @@
         }
 
         &-2{
-            grid-column: 3/ span 16;
-            grid-row: 1/ span 1;
+            grid-column: 3/ span 4;
+            grid-row: 5/ span 1;
+            align-self: end;
             &--image-2{
                 width: 25vw;
                 height: auto;
@@ -27,8 +30,9 @@
         }
 
         &-3{
-            grid-column: 8/ span 16;
-            grid-row: 1/ span 1;
+            grid-column: 8/ span 4;
+            grid-row: 6/ span 1;
+            align-self: end;
             &--image-3{
                 width: 25vw;
                 height: auto;
@@ -40,8 +44,9 @@
     &__animal{
     
         &-1{
-            grid-column: 2/ span 3;
+            grid-column: 2/ span 2;
             grid-row: 2/ span 2;
+            align-self: end;
             &--image-1{
                 width: 10vw;
                 height: auto;
@@ -51,7 +56,8 @@
 
         &-2{
             grid-column: 6 / span 2;
-            grid-row: 6 /span 2;
+            grid-row: 5 /span 2;
+            align-self: end;
             &--image-2{
                 width: 10vw;
                 height: auto;
@@ -60,27 +66,19 @@
         }
 
         &-3{
-            grid-column: 10 / span 2;
+            grid-column: 9 / span 1;
             grid-row: 3 /span 2;
+            align-self: end;
             &--image-3{
                 width: 7.5vw;
                 height: auto;
             }
         }
         &-4{
-            grid-column: 12 / span 2;
-            grid-row: 2 /span 2;
+            grid-column: 12 / span 1;
+            grid-row: 1 /span 2;
+            align-self: end;
             &--image-4{
-                width: 5vw;
-                height: auto;
-            }
-        }
-        &-5{
-            grid-column: 14 / span 2;
-            grid-row: 5 /span 2;
-            z-index: 2;
-            
-            &--image-5{
                 width: 5vw;
                 height: auto;
             }
@@ -99,8 +97,9 @@
         // bottom: 0;
         // left: 0;
         grid-column: 1 / span 2;
-        grid-row: 5 / span 1;
+        grid-row: 5 / span 5;
         z-index: 3;
+        align-self: end;
         transform: scaleX(-1);
         &--image{
             @include zookeeperSize;
@@ -111,6 +110,7 @@
         grid-column: 7 / span 4;
         grid-row: 4 / span 6;
         z-index: 1;
+        align-self: end;
         &--image{
             width: 100%;
             height: 100%;
@@ -121,5 +121,44 @@
     &__animal-board:hover{
         transition: transform 2s;
         transform: scale(1.4);
+    }
+}
+
+@media(max-width: 1400px){
+    .savanne2{
+        &__animal-2{
+            grid-row: 4 /span 2;
+        }
+        &__animal-3{
+            grid-row: 2 /span 2;
+        }
+        &__tree-1{
+            grid-row: 8 / span 1;
+        }
+        &__tree-3{
+            grid-row: 5 / span 1;
+        }
+    }
+}
+@media(max-width: 1300px){
+    .savanne2{
+        &__tree-2{
+            grid-row: 4 /span 1;
+        }
+    }
+}
+
+@media(max-width: 1250px){
+    .savanne2{
+        &__speech-bubble{
+            grid-row: 5 /span 1;
+        }
+    }
+}
+@media(max-width: 1200px){
+    .savanne2{
+        &__tree-3{
+            grid-row: 4 / span 1;
+        }
     }
 }

@@ -3,18 +3,13 @@ import {reloadSpeech} from "./functions.js";
 const puzzelButton = document.getElementById("js--map-btn");
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
-const mouthMove = document.getElementById("js--mouth");
 const herhaal = document.getElementById("js--speech-reload");
 
 const mapKapot = new Audio("../audio/Tjalle/2-map/1-kaartkapot.m4a");
 
 mapKapot.play();
-mapKapot.onplaying = () => {
-  mouthMove.style.display = "block";
-  mouthMove.classList.add("mouth_move_map");
-}
+
 mapKapot.onended = () => {
-  mouthMove.style.display = "none";
   puzzelButton.style.display = "flex";
   herhaal.style.display = "block";
 }
@@ -47,7 +42,7 @@ speakOff.onclick = () => {
 };
 
 herhaal.onclick = () => {
-  reloadSpeech(mapKapot, herhaal, mouthMove);
+  reloadSpeech(mapKapot, herhaal);
 }
 
 puzzelButton.onclick = () => {

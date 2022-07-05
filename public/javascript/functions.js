@@ -9,8 +9,7 @@ let rock = 0;
 let pond = 0;
 
 // audio
-const mouthMove = document.getElementById("js--mouth");
-const mouthMovePinguin = document.getElementById("js--mouth-pinguin");
+
 // let kaartHeel = new Audio("../audio/3-Mappuzzel/2-kaartKlaar.mp3");
 
 const addAnimate = (animate) => {
@@ -21,30 +20,20 @@ const removeAnimate = (animate) => {
   animate.classList.remove("reload_animation");
 }
 
-const removeMoveMouth = (mouth) => {
-  mouth.classList.remove("mouth_move");
-  mouth.classList.remove("mouth_move_wave");
-  mouth.classList.remove("mouth_move_map");
-  mouth.classList.remove("mouth_move_pad");
-  mouth.classList.remove("mouth_move_verblijf");
-  mouth.classList.remove("mouth_move_head");
-  mouth.style.display = "none";
-}
-const reloadSpeech = (audio, animate, mouth) => {
+
+const reloadSpeech = (audio, animate) => {
   addAnimate(animate);
   audio.play();
   audio.onended = () => {
     removeAnimate(animate);
-    removeMoveMouth(mouth);
   }
 }
 
-const reloadHint = (audio, animate, mouth) => {
+const reloadHint = (audio, animate) => {
   addAnimate(animate);
   audio.play();
   audio.onended = () => {
     removeAnimate(animate);
-    removeMoveMouth(mouth);
   }
 }
 
@@ -130,12 +119,8 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spee
           speechButton.style.display = "none";
           mapOverlay.style.zIndex = '1';
           kaartHeel.play();
-          kaartHeel.onplaying = () => {
-            mouthMove.style.display = "block";
-            mouthMove.classList.add("mouth_move_head");
-          }
+
           kaartHeel.onended = () => {
-            mouthMove.style.display = "none";
             herhaal.style.display = "block";
             btn.style.display = "block";
           }
@@ -234,13 +219,8 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         text.style.visibility = "visible";
         text.innerHTML = "Goed gedaan! De pinguïns zijn heel blij.";
         goedGedaan.play();
-        goedGedaan.onplaying = () => {
-          mouthMovePinguin.style.display = "block";
-          mouthMovePinguin.classList.add("mouth_move_verblijf");
 
-        }
         goedGedaan.onended = () => {
-          mouthMovePinguin.style.display = "none";
           nextBtn.style.display = "block";
           herhaal.style.display = "block";
 

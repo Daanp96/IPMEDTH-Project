@@ -14,7 +14,6 @@ const hintBtnGlow = document.getElementById("js--hint-glow");
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
-const mouthMove = document.getElementById("js--mouth-pinguin");
 
 const herhaal = document.getElementById("js--speech-reload");
 
@@ -68,12 +67,8 @@ if(document.URL.includes("pinguinverblijf.html") ){
 
     hintBtn.disabled = true;
     pinguinVerblijf.play();
-    pinguinVerblijf.onplaying = () => {
-        mouthMove.style.display = "block";
-        mouthMove.classList.add("mouth_move_verblijf");
-    }
+
     pinguinVerblijf.onended = () => {
-        mouthMove.style.display = "none";
         startOKBtn.style.display = "flex";
         herhaal.style.display = "block";
     }
@@ -107,9 +102,9 @@ if(document.URL.includes("pinguinverblijf.html") ){
 
     herhaal.onclick = () => {
         if(isHint) {
-            reloadHint(hintHerhaalArctic[countHint], herhaal, mouthMove);
+            reloadHint(hintHerhaalArctic[countHint], herhaal);
         } else {
-            reloadSpeech(pinguinVerblijf, herhaal, mouthMove);
+            reloadSpeech(pinguinVerblijf, herhaal);
         }
     }
     
@@ -129,12 +124,8 @@ if(document.URL.includes("pinguinverblijf.html") ){
                 // startOKBtn.style.visibility = "visible";
                 tekst = 'Alle pinguïns moeten gevoed worden.';
                 hint1.play();
-                hint1.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint1.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "flex";
                     herhaal.style.display = "block";
                 }
@@ -154,12 +145,8 @@ if(document.URL.includes("pinguinverblijf.html") ){
                 // startOKBtn.style.visibility = "visible";
                 tekst = 'Beweeg je muis naar de emmer met de vis en doe dit:';
                 hint2.play();
-                hint2.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint2.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "flex";
                     herhaal.style.display = "block";
                 }

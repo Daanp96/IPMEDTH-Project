@@ -1,10 +1,10 @@
-const bedankt = new Audio("../audio/Tjalle/10-uitgang/1-bedankt.m4a");
+const bedankt = new Audio("../../audio/Tjalle/10-uitgang/1-bedankt.m4a");
 
 const overlay = document.getElementById("js--end-overlay");
 const diploma = document.getElementById("js--diploma");
 const diplomaInput = document.getElementById("js--diploma-input");
 const diplomaBtn = document.getElementById("js--diploma-button");
-const eindeTekst = document.getElementById("js--einde_tekst");
+const eindeTekst = document.getElementById("js--einde-tekst");
 // const overlayTitle = document.getElementById("js--overlay-title");
 
 const keuzes = document.getElementById("js--keuzes");
@@ -15,10 +15,10 @@ const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
 
 setInterval(() => {
-    if (localStorage.getItem("speakOnStorage") == 'hidden') {
+    if (localStorage.getItem("speakOnStorage2") == 'hidden') {
         speakOnFunction();
     }
-    if (localStorage.getItem("speakOnStorage") == 'visible') {
+    if (localStorage.getItem("speakOnStorage2") == 'visible') {
         speakOffFunction();
     }
 }, 1000);
@@ -64,7 +64,6 @@ window.onafterprint = (e) =>{
 };
 
 bedankt.play();
-
 bedankt.onended = () => {
     overlay.style.opacity = "1";
     diploma.style.opacity = "1";
@@ -74,6 +73,7 @@ bedankt.onended = () => {
 
 opnieuw.onclick = () => {
     toStart();
+    // window.location = "../../index.html";
 }
 
 afsluiten.onclick = () => {

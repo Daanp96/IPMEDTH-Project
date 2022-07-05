@@ -13,7 +13,6 @@ const speakOff = document.getElementById("js--speak-off");
 
 const mapOverlay = document.getElementById("js--map-overlay");
 const herhaal = document.getElementById("js--speech-reload");
-const mouthMove = document.getElementById("js--mouth");
 
 const animalHeads = document.getElementsByClassName("popup__container-savanne--image");
 for(let animal of animalHeads){
@@ -89,21 +88,17 @@ if(document.URL.includes("savanne.html") ){
     };
     
     savanneVerblijf.play();
-    savanneVerblijf.onplaying = () => {
-        mouthMove.style.display = "block";
-        mouthMove.classList.add("mouth_move_verblijf");
-    }
+
     savanneVerblijf.onended = () => {
-        mouthMove.style.display = "none";
         startOKBtn.style.display = "block";
         herhaal.style.display = "block";
     }
     
     herhaal.onclick = () => {
         if(isHint) {
-            reloadHint(hintHerhaalSavanne[countHint], herhaal, mouthMove);
+            reloadHint(hintHerhaalSavanne[countHint], herhaal);
         } else {
-            reloadSpeech(audioHerhaalSavanne[countHerhaal], herhaal, mouthMove);
+            reloadSpeech(audioHerhaalSavanne[countHerhaal], herhaal);
         }
     }   
 
@@ -152,12 +147,8 @@ if(document.URL.includes("savanne.html") ){
                 tekst = 'Maar blijkbaar hebben we de verkeerde naam opgehangen! Kan jij het bord voor ons verbeteren?';
                 image = '';
                 verbeteren.play();
-                verbeteren.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 verbeteren.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -198,12 +189,8 @@ if(document.URL.includes("savanne.html") ){
                 // startOKBtn.style.visibility = "visible";
                 tekst = 'Klik op het bord.';
                 hint1.play();
-                hint1.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint1.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -222,12 +209,8 @@ if(document.URL.includes("savanne.html") ){
                 // startOKBtn.style.visibility = "visible";
                 tekst = 'Klik op de foute naam.';
                 hint2.play();
-                hint2.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint2.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -247,12 +230,8 @@ if(document.URL.includes("savanne.html") ){
                 explaineBtn.style.width = "23vw";
                 tekst = 'Je toetsenbord gebruikt blokletters. Dit zijn de kleine letters.';
                 hint3.play();
-                hint3.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint3.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
@@ -272,12 +251,8 @@ if(document.URL.includes("savanne.html") ){
                 startOKBtn.style.visibility = "visible";
                 tekst = 'Het antwoord is olifant.';
                 hint4.play();
-                hint4.onplaying = () => {
-                    mouthMove.style.display = "block";
-                    mouthMove.classList.add("mouth_move_verblijf");
-                }
+
                 hint4.onended = () => {
-                    mouthMove.style.display = "none";
                     startOKBtn.style.display = "block";
                     herhaal.style.display = "block";
                 }
