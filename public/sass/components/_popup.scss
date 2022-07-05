@@ -203,8 +203,9 @@
         background-image: url(../images/savanne/sign-monkey-popup.png);
         @include background-popup;
         height: 70vh;
+        width: 60vw;
         display: grid;
-        grid-template-rows: repeat(9, minmax(0, 1fr));
+        grid-template-rows: repeat(10, minmax(0, 1fr));
         grid-template-columns: repeat(9, minmax(0, 1fr));
         // grid-gap: 1.5rem;
         padding: 1.5rem;
@@ -219,49 +220,53 @@
             color: $color-white;
         }
 
-        &--lion-head{
-            grid-column: 2 / span 2;
-            grid-row: 3 /span 2;
+        &--lion{
+            grid-column: 1 / span 3;
+            grid-row: 2 /span 2;
+            align-self: center;
+            place-self: self-start;
+            text-align: center;
+        }
+        &--elephant{
+            grid-column: 4 / span 3;
+            grid-row: 2 /span 2;
             align-self: center;
             place-self: self-start;
         }
-        &--elephant-head{
-            grid-column: 4 / span 4;
-            grid-row: 3 /span 2;
-            align-self: center;
-            place-self: self-start;
-        }
-        &--zebra-head{
-            grid-column: 7 / span 2;
-            grid-row: 3 /span 2;
+        &--zebra{
+            grid-column: 7 / span 3;
+            grid-row: 2 /span 2;
             align-self: center;
             place-self: self-start;
             text-align-last: center;
         }
 
         &--image{
-            width: 65%;
+            width: 50%;
+            height: auto;
+        }
+        &--image-big{
+            width: 100%;
             height: auto;
         }
 
         &-text{
-
             &--leeuw{
                 color: $color-white;
                 font-weight: 400;
                 font-size: 4rem;
-                grid-column: 2 / span 2;
+                text-align: center;
+                grid-column: 1 / span 3;
                 grid-row: 6 / span 1;
-
             }
 
             &--zebra{
                 color: $color-white;
                 font-weight: 400;
                 font-size: 4rem;
-                grid-column: 7 / span 2;
-                grid-row: 6 / span 1;
                 text-align: center;
+                grid-column: 7 / span 3;
+                grid-row: 6 / span 1;
             }
 
         }
@@ -298,8 +303,9 @@
         }
         
         &--button{
-            grid-column: 4 / span 2;
+            grid-column: 4 / span 3;
             grid-row: 8 /span 2;
+            justify-self: center;
             // margin-top: 1.5rem;
         }
     }
@@ -325,7 +331,8 @@
         transform: translate(-50%, -50%) scale(1);
     }
 
-    &__close{
+    &__close,
+    &__close-vissenverblijf{
         &:link,
         &:visited{
             color: $color-white;
@@ -343,12 +350,30 @@
             color: red;
         }
     }
-    &__close--savanne{
+    // &__close--savanne{
+    //     &:link,
+    //     &:visited{
+    //         color: $color-white;
+    //         grid-column: 9;
+    //         grid-row: 2;
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //         font-size: 6rem;
+    //         text-decoration: none;
+    //         transition: all .2s;
+    //         line-height: 1;
+    //     }
+    //     &:hover{
+    //         color: red;
+    //     }
+    // }
+    &__close-savanne{
         &:link,
         &:visited{
             color: $color-white;
             grid-column: 9;
-            grid-row: 1;
+            grid-row: 2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -375,4 +400,131 @@ input[type=number]::-webkit-outer-spin-button{
     cursor: $cursor-point;
     background-color: transparent;
     border: none;
+}
+
+@media(max-width: 1450px){
+    .popup{
+        &__close{
+            margin-top: 3rem;
+        }
+        &__container-savanne{
+            height: 65vh;
+        }
+    }
+}
+@media(max-width: 1350px){
+    .popup{
+        &__container-monkey{
+            &--p1{
+                font-size: 3.5rem;
+            }
+        }
+        &__close{
+            margin-top: 6rem;
+        }
+    }
+}
+@media(max-width: 1300px){
+    .popup{
+        &__container-monkey{
+            &--p1{
+                font-size: 3rem;
+            }
+            &--button{
+                margin-top: 0rem;
+            }
+        }
+        &__container-savanne{
+            height: 60vh;
+        }
+        &__close{
+            margin-top: 8rem;
+        }
+    }
+}
+@media(max-width: 1250px){
+    .popup{
+        &__container-monkey{
+            &--p1{
+                font-size: 2.7rem;
+            }
+        }
+        // &__close,
+        // &__close--savanne{
+        //     margin-top: 8rem;
+        // }
+        &__close{
+            margin-top: 8rem;
+        }
+        // &__close-savanne{
+        //     margin-top: 5rem;
+        // }
+        &__close-vissenverblijf{
+            margin-left: 5rem;
+        }
+    }
+}
+@media(max-width: 1200px){
+    .popup{
+        &__container-savanne{
+            height: 55vh;
+            &--image{
+                width: 45%;
+                height: auto;
+            }
+        }
+    }
+}
+@media(max-width: 1150px){
+    .popup{
+        &__container{
+            &--p1{
+                font-size: 2.5rem;
+            }
+        }
+        &__close{
+            margin-top: 9rem;
+        }
+    }
+}
+@media(max-width: 1100px){
+    .popup{
+        &__container-monkey{
+            &--p1{
+                align-self: end;
+            }
+        }
+        &__container-savanne{
+            height: 50vh;
+            &--wrapper{
+                font-size: 3rem;
+            }
+            &-text--zebra,
+            &-text--leeuw{
+                font-size: 3rem;
+            }
+        } 
+    }
+}
+@media(max-width: 1050px){
+    .popup{
+        &__close{
+            margin-left: 2rem;
+        } 
+ 
+    }
+}
+@media(min-width: 1550px){
+    .popup{
+        &__container-savanne{
+            height: 75vh;
+        }
+    }
+}
+@media(min-width: 1700px){
+    .popup{
+        &__close{
+            margin-right: 5rem;
+        }    
+    }
 }

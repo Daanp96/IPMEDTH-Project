@@ -166,12 +166,12 @@ if(document.URL.includes("pinguinverblijf.html") ){
                 speechBubble.style.zIndex = "";
                 mapOverlay.style.zIndex = "-1";
                 break;
-    
+        }
         herhaal.style.display = "none";
         startOKBtn.style.display = "none";
         speechBubble_p.innerHTML = tekst;
         explaineBtn.src = image;
-        }
+        
     };
 }
   
