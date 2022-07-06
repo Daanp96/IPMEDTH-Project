@@ -35,7 +35,8 @@ mapUitleg.onended = () => {
 let countHint = 0;
 let isHint = false;
 let countHerhaal = 0;
-let audioHerhaal = [mapUitleg, kaartHeel]
+let audioHerhaal = [mapUitleg, kaartHeel];
+let countGlow = 0;
 
 herhaal.onclick = () => {
     if(isHint) {
@@ -100,19 +101,19 @@ speechButton.onclick = () => {
     speechButton.style.display = "none";
     countHerhaal++;
     
-    if(countHint == 0){
-        hintGlow(60000, hintBtnGlow);
+    setTimeout(() => {
+        hintGlow(countGlow, hintBtnGlow);
         setTimeout(() => {
             hintBtnGlow.classList.remove("glow");
         }, 70000);
-    } else {
-        hintBtnGlow.classList.remove("glow");
-    }
+    }, 60000);
 }
 
 hintBtn.onclick = () => {
     console.log(countHint);
     isHint = true;
+    countGlow = 1;
+    hintGlow(countGlow, hintBtnGlow);
     switch (countHint) {
         case 0: 
             hintBtnGlow.classList.remove("glow");

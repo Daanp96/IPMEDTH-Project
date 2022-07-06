@@ -52,6 +52,7 @@ const audioHints = [hint1, hint2];
 let countHint = 0;
 let countIjs = 0;
 let tekst = '';
+let countGlow = 0;
 
 goedemiddag.play();
 goedemiddag.onended = () => {
@@ -134,14 +135,12 @@ ijsbalie.onclick = () => {
         herhaalIjs.style.display = "block";
     }
 
-    if(countHint == 0){
-        hintGlow(60000, hintBtnGlow);
+    setTimeout(() => {
+        hintGlow(countGlow, hintBtnGlow);
         setTimeout(() => {
             hintBtnGlow.classList.remove("glow");
         }, 70000);
-    } else {
-        hintBtnGlow.classList.remove("glow");
-    }
+    }, 60000);
 
     for (let ijs of ijsjes) {
 
@@ -174,6 +173,8 @@ for(let munt of munten) {
 }
 
 hintBtn.onclick = () => {
+    countGlow = 1;
+    hintGlow(countGlow, hintBtnGlow);
     switch (countHint) {
         case 0:
             hintBtnGlow.classList.remove("glow");

@@ -20,6 +20,7 @@ let startOK = 0;
 let countHerhaal = 0;
 let isHint = false;
 let startTime;
+let countGlow = 0;
 
 function start(){
     startTime = new Date();
@@ -144,18 +145,16 @@ if(document.URL.includes("groep-2/savanne.html") ){
                 mapOverlay.style.zIndex = "-1";
                 hintBtn.disabled = false;
                 start();
-                if(countHint == 0){
-                    hintGlow(60000, hintBtnGlow);
+                setTimeout(() => {
+                    hintGlow(countGlow, hintBtnGlow);
                     setTimeout(() => {
                         hintBtnGlow.classList.remove("glow");
                     }, 70000);
-                } else {
-                    hintBtnGlow.classList.remove("glow");
-                }
+                }, 60000);
                 break;
         }
-        // herhaal.style.display = "none";
-        // startOKBtn.style.display = "none";
+        herhaal.style.display = "none";
+        startOKBtn.style.display = "none";
         speechBubble_p.innerHTML = tekst;
         startOK++;
         countHerhaal++;
@@ -164,6 +163,8 @@ if(document.URL.includes("groep-2/savanne.html") ){
     hintBtn.onclick = () => {
         isHint = true;
         console.log(countHint);
+        countGlow = 1;
+        hintGlow(countGlow, hintBtnGlow);
         switch (countHint) {
             case 0: 
                 speechBubble.style.visibility = "visible";

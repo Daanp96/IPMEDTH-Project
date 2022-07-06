@@ -40,6 +40,7 @@ let startOK = 0;
 let tekst = '';
 let image = '';
 let startTime;
+let countGlow = 0;
 
 function start(){
     startTime = new Date();
@@ -133,14 +134,12 @@ if(document.URL.includes("vissenverblijf.html") ){
                 mapOverlay.style.zIndex = "-1";
                 hintBtn.disabled = false;
                 start();
-                if(countHint == 0){
-                    hintGlow(60000, hintBtnGlow);
+                setTimeout(() => {
+                    hintGlow(countGlow, hintBtnGlow);
                     setTimeout(() => {
                         hintBtnGlow.classList.remove("glow");
                     }, 70000);
-                } else {
-                    hintBtnGlow.classList.remove("glow");
-                }
+                }, 60000);
                 break;
         }
     
@@ -173,6 +172,8 @@ if(document.URL.includes("vissenverblijf.html") ){
     
     hintBtn.onclick = () => {
         isHint = true;
+        countGlow = 1;
+        hintGlow(countGlow, hintBtnGlow);
         switch (countHint) {
             case 0: 
                 hintBtnGlow.classList.remove("glow");

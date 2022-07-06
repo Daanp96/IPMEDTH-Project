@@ -95,6 +95,8 @@ let countEnd = 0;
 let tekst = '';
 let speakOnStorage;
 let isHint = false;
+let countGlow = 0;
+
 hintBtn.disabled = true;
 
 setInterval(() => {
@@ -197,19 +199,19 @@ hintBubbleBtn.onclick = () => {
     headZookeeper.classList.add("hide");
     hintBubble.classList.add("hide");
     hintBtn.disabled = false;
-    if(countHint == 0){
-        hintGlow(60000, hintBtnGlow);
+    setTimeout(() => {
+        hintGlow(countGlow, hintBtnGlow);
         setTimeout(() => {
             hintBtnGlow.classList.remove("glow");
         }, 70000);
-    } else {
-        hintBtnGlow.classList.remove("glow");
-    }
+    }, 60000);
     countHerhaal++;
 }
 
 hintBtn.onclick = () => {
     console.log(countHint);
+    countGlow = 1;
+    hintGlow(countGlow, hintBtnGlow);
     switch (countHint) {
         case 0: 
             hintBtnGlow.classList.remove("glow");

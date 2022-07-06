@@ -37,11 +37,15 @@ const reloadHint = (audio, animate) => {
   }
 }
 
-const hintGlow = (tijd, hint) => {
-  setTimeout(() => {
-    hint.classList.add("glow");
-    // hint.classList.add("puzzel-options__btn-hint-glow");
-  }, tijd);
+const hintGlow = (isGlow, hint) => {
+  switch (isGlow) {
+    case 0:
+      hint.classList.add("glow");
+      break;
+    case 1:
+      hint.classList.remove("glow");
+      break;
+  }
 }
 
 const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay, hintBtn) => {
@@ -144,7 +148,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spee
 
 const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herhaal, hintBtn) => {
   let currentDroppable = null;
-
+  let stop = 0;
 
   obj.onmousedown = function(event) {
 
@@ -215,8 +219,9 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         pinguinsFed++;
       }
       
-      if(pinguinsFed == 7){
+      if(pinguinsFed == 7 && stop == 0){
         hintBtn.disabled = true;
+        console.log(hintBtn);
         speech.style.visibility = "visible";
         obj.style.visibility = "hidden";
         speechBtn.style.display = "none";
@@ -227,12 +232,13 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         goedGedaan.onended = () => {
           nextBtn.style.display = "block";
           herhaal.style.display = "block";
-
+          hintBtn.disabled = true;
         }
         
         herhaal.onclick = () => {
           reloadSpeech(goedGedaan, herhaal);
         }
+        stop++;
       }
     };
   };

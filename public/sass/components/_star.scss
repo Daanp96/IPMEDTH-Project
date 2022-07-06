@@ -16,7 +16,7 @@
         grid-row: 8 /span 1;
         align-self: center;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-2{
         @include ratedStar;
@@ -24,7 +24,7 @@
         grid-row: 8 /span 1;
         align-self: center;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-3{
         @include ratedStar;
@@ -32,7 +32,7 @@
         grid-row: 8 /span 1;
         align-self: center;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-4{
         @include ratedStar;
@@ -40,7 +40,7 @@
         grid-row: 4 /span 1;
         align-self: end;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-5{
         @include ratedStar;
@@ -48,7 +48,7 @@
         grid-row: 4 /span 1;
         align-self: end;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-6{
         @include ratedStar;
@@ -56,7 +56,7 @@
         grid-row: 4 /span 1;
         align-self: end;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-7{
         @include ratedStar;
@@ -64,7 +64,7 @@
         grid-row: 2 /span 1;
         align-self: start;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-8{
         @include ratedStar;
@@ -72,7 +72,7 @@
         grid-row: 2 /span 1;
         align-self: start;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-9{
         @include ratedStar;
@@ -80,7 +80,7 @@
         grid-row: 2 /span 1;
         align-self: start;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-10{
         @include ratedStar;
@@ -88,7 +88,7 @@
         grid-row: 5 /span 1;
         align-self: start;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-11{
         @include ratedStar;
@@ -96,7 +96,7 @@
         grid-row: 5 /span 1;
         align-self: start;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
     &-12{
         @include ratedStar;
@@ -104,7 +104,7 @@
         grid-row: 5 /span 1;
         align-self: start;
         justify-self: center;
-        z-index: 2;
+        z-index: 4;
     }
 }
 
