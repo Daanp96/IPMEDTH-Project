@@ -63,7 +63,7 @@ function speakOffFunction(){
 };
 
 if(document.URL.includes("pinguinverblijf.html") ){
-    dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan, herhaal);
+    dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan, herhaal, hintBtn);
 
     hintBtn.disabled = true;
     pinguinVerblijf.play();

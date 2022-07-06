@@ -142,7 +142,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spee
   };
 }
 
-const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herhaal) => {
+const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herhaal, hintBtn) => {
   let currentDroppable = null;
 
 
@@ -216,6 +216,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
       }
       
       if(pinguinsFed == 7){
+        hintBtn.disabled = true;
         speech.style.visibility = "visible";
         obj.style.visibility = "hidden";
         speechBtn.style.display = "none";
