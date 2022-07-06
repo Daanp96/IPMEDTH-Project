@@ -37,11 +37,15 @@ const reloadHint = (audio, animate) => {
   }
 }
 
-const hintGlow = (tijd, hint) => {
-  setTimeout(() => {
-    hint.classList.add("glow");
-    // hint.classList.add("puzzel-options__btn-hint-glow");
-  }, tijd);
+const hintGlow = (isGlow, hint) => {
+  switch (isGlow) {
+    case 0:
+      hint.classList.add("glow");
+      break;
+    case 1:
+      hint.classList.remove("glow");
+      break;
+  }
 }
 
 const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay, hintBtn) => {

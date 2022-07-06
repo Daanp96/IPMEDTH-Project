@@ -1681,7 +1681,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-2 {
@@ -1705,7 +1705,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-3 {
@@ -1729,7 +1729,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-4 {
@@ -1753,7 +1753,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: end;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-5 {
@@ -1777,7 +1777,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: end;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-6 {
@@ -1801,7 +1801,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: end;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-7 {
@@ -1825,7 +1825,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: start;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-8 {
@@ -1849,7 +1849,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: start;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-9 {
@@ -1873,7 +1873,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: start;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-10 {
@@ -1897,7 +1897,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: start;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-11 {
@@ -1921,7 +1921,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: start;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ratedStart-12 {
@@ -1945,7 +1945,7 @@ input[type=number]::-webkit-outer-spin-button {
       align-self: start;
   -ms-grid-column-align: center;
       justify-self: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 @media (max-width: 1200px) {

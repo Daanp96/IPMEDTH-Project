@@ -20,6 +20,7 @@ const herhaal = document.getElementById("js--speech-reload");
 let countHint = 0;
 let tekst = '';
 let image = '';
+let countGlow = 0;
 
 const pinguinVerblijf = new Audio("../../audio/Tjalle/7-pinguins/1-pinguïnverblijf.m4a");
 
@@ -83,14 +84,12 @@ if(document.URL.includes("pinguinverblijf.html") ){
         herhaal.style.display = "none";
 
         start();
-        if(countHint == 0){
-            hintGlow(60000, hintBtnGlow);
+        setTimeout(() => {
+            hintGlow(countGlow, hintBtnGlow);
             setTimeout(() => {
                 hintBtnGlow.classList.remove("glow");
             }, 70000);
-        } else {
-            hintBtnGlow.classList.remove("glow");
-        }
+        }, 60000);
     }
 
     speakOn.onclick = () => {
@@ -115,6 +114,8 @@ if(document.URL.includes("pinguinverblijf.html") ){
     hintBtn.onclick = () => {
         isHint = true;
         console.log(countHint);
+        countGlow = 1;
+        hintGlow(countGlow, hintBtnGlow);
         switch (countHint) {
             case 0: 
                 hintBtnGlow.classList.remove("glow");
