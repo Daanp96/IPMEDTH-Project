@@ -1,6 +1,6 @@
 import {reloadSpeech} from "./functions.js";
 
-let welkeKlas = new Audio("./audio/Tjalle/0-keuzescherm/1-welkeklas.m4a");
+let welkeKlas = new Audio("./audio/Tjalle/0-keuzescherm/1-welkeKlas.m4a");
 
 const speechReload = document.getElementById("js--speech-reload");
 const beginBtn = document.getElementById("js--begin");
