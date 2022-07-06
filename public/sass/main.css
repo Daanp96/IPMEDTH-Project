@@ -922,6 +922,7 @@ img {
   font-size: 4rem;
   color: #fff;
   overflow: hidden;
+  cursor: url("../images/cursor/cursor_point_60.cur"), default;
 }
 .popup__container-savanne--wrapper:focus {
   border: 1px solid rgb(102, 175, 233);

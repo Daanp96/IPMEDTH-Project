@@ -138,6 +138,7 @@ hintBtn.onclick = () => {
                 speech.style.zIndex = "-1";
                 mapOverlay.style.zIndex = "-1";
                 speechImage.classList.add("hide");
+                herhaal.style.display = "none";
                 hintBtn.muted = true;
                 isHint = false;
                 countHint++;

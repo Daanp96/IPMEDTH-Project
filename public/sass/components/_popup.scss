@@ -283,6 +283,7 @@
                 font-size: 4rem;
                 color: $color-white;
                 overflow: hidden;
+                cursor: $cursor-point;
 
                 &:focus{
                     border: 1px solid rgb(102, 175, 233);
