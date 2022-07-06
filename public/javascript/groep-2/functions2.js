@@ -145,9 +145,9 @@ const dragDropMap2 = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spe
   };
 }
 
-const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herhaal) => {
+const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herhaal, hintBtn) => {
   let currentDroppable = null;
-
+  let stop = 0;
 
   obj.onmousedown = function(event) {
 
@@ -217,7 +217,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         pinguinsFed++;
       }
       
-      if(pinguinsFed == 7){
+      if(pinguinsFed == 7 && stop == 0){
         speech.style.visibility = "visible";
         obj.style.visibility = "hidden";
         speechBtn.style.display = "none";
@@ -233,6 +233,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
         herhaal.onclick = () => {
           reloadSpeech(goedGedaan, herhaal);
         }
+        stop++;
       }
     };
   };

@@ -64,7 +64,7 @@ function speakOffFunction(){
 };
 
 if(document.URL.includes("pinguinverblijf.html") ){
-    dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan, herhaal);
+    dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan, herhaal, hintBtn);
 
     hintBtn.disabled = true;
     pinguinVerblijf.play();
@@ -118,7 +118,6 @@ if(document.URL.includes("pinguinverblijf.html") ){
         hintGlow(countGlow, hintBtnGlow);
         switch (countHint) {
             case 0: 
-                hintBtnGlow.classList.remove("glow");
                 speechBubble.style.visibility = "visible";
                 // explaineBtn.classList.remove("hide");
                 speechBubble_p.style.visibility = "visible";
@@ -166,15 +165,14 @@ if(document.URL.includes("pinguinverblijf.html") ){
                 startOKBtn.style.display = "none";
                 speechBubble.style.zIndex = "";
                 mapOverlay.style.zIndex = "-1";
+                // tekst = '';
+                hintBtn.disabled = true;
                 break;
-            }
+        }
         herhaal.style.display = "none";
         startOKBtn.style.display = "none";
-        console.log(tekst);
         speechBubble_p.innerHTML = tekst;
-        console.log(speechBubble_p.innerHTML);
-        explaineBtn.src = image;
-        
+        explaineBtn.src = image;        
     };
 }
   

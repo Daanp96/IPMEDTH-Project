@@ -64,7 +64,7 @@ function speakOffFunction(){
 };
 
 if(document.URL.includes("pinguinverblijf.html") ){
-    dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan, herhaal);
+    dragDropArctic(fishDrag, speechBubble, speechBubble_p, pinguinverblijfBtn, startOKBtn, goedGedaan, herhaal, hintBtn);
 
     hintBtn.disabled = true;
     pinguinVerblijf.play();
@@ -166,6 +166,7 @@ if(document.URL.includes("pinguinverblijf.html") ){
                 startOKBtn.style.display = "none";
                 speechBubble.style.zIndex = "";
                 mapOverlay.style.zIndex = "-1";
+                hintBtn.disabled = true;
                 break;
         }
         herhaal.style.display = "none";
