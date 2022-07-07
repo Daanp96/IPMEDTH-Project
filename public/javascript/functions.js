@@ -58,7 +58,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spee
 
     obj.style.position = 'absolute';
     obj.style.transform = "rotate(0)";
-    obj.style.zIndex = 1000;
+    obj.style.zIndex = 3;
     obj.style.cursor = "url('../images/cursor/cursor_grabbing_60.cur'), default";
     document.body.append(obj);
 

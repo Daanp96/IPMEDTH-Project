@@ -48,6 +48,12 @@ diplomaBtn.onclick = () => {
     diploma.style.gridRow = "1 / span 8";
     diplomaBtn.style.display = "none";
     window.print();
+    // const myWindow = window.open('http://127.0.0.1:5500/public/pages/einde.html','', 'width=1000,height=1000');
+    // // myWindow.focus();
+    
+    // myWindow.print();
+
+
 };
 
 window.onafterprint = (e) =>{
@@ -56,7 +62,7 @@ window.onafterprint = (e) =>{
     opnieuw.style.display = "inline";
     afsluiten.style.display = "inline";
     eindeTekst.style.display = "block";
-    window.localStorage.clear();
+    // window.localStorage.clear();
     e.preventDefault();
     // opnieuwSpelen.play();
     
@@ -74,10 +80,12 @@ bedankt.onended = () => {
 }
 
 opnieuw.onclick = () => {
+    window.localStorage.clear();
     toStart();
 }
 
 afsluiten.onclick = () => {
+    window.localStorage.clear();
     closeWindow();
 }
 
