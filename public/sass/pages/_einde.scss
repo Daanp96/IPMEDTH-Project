@@ -199,3 +199,10 @@
     }
 
 }
+
+@media print {
+    .diploma {
+        grid-column: 1 / span 16;
+        grid-row: 1 / span 8;
+    }
+}

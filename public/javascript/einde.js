@@ -44,24 +44,13 @@ speakOff.onclick = () => {
 };
 
 diplomaBtn.onclick = () => {
-    diploma.style.gridColumn = "1 / span 16";
-    diploma.style.gridRow = "1 / span 8";
     diplomaBtn.style.display = "none";
     window.print();
-};
-
-window.onafterprint = (e) =>{
-    console.log("terug");
     diploma.style.display = "none";
     opnieuw.style.display = "inline";
     afsluiten.style.display = "inline";
     eindeTekst.style.display = "block";
-    window.localStorage.clear();
-    e.preventDefault();
     // opnieuwSpelen.play();
-    
-    // window.close();
-    // return false;
 };
 
 bedankt.play();
