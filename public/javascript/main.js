@@ -72,27 +72,18 @@ if(document.URL.includes("vissenverblijf.html") ){
             timeDiff /= 1000;
             let seconds = Math.round(timeDiff);
             aantalSecondesVissenverblijf = seconds;
-            // hintCountPlusSeconds(countHint);
-            // console.log(aantalSecondesVissenverblijf);
-            // countHint = hintCountPlusSeconds(countHint);
-            console.log(startTimeVis);
-            console.log(countHintVis);
     
             if(countHintVis == 1){
                 aantalSecondesVissenverblijf += 10;
-                console.log(aantalSecondesVissenverblijf);
             }
             if(countHintVis == 2){
                 aantalSecondesVissenverblijf += 20;
-                console.log(aantalSecondesVissenverblijf);
             }
             if(countHintVis == 3){
                 aantalSecondesVissenverblijf += 30;
-                console.log(aantalSecondesVissenverblijf);
             }
             if(countHintVis == 4){
                 aantalSecondesVissenverblijf += 40;
-                console.log(aantalSecondesVissenverblijf);
             }
 
             if(seconds <= 90){
@@ -100,7 +91,7 @@ if(document.URL.includes("vissenverblijf.html") ){
                     localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                     localStorage.setItem('star1', 0);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             if(seconds > 90 && seconds <= 150){
@@ -108,7 +99,7 @@ if(document.URL.includes("vissenverblijf.html") ){
                     localStorage.setItem('star2', 0);
                     localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             if(seconds > 150){
@@ -116,7 +107,7 @@ if(document.URL.includes("vissenverblijf.html") ){
                     localStorage.setItem('star3', 0);
                     localStorage.setItem("aantalSecondesVissenverblijf", aantalSecondesVissenverblijf);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             document.getElementById("aantalVissen").style.color = "lime";
@@ -139,62 +130,6 @@ if(document.URL.includes("vissenverblijf.html") ){
     });
 }
 
-// if(document.URL.includes("savanne.html")){
-//     const terugKaart = new Audio("../audio/5-vissen/4-terugKaart.mp3");
-//     formSavanneBtn.addEventListener("click", function(e){
-
-//         let form_answer = document.forms["answerForm"]["textInput"].value;
-
-//         endTime = new Date();
-//         var timeDiff = endTime - startTime; //ms
-//         timeDiff /= 1000;
-//         let seconds = Math.round(timeDiff);
-//         aantalSecondesSavanne = seconds;
-    
-//         if(form_answer == naam_correct){
-//             terugKaart.play();
-//             if(seconds <= 90){
-//                 try {
-//                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
-//                     localStorage.setItem('star4', 0);
-//                 } catch (error) {
-//                     console.log(error);
-//                 }
-//             }
-//             if(seconds > 90 && seconds <= 150){
-//                 try {
-//                     localStorage.setItem('star5', 0);
-//                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
-//                 } catch (error) {
-//                     console.log(error);
-//                 }
-//             }
-//             if(seconds > 150){
-//                 try {
-//                     localStorage.setItem('star6', 0);
-//                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
-//                 } catch (error) {
-//                     console.log(error);
-//                 }
-//             }
-//             document.getElementById("naamDier").style.color = "lime";
-//             setTimeout(() => {
-//                 endSavannePuzzel();
-//             }, 1000);
-            
-//         }else{
-//             savanneForm.classList.add("shake");
-//             document.getElementById("naamDier").style.color = "red";
-//             setTimeout(() => {
-//                 savanneForm.classList.remove("shake");
-//                 document.getElementById("naamDier").style.color = "black";
-//                 document.getElementById("naamDier").value = '';
-//             }, 2000);
-//         }
-//         e.preventDefault();
-//     });
-// }
-
 if(document.URL.includes("pinguinverblijf.html")){
     pinguinverblijfBtn.addEventListener("click", function(e){
         
@@ -204,16 +139,11 @@ if(document.URL.includes("pinguinverblijf.html")){
         let seconds = Math.round(timeDiff);
         aantalSecondesPinguinverblijf = seconds;
 
-        console.log(startTimePinguin);
-        console.log(countHintPinguin);
-
         if(countHintPinguin == 1){
             aantalSecondesPinguinverblijf += 10;
-            console.log(aantalSecondesPinguinverblijf);
         }
         if(countHintPinguin == 2){
             aantalSecondesPinguinverblijf += 20;
-            console.log(aantalSecondesPinguinverblijf);
         }
     
         if(seconds <= 90){
@@ -221,7 +151,7 @@ if(document.URL.includes("pinguinverblijf.html")){
                 localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
                 localStorage.setItem('star7', 0);
             } catch (error) {
-                console.log(error);
+                throw error;
             }
         }
         if(seconds > 90 && seconds <= 150){
@@ -229,7 +159,7 @@ if(document.URL.includes("pinguinverblijf.html")){
                 localStorage.setItem('star8', 0);
                 localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
             } catch (error) {
-                console.log(error);
+                throw error;
             }
         }
         if(seconds > 150){
@@ -237,7 +167,7 @@ if(document.URL.includes("pinguinverblijf.html")){
                 localStorage.setItem('star9', 0);
                 localStorage.setItem("aantalSecondesPinguinverblijf", aantalSecondesPinguinverblijf);
             } catch (error) {
-                console.log(error);
+                throw error;
             }
         }
         
@@ -254,7 +184,6 @@ const spanTypenBtn = document.getElementById("js--form-submitTypen");
 
 if(document.URL.includes("savanne.html")){
     spanTypenBtn.addEventListener("click", function(e){
-        console.log(spanTypen.innerText);
 
         if(spanTypen.innerText == typen_correct){
             endTime = new Date();
@@ -262,25 +191,18 @@ if(document.URL.includes("savanne.html")){
             timeDiff /= 1000;
             let seconds = Math.round(timeDiff);
             aantalSecondesSavanne = seconds;
-
-            console.log(startTimeSavanne);
-            console.log(countHintSavanne);
     
             if(countHintSavanne == 1){
                 aantalSecondesSavanne += 10;
-                console.log(aantalSecondesSavanne);
             }
             if(countHintSavanne == 2){
                 aantalSecondesSavanne += 20;
-                console.log(aantalSecondesSavanne);
             }
             if(countHintSavanne == 3){
                 aantalSecondesSavanne += 30;
-                console.log(aantalSecondesSavanne);
             }
             if(countHintSavanne == 4){
                 aantalSecondesSavanne += 40;
-                console.log(aantalSecondesSavanne);
             }
 
             if(seconds <= 90){
@@ -288,7 +210,7 @@ if(document.URL.includes("savanne.html")){
                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                     localStorage.setItem('star4', 0);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             if(seconds > 90 && seconds <= 150){
@@ -296,7 +218,7 @@ if(document.URL.includes("savanne.html")){
                     localStorage.setItem('star5', 0);
                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             if(seconds > 150){
@@ -304,7 +226,7 @@ if(document.URL.includes("savanne.html")){
                     localStorage.setItem('star6', 0);
                     localStorage.setItem("aantalSecondesSavanne", aantalSecondesSavanne);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             document.getElementById("js--typen-form").style.color = "lime";
@@ -334,7 +256,7 @@ if(document.URL.includes("giraffeverblijf.html")){
             localStorage.setItem('star10', 0);
 
         } catch (error) {
-            console.log(error);
+            throw error;
         }
         
         endGiraffeverblijfPuzzel();
@@ -347,7 +269,7 @@ if(document.URL.includes("giraffeverblijf.html")){
         try {
             localStorage.setItem('star10', 0);
         } catch (error) {
-            console.log(error);
+            throw error;
         }
         
         endGiraffeverblijfPuzzel();

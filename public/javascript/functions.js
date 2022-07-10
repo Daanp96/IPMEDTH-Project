@@ -221,7 +221,6 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
       
       if(pinguinsFed == 7 && stop == 0){
         hintBtn.disabled = true;
-        console.log(hintBtn);
         speech.style.visibility = "visible";
         obj.style.visibility = "hidden";
         speechBtn.style.display = "none";

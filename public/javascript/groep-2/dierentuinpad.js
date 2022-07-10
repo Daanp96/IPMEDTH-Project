@@ -116,7 +116,6 @@ if(document.URL.includes("groep-2/dierentuinpad.html") ){
     } else {
         x = 0;
     }
-    console.log(x);
 
     switch (x) {
         case 0:
