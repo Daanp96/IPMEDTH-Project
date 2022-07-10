@@ -12,8 +12,7 @@
     <script src="../javascript/savanne.js" type="module" defer></script>
     <title>Dierentuin</title>
 </head>
-<body>
-    <!-- <iframe src="../audio/6-aap/1-savanneverblijf.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
+<body oncontextmenu="return false;">
     <main class="savanne--background overflow">
         <section class="button-options-big grid-16-1 walk-path--background">
             <article class="wall__up-1 ">
@@ -39,10 +38,6 @@
             <button class="button-options-big__hint button " id="js--hint">
                 <img class="button-options-big__hint--image" id="js--hint-glow" src="../images/buttons/hint-btn.png"></img>
             </button>
-
-            <!-- <button class="puzzel-options__btn-information button ">
-                <img class="puzzel-options__btn-information--image" src="../images/information-btn.png"></img>
-            </button> -->
 
             <button class="button-options-big__speak button" id="js--speak-on">
                 <img class="button-options-big__speak--image" src="../images/buttons/speak-on-btn.png"></img>
@@ -137,7 +132,6 @@
         <div class="popup" id="popup">
             <div class="popup__content-savanne">
                 <div class="popup__container-savanne">
-                    <!-- <p class="popup__container-monkey--p1"></p> -->
                     <figure class="popup__container-savanne--lion">
                         <img class="popup__container-savanne--image" src="../images/savanne/lion-head.png" alt="leeuwenhoofd">
                     </figure>
@@ -154,10 +148,6 @@
                     </figure>
                     <p class="popup__container-savanne-text--zebra">Zebra</p>
 
-                    <!-- <form class="popup__container-typen--form" id="js--savanne-form" name="answerForm" autocomplete="off">
-                        <label for="naamDier"></label>
-                        <input class="popup__container--form-input button" name="textInput" id="naamDier" type="text" placeholder="?" required>
-                    </form> -->
                     <div class="popup__container-savanne--button">
                         <button class="btn-ok-popup button" id="js--form-submitTypen" form="answerForm" type="submit" value="">&#10004;</button>
                     </div>

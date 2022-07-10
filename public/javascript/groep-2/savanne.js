@@ -162,7 +162,6 @@ if(document.URL.includes("groep-2/savanne.html") ){
     
     hintBtn.onclick = () => {
         isHint = true;
-        console.log(countHint);
         countGlow = 1;
         hintGlow(countGlow, hintBtnGlow);
         switch (countHint) {

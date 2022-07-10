@@ -50,17 +50,12 @@ diplomaBtn.onclick = () => {
 };
 
 window.onafterprint = (e) =>{
-    console.log("terug");
     diploma.style.display = "none";
     opnieuw.style.display = "inline";
     afsluiten.style.display = "inline";
     eindeTekst.style.display = "block";
     window.localStorage.clear();
     e.preventDefault();
-
-    
-    // window.close();
-    // return false;
 };
 
 bedankt.play();
@@ -73,7 +68,6 @@ bedankt.onended = () => {
 
 opnieuw.onclick = () => {
     toStart();
-    // window.location = "../../index.html";
 }
 
 afsluiten.onclick = () => {

@@ -113,7 +113,6 @@ if(document.URL.includes("pinguinverblijf.html") ){
         
     hintBtn.onclick = () => {
         isHint = true;
-        console.log(countHint);
         countGlow = 1;
         hintGlow(countGlow, hintBtnGlow);
         switch (countHint) {

@@ -123,7 +123,6 @@ if(document.URL.includes("dierentuinpad.html") ){
     } else {
         x = 0;
     }
-    console.log(x);
 
     switch (x) {
         case 0:

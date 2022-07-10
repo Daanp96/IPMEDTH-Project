@@ -70,27 +70,18 @@ if(document.URL.includes("groep-2/vissenverblijf.html") ){
             timeDiff /= 1000;
             let seconds = Math.round(timeDiff);
             aantalSecondesVissenverblijf2 = seconds;
-            // hintCountPlusSeconds(countHint);
-            // console.log(aantalSecondesVissenverblijf);
-            // countHint = hintCountPlusSeconds(countHint);
-            console.log(startTimeVis);
-            console.log(countHintVis);
-    
+
             if(countHintVis == 1){
                 aantalSecondesVissenverblijf2 += 10;
-                console.log(aantalSecondesVissenverblijf2);
             }
             if(countHintVis == 2){
                 aantalSecondesVissenverblijf2 += 20;
-                console.log(aantalSecondesVissenverblijf2);
             }
             if(countHintVis == 3){
                 aantalSecondesVissenverblijf2 += 30;
-                console.log(aantalSecondesVissenverblijf2);
             }
             if(countHintVis == 4){
                 aantalSecondesVissenverblijf2 += 40;
-                console.log(aantalSecondesVissenverblijf2);
             }
 
             if(seconds <= 90){
@@ -98,7 +89,7 @@ if(document.URL.includes("groep-2/vissenverblijf.html") ){
                     localStorage.setItem("aantalSecondesVissenverblijf2", aantalSecondesVissenverblijf2);
                     localStorage.setItem('star1', 0);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             if(seconds > 90 && seconds <= 150){
@@ -106,7 +97,7 @@ if(document.URL.includes("groep-2/vissenverblijf.html") ){
                     localStorage.setItem('star2', 0);
                     localStorage.setItem("aantalSecondesVissenverblijf2", aantalSecondesVissenverblijf2);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             if(seconds > 150){
@@ -114,7 +105,7 @@ if(document.URL.includes("groep-2/vissenverblijf.html") ){
                     localStorage.setItem('star3', 0);
                     localStorage.setItem("aantalSecondesVissenverblijf2", aantalSecondesVissenverblijf2);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             document.getElementById("aantalVissen").style.color = "lime";
@@ -146,16 +137,11 @@ if(document.URL.includes("groep-2/pinguinverblijf.html")){
         let seconds = Math.round(timeDiff);
         aantalSecondesPinguinverblijf2 = seconds;
 
-        console.log(startTimePinguin);
-        console.log(countHintPinguin);
-
         if(countHintPinguin == 1){
             aantalSecondesPinguinverblijf2 += 10;
-            console.log(aantalSecondesPinguinverblijf2);
         }
         if(countHintPinguin == 2){
             aantalSecondesPinguinverblijf2 += 20;
-            console.log(aantalSecondesPinguinverblijf2);
         }
     
         if(seconds <= 90){
@@ -163,7 +149,7 @@ if(document.URL.includes("groep-2/pinguinverblijf.html")){
                 localStorage.setItem("aantalSecondesPinguinverblijf2", aantalSecondesPinguinverblijf2);
                 localStorage.setItem('star7', 0);
             } catch (error) {
-                console.log(error);
+                throw error;
             }
         }
         if(seconds > 90 && seconds <= 150){
@@ -171,7 +157,7 @@ if(document.URL.includes("groep-2/pinguinverblijf.html")){
                 localStorage.setItem('star8', 0);
                 localStorage.setItem("aantalSecondesPinguinverblijf2", aantalSecondesPinguinverblijf2);
             } catch (error) {
-                console.log(error);
+                throw error;
             }
         }
         if(seconds > 150){
@@ -179,7 +165,7 @@ if(document.URL.includes("groep-2/pinguinverblijf.html")){
                 localStorage.setItem('star9', 0);
                 localStorage.setItem("aantalSecondesPinguinverblijf2", aantalSecondesPinguinverblijf2);
             } catch (error) {
-                console.log(error);
+                throw error;
             }
         }
         
@@ -191,12 +177,8 @@ if(document.URL.includes("groep-2/pinguinverblijf.html")){
     });
 }
 
-// const spanTypen = document.getElementById("js--typen-form");
-// const spanTypenBtn = document.getElementById("js--form-submitTypen");
-
 if(document.URL.includes("groep-2/savanne.html")){
     formSavanneBtn.addEventListener("click", function(e){
-        // console.log(spanTypen.innerText);
 
         let form_answer = document.forms["answerForm"]["textInput"].value;
 
@@ -206,25 +188,18 @@ if(document.URL.includes("groep-2/savanne.html")){
             timeDiff /= 1000;
             let seconds = Math.round(timeDiff);
             aantalSecondesSavanne2 = seconds;
-
-            console.log(startTimeSavanne);
-            console.log(countHintSavanne);
     
             if(countHintSavanne == 1){
                 aantalSecondesSavanne2 += 10;
-                console.log(aantalSecondesSavanne2);
             }
             if(countHintSavanne == 2){
                 aantalSecondesSavanne2 += 20;
-                console.log(aantalSecondesSavanne2);
             }
             if(countHintSavanne == 3){
                 aantalSecondesSavanne2 += 30;
-                console.log(aantalSecondesSavanne2);
             }
             if(countHintSavanne == 4){
                 aantalSecondesSavanne2 += 40;
-                console.log(aantalSecondesSavanne2);
             }
 
             if(seconds <= 90){
@@ -232,7 +207,7 @@ if(document.URL.includes("groep-2/savanne.html")){
                     localStorage.setItem("aantalSecondesSavanne2", aantalSecondesSavanne2);
                     localStorage.setItem('star4', 0);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             if(seconds > 90 && seconds <= 150){
@@ -240,7 +215,7 @@ if(document.URL.includes("groep-2/savanne.html")){
                     localStorage.setItem('star5', 0);
                     localStorage.setItem("aantalSecondesSavanne2", aantalSecondesSavanne2);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             if(seconds > 150){
@@ -248,7 +223,7 @@ if(document.URL.includes("groep-2/savanne.html")){
                     localStorage.setItem('star6', 0);
                     localStorage.setItem("aantalSecondesSavanne2", aantalSecondesSavanne2);
                 } catch (error) {
-                    console.log(error);
+                    throw error;
                 }
             }
             document.getElementById("naamDier").style.color = "lime";
@@ -278,7 +253,7 @@ if(document.URL.includes("groep-2/giraffeverblijf.html")){
             localStorage.setItem('star10', 0);
 
         } catch (error) {
-            console.log(error);
+            throw error;
         }
         
         endGiraffeverblijfPuzzel();
@@ -291,7 +266,7 @@ if(document.URL.includes("groep-2/giraffeverblijf.html")){
         try {
             localStorage.setItem('star10', 0);
         } catch (error) {
-            console.log(error);
+            throw error;
         }
         
         endGiraffeverblijfPuzzel();
