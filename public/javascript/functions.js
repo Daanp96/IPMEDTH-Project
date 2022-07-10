@@ -50,6 +50,7 @@ const hintGlow = (isGlow, hint) => {
 
 const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, speechButton, mapOverlay, hintBtn) => {
   let currentDroppable = null;
+  let attr;
 
   obj.onmousedown = function(event) {
 
@@ -100,7 +101,11 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spee
       obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
-      const attr = currentDroppable.getAttribute('data-piece');
+      try {
+        attr = currentDroppable.getAttribute('data-piece');
+      } catch (e) {
+        return;
+      }
 
       if(attr == obj.getAttribute('data-piece')) {
         currentDroppable.style.opacity = '100%';
@@ -149,6 +154,7 @@ const dragDropMap = (obj, btn, zookpr, speech, speechP, kaartHeel, herhaal, spee
 const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herhaal, hintBtn) => {
   let currentDroppable = null;
   let stop = 0;
+  let attr;
 
   obj.onmousedown = function(event) {
 
@@ -198,7 +204,11 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
       obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
       
-      const attr = currentDroppable.getAttribute('data-pinguin');
+      try {
+        attr = currentDroppable.getAttribute('data-pinguin');
+      } catch (e) {
+        return;
+      }
 
       if(attr == obj.getAttribute('data-pinguin')) {
         let elem = document.createElement("img");
@@ -257,6 +267,7 @@ const dragDropArctic = (obj, speech, text, nextBtn, speechBtn, goedGedaan, herha
 
 const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kassaDrop) => {
   let currentDroppable = null;
+  let attr;
 
   obj.onmousedown = function(event) {
 
@@ -305,7 +316,11 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
       obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
-      const attr = currentDroppable.getAttribute('data-bol');
+      try {
+        attr = currentDroppable.getAttribute('data-bol');
+      } catch (e) {
+        return;
+      }
     
       if(attr == obj.getAttribute('data-bol')) {
         let kleur = obj.getAttribute('data-kleur');
@@ -363,6 +378,8 @@ const dragDropIjs = (obj, kassa, bol1, bol2, ijsjes, speech, audio, herhaal, kas
 
 const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal, hint) => {
   let currentDroppable = null;
+  let attr1;
+  let attr2;
 
   obj.onmousedown = function(event) {
 
@@ -412,8 +429,12 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal, hint) =>
       obj.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       obj.onmouseup = null;
 
-      const attr1 = currentDroppable.getAttribute('data-geld1');
-      const attr2 = currentDroppable.getAttribute('data-geld2');
+      try {
+        attr1 = currentDroppable.getAttribute('data-geld1');
+        attr2 = currentDroppable.getAttribute('data-geld2');
+      } catch (e) {
+        return;
+      }
 
       if (ijsPrijs == 1) {
         obj.removeAttribute('data-geld2');
@@ -469,6 +490,7 @@ const dragDropGeld = (obj, kassa, btn, speech, audio, kaching, herhaal, hint) =>
 }
 
 const dragDropGiraffe = (object, endBtn, giraffeImage) => {
+  let el;
 
   object.onmousedown = (event) => {
 
@@ -504,7 +526,11 @@ const dragDropGiraffe = (object, endBtn, giraffeImage) => {
       object.style.cursor = "url('../images/cursor/cursor_grab_60.cur'), default";
       object.onmouseup = null;
 
-      const el = object.getAttribute("data-elements");
+      try {
+        el = object.getAttribute("data-elements");
+      } catch (e) {
+        return;
+      }
 
       if (el == "tree") {
         object.removeAttribute('data-elements');
