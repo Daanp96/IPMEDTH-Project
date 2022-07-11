@@ -209,7 +209,6 @@ hintBubbleBtn.onclick = () => {
 }
 
 hintBtn.onclick = () => {
-    console.log(countHint);
     countGlow = 1;
     hintGlow(countGlow, hintBtnGlow);
     switch (countHint) {
@@ -286,7 +285,6 @@ startOKBtn.onclick = () => {
     bovenaan.play();
 
     bovenaan.onended = () => {
-        console.log("none");
         hintBubbleBtn.style.display = "flex";
         herhaalHint.style.display = "block";
     }
@@ -382,10 +380,6 @@ sidebarPond2.onclick = () => {
 };
 
 endBtn.onclick = () => {
-    
-    // endTalk();
-    // countEnd = 1;
-    console.log(countEnd);
     mapOverlay.classList.remove("hide");
     headZookeeper.classList.remove("hide");
     endBubble.classList.remove("hide");
@@ -408,7 +402,6 @@ const naarPad = () => {
 // }
 
 endSpeechBubbleDierentuin.onclick = () =>{
-    console.log(countEnd);
     countEnd++;
     mapOverlay.classList.add("hide");
     headZookeeper.classList.add("hide");
@@ -417,7 +410,6 @@ endSpeechBubbleDierentuin.onclick = () =>{
 };
 
 endSpeechBubbleNatuur.onclick = () =>{
-    console.log(countEnd);
     countEnd++;
     mapOverlay.classList.add("hide");
     headZookeeper.classList.add("hide");
@@ -426,7 +418,6 @@ endSpeechBubbleNatuur.onclick = () =>{
 };
 
 endBubbleBtn.onclick = () => {
-    console.log(countEnd);
     switch (countEnd) {
         case 0: 
             endBubbleBtn.style.display = "none";

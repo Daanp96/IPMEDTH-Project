@@ -11,7 +11,7 @@
     <script src="../javascript/main.js" type="module" defer></script>
     <script src="../javascript/giraffeverblijf.js" type="module" defer></script>
 </head>
-<body>
+<body oncontextmenu="return false;">
     <main>
         <section id="js--article-intro">
             <article class="button-options-big grid-16-1 walk-path--background">
@@ -61,11 +61,6 @@
                         <button class="btn-ok-small btn-speech button" id="js--speech-bubble-btn">&#10132;</button>
                     </div>
                 </div>
-
-                <!-- <div class="intro__btn">
-                    <button id="js--intro-btn" class="btn-ok button">&#10132;</button>
-                </div> -->
-
                 <article class="wall__down-1">
                     <figure>
                         <img class="wall__down-1--image" src="../images/hok_items/wall.png" alt="wall">
@@ -89,10 +84,6 @@
                         <img class="giraffeverblijf-options__hint--image" id="js--hint-glow" src="../images/buttons/hint-btn.png"></img>
                     </button>
     
-                    <!-- <button class="giraffe-options__btn-information button ">
-                        <img class="giraffe-options__btn-information--image" src="../images/information-btn.png"></img>
-                    </button> -->
-        
                     <button class="giraffeverblijf-options__speak button" id="js--speak-on-2">
                         <img class="giraffeverblijf-options__speak--image" src="../images/buttons/speak-on-btn.png"></img>
                     </button>
@@ -187,7 +178,6 @@
                     </figure>
                 </article>
                 <div class="speech-bubble giraffeverblijf__speech-bubble hide" id="js--hintBubble">
-                    <!-- <img class="btn-explaine hide" id="js--speech-bubble-img"></img> -->
                     <img class="speech-bubble-reload button" id="js--speech-reload-hint" src="../images/buttons/reload_button.png"></img>
                     <p id="js--speech-bubble-p-hint"></p>
                     <div class="btn-ok-div">
@@ -196,7 +186,6 @@
                 </div>
 
                 <div class="speech-bubble giraffeverblijf__speech-bubble hide" id="js--endBubble">
-                    <!-- <img class="btn-explaine hide" id="js--speech-bubble-img"></img> -->
                     <img class="speech-bubble-reload--end button" id="js--speech-reload-end" src="../images/buttons/reload_button.png"></img>
                     <p id="js--speech-bubble-p-end">Dat ziet er goed uit. Een goed ingericht hok is goed voor de gezondheid van de dieren.</p>
                     <div class="btn-ok-div" id="js--speech-bubble-div">

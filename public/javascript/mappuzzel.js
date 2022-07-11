@@ -40,10 +40,8 @@ let countGlow = 0;
 
 herhaal.onclick = () => {
     if(isHint) {
-        console.log('is hint')
         reloadHint(hint, herhaal);
     } else {
-        console.log("is geen hint")
         reloadSpeech(audioHerhaal[countHerhaal], herhaal);
     }
 }
@@ -110,7 +108,6 @@ speechButton.onclick = () => {
 }
 
 hintBtn.onclick = () => {
-    console.log(countHint);
     isHint = true;
     countGlow = 1;
     hintGlow(countGlow, hintBtnGlow);

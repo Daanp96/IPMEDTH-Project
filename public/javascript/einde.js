@@ -44,8 +44,6 @@ speakOff.onclick = () => {
 };
 
 diplomaBtn.onclick = () => {
-    diploma.style.gridColumn = "1 / span 16";
-    diploma.style.gridRow = "1 / span 8";
     diplomaBtn.style.display = "none";
     window.print();
     // const myWindow = window.open('http://127.0.0.1:5500/public/pages/einde.html','', 'width=1000,height=1000');
@@ -65,9 +63,6 @@ window.onafterprint = (e) =>{
     // window.localStorage.clear();
     e.preventDefault();
     // opnieuwSpelen.play();
-    
-    // window.close();
-    // return false;
 };
 
 bedankt.play();
