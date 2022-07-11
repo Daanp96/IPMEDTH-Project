@@ -1,6 +1,6 @@
 import {countHint as countHintVis, startTime as startTimeVis} from "./vissenverblijf.js";
 import {countHint as countHintSavanne, startTime as startTimeSavanne} from "./savanne.js";
-// import {countHint as countHintPinguin,startTime as startTimePinguin} from "./pinguinverblijf.js";
+import {countHint as countHintPinguin,startTime as startTimePinguin} from "./pinguinverblijf.js";
 
 const speakOn = document.getElementById("js--speak-on");
 const speakOff = document.getElementById("js--speak-off");
@@ -87,14 +87,14 @@ if(document.URL.includes("groep-2/vissenverblijf.html") ){
             if(seconds <= 90){
                 try {
                     localStorage.setItem("aantalSecondesVissenverblijf2", aantalSecondesVissenverblijf2);
-                    localStorage.setItem('star1', 0);
+                    localStorage.setItem('groep2Star1', 0);
                 } catch (error) {
                     throw error;
                 }
             }
             if(seconds > 90 && seconds <= 150){
                 try {
-                    localStorage.setItem('star2', 0);
+                    localStorage.setItem('groep2Star2', 0);
                     localStorage.setItem("aantalSecondesVissenverblijf2", aantalSecondesVissenverblijf2);
                 } catch (error) {
                     throw error;
@@ -102,7 +102,7 @@ if(document.URL.includes("groep-2/vissenverblijf.html") ){
             }
             if(seconds > 150){
                 try {
-                    localStorage.setItem('star3', 0);
+                    localStorage.setItem('groep2Star3', 0);
                     localStorage.setItem("aantalSecondesVissenverblijf2", aantalSecondesVissenverblijf2);
                 } catch (error) {
                     throw error;
@@ -147,14 +147,14 @@ if(document.URL.includes("groep-2/pinguinverblijf.html")){
         if(seconds <= 90){
             try {
                 localStorage.setItem("aantalSecondesPinguinverblijf2", aantalSecondesPinguinverblijf2);
-                localStorage.setItem('star7', 0);
+                localStorage.setItem('groep2Star7', 0);
             } catch (error) {
                 throw error;
             }
         }
         if(seconds > 90 && seconds <= 150){
             try {
-                localStorage.setItem('star8', 0);
+                localStorage.setItem('groep2Star8', 0);
                 localStorage.setItem("aantalSecondesPinguinverblijf2", aantalSecondesPinguinverblijf2);
             } catch (error) {
                 throw error;
@@ -162,7 +162,7 @@ if(document.URL.includes("groep-2/pinguinverblijf.html")){
         }
         if(seconds > 150){
             try {
-                localStorage.setItem('star9', 0);
+                localStorage.setItem('groep2Star9', 0);
                 localStorage.setItem("aantalSecondesPinguinverblijf2", aantalSecondesPinguinverblijf2);
             } catch (error) {
                 throw error;
@@ -205,14 +205,14 @@ if(document.URL.includes("groep-2/savanne.html")){
             if(seconds <= 90){
                 try {
                     localStorage.setItem("aantalSecondesSavanne2", aantalSecondesSavanne2);
-                    localStorage.setItem('star4', 0);
+                    localStorage.setItem('groep2Star4', 0);
                 } catch (error) {
                     throw error;
                 }
             }
             if(seconds > 90 && seconds <= 150){
                 try {
-                    localStorage.setItem('star5', 0);
+                    localStorage.setItem('groep2Star5', 0);
                     localStorage.setItem("aantalSecondesSavanne2", aantalSecondesSavanne2);
                 } catch (error) {
                     throw error;
@@ -220,7 +220,7 @@ if(document.URL.includes("groep-2/savanne.html")){
             }
             if(seconds > 150){
                 try {
-                    localStorage.setItem('star6', 0);
+                    localStorage.setItem('groep2Star6', 0);
                     localStorage.setItem("aantalSecondesSavanne2", aantalSecondesSavanne2);
                 } catch (error) {
                     throw error;
@@ -250,7 +250,7 @@ if(document.URL.includes("groep-2/giraffeverblijf.html")){
     endSpeechBubbleDierentuin.addEventListener("click", function(e){
     
         try {
-            localStorage.setItem('star10', 0);
+            localStorage.setItem('groep2Star10', 0);
 
         } catch (error) {
             throw error;
@@ -264,7 +264,7 @@ if(document.URL.includes("groep-2/giraffeverblijf.html")){
     endSpeechBubbleNatuur.addEventListener("click", function(e){
 
         try {
-            localStorage.setItem('star10', 0);
+            localStorage.setItem('groep2Star10', 0);
         } catch (error) {
             throw error;
         }
