@@ -40,10 +40,8 @@ let countGlow = 0;
 
 herhaal.onclick = () => {
     if(isHint) {
-        console.log('is hint')
         reloadHint(hint, herhaal);
     } else {
-        console.log("is geen hint")
         reloadSpeech(audioHerhaal[countHerhaal], herhaal);
     }
 }
@@ -110,7 +108,6 @@ speechButton.onclick = () => {
 }
 
 hintBtn.onclick = () => {
-    console.log(countHint);
     isHint = true;
     countGlow = 1;
     hintGlow(countGlow, hintBtnGlow);
@@ -118,10 +115,10 @@ hintBtn.onclick = () => {
         case 0: 
             hintBtnGlow.classList.remove("glow");
             zookeeper.style.visibility = "visible";
-            zookeeper.style.zIndex = "4";
+            zookeeper.style.zIndex = "6";
             speech.style.visibility = "visible";
-            speech.style.zIndex = "2";
-            mapOverlay.style.zIndex = "1";
+            speech.style.zIndex = "6";
+            mapOverlay.style.zIndex = "4";
             speechImage.classList.remove("hide");
             herhaal.style.display = "none";
             speechP.innerHTML = "Beweeg de muis naar een puzzelstukje en doe dan dit:";
