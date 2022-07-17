@@ -380,6 +380,7 @@ sidebarPond2.onclick = () => {
 };
 
 endBtn.onclick = () => {
+    hintGlow(countGlow, hintBtnGlow);
     mapOverlay.classList.remove("hide");
     headZookeeper.classList.remove("hide");
     endBubble.classList.remove("hide");
