@@ -22,7 +22,7 @@ let tekst = '';
 let image = '';
 let countGlow = 0;
 
-const pinguinVerblijf = new Audio("../audio/Tjalle/7-pinguins/1-pinguïnverblijf.m4a");
+const pinguinVerblijf = new Audio("../audio/Tjalle/7-pinguins/1-pinguinverblijf.m4a");
 
 const goedGedaan = new Audio("../audio/Tjalle/7-pinguins/2-goedGedaan.m4a");
 const hint1 = new Audio("../audio/Tjalle/7-pinguins/hint-1.m4a");
